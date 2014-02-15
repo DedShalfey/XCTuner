@@ -1,4 +1,4 @@
-object AboutBox: TAboutBox
+﻿object AboutBox: TAboutBox
   Left = 200
   Top = 108
   BorderStyle = bsDialog

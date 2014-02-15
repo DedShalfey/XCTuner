@@ -1,1 +1,1 @@
-application for quick setup config
+﻿application for quick setup config
