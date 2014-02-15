@@ -1,4 +1,4 @@
-unit Unit1;
+п»їunit Unit1;
 
 interface
 
@@ -77,7 +77,7 @@ implementation
 
 procedure TForm1.battle_loading();
 begin
-  // загрузка данных из файла в интерфейс
+  // Р·Р°РіСЂСѓР·РєР° РґР°РЅРЅС‹С… РёР· С„Р°Р№Р»Р° РІ РёРЅС‚РµСЂС„РµР№СЃ
   b_s1:=battle.Strings[8].Trim;
   b_s2:=battle.Strings[11].Trim;
   b_s3:=battle.Strings[14].Trim;
@@ -107,7 +107,7 @@ end;
 
 procedure TForm1.battle_save;
 begin
-  // процедура подготовки изменений для сохранения
+  // РїСЂРѕС†РµРґСѓСЂР° РїРѕРґРіРѕС‚РѕРІРєРё РёР·РјРµРЅРµРЅРёР№ РґР»СЏ СЃРѕС…СЂР°РЅРµРЅРёСЏ
   if (RadioButton1.Checked=True) then
     b_s1:='    "mirroredVehicleIcons": false,' else b_s1:='    "mirroredVehicleIcons": true,';
 
@@ -160,17 +160,17 @@ end;
 
 procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  // При закрытие на всякий случай очищаем переменную xvm
+  // РџСЂРё Р·Р°РєСЂС‹С‚РёРµ РЅР° РІСЃСЏРєРёР№ СЃР»СѓС‡Р°Р№ РѕС‡РёС‰Р°РµРј РїРµСЂРµРјРµРЅРЅСѓСЋ xvm
   xvm.Free;
   battle.Free;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
-  // Создаем объекты типа TStringlist
+  // РЎРѕР·РґР°РµРј РѕР±СЉРµРєС‚С‹ С‚РёРїР° TStringlist
   xvm:=TStringList.Create;
   battle:=TStringList.Create;
-  // Проверяем присутствие файла @xvm.xc в директории с программой
+  // РџСЂРѕРІРµСЂСЏРµРј РїСЂРёСЃСѓС‚СЃС‚РІРёРµ С„Р°Р№Р»Р° @xvm.xc РІ РґРёСЂРµРєС‚РѕСЂРёРё СЃ РїСЂРѕРіСЂР°РјРјРѕР№
   if ((FileExists(ExtractFilePath(ParamStr(0))+'@xvm.xc')) and
   (FileExists(ExtractFilePath(ParamStr(0))+'battle.xc'))) then
     begin
@@ -181,8 +181,8 @@ begin
     end
   else
     begin
-      // выводим сообщение, очищаем переменную xvm и принудительно закрываем программу
-      ShowMessage('Файлы конфига не найден или отсутствуют! Поместите программу в папку с конфигом или проверте присутствие всех файлов! Программа закроется!');
+      // РІС‹РІРѕРґРёРј СЃРѕРѕР±С‰РµРЅРёРµ, РѕС‡РёС‰Р°РµРј РїРµСЂРµРјРµРЅРЅСѓСЋ xvm Рё РїСЂРёРЅСѓРґРёС‚РµР»СЊРЅРѕ Р·Р°РєСЂС‹РІР°РµРј РїСЂРѕРіСЂР°РјРјСѓ
+      ShowMessage('Р¤Р°Р№Р»С‹ РєРѕРЅС„РёРіР° РЅРµ РЅР°Р№РґРµРЅ РёР»Рё РѕС‚СЃСѓС‚СЃС‚РІСѓСЋС‚! РџРѕРјРµСЃС‚РёС‚Рµ РїСЂРѕРіСЂР°РјРјСѓ РІ РїР°РїРєСѓ СЃ РєРѕРЅС„РёРіРѕРј РёР»Рё РїСЂРѕРІРµСЂС‚Рµ РїСЂРёСЃСѓС‚СЃС‚РІРёРµ РІСЃРµС… С„Р°Р№Р»РѕРІ! РџСЂРѕРіСЂР°РјРјР° Р·Р°РєСЂРѕРµС‚СЃСЏ!');
       xvm.Free;
       battle.Free;
       Application.Terminate;
@@ -198,7 +198,7 @@ end;
 
 procedure TForm1.xvm_loading;
 begin
-// загрузка данных из файла @xvm.xc
+// Р·Р°РіСЂСѓР·РєР° РґР°РЅРЅС‹С… РёР· С„Р°Р№Р»Р° @xvm.xc
   xvm_s1:=xvm.Strings[25].Trim;
   xvm_s2:=xvm.Strings[29].Trim;
   xvm_s3:=xvm.Strings[37].Trim;
