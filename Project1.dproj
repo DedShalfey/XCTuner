@@ -94,10 +94,11 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
         <VerInfo_AutoGenVersion>true</VerInfo_AutoGenVersion>
-        <VerInfo_Release>1</VerInfo_Release>
+        <VerInfo_Release>2</VerInfo_Release>
         <Icon_MainIcon>Project1_Icon.ico</Icon_MainIcon>
-        <VerInfo_Keys>CompanyName=Ded_Shalfey config;FileDescription=App for Ded_Shalfey config;FileVersion=0.1.1.0;InternalName=App for Ded_Shalfey config;LegalCopyright=;LegalTrademarks=;OriginalFilename=DSconf;ProductName=DSconf;ProductVersion=0.1.1.0;Comments=</VerInfo_Keys>
+        <VerInfo_Keys>CompanyName=Ded_Shalfey config;FileDescription=App for Ded_Shalfey config;FileVersion=0.1.2.0;InternalName=App for Ded_Shalfey config;LegalCopyright=;LegalTrademarks=;OriginalFilename=DSconf;ProductName=DSconf;ProductVersion=0.1.2.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">

@@ -2149,8 +2149,6 @@ object Form1: TForm1
       Font.Name = 'Tahoma'
       Font.Style = []
       ParentFont = False
-      ExplicitWidth = 949
-      ExplicitHeight = 522
       object Image1: TImage
         Left = 692
         Top = 315
