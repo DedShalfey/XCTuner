@@ -2,7 +2,7 @@ object AboutBox: TAboutBox
   Left = 200
   Top = 108
   BorderStyle = bsDialog
-  Caption = 'About'
+  Caption = #1054' '#1055#1088#1086#1075#1088#1072#1084#1084#1077'...'
   ClientHeight = 282
   ClientWidth = 450
   Color = clBtnFace
@@ -1419,7 +1419,7 @@ object AboutBox: TAboutBox
       Top = 74
       Width = 90
       Height = 13
-      Caption = #1074#1077#1088#1089#1080#1103': 0.1.1 beta'
+      Caption = #1074#1077#1088#1089#1080#1103': 0.1.4 beta'
       IsControl = True
     end
     object Copyright: TLabel

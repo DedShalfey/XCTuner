@@ -105,7 +105,7 @@ begin
   b_s2:=battle.Strings[11].Trim;
   b_s3:=battle.Strings[14].Trim;
   b_s4:=battle.Strings[17].Trim;
-  b_s5:=battle.Strings[23].Trim;
+  b_s5:=battle.Strings[24].Trim;
   b_s6:=battle.Strings[37].Trim;
 
   if (b_s1='"mirroredVehicleIcons": false,') then
@@ -161,8 +161,8 @@ begin
   battle.Delete(17);
   battle.Insert(17, b_s4);
 
-  battle.Delete(23);
-  battle.Insert(23, b_s5);
+  battle.Delete(24);
+  battle.Insert(24, b_s5);
 
   battle.Delete(37);
   battle.Insert(37, b_s6);
