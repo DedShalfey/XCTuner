@@ -50,25 +50,48 @@ type
     BitBtn1: TBitBtn;
     Image1: TImage;
     BitBtn2: TBitBtn;
+    GroupBox9: TGroupBox;
+    GroupBox10: TGroupBox;
+    RadioButton13: TRadioButton;
+    RadioButton14: TRadioButton;
+    GroupBox11: TGroupBox;
+    RadioButton15: TRadioButton;
+    RadioButton16: TRadioButton;
+    GroupBox12: TGroupBox;
+    RadioButton17: TRadioButton;
+    RadioButton18: TRadioButton;
+    GroupBox13: TGroupBox;
+    RadioButton19: TRadioButton;
+    RadioButton20: TRadioButton;
+    GroupBox14: TGroupBox;
+    RadioButton21: TRadioButton;
+    RadioButton22: TRadioButton;
+    BitBtn3: TBitBtn;
+    BitBtn4: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Image1Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
+    procedure BitBtn3Click(Sender: TObject);
+    procedure BitBtn4Click(Sender: TObject);
   private
     { Private declarations }
   public
     procedure battle_loading();
     procedure battle_save();
     procedure xvm_loading();
+    procedure rating_loading();
+    procedure rating_save();
     { Public declarations }
   end;
 
 var
   Form1: TForm1;
-  xvm, battle: TStringList;
+  xvm, battle, rating: TStringList;
   b_s1, b_s2, b_s3, b_s4, b_s5, b_s6: String;
   xvm_s1, xvm_s2, xvm_s3, xvm_s4, xvm_s5, xvm_s6, xvm_s7, xvm_s8: String;
+  rating_s1, rating_s2, rating_s3, rating_s4, rating_s5: String;
 
 implementation
 
@@ -77,7 +100,7 @@ implementation
 
 procedure TForm1.battle_loading();
 begin
-  // загрузка данных из файла в интерфейс
+  // загрузка данных из файла battle.xc в интерфейс
   b_s1:=battle.Strings[8].Trim;
   b_s2:=battle.Strings[11].Trim;
   b_s3:=battle.Strings[14].Trim;
@@ -107,7 +130,7 @@ end;
 
 procedure TForm1.battle_save;
 begin
-  // процедура подготовки изменений для сохранения
+  // процедура подготовки изменений для сохранения в файл battle.xc
   if (RadioButton1.Checked=True) then
     b_s1:='    "mirroredVehicleIcons": false,' else b_s1:='    "mirroredVehicleIcons": true,';
 
@@ -158,6 +181,19 @@ begin
 battle_loading();
 end;
 
+procedure TForm1.BitBtn3Click(Sender: TObject);
+begin
+rating_loading();
+end;
+
+procedure TForm1.BitBtn4Click(Sender: TObject);
+begin
+rating_save();
+rating.SaveToFile(ExtractFilePath(ParamStr(0))+'rating.xc');
+rating.Clear;
+rating.LoadFromFile(ExtractFilePath(ParamStr(0))+'rating.xc');
+end;
+
 procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   // При закрытие на всякий случай очищаем переменную xvm
@@ -170,14 +206,18 @@ begin
   // Создаем объекты типа TStringlist
   xvm:=TStringList.Create;
   battle:=TStringList.Create;
+  rating:=TStringList.Create;
   // Проверяем присутствие файла @xvm.xc в директории с программой
   if ((FileExists(ExtractFilePath(ParamStr(0))+'@xvm.xc')) and
-  (FileExists(ExtractFilePath(ParamStr(0))+'battle.xc'))) then
+  (FileExists(ExtractFilePath(ParamStr(0))+'battle.xc')) and
+  (FileExists(ExtractFilePath(ParamStr(0))+'rating.xc'))) then
     begin
       xvm.LoadFromFile(ExtractFilePath(ParamStr(0))+'@xvm.xc');
       battle.LoadFromFile(ExtractFilePath(ParamStr(0))+'battle.xc');
+      rating.LoadFromFile(ExtractFilePath(ParamStr(0))+'rating.xc');
       xvm_loading();
       battle_loading();
+      rating_loading();
     end
   else
     begin
@@ -185,6 +225,7 @@ begin
       ShowMessage('Файлы конфига не найден или отсутствуют! Поместите программу в папку с конфигом или проверте присутствие всех файлов! Программа закроется!');
       xvm.Free;
       battle.Free;
+      rating.Free;
       Application.Terminate;
     end;
 end;
@@ -195,6 +236,67 @@ AboutBox.ShowModal;
 end;
 
 
+
+procedure TForm1.rating_loading;
+begin
+  // загрузка данных из файла rating.xc в интерфейс
+  rating_s1:=rating.Strings[8].Trim;
+  rating_s2:=rating.Strings[11].Trim;
+  rating_s3:=rating.Strings[14].Trim;
+  rating_s4:=rating.Strings[17].Trim;
+  rating_s5:=rating.Strings[20].Trim;
+
+  if (rating_s1='"showPlayersStatistics": true,') then
+  RadioButton13.Checked:=True else RadioButton14.Checked:=True;
+
+  if (rating_s2='"enableUserInfoStatistics": true,') then
+  RadioButton15.Checked:=True else RadioButton16.Checked:=True;
+
+  if (rating_s3='"enableCompanyStatistics": true,') then
+  RadioButton17.Checked:=True else RadioButton18.Checked:=True;
+
+  if (rating_s4='"loadEnemyStatsInFogOfWar": true,') then
+  RadioButton19.Checked:=True else RadioButton20.Checked:=True;
+
+  if (rating_s5='"enableStatisticsLog": true') then
+  RadioButton21.Checked:=True else RadioButton22.Checked:=True;
+
+end;
+
+procedure TForm1.rating_save;
+begin
+    // процедура подготовки изменений для сохранения в файл rating.xc
+  if (RadioButton13.Checked=True) then
+    rating_s1:='    "showPlayersStatistics": true,' else rating_s1:='    "showPlayersStatistics": false,';
+
+  if (RadioButton15.Checked=True) then
+    rating_s2:='    "enableUserInfoStatistics": true,' else rating_s2:='    "enableUserInfoStatistics": false,';
+
+  if (RadioButton17.Checked=True) then
+    rating_s3:='    "enableCompanyStatistics": true,' else rating_s3:='    "enableCompanyStatistics": false,';
+
+  if (RadioButton19.Checked=True) then
+    rating_s4:='    "loadEnemyStatsInFogOfWar": true,' else rating_s4:='    "loadEnemyStatsInFogOfWar": false,';
+
+  if (RadioButton21.Checked=True) then
+    rating_s5:='    "enableStatisticsLog": true' else rating_s5:='    "enableStatisticsLog": false';
+
+  rating.Delete(8);
+  rating.Insert(8, rating_s1);
+
+  rating.Delete(11);
+  rating.Insert(11, rating_s2);
+
+  rating.Delete(14);
+  rating.Insert(14, rating_s3);
+
+  rating.Delete(17);
+  rating.Insert(17, rating_s4);
+
+  rating.Delete(20);
+  rating.Insert(20, rating_s5);
+
+end;
 
 procedure TForm1.xvm_loading;
 begin

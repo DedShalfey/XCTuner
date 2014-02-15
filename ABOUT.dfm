@@ -1,4 +1,4 @@
-﻿object AboutBox: TAboutBox
+object AboutBox: TAboutBox
   Left = 200
   Top = 108
   BorderStyle = bsDialog
@@ -1417,9 +1417,9 @@
     object Version: TLabel
       Left = 80
       Top = 74
-      Width = 81
+      Width = 90
       Height = 13
-      Caption = #1074#1077#1088#1089#1080#1103': 0.1 beta'
+      Caption = #1074#1077#1088#1089#1080#1103': 0.1.1 beta'
       IsControl = True
     end
     object Copyright: TLabel
