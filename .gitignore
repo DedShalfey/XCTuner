@@ -8,3 +8,8 @@ __history
 *.exe
 *.dll
 bin/*
+.gitattributes
+.gitignore
+win32/*
+win32/Release/*
+win32/Debug/*
