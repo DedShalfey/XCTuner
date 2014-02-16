@@ -102,6 +102,7 @@ implementation
 
 {$R *.dfm}
 
+
 //////////////////////////////////////////////////////////////////////////
 /////////////////Проверка версии файла (программы)////////////////////////
 //////////////////////////////////////////////////////////////////////////
@@ -164,6 +165,40 @@ end;
 /////////////////////////////////////////////////////////
 
 
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  // вывод версии файла в заголовок
+  Form1.Caption:=Form1.Caption + ' Версия - ' + MyVersion(ParamStr(0));
+  // Создаем объекты типа TStringlist
+  xvm:=TStringList.Create;
+  battle:=TStringList.Create;
+  rating:=TStringList.Create;
+  temp_list:=TStringList.Create;
+  // Проверяем присутствие файла @xvm.xc в директории с программой
+  if ((FileExists(ExtractFilePath(ParamStr(0))+'@xvm.xc')) and
+  (FileExists(ExtractFilePath(ParamStr(0))+'battle.xc')) and
+  (FileExists(ExtractFilePath(ParamStr(0))+'rating.xc'))) then
+    begin
+      xvm.LoadFromFile(ExtractFilePath(ParamStr(0))+'@xvm.xc');
+      battle.LoadFromFile(ExtractFilePath(ParamStr(0))+'battle.xc');
+      rating.LoadFromFile(ExtractFilePath(ParamStr(0))+'rating.xc');
+      xvm_loading();
+      battle_loading();
+      rating_loading();
+    end
+  else
+    begin
+      // выводим сообщение, очищаем переменную xvm и принудительно закрываем программу
+      ShowMessage('Файлы конфига не найдены или отсутствуют! Поместите программу в папку с файлами конфига или проверте присутствие всех файлов! Программа закроется!');
+      xvm.Free;
+      battle.Free;
+      rating.Free;
+      temp_list.Free;
+      Application.Terminate;
+    end;
+end;
+
+
 procedure TForm1.battle_loading();
 begin
   // загрузка данных из файла battle.xc в интерфейс
@@ -204,7 +239,7 @@ begin
   RadioButton1.Checked:=True else RadioButton2.Checked:=True;
 
   if pos('false', b_s2)>0 then
-  RadioButton4.Checked:=True else RadioButton2.Checked:=True;
+  RadioButton4.Checked:=True else RadioButton3.Checked:=True;
 
   if pos('false', b_s3)>0 then
   RadioButton5.Checked:=True else RadioButton6.Checked:=True;
@@ -295,38 +330,7 @@ begin
   temp_list.Free;
 end;
 
-procedure TForm1.FormCreate(Sender: TObject);
-begin
-  // вывод версии файла в заголовок
-  Form1.Caption:=Form1.Caption + ' Версия - ' + MyVersion(ParamStr(0));
-  // Создаем объекты типа TStringlist
-  xvm:=TStringList.Create;
-  battle:=TStringList.Create;
-  rating:=TStringList.Create;
-  temp_list:=TStringList.Create;
-  // Проверяем присутствие файла @xvm.xc в директории с программой
-  if ((FileExists(ExtractFilePath(ParamStr(0))+'@xvm.xc')) and
-  (FileExists(ExtractFilePath(ParamStr(0))+'battle.xc')) and
-  (FileExists(ExtractFilePath(ParamStr(0))+'rating.xc'))) then
-    begin
-      xvm.LoadFromFile(ExtractFilePath(ParamStr(0))+'@xvm.xc');
-      battle.LoadFromFile(ExtractFilePath(ParamStr(0))+'battle.xc');
-      rating.LoadFromFile(ExtractFilePath(ParamStr(0))+'rating.xc');
-      xvm_loading();
-      battle_loading();
-      rating_loading();
-    end
-  else
-    begin
-      // выводим сообщение, очищаем переменную xvm и принудительно закрываем программу
-      ShowMessage('Файлы конфига не найдены или отсутствуют! Поместите программу в папку с файлами конфига или проверте присутствие всех файлов! Программа закроется!');
-      xvm.Free;
-      battle.Free;
-      rating.Free;
-      temp_list.Free;
-      Application.Terminate;
-    end;
-end;
+
 
 procedure TForm1.Image1Click(Sender: TObject);
 begin
