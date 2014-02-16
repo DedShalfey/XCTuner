@@ -102,6 +102,67 @@ implementation
 
 {$R *.dfm}
 
+//////////////////////////////////////////////////////////////////////////
+/////////////////Проверка версии файла (программы)////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+function MyVersion(Files: string): string;
+var
+  Buffer: string;
+  fInfoSize: DWORD;
+  function InitVersion: boolean;
+  var
+    FilenamePointer: PChar;
+  begin
+    Result := True;
+    FilenamePointer := PChar(Files);
+    fInfoSize := GetFileVersionInfoSize(FilenamePointer, fInfoSize);
+    if fInfoSize > 0 then
+    begin
+      SetLength(Buffer, fInfoSize);
+      if not GetFileVersionInfo(FilenamePointer, 0, fInfoSize, PChar(Buffer))
+        then
+      begin
+        Result := False;
+      end;
+    end; //if
+  end; //InitVersion
+
+  function GetVersion(whatToGet: string): string;
+  var
+    tmpVersion: string;
+    Len, Len2: DWORD;
+    Value: PChar;
+    temp: PLongInt;
+    tempStr: string;
+  begin
+    Result := '';
+    if fInfoSize > 0 then
+    begin
+      SetLength(tmpVersion, 200);
+      Value := @tmpVersion;
+      VerQueryValue(PChar(Buffer), '\VarFileInfo\Translation', Pointer(temp),
+        Len2);
+      tempStr := Format('%s%.4x%.4x\%s%s', ['\StringFileInfo\', LoWord(temp^),
+        HiWord(temp^), whattoget, #0]);
+      if VerQueryValue(PChar(Buffer), PChar(tempStr), Pointer(Value), Len) then
+        Result := Value;
+    end; // if
+  end; //getversion
+begin
+  Buffer := '';
+  try
+    InitVersion;
+    result := GetVersion('FileVersion');
+  except
+    Result := '';
+  end;
+end;
+
+/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
+
 
 procedure TForm1.battle_loading();
 begin
@@ -154,7 +215,7 @@ begin
   if pos('false', b_s5)>0 then
   RadioButton10.Checked:=True else RadioButton9.Checked:=True;
 
-  if pos('true', b_s6)>0 then
+  if pos('false', b_s6)>0 then
   RadioButton11.Checked:=True else RadioButton12.Checked:=True;
 
 end;
@@ -178,7 +239,7 @@ begin
     b_s5:=StringReplace(b_s5, 'true', 'false', []) else b_s5:=StringReplace(b_s5, 'false', 'true', []);
 
   if (RadioButton11.Checked=True) then
-    b_s6:=StringReplace(b_s6, 'false', 'true', []) else b_s6:=StringReplace(b_s6, 'true', 'false', []);
+    b_s6:=StringReplace(b_s6, 'true', 'false', []) else b_s6:=StringReplace(b_s6, 'false', 'true', []);
 
   battle.Delete(bs1_SL);
   battle.Insert(bs1_SL, b_s1);
@@ -236,6 +297,8 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+  // вывод версии файла в заголовок
+  Form1.Caption:=Form1.Caption + ' Версия - ' + MyVersion(ParamStr(0));
   // Создаем объекты типа TStringlist
   xvm:=TStringList.Create;
   battle:=TStringList.Create;
@@ -442,5 +505,9 @@ begin
   delete(xvm_s8, 2, 1);
   label16.Caption:=xvm_s8.Trim;
 end;
+
+
+
+
 
 end.
