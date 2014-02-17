@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls,
-  Vcl.Buttons, Vcl.Imaging.pngimage, About;
+  Vcl.Buttons, Vcl.Imaging.pngimage, About, Vcl.Samples.Spin;
 
 type
   TForm1 = class(TForm)
@@ -68,6 +68,62 @@ type
     RadioButton22: TRadioButton;
     BitBtn3: TBitBtn;
     BitBtn4: TBitBtn;
+    TabSheet2: TTabSheet;
+    GroupBox15: TGroupBox;
+    GroupBox16: TGroupBox;
+    RadioButton23: TRadioButton;
+    RadioButton24: TRadioButton;
+    GroupBox17: TGroupBox;
+    RadioButton25: TRadioButton;
+    RadioButton26: TRadioButton;
+    GroupBox18: TGroupBox;
+    RadioButton27: TRadioButton;
+    RadioButton28: TRadioButton;
+    GroupBox19: TGroupBox;
+    RadioButton29: TRadioButton;
+    RadioButton30: TRadioButton;
+    Label18: TLabel;
+    Label19: TLabel;
+    GroupBox21: TGroupBox;
+    GroupBox22: TGroupBox;
+    RadioButton31: TRadioButton;
+    RadioButton32: TRadioButton;
+    GroupBox23: TGroupBox;
+    RadioButton33: TRadioButton;
+    RadioButton34: TRadioButton;
+    GroupBox24: TGroupBox;
+    RadioButton35: TRadioButton;
+    RadioButton36: TRadioButton;
+    GroupBox25: TGroupBox;
+    RadioButton37: TRadioButton;
+    RadioButton38: TRadioButton;
+    GroupBox26: TGroupBox;
+    RadioButton39: TRadioButton;
+    RadioButton40: TRadioButton;
+    GroupBox27: TGroupBox;
+    RadioButton41: TRadioButton;
+    RadioButton42: TRadioButton;
+    GroupBox28: TGroupBox;
+    Label20: TLabel;
+    Label21: TLabel;
+    RadioButton43: TRadioButton;
+    RadioButton44: TRadioButton;
+    SpinEdit3: TSpinEdit;
+    SpinEdit4: TSpinEdit;
+    GroupBox20: TGroupBox;
+    Label17: TLabel;
+    TrackBar1: TTrackBar;
+    Label22: TLabel;
+    SpinEdit5: TSpinEdit;
+    GroupBox29: TGroupBox;
+    TrackBar2: TTrackBar;
+    SpinEdit6: TSpinEdit;
+    GroupBox30: TGroupBox;
+    SpinEdit7: TSpinEdit;
+    TrackBar3: TTrackBar;
+    Label23: TLabel;
+    SpinEdit1: TSpinEdit;
+    SpinEdit2: TSpinEdit;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Image1Click(Sender: TObject);
@@ -75,10 +131,18 @@ type
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitBtn4Click(Sender: TObject);
+    procedure TrackBar1Change(Sender: TObject);
+    procedure TrackBar2Change(Sender: TObject);
+    procedure TrackBar3Change(Sender: TObject);
+    procedure SpinEdit6Change(Sender: TObject);
+    procedure SpinEdit7Change(Sender: TObject);
   private
     { Private declarations }
   public
     procedure SearchLine_my();
+    procedure SearchLine_my_2();
+    procedure SearchLine_my_3();
+    procedure xvm_info();
     procedure battle_loading();
     procedure battle_save();
     procedure xvm_loading();
@@ -91,7 +155,7 @@ var
   Form1: TForm1;
   xvm, battle, rating, temp_list: TStringList;
   b_s1, b_s2, b_s3, b_s4, b_s5, b_s6: String;
-  xvm_s1, xvm_s2, xvm_s3, xvm_s4, xvm_s5, xvm_s6, xvm_s7, xvm_s8: String;
+  xvm_s1, xvm_s2, xvm_s3, xvm_s4, xvm_s5, xvm_s6, xvm_s7, xvm_s8, xvm_sN: String;
   rating_s1, rating_s2, rating_s3, rating_s4, rating_s5: String;
   Search: String;
   k, SearchLine: Integer;
@@ -428,7 +492,61 @@ procedure TForm1.SearchLine_my;
 begin
   for k := 0 to (temp_list.Count - 1) do
     if pos(Search, temp_list.Strings[k])>0 then
+    begin
     SearchLine:= k;
+    Exit;
+    end;
+end;
+
+procedure TForm1.SearchLine_my_2;
+// процедура нахождения слов во вложенных конструкциях 1 уровня
+begin
+//
+end;
+
+procedure TForm1.SearchLine_my_3;
+// процедура нахождения слов во вложенных конструкциях 2 уровня
+begin
+//
+end;
+
+procedure TForm1.SpinEdit6Change(Sender: TObject);
+begin
+TrackBar2.Position:=SpinEdit6.Value;
+end;
+
+procedure TForm1.SpinEdit7Change(Sender: TObject);
+begin
+TrackBar3.Position:=SpinEdit7.Value;
+end;
+
+// процедура удаления лишних сиволов и пробелов в обработчике загр. информации из xvm
+procedure TForm1.xvm_info;
+begin
+    if xvm_sN[Length(xvm_sN)]='"' then
+    Delete(xvm_sN, Length(xvm_sN), 1)
+    else
+      begin
+        Delete(xvm_sN, Length(xvm_sN)-1, 2);
+      end;
+  Delete(xvm_sN, 1, Pos(':', xvm_sN));
+  xvm_sN:=xvm_sN.TrimLeft;
+  Delete(xvm_sN, 1, 1);
+end;
+
+procedure TForm1.TrackBar1Change(Sender: TObject);
+begin
+Label17.Caption:=IntToStr(TrackBar1.Position) + ' мс';
+end;
+
+procedure TForm1.TrackBar2Change(Sender: TObject);
+begin
+SpinEdit6.Value:=TrackBar2.Position;
+end;
+
+procedure TForm1.TrackBar3Change(Sender: TObject);
+begin
+SpinEdit7.Value:=TrackBar3.Position;
 end;
 
 procedure TForm1.xvm_loading;
@@ -469,45 +587,48 @@ begin
   SearchLine_my();
   xvm_s8:=xvm.Strings[SearchLine].Trim;
 
-  delete(xvm_s1, 1, Pos(': ', xvm_s1));
-  delete(xvm_s1, Length(xvm_s1) - 1, 2);
-  delete(xvm_s1, 2, 1);
-  label2.Caption:=xvm_s1.Trim;
+  // Обработка строк и вывод их в программу
 
-  delete(xvm_s2, 1, Pos(': ', xvm_s2));
-  delete(xvm_s2, Length(xvm_s2) - 1, 2);
-  delete(xvm_s2, 2, 1);
-  label4.Caption:=xvm_s2.Trim;
+  xvm_sN:=xvm_s1;
+  xvm_info();
+  xvm_s1:=xvm_sN;
+  Label2.Caption:=xvm_s1;
 
-  delete(xvm_s3, 1, Pos(': ', xvm_s3));
-  delete(xvm_s3, Length(xvm_s3) - 1, 2);
-  delete(xvm_s3, 2, 1);
-  label6.Caption:=xvm_s3.Trim;
+  xvm_sN:=xvm_s2;
+  xvm_info();
+  xvm_s2:=xvm_sN;
+  Label4.Caption:=xvm_s2;
 
-  delete(xvm_s4, 1, Pos(': ', xvm_s4));
-  delete(xvm_s4, Length(xvm_s4) - 1, 2);
-  delete(xvm_s4, 2, 1);
-  label8.Caption:=xvm_s4.Trim;
+  xvm_sN:=xvm_s3;
+  xvm_info();
+  xvm_s3:=xvm_sN;
+  Label6.Caption:=xvm_s3;
 
-  delete(xvm_s5, 1, Pos(': ', xvm_s5));
-  delete(xvm_s5, Length(xvm_s5) - 1, 2);
-  delete(xvm_s5, 2, 1);
-  label10.Caption:=xvm_s5.Trim;
+  xvm_sN:=xvm_s4;
+  xvm_info();
+  xvm_s4:=xvm_sN;
+  Label8.Caption:=xvm_s4;
 
-  delete(xvm_s6, 1, Pos(': ', xvm_s6));
-  delete(xvm_s6, Length(xvm_s6) - 1, 2);
-  delete(xvm_s6, 2, 1);
-  label12.Caption:=xvm_s6.Trim;
+  xvm_sN:=xvm_s5;
+  xvm_info();
+  xvm_s5:=xvm_sN;
+  Label10.Caption:=xvm_s5;
 
-  delete(xvm_s7, 1, Pos(': ', xvm_s7));
-  delete(xvm_s7, Length(xvm_s7) - 1, 2);
-  delete(xvm_s7, 2, 1);
-  label14.Caption:=xvm_s7.Trim;
+  xvm_sN:=xvm_s6;
+  xvm_info();
+  xvm_s6:=xvm_sN;
+  Label12.Caption:=xvm_s6;
 
-  delete(xvm_s8, 1, Pos(': ', xvm_s8));
-  delete(xvm_s8, Length(xvm_s8) - 1, 2);
-  delete(xvm_s8, 2, 1);
-  label16.Caption:=xvm_s8.Trim;
+  xvm_sN:=xvm_s7;
+  xvm_info();
+  xvm_s7:=xvm_sN;
+  Label14.Caption:=xvm_s7;
+
+  xvm_sN:=xvm_s8;
+  xvm_info();
+  xvm_s8:=xvm_sN;
+  Label16.Caption:=xvm_s8;
+
 end;
 
 

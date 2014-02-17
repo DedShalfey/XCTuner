@@ -5,7 +5,7 @@ object Form1: TForm1
   BorderStyle = bsSingle
   Caption = #1050#1086#1085#1092#1080#1075'0'#1088#1072#1090#1086#1088' - Ded_Shalfey config beta testing...'
   ClientHeight = 532
-  ClientWidth = 889
+  ClientWidth = 887
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -2136,8 +2136,9 @@ object Form1: TForm1
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 889
+    Width = 887
     Height = 532
+    Cursor = crHandPoint
     ActivePage = TabSheet1
     Align = alClient
     Font.Charset = DEFAULT_CHARSET
@@ -2156,7 +2157,7 @@ object Form1: TForm1
       Font.Style = []
       ParentFont = False
       object Image1: TImage
-        Left = 712
+        Left = 696
         Top = 330
         Width = 128
         Height = 125
@@ -2738,7 +2739,7 @@ object Form1: TForm1
       object GroupBox1: TGroupBox
         Left = 343
         Top = 278
-        Width = 306
+        Width = 290
         Height = 209
         Caption = #1054#1089#1085#1086#1074#1085#1072#1103' '#1080#1085#1092#1086#1088#1084#1072#1094#1080#1103':'
         Color = 15987699
@@ -3607,6 +3608,681 @@ object Form1: TForm1
           ParentFont = False
           TabOrder = 6
           OnClick = BitBtn4Click
+        end
+      end
+    end
+    object TabSheet2: TTabSheet
+      Caption = #1051#1086#1075#1080#1085' '#1080' '#1040#1085#1075#1072#1088' ('#1055#1088#1086#1090#1086#1090#1080#1087' -'#1042#1082#1083#1072#1076#1082#1072' '#1085#1077' '#1088#1072#1073#1086#1090#1072#1077#1090' '#1087#1086#1082#1072'!!!)'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ImageIndex = 1
+      ParentFont = False
+      ExplicitLeft = 8
+      ExplicitTop = 28
+      ExplicitWidth = 881
+      ExplicitHeight = 0
+      object Label23: TLabel
+        Left = 172
+        Top = 432
+        Width = 578
+        Height = 57
+        Caption = #1055#1088#1086#1090#1086#1090#1080#1087' ( '#1085#1077' '#1088#1072#1073#1086#1095#1080#1077' '#1092#1091#1085#1082#1094#1080#1080')!'
+        Color = clRed
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clRed
+        Font.Height = -32
+        Font.Name = 'Segoe Print'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+      object GroupBox15: TGroupBox
+        Left = 3
+        Top = 11
+        Width = 248
+        Height = 366
+        Caption = #1069#1082#1088#1072#1085' '#1074#1074#1086#1076#1072' '#1083#1086#1075#1080#1085#1072' '#1080' '#1087#1072#1088#1086#1083#1103':'
+        Color = 15987699
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 0
+        object GroupBox16: TGroupBox
+          Left = 16
+          Top = 25
+          Width = 217
+          Height = 51
+          Caption = #1055#1088#1086#1087#1091#1089#1082#1072#1090#1100' '#1074#1089#1090#1091#1087#1080#1090#1077#1083#1100#1085#1086#1077' '#1074#1080#1076#1077#1086':'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+          object RadioButton23: TRadioButton
+            Left = 16
+            Top = 24
+            Width = 113
+            Height = 17
+            Caption = #1042#1082#1083#1102#1095#1077#1085#1086
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            TabStop = True
+          end
+          object RadioButton24: TRadioButton
+            Left = 128
+            Top = 24
+            Width = 74
+            Height = 17
+            Caption = #1054#1090#1082#1083#1102#1095#1077#1085#1086
+            TabOrder = 1
+          end
+        end
+        object GroupBox17: TGroupBox
+          Left = 16
+          Top = 82
+          Width = 217
+          Height = 51
+          Caption = #1040#1074#1090#1086#1084#1072#1090#1080#1095#1077#1089#1082#1080#1081' '#1074#1093#1086#1076' '#1074' '#1080#1075#1088#1091':'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 1
+          object RadioButton25: TRadioButton
+            Left = 16
+            Top = 24
+            Width = 113
+            Height = 17
+            Caption = #1042#1082#1083#1102#1095#1077#1085#1086
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            TabStop = True
+          end
+          object RadioButton26: TRadioButton
+            Left = 128
+            Top = 24
+            Width = 74
+            Height = 17
+            Caption = #1054#1090#1082#1083#1102#1095#1077#1085#1086
+            TabOrder = 1
+          end
+        end
+        object GroupBox18: TGroupBox
+          Left = 16
+          Top = 139
+          Width = 217
+          Height = 51
+          Caption = #1040#1074#1090#1086#1084#1072#1090' '#1087#1088#1086#1080#1075#1088#1099#1074#1072#1085#1080#1077' '#1089#1090#1072#1088#1099#1093' '#1088#1077#1087#1083#1077#1077#1074':'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 2
+          object RadioButton27: TRadioButton
+            Left = 16
+            Top = 24
+            Width = 113
+            Height = 17
+            Caption = #1042#1082#1083#1102#1095#1077#1085#1086
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            TabStop = True
+          end
+          object RadioButton28: TRadioButton
+            Left = 128
+            Top = 24
+            Width = 74
+            Height = 17
+            Caption = #1054#1090#1082#1083#1102#1095#1077#1085#1086
+            TabOrder = 1
+          end
+        end
+        object GroupBox19: TGroupBox
+          Left = 16
+          Top = 196
+          Width = 217
+          Height = 149
+          Caption = #1055#1080#1085#1075' '#1076#1086' '#1089#1077#1088#1074#1077#1088#1086#1074':'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 3
+          object Label18: TLabel
+            Left = 16
+            Top = 64
+            Width = 90
+            Height = 13
+            Caption = #1055#1086#1079#1080#1094#1080#1103' '#1087#1086' '#1086#1089#1080' X:'
+          end
+          object Label19: TLabel
+            Left = 16
+            Top = 108
+            Width = 90
+            Height = 13
+            Caption = #1055#1086#1079#1080#1094#1080#1103' '#1087#1086' '#1086#1089#1080' Y:'
+          end
+          object RadioButton29: TRadioButton
+            Left = 16
+            Top = 24
+            Width = 113
+            Height = 17
+            Caption = #1042#1082#1083#1102#1095#1077#1085#1086
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            TabStop = True
+          end
+          object RadioButton30: TRadioButton
+            Left = 128
+            Top = 24
+            Width = 74
+            Height = 17
+            Caption = #1054#1090#1082#1083#1102#1095#1077#1085#1086
+            TabOrder = 1
+          end
+          object SpinEdit1: TSpinEdit
+            Left = 136
+            Top = 61
+            Width = 57
+            Height = 22
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            MaxValue = 0
+            MinValue = 0
+            ParentFont = False
+            TabOrder = 2
+            Value = 0
+          end
+          object SpinEdit2: TSpinEdit
+            Left = 136
+            Top = 105
+            Width = 57
+            Height = 22
+            MaxValue = 0
+            MinValue = 0
+            TabOrder = 3
+            Value = 0
+          end
+        end
+      end
+      object GroupBox21: TGroupBox
+        Left = 272
+        Top = 11
+        Width = 601
+        Height = 406
+        Caption = #1040#1085#1075#1072#1088
+        Color = 15987699
+        ParentBackground = False
+        ParentColor = False
+        TabOrder = 1
+        object GroupBox22: TGroupBox
+          Left = 16
+          Top = 15
+          Width = 234
+          Height = 51
+          Caption = #1048#1082#1086#1085#1082#1072' '#1086#1073#1091#1095#1077#1085#1080#1103':'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+          object RadioButton31: TRadioButton
+            Left = 16
+            Top = 24
+            Width = 113
+            Height = 17
+            Caption = #1042#1082#1083#1102#1095#1077#1085#1086
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            TabStop = True
+          end
+          object RadioButton32: TRadioButton
+            Left = 128
+            Top = 24
+            Width = 74
+            Height = 17
+            Caption = #1054#1090#1082#1083#1102#1095#1077#1085#1086
+            TabOrder = 1
+          end
+        end
+        object GroupBox23: TGroupBox
+          Left = 16
+          Top = 72
+          Width = 234
+          Height = 51
+          Caption = 'XWN8 '#1074#1084#1077#1089#1090#1086' XEFF '#1074' '#1086#1082#1085#1072#1093' '#1088#1086#1090':'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 1
+          object RadioButton33: TRadioButton
+            Left = 16
+            Top = 24
+            Width = 113
+            Height = 17
+            Caption = #1042#1082#1083#1102#1095#1077#1085#1086
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            TabStop = True
+          end
+          object RadioButton34: TRadioButton
+            Left = 128
+            Top = 24
+            Width = 74
+            Height = 17
+            Caption = #1054#1090#1082#1083#1102#1095#1077#1085#1086
+            TabOrder = 1
+          end
+        end
+        object GroupBox24: TGroupBox
+          Left = 16
+          Top = 129
+          Width = 234
+          Height = 51
+          Caption = #1047#1085#1072#1082' '#1084#1072#1089#1090#1077#1088#1089#1090#1074#1072' '#1074' '#1082#1072#1088#1091#1089#1077#1083#1080' '#1090#1072#1085#1082#1086#1074':'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 2
+          object RadioButton35: TRadioButton
+            Left = 16
+            Top = 24
+            Width = 113
+            Height = 17
+            Caption = #1042#1082#1083#1102#1095#1077#1085#1086
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            TabStop = True
+          end
+          object RadioButton36: TRadioButton
+            Left = 128
+            Top = 24
+            Width = 74
+            Height = 17
+            Caption = #1054#1090#1082#1083#1102#1095#1077#1085#1086
+            TabOrder = 1
+          end
+        end
+        object GroupBox25: TGroupBox
+          Left = 16
+          Top = 186
+          Width = 234
+          Height = 51
+          Caption = #1047#1085#1072#1082' '#1084#1072#1089#1090#1077#1088#1089#1090#1074#1072' '#1074' '#1076#1077#1088#1077#1074#1077' '#1080#1089#1089#1083#1077#1076#1086#1074#1072#1085#1080#1081':'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 3
+          object RadioButton37: TRadioButton
+            Left = 16
+            Top = 24
+            Width = 113
+            Height = 17
+            Caption = #1042#1082#1083#1102#1095#1077#1085#1086
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            TabStop = True
+          end
+          object RadioButton38: TRadioButton
+            Left = 128
+            Top = 24
+            Width = 74
+            Height = 17
+            Caption = #1054#1090#1082#1083#1102#1095#1077#1085#1086
+            TabOrder = 1
+          end
+        end
+        object GroupBox26: TGroupBox
+          Left = 16
+          Top = 243
+          Width = 234
+          Height = 51
+          Caption = #1050#1085#1086#1087#1082#1072' '#1089' '#1094#1077#1085#1086#1081' '#1074' '#1076#1077#1088#1077#1074#1077' '#1080#1089#1089#1083#1077#1076#1086#1074#1072#1085#1080#1081':'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 4
+          object RadioButton39: TRadioButton
+            Left = 16
+            Top = 24
+            Width = 113
+            Height = 17
+            Caption = #1042#1082#1083#1102#1095#1077#1085#1086
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            TabStop = True
+          end
+          object RadioButton40: TRadioButton
+            Left = 128
+            Top = 24
+            Width = 74
+            Height = 17
+            Caption = #1054#1090#1082#1083#1102#1095#1077#1085#1086
+            TabOrder = 1
+          end
+        end
+        object GroupBox27: TGroupBox
+          Left = 16
+          Top = 300
+          Width = 234
+          Height = 51
+          Caption = #1042#1080#1076#1078#1077#1090#1099':'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 5
+          object RadioButton41: TRadioButton
+            Left = 16
+            Top = 24
+            Width = 113
+            Height = 17
+            Caption = #1042#1082#1083#1102#1095#1077#1085#1086
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            TabStop = True
+          end
+          object RadioButton42: TRadioButton
+            Left = 128
+            Top = 24
+            Width = 74
+            Height = 17
+            Caption = #1054#1090#1082#1083#1102#1095#1077#1085#1086
+            TabOrder = 1
+          end
+        end
+        object GroupBox28: TGroupBox
+          Left = 320
+          Top = 15
+          Width = 265
+          Height = 375
+          Caption = #1055#1080#1085#1075' '#1076#1086' '#1089#1077#1088#1074#1077#1088#1086#1074':'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 6
+          object Label20: TLabel
+            Left = 16
+            Top = 121
+            Width = 90
+            Height = 13
+            Caption = #1055#1086#1079#1080#1094#1080#1103' '#1087#1086' '#1086#1089#1080' X:'
+          end
+          object Label21: TLabel
+            Left = 16
+            Top = 149
+            Width = 90
+            Height = 13
+            Caption = #1055#1086#1079#1080#1094#1080#1103' '#1087#1086' '#1086#1089#1080' Y:'
+          end
+          object Label22: TLabel
+            Left = 16
+            Top = 178
+            Width = 75
+            Height = 13
+            Caption = #1055#1088#1086#1079#1088#1072#1095#1085#1086#1089#1090#1100':'
+          end
+          object RadioButton43: TRadioButton
+            Left = 32
+            Top = 24
+            Width = 113
+            Height = 17
+            Caption = #1042#1082#1083#1102#1095#1077#1085#1086
+            Checked = True
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 0
+            TabStop = True
+          end
+          object RadioButton44: TRadioButton
+            Left = 160
+            Top = 24
+            Width = 74
+            Height = 17
+            Caption = #1054#1090#1082#1083#1102#1095#1077#1085#1086
+            TabOrder = 1
+          end
+          object SpinEdit3: TSpinEdit
+            Left = 144
+            Top = 118
+            Width = 57
+            Height = 22
+            MaxValue = 0
+            MinValue = 0
+            TabOrder = 2
+            Value = 0
+          end
+          object SpinEdit4: TSpinEdit
+            Left = 144
+            Top = 146
+            Width = 57
+            Height = 22
+            MaxValue = 0
+            MinValue = 0
+            TabOrder = 3
+            Value = 0
+          end
+          object GroupBox20: TGroupBox
+            Left = 11
+            Top = 47
+            Width = 244
+            Height = 63
+            Caption = #1048#1085#1090#1077#1088#1074#1072#1083' '#1086#1073#1085#1086#1074#1083#1077#1085#1080#1103' '#1087#1080#1085#1075#1072':'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 4
+            object Label17: TLabel
+              Left = 194
+              Top = 28
+              Width = 38
+              Height = 13
+              Caption = '2000 '#1084#1089
+            end
+            object TrackBar1: TTrackBar
+              Left = 3
+              Top = 17
+              Width = 189
+              Height = 41
+              Cursor = crHandPoint
+              Max = 60000
+              Min = 100
+              PageSize = 100
+              Position = 2000
+              PositionToolTip = ptBottom
+              TabOrder = 0
+              TickMarks = tmBoth
+              TickStyle = tsManual
+              OnChange = TrackBar1Change
+            end
+          end
+          object SpinEdit5: TSpinEdit
+            Left = 144
+            Top = 175
+            Width = 57
+            Height = 22
+            MaxValue = 100
+            MinValue = 0
+            TabOrder = 5
+            Value = 0
+          end
+          object GroupBox29: TGroupBox
+            Left = 11
+            Top = 213
+            Width = 244
+            Height = 63
+            Caption = #1052#1072#1082#1089#1080#1084#1072#1083#1100#1085#1086#1077' '#1082#1086#1083#1080#1095#1077#1089#1090#1074#1086' '#1089#1090#1088#1086#1082' '#1074' '#1082#1086#1083#1086#1085#1082#1077':'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 6
+            object TrackBar2: TTrackBar
+              Left = 3
+              Top = 18
+              Width = 162
+              Height = 34
+              Cursor = crHandPoint
+              Min = 1
+              PageSize = 1
+              Position = 1
+              TabOrder = 0
+              TickMarks = tmBoth
+              TickStyle = tsManual
+              OnChange = TrackBar2Change
+            end
+            object SpinEdit6: TSpinEdit
+              Left = 171
+              Top = 26
+              Width = 57
+              Height = 22
+              MaxValue = 10
+              MinValue = 1
+              TabOrder = 1
+              Value = 1
+              OnChange = SpinEdit6Change
+            end
+          end
+          object GroupBox30: TGroupBox
+            Left = 11
+            Top = 294
+            Width = 244
+            Height = 63
+            Caption = #1055#1088#1086#1089#1090#1088#1072#1085#1089#1090#1074#1086' '#1084#1077#1078#1076#1091' '#1082#1086#1083#1086#1085#1082#1072#1084#1080':'
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clWindowText
+            Font.Height = -11
+            Font.Name = 'Tahoma'
+            Font.Style = []
+            ParentFont = False
+            TabOrder = 7
+            object SpinEdit7: TSpinEdit
+              Left = 172
+              Top = 23
+              Width = 57
+              Height = 22
+              MaxValue = 30
+              MinValue = -10
+              TabOrder = 0
+              Value = 0
+              OnChange = SpinEdit7Change
+            end
+            object TrackBar3: TTrackBar
+              Left = 3
+              Top = 15
+              Width = 162
+              Height = 34
+              Cursor = crHandPoint
+              Max = 30
+              Min = -10
+              PageSize = 1
+              TabOrder = 1
+              TickMarks = tmBoth
+              TickStyle = tsManual
+              OnChange = TrackBar3Change
+            end
+          end
         end
       end
     end
