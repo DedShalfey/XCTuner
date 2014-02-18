@@ -1,26 +1,39 @@
-﻿unit Unit1;
+unit Unit1;
+
+{$mode objfpc}{$H+}
 
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.ExtCtrls,
-  Vcl.Buttons, Vcl.Imaging.pngimage, About, Vcl.Samples.Spin;
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
+  Buttons, ComCtrls, StdCtrls, Spin, Unit2;
+{$H+}
 
 type
-  TForm1 = class(TForm)
-    PageControl1: TPageControl;
-    GroupBox1: TGroupBox;
-    TabSheet1: TTabSheet;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
-    Label5: TLabel;
-    Label6: TLabel;
-    Label7: TLabel;
-    Label8: TLabel;
-    Label9: TLabel;
+
+  { TXCTuner_Form1 }
+
+  TXCTuner_Form1 = class(TForm)
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    BitRefresh2: TBitBtn;
+    BitRefresh3: TBitBtn;
+    BitSave2: TBitBtn;
+    BitSave3: TBitBtn;
+    GroupBox10: TGroupBox;
+    GroupBox11: TGroupBox;
+    GroupBox12: TGroupBox;
+    GroupBox13: TGroupBox;
+    GroupBox14: TGroupBox;
+    GroupBox15: TGroupBox;
+    GroupBox16: TGroupBox;
+    GroupBox17: TGroupBox;
+    GroupBox18: TGroupBox;
+    GroupBox19: TGroupBox;
+    GroupBox20: TGroupBox;
+    GroupBox7: TGroupBox;
+    GroupBox8: TGroupBox;
+    GroupBox9: TGroupBox;
     Label10: TLabel;
     Label11: TLabel;
     Label12: TLabel;
@@ -28,120 +41,84 @@ type
     Label14: TLabel;
     Label15: TLabel;
     Label16: TLabel;
-    GroupBox2: TGroupBox;
-    GroupBox3: TGroupBox;
+    Label17: TLabel;
+    Label18: TLabel;
+    Label1: TLabel;
+    Label19: TLabel;
+    Label2: TLabel;
+    Label20: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
     RadioButton1: TRadioButton;
     RadioButton2: TRadioButton;
-    GroupBox4: TGroupBox;
-    RadioButton3: TRadioButton;
-    RadioButton4: TRadioButton;
-    GroupBox5: TGroupBox;
-    RadioButton5: TRadioButton;
-    RadioButton6: TRadioButton;
-    GroupBox6: TGroupBox;
-    RadioButton7: TRadioButton;
-    RadioButton8: TRadioButton;
-    GroupBox7: TGroupBox;
-    RadioButton9: TRadioButton;
-    RadioButton10: TRadioButton;
-    GroupBox8: TGroupBox;
-    RadioButton11: TRadioButton;
-    RadioButton12: TRadioButton;
-    BitBtn1: TBitBtn;
-    Image1: TImage;
-    BitBtn2: TBitBtn;
-    GroupBox9: TGroupBox;
-    GroupBox10: TGroupBox;
-    RadioButton13: TRadioButton;
-    RadioButton14: TRadioButton;
-    GroupBox11: TGroupBox;
-    RadioButton15: TRadioButton;
-    RadioButton16: TRadioButton;
-    GroupBox12: TGroupBox;
-    RadioButton17: TRadioButton;
-    RadioButton18: TRadioButton;
-    GroupBox13: TGroupBox;
-    RadioButton19: TRadioButton;
-    RadioButton20: TRadioButton;
-    GroupBox14: TGroupBox;
-    RadioButton21: TRadioButton;
-    RadioButton22: TRadioButton;
-    BitBtn3: TBitBtn;
-    BitBtn4: TBitBtn;
-    TabSheet2: TTabSheet;
-    GroupBox15: TGroupBox;
-    GroupBox16: TGroupBox;
     RadioButton23: TRadioButton;
     RadioButton24: TRadioButton;
-    GroupBox17: TGroupBox;
     RadioButton25: TRadioButton;
     RadioButton26: TRadioButton;
-    GroupBox18: TGroupBox;
     RadioButton27: TRadioButton;
     RadioButton28: TRadioButton;
-    GroupBox19: TGroupBox;
     RadioButton29: TRadioButton;
+    RadioButton3: TRadioButton;
     RadioButton30: TRadioButton;
-    Label18: TLabel;
-    Label19: TLabel;
-    GroupBox21: TGroupBox;
-    GroupBox22: TGroupBox;
-    RadioButton31: TRadioButton;
-    RadioButton32: TRadioButton;
-    GroupBox23: TGroupBox;
-    RadioButton33: TRadioButton;
-    RadioButton34: TRadioButton;
-    GroupBox24: TGroupBox;
-    RadioButton35: TRadioButton;
-    RadioButton36: TRadioButton;
-    GroupBox25: TGroupBox;
-    RadioButton37: TRadioButton;
-    RadioButton38: TRadioButton;
-    GroupBox26: TGroupBox;
-    RadioButton39: TRadioButton;
-    RadioButton40: TRadioButton;
-    GroupBox27: TGroupBox;
-    RadioButton41: TRadioButton;
-    RadioButton42: TRadioButton;
-    GroupBox28: TGroupBox;
-    Label20: TLabel;
-    Label21: TLabel;
-    RadioButton43: TRadioButton;
-    RadioButton44: TRadioButton;
-    SpinEdit3: TSpinEdit;
-    SpinEdit4: TSpinEdit;
-    GroupBox20: TGroupBox;
-    Label17: TLabel;
-    TrackBar1: TTrackBar;
-    Label22: TLabel;
-    SpinEdit5: TSpinEdit;
-    GroupBox29: TGroupBox;
-    TrackBar2: TTrackBar;
-    SpinEdit6: TSpinEdit;
-    GroupBox30: TGroupBox;
-    SpinEdit7: TSpinEdit;
-    TrackBar3: TTrackBar;
-    Label23: TLabel;
+    RadioButton4: TRadioButton;
+    RadioButton5: TRadioButton;
+    RadioButton6: TRadioButton;
+    RadioButton7: TRadioButton;
+    RadioButton8: TRadioButton;
+    RadioButton9: TRadioButton;
+    RadioButton10: TRadioButton;
+    RadioButton11: TRadioButton;
+    RadioButton12: TRadioButton;
     SpinEdit1: TSpinEdit;
     SpinEdit2: TSpinEdit;
-    BitBtn5: TBitBtn;
-    BitBtn6: TBitBtn;
-    procedure FormCreate(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure Image1Click(Sender: TObject);
+    SpinEdit3: TSpinEdit;
+    SpinEdit4: TSpinEdit;
+    tAbout: TBitBtn;
+    BitBtn3: TBitBtn;
+    BitRefresh1: TBitBtn;
+    BitSave1: TBitBtn;
+    BtExit: TBitBtn;
+    GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
+    GroupBox3: TGroupBox;
+    GroupBox4: TGroupBox;
+    GroupBox5: TGroupBox;
+    GroupBox6: TGroupBox;
+    PageControl1: TPageControl;
+    Panel1: TPanel;
+    RadioButton13: TRadioButton;
+    RadioButton22: TRadioButton;
+    RadioButton14: TRadioButton;
+    RadioButton15: TRadioButton;
+    RadioButton16: TRadioButton;
+    RadioButton17: TRadioButton;
+    RadioButton18: TRadioButton;
+    RadioButton19: TRadioButton;
+    RadioButton20: TRadioButton;
+    RadioButton21: TRadioButton;
+    TabSheet1: TTabSheet;
+    TabSheet2: TTabSheet;
+    TabSheet3: TTabSheet;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
-    procedure BitBtn4Click(Sender: TObject);
-    procedure TrackBar1Change(Sender: TObject);
-    procedure TrackBar2Change(Sender: TObject);
-    procedure TrackBar3Change(Sender: TObject);
-    procedure SpinEdit6Change(Sender: TObject);
-    procedure SpinEdit7Change(Sender: TObject);
-    procedure BitBtn5Click(Sender: TObject);
-    procedure BitBtn6Click(Sender: TObject);
+    procedure BitRefresh1Click(Sender: TObject);
+    procedure BitRefresh2Click(Sender: TObject);
+    procedure BitRefresh3Click(Sender: TObject);
+    procedure BitSave1Click(Sender: TObject);
+    procedure BitSave2Click(Sender: TObject);
+    procedure BitSave3Click(Sender: TObject);
+    procedure BtExitClick(Sender: TObject);
+    procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
+    procedure FormCreate(Sender: TObject);
+    procedure tAboutClick(Sender: TObject);
   private
-    { Private declarations }
+    { private declarations }
   public
     procedure SearchLine_my();
     procedure SearchLine_my_2();
@@ -155,11 +132,11 @@ type
     procedure xvm_loading();
     procedure rating_loading();
     procedure rating_save();
-    { Public declarations }
+    { public declarations }
   end;
 
 var
-  Form1: TForm1;
+  XCTuner_Form1: TXCTuner_Form1;
   xvm, battle, login, rating, temp_list: TStringList;
   b_s1, b_s2, b_s3, b_s4, b_s5, b_s6: String;
   xvm_s1, xvm_s2, xvm_s3, xvm_s4, xvm_s5, xvm_s6, xvm_s7, xvm_s8, xvm_sN: String;
@@ -173,76 +150,97 @@ var
 
 implementation
 
-{$R *.dfm}
+{$R *.lfm}
+
+{ TXCTuner_Form1 }
 
 
-//////////////////////////////////////////////////////////////////////////
-/////////////////Проверка версии файла (программы)////////////////////////
-//////////////////////////////////////////////////////////////////////////
-
-function MyVersion(Files: string): string;
-var
-  Buffer: string;
-  fInfoSize: DWORD;
-  function InitVersion: boolean;
-  var
-    FilenamePointer: PChar;
-  begin
-    Result := True;
-    FilenamePointer := PChar(Files);
-    fInfoSize := GetFileVersionInfoSize(FilenamePointer, fInfoSize);
-    if fInfoSize > 0 then
-    begin
-      SetLength(Buffer, fInfoSize);
-      if not GetFileVersionInfo(FilenamePointer, 0, fInfoSize, PChar(Buffer))
-        then
-      begin
-        Result := False;
-      end;
-    end; //if
-  end; //InitVersion
-
-  function GetVersion(whatToGet: string): string;
-  var
-    tmpVersion: string;
-    Len, Len2: DWORD;
-    Value: PChar;
-    temp: PLongInt;
-    tempStr: string;
-  begin
-    Result := '';
-    if fInfoSize > 0 then
-    begin
-      SetLength(tmpVersion, 200);
-      Value := @tmpVersion;
-      VerQueryValue(PChar(Buffer), '\VarFileInfo\Translation', Pointer(temp),
-        Len2);
-      tempStr := Format('%s%.4x%.4x\%s%s', ['\StringFileInfo\', LoWord(temp^),
-        HiWord(temp^), whattoget, #0]);
-      if VerQueryValue(PChar(Buffer), PChar(tempStr), Pointer(Value), Len) then
-        Result := Value;
-    end; // if
-  end; //getversion
+procedure TXCTuner_Form1.BitBtn1Click(Sender: TObject);
 begin
-  Buffer := '';
-  try
-    InitVersion;
-    result := GetVersion('FileVersion');
-  except
-    Result := '';
-  end;
+  BitBtn1.Font.Style:=[fsBold];
+  BitBtn2.Font.Style:=[];
+  BitBtn3.Font.Style:=[];
+  PageControl1.ActivePage:=TabSheet1;
 end;
 
-/////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////
+procedure TXCTuner_Form1.BitBtn2Click(Sender: TObject);
+begin
+  BitBtn1.Font.Style:=[];
+  BitBtn2.Font.Style:=[fsBold];
+  BitBtn3.Font.Style:=[];
+  PageControl1.ActivePage:=TabSheet2;
+end;
 
+procedure TXCTuner_Form1.BitBtn3Click(Sender: TObject);
+begin
+  BitBtn1.Font.Style:=[];
+  BitBtn2.Font.Style:=[];
+  BitBtn3.Font.Style:=[fsBold];
+  PageControl1.ActivePage:=TabSheet3;
+end;
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TXCTuner_Form1.BitRefresh1Click(Sender: TObject);
+begin
+  rating_loading();
+end;
+
+procedure TXCTuner_Form1.BitRefresh2Click(Sender: TObject);
+begin
+  battle_loading();
+end;
+
+procedure TXCTuner_Form1.BitRefresh3Click(Sender: TObject);
+begin
+  login_loading();
+end;
+
+procedure TXCTuner_Form1.BitSave1Click(Sender: TObject);
+begin
+  rating_save();
+  rating.SaveToFile(ExtractFilePath(ParamStr(0))+'rating.xc');
+  rating.Clear;
+  rating.LoadFromFile(ExtractFilePath(ParamStr(0))+'rating.xc');
+end;
+
+procedure TXCTuner_Form1.BitSave2Click(Sender: TObject);
+begin
+  battle_save();
+  battle.SaveToFile(ExtractFilePath(ParamStr(0))+'battle.xc');
+  battle.Clear;
+  battle.LoadFromFile(ExtractFilePath(ParamStr(0))+'battle.xc');
+end;
+
+procedure TXCTuner_Form1.BitSave3Click(Sender: TObject);
+begin
+  login_save();
+  login.SaveToFile(ExtractFilePath(ParamStr(0))+'login.xc');
+  login.Clear;
+  login.LoadFromFile(ExtractFilePath(ParamStr(0))+'login.xc');
+end;
+
+procedure TXCTuner_Form1.BtExitClick(Sender: TObject);
+begin
+  XCTuner_Form1.Close;
+end;
+
+procedure TXCTuner_Form1.FormClose(Sender: TObject;
+  var CloseAction: TCloseAction);
+begin
+  // При закрытие на всякий случай очищаем переменную xvm
+  xvm.Free;
+  battle.Free;
+  login.Free;
+  rating.Free;
+  temp_list.Free;
+end;
+
+procedure TXCTuner_Form1.FormCreate(Sender: TObject);
 begin
   // вывод версии файла в заголовок
-  Form1.Caption:=Form1.Caption + ' Версия - ' + MyVersion(ParamStr(0));
+  XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.5.4';
+  BitBtn1.Click;
   // Создаем объекты типа TStringlist
+  xvm:=TStringList.Create;
   xvm:=TStringList.Create;
   battle:=TStringList.Create;
   login:=TStringList.Create;
@@ -275,41 +273,105 @@ begin
     end;
 end;
 
-
-procedure TForm1.battle_loading();
+procedure TXCTuner_Form1.tAboutClick(Sender: TObject);
 begin
+  About.ShowModal;
+end;
+
+procedure TXCTuner_Form1.SearchLine_my;
+// процедура поиска нужного слова // выводит номер строки где найдено это слово
+begin
+  for k := 0 to (temp_list.Count - 1) do
+    if pos(Search, temp_list.Strings[k])>0 then
+    begin
+    SearchLine:= k;
+    Exit;
+    end;
+end;
+
+procedure TXCTuner_Form1.SearchLine_my_2;
+// процедура нахождения слов во вложенных конструкциях 1 уровня
+begin
+  for k := SearchLine to (temp_list.Count - 1) do
+    if pos(Search, temp_list.Strings[k])>0 then
+    begin
+    SearchLine:= k;
+    Exit;
+    end;
+end;
+
+procedure TXCTuner_Form1.SearchLine_my_3;
+// процедура нахождения слов во вложенных конструкциях 2 уровня
+begin
+//
+end;
+
+// процедура удаления лишних сиволов и пробелов в обработчике загр. информации из xvm
+procedure TXCTuner_Form1.xvm_info;
+begin
+  if xvm_sN[Length(xvm_sN)]='"' then
+    Delete(xvm_sN, Length(xvm_sN), 1)
+    else
+      begin
+        Delete(xvm_sN, Length(xvm_sN)-1, 2);
+      end;
+  Delete(xvm_sN, 1, Pos(':', xvm_sN));
+  xvm_sN:=TrimLeft(xvm_sN);
+  Delete(xvm_sN, 1, 1);
+end;
+
+// процедура удаления лишних сиволов и пробелов в обработчике загр. информации из файлов xvm
+procedure TXCTuner_Form1.search_info;
+begin
+  if search_sN[Length(search_sN)]=',' then
+    begin
+      Delete(search_sN, Length(search_sN), 1);
+      Delete(search_sN, 1, Pos(':', search_sN));
+      search_sN:=Trim(search_sN);
+    end
+    else
+      begin
+        Delete(search_sN, 1, Pos(':', search_sN));
+        search_sN:=Trim(search_sN);
+      end;
+end;
+
+procedure TXCTuner_Form1.battle_loading;
+begin
+  battle.Clear;
+  battle.LoadFromFile(ExtractFilePath(ParamStr(0))+'battle.xc');
   // загрузка данных из файла battle.xc в интерфейс
   temp_list.Clear;
   temp_list.Text:=battle.Text;
 
   Search:='"mirroredVehicleIcons"';
   SearchLine_my();
-  b_s1:=battle.Strings[SearchLine].TrimRight;
+  b_s1:=TrimRight(battle.Strings[SearchLine]);
   bs1_SL:=SearchLine;
 
   Search:='"showPostmortemTips"';
   SearchLine_my();
-  b_s2:=battle.Strings[SearchLine].TrimRight;
+  b_s2:=TrimRight(battle.Strings[SearchLine]);
   bs2_SL:=SearchLine;
 
   Search:='"removePanelsModeSwitcher"';
   SearchLine_my();
-  b_s3:=battle.Strings[SearchLine].TrimRight;
+  b_s3:=TrimRight(battle.Strings[SearchLine]);
   bs3_SL:=SearchLine;
 
   Search:='"highlightVehicleIcon"';
   SearchLine_my();
-  b_s4:=battle.Strings[SearchLine].TrimRight;
+  b_s4:=TrimRight(battle.Strings[SearchLine]);
   bs4_SL:=SearchLine;
 
   Search:='"useStandardMarkers"';
   SearchLine_my();
-  b_s5:=battle.Strings[SearchLine].TrimRight;
+  b_s5:=TrimRight(battle.Strings[SearchLine]);
   bs5_SL:=SearchLine;
 
   Search:='"hideTeamTextFields"';
   SearchLine_my();
-  b_s6:=battle.Strings[SearchLine].TrimRight;
+  b_s6:=TrimRight(battle.Strings[SearchLine]);
   bs6_SL:=SearchLine;
 
   if pos('false', b_s1)>0 then
@@ -329,10 +391,117 @@ begin
 
   if pos('false', b_s6)>0 then
   RadioButton11.Checked:=True else RadioButton12.Checked:=True;
+end;
+
+procedure TXCTuner_Form1.login_loading;
+// загрузка из файла login.xc и обработка данных
+begin
+  login.Clear;
+  login.LoadFromFile(ExtractFilePath(ParamStr(0))+'login.xc');
+
+  temp_list.Clear;
+  temp_list.Text:=login.Text;
+
+  Search:='"skipIntro"';
+  SearchLine_my();
+  login_s1:=TrimRight(login.Strings[SearchLine]);
+  log1_SL:=SearchLine;
+
+  Search:='"autologin"';
+  SearchLine_my();
+  login_s2:=TrimRight(login.Strings[SearchLine]);
+  log2_SL:=SearchLine;
+
+
+  Search:='"confirmOldReplays"';
+  SearchLine_my();
+  login_s3:=TrimRight(login.Strings[SearchLine]);
+  log3_SL:=SearchLine;
+
+  Search:='"pingServers"';
+  SearchLine_my();
+  Search:='"enabled"';
+  SearchLine_my_2();
+  login_s4:=TrimRight(login.Strings[SearchLine]);
+  log4_SL:=SearchLine;
+
+  Search:='"pingServers"';
+  SearchLine_my();
+  Search:='"x"';
+  SearchLine_my_2();
+  login_s5:=TrimRight(login.Strings[SearchLine]);
+  log5_SL:=SearchLine;
+  search_sN:=login_s5;
+  search_info();
+  login_s5:=search_sN;
+  SpinEdit3.Value:=StrToInt(login_s5);
+
+  Search:='"pingServers"';
+  SearchLine_my();
+  Search:='"y"';
+  SearchLine_my_2();
+  login_s6:=TrimRight(login.Strings[SearchLine]);
+  log6_SL:=SearchLine;
+  search_sN:=login_s6;
+  search_info();
+  login_s6:=search_sN;
+  SpinEdit4.Value:=StrToInt(login_s6);
+
+
+  if pos('true', login_s1)>0 then
+  RadioButton23.Checked:=True else RadioButton24.Checked:=True;
+
+  if pos('true', login_s2)>0 then
+  RadioButton25.Checked:=True else RadioButton26.Checked:=True;
+
+  if pos('true', login_s3)>0 then
+  RadioButton27.Checked:=True else RadioButton28.Checked:=True;
+
+  if pos('true', login_s4)>0 then
+  RadioButton29.Checked:=True else RadioButton30.Checked:=True;
 
 end;
 
-procedure TForm1.battle_save;
+procedure TXCTuner_Form1.login_save;
+begin
+  // сохранение изменений в файл login.xc
+  if (RadioButton23.Checked=True) then
+    login_s1:=StringReplace(login_s1, 'false', 'true', []) else login_s1:=StringReplace(login_s1, 'true', 'false', []);
+
+  if (RadioButton25.Checked=True) then
+    login_s2:=StringReplace(login_s2, 'false', 'true', []) else login_s2:=StringReplace(login_s2, 'true', 'false', []);
+
+  if (RadioButton27.Checked=True) then
+    login_s3:=StringReplace(login_s3, 'false', 'true', []) else login_s3:=StringReplace(login_s3, 'true', 'false', []);
+
+  if (RadioButton29.Checked=True) then
+    login_s4:=StringReplace(login_s4, 'false', 'true', []) else login_s4:=StringReplace(login_s4, 'true', 'false', []);
+
+
+  login.Delete(log1_SL);
+  login.Insert(log1_SL, login_s1);
+
+  login.Delete(log2_SL);
+  login.Insert(log2_SL, login_s2);
+
+  login.Delete(log3_SL);
+  login.Insert(log3_SL, login_s3);
+
+  login.Delete(log4_SL);
+  login.Insert(log4_SL, login_s4);
+
+  login_s5_2:=login.Strings[log5_SL];
+  login_s5_2:=StringReplace(login_s5_2, login_s5, IntToStr(SpinEdit3.Value), []);
+  login.Delete(log5_SL);
+  login.Insert(log5_SL, login_s5_2);
+
+  login_s6_2:=login.Strings[log6_SL];
+  login_s6_2:=StringReplace(login_s6_2, login_s6, IntToStr(SpinEdit4.Value), []);
+  login.Delete(log6_SL);
+  login.Insert(log6_SL, login_s6_2);
+end;
+
+procedure TXCTuner_Form1.battle_save;
 begin
   // процедура подготовки изменений для сохранения в файл battle.xc
   if (RadioButton1.Checked=True) then
@@ -372,199 +541,118 @@ begin
   battle.Insert(bs6_SL, b_s6);
 end;
 
-procedure TForm1.BitBtn1Click(Sender: TObject);
+procedure TXCTuner_Form1.xvm_loading;
 begin
-battle_save();
-battle.SaveToFile(ExtractFilePath(ParamStr(0))+'battle.xc');
-battle.Clear;
-battle.LoadFromFile(ExtractFilePath(ParamStr(0))+'battle.xc');
+  // загрузка данных из файла @xvm.xc
+    temp_list.Clear;
+    temp_list.Text:=xvm.Text;
+
+    Search:='"configVersion"';
+    SearchLine_my();
+    xvm_s1:=Trim(xvm.Strings[SearchLine]);
+
+    Search:='"editorVersion"';
+    SearchLine_my();
+    xvm_s2:=Trim(xvm.Strings[SearchLine]);
+
+    Search:='"language"';
+    SearchLine_my();
+    xvm_s3:=Trim(xvm.Strings[SearchLine]);
+
+    Search:='"region"';
+    SearchLine_my();
+    xvm_s4:=Trim(xvm.Strings[SearchLine]);
+
+    Search:='"author"';
+    SearchLine_my();
+    xvm_s5:=Trim(xvm.Strings[SearchLine]);
+
+    Search:='"description"';
+    SearchLine_my();
+    xvm_s6:=Trim(xvm.Strings[SearchLine]);
+
+    Search:='"date"';
+    SearchLine_my();
+    xvm_s7:=Trim(xvm.Strings[SearchLine]);
+
+    Search:='"gameVersion"';
+    SearchLine_my();
+    xvm_s8:=Trim(xvm.Strings[SearchLine]);
+
+    // Обработка строк и вывод их в программу
+
+    xvm_sN:=xvm_s1;
+    xvm_info();
+    xvm_s1:=xvm_sN;
+    Label2.Caption:=xvm_s1;
+
+    xvm_sN:=xvm_s2;
+    xvm_info();
+    xvm_s2:=xvm_sN;
+    Label4.Caption:=xvm_s2;
+
+    xvm_sN:=xvm_s3;
+    xvm_info();
+    xvm_s3:=xvm_sN;
+    Label6.Caption:=xvm_s3;
+
+    xvm_sN:=xvm_s4;
+    xvm_info();
+    xvm_s4:=xvm_sN;
+    Label8.Caption:=xvm_s4;
+
+    xvm_sN:=xvm_s5;
+    xvm_info();
+    xvm_s5:=xvm_sN;
+    Label10.Caption:=xvm_s5;
+
+    xvm_sN:=xvm_s6;
+    xvm_info();
+    xvm_s6:=xvm_sN;
+    Label12.Caption:=xvm_s6;
+
+    xvm_sN:=xvm_s7;
+    xvm_info();
+    xvm_s7:=xvm_sN;
+    Label14.Caption:=xvm_s7;
+
+    xvm_sN:=xvm_s8;
+    xvm_info();
+    xvm_s8:=xvm_sN;
+    Label16.Caption:=xvm_s8;
 end;
 
-procedure TForm1.BitBtn2Click(Sender: TObject);
+procedure TXCTuner_Form1.rating_loading;
 begin
-battle_loading();
-end;
-
-procedure TForm1.BitBtn3Click(Sender: TObject);
-begin
-rating_loading();
-end;
-
-procedure TForm1.BitBtn4Click(Sender: TObject);
-begin
-rating_save();
-rating.SaveToFile(ExtractFilePath(ParamStr(0))+'rating.xc');
-rating.Clear;
-rating.LoadFromFile(ExtractFilePath(ParamStr(0))+'rating.xc');
-end;
-
-procedure TForm1.BitBtn5Click(Sender: TObject);
-begin
-login_loading();
-end;
-
-procedure TForm1.BitBtn6Click(Sender: TObject);
-begin
-login_save();
-login.SaveToFile(ExtractFilePath(ParamStr(0))+'login.xc');
-login.Clear;
-login.LoadFromFile(ExtractFilePath(ParamStr(0))+'login.xc');
-end;
-
-procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-  // При закрытие на всякий случай очищаем переменную xvm
-  xvm.Free;
-  battle.Free;
-  login.Free;
-  rating.Free;
-  temp_list.Free;
-end;
-
-
-
-procedure TForm1.Image1Click(Sender: TObject);
-begin
-AboutBox.ShowModal;
-end;
-
-
-
-procedure TForm1.login_loading;
-// загрузка из файла login.xc и обработка данных
-begin
-  temp_list.Clear;
-  temp_list.Text:=login.Text;
-
-  Search:='"skipIntro"';
-  SearchLine_my();
-  login_s1:=login.Strings[SearchLine].TrimRight;
-  log1_SL:=SearchLine;
-
-  Search:='"autologin"';
-  SearchLine_my();
-  login_s2:=login.Strings[SearchLine].TrimRight;
-  log2_SL:=SearchLine;
-
-
-  Search:='"confirmOldReplays"';
-  SearchLine_my();
-  login_s3:=login.Strings[SearchLine].TrimRight;
-  log3_SL:=SearchLine;
-
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"enabled"';
-  SearchLine_my_2();
-  login_s4:=login.Strings[SearchLine].TrimRight;
-  log4_SL:=SearchLine;
-
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"x"';
-  SearchLine_my_2();
-  login_s5:=login.Strings[SearchLine].TrimRight;
-  log5_SL:=SearchLine;
-  search_sN:=login_s5;
-  search_info();
-  login_s5:=search_sN;
-  SpinEdit1.Value:=StrToInt(login_s5);
-
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"y"';
-  SearchLine_my_2();
-  login_s6:=login.Strings[SearchLine].TrimRight;
-  log6_SL:=SearchLine;
-  search_sN:=login_s6;
-  search_info();
-  login_s6:=search_sN;
-  SpinEdit2.Value:=StrToInt(login_s6);
-
-
-  if pos('true', login_s1)>0 then
-  RadioButton23.Checked:=True else RadioButton24.Checked:=True;
-
-  if pos('true', login_s2)>0 then
-  RadioButton25.Checked:=True else RadioButton26.Checked:=True;
-
-  if pos('true', login_s3)>0 then
-  RadioButton27.Checked:=True else RadioButton28.Checked:=True;
-
-  if pos('true', login_s4)>0 then
-  RadioButton29.Checked:=True else RadioButton30.Checked:=True;
-
-end;
-
-procedure TForm1.login_save;
-begin
-// сохранение изменений в файл login.xc
-  if (RadioButton23.Checked=True) then
-    login_s1:=StringReplace(login_s1, 'false', 'true', []) else login_s1:=StringReplace(login_s1, 'true', 'false', []);
-
-  if (RadioButton25.Checked=True) then
-    login_s2:=StringReplace(login_s2, 'false', 'true', []) else login_s2:=StringReplace(login_s2, 'true', 'false', []);
-
-  if (RadioButton27.Checked=True) then
-    login_s3:=StringReplace(login_s3, 'false', 'true', []) else login_s3:=StringReplace(login_s3, 'true', 'false', []);
-
-  if (RadioButton29.Checked=True) then
-    login_s4:=StringReplace(login_s4, 'false', 'true', []) else login_s4:=StringReplace(login_s4, 'true', 'false', []);
-
-
-  login.Delete(log1_SL);
-  login.Insert(log1_SL, login_s1);
-
-  login.Delete(log2_SL);
-  login.Insert(log2_SL, login_s2);
-
-  login.Delete(log3_SL);
-  login.Insert(log3_SL, login_s3);
-
-  login.Delete(log4_SL);
-  login.Insert(log4_SL, login_s4);
-
-  login_s5_2:=login.Strings[log5_SL];
-  login_s5_2:=StringReplace(login_s5_2, login_s5, IntToStr(SpinEdit1.Value), []);
-  login.Delete(log5_SL);
-  login.Insert(log5_SL, login_s5_2);
-
-  login_s6_2:=login.Strings[log6_SL];
-  login_s6_2:=StringReplace(login_s6_2, login_s6, IntToStr(SpinEdit2.Value), []);
-  login.Delete(log6_SL);
-  login.Insert(log6_SL, login_s6_2);
-
-end;
-
-procedure TForm1.rating_loading;
-begin
+  rating.Clear;
+  rating.LoadFromFile(ExtractFilePath(ParamStr(0))+'rating.xc');
   // загрузка данных из файла rating.xc в интерфейс
   temp_list.Clear;
   temp_list.Text:=rating.Text;
 
   Search:='"showPlayersStatistics"';
   SearchLine_my();
-  rating_s1:=rating.Strings[SearchLine].TrimRight;
+  rating_s1:=TrimRight(rating.Strings[SearchLine]);
   rat1_SL:=SearchLine;
 
   Search:='"enableUserInfoStatistics"';
   SearchLine_my();
-  rating_s2:=rating.Strings[SearchLine].TrimRight;
+  rating_s2:=TrimRight(rating.Strings[SearchLine]);
   rat2_SL:=SearchLine;
 
   Search:='"enableCompanyStatistics"';
   SearchLine_my();
-  rating_s3:=rating.Strings[SearchLine].TrimRight;
+  rating_s3:=TrimRight(rating.Strings[SearchLine]);
   rat3_SL:=SearchLine;
 
   Search:='"loadEnemyStatsInFogOfWar"';
   SearchLine_my();
-  rating_s4:=rating.Strings[SearchLine].TrimRight;
+  rating_s4:=TrimRight(rating.Strings[SearchLine]);
   rat4_SL:=SearchLine;
 
   Search:='"enableStatisticsLog"';
   SearchLine_my();
-  rating_s5:=rating.Strings[SearchLine].TrimRight;
+  rating_s5:=TrimRight(rating.Strings[SearchLine]);
   rat5_SL:=SearchLine;
 
   if pos('true', rating_s1)>0 then
@@ -581,12 +669,11 @@ begin
 
   if pos('true', rating_s5)>0 then
   RadioButton21.Checked:=True else RadioButton22.Checked:=True;
-
 end;
 
-procedure TForm1.rating_save;
+procedure TXCTuner_Form1.rating_save;
 begin
-    // процедура подготовки изменений для сохранения в файл rating.xc
+  // процедура подготовки изменений для сохранения в файл rating.xc
   if (RadioButton13.Checked=True) then
     rating_s1:=StringReplace(rating_s1, 'false', 'true', []) else rating_s1:=StringReplace(rating_s1, 'true', 'false', []);
 
@@ -616,177 +703,9 @@ begin
 
   rating.Delete(rat5_SL);
   rating.Insert(rat5_SL, rating_s5);
-
 end;
-
-
-procedure TForm1.SearchLine_my;
-// процедура поиска нужного слова // выводит номер строки где найдено это слово
-begin
-  for k := 0 to (temp_list.Count - 1) do
-    if pos(Search, temp_list.Strings[k])>0 then
-    begin
-    SearchLine:= k;
-    Exit;
-    end;
-end;
-
-procedure TForm1.SearchLine_my_2;
-// процедура нахождения слов во вложенных конструкциях 1 уровня
-begin
-  for k := SearchLine to (temp_list.Count - 1) do
-    if pos(Search, temp_list.Strings[k])>0 then
-    begin
-    SearchLine:= k;
-    Exit;
-    end;
-end;
-
-procedure TForm1.SearchLine_my_3;
-// процедура нахождения слов во вложенных конструкциях 2 уровня
-begin
-//
-end;
-
-procedure TForm1.SpinEdit6Change(Sender: TObject);
-begin
-TrackBar2.Position:=SpinEdit6.Value;
-end;
-
-procedure TForm1.SpinEdit7Change(Sender: TObject);
-begin
-TrackBar3.Position:=SpinEdit7.Value;
-end;
-
-// процедура удаления лишних сиволов и пробелов в обработчике загр. информации из xvm
-procedure TForm1.xvm_info;
-begin
-    if xvm_sN[Length(xvm_sN)]='"' then
-    Delete(xvm_sN, Length(xvm_sN), 1)
-    else
-      begin
-        Delete(xvm_sN, Length(xvm_sN)-1, 2);
-      end;
-  Delete(xvm_sN, 1, Pos(':', xvm_sN));
-  xvm_sN:=xvm_sN.TrimLeft;
-  Delete(xvm_sN, 1, 1);
-end;
-
-// процедура удаления лишних сиволов и пробелов в обработчике загр. информации из файлов xvm
-procedure TForm1.search_info;
-begin
-    if search_sN[Length(search_sN)]=',' then
-    begin
-      Delete(search_sN, Length(search_sN), 1);
-      Delete(search_sN, 1, Pos(':', search_sN));
-      search_sN:=search_sN.Trim;
-    end
-    else
-      begin
-        Delete(search_sN, 1, Pos(':', search_sN));
-        search_sN:=search_sN.Trim;
-      end;
-end;
-
-procedure TForm1.TrackBar1Change(Sender: TObject);
-begin
-Label17.Caption:=IntToStr(TrackBar1.Position) + ' мс';
-end;
-
-procedure TForm1.TrackBar2Change(Sender: TObject);
-begin
-SpinEdit6.Value:=TrackBar2.Position;
-end;
-
-procedure TForm1.TrackBar3Change(Sender: TObject);
-begin
-SpinEdit7.Value:=TrackBar3.Position;
-end;
-
-procedure TForm1.xvm_loading;
-begin
-// загрузка данных из файла @xvm.xc
-  temp_list.Clear;
-  temp_list.Text:=xvm.Text;
-
-  Search:='"configVersion"';
-  SearchLine_my();
-  xvm_s1:=xvm.Strings[SearchLine].Trim;
-
-  Search:='"editorVersion"';
-  SearchLine_my();
-  xvm_s2:=xvm.Strings[SearchLine].Trim;
-
-  Search:='"language"';
-  SearchLine_my();
-  xvm_s3:=xvm.Strings[SearchLine].Trim;
-
-  Search:='"region"';
-  SearchLine_my();
-  xvm_s4:=xvm.Strings[SearchLine].Trim;
-
-  Search:='"author"';
-  SearchLine_my();
-  xvm_s5:=xvm.Strings[SearchLine].Trim;
-
-  Search:='"description"';
-  SearchLine_my();
-  xvm_s6:=xvm.Strings[SearchLine].Trim;
-
-  Search:='"date"';
-  SearchLine_my();
-  xvm_s7:=xvm.Strings[SearchLine].Trim;
-
-  Search:='"gameVersion"';
-  SearchLine_my();
-  xvm_s8:=xvm.Strings[SearchLine].Trim;
-
-  // Обработка строк и вывод их в программу
-
-  xvm_sN:=xvm_s1;
-  xvm_info();
-  xvm_s1:=xvm_sN;
-  Label2.Caption:=xvm_s1;
-
-  xvm_sN:=xvm_s2;
-  xvm_info();
-  xvm_s2:=xvm_sN;
-  Label4.Caption:=xvm_s2;
-
-  xvm_sN:=xvm_s3;
-  xvm_info();
-  xvm_s3:=xvm_sN;
-  Label6.Caption:=xvm_s3;
-
-  xvm_sN:=xvm_s4;
-  xvm_info();
-  xvm_s4:=xvm_sN;
-  Label8.Caption:=xvm_s4;
-
-  xvm_sN:=xvm_s5;
-  xvm_info();
-  xvm_s5:=xvm_sN;
-  Label10.Caption:=xvm_s5;
-
-  xvm_sN:=xvm_s6;
-  xvm_info();
-  xvm_s6:=xvm_sN;
-  Label12.Caption:=xvm_s6;
-
-  xvm_sN:=xvm_s7;
-  xvm_info();
-  xvm_s7:=xvm_sN;
-  Label14.Caption:=xvm_s7;
-
-  xvm_sN:=xvm_s8;
-  xvm_info();
-  xvm_s8:=xvm_sN;
-  Label16.Caption:=xvm_s8;
-
-end;
-
-
 
 
 
 end.
+
