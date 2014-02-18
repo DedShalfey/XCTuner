@@ -124,6 +124,8 @@ type
     Label23: TLabel;
     SpinEdit1: TSpinEdit;
     SpinEdit2: TSpinEdit;
+    BitBtn5: TBitBtn;
+    BitBtn6: TBitBtn;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Image1Click(Sender: TObject);
@@ -136,6 +138,8 @@ type
     procedure TrackBar3Change(Sender: TObject);
     procedure SpinEdit6Change(Sender: TObject);
     procedure SpinEdit7Change(Sender: TObject);
+    procedure BitBtn5Click(Sender: TObject);
+    procedure BitBtn6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -143,7 +147,10 @@ type
     procedure SearchLine_my_2();
     procedure SearchLine_my_3();
     procedure xvm_info();
+    procedure search_info();
     procedure battle_loading();
+    procedure login_loading();
+    procedure login_save();
     procedure battle_save();
     procedure xvm_loading();
     procedure rating_loading();
@@ -153,13 +160,15 @@ type
 
 var
   Form1: TForm1;
-  xvm, battle, rating, temp_list: TStringList;
+  xvm, battle, login, rating, temp_list: TStringList;
   b_s1, b_s2, b_s3, b_s4, b_s5, b_s6: String;
   xvm_s1, xvm_s2, xvm_s3, xvm_s4, xvm_s5, xvm_s6, xvm_s7, xvm_s8, xvm_sN: String;
+  login_s1, login_s2, login_s3, login_s4, login_s5, login_s6, login_s5_2, login_s6_2: string;
   rating_s1, rating_s2, rating_s3, rating_s4, rating_s5: String;
-  Search: String;
+  Search, search_sN: String;
   k, SearchLine: Integer;
   bs1_SL, bs2_SL, bs3_SL, bs4_SL, bs5_SL, bs6_SL: Integer;
+  log1_SL, log2_SL, log3_SL, log4_SL, log5_SL, log6_SL: Integer;
   rat1_SL, rat2_SL, rat3_SL, rat4_SL, rat5_SL: Integer;
 
 implementation
@@ -236,6 +245,7 @@ begin
   // Создаем объекты типа TStringlist
   xvm:=TStringList.Create;
   battle:=TStringList.Create;
+  login:=TStringList.Create;
   rating:=TStringList.Create;
   temp_list:=TStringList.Create;
   // Проверяем присутствие файла @xvm.xc в директории с программой
@@ -245,9 +255,11 @@ begin
     begin
       xvm.LoadFromFile(ExtractFilePath(ParamStr(0))+'@xvm.xc');
       battle.LoadFromFile(ExtractFilePath(ParamStr(0))+'battle.xc');
+      login.LoadFromFile(ExtractFilePath(ParamStr(0))+'login.xc');
       rating.LoadFromFile(ExtractFilePath(ParamStr(0))+'rating.xc');
       xvm_loading();
       battle_loading();
+      login_loading();
       rating_loading();
     end
   else
@@ -256,6 +268,7 @@ begin
       ShowMessage('Файлы конфига не найдены или отсутствуют! Поместите программу в папку с файлами конфига или проверте присутствие всех файлов! Программа закроется!');
       xvm.Free;
       battle.Free;
+      login.Free;
       rating.Free;
       temp_list.Free;
       Application.Terminate;
@@ -385,11 +398,25 @@ rating.Clear;
 rating.LoadFromFile(ExtractFilePath(ParamStr(0))+'rating.xc');
 end;
 
+procedure TForm1.BitBtn5Click(Sender: TObject);
+begin
+login_loading();
+end;
+
+procedure TForm1.BitBtn6Click(Sender: TObject);
+begin
+login_save();
+login.SaveToFile(ExtractFilePath(ParamStr(0))+'login.xc');
+login.Clear;
+login.LoadFromFile(ExtractFilePath(ParamStr(0))+'login.xc');
+end;
+
 procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   // При закрытие на всякий случай очищаем переменную xvm
   xvm.Free;
   battle.Free;
+  login.Free;
   rating.Free;
   temp_list.Free;
 end;
@@ -402,6 +429,112 @@ AboutBox.ShowModal;
 end;
 
 
+
+procedure TForm1.login_loading;
+// загрузка из файла login.xc и обработка данных
+begin
+  temp_list.Clear;
+  temp_list.Text:=login.Text;
+
+  Search:='"skipIntro"';
+  SearchLine_my();
+  login_s1:=login.Strings[SearchLine].TrimRight;
+  log1_SL:=SearchLine;
+
+  Search:='"autologin"';
+  SearchLine_my();
+  login_s2:=login.Strings[SearchLine].TrimRight;
+  log2_SL:=SearchLine;
+
+
+  Search:='"confirmOldReplays"';
+  SearchLine_my();
+  login_s3:=login.Strings[SearchLine].TrimRight;
+  log3_SL:=SearchLine;
+
+  Search:='"pingServers"';
+  SearchLine_my();
+  Search:='"enabled"';
+  SearchLine_my_2();
+  login_s4:=login.Strings[SearchLine].TrimRight;
+  log4_SL:=SearchLine;
+
+  Search:='"pingServers"';
+  SearchLine_my();
+  Search:='"x"';
+  SearchLine_my_2();
+  login_s5:=login.Strings[SearchLine].TrimRight;
+  log5_SL:=SearchLine;
+  search_sN:=login_s5;
+  search_info();
+  login_s5:=search_sN;
+  SpinEdit1.Value:=StrToInt(login_s5);
+
+  Search:='"pingServers"';
+  SearchLine_my();
+  Search:='"y"';
+  SearchLine_my_2();
+  login_s6:=login.Strings[SearchLine].TrimRight;
+  log6_SL:=SearchLine;
+  search_sN:=login_s6;
+  search_info();
+  login_s6:=search_sN;
+  SpinEdit2.Value:=StrToInt(login_s6);
+
+
+  if pos('true', login_s1)>0 then
+  RadioButton23.Checked:=True else RadioButton24.Checked:=True;
+
+  if pos('true', login_s2)>0 then
+  RadioButton25.Checked:=True else RadioButton26.Checked:=True;
+
+  if pos('true', login_s3)>0 then
+  RadioButton27.Checked:=True else RadioButton28.Checked:=True;
+
+  if pos('true', login_s4)>0 then
+  RadioButton29.Checked:=True else RadioButton30.Checked:=True;
+
+end;
+
+procedure TForm1.login_save;
+begin
+// сохранение изменений в файл login.xc
+  if (RadioButton23.Checked=True) then
+    login_s1:=StringReplace(login_s1, 'false', 'true', []) else login_s1:=StringReplace(login_s1, 'true', 'false', []);
+
+  if (RadioButton25.Checked=True) then
+    login_s2:=StringReplace(login_s2, 'false', 'true', []) else login_s2:=StringReplace(login_s2, 'true', 'false', []);
+
+  if (RadioButton27.Checked=True) then
+    login_s3:=StringReplace(login_s3, 'false', 'true', []) else login_s3:=StringReplace(login_s3, 'true', 'false', []);
+
+  if (RadioButton29.Checked=True) then
+    login_s4:=StringReplace(login_s4, 'false', 'true', []) else login_s4:=StringReplace(login_s4, 'true', 'false', []);
+
+
+  login.Delete(log1_SL);
+  login.Insert(log1_SL, login_s1);
+
+  login.Delete(log2_SL);
+  login.Insert(log2_SL, login_s2);
+
+  login.Delete(log3_SL);
+  login.Insert(log3_SL, login_s3);
+
+  login.Delete(log4_SL);
+  login.Insert(log4_SL, login_s4);
+
+  login_s5_2:=login.Strings[log5_SL];
+  login_s5_2:=StringReplace(login_s5_2, login_s5, IntToStr(SpinEdit1.Value), []);
+  login.Delete(log5_SL);
+  login.Insert(log5_SL, login_s5_2);
+
+  login_s6_2:=login.Strings[log6_SL];
+  login_s6_2:=StringReplace(login_s6_2, login_s6, IntToStr(SpinEdit2.Value), []);
+  login.Delete(log6_SL);
+  login.Insert(log6_SL, login_s6_2);
+
+end;
 
 procedure TForm1.rating_loading;
 begin
@@ -501,7 +634,12 @@ end;
 procedure TForm1.SearchLine_my_2;
 // процедура нахождения слов во вложенных конструкциях 1 уровня
 begin
-//
+  for k := SearchLine to (temp_list.Count - 1) do
+    if pos(Search, temp_list.Strings[k])>0 then
+    begin
+    SearchLine:= k;
+    Exit;
+    end;
 end;
 
 procedure TForm1.SearchLine_my_3;
@@ -532,6 +670,22 @@ begin
   Delete(xvm_sN, 1, Pos(':', xvm_sN));
   xvm_sN:=xvm_sN.TrimLeft;
   Delete(xvm_sN, 1, 1);
+end;
+
+// процедура удаления лишних сиволов и пробелов в обработчике загр. информации из файлов xvm
+procedure TForm1.search_info;
+begin
+    if search_sN[Length(search_sN)]=',' then
+    begin
+      Delete(search_sN, Length(search_sN), 1);
+      Delete(search_sN, 1, Pos(':', search_sN));
+      search_sN:=search_sN.Trim;
+    end
+    else
+      begin
+        Delete(search_sN, 1, Pos(':', search_sN));
+        search_sN:=search_sN.Trim;
+      end;
 end;
 
 procedure TForm1.TrackBar1Change(Sender: TObject);

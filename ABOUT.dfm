@@ -1408,15 +1408,15 @@ object AboutBox: TAboutBox
       IsControl = True
     end
     object ProductName: TLabel
-      Left = 8
+      Left = 94
       Top = 16
-      Width = 193
+      Width = 85
       Height = 13
-      Caption = #1053#1072#1079#1074#1072#1085#1080#1077': '#1050#1086#1085#1092#1080#1075'0'#1088#1072#1090#1086#1088' Ded_Shalfey'
+      Caption = #1053#1072#1079#1074#1072#1085#1080#1077': XConf'
       IsControl = True
     end
     object Version: TLabel
-      Left = 80
+      Left = 93
       Top = 74
       Width = 90
       Height = 13
@@ -1424,15 +1424,15 @@ object AboutBox: TAboutBox
       IsControl = True
     end
     object Copyright: TLabel
-      Left = 8
+      Left = 98
       Top = 183
-      Width = 71
+      Width = 77
       Height = 13
-      Caption = 'Copyright 2014'
+      Caption = 'Copyright'#169'2014'
       IsControl = True
     end
     object Label1: TLabel
-      Left = 84
+      Left = 100
       Top = 112
       Width = 72
       Height = 13
@@ -1443,6 +1443,13 @@ object AboutBox: TAboutBox
       Font.Name = 'MS Sans Serif'
       Font.Style = []
       ParentFont = False
+    end
+    object Label2: TLabel
+      Left = 48
+      Top = 45
+      Width = 170
+      Height = 13
+      Caption = #1040#1074#1090#1086#1088': Rustam A. aka Ded_Shalfey'
     end
   end
   object OKButton: TButton

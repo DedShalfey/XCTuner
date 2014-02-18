@@ -15,6 +15,7 @@ type
     Copyright: TLabel;
     OKButton: TButton;
     Label1: TLabel;
+    Label2: TLabel;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
