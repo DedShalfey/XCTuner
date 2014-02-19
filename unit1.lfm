@@ -1,7 +1,7 @@
 object XCTuner_Form1: TXCTuner_Form1
-  Left = 87
+  Left = 195
   Height = 572
-  Top = 353
+  Top = 94
   Width = 1033
   Caption = 'XCTuner'
   ClientHeight = 572
@@ -1175,9 +1175,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 17
           Height = 15
           Top = 8
-          Width = 108
+          Width = 101
           Caption = 'Версия мода XVM:'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end
@@ -1185,9 +1184,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 154
           Height = 15
           Top = 8
-          Width = 27
+          Width = 24
           Caption = '5.1.0'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end
@@ -1195,9 +1193,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 17
           Height = 15
           Top = 26
-          Width = 108
+          Width = 101
           Caption = 'Версия редактора:'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end
@@ -1205,9 +1202,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 154
           Height = 15
           Top = 26
-          Width = 24
+          Width = 21
           Caption = '0.73'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end
@@ -1215,9 +1211,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 17
           Height = 15
           Top = 44
-          Width = 34
+          Width = 30
           Caption = 'Язык:'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end
@@ -1225,9 +1220,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 154
           Height = 15
           Top = 44
-          Width = 25
+          Width = 24
           Caption = 'auto'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end
@@ -1235,9 +1229,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 17
           Height = 15
           Top = 62
-          Width = 44
+          Width = 42
           Caption = 'Регион:'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end
@@ -1245,9 +1238,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 154
           Height = 15
           Top = 62
-          Width = 25
+          Width = 24
           Caption = 'auto'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end
@@ -1255,9 +1247,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 17
           Height = 15
           Top = 80
-          Width = 62
+          Width = 60
           Caption = 'Авторство:'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end
@@ -1265,9 +1256,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 154
           Height = 15
           Top = 80
-          Width = 69
+          Width = 64
           Caption = 'Ded_Shalfey'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end
@@ -1275,9 +1265,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 17
           Height = 15
           Top = 98
-          Width = 113
+          Width = 108
           Caption = 'Описание конфига:'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end
@@ -1285,9 +1274,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 154
           Height = 15
           Top = 98
-          Width = 115
+          Width = 108
           Caption = 'Version 9.2.8 Elegant'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end
@@ -1295,9 +1283,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 17
           Height = 15
           Top = 116
-          Width = 117
+          Width = 109
           Caption = 'Дата модификации:'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end
@@ -1305,9 +1292,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 154
           Height = 15
           Top = 116
-          Width = 48
+          Width = 42
           Caption = '15.02.14'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end
@@ -1315,9 +1301,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 17
           Height = 15
           Top = 134
-          Width = 79
+          Width = 73
           Caption = 'Версия игры:'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end
@@ -1325,9 +1310,8 @@ object XCTuner_Form1: TXCTuner_Form1
           Left = 154
           Height = 15
           Top = 134
-          Width = 34
+          Width = 30
           Caption = '0.8.11'
-          Font.Style = [fsBold]
           ParentColor = False
           ParentFont = False
         end

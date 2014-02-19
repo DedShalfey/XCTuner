@@ -289,24 +289,21 @@ procedure TXCTuner_Form1.BitSave2Click(Sender: TObject);
 begin
   battle_save();
   battle.SaveToFile(ExtractFilePath(ParamStr(0))+'battle.xc');
-  battle.Clear;
-  battle.LoadFromFile(ExtractFilePath(ParamStr(0))+'battle.xc');
+  battle_loading();
 end;
 
 procedure TXCTuner_Form1.BitSave3Click(Sender: TObject);
 begin
   login_save();
   login.SaveToFile(ExtractFilePath(ParamStr(0))+'login.xc');
-  login.Clear;
-  login.LoadFromFile(ExtractFilePath(ParamStr(0))+'login.xc');
+  login_loading();
 end;
 
 procedure TXCTuner_Form1.BitSave4Click(Sender: TObject);
 begin
   hangar_save();
   hangar.SaveToFile(ExtractFilePath(ParamStr(0))+'hangar.xc');
-  hangar.Clear;
-  hangar.LoadFromFile(ExtractFilePath(ParamStr(0))+'hangar.xc');
+  hangar_loading();
 end;
 
 procedure TXCTuner_Form1.BtExitClick(Sender: TObject);
@@ -329,7 +326,7 @@ end;
 procedure TXCTuner_Form1.FormCreate(Sender: TObject);
 begin
   // вывод версии файла в заголовок
-  XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.6.31';
+  XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.6.37';
   XCTuner_Form1.Height:=538;
   XCTuner_Form1.Width:=1081;
   BitBtn1.Click;
