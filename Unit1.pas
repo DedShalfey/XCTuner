@@ -6,8 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  Buttons, ComCtrls, StdCtrls, Spin, Unit2;
-{$H+}
+  Buttons, ComCtrls, StdCtrls, Spin, Unit2, Unit3;
 
 type
 
@@ -49,6 +48,8 @@ type
     GroupBox7: TGroupBox;
     GroupBox8: TGroupBox;
     GroupBox9: TGroupBox;
+    Image1: TImage;
+    ImageList1: TImageList;
     Label10: TLabel;
     Label11: TLabel;
     Label12: TLabel;
@@ -161,6 +162,7 @@ type
     procedure BtExitClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
     procedure SpinEdit10Change(Sender: TObject);
     procedure SpinEdit8Change(Sender: TObject);
     procedure SpinEdit9Change(Sender: TObject);
@@ -193,6 +195,7 @@ var
   xvm, battle, login, hangar, rating, temp_list: TStringList;
   b_s1, b_s2, b_s3, b_s4, b_s5, b_s6, b_s7, b_s8, b_s7_2, b_s8_2: String;
   xvm_s1, xvm_s2, xvm_s3, xvm_s4, xvm_s5, xvm_s6, xvm_s7, xvm_s8, xvm_sN: String;
+  xvm_s1_2, xvm_s2_2, xvm_s3_2, xvm_s4_2, xvm_s5_2, xvm_s6_2, xvm_s7_2, xvm_s8_2: String;
   login_s1, login_s2, login_s3, login_s4, login_s5, login_s6, login_s5_2, login_s6_2: string;
 
   hangar_s1, hangar_s2, hangar_s3, hangar_s4, hangar_s5, hangar_s6, hangar_s7: string;
@@ -204,6 +207,7 @@ var
   k, SearchLine: Integer;
   bs1_SL, bs2_SL, bs3_SL, bs4_SL, bs5_SL, bs6_SL, bs7_SL, bs8_SL: Integer;
   log1_SL, log2_SL, log3_SL, log4_SL, log5_SL, log6_SL: Integer;
+  xvm1_SL, xvm2_SL, xvm3_SL, xvm4_SL, xvm5_SL, xvm6_SL, xvm7_SL, xvm8_SL: Integer;
 
   hgar1_SL, hgar2_SL, hgar3_SL, hgar4_SL, hgar5_SL, hgar6_SL, hgar7_SL: Integer;
   hgar8_SL, hgar9_SL, hgar10_SL, hgar11_SL, hgar12_SL, hgar13_SL: Integer;
@@ -219,25 +223,37 @@ implementation
 
 procedure TXCTuner_Form1.BitBtn1Click(Sender: TObject);
 begin
+  BitBtn1.Glyph:=nil;
+  BitBtn2.Glyph:=nil;
+  BitBtn3.Glyph:=nil;
   BitBtn1.Font.Style:=[fsBold];
   BitBtn2.Font.Style:=[];
   BitBtn3.Font.Style:=[];
+  ImageList1.GetBitmap(0, BitBtn1.Glyph);
   PageControl1.ActivePage:=TabSheet1;
 end;
 
 procedure TXCTuner_Form1.BitBtn2Click(Sender: TObject);
 begin
+  BitBtn1.Glyph:=nil;
+  BitBtn2.Glyph:=nil;
+  BitBtn3.Glyph:=nil;
   BitBtn1.Font.Style:=[];
   BitBtn2.Font.Style:=[fsBold];
   BitBtn3.Font.Style:=[];
+  ImageList1.GetBitmap(0, BitBtn2.Glyph);
   PageControl1.ActivePage:=TabSheet2;
 end;
 
 procedure TXCTuner_Form1.BitBtn3Click(Sender: TObject);
 begin
+  BitBtn1.Glyph:=nil;
+  BitBtn2.Glyph:=nil;
+  BitBtn3.Glyph:=nil;
   BitBtn1.Font.Style:=[];
   BitBtn2.Font.Style:=[];
   BitBtn3.Font.Style:=[fsBold];
+  ImageList1.GetBitmap(0, BitBtn3.Glyph);
   PageControl1.ActivePage:=TabSheet3;
 end;
 
@@ -313,7 +329,9 @@ end;
 procedure TXCTuner_Form1.FormCreate(Sender: TObject);
 begin
   // вывод версии файла в заголовок
-  XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.6.21';
+  XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.6.31';
+  XCTuner_Form1.Height:=538;
+  XCTuner_Form1.Width:=1081;
   BitBtn1.Click;
   // Создаем объекты типа TStringlist
   xvm:=TStringList.Create;
@@ -352,6 +370,19 @@ begin
       temp_list.Free;
       Application.Terminate;
     end;
+end;
+
+procedure TXCTuner_Form1.Image1Click(Sender: TObject);
+begin
+  Edit_XVM.Edit1.Text:=xvm_s1;
+  Edit_XVM.Edit2.Text:=xvm_s2;
+  Edit_XVM.Edit3.Text:=xvm_s3;
+  Edit_XVM.Edit4.Text:=xvm_s4;
+  Edit_XVM.Edit5.Text:=xvm_s5;
+  Edit_XVM.Edit6.Text:=xvm_s6;
+  Edit_XVM.DateEdit1.Text:=xvm_s7;
+  Edit_XVM.Edit7.Text:=xvm_s8;
+  Edit_XVM.ShowModal;
 end;
 
 procedure TXCTuner_Form1.SpinEdit10Change(Sender: TObject);
@@ -914,34 +945,42 @@ begin
 
     Search:='"configVersion"';
     SearchLine_my();
+    xvm1_SL:=SearchLine;
     xvm_s1:=Trim(xvm.Strings[SearchLine]);
 
     Search:='"editorVersion"';
     SearchLine_my();
+    xvm2_SL:=SearchLine;
     xvm_s2:=Trim(xvm.Strings[SearchLine]);
 
     Search:='"language"';
     SearchLine_my();
+    xvm3_SL:=SearchLine;
     xvm_s3:=Trim(xvm.Strings[SearchLine]);
 
     Search:='"region"';
     SearchLine_my();
+    xvm4_SL:=SearchLine;
     xvm_s4:=Trim(xvm.Strings[SearchLine]);
 
     Search:='"author"';
     SearchLine_my();
+    xvm5_SL:=SearchLine;
     xvm_s5:=Trim(xvm.Strings[SearchLine]);
 
     Search:='"description"';
     SearchLine_my();
+    xvm6_SL:=SearchLine;
     xvm_s6:=Trim(xvm.Strings[SearchLine]);
 
     Search:='"date"';
     SearchLine_my();
+    xvm7_SL:=SearchLine;
     xvm_s7:=Trim(xvm.Strings[SearchLine]);
 
     Search:='"gameVersion"';
     SearchLine_my();
+    xvm8_SL:=SearchLine;
     xvm_s8:=Trim(xvm.Strings[SearchLine]);
 
     // Обработка строк и вывод их в программу
