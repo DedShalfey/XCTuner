@@ -421,11 +421,11 @@ object About: TAbout
     ParentColor = False
   end
   object Label2: TLabel
-    Left = 145
+    Left = 138
     Height = 15
     Top = 112
-    Width = 72
-    Caption = 'Версия: 0.000'
+    Width = 84
+    Caption = 'Версия: 0.1.6.20'
     ParentColor = False
   end
   object Label3: TLabel

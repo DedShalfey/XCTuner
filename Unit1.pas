@@ -191,7 +191,7 @@ type
 var
   XCTuner_Form1: TXCTuner_Form1;
   xvm, battle, login, hangar, rating, temp_list: TStringList;
-  b_s1, b_s2, b_s3, b_s4, b_s5, b_s6: String;
+  b_s1, b_s2, b_s3, b_s4, b_s5, b_s6, b_s7, b_s8, b_s7_2, b_s8_2: String;
   xvm_s1, xvm_s2, xvm_s3, xvm_s4, xvm_s5, xvm_s6, xvm_s7, xvm_s8, xvm_sN: String;
   login_s1, login_s2, login_s3, login_s4, login_s5, login_s6, login_s5_2, login_s6_2: string;
 
@@ -202,7 +202,7 @@ var
   rating_s1, rating_s2, rating_s3, rating_s4, rating_s5: String;
   Search, search_sN: String;
   k, SearchLine: Integer;
-  bs1_SL, bs2_SL, bs3_SL, bs4_SL, bs5_SL, bs6_SL: Integer;
+  bs1_SL, bs2_SL, bs3_SL, bs4_SL, bs5_SL, bs6_SL, bs7_SL, bs8_SL: Integer;
   log1_SL, log2_SL, log3_SL, log4_SL, log5_SL, log6_SL: Integer;
 
   hgar1_SL, hgar2_SL, hgar3_SL, hgar4_SL, hgar5_SL, hgar6_SL, hgar7_SL: Integer;
@@ -313,7 +313,7 @@ end;
 procedure TXCTuner_Form1.FormCreate(Sender: TObject);
 begin
   // вывод версии файла в заголовок
-  XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.6.1';
+  XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.6.20';
   BitBtn1.Click;
   // Создаем объекты типа TStringlist
   xvm:=TStringList.Create;
@@ -484,6 +484,28 @@ begin
   SearchLine_my();
   b_s6:=TrimRight(battle.Strings[SearchLine]);
   bs6_SL:=SearchLine;
+
+  Search:='"expertPanel"';
+  SearchLine_my();
+  Search:='"delay"';
+  SearchLine_my_2();
+  b_s7:=TrimRight(battle.Strings[SearchLine]);
+  bs7_SL:=SearchLine;
+  search_sN:=b_s7;
+  search_info();
+  b_s7:=search_sN;
+  SpinEdit1.Value:=StrToInt(b_s7);
+
+  Search:='"expertPanel"';
+  SearchLine_my();
+  Search:='"scale"';
+  SearchLine_my_2();
+  b_s8:=TrimRight(battle.Strings[SearchLine]);
+  bs8_SL:=SearchLine;
+  search_sN:=b_s8;
+  search_info();
+  b_s8:=search_sN;
+  SpinEdit2.Value:=StrToInt(b_s8);
 
   if pos('false', b_s1)>0 then
   RadioButton1.Checked:=True else RadioButton2.Checked:=True;
@@ -871,6 +893,17 @@ begin
 
   battle.Delete(bs6_SL);
   battle.Insert(bs6_SL, b_s6);
+
+  b_s7_2:=battle.Strings[bs7_SL];
+  b_s7_2:=StringReplace(b_s7_2, b_s7, IntToStr(SpinEdit1.Value), []);
+  battle.Delete(bs7_SL);
+  battle.Insert(bs7_SL, b_s7_2);
+
+  b_s8_2:=battle.Strings[bs8_SL];
+  b_s8_2:=StringReplace(b_s8_2, b_s8, IntToStr(SpinEdit2.Value), []);
+  battle.Delete(bs8_SL);
+  battle.Insert(bs8_SL, b_s8_2);
+
 end;
 
 procedure TXCTuner_Form1.xvm_loading;
