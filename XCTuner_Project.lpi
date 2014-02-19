@@ -22,7 +22,7 @@
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="1"/>
       <RevisionNr Value="6"/>
-      <BuildNr Value="21"/>
+      <BuildNr Value="22"/>
       <Language Value="0419"/>
       <Attributes pvaPreRelease="True"/>
       <StringTable FileDescription="XCTuner" LegalCopyright="Ded_Shalfey" ProductName="XCTuner" ProductVersion=""/>

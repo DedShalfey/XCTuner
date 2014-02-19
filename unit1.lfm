@@ -1,7 +1,7 @@
 object XCTuner_Form1: TXCTuner_Form1
-  Left = 273
+  Left = 138
   Height = 538
-  Top = 75
+  Top = 88
   Width = 1081
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
@@ -403,25 +403,27 @@ object XCTuner_Form1: TXCTuner_Form1
         ParentColor = False
         TabOrder = 0
         object GroupBox2: TGroupBox
+          Cursor = crHelp
           Left = 6
           Height = 57
+          Hint = 'Если переключатель отключить, то модуль статистики не будет работать (отключится по всему конфигу!). '
           Top = 8
           Width = 265
           Caption = 'Глобальный Переключатель Статистики:'
           ClientHeight = 39
           ClientWidth = 261
+          ParentShowHint = False
+          ShowHint = True
           TabOrder = 0
           object RadioButton13: TRadioButton
             Cursor = crHandPoint
             Left = 14
             Height = 19
-            Hint = 'Если переключатель отключить, то модуль статистики не будет работать (отключится по всему конфигу!). '
             Top = 8
             Width = 77
             Caption = 'Включено'
             Checked = True
             ParentShowHint = False
-            ShowHint = True
             TabOrder = 1
             TabStop = True
           end
@@ -744,22 +746,27 @@ object XCTuner_Form1: TXCTuner_Form1
         ClientWidth = 580
         TabOrder = 1
         object GroupBox8: TGroupBox
+          Cursor = crHelp
           Left = 14
           Height = 57
+          Hint = 'Если вы используете стандартные иконки, то лучше отключить зеркалирование иконок. Для альтернативных иконок наоборот - выключить зеркалирование!'
           Top = 8
           Width = 265
-          Caption = 'Вид иконок:'
+          Caption = 'Зеркалирование иконок:'
           ClientHeight = 39
           ClientWidth = 261
+          ParentShowHint = False
+          ShowHint = True
           TabOrder = 0
           object RadioButton1: TRadioButton
             Cursor = crHandPoint
             Left = 14
             Height = 19
             Top = 8
-            Width = 112
-            Caption = 'Альтернативные'
+            Width = 77
+            Caption = 'Включено'
             Checked = True
+            ParentShowHint = False
             TabOrder = 1
             TabStop = True
           end
@@ -768,8 +775,8 @@ object XCTuner_Form1: TXCTuner_Form1
             Left = 142
             Height = 19
             Top = 8
-            Width = 92
-            Caption = 'Стандартные'
+            Width = 84
+            Caption = 'Отключено'
             TabOrder = 0
           end
         end

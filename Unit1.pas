@@ -313,7 +313,7 @@ end;
 procedure TXCTuner_Form1.FormCreate(Sender: TObject);
 begin
   // вывод версии файла в заголовок
-  XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.6.20';
+  XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.6.21';
   BitBtn1.Click;
   // Создаем объекты типа TStringlist
   xvm:=TStringList.Create;
@@ -508,7 +508,7 @@ begin
   SpinEdit2.Value:=StrToInt(b_s8);
 
   if pos('false', b_s1)>0 then
-  RadioButton1.Checked:=True else RadioButton2.Checked:=True;
+  RadioButton2.Checked:=True else RadioButton2.Checked:=True;
 
   if pos('false', b_s2)>0 then
   RadioButton4.Checked:=True else RadioButton3.Checked:=True;
@@ -858,7 +858,7 @@ end;
 procedure TXCTuner_Form1.battle_save;
 begin
   // процедура подготовки изменений для сохранения в файл battle.xc
-  if (RadioButton1.Checked=True) then
+  if (RadioButton2.Checked=True) then
     b_s1:=StringReplace(b_s1, 'true', 'false', []) else b_s1:=StringReplace(b_s1, 'false', 'true', []);
 
   if (RadioButton4.Checked=True) then
