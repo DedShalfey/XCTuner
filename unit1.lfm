@@ -1,8 +1,10 @@
 object XCTuner_Form1: TXCTuner_Form1
-  Left = 189
+  Left = 199
   Height = 538
-  Top = 93
+  Top = 120
   Width = 1081
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'XCTuner'
   ClientHeight = 538
   ClientWidth = 1081
@@ -13,127 +15,127 @@ object XCTuner_Form1: TXCTuner_Form1
     FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
     FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
     FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
     FF00030303000303030003030300030303000303030003030300030303000303
-    03000000000000000000000000220000000E0000000000000000000000000000
-    00030000000000000008000000280000002D0101010000000000000000010000
-    0000000000000000000006060600202020002D2D2D0032323200303030003030
-    3000010101000101010001010100010101000101010001010100010101000000
-    00003E3E3E8D2B2B2BA5606060F15C5C5CDE0101015F00000003000000000000
-    000000000050191919CE333333F4171717FF0404048500000000000000000000
-    0000000000000202023005050500191919003030300036363600343434003434
-    3400000000000000000000000000000000000000000000000000000000000000
-    0017D5D5D5FFFFFFFFFFD0D0D0FFC7C7C7FF757575FF121212C9000000600000
-    002E000000AD5A5A5AFF5F5F5FFF333333FF131313FF00000083030303300000
-    0038131313BD333333FF222222BF222222212B2B2B002E2E2E002C2C2C002C2C
-    2C00000000000000000000000000000000000000000000000000000000000B0B
-    0B6AF6F6F6FFFFFFFFFFFFFFFFFEFBFBFBFEF9F9F9FFE4E4E4FF959595FF5B5B
-    5BED2D2D2DF3383838FE393939FF393939FE333333FF101010FF161616FF1414
-    14FF2C2C2CFF323232FF323232FF424242E61717170701010100010101000101
-    0100000000000000000000000000000000000000000000000000000000004C4C
-    4CB6FFFFFFFFF5F5F5FFF3F3F3FEF5F5F5FEFFFFFFFEFFFFFFFEFFFFFFFFE5E5
-    E5FF3C3C3CFF343434FE373737FE363636FE373737FE333333FF2A2A2AFF2E2E
-    2EFF2D2D2DFE1F1F1FFE1B1B1BFF242424FF0A0A0A2400000000000000000000
-    00000000000000000000000000000000000000000000000000000000002D8A8A
-    8AECFFFFFFFFF4F4F4FEEFEFEFFEFDFDFDFE9F9F9FFE242424FE292929FE1616
-    16FE232323FE4C4C4CFE3E3E3EFE3C3C3CFE353535FE323232FE323232FE2E2E
-    2EFE272727FE262626FE262626FF171717E50202020000000000000000000000
-    000000000000000000000000000000000000000000000000000000000076C5C5
-    C5FFFFFFFFFFFAFAFAFEEFEFEFFEC6C6C6FE4E4E4EFE424242FE111111FE2424
-    24FE5C5C5CFE454545FE3E3E3EFE383838FE3B3B3BFE393939FE303030FE2121
-    21FE282828FE2C2C2CFE272727FF272727F50C0C0C5603030307040404000202
-    020000000000000000000000000000000000000000000000002E090909B0F6F6
-    F6FFFFFFFFFFF8F8F8FEEDEDEDFE999999FE686868FE969696FE888888FE5B5B
-    5BFE414141FE4B4B4BFE454545FE3D3D3DFE4F4F4FFE606060FE555555FE4D4D
-    4DFE323232FE222222FE2C2C2CFE2B2B2BFF282828FF0D0D0DEA0000006B0000
-    0000000000000000000000000000000000000000001B0000006F494949C0FFFF
-    FFFFFAFAFAFFFAFAFAFEDDDDDDFEA5A5A5FE7F7F7FFE838383FE838383FE7C7C
-    7CFE616161FE3C3C3CFE474747FE9D9D9DFEC9C9C9FED4D4D4FEC7C7C7FE9898
-    98FE666666FE393939FE232323FE2C2C2CFE2E2E2EFF272727FF0D0D0DD90404
-    040300000000000000000000000000000005000000690000007B939393DDFFFF
-    FFFFF4F4F4FEFAFAFAFEECECECFECDCDCDFEA3A3A3FE848484FE828282FE8B8B
-    8BFE636363FE373737FEC8C8C8FEFFFFFFFEFFFFFFFEFFFFFFFEFFFFFFFEFAFA
-    FAFEB1B1B1FF6A6A6AFF2B2B2BFE2C2C2CFE2A2A2AFE2D2D2DFF292929FE1A1A
-    1A33000000000000000000000000000000450000006D0202028FE5E5E5FFFFFF
-    FFFFF6F6F8FEF3F3F3FEFFFFFFFEFFFFFFFEBDBCBCFE838282FE8B8B8BFE8787
-    87FE2B2B2BFEADADADFEFFFFFFFEF2F2F2FEEFEFEFFEEFEFEFFEEEEEEEFEFFFF
-    FFFFDADADAF76B6B6BF44C4C4CFF272727FE303030FE2B2B2BFF2B2B2BFF1E1E
-    1E5200000000000000000000002100000072000000506A6B6BD0FFFFFFFFFBFA
-    F9FEF0F0EFFEF9F9FBFEFFFFFFFEB5B5B5FE464646FE949494FE9B9B9BFE6D6D
-    6DFE333333FEF1F1F1FEFFFFFFFEF2F2F2FEF1F1F1FEF5F5F5FEF6F6F6FEFFFF
-    FFFF858585CF2E2E2EE1636363FF2C2C2CFE343434FF363636FF282828851A1A
-    1A11000000000000000A000000570000004E0D0A0A6FDBDFDFFFECFFFFFFF2F8
-    F3FEEAE4DEFEF9FBF8FEEEEFEFFE535252FE606060FEA7A7A7FEA5A5A5FE7575
-    75FE030303FE9F9D9DFEFFFFFFFEF2F2F2FEF1F1F1FEEBEBEBFEE7E7E7FEFFFF
-    FFFD4A4A4AE9262626FB5D5D5DFF323232FF424242FF3434345C161616001C1C
-    1C0000000000000000370000005C0000002A626B6BBEDFD0D0FFE8A3A2FEEBF5
-    F1FEE2FFFFFEF9FFFFFEE3E3E3FE959595FEACACACFE9D9D9DFEA2A2A2FE8F8F
-    8FFE0D0D0CFE040404FE9E9F9FFEF2F2F2FEF7F6F6FEF1F1F1FEE1E1E1FE6D6D
-    6FFE070707FF5B5B59FF474747FE3C3C3CFF3E3E3EFF22222235212121002222
-    22000000001C000000490000002E09070751B1C2C1FF7C6E6EFFF8000CFFCD62
-    6BFFDF4949FEFF7C87FEFFFFFFFEBCBFBFFE8D8D8DFE9C9C9CFE9D9D9DFEAEAE
-    AEFE5D5E5EFE000000FE000000FE3D3D3DFE646565FE5E5F5FFE1F1F1FFE0000
-    00FE3C3C3AFE5A5A5AFE434242FE434343FE434343FF212121B8131313001919
-    19000000002E0000003E00000008747474A5FFFFFFFF4F877EFFA00C20FFFF00
-    00FFFF0405FFFF4352FFFFFFFFFEF7FFFFFEB2B1B2FEA2A2A2FE979797FEA7A7
-    A7FEA3A3A3FE474747FE000000FE000000FE000000FE000000FE000000FE3B39
-    39FE545454FE464646FE4B4B4BFF454545FF464646FF3E3E3ECA2B2B2B002E2E
-    2E0000000028000000190000002BD4D4D4F8F7F7F6FFB9CFCCFE766C68FFF800
-    00FFF5919BFFC3FFFFFEE6E3E1FEF0FDF9FEF8FAF9FEF4F4F4FEC1C1C1FE9494
-    94FEA9A9A9FEA7A9A9FE6B6C6EFE434342FE373635FE403F3FFE585656FE7272
-    72FE727272FF515151FF4D4D4DFF4C4C4CFF454545FF4343432E444444004444
-    4400000000160000000053535385FFFFFFFFD2D2D2FFF8F4F7FEDAF5ECFEDEAD
-    94FEA65053FFE62231FFF72024FFD8ABABFEE8FFFFFEFFFFFFFEE7E7E7FE8D8D
-    8DFEA3A3A3FEA1A1A1FEAFAFAFFEA0A1A1FE919292FE8F8F8FFE919191FE8686
-    86FE7E7E7EFF787878D84C4C4C63494949664B4B4B3541414100414141004242
-    42000000000000000004C1C1C1ECF9FBFFFFE8E3D5FEEFD48DFE7998EDFF69CD
-    FFFEABC69FFEB90A10FFD40109FFFF0912FFFFC0C3FEFDFFFFFEF5F8F8FE9D9D
-    9DFE949494FE979797FE919191FE959595FE8A8A8AFE8B8B8BFE8D8D8DFF8282
-    82FF858585D87E7E7E0143434300444444004B4B4B0041414100404040004141
-    4100000000005656565EFFFFFFFFBCB4A3FFA1B3DEFE838DAAFF3A5593FF0067
-    FFFFE1ECF4FEAAD39BFED9202CFFD11B27FFC53E48FFFF7A84FFFEFFFFFEEBFF
-    FFFEB8B5B5FEA5A5A5FED9D9D9FEE8E8E8FEDBDBDBFE949494FE767676FF8B8B
-    8BFF8C8C8C5D8B8B8B0061616100424242004B4B4B0041414100404040004141
-    410057575700CACACAD5FFFFFFFFA59A83FE3B435BFF0049FFFF0062FFFF2075
-    FFFF216EFFFF63ADFFFEBEDDC4FE735D5AFFF10000FFE2020CFFF0676CFFFFE1
-    E5FEF7FFFFFEFFFFFFFEFFFFFFFEFFFFFFFEFFFFFFFEEEEEEEFFBABABABC8888
-    882D7B7B7B008D8D8D0072727200424242004B4B4B0041414100404040004141
-    4100A7A7A74FE0E0E0FFE5E5E5FFCBCDD3FFB6A378FE5571A4FF005BF3FF0057
-    FFFF0067FFFF2D79FFFFC8DDF0FEEDD889FECE623FFFD30410FFF30000FFD933
-    42FFF5797DFFEFD7D8FEECE4E4FEEDF0F3FEF2FDFCFFFFFFFFFFFFFFFF57D0D0
-    D0008A8A8A009696960078787800343434004C4C4C0041414100404040004141
-    4100B6B6B62BEDEDED9BDBDBDBEDE1E2E2FFFFFFFFFECEC0A1FE725F39FF004D
-    FFFF5D95FFFFCFAC5AFF5886EEFF4C91FFFF5DC4FFFEFFBA9FFE9D8A89FFAD04
-    10FFFF0000FFCD3D48FF974750FFF81217FFFCBEC7FFF0FFFFFFF5F2F22BFFFF
-    FF00F3F3F300F2F2F200EFEFEF006C6B6B001F1E1E0034333300313131003232
-    3200B8B8B800F6F7F700CBCBCB0DC8C7C6CBF1EEE9FFE4E0DAFEC9BB9DFE9FB3
-    E2FF3F64B8FF1F407DFF004BFFFF2165EDFF0C5CFFFF7CCFFFFEE2FFF8FEABA5
-    A5FFE5616CFFC1515AFF76242FFFFF0000FFFF050EFFF5C2C5E9F2FBFB00F3F5
-    F500FAFCFC00FBFCFC00FFFFFF00EAEBEB0050515100404141004A4B4B004B4C
-    4C00BBBBBA00D3D2D200A9A8A800D0CECAFDF2EEE8FFFAF7F5FFFFFFFFFFFFFF
-    F3FFBB9D58FF25427AFF004FFFFF8E9CC5FFB3B8D1FE8DB8FFFFFFFFFFFEF9FF
-    FFFEEFFFFFFECEFFFBFEC7ADAFFFDA8B8EFEF07172FFFFBBC0B3F8FFFF00F8FC
-    FC00F8FCFC00F8FCFC00F7FCFC00FFFFFF00FBFFFF00EAEFEF00EFF3F300EFF3
-    F300B9B9B800AFAFAF00B8B6B604F2EFED70FFFFFF9FFBFAF9C5FDFDFCE8FFFF
-    FFFFECEAE8FFCBBC9EFF738AC5FF2270FFFF3886FFFFFFFFFFFFFFFFFFFEFFFF
-    FFFEFFFFFFFEFFFFFFFEFFFFFFFEF0FFFFFEF3FFFFFFFBFFFF7DFBF9F900FBFB
-    FB00FBFBFB00FBFBFB00FAFAFA00FAFAFA00FFFFFF00FFFFFF00FFFFFF00FFFF
-    FF00B8B8B800B4B4B400B8B8B800EEEBE900FFFEFE00F9F8F800F9F8F706FCFA
-    F926FFFFFF4BDDDEDF70D1BF9598C5C4BCBDBDD5FFE3F5F7FDFFFFFFFEFFFFFF
-    FFFFFFFFFFFFFFFFFFFFFDFDFDFFFFFEFEFFFDFCFCFFF9F9F945FAFAFA00FAFA
+    0300000000000000000000000000000000000000000000000000000000000000
+    0001000000000000000000000000000000000000000000000000000000000000
+    0000000000000000000004040400171717000505050000000000000000000000
+    0000020202000202020002020200020202000202020002020200020202000202
+    020000000008000000050E0E0E451010105D0000000000000000000000000000
+    0000000000080000002F0000005C030303730202021501010100000000000000
+    0000000000000000000003030300171717000505050000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00004D4D4D88727272E1747474FFA3A3A3FF202020BA0000004C000000000000
+    00000000004A262626F5515151FF2A2A2AFF090909DF00000009000000000000
+    0000020202170D0D0D750505052E0E0E0E000505050000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000000000
+    00007E7E7EE0575757FFA5A5A5FFEFEFEFFFBCBCBCFF676767FF131313BB0000
+    006E000000AC4B4B4BFF5D5D5DFF353535FF272727FF010101D9040404830303
+    037D181818ED3F3F3FFF303030FF2D2D2D6A0202020000000000000000000000
+    0000000000000000000000000000000000000000000000000000000000001313
+    133F707070FF000000FF272727FF171717FFCFCFCFFEFFFFFFFFF5F5F5FFBEBE
+    BEFF505050FF2A2A2AFD383838FE353535FE383838FE212121FF1E1E1EFF2222
+    22FF2B2B2BFF2A2A2AFF2A2A2AFF3F3F3FFF0D0D0D1D00000000000000000000
+    0000000000000000000000000000000000000000000000000000000000003B3B
+    3B90969696FF868686FFF0F0F0FE686868FFC2C2C2FECDCDCDFECCCCCCFECCCC
+    CCFF414141FF323232FE3E3E3EFE393939FE353535FE373737FE323232FE3131
+    31FF2C2C2CFE1E1E1EFE1C1C1CFF1A1A1AFF0A0A0A2300000000000000000000
+    0000000000000000000000000000000000000000000000000000000000116C6C
+    6CD07E7E7EFF343434FF989898FEFFFFFFFEA8A8A8FE0A0A0AFE020202FE0000
+    00FE343434FE4D4D4DFE414141FE3C3C3CFE323232FE2A2A2AFE272727FE2A2A
+    2AFE2B2B2BFE282828FE272727FF202020EE0404040000000000020202000101
+    0100000000000000000000000000000000000000000000000000000000557F7F
+    7FF15E5E5EFF4B4B4BFF000000FF464646FF909090FE666666FE5C5C5CFE3E3E
+    3EFE505050FE474747FE404040FE414141FE3F3F3FFE3F3F3FFE404040FE3232
+    32FE202020FE2A2A2AFE282828FF2B2B2BFF141414B10404045A030303140202
+    020000000000000000000000000000000000000000000000002E020202968E8E
+    8EFC888888FFC3C3C3FE8C8C8CFF6A6A6AFE8C8C8CFE8E8E8EFE8B8B8BFE7272
+    72FE474747FE4C4C4CFE3F3F3FFE464646FE797979FE8D8D8DFE838383FE5F5F
+    5FFE464646FE282828FE292929FE2B2B2BFE2E2E2EFF1B1B1BFF020202A90000
+    000000000000000000000000000000000000000000160000006E474747A77676
+    76FF4A4A4AFFA7A7A7FE6A6A6AFFC7C7C7FE959595FE818181FE838383FE8484
+    84FE787878FE353535FE5D5D5DFEC6C6C6FEEEEEEEFEF3F3F3FEEBEBEBFEC4C4
+    C4FE888888FE4D4D4DFE242424FE2C2C2CFE2D2D2DFE2D2D2DFF1C1C1CE90D0D
+    0D14000000000000000000000000000000020000006400000070848484CAC5C5
+    C5FF000000FF262626FF7F7F7FFFE1E1E1FEDAD9D9FE8D8D8DFE838383FE8C8C
+    8CFE5D5D5DFE454545FEECECECFEFFFFFFFEF9F9F9FEF3F3F3FEF8F8F8FEFFFF
+    FFFEDADADAFF7A7A7AFF393939FE292929FE2B2B2BFE272727FF282828FF1F1F
+    1F500000000000000000000000000000003C0000006D0101017BB7B7B7FF9B9B
+    9BFF535353FF000000FFB6B6B6FEFFFFFFFEA8A7A7FE818080FE919193FE8B8B
+    8BFE282828FEB7B7B7FEFFFFFFFEEDEDEDFEEFEFEFFEEFEFEFFEF3F3F3FEFFFF
+    FFFFC8C8C8E8616161E7575757FF282828FE303030FE313131FF2E2E2EFF1C1C
+    1C3D00000000000000000000001B0000006C00000047717171B8C3C4C4FF2B2B
+    2BFF8B8B8AFF787879FFB1B1B1FFBDBDBDFE252727FE8A8A8AFEA2A2A2FE8383
+    83FE161616FEBCBCBCFEFFFFFFFEF7F7F7FEF8F8F8FEF8F8F8FEEDEDEDFEFFFF
+    FFFF818181D4181818E4676767FF303030FE383838FF373737CF1E1E1E2B1717
+    170000000000000000070000004E0000005002020259ECECECFC737272FF0000
+    00FF11100EFF3B3B39FFE5E5E5FE989898FE7B7B7BFEA7A7A7FE9E9E9EFE8F8F
+    8FFE100E0EFE323132FEEBECECFEFFFFFFFEF0F0F0FEECECECFEF9F9F9FEE9E9
+    E9FD303030FB343432FF575757FE353535FF424242FF3030302A1B1B1B002020
+    2000000000000000002F00000057000000215D5D5DA3FFFFFFFF676564FFC0BC
+    BBFEBAB6B5FF1A1917FFEDECECFEC8C9C9FE9E9E9EFEA0A0A0FE9C9C9CFEAAAA
+    AAFE4E4E4EFE000000FE272727FE9F9FA1FEC3C3C3FEC1C1C1FE9C9C9CFE2020
+    20FE0A0909FF616161FF444444FE3F3F3FFF404040FF1F1F1F741B1B1B001E1E
+    1E0000000015000000410000003200000036CECECEF3EBEBE9FF393838FF9C99
+    99FE9A9998FF767472FFFFFFFFFEEEEFEFFE959595FE8E8E8EFE979797FEADAD
+    ADFE939393FE191919FE000000FE000000FE100E0EFE0D0D0CFE000000FE0202
+    02FE4B4B4BFE505050FE464646FE444444FE464646FF2E2E2EE4171717001C1C
+    1C0000000027000000380000000245454583FFFFFFFF8F8E8EFF131210FF2626
+    24FF0B0B0BFF9B9695FEFFFFFFFEFFFEFEFEE7E7E7FECBCBCBFEAEAEAEFE9898
+    98FEB0B0B0FE8E8F8FFE363636FE070605FE000000FE020202FE242423FE5555
+    55FE626262FE474747FF4A4A4AFF4A4A4AFF444444FF434343903E3E3E003E3E
+    3E00000000200000001A00000010B9B9B9E5FFFFFFFF818080FF050505FF2423
+    23FF5F5E5BFFDDDBDBFEFAF8F7FED8D5D0FEEEEDE8FEFFFFFFFEEEEEEEFE9696
+    96FE9B9B9BFEAEAEAEFEA5A5A5FE7C7C7DFE6A6A6AFE6A6A6AFE757576FE8382
+    83FE7F7F7FFF666666FF4F4F4FDD4B4B4BDC494949AB43434300444444004444
+    4400000000080000000030303062FFFFFFFFD5D7D3FFFCF5FFFECABDD0FE7A75
+    81FF3C383DFFFAF8F7FEFDFCF9FEF0ECE9FEEAE7E4FEFFFFFFFEFCFCFCFE9B9B
+    9BFE999999FEA1A1A1FE969696FE979797FE979797FE9D9D9DFE949494FE8282
+    82FE808080FF8080807149494900454545004D4D4D0042424200424242004242
+    42000000000000000000A3A3A3D1FFFFFFFFD0CDD5FEE9F5DEFEFFFFFFFEFFFF
+    FFFEFFF7FFFEF7EFF5FEFFFFFFFEFFFFFFFEFFFFFFFEFFFFFFFEFFFFFFFED3D3
+    D3FE989898FE8D8D8DFEABABABFEBEBEBEFEB0B0B0FE868686FE818181FF8989
+    89FF8B8B8BBF8383830050505000444444004C4C4C0042424200424242004242
+    42002A2A2A0060606036EAEAEAFFDBDADBFFFEE9FFFF78C300FF007E00FF38AB
+    00FF74C600FFE1EBC6FEB0D57AFEBBD999FEE1E9CEFEFAF8F1FEFDFDFEFEFFFF
+    FFFEFFF5FFFEF3E0FDFEFFFFFFFEFFFFFFFEFFFFFFFECCCCCCFE8D8D8DF68383
+    83A38A8A8A2C9090900074747400434343004A4A4A0042424200424242004242
+    42009A9A9A02C2C2C2CFF0F0F0FFC9C9C9FEECE6EFFFDFF0C4FF4DB100FF0073
+    00FF4FAF00FFFFF9FDFF1E9E00FF008900FF008E00FF008E00FFDAECC4FEFFFF
+    FFFEEAF7D3FEC9EFB9FEC9E5B7FEFFF7F9FEFFFFFFFEFFFFFFFFF6F7F699ABAB
+    AB00676767007979790059595900373737004F4F4F0042424200424242004242
+    4200A5A5A505D9D9D9D8E7E7E7FFC9CAC9FFEBEFECFEFFFFFFFEFFFFFFFF6BB3
+    00FF27A200FF7AC100FF1C9E00FF008900FF239F00FF78C100FFF9FAF2FF96CD
+    0BFF009100FF008500FF008B00FF0F9A00FFC7E29CFFFFFEFFFFFFFFFF5FF7F7
+    F700BABABA00C2C2C200B4B4B4004B4B4B003535350045454500424242004242
+    4200C4C4C400E6E6E602EFEFEF50CECFCEB9F2EBF1FFFFF5FCFEBED69DFF64B6
+    00FF008D00FF007D00FF008F00FFA9D16AFEFFFFFFFEFFFFFFFEBFDF97FF0083
+    00FF008700FF71BE00FFCCE7A3FF009200FF007900FFE1ECD1FFFDFAFF29F8F8
+    F800FFFFFF00FFFFFF00FFFFFF00C7C7C70019191900111111001C1C1C001C1C
+    1C00BEBFBF00D4D4D600C3C4C600DBC8EA79B7CB89FF008C00FF007F00FF007F
+    00FF3AA800FFB5D97BFF199C00FF79BF1CFEFFFFFFFEFFFFFFFF70BD00FF0083
+    00FF009300FFE1EFCBFEFFFFFFFFEFF5DEFE8EC86AFFE4EED7E8FCFBFC00F6F6
+    F600F6F6F600F6F6F600F8F8F800FFFFFF00BBBBBB00919191009F9F9F009F9F
+    9F00CECDCD00CAC9C800BAB8B800EDE0F387DAEEBEF266BA00FF60B600FF22A0
+    00FF71BC00FFEEF0D6FF009200FF007500FF089800FFE6F2DBFFBCDF94FF0080
+    00FF009100FFDEEDC0FEFFFFFFFED4E9C1FEFFFCF0FFFFFFFFB2FAFAFA00FBFB
+    FB00FBFBFB00FBFBFB00FAFAFA00FBFBFB00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FF00E6E1E000E6E0DF00E5DFDE00ECEAE100FFFFFF0EFFFFFF2FFFFFFF51FFFA
+    F979F8F8F1A0E3F0D7C4AAD786E893CC3FFF35A700FFDBF0C0FFFFFFFFFF67C1
+    00FF008800FF009A00FF39A700FF007200FF4CAE00FFFFFFFF7CFEFDFF00FAFA
     FA00FAFAFA00FAFAFA00FAFAFA00FAFAFA00FAFAFA00FAFAFA00FAFAFA00FAFA
-    FA00B8B8B800B5B5B500B7B7B700EDEAE800FFFEFD00F9F8F700F9F8F700FDFC
-    FB00FFFFFF00ABAAAA0087888B00928F8800FFF9E003CFCFCC4FC3C3C3A9C4C4
-    C4FFCFCFCFFFF7F7F7B5FDFDFDCFFBFBFBFAFBFBFBFFFBFBFB13FBFBFB00FBFB
+    FA00E2DDDC00E2DDDC00DED9D800ECE7E500FBFAF900F9F9F800FCF9FC00FFFC
+    FF00FFFFFF00FFFFFF00FFFFFF06FFFFFF24FFFFFF4BE0DEDE96DCDBDEEBE9E3
+    E4FF99C65DFF62B900FF66B900FF2DA300FF91CA35FFFFFFFF45FCFCFC00FBFB
     FB00FBFBFB00FBFBFB00FBFBFB00FBFBFB00FBFBFB00FBFBFB00FBFBFB00FBFB
-    FB00B8B8B800B5B5B500B7B7B700EDEAE800FFFEFD00F9F8F700F9F8F700FDFC
-    FB00FFFFFF00B5B3B3008C8C8C008A8A8A00EAEAEA00C6C6C600B8B8B800A9A9
-    A92986868661CFCFCF00FFFFFF00FCFCFC18FBFBFB2DFBFBFB00FBFBFB00FBFB
+    FB00E2DDDC00E2DDDC00DED9D800ECE7E500FBFAF900F9F9F800F9F8F700F9F7
+    F600FBFAFA00FCFCFC00FCFCFC00FFFFFF00F9F8FB00C3C2C400B1B1B10CB5B0
+    BC65BAA5C9B9F9E5FF43FFFFFF36FFFFFF66FEFCFC8CFAFAFA13FAFAFA00FBFB
     FB00FBFBFB00FBFBFB00FBFBFB00FBFBFB00FBFBFB00FBFBFB00FBFBFB00FBFB
-    FB00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+    FB00E2DDDC00E2DDDC00DED9D800ECE7E500FBFAF900F9F9F800F9F8F700F9F7
+    F600FBFAFA00FCFCFC00FCFCFC00FFFFFF00F7F7F700C9C9C900BFBFBF00B7B7
+    B7008D8B9128C7BFCC00FFFFFF00FFFFFF00FFFFFF01F9F9F900FAFAFA00FAFA
+    FA00FAFAFA00FAFAFA00FAFAFA00FAFAFA00FAFAFA00FAFAFA00FAFAFA00FAFA
+    FA00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
     FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
     FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
     FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
@@ -380,9 +382,9 @@ object XCTuner_Form1: TXCTuner_Form1
     Height = 538
     Top = 0
     Width = 911
-    ActivePage = TabSheet1
+    ActivePage = TabSheet3
     Align = alClient
-    TabIndex = 0
+    TabIndex = 2
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Общие'
@@ -410,16 +412,21 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 261
           TabOrder = 0
           object RadioButton13: TRadioButton
+            Cursor = crHandPoint
             Left = 14
             Height = 19
+            Hint = 'Если переключатель отключить, то модуль статистики не будет работать (отключится по всему конфигу!). '
             Top = 8
             Width = 77
             Caption = 'Включено'
             Checked = True
+            ParentShowHint = False
+            ShowHint = True
             TabOrder = 1
             TabStop = True
           end
           object RadioButton14: TRadioButton
+            Cursor = crHandPoint
             Left = 142
             Height = 19
             Top = 8
@@ -438,21 +445,23 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 261
           TabOrder = 1
           object RadioButton15: TRadioButton
+            Cursor = crHandPoint
             Left = 14
             Height = 19
             Top = 8
-            Width = 77
-            Caption = 'Включено'
+            Width = 76
+            Caption = 'Включена'
             Checked = True
             TabOrder = 1
             TabStop = True
           end
           object RadioButton16: TRadioButton
+            Cursor = crHandPoint
             Left = 142
             Height = 19
             Top = 8
-            Width = 84
-            Caption = 'Отключено'
+            Width = 83
+            Caption = 'Отключена'
             TabOrder = 0
           end
         end
@@ -466,6 +475,7 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 261
           TabOrder = 2
           object RadioButton17: TRadioButton
+            Cursor = crHandPoint
             Left = 14
             Height = 19
             Top = 8
@@ -476,6 +486,7 @@ object XCTuner_Form1: TXCTuner_Form1
             TabStop = True
           end
           object RadioButton18: TRadioButton
+            Cursor = crHandPoint
             Left = 142
             Height = 19
             Top = 8
@@ -494,21 +505,23 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 261
           TabOrder = 3
           object RadioButton19: TRadioButton
+            Cursor = crHandPoint
             Left = 14
             Height = 19
             Top = 8
-            Width = 77
-            Caption = 'Включено'
+            Width = 76
+            Caption = 'Включена'
             Checked = True
             TabOrder = 1
             TabStop = True
           end
           object RadioButton20: TRadioButton
+            Cursor = crHandPoint
             Left = 142
             Height = 19
             Top = 8
-            Width = 84
-            Caption = 'Отключено'
+            Width = 83
+            Caption = 'Отключена'
             TabOrder = 0
           end
         end
@@ -517,11 +530,12 @@ object XCTuner_Form1: TXCTuner_Form1
           Height = 57
           Top = 264
           Width = 265
-          Caption = 'сохранение статистики в файл "XVM.log":'
+          Caption = 'Сохранение статистики в файл "XVM.log":'
           ClientHeight = 39
           ClientWidth = 261
           TabOrder = 4
           object RadioButton21: TRadioButton
+            Cursor = crHandPoint
             Left = 14
             Height = 19
             Top = 8
@@ -532,6 +546,7 @@ object XCTuner_Form1: TXCTuner_Form1
             TabStop = True
           end
           object RadioButton22: TRadioButton
+            Cursor = crHandPoint
             Left = 142
             Height = 19
             Top = 8
@@ -738,6 +753,7 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 261
           TabOrder = 0
           object RadioButton1: TRadioButton
+            Cursor = crHandPoint
             Left = 14
             Height = 19
             Top = 8
@@ -748,6 +764,7 @@ object XCTuner_Form1: TXCTuner_Form1
             TabStop = True
           end
           object RadioButton2: TRadioButton
+            Cursor = crHandPoint
             Left = 142
             Height = 19
             Top = 8
@@ -766,21 +783,23 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 261
           TabOrder = 1
           object RadioButton3: TRadioButton
+            Cursor = crHandPoint
             Left = 14
             Height = 19
             Top = 8
-            Width = 77
-            Caption = 'Включено'
+            Width = 76
+            Caption = 'Включена'
             Checked = True
             TabOrder = 1
             TabStop = True
           end
           object RadioButton4: TRadioButton
+            Cursor = crHandPoint
             Left = 142
             Height = 19
             Top = 8
-            Width = 84
-            Caption = 'Отключено'
+            Width = 83
+            Caption = 'Отключена'
             TabOrder = 0
           end
         end
@@ -794,21 +813,23 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 261
           TabOrder = 2
           object RadioButton5: TRadioButton
+            Cursor = crHandPoint
             Left = 14
             Height = 19
             Top = 8
-            Width = 77
-            Caption = 'Включено'
+            Width = 70
+            Caption = 'Включен'
             Checked = True
             TabOrder = 1
             TabStop = True
           end
           object RadioButton6: TRadioButton
+            Cursor = crHandPoint
             Left = 142
             Height = 19
             Top = 8
-            Width = 84
-            Caption = 'Отключено'
+            Width = 77
+            Caption = 'Отключен'
             TabOrder = 0
           end
         end
@@ -822,21 +843,23 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 261
           TabOrder = 3
           object RadioButton7: TRadioButton
+            Cursor = crHandPoint
             Left = 14
             Height = 19
             Top = 8
-            Width = 77
-            Caption = 'Включено'
+            Width = 76
+            Caption = 'Включена'
             Checked = True
             TabOrder = 1
             TabStop = True
           end
           object RadioButton8: TRadioButton
+            Cursor = crHandPoint
             Left = 142
             Height = 19
             Top = 8
-            Width = 84
-            Caption = 'Отключено'
+            Width = 83
+            Caption = 'Отключена'
             TabOrder = 0
           end
         end
@@ -850,21 +873,23 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 261
           TabOrder = 4
           object RadioButton9: TRadioButton
+            Cursor = crHandPoint
             Left = 14
             Height = 19
             Top = 8
-            Width = 77
-            Caption = 'Включено'
+            Width = 79
+            Caption = 'Включены'
             Checked = True
             TabOrder = 1
             TabStop = True
           end
           object RadioButton10: TRadioButton
+            Cursor = crHandPoint
             Left = 142
             Height = 19
             Top = 8
-            Width = 84
-            Caption = 'Отключено'
+            Width = 86
+            Caption = 'Отключены'
             TabOrder = 0
           end
         end
@@ -878,6 +903,7 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 261
           TabOrder = 5
           object RadioButton11: TRadioButton
+            Cursor = crHandPoint
             Left = 14
             Height = 19
             Top = 8
@@ -888,6 +914,7 @@ object XCTuner_Form1: TXCTuner_Form1
             TabStop = True
           end
           object RadioButton12: TRadioButton
+            Cursor = crHandPoint
             Left = 142
             Height = 19
             Top = 8
@@ -1084,20 +1111,28 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 261
           TabOrder = 8
           object Label17: TLabel
+            Cursor = crHelp
             Left = 21
             Height = 15
+            Hint = 'Задержка исчезновения панели. Оригинальное значение было 5'
             Top = 8
             Width = 56
             Caption = 'Задержка:'
             ParentColor = False
+            ParentShowHint = False
+            ShowHint = True
           end
           object Label18: TLabel
+            Cursor = crHelp
             Left = 21
             Height = 15
+            Hint = 'Увеличение панели. 100 в оригинале.'
             Top = 40
             Width = 69
             Caption = 'Увеличение:'
             ParentColor = False
+            ParentShowHint = False
+            ShowHint = True
           end
           object SpinEdit1: TSpinEdit
             Left = 150
@@ -1263,8 +1298,8 @@ object XCTuner_Form1: TXCTuner_Form1
     end
     object TabSheet2: TTabSheet
       Caption = 'Логин'
-      ClientHeight = 546
-      ClientWidth = 904
+      ClientHeight = 510
+      ClientWidth = 903
       TabVisible = False
       object GroupBox20: TGroupBox
         Left = 10
@@ -1285,6 +1320,7 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 245
           TabOrder = 0
           object RadioButton23: TRadioButton
+            Cursor = crHandPoint
             Left = 14
             Height = 19
             Top = 8
@@ -1295,6 +1331,7 @@ object XCTuner_Form1: TXCTuner_Form1
             TabStop = True
           end
           object RadioButton24: TRadioButton
+            Cursor = crHandPoint
             Left = 142
             Height = 19
             Top = 8
@@ -1313,6 +1350,7 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 245
           TabOrder = 1
           object RadioButton25: TRadioButton
+            Cursor = crHandPoint
             Left = 14
             Height = 19
             Top = 8
@@ -1323,6 +1361,7 @@ object XCTuner_Form1: TXCTuner_Form1
             TabStop = True
           end
           object RadioButton26: TRadioButton
+            Cursor = crHandPoint
             Left = 142
             Height = 19
             Top = 8
@@ -1332,15 +1371,20 @@ object XCTuner_Form1: TXCTuner_Form1
           end
         end
         object GroupBox18: TGroupBox
+          Cursor = crHelp
           Left = 6
           Height = 57
+          Hint = 'Если включить, то при открытие старых реплеев они будут автоматически запускаться на проигрывание'
           Top = 136
           Width = 249
           Caption = 'Автомат проигрывание старых реплеев:'
           ClientHeight = 39
           ClientWidth = 245
+          ParentShowHint = False
+          ShowHint = True
           TabOrder = 2
           object RadioButton27: TRadioButton
+            Cursor = crHandPoint
             Left = 14
             Height = 19
             Top = 8
@@ -1351,6 +1395,7 @@ object XCTuner_Form1: TXCTuner_Form1
             TabStop = True
           end
           object RadioButton28: TRadioButton
+            Cursor = crHandPoint
             Left = 142
             Height = 19
             Top = 8
@@ -1407,6 +1452,7 @@ object XCTuner_Form1: TXCTuner_Form1
             Value = 150
           end
           object RadioButton29: TRadioButton
+            Cursor = crHandPoint
             Left = 14
             Height = 19
             Top = 8
@@ -1417,6 +1463,7 @@ object XCTuner_Form1: TXCTuner_Form1
             TabStop = True
           end
           object RadioButton30: TRadioButton
+            Cursor = crHandPoint
             Left = 142
             Height = 19
             Top = 8
@@ -1607,7 +1654,600 @@ object XCTuner_Form1: TXCTuner_Form1
     end
     object TabSheet3: TTabSheet
       Caption = 'Ангар'
+      ClientHeight = 510
+      ClientWidth = 903
       TabVisible = False
+      object GroupBox21: TGroupBox
+        Left = 10
+        Height = 417
+        Top = 8
+        Width = 264
+        Caption = 'Ангар'
+        ClientHeight = 399
+        ClientWidth = 260
+        TabOrder = 0
+        object GroupBox22: TGroupBox
+          Left = 6
+          Height = 57
+          Top = 8
+          Width = 249
+          Caption = 'Иконка обучения:'
+          ClientHeight = 39
+          ClientWidth = 245
+          TabOrder = 0
+          object RadioButton31: TRadioButton
+            Cursor = crHandPoint
+            Left = 14
+            Height = 19
+            Top = 8
+            Width = 77
+            Caption = 'Включено'
+            Checked = True
+            TabOrder = 1
+            TabStop = True
+          end
+          object RadioButton32: TRadioButton
+            Cursor = crHandPoint
+            Left = 142
+            Height = 19
+            Top = 8
+            Width = 84
+            Caption = 'Отключено'
+            TabOrder = 0
+          end
+        end
+        object GroupBox23: TGroupBox
+          Left = 6
+          Height = 57
+          Top = 72
+          Width = 249
+          Caption = 'XWN8 вместо XEFF в окнах рот:'
+          ClientHeight = 39
+          ClientWidth = 245
+          TabOrder = 1
+          object RadioButton33: TRadioButton
+            Cursor = crHandPoint
+            Left = 14
+            Height = 19
+            Top = 8
+            Width = 77
+            Caption = 'Включено'
+            Checked = True
+            TabOrder = 1
+            TabStop = True
+          end
+          object RadioButton34: TRadioButton
+            Cursor = crHandPoint
+            Left = 142
+            Height = 19
+            Top = 8
+            Width = 84
+            Caption = 'Отключено'
+            TabOrder = 0
+          end
+        end
+        object GroupBox24: TGroupBox
+          Left = 6
+          Height = 57
+          Top = 136
+          Width = 249
+          Caption = 'Знак мастерства в карусели танков:'
+          ClientHeight = 39
+          ClientWidth = 245
+          TabOrder = 2
+          object RadioButton35: TRadioButton
+            Cursor = crHandPoint
+            Left = 14
+            Height = 19
+            Top = 8
+            Width = 77
+            Caption = 'Включено'
+            Checked = True
+            TabOrder = 1
+            TabStop = True
+          end
+          object RadioButton36: TRadioButton
+            Cursor = crHandPoint
+            Left = 142
+            Height = 19
+            Top = 8
+            Width = 84
+            Caption = 'Отключено'
+            TabOrder = 0
+          end
+        end
+        object GroupBox25: TGroupBox
+          Left = 6
+          Height = 57
+          Top = 200
+          Width = 249
+          Caption = 'Знак мастерства в дереве исследований:'
+          ClientHeight = 39
+          ClientWidth = 245
+          TabOrder = 3
+          object RadioButton37: TRadioButton
+            Cursor = crHandPoint
+            Left = 14
+            Height = 19
+            Top = 8
+            Width = 77
+            Caption = 'Включено'
+            Checked = True
+            TabOrder = 1
+            TabStop = True
+          end
+          object RadioButton38: TRadioButton
+            Cursor = crHandPoint
+            Left = 142
+            Height = 19
+            Top = 8
+            Width = 84
+            Caption = 'Отключено'
+            TabOrder = 0
+          end
+        end
+        object GroupBox26: TGroupBox
+          Left = 6
+          Height = 57
+          Top = 264
+          Width = 249
+          Caption = 'Кнопка с ценой в дереве исследований:'
+          ClientHeight = 39
+          ClientWidth = 245
+          TabOrder = 4
+          object RadioButton39: TRadioButton
+            Cursor = crHandPoint
+            Left = 14
+            Height = 19
+            Top = 8
+            Width = 77
+            Caption = 'Включено'
+            Checked = True
+            TabOrder = 1
+            TabStop = True
+          end
+          object RadioButton40: TRadioButton
+            Cursor = crHandPoint
+            Left = 142
+            Height = 19
+            Top = 8
+            Width = 84
+            Caption = 'Отключено'
+            TabOrder = 0
+          end
+        end
+        object GroupBox27: TGroupBox
+          Left = 6
+          Height = 57
+          Top = 328
+          Width = 249
+          Caption = 'Виджеты:'
+          ClientHeight = 39
+          ClientWidth = 245
+          TabOrder = 5
+          object RadioButton41: TRadioButton
+            Cursor = crHandPoint
+            Left = 14
+            Height = 19
+            Top = 8
+            Width = 77
+            Caption = 'Включено'
+            Checked = True
+            TabOrder = 1
+            TabStop = True
+          end
+          object RadioButton42: TRadioButton
+            Cursor = crHandPoint
+            Left = 142
+            Height = 19
+            Top = 8
+            Width = 84
+            Caption = 'Отключено'
+            TabOrder = 0
+          end
+        end
+      end
+      object GroupBox28: TGroupBox
+        Left = 290
+        Height = 418
+        Top = 8
+        Width = 601
+        Caption = 'Пинг До Серверов:'
+        ClientHeight = 400
+        ClientWidth = 597
+        TabOrder = 1
+        object GroupBox29: TGroupBox
+          Left = 14
+          Height = 57
+          Top = 8
+          Width = 272
+          Caption = 'Состояние:'
+          ClientHeight = 39
+          ClientWidth = 268
+          TabOrder = 0
+          object RadioButton43: TRadioButton
+            Cursor = crHandPoint
+            Left = 14
+            Height = 19
+            Top = 8
+            Width = 77
+            Caption = 'Включено'
+            Checked = True
+            TabOrder = 1
+            TabStop = True
+          end
+          object RadioButton44: TRadioButton
+            Cursor = crHandPoint
+            Left = 174
+            Height = 19
+            Top = 8
+            Width = 84
+            Caption = 'Отключено'
+            TabOrder = 0
+          end
+        end
+        object GroupBox30: TGroupBox
+          Left = 14
+          Height = 104
+          Top = 80
+          Width = 272
+          Caption = 'Интервал обновления пинга:'
+          ClientHeight = 86
+          ClientWidth = 268
+          TabOrder = 1
+          object TrackBar1: TTrackBar
+            Cursor = crHandPoint
+            Left = 6
+            Height = 27
+            Top = 13
+            Width = 248
+            Max = 60000
+            Min = 100
+            OnChange = TrackBar1Change
+            PageSize = 1000
+            Position = 100
+            TickMarks = tmBoth
+            TickStyle = tsNone
+            ParentShowHint = False
+            TabOrder = 0
+          end
+          object Label21: TLabel
+            Left = 185
+            Height = 15
+            Top = 53
+            Width = 15
+            Caption = 'мс'
+            ParentColor = False
+          end
+          object SpinEdit10: TSpinEdit
+            Left = 83
+            Height = 23
+            Top = 50
+            Width = 88
+            Increment = 100
+            MaxValue = 60000
+            MinValue = 100
+            OnChange = SpinEdit10Change
+            TabOrder = 1
+            Value = 100
+          end
+        end
+        object Label22: TLabel
+          Left = 22
+          Height = 15
+          Top = 197
+          Width = 101
+          Caption = 'Позиция по оси X:'
+          ParentColor = False
+        end
+        object Label23: TLabel
+          Left = 22
+          Height = 15
+          Top = 231
+          Width = 101
+          Caption = 'Позиция по оси Y:'
+          ParentColor = False
+        end
+        object Label24: TLabel
+          Left = 22
+          Height = 15
+          Top = 265
+          Width = 82
+          Caption = 'Прозрачность:'
+          ParentColor = False
+        end
+        object SpinEdit5: TSpinEdit
+          Left = 189
+          Height = 23
+          Top = 192
+          Width = 66
+          Increment = 10
+          TabOrder = 2
+        end
+        object SpinEdit6: TSpinEdit
+          Left = 189
+          Height = 23
+          Top = 226
+          Width = 66
+          Increment = 10
+          TabOrder = 3
+        end
+        object SpinEdit7: TSpinEdit
+          Left = 189
+          Height = 23
+          Top = 261
+          Width = 66
+          TabOrder = 4
+        end
+        object GroupBox31: TGroupBox
+          Left = 14
+          Height = 80
+          Top = 304
+          Width = 272
+          Caption = 'Максимальное количество строк в колонке:'
+          ClientHeight = 62
+          ClientWidth = 268
+          TabOrder = 5
+          object TrackBar2: TTrackBar
+            Cursor = crHandPoint
+            Left = 6
+            Height = 27
+            Top = 15
+            Width = 184
+            Min = 1
+            OnChange = TrackBar2Change
+            Position = 1
+            TickMarks = tmBoth
+            TickStyle = tsNone
+            TabOrder = 0
+          end
+          object SpinEdit8: TSpinEdit
+            Left = 206
+            Height = 23
+            Top = 17
+            Width = 50
+            MaxValue = 10
+            MinValue = 1
+            OnChange = SpinEdit8Change
+            TabOrder = 1
+            Value = 1
+          end
+        end
+        object GroupBox32: TGroupBox
+          Left = 302
+          Height = 72
+          Top = 8
+          Width = 280
+          Caption = 'Пространство между колонками:'
+          ClientHeight = 54
+          ClientWidth = 276
+          TabOrder = 6
+          object TrackBar3: TTrackBar
+            Cursor = crHandPoint
+            Left = 6
+            Height = 28
+            Top = 14
+            Width = 200
+            Max = 30
+            Min = -10
+            OnChange = TrackBar3Change
+            Position = 0
+            TickMarks = tmBoth
+            TickStyle = tsNone
+            TabOrder = 0
+          end
+          object SpinEdit9: TSpinEdit
+            Left = 214
+            Height = 23
+            Top = 16
+            Width = 50
+            MaxValue = 30
+            MinValue = -10
+            OnChange = SpinEdit9Change
+            TabOrder = 1
+          end
+        end
+        object GroupBox33: TGroupBox
+          Left = 302
+          Height = 264
+          Top = 88
+          Width = 280
+          Caption = 'Стиль текста:'
+          ClientHeight = 246
+          ClientWidth = 276
+          TabOrder = 7
+          object Label25: TLabel
+            Left = 53
+            Height = 25
+            Top = 104
+            Width = 180
+            Caption = 'Блок в разработке!'
+            Font.Color = clBlue
+            Font.Height = -19
+            Font.Style = [fsBold, fsUnderline]
+            ParentColor = False
+            ParentFont = False
+          end
+        end
+      end
+      object BitSave4: TBitBtn
+        Cursor = crHandPoint
+        Left = 456
+        Height = 49
+        Hint = 'Сохранить изменения в конфига'
+        Top = 448
+        Width = 115
+        Caption = 'Сохранить'
+        Glyph.Data = {
+          36090000424D3609000000000000360000002800000018000000180000000100
+          2000000000000009000064000000640000000000000000000000A4A3A20CA4A4
+          A541A5AAB740A5ACBB4EA5ABB95DA5ABB969A5ABB973A5ABB97AA5ABB980A5AB
+          B984A5ABB985A5ABB989A5ABB989A5ABB985A5ABB984A5ABB980A2ADBB7BAEA6
+          B474AFA6B46AA2ADBB5FA5ABBA50A5ACBB3FA4A6AA3EA4A3A111A5A8B015A4AB
+          BA6DA2977EE6B0894BFFB48A4AFFB38A4EFFB38A4EFFB38A4EFFB38B4EFFB38B
+          4EFFB38B4EFFB38B4EFFB38B4EFFB38B4EFFB38B4EFFB28B4BFFBB864DFF9998
+          77FF979979FFBB864DFFB48845FFA79064F5A2A7AF84A5ABBA1EA4A8AF00A58C
+          583A9F720FFF597A62FF487F80FF4E7C73FF4E7C73FF4E7C73FF4E7C73FF4E7C
+          73FF4E7C73FF4E7C73FF4E7C73FF4E7C73FF4E7C73FF507B7AFF71817AFF41A8
+          4DFF3EA949FF708279FF477E82FF827227FFAD823383A4A19D009F7F37009E6E
+          067D9E7922FFA2D6F8FF9EE7FFFFAEF2FFFFAFF3FFFFAEF2FFFFAEF2FFFFAEF2
+          FFFFAEF2FFFFAEF2FFFFAEF2FFFFAEF2FFFFAAF2FFFFBBF1FFFF5ACAD7FF14AC
+          4FFF16AC4DFF58CDD6FFAEEBFFFF9F9D77FF9C6300CB9E792400A0781E009A75
+          1F719F7C29FFFFFFEDFFFFFFFFFFFBDFCDFFF9DDC9FFFBDFCDFFFBDFCDFFFBDF
+          CDFFFBDFCDFFFBDFCDFFFBDFCDFFFBE0CDFFFFE2D8FFF0E9CCFF3EBB5BFF24AA
+          57FF26AB5AFF34B453FFFFFFF8FFF0B98DFF876405BDA07A2400A47F2D009F78
+          2171A37E2BFFF5F0E6FFFFFFFFFFEDE8E4FFECE7E3FFEDE8E4FFEDE8E4FFEDE8
+          E4FFEDE8E4FFEDE8E4FFECE8E4FFEDE9E5FFF6DFE0FF3BA961FF13AD52FF37B6
+          6AFF36B66AFF11AA50FF53D096FFD0A670FFA56D12BCA3802E00A7823000A27B
+          2571A6812EFFF6F2E8FFFFFFFFFFE4DDD7FFE2DBD5FFE4DDD7FFE4DDD7FFE4DD
+          D7FFE4DDD7FFE4DDD7FFE7DDD8FFFCE3E6FF8EDCB2FF09B458FF30B86CFF2FB9
+          6DFF2FB96DFF32BB70FF0EBD6BFF5B9E4DFFC57624BBB27D2B00AA853300A57E
+          2871A98431FFF6F1E7FFFFFFFFFFEDE8E4FFECE6E2FFEDE8E4FFEDE8E4FFEDE8
+          E4FFEDE8E4FFE9E9E3FFF9E7E8FFB5CBB4FF02AC51FF26BE70FF2EBE73FF2CBD
+          72FF2CBD72FF2DBD72FF27BF73FF18C579FF829748B3B77F2C00AD873600A880
+          2A71AC8734FFF7F3E9FFFFFFFFFFE5DFD9FFE4DDD7FFE5DFD9FFE5DFD9FFE5DF
+          D9FFE5DFD9FFF1DDDCFFEAE9E4FF3BD28BFF0DBB65FF2DC177FF2AC177FF2AC1
+          77FF2AC177FF2AC177FF2CC076FF23C57AFF26C379E337BC7005B08A3800AB82
+          2C71AF8936FFFFFFFFFFFFFFFFFFE9E6E8FFE8E4E5FFE9E6E8FFE9E6E8FFE9E6
+          E8FFE9E6E8FFF0E3E8FF3FC288FF00BE5FFF0FC97CFF25C67BFF2AC57BFF27C5
+          7BFF27C57BFF28C57BFF2AC479FF16CD83FF04D58CFF15CE84D5B28C3B00B18A
+          3871AB8129FFDDCBA8FFF6F1E7FFFFFDF6FFFFFEF7FFFFFDF6FFFFFDF6FFFFFD
+          F6FFFFFDF6FFF7FCF2FF96DFB4FF92D6AAFF96DAB0FF2ECB83FF1BC87BFF25C9
+          7FFF25C97FFF24CA80FF1CCE84FF68AD5FFF80A253D81CCD8377B68F3E00B690
+          4071B48D3AFFAF852EFFB58D3BFFB58D3BFFB58D3BFFB58D3BFFB58D3BFFB58D
+          3BFFB58D3BFFB68E3CFFD99651FFEB9551FFD79955FF32C880FF13D187FF23CC
+          83FF23CC83FF20CE84FF0FD58CFFA29747FFF6741FB08CA05100B9914100B991
+          4171B99242FFB78F3DFFB58C37FFB58C37FFB58C37FFB58C37FFB58C37FFB58C
+          37FFB58C37FFB58C37FFB58C37FFC08832FFB08E39FF2DCA80FF15D58DFF22D0
+          86FF22D086FF1ED187FF10D78EFF8DA455FFCF8836BCCA8A3900BB944300BB94
+          4371BB9443FFBB9443FFBB9443FFBB9443FFBB9443FFBB9443FFBB9443FFBB94
+          43FFBB9443FFBB9443FFBB9443FFC6903EFFB69645FF2CCD84FF12D78FFF20D2
+          89FF20D289FF1DD38AFF0ED991FF8FA657FFD48A38BCBB944300BF964600BF96
+          4671BF9747FFBD9544FFBC9341FFBD9341FFBD9341FFBD9341FFBD9341FFBD93
+          41FFBD9341FFBD9341FFBD9341FFC78F3CFFB89544FF2BCF87FF10D993FF1ED4
+          8CFF1ED48CFF1BD58DFF0CDB94FF91A85AFFD88C3BBCBF964600C2994900C299
+          4971BF9644FFC9A052FFD0AB60FFCEA85CFFCEA85CFFCEA85CFFCEA85CFFCEA8
+          5CFFCEA85CFFCEA85CFFCEA85CFFDBA558FFC9AA5DFF2BD38BFF0EDA92FF1DD6
+          8EFF1DD68EFF1AD78FFF0ADD96FF93AA5DFFDC8F3EBCC2994900C49B4B00C399
+          4871CBA254FFC5A55EFFB08F42FFAC8834FFAC8733FFAC8834FFAC8834FFAC88
+          34FFAC8834FFAC8834FFAC8834FFB8822EFFA78A36FF26D189FF0FDF98FF1CD8
+          90FF1CD890FF19D991FF07DF98FF94AC5FFFE09240BEC49B4B00C89E4E00C99D
+          4C71D0A95EFFA48232FF896208FFA28138FFA88B47FFAA8D4AFFA78943FFA383
+          39FFA38339FFA38339FFA38339FFAA7C33FF9F863CFF17D184FF02E39CFF0FDB
+          94FF0DDA93FF0ADB93FF00E49FFF93B265FFE69442C5C89E4E00CBA05000CDA1
+          5071CEA658FF987015FFC6B387FFFFFFFFFFFEFEFEFFFDFCFBFFFFFFFEFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9FFFFFF55E6ABFF2AE295FF3BE5
+          A0FF3BE49FFF37E5A3FF2FE6A2FFA8AC5FFFE098479ECCA05000CEA35300CFA3
+          5271D1A85AFF997117FFE3DAC7FFFFFFFFFFB49859FF946C1FFFC6B080FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4FBF6FF978D41FFAD99
+          48FFCBB568FFC2AF61FFC4AA5BFFD1A151FFCEA35334CEA35300D1A55600D2A5
+          5571D4AA5DFFA0781FFFDED3BAFFFFFFFFFFA68233FF814F00FFBA9E60FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFFFFB07A30FFC587
+          31FFEAA858FFE19E4CFFE0A04FFFD3A5568BCFA55600D1A55600D4A85900D5A8
+          587AD7AD60FFAA8027FFE1D5BCFFFFFFFFFFB49145FF956400FFC4A96EFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFCF9FFAE8C42FFBF96
+          42FFDCAF61FFD4A859FFD4A859A8D3A75800D3A75800D3A75800D7AB5C00D8AA
+          5967D9B164FFB48931FFE5D8BFFFFFFFFFFFBA9447FF9E6A00FFC9AC70FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFCFAFFB7944AFFC69C
+          4AFFDEB264FFD7AA5BBAD6AA5B00D6AA5B00D6AA5B00D6AA5B00D9AD5E00DBAD
+          5E09DBAF60A0BB8D33CAE5D7BACAFFFFFFCAF3EBDCCAEEE3CDCAF6F0E4CAFFFF
+          FFCAFFFFFFCAFFFFFFCAFFFFFFCAFFFFFFCAFFFFFFCAFDFCFACAC09B52CAC99D
+          47C0DFB26471D8AC5C00D7AB5C00D7AB5C00D7AB5C00D7AB5C00
+        }
+        OnClick = BitSave4Click
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 2
+      end
+      object BitRefresh4: TBitBtn
+        Cursor = crHandPoint
+        Left = 322
+        Height = 49
+        Hint = 'Обновить данные из конфига'
+        Top = 448
+        Width = 115
+        Caption = 'Обновить'
+        Glyph.Data = {
+          36090000424D3609000000000000360000002800000018000000180000000100
+          20000000000000090000640000006400000000000000000000000C1900000C19
+          00000C19000008110000183000002C5700000B15000000000000000000000000
+          000009000014100800270E0700250400000E0000000000000000000000000000
+          00000000000000000000000000000000000000000000000000000C1900000C19
+          00000C19000008110000183000002D580000070C0000000000000A0500131E17
+          005A272800932C3900A82B3400A6242000881814005002000009000000000000
+          00000000000000000000000000000000000000000000000000000C1900000C19
+          00000C1900000811000018310000274F00000C10000523200087346B00ED2CA7
+          00FF21C500FF1AD300FF1DCD00FF26BA00FF338E00FF364D00E11E1B006F0000
+          00000000000000000000000000000000000000000000000000000C1900000C19
+          00000C19000008120000152C000028400020325100D726B800FF06F700FF00FF
+          00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF16DB00FF378E00FF3033
+          00BA0000000B00000000000000000000000000000000000000000D1B00000D1B
+          00000D1B0000070F000015230013335D00E628BF13FF0CFF16FF0AFE10FF09FF
+          0FFF03FF0BFF00FF06FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF30A7
+          00FF323800CA0000000000000000000000000000000000000000000000000000
+          00000000000003030000284D00BD40B327FF3CEA49FF3CE044FF34DE38FF2BC9
+          22FF27BB16FF20C412FF15EC14FF0AFF12FF05FB05FF01FD00FF00FF00FF00FF
+          00FF329400FF311C00B0231D0076292B008C0E17004C000000001C3800001C38
+          00001A350000112B004749921FFF8AF996FF84F58EFF5AC24DFF3A8016FF3155
+          03D4365300973D5B009D396F08DE2CB21CFE25E62CFF22DD23FF1EE11DFF0CF9
+          12FF0BE807FF2A9D00FF23BC00FF26C000FF377B00FF0D0E0036142800001428
+          000015270000225700BCA8E29FFFD4FFE0FF66A74CFF295101DC264300542449
+          0000285100001E3A00001B22001C334100ED3AA825FF29E931FF11ED11FF05FB
+          04FF00FF00FF00FF00FF00FF00FF00FF00FF2F9900FF190D00581B3800001B39
+          000005270013678E43FDFFFFFFFF6E9F4DFF194C00AD173B000A275400002F62
+          00001A3600000E18000F274A04BC339212FC24C41BFF13E816FF06ED07FF05F0
+          04FF02F502FF00FB00FF00FF00FF04FC00FF347700FF0D08002329540000274D
+          00001248004698B47CFF95A372FF001A008C00080000060F00000C1B0000152A
+          0000346B00002F5F00344F9123FF89FF9AFF66E76EFF53CD51FF4BCC4BFF3FCD
+          3FFF34CE34FF29D028FF1EEC28FF2FC416FF2C4400C80001000019320000162C
+          0000274A0066446B0CFF236A00FF264200AB1806005900000007000000000000
+          0000173000002E6900052B6007B585B670FFDDFFE3FFC8FDCFFFA1E7A1FF90E1
+          90FF82DC82FF76DC78FF74E37BFF4C8F17FF101C005E000000000C0F00000B11
+          0000323C00B3219800FF00F100FF12EB00FF2AAC00FF325800DF1F1000690000
+          000000000000193C00002F6900002150009D709459FFE4EDDDFFFFFFFFFFFEFF
+          FFFFE1FAE2FFEAFFF3FFA8D894FF215000E50003000200000000132700002533
+          003B367802FF08FD0BFF00FF00FF00FF00FF00FF00FF0FF200FF2CA900FF313E
+          00C50A00002A0000000021400000356D00001246004C2C5903CF8DAA73FFE5EA
+          DCFFFFFFFFFFFFFFFFFF57842AFF001700570000000000000000142000003047
+          00C12ABE13FF12FF1DFF09F609FF00FF00FF00FF00FF00FF00FF00FF00FF1BDE
+          00FF346500F20B050032000000001C3A0000406D000025520000064700572858
+          00A7698445E9628133FF1D5600F30303000500000000000000002D48002A3370
+          03FF2AD52BFF21E424FF17E917FF09F609FF00FF00FF00FF00FF00FF00FF00FF
+          00FF16F700FF2D3B00C700000000000000001E31000026430000092100000B0F
+          00001D3E00D50FA300FF286F00D201000000000000000000000029480083449D
+          25FF42DF4BFF29CF29FF21DD21FF14E814FF02F702FF00FF00FF00FF00FF06E6
+          00FF2AB600FF273B008C000000000000000000000000000000000E0600253539
+          00D218CF00FF0FFC00FF283B00A6000000000000000000000000274F00BF6BC7
+          5FFF74FC84FF45E04AFF25DA2AFF12D911FF19E518FF11EC14FF15E313FF3675
+          00FF2F2400A700000000000000000000000003000000241C0065395E00F31BCF
+          00FF00FF00FF26BA00FF1F0E005A000000000000000000000000295500BA62A9
+          42FF78DB6AFF3FA82FFF60BC50FF9DF6A4FF71DB71FF51CB51FF2FD234FF29BC
+          19FF285F02DC1D21008B1711005E2322007E314B00D12F9700FF0DEA00FF00FF
+          00FF08FD00FF355E00EF06000007000000000000000000000000305F00232750
+          009F203F00B41D4100A446661AFFE2F1DCFFD8FFE2FF85DF84FF5DD35DFF33DB
+          3CFF26D723FF2FB712FF31A70CFF2BB70AFF16E206FF00FF00FF00FF00FF00FF
+          00FF31AA00FF221A006200000000000000000000000000000000376B0000172B
+          0000000000001F380000276200734B7625FFEDF5E9FFEFFFF6FFA0EAA1FF6FD7
+          6EFF46D64AFF28E030FF1DE924FF17F71FFF0FFC16FF06FF0DFF00FF04FF24C0
+          00FF323A00B00303000000000000000000000000000000000000366A00001A31
+          000000000000082C0000115300000B46008046721AFFC8D2BCFFF6FFFCFFD2FF
+          DBFF9BF3A2FF69E26EFF41DA46FF2CE234FF21F02AFF1AE518FF2CA106FF323E
+          00B2030000000000000000000000000000000000000000000000366A00001A32
+          0000000000000024000000410000245800002151004F1D5300D56A8B46FF9EBC
+          8BFFA5D49AFF90D887FF67CC5DFF3EB22EFF329B11FF346503EC384B00771422
+          0000000000000000000000000000000000000000000000000000366A00001A32
+          000000000000002700000047000023580000385D00002A5B0000154E00511B4F
+          00972F5E00C4346006D4325E03CC305400A7283800662B4F001129520000172C
+          0000000000000000000000000000000000000000000000000000366A00001A32
+          000000000000002700000047000023580000375E00002E5F00002B5C00002456
+          00171C4E00411239005218360049294900261A300000285400002C550000182D
+          0000000000000000000000000000000000000000000000000000
+        }
+        OnClick = BitRefresh4Click
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 3
+      end
     end
   end
 end

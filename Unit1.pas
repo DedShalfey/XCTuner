@@ -18,8 +18,10 @@ type
     BitBtn2: TBitBtn;
     BitRefresh2: TBitBtn;
     BitRefresh3: TBitBtn;
+    BitRefresh4: TBitBtn;
     BitSave2: TBitBtn;
     BitSave3: TBitBtn;
+    BitSave4: TBitBtn;
     GroupBox10: TGroupBox;
     GroupBox11: TGroupBox;
     GroupBox12: TGroupBox;
@@ -31,6 +33,19 @@ type
     GroupBox18: TGroupBox;
     GroupBox19: TGroupBox;
     GroupBox20: TGroupBox;
+    GroupBox21: TGroupBox;
+    GroupBox22: TGroupBox;
+    GroupBox23: TGroupBox;
+    GroupBox24: TGroupBox;
+    GroupBox25: TGroupBox;
+    GroupBox26: TGroupBox;
+    GroupBox27: TGroupBox;
+    GroupBox28: TGroupBox;
+    GroupBox29: TGroupBox;
+    GroupBox30: TGroupBox;
+    GroupBox31: TGroupBox;
+    GroupBox32: TGroupBox;
+    GroupBox33: TGroupBox;
     GroupBox7: TGroupBox;
     GroupBox8: TGroupBox;
     GroupBox9: TGroupBox;
@@ -47,6 +62,11 @@ type
     Label19: TLabel;
     Label2: TLabel;
     Label20: TLabel;
+    Label21: TLabel;
+    Label22: TLabel;
+    Label23: TLabel;
+    Label24: TLabel;
+    Label25: TLabel;
     Label3: TLabel;
     Label4: TLabel;
     Label5: TLabel;
@@ -65,7 +85,21 @@ type
     RadioButton29: TRadioButton;
     RadioButton3: TRadioButton;
     RadioButton30: TRadioButton;
+    RadioButton31: TRadioButton;
+    RadioButton32: TRadioButton;
+    RadioButton33: TRadioButton;
+    RadioButton34: TRadioButton;
+    RadioButton35: TRadioButton;
+    RadioButton36: TRadioButton;
+    RadioButton37: TRadioButton;
+    RadioButton38: TRadioButton;
+    RadioButton39: TRadioButton;
     RadioButton4: TRadioButton;
+    RadioButton40: TRadioButton;
+    RadioButton41: TRadioButton;
+    RadioButton42: TRadioButton;
+    RadioButton43: TRadioButton;
+    RadioButton44: TRadioButton;
     RadioButton5: TRadioButton;
     RadioButton6: TRadioButton;
     RadioButton7: TRadioButton;
@@ -75,9 +109,15 @@ type
     RadioButton11: TRadioButton;
     RadioButton12: TRadioButton;
     SpinEdit1: TSpinEdit;
+    SpinEdit10: TSpinEdit;
     SpinEdit2: TSpinEdit;
     SpinEdit3: TSpinEdit;
     SpinEdit4: TSpinEdit;
+    SpinEdit5: TSpinEdit;
+    SpinEdit6: TSpinEdit;
+    SpinEdit7: TSpinEdit;
+    SpinEdit8: TSpinEdit;
+    SpinEdit9: TSpinEdit;
     tAbout: TBitBtn;
     BitBtn3: TBitBtn;
     BitRefresh1: TBitBtn;
@@ -104,19 +144,30 @@ type
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
+    TrackBar1: TTrackBar;
+    TrackBar2: TTrackBar;
+    TrackBar3: TTrackBar;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
     procedure BitRefresh1Click(Sender: TObject);
     procedure BitRefresh2Click(Sender: TObject);
     procedure BitRefresh3Click(Sender: TObject);
+    procedure BitRefresh4Click(Sender: TObject);
     procedure BitSave1Click(Sender: TObject);
     procedure BitSave2Click(Sender: TObject);
     procedure BitSave3Click(Sender: TObject);
+    procedure BitSave4Click(Sender: TObject);
     procedure BtExitClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure SpinEdit10Change(Sender: TObject);
+    procedure SpinEdit8Change(Sender: TObject);
+    procedure SpinEdit9Change(Sender: TObject);
     procedure tAboutClick(Sender: TObject);
+    procedure TrackBar1Change(Sender: TObject);
+    procedure TrackBar2Change(Sender: TObject);
+    procedure TrackBar3Change(Sender: TObject);
   private
     { private declarations }
   public
@@ -125,11 +176,13 @@ type
     procedure SearchLine_my_3();
     procedure xvm_info();
     procedure search_info();
+    procedure xvm_loading();
     procedure battle_loading();
+    procedure battle_save();
     procedure login_loading();
     procedure login_save();
-    procedure battle_save();
-    procedure xvm_loading();
+    procedure hangar_loading();
+    procedure hangar_save();
     procedure rating_loading();
     procedure rating_save();
     { public declarations }
@@ -137,15 +190,24 @@ type
 
 var
   XCTuner_Form1: TXCTuner_Form1;
-  xvm, battle, login, rating, temp_list: TStringList;
+  xvm, battle, login, hangar, rating, temp_list: TStringList;
   b_s1, b_s2, b_s3, b_s4, b_s5, b_s6: String;
   xvm_s1, xvm_s2, xvm_s3, xvm_s4, xvm_s5, xvm_s6, xvm_s7, xvm_s8, xvm_sN: String;
   login_s1, login_s2, login_s3, login_s4, login_s5, login_s6, login_s5_2, login_s6_2: string;
+
+  hangar_s1, hangar_s2, hangar_s3, hangar_s4, hangar_s5, hangar_s6, hangar_s7: string;
+  hangar_s8, hangar_s9, hangar_s10, hangar_s11, hangar_s12, hangar_s13: string;
+  hangar_s8_2, hangar_s9_2, hangar_s10_2, hangar_s11_2, hangar_s12_2, hangar_s13_2: string;
+
   rating_s1, rating_s2, rating_s3, rating_s4, rating_s5: String;
   Search, search_sN: String;
   k, SearchLine: Integer;
   bs1_SL, bs2_SL, bs3_SL, bs4_SL, bs5_SL, bs6_SL: Integer;
   log1_SL, log2_SL, log3_SL, log4_SL, log5_SL, log6_SL: Integer;
+
+  hgar1_SL, hgar2_SL, hgar3_SL, hgar4_SL, hgar5_SL, hgar6_SL, hgar7_SL: Integer;
+  hgar8_SL, hgar9_SL, hgar10_SL, hgar11_SL, hgar12_SL, hgar13_SL: Integer;
+
   rat1_SL, rat2_SL, rat3_SL, rat4_SL, rat5_SL: Integer;
 
 implementation
@@ -194,6 +256,11 @@ begin
   login_loading();
 end;
 
+procedure TXCTuner_Form1.BitRefresh4Click(Sender: TObject);
+begin
+  hangar_loading();
+end;
+
 procedure TXCTuner_Form1.BitSave1Click(Sender: TObject);
 begin
   rating_save();
@@ -218,6 +285,14 @@ begin
   login.LoadFromFile(ExtractFilePath(ParamStr(0))+'login.xc');
 end;
 
+procedure TXCTuner_Form1.BitSave4Click(Sender: TObject);
+begin
+  hangar_save();
+  hangar.SaveToFile(ExtractFilePath(ParamStr(0))+'hangar.xc');
+  hangar.Clear;
+  hangar.LoadFromFile(ExtractFilePath(ParamStr(0))+'hangar.xc');
+end;
+
 procedure TXCTuner_Form1.BtExitClick(Sender: TObject);
 begin
   XCTuner_Form1.Close;
@@ -230,6 +305,7 @@ begin
   xvm.Free;
   battle.Free;
   login.Free;
+  hangar.Free;
   rating.Free;
   temp_list.Free;
 end;
@@ -237,27 +313,32 @@ end;
 procedure TXCTuner_Form1.FormCreate(Sender: TObject);
 begin
   // вывод версии файла в заголовок
-  XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.5.4';
+  XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.6.1';
   BitBtn1.Click;
   // Создаем объекты типа TStringlist
   xvm:=TStringList.Create;
   xvm:=TStringList.Create;
   battle:=TStringList.Create;
   login:=TStringList.Create;
+  hangar:=TStringList.Create;
   rating:=TStringList.Create;
   temp_list:=TStringList.Create;
   // Проверяем присутствие файла @xvm.xc в директории с программой
   if ((FileExists(ExtractFilePath(ParamStr(0))+'@xvm.xc')) and
   (FileExists(ExtractFilePath(ParamStr(0))+'battle.xc')) and
+  (FileExists(ExtractFilePath(ParamStr(0))+'login.xc')) and
+  (FileExists(ExtractFilePath(ParamStr(0))+'hangar.xc')) and
   (FileExists(ExtractFilePath(ParamStr(0))+'rating.xc'))) then
     begin
       xvm.LoadFromFile(ExtractFilePath(ParamStr(0))+'@xvm.xc');
       battle.LoadFromFile(ExtractFilePath(ParamStr(0))+'battle.xc');
       login.LoadFromFile(ExtractFilePath(ParamStr(0))+'login.xc');
+      login.LoadFromFile(ExtractFilePath(ParamStr(0))+'hangar.xc');
       rating.LoadFromFile(ExtractFilePath(ParamStr(0))+'rating.xc');
       xvm_loading();
       battle_loading();
       login_loading();
+      hangar_loading();
       rating_loading();
     end
   else
@@ -273,9 +354,39 @@ begin
     end;
 end;
 
+procedure TXCTuner_Form1.SpinEdit10Change(Sender: TObject);
+begin
+  TrackBar1.Position:=SpinEdit10.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit8Change(Sender: TObject);
+begin
+  TrackBar2.Position:=SpinEdit8.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit9Change(Sender: TObject);
+begin
+  TrackBar3.Position:=SpinEdit9.Value;
+end;
+
 procedure TXCTuner_Form1.tAboutClick(Sender: TObject);
 begin
   About.ShowModal;
+end;
+
+procedure TXCTuner_Form1.TrackBar1Change(Sender: TObject);
+begin
+  SpinEdit10.Value:=TrackBar1.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar2Change(Sender: TObject);
+begin
+  SpinEdit8.Value:=TrackBar2.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar3Change(Sender: TObject);
+begin
+  SpinEdit9.Value:=TrackBar3.Position;
 end;
 
 procedure TXCTuner_Form1.SearchLine_my;
@@ -499,6 +610,227 @@ begin
   login_s6_2:=StringReplace(login_s6_2, login_s6, IntToStr(SpinEdit4.Value), []);
   login.Delete(log6_SL);
   login.Insert(log6_SL, login_s6_2);
+end;
+
+// загрузка из файла hangar
+procedure TXCTuner_Form1.hangar_loading;
+begin
+  hangar.Clear;
+  hangar.LoadFromFile(ExtractFilePath(ParamStr(0))+'hangar.xc');
+  // загрузка данных из файла hangar.xc в интерфейс
+  temp_list.Clear;
+  temp_list.Text:=hangar.Text;
+
+  Search:='"hideTutorial"';
+  SearchLine_my();
+  hangar_s1:=TrimRight(hangar.Strings[SearchLine]);
+  hgar1_SL:=SearchLine;
+
+  Search:='"xwnInCompany"';
+  SearchLine_my();
+  hangar_s2:=TrimRight(hangar.Strings[SearchLine]);
+  hgar2_SL:=SearchLine;
+
+  Search:='"masteryMarkInTankCarousel"';
+  SearchLine_my();
+  hangar_s3:=TrimRight(hangar.Strings[SearchLine]);
+  hgar3_SL:=SearchLine;
+
+  Search:='"masteryMarkInTechTree"';
+  SearchLine_my();
+  hangar_s4:=TrimRight(hangar.Strings[SearchLine]);
+  hgar4_SL:=SearchLine;
+
+  Search:='"hidePricesInTechTree"';
+  SearchLine_my();
+  hangar_s5:=TrimRight(hangar.Strings[SearchLine]);
+  hgar5_SL:=SearchLine;
+
+  Search:='"widgetsEnabled"';
+  SearchLine_my();
+  hangar_s6:=TrimRight(hangar.Strings[SearchLine]);
+  hgar6_SL:=SearchLine;
+
+  Search:='"pingServers"';
+  SearchLine_my();
+  Search:='"enabled"';
+  SearchLine_my_2();
+  hangar_s7:=TrimRight(hangar.Strings[SearchLine]);
+  hgar7_SL:=SearchLine;
+
+  // интервал обновления пинга
+  Search:='"pingServers"';
+  SearchLine_my();
+  Search:='"updateInterval"';
+  SearchLine_my_2();
+  hangar_s8:=TrimRight(hangar.Strings[SearchLine]);
+  hgar8_SL:=SearchLine;
+  search_sN:=hangar_s8;
+  search_info();
+  hangar_s8:=search_sN;
+  TrackBar1.Position:=StrToInt(hangar_s8);
+  SpinEdit10.Value:=StrToInt(hangar_s8);
+
+  // положение поля по x
+  Search:='"pingServers"';
+  SearchLine_my();
+  Search:='"x"';
+  SearchLine_my_2();
+  hangar_s9:=TrimRight(hangar.Strings[SearchLine]);
+  hgar9_SL:=SearchLine;
+  search_sN:=hangar_s9;
+  search_info();
+  hangar_s9:=search_sN;
+  SpinEdit5.Value:=StrToInt(hangar_s9);
+
+  // положение поля по y
+  Search:='"pingServers"';
+  SearchLine_my();
+  Search:='"y"';
+  SearchLine_my_2();
+  hangar_s10:=TrimRight(hangar.Strings[SearchLine]);
+  hgar10_SL:=SearchLine;
+  search_sN:=hangar_s10;
+  search_info();
+  hangar_s10:=search_sN;
+  SpinEdit6.Value:=StrToInt(hangar_s10);
+
+  // прозрачность поля
+  Search:='"pingServers"';
+  SearchLine_my();
+  Search:='"alpha"';
+  SearchLine_my_2();
+  hangar_s11:=TrimRight(hangar.Strings[SearchLine]);
+  hgar11_SL:=SearchLine;
+  search_sN:=hangar_s11;
+  search_info();
+  hangar_s11:=search_sN;
+  SpinEdit7.Value:=StrToInt(hangar_s11);
+
+  // максимальное количество строк одной колонки
+  Search:='"pingServers"';
+  SearchLine_my();
+  Search:='"maxRows"';
+  SearchLine_my_2();
+  hangar_s12:=TrimRight(hangar.Strings[SearchLine]);
+  hgar12_SL:=SearchLine;
+  search_sN:=hangar_s12;
+  search_info();
+  hangar_s12:=search_sN;
+  TrackBar2.Position:=StrToInt(hangar_s12);
+  SpinEdit8.Value:=StrToInt(hangar_s12);
+
+  // пространство между колонками
+  Search:='"pingServers"';
+  SearchLine_my();
+  Search:='"columnGap"';
+  SearchLine_my_2();
+  hangar_s13:=TrimRight(hangar.Strings[SearchLine]);
+  hgar13_SL:=SearchLine;
+  search_sN:=hangar_s13;
+  search_info();
+  hangar_s13:=search_sN;
+  TrackBar3.Position:=StrToInt(hangar_s13);
+  SpinEdit9.Value:=StrToInt(hangar_s13);
+
+  // идет вывод в переключатели
+  if pos('false', hangar_s1)>0 then
+  RadioButton31.Checked:=True else RadioButton32.Checked:=True;
+
+  if pos('true', hangar_s2)>0 then
+  RadioButton33.Checked:=True else RadioButton34.Checked:=True;
+
+  if pos('true', hangar_s3)>0 then
+  RadioButton35.Checked:=True else RadioButton36.Checked:=True;
+
+  if pos('true', hangar_s4)>0 then
+  RadioButton37.Checked:=True else RadioButton38.Checked:=True;
+
+  if pos('false', hangar_s5)>0 then
+  RadioButton39.Checked:=True else RadioButton40.Checked:=True;
+
+  if pos('true', hangar_s6)>0 then
+  RadioButton41.Checked:=True else RadioButton42.Checked:=True;
+
+  if pos('true', hangar_s7)>0 then
+  RadioButton43.Checked:=True else RadioButton44.Checked:=True;
+
+end;
+
+// сохранение параметров в файл hangar.xc
+procedure TXCTuner_Form1.hangar_save;
+begin
+  if (RadioButton32.Checked=True) then
+    hangar_s1:=StringReplace(hangar_s1, 'false', 'true', []) else hangar_s1:=StringReplace(hangar_s1, 'true', 'false', []);
+  if (RadioButton33.Checked=True) then
+    hangar_s2:=StringReplace(hangar_s2, 'false', 'true', []) else hangar_s2:=StringReplace(hangar_s2, 'true', 'false', []);
+  if (RadioButton35.Checked=True) then
+    hangar_s3:=StringReplace(hangar_s3, 'false', 'true', []) else hangar_s3:=StringReplace(hangar_s3, 'true', 'false', []);
+  if (RadioButton37.Checked=True) then
+    hangar_s4:=StringReplace(hangar_s4, 'false', 'true', []) else hangar_s4:=StringReplace(hangar_s4, 'true', 'false', []);
+  if (RadioButton40.Checked=True) then
+    hangar_s5:=StringReplace(hangar_s5, 'false', 'true', []) else hangar_s5:=StringReplace(hangar_s5, 'true', 'false', []);
+  if (RadioButton41.Checked=True) then
+    hangar_s6:=StringReplace(hangar_s6, 'false', 'true', []) else hangar_s6:=StringReplace(hangar_s6, 'true', 'false', []);
+  if (RadioButton43.Checked=True) then
+    hangar_s7:=StringReplace(hangar_s7, 'false', 'true', []) else hangar_s7:=StringReplace(hangar_s7, 'true', 'false', []);
+
+
+
+
+  hangar.Delete(hgar1_SL);
+  hangar.Insert(hgar1_SL, hangar_s1);
+
+  hangar.Delete(hgar2_SL);
+  hangar.Insert(hgar2_SL, hangar_s2);
+
+  hangar.Delete(hgar3_SL);
+  hangar.Insert(hgar3_SL, hangar_s3);
+
+  hangar.Delete(hgar4_SL);
+  hangar.Insert(hgar4_SL, hangar_s4);
+
+  hangar.Delete(hgar5_SL);
+  hangar.Insert(hgar5_SL, hangar_s5);
+
+  hangar.Delete(hgar6_SL);
+  hangar.Insert(hgar6_SL, hangar_s6);
+
+  hangar.Delete(hgar7_SL);
+  hangar.Insert(hgar7_SL, hangar_s7);
+
+
+  hangar_s8_2:=hangar.Strings[hgar8_SL];
+  hangar_s8_2:=StringReplace(hangar_s8_2, hangar_s8, IntToStr(SpinEdit10.Value), []);
+  hangar.Delete(hgar8_SL);
+  hangar.Insert(hgar8_SL, hangar_s8_2);
+
+  hangar_s9_2:=hangar.Strings[hgar9_SL];
+  hangar_s9_2:=StringReplace(hangar_s9_2, hangar_s9, IntToStr(SpinEdit5.Value), []);
+  hangar.Delete(hgar9_SL);
+  hangar.Insert(hgar9_SL, hangar_s9_2);
+
+  hangar_s10_2:=hangar.Strings[hgar10_SL];
+  hangar_s10_2:=StringReplace(hangar_s10_2, hangar_s10, IntToStr(SpinEdit6.Value), []);
+  hangar.Delete(hgar10_SL);
+  hangar.Insert(hgar10_SL, hangar_s10_2);
+
+  hangar_s11_2:=hangar.Strings[hgar11_SL];
+  hangar_s11_2:=StringReplace(hangar_s11_2, hangar_s11, IntToStr(SpinEdit7.Value), []);
+  hangar.Delete(hgar11_SL);
+  hangar.Insert(hgar11_SL, hangar_s11_2);
+
+  hangar_s12_2:=hangar.Strings[hgar12_SL];
+  hangar_s12_2:=StringReplace(hangar_s12_2, hangar_s12, IntToStr(SpinEdit8.Value), []);
+  hangar.Delete(hgar12_SL);
+  hangar.Insert(hgar12_SL, hangar_s12_2);
+
+  hangar_s13_2:=hangar.Strings[hgar13_SL];
+  hangar_s13_2:=StringReplace(hangar_s13_2, hangar_s13, IntToStr(SpinEdit9.Value), []);
+  hangar.Delete(hgar13_SL);
+  hangar.Insert(hgar13_SL, hangar_s13_2);
+
+
 end;
 
 procedure TXCTuner_Form1.battle_save;
