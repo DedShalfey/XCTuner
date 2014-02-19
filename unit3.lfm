@@ -1,7 +1,7 @@
 object Edit_XVM: TEdit_XVM
-  Left = 903
+  Left = 823
   Height = 296
-  Top = 127
+  Top = 226
   Width = 345
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle

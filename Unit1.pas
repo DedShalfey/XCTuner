@@ -15,6 +15,7 @@ type
   TXCTuner_Form1 = class(TForm)
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
+    BitBtn4: TBitBtn;
     BitRefresh2: TBitBtn;
     BitRefresh3: TBitBtn;
     BitRefresh4: TBitBtn;
@@ -151,6 +152,7 @@ type
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
+    procedure BitBtn4Click(Sender: TObject);
     procedure BitRefresh1Click(Sender: TObject);
     procedure BitRefresh2Click(Sender: TObject);
     procedure BitRefresh3Click(Sender: TObject);
@@ -231,6 +233,8 @@ begin
   BitBtn3.Font.Style:=[];
   ImageList1.GetBitmap(0, BitBtn1.Glyph);
   PageControl1.ActivePage:=TabSheet1;
+  XCTuner_Form1.Height:=530;
+  XCTuner_Form1.Width:=1094;
 end;
 
 procedure TXCTuner_Form1.BitBtn2Click(Sender: TObject);
@@ -243,6 +247,8 @@ begin
   BitBtn3.Font.Style:=[];
   ImageList1.GetBitmap(0, BitBtn2.Glyph);
   PageControl1.ActivePage:=TabSheet2;
+  XCTuner_Form1.Height:=530;
+  XCTuner_Form1.Width:=482;
 end;
 
 procedure TXCTuner_Form1.BitBtn3Click(Sender: TObject);
@@ -255,6 +261,52 @@ begin
   BitBtn3.Font.Style:=[fsBold];
   ImageList1.GetBitmap(0, BitBtn3.Glyph);
   PageControl1.ActivePage:=TabSheet3;
+  XCTuner_Form1.Height:=530;
+  XCTuner_Form1.Width:=1094;
+end;
+
+procedure TXCTuner_Form1.BitBtn4Click(Sender: TObject);
+begin
+  if (Panel1.Visible=true) then
+    begin
+      Panel1.Visible:=false;
+      BitBtn4.Caption:='>';
+        if PageControl1.ActivePage=TabSheet1 then
+          begin
+            XCTuner_Form1.Height:=530;
+            XCTuner_Form1.Width:=924;
+          end;
+        if PageControl1.ActivePage=TabSheet2 then
+          begin
+            XCTuner_Form1.Height:=530;
+            XCTuner_Form1.Width:=310;
+          end;
+        if PageControl1.ActivePage=TabSheet3 then
+          begin
+            XCTuner_Form1.Height:=530;
+            XCTuner_Form1.Width:=924;
+          end;
+    end
+      else
+    begin
+      Panel1.Visible:=true;
+      BitBtn4.Caption:='<';
+      if PageControl1.ActivePage=TabSheet1 then
+          begin
+            XCTuner_Form1.Height:=530;
+            XCTuner_Form1.Width:=1094;
+          end;
+        if PageControl1.ActivePage=TabSheet2 then
+          begin
+            XCTuner_Form1.Height:=530;
+            XCTuner_Form1.Width:=482;
+          end;
+        if PageControl1.ActivePage=TabSheet3 then
+          begin
+            XCTuner_Form1.Height:=530;
+            XCTuner_Form1.Width:=1094;
+          end;
+    end;
 end;
 
 procedure TXCTuner_Form1.BitRefresh1Click(Sender: TObject);
@@ -326,9 +378,9 @@ end;
 procedure TXCTuner_Form1.FormCreate(Sender: TObject);
 begin
   // вывод версии файла в заголовок
-  XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.6.37';
-  XCTuner_Form1.Height:=538;
-  XCTuner_Form1.Width:=1081;
+  XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.6.43';
+  XCTuner_Form1.Height:=530;
+  XCTuner_Form1.Width:=1094;
   BitBtn1.Click;
   // Создаем объекты типа TStringlist
   xvm:=TStringList.Create;
