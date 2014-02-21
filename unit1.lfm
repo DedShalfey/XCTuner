@@ -1,12 +1,12 @@
 object XCTuner_Form1: TXCTuner_Form1
-  Left = 282
-  Height = 679
-  Top = 81
+  Left = 283
+  Height = 528
+  Top = 136
   Width = 1053
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'XCTuner'
-  ClientHeight = 679
+  ClientHeight = 528
   ClientWidth = 1053
   Icon.Data = {
     BE1000000000010001002020000001002000A810000016000000280000002000
@@ -151,11 +151,11 @@ object XCTuner_Form1: TXCTuner_Form1
   LCLVersion = '1.3'
   object Panel1: TPanel
     Left = 0
-    Height = 679
+    Height = 528
     Top = 0
     Width = 170
     Align = alLeft
-    ClientHeight = 679
+    ClientHeight = 528
     ClientWidth = 170
     Color = clGradientInactiveCaption
     ParentColor = False
@@ -189,7 +189,7 @@ object XCTuner_Form1: TXCTuner_Form1
       Left = 1
       Height = 46
       Hint = 'Закрыть программу'
-      Top = 632
+      Top = 481
       Width = 168
       Align = alBottom
       Caption = 'Выход  '
@@ -280,7 +280,7 @@ object XCTuner_Form1: TXCTuner_Form1
       Left = 1
       Height = 38
       Hint = 'Просмотреть сведения о программе...'
-      Top = 594
+      Top = 443
       Width = 168
       Align = alBottom
       Caption = 'About'
@@ -379,28 +379,28 @@ object XCTuner_Form1: TXCTuner_Form1
   end
   object PageControl1: TPageControl
     Left = 186
-    Height = 679
+    Height = 528
     Top = 0
     Width = 867
-    ActivePage = TabSheet3
+    ActivePage = TabSheet1
     Align = alClient
-    TabIndex = 2
+    TabIndex = 0
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Общие'
-      ClientHeight = 634
+      ClientHeight = 500
       ClientWidth = 859
       ParentFont = False
       TabVisible = False
       object ScrollBox2: TScrollBox
         Left = 0
-        Height = 634
+        Height = 500
         Top = 0
         Width = 859
         HorzScrollBar.Page = 838
-        VertScrollBar.Page = 630
+        VertScrollBar.Page = 496
         Align = alClient
-        ClientHeight = 630
+        ClientHeight = 496
         ClientWidth = 838
         TabOrder = 0
         OnMouseWheelDown = ScrollBox2MouseWheelDown
@@ -410,6 +410,7 @@ object XCTuner_Form1: TXCTuner_Form1
           Height = 222
           Top = 134
           Width = 584
+          BorderSpacing.Bottom = 4
           Caption = 'Блок Управления Статистикой'
           ClientHeight = 204
           ClientWidth = 580
@@ -754,6 +755,7 @@ object XCTuner_Form1: TXCTuner_Form1
           Height = 320
           Top = 366
           Width = 584
+          BorderSpacing.Bottom = 8
           Caption = 'Общие Параметра Боевого Интерфейса'
           ClientHeight = 302
           ClientWidth = 580
@@ -1394,13 +1396,13 @@ object XCTuner_Form1: TXCTuner_Form1
     end
     object TabSheet2: TTabSheet
       Caption = 'Логин'
-      ClientHeight = 634
+      ClientHeight = 500
       ClientWidth = 859
       TabVisible = False
       object GroupBox20: TGroupBox
         Left = 226
         Height = 432
-        Top = 48
+        Top = 40
         Width = 264
         Caption = 'Параметры Экрана Логина'
         ClientHeight = 414
@@ -1750,22 +1752,21 @@ object XCTuner_Form1: TXCTuner_Form1
     end
     object TabSheet3: TTabSheet
       Caption = 'Ангар'
-      ClientHeight = 651
+      ClientHeight = 500
       ClientWidth = 859
       TabVisible = False
       object ScrollBox1: TScrollBox
         Left = 0
-        Height = 647
-        Top = 4
+        Height = 500
+        Top = 0
         Width = 859
         HorzScrollBar.Page = 842
-        VertScrollBar.Page = 647
+        VertScrollBar.Page = 500
         Align = alClient
-        BorderSpacing.Top = 4
         BorderStyle = bsNone
-        ClientHeight = 647
+        ClientHeight = 500
         ClientWidth = 842
-        Color = clActiveBorder
+        Color = clDefault
         ParentColor = False
         TabOrder = 0
         OnMouseWheelDown = ScrollBox1MouseWheelDown
@@ -1964,9 +1965,8 @@ object XCTuner_Form1: TXCTuner_Form1
         object GroupBox28: TGroupBox
           Left = 2
           Height = 584
-          Top = 228
+          Top = 24
           Width = 596
-          BorderSpacing.Left = 2
           BorderSpacing.Bottom = 4
           Caption = 'Пинг До Серверов:'
           ClientHeight = 566
@@ -2111,14 +2111,17 @@ object XCTuner_Form1: TXCTuner_Form1
             object TrackBar2: TTrackBar
               Cursor = crHandPoint
               Left = 6
-              Height = 24
-              Top = 15
+              Height = 15
+              Top = 20
               Width = 192
               Min = 1
               OnChange = TrackBar2Change
+              PageSize = 1
               Position = 1
               TickMarks = tmTopLeft
               TickStyle = tsNone
+              BorderSpacing.CellAlignHorizontal = ccaCenter
+              BorderSpacing.CellAlignVertical = ccaCenter
               TabOrder = 0
             end
             object SpinEdit8: TSpinEdit
@@ -2145,12 +2148,13 @@ object XCTuner_Form1: TXCTuner_Form1
             object TrackBar3: TTrackBar
               Cursor = crHandPoint
               Left = 6
-              Height = 24
-              Top = 16
+              Height = 15
+              Top = 20
               Width = 192
               Max = 30
               Min = -10
               OnChange = TrackBar3Change
+              PageSize = 1
               Position = 0
               TickMarks = tmTopLeft
               TickStyle = tsNone
@@ -2159,7 +2163,7 @@ object XCTuner_Form1: TXCTuner_Form1
             object SpinEdit9: TSpinEdit
               Left = 206
               Height = 23
-              Top = 16
+              Top = 17
               Width = 50
               MaxValue = 30
               MinValue = -10
@@ -2790,7 +2794,7 @@ object XCTuner_Form1: TXCTuner_Form1
   object BitBtn4: TBitBtn
     Cursor = crHandPoint
     Left = 170
-    Height = 679
+    Height = 528
     Top = 0
     Width = 16
     Align = alLeft
