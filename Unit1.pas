@@ -6,7 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, ExtCtrls,
-  Buttons, ComCtrls, StdCtrls, Spin, Unit2, Unit3;
+  Buttons, ComCtrls, StdCtrls, Spin, Unit2, Unit3, mbColorPalette, mbColorList,
+  mbColorPreview, HSVColorPicker, StrUtils, types;
 
 type
 
@@ -16,12 +17,30 @@ type
     BitBtn1: TBitBtn;
     BitBtn2: TBitBtn;
     BitBtn4: TBitBtn;
+    BitRefresh1: TBitBtn;
     BitRefresh2: TBitBtn;
     BitRefresh3: TBitBtn;
     BitRefresh4: TBitBtn;
+    BitSave1: TBitBtn;
     BitSave2: TBitBtn;
     BitSave3: TBitBtn;
     BitSave4: TBitBtn;
+    CheckBox1: TCheckBox;
+    CheckBox2: TCheckBox;
+    ColorButton1: TColorButton;
+    ColorButton2: TColorButton;
+    ColorButton3: TColorButton;
+    ColorButton4: TColorButton;
+    ColorButton5: TColorButton;
+    ColorDialog1: TColorDialog;
+    ComboBox1: TComboBox;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Edit5: TEdit;
+    Edit6: TEdit;
+    GroupBox1: TGroupBox;
     GroupBox10: TGroupBox;
     GroupBox11: TGroupBox;
     GroupBox12: TGroupBox;
@@ -32,6 +51,7 @@ type
     GroupBox17: TGroupBox;
     GroupBox18: TGroupBox;
     GroupBox19: TGroupBox;
+    GroupBox2: TGroupBox;
     GroupBox20: TGroupBox;
     GroupBox21: TGroupBox;
     GroupBox22: TGroupBox;
@@ -42,15 +62,23 @@ type
     GroupBox27: TGroupBox;
     GroupBox28: TGroupBox;
     GroupBox29: TGroupBox;
+    GroupBox3: TGroupBox;
     GroupBox30: TGroupBox;
     GroupBox31: TGroupBox;
     GroupBox32: TGroupBox;
     GroupBox33: TGroupBox;
+    GroupBox34: TGroupBox;
+    GroupBox35: TGroupBox;
+    GroupBox37: TGroupBox;
+    GroupBox4: TGroupBox;
+    GroupBox5: TGroupBox;
+    GroupBox6: TGroupBox;
     GroupBox7: TGroupBox;
     GroupBox8: TGroupBox;
     GroupBox9: TGroupBox;
     Image1: TImage;
     ImageList1: TImageList;
+    Label1: TLabel;
     Label10: TLabel;
     Label11: TLabel;
     Label12: TLabel;
@@ -60,7 +88,6 @@ type
     Label16: TLabel;
     Label17: TLabel;
     Label18: TLabel;
-    Label1: TLabel;
     Label19: TLabel;
     Label2: TLabel;
     Label20: TLabel;
@@ -69,15 +96,43 @@ type
     Label23: TLabel;
     Label24: TLabel;
     Label25: TLabel;
+    Label26: TLabel;
+    Label27: TLabel;
+    Label28: TLabel;
+    Label29: TLabel;
     Label3: TLabel;
+    Label30: TLabel;
+    Label31: TLabel;
+    Label32: TLabel;
+    Label33: TLabel;
+    Label34: TLabel;
+    Label35: TLabel;
+    Label36: TLabel;
+    Label37: TLabel;
+    Label38: TLabel;
+    Label39: TLabel;
     Label4: TLabel;
+    Label40: TLabel;
     Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
     Label9: TLabel;
     RadioButton1: TRadioButton;
+    RadioButton10: TRadioButton;
+    RadioButton11: TRadioButton;
+    RadioButton12: TRadioButton;
+    RadioButton13: TRadioButton;
+    RadioButton14: TRadioButton;
+    RadioButton15: TRadioButton;
+    RadioButton16: TRadioButton;
+    RadioButton17: TRadioButton;
+    RadioButton18: TRadioButton;
+    RadioButton19: TRadioButton;
     RadioButton2: TRadioButton;
+    RadioButton20: TRadioButton;
+    RadioButton21: TRadioButton;
+    RadioButton22: TRadioButton;
     RadioButton23: TRadioButton;
     RadioButton24: TRadioButton;
     RadioButton25: TRadioButton;
@@ -102,16 +157,26 @@ type
     RadioButton42: TRadioButton;
     RadioButton43: TRadioButton;
     RadioButton44: TRadioButton;
+    RadioButton45: TRadioButton;
+    RadioButton46: TRadioButton;
     RadioButton5: TRadioButton;
     RadioButton6: TRadioButton;
     RadioButton7: TRadioButton;
     RadioButton8: TRadioButton;
     RadioButton9: TRadioButton;
-    RadioButton10: TRadioButton;
-    RadioButton11: TRadioButton;
-    RadioButton12: TRadioButton;
+    ScrollBox1: TScrollBox;
+    ScrollBox2: TScrollBox;
     SpinEdit1: TSpinEdit;
     SpinEdit10: TSpinEdit;
+    SpinEdit11: TSpinEdit;
+    SpinEdit12: TSpinEdit;
+    SpinEdit13: TSpinEdit;
+    SpinEdit14: TSpinEdit;
+    SpinEdit15: TSpinEdit;
+    SpinEdit16: TSpinEdit;
+    SpinEdit17: TSpinEdit;
+    SpinEdit18: TSpinEdit;
+    SpinEdit19: TSpinEdit;
     SpinEdit2: TSpinEdit;
     SpinEdit3: TSpinEdit;
     SpinEdit4: TSpinEdit;
@@ -122,27 +187,9 @@ type
     SpinEdit9: TSpinEdit;
     tAbout: TBitBtn;
     BitBtn3: TBitBtn;
-    BitRefresh1: TBitBtn;
-    BitSave1: TBitBtn;
     BtExit: TBitBtn;
-    GroupBox1: TGroupBox;
-    GroupBox2: TGroupBox;
-    GroupBox3: TGroupBox;
-    GroupBox4: TGroupBox;
-    GroupBox5: TGroupBox;
-    GroupBox6: TGroupBox;
     PageControl1: TPageControl;
     Panel1: TPanel;
-    RadioButton13: TRadioButton;
-    RadioButton22: TRadioButton;
-    RadioButton14: TRadioButton;
-    RadioButton15: TRadioButton;
-    RadioButton16: TRadioButton;
-    RadioButton17: TRadioButton;
-    RadioButton18: TRadioButton;
-    RadioButton19: TRadioButton;
-    RadioButton20: TRadioButton;
-    RadioButton21: TRadioButton;
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
@@ -162,9 +209,21 @@ type
     procedure BitSave3Click(Sender: TObject);
     procedure BitSave4Click(Sender: TObject);
     procedure BtExitClick(Sender: TObject);
+    procedure ColorButton1Click(Sender: TObject);
+    procedure ColorButton1ColorChanged(Sender: TObject);
+    procedure ColorButton2ColorChanged(Sender: TObject);
+    procedure ComboBox1Change(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure Image1Click(Sender: TObject);
+    procedure ScrollBox1MouseWheelDown(Sender: TObject; Shift: TShiftState;
+      MousePos: TPoint; var Handled: Boolean);
+    procedure ScrollBox1MouseWheelUp(Sender: TObject; Shift: TShiftState;
+      MousePos: TPoint; var Handled: Boolean);
+    procedure ScrollBox2MouseWheelDown(Sender: TObject; Shift: TShiftState;
+      MousePos: TPoint; var Handled: Boolean);
+    procedure ScrollBox2MouseWheelUp(Sender: TObject; Shift: TShiftState;
+      MousePos: TPoint; var Handled: Boolean);
     procedure SpinEdit10Change(Sender: TObject);
     procedure SpinEdit8Change(Sender: TObject);
     procedure SpinEdit9Change(Sender: TObject);
@@ -173,6 +232,7 @@ type
     procedure TrackBar2Change(Sender: TObject);
     procedure TrackBar3Change(Sender: TObject);
   private
+    function ColorToHex(rgb:TColor):String;
     { private declarations }
   public
     procedure SearchLine_my();
@@ -180,6 +240,7 @@ type
     procedure SearchLine_my_3();
     procedure xvm_info();
     procedure search_info();
+    procedure search_info_2();
     procedure xvm_loading();
     procedure battle_loading();
     procedure battle_save();
@@ -193,6 +254,7 @@ type
   end;
 
 var
+  rgb: TColor;
   XCTuner_Form1: TXCTuner_Form1;
   xvm, battle, login, hangar, rating, temp_list: TStringList;
   b_s1, b_s2, b_s3, b_s4, b_s5, b_s6, b_s7, b_s8, b_s7_2, b_s8_2: String;
@@ -233,8 +295,6 @@ begin
   BitBtn3.Font.Style:=[];
   ImageList1.GetBitmap(0, BitBtn1.Glyph);
   PageControl1.ActivePage:=TabSheet1;
-  XCTuner_Form1.Height:=530;
-  XCTuner_Form1.Width:=1094;
 end;
 
 procedure TXCTuner_Form1.BitBtn2Click(Sender: TObject);
@@ -247,8 +307,6 @@ begin
   BitBtn3.Font.Style:=[];
   ImageList1.GetBitmap(0, BitBtn2.Glyph);
   PageControl1.ActivePage:=TabSheet2;
-  XCTuner_Form1.Height:=530;
-  XCTuner_Form1.Width:=482;
 end;
 
 procedure TXCTuner_Form1.BitBtn3Click(Sender: TObject);
@@ -261,8 +319,6 @@ begin
   BitBtn3.Font.Style:=[fsBold];
   ImageList1.GetBitmap(0, BitBtn3.Glyph);
   PageControl1.ActivePage:=TabSheet3;
-  XCTuner_Form1.Height:=530;
-  XCTuner_Form1.Width:=1094;
 end;
 
 procedure TXCTuner_Form1.BitBtn4Click(Sender: TObject);
@@ -271,41 +327,13 @@ begin
     begin
       Panel1.Visible:=false;
       BitBtn4.Caption:='>';
-        if PageControl1.ActivePage=TabSheet1 then
-          begin
-            XCTuner_Form1.Height:=530;
-            XCTuner_Form1.Width:=924;
-          end;
-        if PageControl1.ActivePage=TabSheet2 then
-          begin
-            XCTuner_Form1.Height:=530;
-            XCTuner_Form1.Width:=310;
-          end;
-        if PageControl1.ActivePage=TabSheet3 then
-          begin
-            XCTuner_Form1.Height:=530;
-            XCTuner_Form1.Width:=924;
-          end;
+      XCTuner_Form1.Width:=770;
     end
       else
     begin
       Panel1.Visible:=true;
       BitBtn4.Caption:='<';
-      if PageControl1.ActivePage=TabSheet1 then
-          begin
-            XCTuner_Form1.Height:=530;
-            XCTuner_Form1.Width:=1094;
-          end;
-        if PageControl1.ActivePage=TabSheet2 then
-          begin
-            XCTuner_Form1.Height:=530;
-            XCTuner_Form1.Width:=482;
-          end;
-        if PageControl1.ActivePage=TabSheet3 then
-          begin
-            XCTuner_Form1.Height:=530;
-            XCTuner_Form1.Width:=1094;
-          end;
+      XCTuner_Form1.Width:=940;
     end;
 end;
 
@@ -363,6 +391,28 @@ begin
   XCTuner_Form1.Close;
 end;
 
+procedure TXCTuner_Form1.ColorButton1Click(Sender: TObject);
+begin
+
+end;
+
+// Выбор цвета и заполнение ими поля
+procedure TXCTuner_Form1.ColorButton1ColorChanged(Sender: TObject);
+begin
+  rgb:=ColorToRGB(ColorDialog1.Color);
+  Edit2.Text:=ColorToHex(rgb);
+end;
+
+procedure TXCTuner_Form1.ColorButton2ColorChanged(Sender: TObject);
+begin
+
+end;
+
+procedure TXCTuner_Form1.ComboBox1Change(Sender: TObject);
+begin
+  Edit1.Text:=ComboBox1.Text;
+end;
+
 procedure TXCTuner_Form1.FormClose(Sender: TObject;
   var CloseAction: TCloseAction);
 begin
@@ -378,10 +428,11 @@ end;
 procedure TXCTuner_Form1.FormCreate(Sender: TObject);
 begin
   // вывод версии файла в заголовок
-  XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.6.43';
-  XCTuner_Form1.Height:=530;
-  XCTuner_Form1.Width:=1094;
+  XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.6.96';
+  XCTuner_Form1.Height:=520;
+  XCTuner_Form1.Width:=940;
   BitBtn1.Click;
+  ComboBox1.Items := Screen.Fonts; // загружает в ComboBox все шрифты что есть в windows
   // Создаем объекты типа TStringlist
   xvm:=TStringList.Create;
   xvm:=TStringList.Create;
@@ -434,6 +485,30 @@ begin
   Edit_XVM.ShowModal;
 end;
 
+procedure TXCTuner_Form1.ScrollBox1MouseWheelDown(Sender: TObject;
+  Shift: TShiftState; MousePos: TPoint; var Handled: Boolean);
+begin
+  Scrollbox1.VertScrollBar.Position:= Scrollbox1.VertScrollBar.Position + 30;
+end;
+
+procedure TXCTuner_Form1.ScrollBox1MouseWheelUp(Sender: TObject;
+  Shift: TShiftState; MousePos: TPoint; var Handled: Boolean);
+begin
+  Scrollbox1.VertScrollBar.Position:= Scrollbox1.VertScrollBar.Position - 30;
+end;
+
+procedure TXCTuner_Form1.ScrollBox2MouseWheelDown(Sender: TObject;
+  Shift: TShiftState; MousePos: TPoint; var Handled: Boolean);
+begin
+  Scrollbox2.VertScrollBar.Position:= Scrollbox2.VertScrollBar.Position + 30;
+end;
+
+procedure TXCTuner_Form1.ScrollBox2MouseWheelUp(Sender: TObject;
+  Shift: TShiftState; MousePos: TPoint; var Handled: Boolean);
+begin
+  Scrollbox2.VertScrollBar.Position:= Scrollbox2.VertScrollBar.Position - 30;
+end;
+
 procedure TXCTuner_Form1.SpinEdit10Change(Sender: TObject);
 begin
   TrackBar1.Position:=SpinEdit10.Value;
@@ -469,6 +544,13 @@ begin
   SpinEdit9.Value:=TrackBar3.Position;
 end;
 
+
+// Функция преобразования цвета в вид типа #FFFFFF
+function TXCTuner_Form1.ColorToHex(rgb: TColor): String;
+begin
+  Result:=Format('#%.2x%.2x%.2x', [byte(rgb),byte(rgb shr 8),byte(rgb shr 16)]);
+end;
+
 procedure TXCTuner_Form1.SearchLine_my;
 // процедура поиска нужного слова // выводит номер строки где найдено это слово
 begin
@@ -500,6 +582,11 @@ end;
 // процедура удаления лишних сиволов и пробелов в обработчике загр. информации из xvm
 procedure TXCTuner_Form1.xvm_info;
 begin
+  if pos('//', xvm_sN)<>0 then
+     begin
+       Delete(xvm_sN, pos('//', xvm_sN), (Length(xvm_sN) - pos('//', xvm_sN) + 1));
+       xvm_sN:=TrimRight(xvm_sN);
+     end;
   if xvm_sN[Length(xvm_sN)]='"' then
     Delete(xvm_sN, Length(xvm_sN), 1)
     else
@@ -513,19 +600,44 @@ end;
 
 // процедура удаления лишних сиволов и пробелов в обработчике загр. информации из файлов xvm
 procedure TXCTuner_Form1.search_info;
+var
+  p1, p2: Integer;
 begin
-  if search_sN[Length(search_sN)]=',' then
+  p1:=PosEx(',', search_sN, Pos(Search, search_sN));
+  p2:=PosEx(':', search_sN, Pos(Search, search_sN));
+  if p1<>0 then
     begin
-      Delete(search_sN, Length(search_sN), 1);
-      Delete(search_sN, 1, Pos(':', search_sN));
-      search_sN:=Trim(search_sN);
-    end
-    else
-      begin
-        Delete(search_sN, 1, Pos(':', search_sN));
-        search_sN:=Trim(search_sN);
-      end;
+      Delete(search_sN, p1, Length(search_sN));
+    end;
+  if p2<>0 then
+    begin
+      Delete(search_sN, 1, p2 + 1);
+    end;{ TODO : Доработать если что! }
+  search_sN:=Trim(search_sN);
 end;
+
+//////////////////////////////////////////////////
+// для нахождения выражений типа "выражение"
+//////////////////////////////////////////////////
+procedure TXCTuner_Form1.search_info_2;
+var
+  p3, p4: Integer;
+begin
+  p3:=PosEx(',', search_sN, Pos(Search, search_sN));
+  p4:=PosEx(':', search_sN, Pos(Search, search_sN));
+  if p3<>0 then
+    begin
+      Delete(search_sN, p3 - 1, Length(search_sN));
+    end;
+  if p4<>0 then
+    begin
+      Delete(search_sN, 1, p4 + 1);
+      search_sN:=Trim(search_sN);
+      Delete(search_sN, 1, 1);
+    end;{ TODO : Доработать если что! }
+end;
+//////////////////////////////////////////////////
+//////////////////////////////////////////////////
 
 procedure TXCTuner_Form1.battle_loading;
 begin
@@ -588,7 +700,7 @@ begin
   SpinEdit2.Value:=StrToInt(b_s8);
 
   if pos('false', b_s1)>0 then
-  RadioButton2.Checked:=True else RadioButton2.Checked:=True;
+  RadioButton2.Checked:=True else RadioButton1.Checked:=True;
 
   if pos('false', b_s2)>0 then
   RadioButton4.Checked:=True else RadioButton3.Checked:=True;
