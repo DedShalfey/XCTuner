@@ -1,12 +1,12 @@
 object XCTuner_Form1: TXCTuner_Form1
-  Left = 283
-  Height = 528
-  Top = 136
+  Left = 257
+  Height = 545
+  Top = 167
   Width = 1053
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'XCTuner'
-  ClientHeight = 528
+  ClientHeight = 545
   ClientWidth = 1053
   Icon.Data = {
     BE1000000000010001002020000001002000A810000016000000280000002000
@@ -151,11 +151,11 @@ object XCTuner_Form1: TXCTuner_Form1
   LCLVersion = '1.3'
   object Panel1: TPanel
     Left = 0
-    Height = 528
+    Height = 545
     Top = 0
     Width = 170
     Align = alLeft
-    ClientHeight = 528
+    ClientHeight = 545
     ClientWidth = 170
     Color = clGradientInactiveCaption
     ParentColor = False
@@ -189,7 +189,7 @@ object XCTuner_Form1: TXCTuner_Form1
       Left = 1
       Height = 46
       Hint = 'Закрыть программу'
-      Top = 481
+      Top = 498
       Width = 168
       Align = alBottom
       Caption = 'Выход  '
@@ -280,7 +280,7 @@ object XCTuner_Form1: TXCTuner_Form1
       Left = 1
       Height = 38
       Hint = 'Просмотреть сведения о программе...'
-      Top = 443
+      Top = 460
       Width = 168
       Align = alBottom
       Caption = 'About'
@@ -379,28 +379,28 @@ object XCTuner_Form1: TXCTuner_Form1
   end
   object PageControl1: TPageControl
     Left = 186
-    Height = 528
+    Height = 545
     Top = 0
     Width = 867
-    ActivePage = TabSheet1
+    ActivePage = TabSheet3
     Align = alClient
-    TabIndex = 0
+    TabIndex = 2
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Общие'
-      ClientHeight = 500
+      ClientHeight = 445
       ClientWidth = 859
       ParentFont = False
       TabVisible = False
       object ScrollBox2: TScrollBox
         Left = 0
-        Height = 500
+        Height = 445
         Top = 0
         Width = 859
         HorzScrollBar.Page = 838
-        VertScrollBar.Page = 496
+        VertScrollBar.Page = 441
         Align = alClient
-        ClientHeight = 496
+        ClientHeight = 441
         ClientWidth = 838
         TabOrder = 0
         OnMouseWheelDown = ScrollBox2MouseWheelDown
@@ -1159,21 +1159,27 @@ object XCTuner_Form1: TXCTuner_Form1
             object SpinEdit1: TSpinEdit
               Left = 150
               Height = 23
+              Hint = 'Задержка исчезновения панели в сек.!'
               Top = 7
               Width = 50
-              MaxValue = 15
-              MinValue = 1
+              Alignment = taCenter
+              MaxValue = 60
+              ParentShowHint = False
+              ShowHint = True
               TabOrder = 0
               Value = 15
             end
             object SpinEdit2: TSpinEdit
               Left = 150
               Height = 23
+              Hint = 'Увеличение панели в %'
               Top = 38
               Width = 50
+              Alignment = taCenter
               Increment = 10
               MaxValue = 300
-              MinValue = 100
+              ParentShowHint = False
+              ShowHint = True
               TabOrder = 1
               Value = 150
             end
@@ -1396,7 +1402,7 @@ object XCTuner_Form1: TXCTuner_Form1
     end
     object TabSheet2: TTabSheet
       Caption = 'Логин'
-      ClientHeight = 500
+      ClientHeight = 595
       ClientWidth = 859
       TabVisible = False
       object GroupBox20: TGroupBox
@@ -1532,6 +1538,7 @@ object XCTuner_Form1: TXCTuner_Form1
             Height = 23
             Top = 54
             Width = 64
+            Alignment = taCenter
             Increment = 10
             MaxValue = 1920
             MinValue = -1920
@@ -1543,6 +1550,7 @@ object XCTuner_Form1: TXCTuner_Form1
             Height = 23
             Top = 85
             Width = 64
+            Alignment = taCenter
             Increment = 10
             MaxValue = 1200
             MinValue = -1200
@@ -1752,19 +1760,19 @@ object XCTuner_Form1: TXCTuner_Form1
     end
     object TabSheet3: TTabSheet
       Caption = 'Ангар'
-      ClientHeight = 500
+      ClientHeight = 517
       ClientWidth = 859
       TabVisible = False
       object ScrollBox1: TScrollBox
         Left = 0
-        Height = 500
+        Height = 517
         Top = 0
         Width = 859
         HorzScrollBar.Page = 842
-        VertScrollBar.Page = 500
+        VertScrollBar.Page = 517
         Align = alClient
         BorderStyle = bsNone
-        ClientHeight = 500
+        ClientHeight = 517
         ClientWidth = 842
         Color = clDefault
         ParentColor = False
@@ -1772,7 +1780,7 @@ object XCTuner_Form1: TXCTuner_Form1
         OnMouseWheelDown = ScrollBox1MouseWheelDown
         OnMouseWheelUp = ScrollBox1MouseWheelUp
         object GroupBox21: TGroupBox
-          Left = 2
+          Left = 4
           Height = 224
           Top = 0
           Width = 596
@@ -1963,9 +1971,9 @@ object XCTuner_Form1: TXCTuner_Form1
           end
         end
         object GroupBox28: TGroupBox
-          Left = 2
+          Left = 4
           Height = 584
-          Top = 24
+          Top = 232
           Width = 596
           BorderSpacing.Bottom = 4
           Caption = 'Пинг До Серверов:'
@@ -2011,22 +2019,6 @@ object XCTuner_Form1: TXCTuner_Form1
             ClientHeight = 86
             ClientWidth = 268
             TabOrder = 1
-            object TrackBar1: TTrackBar
-              Cursor = crHandPoint
-              Left = 6
-              Height = 24
-              Top = 16
-              Width = 248
-              Max = 60000
-              Min = 100
-              OnChange = TrackBar1Change
-              PageSize = 1000
-              Position = 100
-              TickMarks = tmTopLeft
-              TickStyle = tsNone
-              ParentShowHint = False
-              TabOrder = 0
-            end
             object Label21: TLabel
               Left = 185
               Height = 15
@@ -2040,12 +2032,32 @@ object XCTuner_Form1: TXCTuner_Form1
               Height = 23
               Top = 50
               Width = 88
+              Alignment = taCenter
               Increment = 100
               MaxValue = 60000
               MinValue = 100
               OnChange = SpinEdit10Change
-              TabOrder = 1
+              TabOrder = 0
               Value = 100
+            end
+            object TrackBar1: TTrackBar
+              Cursor = crHandPoint
+              Left = 6
+              Height = 22
+              Top = 20
+              Width = 250
+              Max = 60000
+              Min = 100
+              OnChange = TrackBar1Change
+              PageSize = 1000
+              Position = 100
+              TickMarks = tmBoth
+              TickStyle = tsNone
+              BorderSpacing.CellAlignHorizontal = ccaCenter
+              BorderSpacing.CellAlignVertical = ccaCenter
+              OnMouseWheelDown = TrackBar1MouseWheelDown
+              OnMouseWheelUp = TrackBar1MouseWheelUp
+              TabOrder = 1
             end
           end
           object Label22: TLabel
@@ -2077,6 +2089,7 @@ object XCTuner_Form1: TXCTuner_Form1
             Height = 23
             Top = 192
             Width = 66
+            Alignment = taCenter
             Increment = 10
             MaxValue = 1920
             MinValue = -1920
@@ -2087,6 +2100,7 @@ object XCTuner_Form1: TXCTuner_Form1
             Height = 23
             Top = 226
             Width = 66
+            Alignment = taCenter
             Increment = 10
             MaxValue = 1920
             MinValue = -1920
@@ -2097,6 +2111,7 @@ object XCTuner_Form1: TXCTuner_Form1
             Height = 23
             Top = 261
             Width = 66
+            Alignment = taCenter
             TabOrder = 4
           end
           object GroupBox31: TGroupBox
@@ -2111,28 +2126,29 @@ object XCTuner_Form1: TXCTuner_Form1
             object TrackBar2: TTrackBar
               Cursor = crHandPoint
               Left = 6
-              Height = 15
+              Height = 22
               Top = 20
               Width = 192
               Min = 1
               OnChange = TrackBar2Change
               PageSize = 1
               Position = 1
-              TickMarks = tmTopLeft
+              TickMarks = tmBoth
               TickStyle = tsNone
               BorderSpacing.CellAlignHorizontal = ccaCenter
               BorderSpacing.CellAlignVertical = ccaCenter
-              TabOrder = 0
+              TabOrder = 1
             end
             object SpinEdit8: TSpinEdit
               Left = 206
               Height = 23
               Top = 17
               Width = 50
+              Alignment = taCenter
               MaxValue = 10
               MinValue = 1
               OnChange = SpinEdit8Change
-              TabOrder = 1
+              TabOrder = 0
               Value = 1
             end
           end
@@ -2145,44 +2161,45 @@ object XCTuner_Form1: TXCTuner_Form1
             ClientHeight = 54
             ClientWidth = 268
             TabOrder = 6
+            object SpinEdit9: TSpinEdit
+              Left = 206
+              Height = 23
+              Top = 17
+              Width = 50
+              Alignment = taCenter
+              MaxValue = 30
+              MinValue = -10
+              OnChange = SpinEdit9Change
+              TabOrder = 0
+            end
             object TrackBar3: TTrackBar
               Cursor = crHandPoint
               Left = 6
-              Height = 15
+              Height = 22
               Top = 20
               Width = 192
               Max = 30
               Min = -10
               OnChange = TrackBar3Change
               PageSize = 1
-              Position = 0
-              TickMarks = tmTopLeft
+              Position = 1
+              SelStart = -10
+              TickMarks = tmBoth
               TickStyle = tsNone
-              TabOrder = 0
-            end
-            object SpinEdit9: TSpinEdit
-              Left = 206
-              Height = 23
-              Top = 17
-              Width = 50
-              MaxValue = 30
-              MinValue = -10
-              OnChange = SpinEdit9Change
+              BorderSpacing.CellAlignHorizontal = ccaCenter
+              BorderSpacing.CellAlignVertical = ccaCenter
               TabOrder = 1
             end
           end
           object GroupBox33: TGroupBox
-            Cursor = crHelp
             Left = 302
             Height = 554
-            Hint = 'Прототип! - Пока не работает!'
             Top = 8
             Width = 280
             Caption = 'Стиль текста:'
             ClientHeight = 536
             ClientWidth = 276
             ParentShowHint = False
-            ShowHint = True
             TabOrder = 7
             object Label25: TLabel
               Left = 14
@@ -2214,6 +2231,7 @@ object XCTuner_Form1: TXCTuner_Form1
               Height = 23
               Top = 65
               Width = 66
+              Alignment = taCenter
               MaxValue = 200
               MinValue = 6
               TabOrder = 1
@@ -2236,17 +2254,14 @@ object XCTuner_Form1: TXCTuner_Form1
               TabOrder = 3
             end
             object GroupBox34: TGroupBox
-              Cursor = crHelp
               Left = 14
               Height = 240
-              Hint = 'Прототип! - Пока не работает!'
               Top = 288
               Width = 248
               Caption = 'Параметры Тени:'
               ClientHeight = 222
               ClientWidth = 244
               ParentShowHint = False
-              ShowHint = True
               TabOrder = 4
               object RadioButton45: TRadioButton
                 Cursor = crHandPoint
@@ -2277,122 +2292,212 @@ object XCTuner_Form1: TXCTuner_Form1
                 ParentColor = False
               end
               object Label28: TLabel
-                Left = 21
+                Left = 51
                 Height = 15
-                Top = 72
+                Top = 75
                 Width = 59
                 Caption = 'Дистанция'
                 ParentColor = False
               end
               object Label29: TLabel
-                Left = 21
+                Left = 51
                 Height = 15
-                Top = 100
+                Top = 104
                 Width = 26
                 Caption = 'Угол'
                 ParentColor = False
               end
               object Label30: TLabel
-                Left = 21
+                Left = 51
                 Height = 15
-                Top = 131
+                Top = 133
                 Width = 79
                 Caption = 'Прозрачность'
                 ParentColor = False
               end
               object Label31: TLabel
-                Left = 21
+                Left = 51
                 Height = 15
-                Top = 160
+                Top = 163
                 Width = 54
                 Caption = 'Размытие'
                 ParentColor = False
               end
               object Label32: TLabel
-                Left = 22
+                Left = 52
                 Height = 15
-                Top = 188
+                Top = 191
                 Width = 84
                 Caption = 'Интенсивность'
                 ParentColor = False
-              end
-              object ColorButton1: TColorButton
-                Cursor = crHandPoint
-                Left = 167
-                Height = 25
-                Top = 35
-                Width = 66
-                BorderWidth = 2
-                ButtonColorSize = 16
-                ButtonColor = clBlack
-                ColorDialog = ColorDialog1
-                OnColorChanged = ColorButton1ColorChanged
               end
               object Edit2: TEdit
                 Left = 66
                 Height = 23
                 Top = 37
                 Width = 80
+                Alignment = taCenter
+                OnExit = Edit2Exit
                 TabOrder = 2
                 Text = '#000000'
               end
               object SpinEdit12: TSpinEdit
-                Left = 167
+                Left = 142
                 Height = 23
                 Hint = 'Диапазон: 0 - 10'
-                Top = 70
+                Top = 72
                 Width = 66
+                Alignment = taCenter
                 MaxValue = 10
                 ParentShowHint = False
                 ShowHint = True
                 TabOrder = 3
               end
               object SpinEdit13: TSpinEdit
-                Left = 167
+                Left = 142
                 Height = 23
                 Hint = 'Диапазон: 0 - 359'
-                Top = 98
+                Top = 100
                 Width = 66
+                Alignment = taCenter
                 MaxValue = 359
                 ParentShowHint = False
                 ShowHint = True
                 TabOrder = 4
               end
               object SpinEdit14: TSpinEdit
-                Left = 167
+                Left = 142
                 Height = 23
                 Hint = 'Диапазон: 0 - 100'
-                Top = 128
+                Top = 130
                 Width = 66
+                Alignment = taCenter
                 ParentShowHint = False
                 ShowHint = True
                 TabOrder = 5
               end
               object SpinEdit15: TSpinEdit
-                Left = 167
+                Left = 142
                 Height = 23
                 Hint = 'Диапазон: 0 - 10'
-                Top = 157
+                Top = 159
                 Width = 66
+                Alignment = taCenter
                 MaxValue = 10
                 ParentShowHint = False
                 ShowHint = True
                 TabOrder = 6
               end
               object SpinEdit16: TSpinEdit
-                Left = 167
+                Left = 142
                 Height = 23
                 Hint = 'Диапазон: 0 - 1000'
-                Top = 185
+                Top = 187
                 Width = 66
+                Alignment = taCenter
                 MaxValue = 1000
                 ParentShowHint = False
                 ShowHint = True
                 TabOrder = 7
               end
+              object mbColorPreview5: TmbColorPreview
+                Left = 155
+                Height = 23
+                Top = 37
+                Width = 23
+              end
+              object BitBtn9: TBitBtn
+                Cursor = crHandPoint
+                Left = 184
+                Height = 34
+                Hint = 'Выбрать цвет'
+                Top = 32
+                Width = 54
+                AutoSize = True
+                Glyph.Data = {
+                  36090000424D3609000000000000360000002800000018000000180000000100
+                  2000000000000009000064000000640000000000000000000000FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008EBADDFF86B4
+                  D8FF6085A5FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0097BFDFFF88B6
+                  DBFF6E96B8FF4B6A84FF1A2630FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF406B77FF9DC3E1FF8EBA
+                  DDFF87B5DAFF688FB0FF4A6881FF3B5367FF152029FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF365B66FF7EA9C7FFACCC
+                  E6FF86B1D3FF92B8D6FF749FC2FF6185A1FF4C6B83FF24323DFF2C2D21FFEC7E
+                  E0FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF7ED3EAFF5F8398FFB6D2
+                  E8FFA5C8E3FF96BEDEFFA1C5E0FF80ACD0FF739CBDFF4E6C84FF475658FFEC7E
+                  E0FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF6097ABFF98BA
+                  D5FFB9D4E9FFACCCE5FF8EBADCFF9ABDDAFF779AB7FF5D788AFF364A56FF5B60
+                  49FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF6AAEC3FF8FA9
+                  BEFFB7D2E7FF9CC1DFFFA7C5DEFF7FA6C6FF86B0D3FF465D6FFF1E2426FF7275
+                  57FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF7ED2EAFF768D
+                  A0FF90B1CCFF96B8D3FF85ACCAFF90B7D7FF415A6FFF38464AFF435050FF7174
+                  56FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF313F
+                  4AFF8CA6BAFF9ABAD4FF6E96B8FF4B6374FF50687DFF384E60FF14181AFF4A4C
+                  38FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF4652
+                  45FF64808DFF6E8C9AFF86AFCFFF3E5767FF303932FF2A363AFF1A242AFFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FF9DB79AFF788D78FF7D9CB2FF6A90AFFF253034FF6F6E42FF525130FFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FFB8D6B4FFB8D6B4FF647870FF88AECCFF4C6B84FFEE8D4CFFEE8D4CFFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FFB8D6B4FFB8D6B4FFB2CFAEFF62797EFF7AA1C0FF506264FFEE8D4CFFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FFB8D6B4FFB8D6B4FFB8D6B4FF95AE92FF6E8CA1FF648AA9FF6F7350FFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FF000000FF000000FF67859BFF374A57FF0000
+                  00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF525734FF435050FF7877
+                  28FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF929131FF7F7E2BFF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+                }
+                OnClick = BitBtn9Click
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 9
+              end
             end
             object GroupBox37: TGroupBox
-              Left = 14
+              Left = 12
               Height = 184
               Top = 96
               Width = 248
@@ -2401,116 +2506,456 @@ object XCTuner_Form1: TXCTuner_Form1
               ClientWidth = 244
               TabOrder = 5
               object Label36: TLabel
-                Left = 6
+                Left = 11
                 Height = 15
-                Top = 13
+                Top = 16
                 Width = 58
                 Caption = 'Отличный'
                 ParentColor = False
               end
               object Edit3: TEdit
-                Left = 78
+                Left = 83
                 Height = 23
-                Top = 8
-                Width = 80
+                Top = 11
+                Width = 68
+                Alignment = taCenter
+                OnExit = Edit3Exit
                 TabOrder = 0
                 Text = '#000000'
               end
-              object ColorButton2: TColorButton
-                Cursor = crHandPoint
-                Left = 167
-                Height = 32
-                Top = 3
-                Width = 66
-                BorderWidth = 2
-                ButtonColorSize = 16
-                ButtonColor = clBlack
-                ColorDialog = ColorDialog1
-                OnColorChanged = ColorButton2ColorChanged
-              end
               object Label37: TLabel
-                Left = 6
+                Left = 11
                 Height = 15
-                Top = 50
+                Top = 53
                 Width = 53
                 Caption = 'Хороший'
                 ParentColor = False
               end
               object Edit4: TEdit
-                Left = 78
+                Left = 83
                 Height = 23
-                Top = 45
-                Width = 80
+                Top = 48
+                Width = 68
+                Alignment = taCenter
+                OnExit = Edit4Exit
                 TabOrder = 1
                 Text = '#000000'
               end
-              object ColorButton3: TColorButton
-                Cursor = crHandPoint
-                Left = 167
-                Height = 32
-                Top = 40
-                Width = 66
-                BorderWidth = 2
-                ButtonColorSize = 16
-                ButtonColor = clBlack
-                ColorDialog = ColorDialog1
-                OnColorChanged = ColorButton2ColorChanged
-              end
               object Label38: TLabel
-                Left = 6
+                Left = 11
                 Height = 15
-                Top = 88
+                Top = 87
                 Width = 47
                 Caption = 'Так себе'
                 ParentColor = False
               end
               object Edit5: TEdit
-                Left = 78
+                Left = 83
                 Height = 23
-                Top = 85
-                Width = 80
+                Top = 83
+                Width = 68
+                Alignment = taCenter
+                OnExit = Edit5Exit
                 TabOrder = 2
                 Text = '#000000'
               end
-              object ColorButton4: TColorButton
-                Cursor = crHandPoint
-                Left = 167
-                Height = 32
-                Top = 80
-                Width = 66
-                BorderWidth = 2
-                ButtonColorSize = 16
-                ButtonColor = clBlack
-                ColorDialog = ColorDialog1
-                OnColorChanged = ColorButton2ColorChanged
-              end
               object Label39: TLabel
-                Left = 6
+                Left = 14
                 Height = 15
-                Top = 130
+                Top = 124
                 Width = 42
                 Caption = 'Плохой'
                 ParentColor = False
               end
               object Edit6: TEdit
-                Left = 78
+                Left = 83
                 Height = 23
-                Top = 125
-                Width = 80
+                Top = 120
+                Width = 68
+                Alignment = taCenter
+                OnExit = Edit6Exit
                 TabOrder = 3
                 Text = '#000000'
               end
-              object ColorButton5: TColorButton
-                Cursor = crHandPoint
-                Left = 167
-                Height = 32
+              object mbColorPreview1: TmbColorPreview
+                Left = 157
+                Height = 23
+                Top = 11
+                Width = 23
+              end
+              object mbColorPreview2: TmbColorPreview
+                Left = 157
+                Height = 23
+                Top = 48
+                Width = 23
+              end
+              object mbColorPreview3: TmbColorPreview
+                Left = 157
+                Height = 23
+                Top = 83
+                Width = 23
+              end
+              object mbColorPreview4: TmbColorPreview
+                Left = 157
+                Height = 23
                 Top = 120
-                Width = 66
-                BorderWidth = 2
-                ButtonColorSize = 16
-                ButtonColor = clBlack
-                ColorDialog = ColorDialog1
-                OnColorChanged = ColorButton2ColorChanged
+                Width = 23
+              end
+              object BitBtn5: TBitBtn
+                Cursor = crHandPoint
+                Left = 186
+                Height = 34
+                Hint = 'Выбрать цвет'
+                Top = 5
+                Width = 54
+                AutoSize = True
+                Glyph.Data = {
+                  36090000424D3609000000000000360000002800000018000000180000000100
+                  2000000000000009000064000000640000000000000000000000FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008EBADDFF86B4
+                  D8FF6085A5FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0097BFDFFF88B6
+                  DBFF6E96B8FF4B6A84FF1A2630FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF406B77FF9DC3E1FF8EBA
+                  DDFF87B5DAFF688FB0FF4A6881FF3B5367FF152029FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF365B66FF7EA9C7FFACCC
+                  E6FF86B1D3FF92B8D6FF749FC2FF6185A1FF4C6B83FF24323DFF2C2D21FFEC7E
+                  E0FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF7ED3EAFF5F8398FFB6D2
+                  E8FFA5C8E3FF96BEDEFFA1C5E0FF80ACD0FF739CBDFF4E6C84FF475658FFEC7E
+                  E0FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF6097ABFF98BA
+                  D5FFB9D4E9FFACCCE5FF8EBADCFF9ABDDAFF779AB7FF5D788AFF364A56FF5B60
+                  49FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF6AAEC3FF8FA9
+                  BEFFB7D2E7FF9CC1DFFFA7C5DEFF7FA6C6FF86B0D3FF465D6FFF1E2426FF7275
+                  57FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF7ED2EAFF768D
+                  A0FF90B1CCFF96B8D3FF85ACCAFF90B7D7FF415A6FFF38464AFF435050FF7174
+                  56FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF313F
+                  4AFF8CA6BAFF9ABAD4FF6E96B8FF4B6374FF50687DFF384E60FF14181AFF4A4C
+                  38FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF4652
+                  45FF64808DFF6E8C9AFF86AFCFFF3E5767FF303932FF2A363AFF1A242AFFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FF9DB79AFF788D78FF7D9CB2FF6A90AFFF253034FF6F6E42FF525130FFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FFB8D6B4FFB8D6B4FF647870FF88AECCFF4C6B84FFEE8D4CFFEE8D4CFFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FFB8D6B4FFB8D6B4FFB2CFAEFF62797EFF7AA1C0FF506264FFEE8D4CFFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FFB8D6B4FFB8D6B4FFB8D6B4FF95AE92FF6E8CA1FF648AA9FF6F7350FFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FF000000FF000000FF67859BFF374A57FF0000
+                  00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF525734FF435050FF7877
+                  28FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF929131FF7F7E2BFF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+                }
+                OnClick = BitBtn5Click
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 8
+              end
+              object BitBtn6: TBitBtn
+                Cursor = crHandPoint
+                Left = 186
+                Height = 34
+                Hint = 'Выбрать цвет'
+                Top = 41
+                Width = 54
+                AutoSize = True
+                Glyph.Data = {
+                  36090000424D3609000000000000360000002800000018000000180000000100
+                  2000000000000009000064000000640000000000000000000000FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008EBADDFF86B4
+                  D8FF6085A5FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0097BFDFFF88B6
+                  DBFF6E96B8FF4B6A84FF1A2630FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF406B77FF9DC3E1FF8EBA
+                  DDFF87B5DAFF688FB0FF4A6881FF3B5367FF152029FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF365B66FF7EA9C7FFACCC
+                  E6FF86B1D3FF92B8D6FF749FC2FF6185A1FF4C6B83FF24323DFF2C2D21FFEC7E
+                  E0FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF7ED3EAFF5F8398FFB6D2
+                  E8FFA5C8E3FF96BEDEFFA1C5E0FF80ACD0FF739CBDFF4E6C84FF475658FFEC7E
+                  E0FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF6097ABFF98BA
+                  D5FFB9D4E9FFACCCE5FF8EBADCFF9ABDDAFF779AB7FF5D788AFF364A56FF5B60
+                  49FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF6AAEC3FF8FA9
+                  BEFFB7D2E7FF9CC1DFFFA7C5DEFF7FA6C6FF86B0D3FF465D6FFF1E2426FF7275
+                  57FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF7ED2EAFF768D
+                  A0FF90B1CCFF96B8D3FF85ACCAFF90B7D7FF415A6FFF38464AFF435050FF7174
+                  56FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF313F
+                  4AFF8CA6BAFF9ABAD4FF6E96B8FF4B6374FF50687DFF384E60FF14181AFF4A4C
+                  38FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF4652
+                  45FF64808DFF6E8C9AFF86AFCFFF3E5767FF303932FF2A363AFF1A242AFFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FF9DB79AFF788D78FF7D9CB2FF6A90AFFF253034FF6F6E42FF525130FFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FFB8D6B4FFB8D6B4FF647870FF88AECCFF4C6B84FFEE8D4CFFEE8D4CFFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FFB8D6B4FFB8D6B4FFB2CFAEFF62797EFF7AA1C0FF506264FFEE8D4CFFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FFB8D6B4FFB8D6B4FFB8D6B4FF95AE92FF6E8CA1FF648AA9FF6F7350FFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FF000000FF000000FF67859BFF374A57FF0000
+                  00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF525734FF435050FF7877
+                  28FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF929131FF7F7E2BFF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+                }
+                OnClick = BitBtn6Click
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 9
+              end
+              object BitBtn7: TBitBtn
+                Cursor = crHandPoint
+                Left = 186
+                Height = 34
+                Hint = 'Выбрать цвет'
+                Top = 78
+                Width = 54
+                AutoSize = True
+                Glyph.Data = {
+                  36090000424D3609000000000000360000002800000018000000180000000100
+                  2000000000000009000064000000640000000000000000000000FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008EBADDFF86B4
+                  D8FF6085A5FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0097BFDFFF88B6
+                  DBFF6E96B8FF4B6A84FF1A2630FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF406B77FF9DC3E1FF8EBA
+                  DDFF87B5DAFF688FB0FF4A6881FF3B5367FF152029FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF365B66FF7EA9C7FFACCC
+                  E6FF86B1D3FF92B8D6FF749FC2FF6185A1FF4C6B83FF24323DFF2C2D21FFEC7E
+                  E0FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF7ED3EAFF5F8398FFB6D2
+                  E8FFA5C8E3FF96BEDEFFA1C5E0FF80ACD0FF739CBDFF4E6C84FF475658FFEC7E
+                  E0FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF6097ABFF98BA
+                  D5FFB9D4E9FFACCCE5FF8EBADCFF9ABDDAFF779AB7FF5D788AFF364A56FF5B60
+                  49FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF6AAEC3FF8FA9
+                  BEFFB7D2E7FF9CC1DFFFA7C5DEFF7FA6C6FF86B0D3FF465D6FFF1E2426FF7275
+                  57FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF7ED2EAFF768D
+                  A0FF90B1CCFF96B8D3FF85ACCAFF90B7D7FF415A6FFF38464AFF435050FF7174
+                  56FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF313F
+                  4AFF8CA6BAFF9ABAD4FF6E96B8FF4B6374FF50687DFF384E60FF14181AFF4A4C
+                  38FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF4652
+                  45FF64808DFF6E8C9AFF86AFCFFF3E5767FF303932FF2A363AFF1A242AFFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FF9DB79AFF788D78FF7D9CB2FF6A90AFFF253034FF6F6E42FF525130FFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FFB8D6B4FFB8D6B4FF647870FF88AECCFF4C6B84FFEE8D4CFFEE8D4CFFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FFB8D6B4FFB8D6B4FFB2CFAEFF62797EFF7AA1C0FF506264FFEE8D4CFFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FFB8D6B4FFB8D6B4FFB8D6B4FF95AE92FF6E8CA1FF648AA9FF6F7350FFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FF000000FF000000FF67859BFF374A57FF0000
+                  00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF525734FF435050FF7877
+                  28FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF929131FF7F7E2BFF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+                }
+                OnClick = BitBtn7Click
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 10
+              end
+              object BitBtn8: TBitBtn
+                Cursor = crHandPoint
+                Left = 186
+                Height = 34
+                Hint = 'Выбрать цвет'
+                Top = 114
+                Width = 54
+                AutoSize = True
+                Glyph.Data = {
+                  36090000424D3609000000000000360000002800000018000000180000000100
+                  2000000000000009000064000000640000000000000000000000FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008EBADDFF86B4
+                  D8FF6085A5FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0097BFDFFF88B6
+                  DBFF6E96B8FF4B6A84FF1A2630FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF406B77FF9DC3E1FF8EBA
+                  DDFF87B5DAFF688FB0FF4A6881FF3B5367FF152029FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF365B66FF7EA9C7FFACCC
+                  E6FF86B1D3FF92B8D6FF749FC2FF6185A1FF4C6B83FF24323DFF2C2D21FFEC7E
+                  E0FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF7ED3EAFF5F8398FFB6D2
+                  E8FFA5C8E3FF96BEDEFFA1C5E0FF80ACD0FF739CBDFF4E6C84FF475658FFEC7E
+                  E0FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF6097ABFF98BA
+                  D5FFB9D4E9FFACCCE5FF8EBADCFF9ABDDAFF779AB7FF5D788AFF364A56FF5B60
+                  49FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF6AAEC3FF8FA9
+                  BEFFB7D2E7FF9CC1DFFFA7C5DEFF7FA6C6FF86B0D3FF465D6FFF1E2426FF7275
+                  57FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF7ED2EAFF768D
+                  A0FF90B1CCFF96B8D3FF85ACCAFF90B7D7FF415A6FFF38464AFF435050FF7174
+                  56FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF313F
+                  4AFF8CA6BAFF9ABAD4FF6E96B8FF4B6374FF50687DFF384E60FF14181AFF4A4C
+                  38FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF4652
+                  45FF64808DFF6E8C9AFF86AFCFFF3E5767FF303932FF2A363AFF1A242AFFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FF9DB79AFF788D78FF7D9CB2FF6A90AFFF253034FF6F6E42FF525130FFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FFB8D6B4FFB8D6B4FF647870FF88AECCFF4C6B84FFEE8D4CFFEE8D4CFFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FFB8D6B4FFB8D6B4FFB2CFAEFF62797EFF7AA1C0FF506264FFEE8D4CFFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                  00FFB8D6B4FFB8D6B4FFB8D6B4FF95AE92FF6E8CA1FF648AA9FF6F7350FFEE8D
+                  4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FF000000FF000000FF67859BFF374A57FF0000
+                  00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF525734FF435050FF7877
+                  28FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF929131FF7F7E2BFF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                  00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                  32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                  FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+                }
+                OnClick = BitBtn8Click
+                ParentShowHint = False
+                ShowHint = True
+                TabOrder = 11
               end
             end
             object Label40: TLabel
@@ -2533,17 +2978,14 @@ object XCTuner_Form1: TXCTuner_Form1
             end
           end
           object GroupBox35: TGroupBox
-            Cursor = crHelp
             Left = 14
             Height = 90
-            Hint = 'Прототип! - Пока не работает!'
             Top = 472
             Width = 272
             Caption = 'Пороговые значения (качество пинга):'
             ClientHeight = 72
             ClientWidth = 268
             ParentShowHint = False
-            ShowHint = True
             TabOrder = 8
             object Label33: TLabel
               Left = 14
@@ -2556,7 +2998,7 @@ object XCTuner_Form1: TXCTuner_Form1
             object Label34: TLabel
               Left = 14
               Height = 15
-              Top = 32
+              Top = 34
               Width = 53
               Caption = 'Хороший'
               ParentColor = False
@@ -2564,7 +3006,7 @@ object XCTuner_Form1: TXCTuner_Form1
             object Label35: TLabel
               Left = 146
               Height = 15
-              Top = 21
+              Top = 19
               Width = 47
               Caption = 'Так себе'
               ParentColor = False
@@ -2575,6 +3017,7 @@ object XCTuner_Form1: TXCTuner_Form1
               Hint = 'Диапазон: 1 - 500'
               Top = 3
               Width = 50
+              Alignment = taCenter
               MaxValue = 500
               MinValue = 1
               ParentShowHint = False
@@ -2588,6 +3031,7 @@ object XCTuner_Form1: TXCTuner_Form1
               Hint = 'Диапазон: 1 - 500'
               Top = 32
               Width = 50
+              Alignment = taCenter
               MaxValue = 500
               MinValue = 1
               ParentShowHint = False
@@ -2601,6 +3045,7 @@ object XCTuner_Form1: TXCTuner_Form1
               Hint = 'Диапазон: 1 - 500'
               Top = 16
               Width = 50
+              Alignment = taCenter
               MaxValue = 500
               MinValue = 1
               ParentShowHint = False
@@ -2794,7 +3239,7 @@ object XCTuner_Form1: TXCTuner_Form1
   object BitBtn4: TBitBtn
     Cursor = crHandPoint
     Left = 170
-    Height = 528
+    Height = 545
     Top = 0
     Width = 16
     Align = alLeft
@@ -2841,32 +3286,5 @@ object XCTuner_Form1: TXCTuner_Form1
       FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
       FF00FFFFFF00FFFFFF00FFFFFF00
     }
-  end
-  object ColorDialog1: TColorDialog
-    Color = clBlack
-    CustomColors.Strings = (
-      'ColorA=000000'
-      'ColorB=000080'
-      'ColorC=008000'
-      'ColorD=008080'
-      'ColorE=800000'
-      'ColorF=800080'
-      'ColorG=808000'
-      'ColorH=808080'
-      'ColorI=C0C0C0'
-      'ColorJ=0000FF'
-      'ColorK=00FF00'
-      'ColorL=00FFFF'
-      'ColorM=FF0000'
-      'ColorN=FF00FF'
-      'ColorO=FFFF00'
-      'ColorP=FFFFFF'
-      'ColorQ=C0DCC0'
-      'ColorR=F0CAA6'
-      'ColorS=F0FBFF'
-      'ColorT=A4A0A0'
-    )
-    left = 48
-    top = 392
   end
 end

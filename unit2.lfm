@@ -145,7 +145,7 @@ object About: TAbout
     0000000000000000000000000000000000000000000000000000000000000000
     0000
   }
-  Position = poScreenCenter
+  Position = poMainFormCenter
   LCLVersion = '1.3'
   object BitBtn1: TBitBtn
     Cursor = crHandPoint
@@ -425,7 +425,7 @@ object About: TAbout
     Height = 15
     Top = 112
     Width = 84
-    Caption = 'Версия: 0.1.6.96'
+    Caption = 'Версия: 0.1.7.49'
     ParentColor = False
   end
   object Label3: TLabel

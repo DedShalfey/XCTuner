@@ -97,9 +97,9 @@ begin
   xvm.Delete(xvm8_SL);
   xvm.Insert(xvm8_SL, xvm_s8_2);
 
-  xvm.SaveToFile(ExtractFilePath(ParamStr(0))+'@xvm.xc');
+  xvm.SaveToFile(dir_xvm+xvm_file_name);
   xvm.Clear;
-  xvm.LoadFromFile(ExtractFilePath(ParamStr(0))+'@xvm.xc');
+  xvm.LoadFromFile(dir_xvm+xvm_file_name);
   XCTuner_Form1.xvm_loading();
 
   Close;
