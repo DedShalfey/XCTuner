@@ -575,15 +575,15 @@ begin
   // Проверяем присутствие файла @xvm.xc в директории с программой
   activ_conf();
   activ_config:=StringReplace(activ_config, '/', '\', [rfReplaceAll, rfIgnoreCase]);
+  // заносим путь к директории конфига
+  dir_xvm:=ExtractFilePath(ParamStr(0))+'\'+activ_config;
 
-  if ((FileExists(ExtractFilePath(ParamStr(0))+'\'+activ_config+'\'+xvm_file_name)) and
-  (FileExists(ExtractFilePath(ParamStr(0))+'\'+activ_config+'\'+'battle.xc')) and
-  (FileExists(ExtractFilePath(ParamStr(0))+'\'+activ_config+'\'+'login.xc')) and
-  (FileExists(ExtractFilePath(ParamStr(0))+'\'+activ_config+'\'+'hangar.xc')) and
-  (FileExists(ExtractFilePath(ParamStr(0))+'\'+activ_config+'\'+'rating.xc'))) then
+  if ((FileExists(dir_xvm+'\'+xvm_file_name)) and
+  (FileExists(dir_xvm+'\'+'battle.xc')) and
+  (FileExists(dir_xvm+'\'+'login.xc')) and
+  (FileExists(dir_xvm+'\'+'hangar.xc')) and
+  (FileExists(dir_xvm+'\'+'rating.xc'))) then
     begin
-      // заносим путь к директории конфига
-      dir_xvm:=ExtractFilePath(ParamStr(0))+'\'+activ_config;
       // Создаем объекты типа TStringlist
       xvm:=TStringList.Create;
       xvm:=TStringList.Create;
@@ -593,18 +593,22 @@ begin
       rating:=TStringList.Create;
       temp_list:=TStringList.Create;
 
-      xvm.LoadFromFile(ExtractFilePath(ParamStr(0))+'\'+activ_config+'\'+xvm_file_name);
-      battle.LoadFromFile(ExtractFilePath(ParamStr(0))+'\'+activ_config+'\'+'battle.xc');
-      login.LoadFromFile(ExtractFilePath(ParamStr(0))+'\'+activ_config+'\'+'login.xc');
-      login.LoadFromFile(ExtractFilePath(ParamStr(0))+'\'+activ_config+'\'+'hangar.xc');
-      rating.LoadFromFile(ExtractFilePath(ParamStr(0))+'\'+activ_config+'\'+'rating.xc');
+      // Загрузка в соответствующие объекты файлы
+      xvm.LoadFromFile(dir_xvm+'\'+xvm_file_name);
+      battle.LoadFromFile(dir_xvm+'\'+'battle.xc');
+      login.LoadFromFile(dir_xvm+'\'+'login.xc');
+      login.LoadFromFile(dir_xvm+'\'+'hangar.xc');
+      rating.LoadFromFile(dir_xvm+'\'+'rating.xc');
 
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.7.49';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.7.54';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       BitBtn1.Click;
-      ComboBox1.Items := Screen.Fonts; // загружает в ComboBox все шрифты что есть в windows
+
+      ComboBox1.Items:=Screen.Fonts;            // загружает в ComboBox все шрифты что есть в windows
+      ComboBox1.Items.Insert(0, '$FieldFont');  // загружает в ComboBox имя деф. шрифта XVM
+      ComboBox1.Items.Insert(1, '$TextFont');   // загружает в ComboBox имя деф. шрифта клиента танков
 
       xvm_loading();
       battle_loading();

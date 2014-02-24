@@ -22,7 +22,7 @@
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="1"/>
       <RevisionNr Value="7"/>
-      <BuildNr Value="50"/>
+      <BuildNr Value="55"/>
       <Language Value="0419"/>
       <Attributes pvaPreRelease="True"/>
       <StringTable FileDescription="XCTuner" LegalCopyright="Ded_Shalfey" ProductName="XCTuner" ProductVersion=""/>
@@ -38,22 +38,25 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="5">
+    <RequiredPackages Count="6">
       <Item1>
-        <PackageName Value="RunTimeTypeInfoControls"/>
+        <PackageName Value="pl_cindy"/>
       </Item1>
       <Item2>
-        <PackageName Value="pl_excontrols"/>
+        <PackageName Value="RunTimeTypeInfoControls"/>
       </Item2>
       <Item3>
-        <PackageName Value="pl_colorlib"/>
+        <PackageName Value="pl_excontrols"/>
       </Item3>
       <Item4>
-        <PackageName Value="pl_visualplanit"/>
+        <PackageName Value="pl_colorlib"/>
       </Item4>
       <Item5>
-        <PackageName Value="LCL"/>
+        <PackageName Value="pl_visualplanit"/>
       </Item5>
+      <Item6>
+        <PackageName Value="LCL"/>
+      </Item6>
     </RequiredPackages>
     <Units Count="5">
       <Unit0>
@@ -105,7 +108,18 @@
       <IncludeFiles Value="$(ProjOutDir)"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
+    <CodeGeneration>
+      <SmartLinkUnit Value="True"/>
+      <Optimizations>
+        <OptimizationLevel Value="3"/>
+      </Optimizations>
+      <SmallerCode Value="True"/>
+    </CodeGeneration>
     <Linking>
+      <Debugging>
+        <GenerateDebugInfo Value="False"/>
+      </Debugging>
+      <LinkSmart Value="True"/>
       <Options>
         <Win32>
           <GraphicApplication Value="True"/>
