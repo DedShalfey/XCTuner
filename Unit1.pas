@@ -248,8 +248,10 @@ type
     procedure TrackBar2Change(Sender: TObject);
     procedure TrackBar3Change(Sender: TObject);
   private
-    function ColorToHex(rgb:TColor):String;
-    function HexToTColor(myColor : string): TColor;
+    function ColorToHex(rgb: TColor):String;
+    function HexToTColor(myColor: string): TColor;
+    function DelStartEnd(InputStr: String): String;
+    function RecStartEnd(RecStr: String): String;
     { private declarations }
   public
     procedure SearchLine_my();
@@ -257,7 +259,6 @@ type
     procedure xvm_info();
     procedure activ_conf();
     procedure search_info();
-    procedure search_info_2();
     procedure xvm_loading();
     procedure battle_loading();
     procedure battle_save();
@@ -479,6 +480,7 @@ begin
   Edit1.Text:=ComboBox1.Text;
 end;
 
+// события при изменение Edit2 при выходе из поля
 procedure TXCTuner_Form1.Edit2Exit(Sender: TObject);
 begin
   ChangeEdit:=Length(Edit2.Text);
@@ -493,6 +495,7 @@ begin
     end;
 end;
 
+// события при изменение Edit3 при выходе из поля
 procedure TXCTuner_Form1.Edit3Exit(Sender: TObject);
 begin
   ChangeEdit:=Length(Edit3.Text);
@@ -507,6 +510,7 @@ begin
     end;
 end;
 
+// события при изменение Edit4 при выходе из поля
 procedure TXCTuner_Form1.Edit4Exit(Sender: TObject);
 begin
   ChangeEdit:=Length(Edit4.Text);
@@ -521,6 +525,7 @@ begin
     end;
 end;
 
+// события при изменение Edit5 при выходе из поля
 procedure TXCTuner_Form1.Edit5Exit(Sender: TObject);
 begin
   ChangeEdit:=Length(Edit5.Text);
@@ -535,6 +540,7 @@ begin
     end;
 end;
 
+// события при изменение Edit6 при выходе из поля
 procedure TXCTuner_Form1.Edit6Exit(Sender: TObject);
 begin
   ChangeEdit:=Length(Edit6.Text);
@@ -737,6 +743,37 @@ begin
   result := rColor;
 end;
 
+// Функция удаления начальных " или "0x и конечного "
+function TXCTuner_Form1.DelStartEnd(InputStr: String): String;
+begin
+  if pos('"0x', InputStr)<>0 then
+    begin
+      Delete(InputStr, 1, 3);
+      Delete(InputStr, Length(InputStr), 1);
+      Result:=InputStr;
+    end else
+    begin
+      Delete(InputStr, 1, 1);
+      Delete(InputStr, Length(InputStr), 1);
+      Result:=InputStr;
+    end;
+end;
+
+// Функция для записи в начало " или "0x , а в конец "
+function TXCTuner_Form1.RecStartEnd(RecStr: String): String;
+begin
+  if RecStr[1]='#' then
+    begin
+      Delete(RecStr, 1, 1);
+      RecStr:='"0x' + RecStr + '"';
+      Result:=RecStr;
+    end else
+    begin
+      RecStr:='"' + RecStr + '"';
+      Result:=RecStr;
+    end;
+end;
+
 // процедура поиска нужного слова / выводит номер строки где найдено это слово
 procedure TXCTuner_Form1.SearchLine_my;
 var k: Integer;
@@ -839,7 +876,7 @@ begin
   end;
 end;
 
-// процедура удаления лишних сиволов и пробелов в обработчике загр. информации из файлов xvm
+// процедура удаления лишних сиволов и пробелов из файлов xvm
 procedure TXCTuner_Form1.search_info;
 var
   p1: Integer;
@@ -866,28 +903,6 @@ begin
     end;{ TODO : Доработать если что! }
   search_sN:=Trim(search_sN);
 end;
-
-///////////////////////////////////////////////////
-//// для нахождения выражений типа "выражение" ////
-///////////////////////////////////////////////////
-procedure TXCTuner_Form1.search_info_2;
-var
-  p3, p4: Integer;
-begin
-  p3:=PosEx(',', search_sN, Pos(Search, search_sN));
-  p4:=PosEx(':', search_sN, Pos(Search, search_sN));
-  if p3<>0 then
-    begin
-      Delete(search_sN, p3 - 1, Length(search_sN));
-    end;
-  if p4<>0 then
-    begin
-      Delete(search_sN, 1, p4 + 1);
-      search_sN:=Trim(search_sN);
-      Delete(search_sN, 1, 1);
-    end;{ TODO : Доработать если что! }
-end;
-//////////////////////////////////////////////////
 
 // загрузка из файла battle.xc
 procedure TXCTuner_Form1.battle_loading;
@@ -1199,10 +1214,6 @@ begin
   TrackBar3.Position:=StrToInt(hangar_s13);
   SpinEdit9.Value:=StrToInt(hangar_s13);
 
-  ///////////////////////////////////////////////////
-  ////////// новые функции///////////////////////
-  //////////////////////////////////////////////////
-
   // Название шрифта // 14
   Search:='"fontStyle"';
   SearchLine_my();
@@ -1213,9 +1224,7 @@ begin
   search_sN:=hangar_s14;
   search_info();
   hangar_s14:=search_sN;
-  Delete(hangar_s14, 1, 1);
-  Delete(hangar_s14, Length(hangar_s14), 1);
-  Edit1.Text:=hangar_s14;
+  Edit1.Text:=DelStartEnd(hangar_s14);
 
   // Размер шрифта // 15
   Search:='"fontStyle"';
@@ -1228,7 +1237,6 @@ begin
   search_info();
   hangar_s15:=search_sN;
   SpinEdit11.Value:=StrToInt(hangar_s15);
-
 
   // Стиль жирный шрифта // 16
   Search:='"fontStyle"';
@@ -1272,8 +1280,7 @@ begin
   search_info();
   hangar_s18:=search_sN;
   hangar_s18_3:=hangar_s18;
-  Delete(hangar_s18, 1, 3);
-  Delete(hangar_s18, Length(hangar_s18), 1);
+  hangar_s18:=DelStartEnd(hangar_s18);
   mbColorPreview1.Color:=HexToTColor(hangar_s18);
   hangar_s18:='#' + hangar_s18;
   Edit3.Text:=hangar_s18;
@@ -1291,8 +1298,7 @@ begin
   search_info();
   hangar_s19:=search_sN;
   hangar_s19_3:=hangar_s19;
-  Delete(hangar_s19, 1, 3);
-  Delete(hangar_s19, Length(hangar_s19), 1);
+  hangar_s19:=DelStartEnd(hangar_s19);
   mbColorPreview2.Color:=HexToTColor(hangar_s19);
   hangar_s19:='#' + hangar_s19;
   Edit4.Text:=hangar_s19;
@@ -1310,8 +1316,7 @@ begin
   search_info();
   hangar_s20:=search_sN;
   hangar_s20_3:=hangar_s20;
-  Delete(hangar_s20, 1, 3);
-  Delete(hangar_s20, Length(hangar_s20), 1);
+  hangar_s20:=DelStartEnd(hangar_s20);
   mbColorPreview3.Color:=HexToTColor(hangar_s20);
   hangar_s20:='#' + hangar_s20;
   Edit5.Text:=hangar_s20;
@@ -1329,8 +1334,7 @@ begin
   search_info();
   hangar_s21:=search_sN;
   hangar_s21_3:=hangar_s21;
-  Delete(hangar_s21, 1, 3);
-  Delete(hangar_s21, Length(hangar_s21), 1);
+  hangar_s21:=DelStartEnd(hangar_s21);
   mbColorPreview4.Color:=HexToTColor(hangar_s21);
   hangar_s21:='#' + hangar_s21;
   Edit6.Text:=hangar_s21;
@@ -1401,8 +1405,7 @@ begin
   search_info();
   hangar_s26:=search_sN;
   hangar_s26_3:=hangar_s26;
-  Delete(hangar_s26, 1, 3);
-  Delete(hangar_s26, Length(hangar_s26), 1);
+  hangar_s26:=DelStartEnd(hangar_s26);
   mbColorPreview5.Color:=HexToTColor(hangar_s26);
   hangar_s26:='#' + hangar_s26;
   Edit2.Text:=hangar_s26;
@@ -1476,11 +1479,6 @@ begin
   search_info();
   hangar_s31:=search_sN;
   SpinEdit16.Value:=StrToInt(hangar_s31);
-
-  //////////////////////////////////////////////////
-  /////////// конец//////////////////////////////
-  ///////////////////////////////////////////////
-
 
   // идет вывод в переключатели
   if pos('false', hangar_s1)>0 then
@@ -1610,7 +1608,7 @@ begin
 
   // поле "название шрифта"
   hangar_s14_2:=hangar.Strings[hgar14_SL];
-  hangar_s14_2:=StringReplace(hangar_s14_2, hangar_s14, Edit1.Text, []);
+  hangar_s14_2:=StringReplace(hangar_s14_2, hangar_s14, RecStartEnd(Edit1.Text), []);
   hangar.Delete(hgar14_SL);
   hangar.Insert(hgar14_SL, hangar_s14_2);
 
@@ -1623,36 +1621,28 @@ begin
 
   // поле "цвет пинга" great
   hangar_s18_2:=hangar.Strings[hgar18_SL];
-  hangar_s18:=Edit3.Text;
-  Delete(hangar_s18, 1, 1);
-  hangar_s18:='"0x' + hangar_s18 + '"';
+  hangar_s18:=RecStartEnd(Edit3.Text);
   hangar_s18_2:=StringReplace(hangar_s18_2, hangar_s18_3, hangar_s18, []);
   hangar.Delete(hgar18_SL);
   hangar.Insert(hgar18_SL, hangar_s18_2);
 
   // поле "цвет пинга" good
   hangar_s19_2:=hangar.Strings[hgar19_SL];
-  hangar_s19:=Edit4.Text;
-  Delete(hangar_s19, 1, 1);
-  hangar_s19:='"0x' + hangar_s19 + '"';
+  hangar_s19:=RecStartEnd(Edit4.Text);
   hangar_s19_2:=StringReplace(hangar_s19_2, hangar_s19_3, hangar_s19, []);
   hangar.Delete(hgar19_SL);
   hangar.Insert(hgar19_SL, hangar_s19_2);
 
   // поле "цвет пинга" poor
   hangar_s20_2:=hangar.Strings[hgar20_SL];
-  hangar_s20:=Edit5.Text;
-  Delete(hangar_s20, 1, 1);
-  hangar_s20:='"0x' + hangar_s20 + '"';
+  hangar_s20:=RecStartEnd(Edit5.Text);
   hangar_s20_2:=StringReplace(hangar_s20_2, hangar_s20_3, hangar_s20, []);
   hangar.Delete(hgar20_SL);
   hangar.Insert(hgar20_SL, hangar_s20_2);
 
   // поле "цвет пинга" bad
   hangar_s21_2:=hangar.Strings[hgar21_SL];
-  hangar_s21:=Edit6.Text;
-  Delete(hangar_s21, 1, 1);
-  hangar_s21:='"0x' + hangar_s21 + '"';
+  hangar_s21:=RecStartEnd(Edit6.Text);
   hangar_s21_2:=StringReplace(hangar_s21_2, hangar_s21_3, hangar_s21, []);
   hangar.Delete(hgar21_SL);
   hangar.Insert(hgar21_SL, hangar_s21_2);
@@ -1677,9 +1667,7 @@ begin
 
   // поле "цвет тени" пинга
   hangar_s26_2:=hangar.Strings[hgar26_SL];
-  hangar_s26:=Edit2.Text;
-  Delete(hangar_s26, 1, 1);
-  hangar_s26:='"0x' + hangar_s26 + '"';
+  hangar_s26:=RecStartEnd(Edit2.Text);
   hangar_s26_2:=StringReplace(hangar_s26_2, hangar_s26_3, hangar_s26, []);
   hangar.Delete(hgar26_SL);
   hangar.Insert(hgar26_SL, hangar_s26_2);
@@ -1947,8 +1935,6 @@ begin
   rating.Delete(rat5_SL);
   rating.Insert(rat5_SL, rating_s5);
 end;
-
-
 
 end.
 
