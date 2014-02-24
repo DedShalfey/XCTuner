@@ -252,6 +252,7 @@ type
     function HexToTColor(myColor: string): TColor;
     function DelStartEnd(InputStr: String): String;
     function RecStartEnd(RecStr: String): String;
+    function Smart_Replacing(PodStr1, PodStr2, FullStr, ChangeStr: String): String;
     { private declarations }
   public
     procedure SearchLine_my();
@@ -778,6 +779,36 @@ begin
     end;
 end;
 
+
+
+/////////////////////////////////////////
+//////////////////////////////
+/////////////////////////
+////////////////////
+////////////
+//////////
+function TXCTuner_Form1.Smart_Replacing(PodStr1, PodStr2, FullStr, ChangeStr: String): String;
+var
+  poz1, poz2: Integer;
+  s1, s2: String;
+begin
+  poz1:=Pos(PodStr1, FullStr);
+  poz2:=PosEx(PodStr2, FullStr, poz1) + Length(PodStr2);
+  s1:=Copy(FullStr, poz1, poz2 - poz1);
+  s2:=s1;
+  s2:=StringReplace(s2, PodStr2, ChangeStr, []);
+  Result:=StringReplace(FullStr, s1, s2, []);
+end;
+//////////////////////////
+////////////////////////
+/////////////////////
+////////////
+//////////
+//////
+///
+
+
+
 // процедура поиска нужного слова / выводит номер строки где найдено это слово
 procedure TXCTuner_Form1.SearchLine_my;
 var k: Integer;
@@ -1087,12 +1118,12 @@ begin
   login.Insert(log4_SL, login_s4);
 
   login_s5_2:=login.Strings[log5_SL];
-  login_s5_2:=StringReplace(login_s5_2, login_s5, IntToStr(SpinEdit3.Value), []);
+  login_s5_2:=Smart_Replacing('"x"', login_s5, login_s5_2, IntToStr(SpinEdit3.Value));
   login.Delete(log5_SL);
   login.Insert(log5_SL, login_s5_2);
 
   login_s6_2:=login.Strings[log6_SL];
-  login_s6_2:=StringReplace(login_s6_2, login_s6, IntToStr(SpinEdit4.Value), []);
+  login_s6_2:=Smart_Replacing('"y"', login_s6, login_s6_2, IntToStr(SpinEdit4.Value));
   login.Delete(log6_SL);
   login.Insert(log6_SL, login_s6_2);
 end;
@@ -1754,12 +1785,12 @@ begin
 
 
   b_s7_2:=battle.Strings[bs7_SL];
-  b_s7_2:=StringReplace(b_s7_2, b_s7, IntToStr(SpinEdit1.Value), []);
+  b_s7_2:=Smart_Replacing('"delay"', b_s7, b_s7_2, IntToStr(SpinEdit1.Value));
   battle.Delete(bs7_SL);
   battle.Insert(bs7_SL, b_s7_2);
 
   b_s8_2:=battle.Strings[bs8_SL];
-  b_s8_2:=StringReplace(b_s8_2, b_s8, IntToStr(SpinEdit2.Value), []);
+  b_s8_2:=Smart_Replacing('"scale"', b_s8, b_s8_2, IntToStr(SpinEdit2.Value));
   battle.Delete(bs8_SL);
   battle.Insert(bs8_SL, b_s8_2);
 

@@ -1195,7 +1195,7 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 580
           TabOrder = 2
           object Label1: TLabel
-            Left = 17
+            Left = 14
             Height = 15
             Top = 9
             Width = 101
@@ -1204,7 +1204,7 @@ object XCTuner_Form1: TXCTuner_Form1
             ParentFont = False
           end
           object Label2: TLabel
-            Left = 154
+            Left = 151
             Height = 15
             Top = 9
             Width = 24
@@ -1213,7 +1213,7 @@ object XCTuner_Form1: TXCTuner_Form1
             ParentFont = False
           end
           object Label3: TLabel
-            Left = 17
+            Left = 14
             Height = 15
             Top = 27
             Width = 101
@@ -1222,7 +1222,7 @@ object XCTuner_Form1: TXCTuner_Form1
             ParentFont = False
           end
           object Label4: TLabel
-            Left = 154
+            Left = 151
             Height = 15
             Top = 27
             Width = 21
@@ -1231,7 +1231,7 @@ object XCTuner_Form1: TXCTuner_Form1
             ParentFont = False
           end
           object Label5: TLabel
-            Left = 17
+            Left = 14
             Height = 15
             Top = 45
             Width = 30
@@ -1240,7 +1240,7 @@ object XCTuner_Form1: TXCTuner_Form1
             ParentFont = False
           end
           object Label6: TLabel
-            Left = 154
+            Left = 151
             Height = 15
             Top = 45
             Width = 24
@@ -1249,7 +1249,7 @@ object XCTuner_Form1: TXCTuner_Form1
             ParentFont = False
           end
           object Label7: TLabel
-            Left = 17
+            Left = 14
             Height = 15
             Top = 63
             Width = 42
@@ -1258,7 +1258,7 @@ object XCTuner_Form1: TXCTuner_Form1
             ParentFont = False
           end
           object Label8: TLabel
-            Left = 154
+            Left = 151
             Height = 15
             Top = 63
             Width = 24
@@ -1267,7 +1267,7 @@ object XCTuner_Form1: TXCTuner_Form1
             ParentFont = False
           end
           object Label9: TLabel
-            Left = 278
+            Left = 233
             Height = 15
             Top = 9
             Width = 60
@@ -1276,7 +1276,7 @@ object XCTuner_Form1: TXCTuner_Form1
             ParentFont = False
           end
           object Label10: TLabel
-            Left = 415
+            Left = 370
             Height = 15
             Top = 9
             Width = 64
@@ -1285,7 +1285,7 @@ object XCTuner_Form1: TXCTuner_Form1
             ParentFont = False
           end
           object Label11: TLabel
-            Left = 278
+            Left = 233
             Height = 15
             Top = 27
             Width = 108
@@ -1294,7 +1294,7 @@ object XCTuner_Form1: TXCTuner_Form1
             ParentFont = False
           end
           object Label12: TLabel
-            Left = 415
+            Left = 370
             Height = 15
             Top = 27
             Width = 108
@@ -1303,7 +1303,7 @@ object XCTuner_Form1: TXCTuner_Form1
             ParentFont = False
           end
           object Label13: TLabel
-            Left = 278
+            Left = 233
             Height = 15
             Top = 45
             Width = 109
@@ -1312,7 +1312,7 @@ object XCTuner_Form1: TXCTuner_Form1
             ParentFont = False
           end
           object Label14: TLabel
-            Left = 415
+            Left = 370
             Height = 15
             Top = 45
             Width = 42
@@ -1321,7 +1321,7 @@ object XCTuner_Form1: TXCTuner_Form1
             ParentFont = False
           end
           object Label15: TLabel
-            Left = 278
+            Left = 233
             Height = 15
             Top = 63
             Width = 73
@@ -1330,7 +1330,7 @@ object XCTuner_Form1: TXCTuner_Form1
             ParentFont = False
           end
           object Label16: TLabel
-            Left = 415
+            Left = 370
             Height = 15
             Top = 63
             Width = 30
@@ -1340,7 +1340,7 @@ object XCTuner_Form1: TXCTuner_Form1
           end
           object Image1: TImage
             Cursor = crHandPoint
-            Left = 550
+            Left = 546
             Height = 32
             Hint = 'Редактировать'
             Top = -4
