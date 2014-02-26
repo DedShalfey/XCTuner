@@ -602,7 +602,7 @@ begin
       rating.LoadFromFile(dir_xvm+'\'+'rating.xc');
 
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.7.54';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.7.79';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       BitBtn1.Click;
@@ -860,55 +860,53 @@ begin
     begin
       xvm_base:=TStringList.Create;
       xvm_base.LoadFromFile(ExtractFilePath(ParamStr(0))+'xvm.xc');
-      for tx := 0 to (xvm_base.Count - 1) do
-        begin
-          activ_config:=TrimLeft(xvm_base.Strings[tx]);
-          if activ_config[1]='$' then
-            begin
-              activ_config:= xvm_base.Strings[tx];
-              activ_config:=TrimLeft(activ_config);
-              Delete(activ_config, 1, pos('"', activ_config));
-              activ_config:=TrimLeft(activ_config);
-              px2:=pos('@xvm.xc', activ_config);
-              px3:=pos('xvm.xc', activ_config);
+    for tx := 0 to (xvm_base.Count - 1) do
+      begin
+        activ_config:=Trim(xvm_base.Strings[tx]);
+        if Length(activ_config)=0  then Continue;
+        if activ_config[1]='$' then
+          begin
+            Delete(activ_config, 1, pos('"', activ_config));
+            activ_config:=TrimLeft(activ_config);
+            px2:=pos('@xvm.xc', activ_config);
+            px3:=pos('xvm.xc', activ_config);
             if px2<>0 then
               begin
                 Delete(activ_config, px2, Length(activ_config) - px2 + 2);
                 xvm_file_name:='@xvm.xc';
                 exit;
-              end else
+              end;
             if px3<>0 then
               begin
                 Delete(activ_config, px3-1, Length(activ_config) - px3 + 2);
                 xvm_file_name:='xvm.xc';
                 exit;
-              end else
-              begin
-                // выводим сообщение, очищаем переменную xvm и принудительно закрываем программу
-                ShowMessage('Активный конфиг не найден! Проверте правильность нахождения пути! Программа закроется!');
-                xvm.Free;
-                xvm_base.Free;
-                battle.Free;
-                login.Free;
-                rating.Free;
-                temp_list.Free;
-                Application.Terminate;
               end;
-            end;
-        end;
-    end
-  else
-  begin
-    // выводим сообщение, очищаем переменную xvm и принудительно закрываем программу
-    ShowMessage('Файл xvm.xc в папке xvm не найден! Проверте правильность нахождения файла! Программа закроется!');
-    xvm.Free;
-    xvm_base.Free;
-    battle.Free;
-    login.Free;
-    rating.Free;
-    temp_list.Free;
-    Application.Terminate;
-  end;
+          end;
+      end;
+    begin
+      // выводим сообщение, очищаем переменную xvm и принудительно закрываем программу
+      ShowMessage('Активный конфиг не найден! Проверте правильность нахождения пути! Программа закроется!');
+      xvm.Free;
+      xvm_base.Free;
+      battle.Free;
+      login.Free;
+      rating.Free;
+      temp_list.Free;
+      Application.Terminate;
+    end;
+    end else
+    begin
+      // выводим сообщение, очищаем переменную xvm и принудительно закрываем программу
+      ShowMessage('Файл xvm.xc в папке xvm не найден! Проверте правильность нахождения файла! Программа закроется!');
+      xvm.Free;
+      xvm_base.Free;
+      battle.Free;
+      login.Free;
+      rating.Free;
+      temp_list.Free;
+      Application.Terminate;
+    end;
 end;
 
 // процедура удаления лишних сиволов и пробелов из файлов xvm
