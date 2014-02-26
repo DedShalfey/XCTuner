@@ -602,7 +602,7 @@ begin
       rating.LoadFromFile(dir_xvm+'\'+'rating.xc');
 
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.7.79';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.7.81';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       BitBtn1.Click;
@@ -1590,32 +1590,32 @@ begin
   hangar.Insert(hgar25_SL, hangar_s25_2);
 
   hangar_s8_2:=hangar.Strings[hgar8_SL];
-  hangar_s8_2:=StringReplace(hangar_s8_2, hangar_s8, IntToStr(SpinEdit10.Value), []);
+  hangar_s8_2:=Smart_Replacing('"updateInterval"', hangar_s8, hangar_s8_2, IntToStr(SpinEdit10.Value));
   hangar.Delete(hgar8_SL);
   hangar.Insert(hgar8_SL, hangar_s8_2);
 
   hangar_s9_2:=hangar.Strings[hgar9_SL];
-  hangar_s9_2:=StringReplace(hangar_s9_2, hangar_s9, IntToStr(SpinEdit5.Value), []);
+  hangar_s9_2:=Smart_Replacing('"x"', hangar_s9, hangar_s9_2, IntToStr(SpinEdit5.Value));
   hangar.Delete(hgar9_SL);
   hangar.Insert(hgar9_SL, hangar_s9_2);
 
   hangar_s10_2:=hangar.Strings[hgar10_SL];
-  hangar_s10_2:=StringReplace(hangar_s10_2, hangar_s10, IntToStr(SpinEdit6.Value), []);
+  hangar_s10_2:=Smart_Replacing('"y"', hangar_s10, hangar_s10_2, IntToStr(SpinEdit6.Value));
   hangar.Delete(hgar10_SL);
   hangar.Insert(hgar10_SL, hangar_s10_2);
 
   hangar_s11_2:=hangar.Strings[hgar11_SL];
-  hangar_s11_2:=StringReplace(hangar_s11_2, hangar_s11, IntToStr(SpinEdit7.Value), []);
+  hangar_s11_2:=Smart_Replacing('"alpha"', hangar_s11, hangar_s11_2, IntToStr(SpinEdit7.Value));
   hangar.Delete(hgar11_SL);
   hangar.Insert(hgar11_SL, hangar_s11_2);
 
   hangar_s12_2:=hangar.Strings[hgar12_SL];
-  hangar_s12_2:=StringReplace(hangar_s12_2, hangar_s12, IntToStr(SpinEdit8.Value), []);
+  hangar_s12_2:=Smart_Replacing('"maxRows"', hangar_s12, hangar_s12_2, IntToStr(SpinEdit8.Value));
   hangar.Delete(hgar12_SL);
   hangar.Insert(hgar12_SL, hangar_s12_2);
 
   hangar_s13_2:=hangar.Strings[hgar13_SL];
-  hangar_s13_2:=StringReplace(hangar_s13_2, hangar_s13, IntToStr(SpinEdit9.Value), []);
+  hangar_s13_2:=Smart_Replacing('"columnGap"', hangar_s13, hangar_s13_2, IntToStr(SpinEdit9.Value));
   hangar.Delete(hgar13_SL);
   hangar.Insert(hgar13_SL, hangar_s13_2);
 
@@ -1641,97 +1641,97 @@ begin
 
   // поле "название шрифта"
   hangar_s14_2:=hangar.Strings[hgar14_SL];
-  hangar_s14_2:=StringReplace(hangar_s14_2, hangar_s14, RecStartEnd(Edit1.Text), []);
+  hangar_s14_2:=Smart_Replacing('"name"', hangar_s14, hangar_s14_2, RecStartEnd(Edit1.Text));
   hangar.Delete(hgar14_SL);
   hangar.Insert(hgar14_SL, hangar_s14_2);
 
   // поле "размер шрифта"
   hangar_s15_2:=hangar.Strings[hgar15_SL];
-  hangar_s15_2:=StringReplace(hangar_s15_2, hangar_s15, IntToStr(SpinEdit11.Value), []);
+  hangar_s15_2:=Smart_Replacing('"size"', hangar_s15, hangar_s15_2, IntToStr(SpinEdit11.Value));
   hangar.Delete(hgar15_SL);
   hangar.Insert(hgar15_SL, hangar_s15_2);
 
 
   // поле "цвет пинга" great
   hangar_s18_2:=hangar.Strings[hgar18_SL];
-  hangar_s18:=RecStartEnd(Edit3.Text);
-  hangar_s18_2:=StringReplace(hangar_s18_2, hangar_s18_3, hangar_s18, []);
+  hangar_s18:=RecStartEnd(hangar_s18);
+  hangar_s18_2:=Smart_Replacing('"great"', hangar_s18, hangar_s18_2, RecStartEnd(Edit3.Text));
   hangar.Delete(hgar18_SL);
   hangar.Insert(hgar18_SL, hangar_s18_2);
 
   // поле "цвет пинга" good
   hangar_s19_2:=hangar.Strings[hgar19_SL];
-  hangar_s19:=RecStartEnd(Edit4.Text);
-  hangar_s19_2:=StringReplace(hangar_s19_2, hangar_s19_3, hangar_s19, []);
+  hangar_s19:=RecStartEnd(hangar_s19);
+  hangar_s19_2:=Smart_Replacing('"good"', hangar_s19, hangar_s19_2, RecStartEnd(Edit4.Text));
   hangar.Delete(hgar19_SL);
   hangar.Insert(hgar19_SL, hangar_s19_2);
 
   // поле "цвет пинга" poor
   hangar_s20_2:=hangar.Strings[hgar20_SL];
-  hangar_s20:=RecStartEnd(Edit5.Text);
-  hangar_s20_2:=StringReplace(hangar_s20_2, hangar_s20_3, hangar_s20, []);
+  hangar_s20:=RecStartEnd(hangar_s20);
+  hangar_s20_2:=Smart_Replacing('"poor"', hangar_s20, hangar_s20_2, RecStartEnd(Edit5.Text));
   hangar.Delete(hgar20_SL);
   hangar.Insert(hgar20_SL, hangar_s20_2);
 
   // поле "цвет пинга" bad
   hangar_s21_2:=hangar.Strings[hgar21_SL];
-  hangar_s21:=RecStartEnd(Edit6.Text);
-  hangar_s21_2:=StringReplace(hangar_s21_2, hangar_s21_3, hangar_s21, []);
+  hangar_s21:=RecStartEnd(hangar_s21);
+  hangar_s21_2:=Smart_Replacing('"bad"', hangar_s21, hangar_s21_2, RecStartEnd(Edit6.Text));
   hangar.Delete(hgar21_SL);
   hangar.Insert(hgar21_SL, hangar_s21_2);
 
   // Пороговые значения, определеяющие качество отклика / great
   hangar_s22_2:=hangar.Strings[hgar22_SL];
-  hangar_s22_2:=StringReplace(hangar_s22_2, hangar_s22, IntToStr(SpinEdit17.Value), []);
+  hangar_s22_2:=Smart_Replacing('"great"', hangar_s22, hangar_s22_2, IntToStr(SpinEdit17.Value));
   hangar.Delete(hgar22_SL);
   hangar.Insert(hgar22_SL, hangar_s22_2);
 
   // Пороговые значения, определеяющие качество отклика / good
   hangar_s23_2:=hangar.Strings[hgar23_SL];
-  hangar_s23_2:=StringReplace(hangar_s23_2, hangar_s23, IntToStr(SpinEdit18.Value), []);
+  hangar_s23_2:=Smart_Replacing('"good"', hangar_s23, hangar_s23_2, IntToStr(SpinEdit18.Value));
   hangar.Delete(hgar23_SL);
   hangar.Insert(hgar23_SL, hangar_s23_2);
 
   // Пороговые значения, определеяющие качество отклика / poor
   hangar_s24_2:=hangar.Strings[hgar24_SL];
-  hangar_s24_2:=StringReplace(hangar_s24_2, hangar_s24, IntToStr(SpinEdit19.Value), []);
+  hangar_s24_2:=Smart_Replacing('"poor"', hangar_s24, hangar_s24_2, IntToStr(SpinEdit19.Value));
   hangar.Delete(hgar24_SL);
   hangar.Insert(hgar24_SL, hangar_s24_2);
 
   // поле "цвет тени" пинга
   hangar_s26_2:=hangar.Strings[hgar26_SL];
-  hangar_s26:=RecStartEnd(Edit2.Text);
-  hangar_s26_2:=StringReplace(hangar_s26_2, hangar_s26_3, hangar_s26, []);
+  hangar_s26:=RecStartEnd(hangar_s26);
+  hangar_s26_2:=Smart_Replacing('"color"', hangar_s26, hangar_s26_2, RecStartEnd(Edit2.Text));
   hangar.Delete(hgar26_SL);
   hangar.Insert(hgar26_SL, hangar_s26_2);
 
   // поле "дистанция" тени
   hangar_s27_2:=hangar.Strings[hgar27_SL];
-  hangar_s27_2:=StringReplace(hangar_s27_2, hangar_s27, IntToStr(SpinEdit12.Value), []);
+  hangar_s27_2:=Smart_Replacing('"distance"', hangar_s27, hangar_s27_2, IntToStr(SpinEdit12.Value));
   hangar.Delete(hgar27_SL);
   hangar.Insert(hgar27_SL, hangar_s27_2);
 
   // поле "угол" тени
   hangar_s28_2:=hangar.Strings[hgar28_SL];
-  hangar_s28_2:=StringReplace(hangar_s28_2, hangar_s28, IntToStr(SpinEdit13.Value), []);
+  hangar_s28_2:=Smart_Replacing('"angle"', hangar_s28, hangar_s28_2, IntToStr(SpinEdit13.Value));
   hangar.Delete(hgar28_SL);
   hangar.Insert(hgar28_SL, hangar_s28_2);
 
   // поле "прозрачность" тени
   hangar_s29_2:=hangar.Strings[hgar29_SL];
-  hangar_s29_2:=StringReplace(hangar_s29_2, hangar_s29, IntToStr(SpinEdit14.Value), []);
+  hangar_s29_2:=Smart_Replacing('"alpha"', hangar_s29, hangar_s29_2, IntToStr(SpinEdit14.Value));
   hangar.Delete(hgar29_SL);
   hangar.Insert(hgar29_SL, hangar_s29_2);
 
   // поле "размытие/размер" тени
   hangar_s30_2:=hangar.Strings[hgar30_SL];
-  hangar_s30_2:=StringReplace(hangar_s30_2, hangar_s30, IntToStr(SpinEdit15.Value), []);
+  hangar_s30_2:=Smart_Replacing('"blur"', hangar_s30, hangar_s30_2, IntToStr(SpinEdit15.Value));
   hangar.Delete(hgar30_SL);
   hangar.Insert(hgar30_SL, hangar_s30_2);
 
   // поле "интенсивность" тени
   hangar_s31_2:=hangar.Strings[hgar31_SL];
-  hangar_s31_2:=StringReplace(hangar_s31_2, hangar_s31, IntToStr(SpinEdit16.Value), []);
+  hangar_s31_2:=Smart_Replacing('"strength"', hangar_s31, hangar_s31_2, IntToStr(SpinEdit16.Value));
   hangar.Delete(hgar31_SL);
   hangar.Insert(hgar31_SL, hangar_s31_2);
 

@@ -1,12 +1,12 @@
 object XCTuner_Form1: TXCTuner_Form1
-  Left = 257
-  Height = 545
-  Top = 167
+  Left = 277
+  Height = 681
+  Top = 135
   Width = 1053
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'XCTuner'
-  ClientHeight = 545
+  ClientHeight = 681
   ClientWidth = 1053
   Icon.Data = {
     BE1000000000010001002020000001002000A810000016000000280000002000
@@ -151,11 +151,11 @@ object XCTuner_Form1: TXCTuner_Form1
   LCLVersion = '1.3'
   object Panel1: TPanel
     Left = 0
-    Height = 545
+    Height = 681
     Top = 0
     Width = 170
     Align = alLeft
-    ClientHeight = 545
+    ClientHeight = 681
     ClientWidth = 170
     Color = clGradientInactiveCaption
     ParentColor = False
@@ -189,7 +189,7 @@ object XCTuner_Form1: TXCTuner_Form1
       Left = 1
       Height = 46
       Hint = 'Закрыть программу'
-      Top = 498
+      Top = 634
       Width = 168
       Align = alBottom
       Caption = 'Выход  '
@@ -280,7 +280,7 @@ object XCTuner_Form1: TXCTuner_Form1
       Left = 1
       Height = 38
       Hint = 'Просмотреть сведения о программе...'
-      Top = 460
+      Top = 596
       Width = 168
       Align = alBottom
       Caption = 'About'
@@ -379,7 +379,7 @@ object XCTuner_Form1: TXCTuner_Form1
   end
   object PageControl1: TPageControl
     Left = 186
-    Height = 545
+    Height = 681
     Top = 0
     Width = 867
     ActivePage = TabSheet1
@@ -388,19 +388,19 @@ object XCTuner_Form1: TXCTuner_Form1
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Общие'
-      ClientHeight = 517
+      ClientHeight = 653
       ClientWidth = 859
       ParentFont = False
       TabVisible = False
       object ScrollBox2: TScrollBox
         Left = 0
-        Height = 517
+        Height = 653
         Top = 0
         Width = 859
         HorzScrollBar.Page = 838
-        VertScrollBar.Page = 513
+        VertScrollBar.Page = 649
         Align = alClient
-        ClientHeight = 513
+        ClientHeight = 649
         ClientWidth = 838
         TabOrder = 0
         OnMouseWheelDown = ScrollBox2MouseWheelDown
@@ -1760,19 +1760,19 @@ object XCTuner_Form1: TXCTuner_Form1
     end
     object TabSheet3: TTabSheet
       Caption = 'Ангар'
-      ClientHeight = 517
+      ClientHeight = 653
       ClientWidth = 859
       TabVisible = False
       object ScrollBox1: TScrollBox
         Left = 0
-        Height = 517
+        Height = 653
         Top = 0
         Width = 859
         HorzScrollBar.Page = 842
-        VertScrollBar.Page = 517
+        VertScrollBar.Page = 653
         Align = alClient
         BorderStyle = bsNone
-        ClientHeight = 517
+        ClientHeight = 653
         ClientWidth = 842
         Color = clDefault
         ParentColor = False
@@ -1973,7 +1973,7 @@ object XCTuner_Form1: TXCTuner_Form1
         object GroupBox28: TGroupBox
           Left = 4
           Height = 584
-          Top = 232
+          Top = 230
           Width = 596
           BorderSpacing.Bottom = 4
           Caption = 'Пинг До Серверов:'
@@ -3239,7 +3239,7 @@ object XCTuner_Form1: TXCTuner_Form1
   object BitBtn4: TBitBtn
     Cursor = crHandPoint
     Left = 170
-    Height = 545
+    Height = 681
     Top = 0
     Width = 16
     Align = alLeft
