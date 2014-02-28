@@ -77,6 +77,39 @@ type
     GroupBox8: TGroupBox;
     GroupBox9: TGroupBox;
     Image1: TImage;
+    Image10: TImage;
+    Image11: TImage;
+    Image12: TImage;
+    Image13: TImage;
+    Image14: TImage;
+    Image15: TImage;
+    Image16: TImage;
+    Image17: TImage;
+    Image18: TImage;
+    Image19: TImage;
+    Image2: TImage;
+    Image20: TImage;
+    Image21: TImage;
+    Image22: TImage;
+    Image23: TImage;
+    Image24: TImage;
+    Image25: TImage;
+    Image26: TImage;
+    Image27: TImage;
+    Image28: TImage;
+    Image29: TImage;
+    Image3: TImage;
+    Image30: TImage;
+    Image31: TImage;
+    Image32: TImage;
+    Image33: TImage;
+    Image34: TImage;
+    Image4: TImage;
+    Image5: TImage;
+    Image6: TImage;
+    Image7: TImage;
+    Image8: TImage;
+    Image9: TImage;
     ImageList1: TImageList;
     Label1: TLabel;
     Label10: TLabel;
@@ -227,7 +260,40 @@ type
     procedure Edit6Exit(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure Image10Click(Sender: TObject);
+    procedure Image11Click(Sender: TObject);
+    procedure Image12Click(Sender: TObject);
+    procedure Image13Click(Sender: TObject);
+    procedure Image14Click(Sender: TObject);
+    procedure Image15Click(Sender: TObject);
+    procedure Image16Click(Sender: TObject);
+    procedure Image17Click(Sender: TObject);
+    procedure Image18Click(Sender: TObject);
+    procedure Image19Click(Sender: TObject);
     procedure Image1Click(Sender: TObject);
+    procedure Image20Click(Sender: TObject);
+    procedure Image21Click(Sender: TObject);
+    procedure Image22Click(Sender: TObject);
+    procedure Image23Click(Sender: TObject);
+    procedure Image24Click(Sender: TObject);
+    procedure Image25Click(Sender: TObject);
+    procedure Image26Click(Sender: TObject);
+    procedure Image27Click(Sender: TObject);
+    procedure Image28Click(Sender: TObject);
+    procedure Image29Click(Sender: TObject);
+    procedure Image2Click(Sender: TObject);
+    procedure Image30Click(Sender: TObject);
+    procedure Image31Click(Sender: TObject);
+    procedure Image32Click(Sender: TObject);
+    procedure Image33Click(Sender: TObject);
+    procedure Image34Click(Sender: TObject);
+    procedure Image3Click(Sender: TObject);
+    procedure Image4Click(Sender: TObject);
+    procedure Image5Click(Sender: TObject);
+    procedure Image6Click(Sender: TObject);
+    procedure Image7Click(Sender: TObject);
+    procedure Image8Click(Sender: TObject);
+    procedure Image9Click(Sender: TObject);
     procedure ScrollBox1MouseWheelDown(Sender: TObject; Shift: TShiftState;
       MousePos: TPoint; var Handled: Boolean);
     procedure ScrollBox1MouseWheelUp(Sender: TObject; Shift: TShiftState;
@@ -253,6 +319,7 @@ type
     function DelStartEnd(InputStr: String): String;
     function RecStartEnd(RecStr: String): String;
     function Smart_Replacing(PodStr1, PodStr2, FullStr, ChangeStr: String): String;
+    function FindFilesXVM(FindStr: String; FileXVMAllStr: TStringList): String;
     { private declarations }
   public
     procedure SearchLine_my();
@@ -278,7 +345,7 @@ var
   ChangeEdit: Integer;
   XCTuner_Form1: TXCTuner_Form1;
   xvm_base, xvm, battle, login, hangar, rating, temp_list: TStringList;
-  activ_config, xvm_file_name: String;
+  activ_config, xvm_file_name, battle_name, login_name, hangar_name, rating_name: String;
   px1, px2, px3: Integer;
   dir_xvm: String;
   b_s1, b_s2, b_s3, b_s4, b_s5, b_s6, b_s7, b_s8, b_s7_2, b_s8_2: String;
@@ -368,12 +435,14 @@ begin
       Panel1.Visible:=false;
       BitBtn4.Caption:='>';
       XCTuner_Form1.Width:=770;
+      BitBtn4.Hint:='Развернуть панель';
     end
       else
     begin
       Panel1.Visible:=true;
       BitBtn4.Caption:='<';
       XCTuner_Form1.Width:=940;
+      BitBtn4.Hint:='Свернуть панель';
     end;
 end;
 
@@ -440,16 +509,16 @@ end;
 procedure TXCTuner_Form1.BitSave1Click(Sender: TObject);
 begin
   rating_save();
-  rating.SaveToFile(dir_xvm+'\rating.xc');
+  rating.SaveToFile(dir_xvm+rating_name);
   rating.Clear;
-  rating.LoadFromFile(dir_xvm+'\rating.xc');
+  rating.LoadFromFile(dir_xvm+rating_name);
 end;
 
 // По кнопке происходит вызов процедуры сохранения данных в файла "battle.xc"
 procedure TXCTuner_Form1.BitSave2Click(Sender: TObject);
 begin
   battle_save();
-  battle.SaveToFile(dir_xvm+'\battle.xc');
+  battle.SaveToFile(dir_xvm+battle_name);
   battle_loading();
 end;
 
@@ -457,7 +526,7 @@ end;
 procedure TXCTuner_Form1.BitSave3Click(Sender: TObject);
 begin
   login_save();
-  login.SaveToFile(dir_xvm+'\login.xc');
+  login.SaveToFile(dir_xvm+login_name);
   login_loading();
 end;
 
@@ -465,7 +534,7 @@ end;
 procedure TXCTuner_Form1.BitSave4Click(Sender: TObject);
 begin
   hangar_save();
-  hangar.SaveToFile(dir_xvm+'\hangar.xc');
+  hangar.SaveToFile(dir_xvm+hangar_name);
   hangar_loading();
 end;
 
@@ -577,32 +646,38 @@ begin
   activ_conf();
   activ_config:=StringReplace(activ_config, '/', '\', [rfReplaceAll, rfIgnoreCase]);
   // заносим путь к директории конфига
-  dir_xvm:=ExtractFilePath(ParamStr(0))+'\'+activ_config;
+  dir_xvm:=ExtractFilePath(ParamStr(0))+activ_config;
 
-  if ((FileExists(dir_xvm+'\'+xvm_file_name)) and
-  (FileExists(dir_xvm+'\'+'battle.xc')) and
-  (FileExists(dir_xvm+'\'+'login.xc')) and
-  (FileExists(dir_xvm+'\'+'hangar.xc')) and
-  (FileExists(dir_xvm+'\'+'rating.xc'))) then
+  // Создаем объекты типа TStringlist
+  xvm:=TStringList.Create;
+  battle:=TStringList.Create;
+  login:=TStringList.Create;
+  hangar:=TStringList.Create;
+  rating:=TStringList.Create;
+  temp_list:=TStringList.Create;
+
+  xvm.LoadFromFile(dir_xvm+xvm_file_name);
+
+  // Узнаем ссылочные имена файлов из файла @xvm.xc
+  battle_name:=FindFilesXVM('"battle"', xvm);
+  login_name:=FindFilesXVM('"login"', xvm);
+  hangar_name:=FindFilesXVM('"hangar"', xvm);
+  rating_name:=FindFilesXVM('"rating"', xvm);
+
+  if ((FileExists(dir_xvm+xvm_file_name )) and
+      (FileExists(dir_xvm+battle_name   )) and
+      (FileExists(dir_xvm+login_name    )) and
+      (FileExists(dir_xvm+hangar_name   )) and
+      (FileExists(dir_xvm+rating_name   ))) then
     begin
-      // Создаем объекты типа TStringlist
-      xvm:=TStringList.Create;
-      xvm:=TStringList.Create;
-      battle:=TStringList.Create;
-      login:=TStringList.Create;
-      hangar:=TStringList.Create;
-      rating:=TStringList.Create;
-      temp_list:=TStringList.Create;
-
       // Загрузка в соответствующие объекты файлы
-      xvm.LoadFromFile(dir_xvm+'\'+xvm_file_name);
-      battle.LoadFromFile(dir_xvm+'\'+'battle.xc');
-      login.LoadFromFile(dir_xvm+'\'+'login.xc');
-      login.LoadFromFile(dir_xvm+'\'+'hangar.xc');
-      rating.LoadFromFile(dir_xvm+'\'+'rating.xc');
+      battle.LoadFromFile(dir_xvm+battle_name);
+      login.LoadFromFile(dir_xvm+login_name);
+      login.LoadFromFile(dir_xvm+hangar_name);
+      rating.LoadFromFile(dir_xvm+rating_name);
 
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.7.81';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.7.87';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       BitBtn1.Click;
@@ -616,6 +691,10 @@ begin
       login_loading();
       hangar_loading();
       rating_loading();
+
+      BitBtn1.Hint:='Настройка в файлах: ' + xvm_file_name + ', ' + battle_name + ' и ' + rating_name;
+      BitBtn2.Hint:='Настройка в файле: ' + login_name;
+      BitBtn3.Hint:='Настройка в файле: ' + hangar_name;
     end
   else
     begin
@@ -631,6 +710,69 @@ begin
     end;
 end;
 
+procedure TXCTuner_Form1.Image10Click(Sender: TObject);
+begin
+  ShowMessage('Данные параметры находятся в файле '+battle_name+' по пути '
+  +activ_config+#13#10+'Задержка исчезновения панели -   "delay" '+IntToStr(bs4_SL+1)+' строка'+#13#10
+  +'Увеличение панели -   "scale" '+IntToStr(bs5_SL+1)+' строка');
+end;
+
+procedure TXCTuner_Form1.Image11Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(bs6_SL+1)+' строке в файле '+battle_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "highlightVehicleIcon": true'+#13#10+'Отключить опцию - "highlightVehicleIcon": false');
+end;
+
+procedure TXCTuner_Form1.Image12Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(bs7_SL+1)+' строке в файле '+battle_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "useStandardMarkers": true'+#13#10+'Отключить опцию - "useStandardMarkers": false');
+end;
+
+procedure TXCTuner_Form1.Image13Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(bs8_SL+1)+' строке в файле '+battle_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "hideTeamTextFields": false'+#13#10+'Отключить опцию - "hideTeamTextFields": true');
+end;
+
+procedure TXCTuner_Form1.Image14Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(log1_SL+1)+' строке в файле '+login_name+' по пути '
+  +activ_config+#13#10+'Вкл. переключатель -   "skipIntro": true'+#13#10+'Откл. переключатель - "skipIntro": false');
+end;
+
+procedure TXCTuner_Form1.Image15Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(log2_SL+1)+' строке в файле '+login_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "autologin": true'+#13#10+'Отключить опцию - "autologin": false');
+end;
+
+procedure TXCTuner_Form1.Image16Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(log3_SL+1)+' строке в файле '+login_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "confirmOldReplays": true'+#13#10+'Отключить опцию - "confirmOldReplays": false');
+end;
+
+procedure TXCTuner_Form1.Image17Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(log4_SL+1)+' строке в файле '+login_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "enabled": true'+#13#10+'Отключить опцию - "enabled": false'
+  +#13#10+'Положение поля по осям настраиваются:'+#13#10+'X - '+IntToStr(log5_SL+1)+' строка'
+  +#13#10+'Y - '+IntToStr(log6_SL+1)+' строка');
+end;
+
+procedure TXCTuner_Form1.Image18Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(hgar1_SL+1)+' строке в файле '+hangar_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "hideTutorial": false'+#13#10+'Отключить опцию - "hideTutorial": true');
+end;
+
+procedure TXCTuner_Form1.Image19Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(hgar2_SL+1)+' строке в файле '+hangar_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "xwnInCompany": true'+#13#10+'Отключить опцию - "xwnInCompany": false');
+end;
+
 // Передача параметров в форму редактирования Edit_XVM
 procedure TXCTuner_Form1.Image1Click(Sender: TObject);
 begin
@@ -643,6 +785,159 @@ begin
   Edit_XVM.DateEdit1.Text:=xvm_s7;
   Edit_XVM.Edit7.Text:=xvm_s8;
   Edit_XVM.ShowModal;
+end;
+
+procedure TXCTuner_Form1.Image20Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(hgar3_SL+1)+' строке в файле '+hangar_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "masteryMarkInTankCarousel": true'+#13#10+'Отключить опцию - "masteryMarkInTankCarousel": false');
+end;
+
+procedure TXCTuner_Form1.Image21Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(hgar7_SL+1)+' строке в файле '+hangar_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "enabled": true'+#13#10+'Отключить опцию - "enabled": false');
+end;
+
+procedure TXCTuner_Form1.Image22Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(hgar8_SL+1)+' строке в файле '+hangar_name+' по пути '
+  +activ_config+#13#10+'Чем меньше значение, тем чаще происходить будет обновление!');
+end;
+
+procedure TXCTuner_Form1.Image23Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(hgar12_SL+1)+' строке в файле '+hangar_name+' по пути '
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image24Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(hgar13_SL+1)+' строке в файле '+hangar_name+' по пути '
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image25Click(Sender: TObject);
+begin
+  ShowMessage('Данные параметры находятся в файле '+hangar_name+' по пути '
+  +activ_config+#13#10+'great - '+IntToStr(hgar22_SL+1)+' строка (до этого значения отклик отличный);'
+  +#13#10+'good - '+IntToStr(hgar23_SL+1)+' строка (до этого значения отклик хороший);'
+  +#13#10+'poor - '+IntToStr(hgar24_SL+1)+' строка (до этого значения отклик так себе);'
+  +#13#10+'Значения более 100 считаются плохим откликом;');
+end;
+
+procedure TXCTuner_Form1.Image26Click(Sender: TObject);
+begin
+  ShowMessage('Данные параметр находится в файле '+hangar_name+' по пути '
+  +activ_config+#13#10+'Видимость (enabled) - '+IntToStr(hgar25_SL+1)+' строка (true - вкл., false -откл.);'
+  +#13#10+'Цвет (color) - '+IntToStr(hgar26_SL+1)+' строка;'
+  +#13#10+'Дистанция (distance) - '+IntToStr(hgar27_SL+1)+' строка;'
+  +#13#10+'Угол (angle) - '+IntToStr(hgar28_SL+1)+' строка;'
+  +#13#10+'Прозрачность (alpha) - '+IntToStr(hgar29_SL+1)+' строка;'
+  +#13#10+'Размытие/Размер (blur) - '+IntToStr(hgar30_SL+1)+' строка;'
+  +#13#10+'Интенсивность (strength) - '+IntToStr(hgar31_SL+1)+' строка;');
+end;
+
+procedure TXCTuner_Form1.Image27Click(Sender: TObject);
+begin
+  ShowMessage('Данные параметр находится в файле '+hangar_name+' по пути '
+  +activ_config+#13#10+'Отличный (great) - '+IntToStr(hgar18_SL+1)+' строка;'
+  +#13#10+'Хороший  (good) - '+IntToStr(hgar19_SL+1)+' строка;'
+  +#13#10+'Так себе    (poor)  - '+IntToStr(hgar20_SL+1)+' строка;'
+  +#13#10+'Плохой      (bad)   - '+IntToStr(hgar21_SL+1)+' строка;');
+end;
+
+procedure TXCTuner_Form1.Image28Click(Sender: TObject);
+begin
+  ShowMessage('Данные параметр находится в файле '+hangar_name+' по пути '
+  +activ_config+#13#10+'Имя шрифта - '+IntToStr(hgar14_SL+1)+' строка;'
+  +#13#10+'Размер шрифта - '+IntToStr(hgar15_SL+1)+' строка;'
+  +#13#10+'Стиль шрифта жирный - '+IntToStr(hgar16_SL+1)+' строка (true - вкл., false - откл.);'
+  +#13#10+'Стиль шрифта курсив - '+IntToStr(hgar17_SL+1)+' строка (true - вкл., false - откл.);');
+end;
+
+procedure TXCTuner_Form1.Image29Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(hgar4_SL+1)+' строке в файле '+hangar_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "masteryMarkInTechTree": true'+#13#10+'Отключить опцию - "masteryMarkInTechTree": false');
+end;
+
+procedure TXCTuner_Form1.Image2Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(rat1_SL+1)+' строке в файле '+rating_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "showPlayersStatistics": true'+#13#10+'Отключить опцию - "showPlayersStatistics": false');
+end;
+
+procedure TXCTuner_Form1.Image30Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(hgar5_SL+1)+' строке в файле '+hangar_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "hidePricesInTechTree": false'+#13#10+'Отключить опцию - "hidePricesInTechTree": true');
+end;
+
+procedure TXCTuner_Form1.Image31Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(hgar6_SL+1)+' строке в файле '+hangar_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "widgetsEnabled": true'+#13#10+'Отключить опцию - "widgetsEnabled": false');
+end;
+
+procedure TXCTuner_Form1.Image32Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(hgar9_SL+1)+' строке в файле '+hangar_name+' по пути '
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image33Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(hgar10_SL+1)+' строке в файле '+hangar_name+' по пути '
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image34Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(hgar11_SL+1)+' строке в файле '+hangar_name+' по пути '
+  +activ_config+#13#10+'Чем меньше значение, тем более прозрачен текст!');
+end;
+
+procedure TXCTuner_Form1.Image3Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(rat2_SL+1)+' строке в файле '+rating_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "enableUserInfoStatistics": true'+#13#10+'Отключить опцию - "enableUserInfoStatistics": false');
+end;
+
+procedure TXCTuner_Form1.Image4Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(rat3_SL+1)+' строке в файле '+rating_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "enableCompanyStatistics": true'+#13#10+'Отключить опцию - "enableCompanyStatistics": false');
+end;
+
+procedure TXCTuner_Form1.Image5Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(rat4_SL+1)+' строке в файле '+rating_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "loadEnemyStatsInFogOfWar": true'+#13#10+'Отключить опцию - "loadEnemyStatsInFogOfWar": false');
+end;
+
+procedure TXCTuner_Form1.Image6Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(rat5_SL+1)+' строке в файле '+rating_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "enableStatisticsLog": true'+#13#10+'Отключить опцию - "enableStatisticsLog": false');
+end;
+
+procedure TXCTuner_Form1.Image7Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(bs1_SL+1)+' строке в файле '+battle_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "mirroredVehicleIcons": true'+#13#10+'Отключить опцию - "mirroredVehicleIcons": false');
+end;
+
+procedure TXCTuner_Form1.Image8Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(bs2_SL+1)+' строке в файле '+battle_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "showPostmortemTips": true'+#13#10+'Отключить опцию - "showPostmortemTips": false');
+end;
+
+procedure TXCTuner_Form1.Image9Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(bs3_SL+1)+' строке в файле '+battle_name+' по пути '
+  +activ_config+#13#10+'Вкл. переключатель -   "removePanelsModeSwitcher": false'+#13#10+'Откл. переключатель - "removePanelsModeSwitcher": true');
 end;
 
 // Прокрутка скролбокса колесиком вниз на 400 pt
@@ -779,14 +1074,7 @@ begin
     end;
 end;
 
-
-
-/////////////////////////////////////////
-//////////////////////////////
-/////////////////////////
-////////////////////
-////////////
-//////////
+// Функция замены значений в файлах конфига!
 function TXCTuner_Form1.Smart_Replacing(PodStr1, PodStr2, FullStr, ChangeStr: String): String;
 var
   poz1, poz2: Integer;
@@ -799,15 +1087,31 @@ begin
   s2:=StringReplace(s2, PodStr2, ChangeStr, []);
   Result:=StringReplace(FullStr, s1, s2, []);
 end;
-//////////////////////////
-////////////////////////
-/////////////////////
-////////////
-//////////
-//////
-///
 
-
+// Функция нахождения имени файлов, на которые ссылается файл @xvm.xc
+function TXCTuner_Form1.FindFilesXVM(FindStr: String; FileXVMAllStr: TStringList
+  ): String;
+var
+  m, c1, c2: Integer;
+  strFind: String;
+begin
+  c1:=0;
+  c2:=0;
+  for m := 0 to (FileXVMAllStr.Count - 1) do
+    begin
+    strFind:=Trim(FileXVMAllStr.Strings[m]);
+    c1:=pos(FindStr, strFind);
+    c2:=PosEx('${', strFind, c1);
+    if Length(strFind)=0 then Continue;
+    if (c1>0) and (c2>0) then
+      begin
+        c1:=PosEx('"', strFind, Pos('$', strFind));
+        c2:=PosEx('"', strFind, c1+1);
+        break;
+      end;
+    end;
+  Result:=Trim(Copy(strFind, c1+1, c2-c1-1));
+end;
 
 // процедура поиска нужного слова / выводит номер строки где найдено это слово
 procedure TXCTuner_Form1.SearchLine_my;
@@ -941,7 +1245,7 @@ end;
 procedure TXCTuner_Form1.battle_loading;
 begin
   battle.Clear;
-  battle.LoadFromFile(dir_xvm+'\'+'battle.xc');
+  battle.LoadFromFile(dir_xvm+battle_name);
   // загрузка данных из файла battle.xc в интерфейс
   temp_list.Clear;
   temp_list.Text:=battle.Text;
@@ -1022,7 +1326,7 @@ procedure TXCTuner_Form1.login_loading;
 // загрузка из файла login.xc и обработка данных
 begin
   login.Clear;
-  login.LoadFromFile(dir_xvm+'\'+'login.xc');
+  login.LoadFromFile(dir_xvm+login_name);
 
   temp_list.Clear;
   temp_list.Text:=login.Text;
@@ -1130,7 +1434,7 @@ end;
 procedure TXCTuner_Form1.hangar_loading;
 begin
   hangar.Clear;
-  hangar.LoadFromFile(dir_xvm+'\'+'hangar.xc');
+  hangar.LoadFromFile(dir_xvm+hangar_name);
   // загрузка данных из файла hangar.xc в интерфейс
   temp_list.Clear;
   temp_list.Text:=hangar.Text;
@@ -1888,7 +2192,7 @@ end;
 procedure TXCTuner_Form1.rating_loading;
 begin
   rating.Clear;
-  rating.LoadFromFile(dir_xvm+'\'+'rating.xc');
+  rating.LoadFromFile(dir_xvm+rating_name);
   // загрузка данных из файла rating.xc в интерфейс
   temp_list.Clear;
   temp_list.Text:=rating.Text;

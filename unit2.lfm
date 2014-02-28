@@ -416,8 +416,8 @@ object About: TAbout
     Left = 88
     Height = 15
     Top = 80
-    Width = 180
-    Caption = 'Автор: Рустам А. aka Ded_Shalfey'
+    Width = 181
+    Caption = 'Автор: Rustam А. aka Ded_Shalfey'
     ParentColor = False
   end
   object Label2: TLabel
@@ -425,7 +425,7 @@ object About: TAbout
     Height = 15
     Top = 112
     Width = 84
-    Caption = 'Версия: 0.1.7.81'
+    Caption = 'Версия: 0.1.7.87'
     ParentColor = False
   end
   object Label3: TLabel
