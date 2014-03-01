@@ -8,7 +8,7 @@ uses
   Classes, SysUtils, FileUtil, RTTICtrls, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, Buttons, ComCtrls, StdCtrls, Spin, ColorBox, Unit2, Unit3,
   TplColorPanelUnit, mbColorPalette, mbColorList, mbColorPreview,
-  HSVColorPicker, HexaColorPicker, StrUtils, types, Unit4;
+  HSVColorPicker, HexaColorPicker, StrUtils, types, Unit4, HMITrackBar;
 
 type
 
@@ -27,19 +27,24 @@ type
     BitRefresh2: TBitBtn;
     BitRefresh3: TBitBtn;
     BitRefresh4: TBitBtn;
+    BitRefresh5: TBitBtn;
     BitSave1: TBitBtn;
     BitSave2: TBitBtn;
     BitSave3: TBitBtn;
     BitSave4: TBitBtn;
+    BitSave5: TBitBtn;
     CheckBox1: TCheckBox;
     CheckBox2: TCheckBox;
     ComboBox1: TComboBox;
+    ComboBox2: TComboBox;
+    ComboBox3: TComboBox;
     Edit1: TEdit;
     Edit2: TEdit;
     Edit3: TEdit;
     Edit4: TEdit;
     Edit5: TEdit;
     Edit6: TEdit;
+    Edit7: TEdit;
     GroupBox1: TGroupBox;
     GroupBox10: TGroupBox;
     GroupBox11: TGroupBox;
@@ -69,8 +74,13 @@ type
     GroupBox33: TGroupBox;
     GroupBox34: TGroupBox;
     GroupBox35: TGroupBox;
+    GroupBox36: TGroupBox;
     GroupBox37: TGroupBox;
+    GroupBox38: TGroupBox;
+    GroupBox39: TGroupBox;
     GroupBox4: TGroupBox;
+    GroupBox40: TGroupBox;
+    GroupBox41: TGroupBox;
     GroupBox5: TGroupBox;
     GroupBox6: TGroupBox;
     GroupBox7: TGroupBox;
@@ -104,7 +114,14 @@ type
     Image32: TImage;
     Image33: TImage;
     Image34: TImage;
+    Image35: TImage;
+    Image36: TImage;
+    Image37: TImage;
+    Image38: TImage;
+    Image39: TImage;
     Image4: TImage;
+    Image40: TImage;
+    Image41: TImage;
     Image5: TImage;
     Image6: TImage;
     Image7: TImage;
@@ -146,6 +163,9 @@ type
     Label39: TLabel;
     Label4: TLabel;
     Label40: TLabel;
+    Label41: TLabel;
+    Label42: TLabel;
+    Label43: TLabel;
     Label5: TLabel;
     Label6: TLabel;
     Label7: TLabel;
@@ -156,6 +176,7 @@ type
     mbColorPreview3: TmbColorPreview;
     mbColorPreview4: TmbColorPreview;
     mbColorPreview5: TmbColorPreview;
+    PageControl2: TPageControl;
     RadioButton1: TRadioButton;
     RadioButton10: TRadioButton;
     RadioButton11: TRadioButton;
@@ -197,7 +218,15 @@ type
     RadioButton44: TRadioButton;
     RadioButton45: TRadioButton;
     RadioButton46: TRadioButton;
+    RadioButton47: TRadioButton;
+    RadioButton48: TRadioButton;
+    RadioButton49: TRadioButton;
     RadioButton5: TRadioButton;
+    RadioButton50: TRadioButton;
+    RadioButton51: TRadioButton;
+    RadioButton52: TRadioButton;
+    RadioButton53: TRadioButton;
+    RadioButton54: TRadioButton;
     RadioButton6: TRadioButton;
     RadioButton7: TRadioButton;
     RadioButton8: TRadioButton;
@@ -231,9 +260,11 @@ type
     TabSheet1: TTabSheet;
     TabSheet2: TTabSheet;
     TabSheet3: TTabSheet;
+    TabSheet4: TTabSheet;
+    TabSheet5: TTabSheet;
+    TrackBar1: TTrackBar;
     TrackBar2: TTrackBar;
     TrackBar3: TTrackBar;
-    TrackBar1: TTrackBar;
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
@@ -247,10 +278,12 @@ type
     procedure BitRefresh2Click(Sender: TObject);
     procedure BitRefresh3Click(Sender: TObject);
     procedure BitRefresh4Click(Sender: TObject);
+    procedure BitRefresh5Click(Sender: TObject);
     procedure BitSave1Click(Sender: TObject);
     procedure BitSave2Click(Sender: TObject);
     procedure BitSave3Click(Sender: TObject);
     procedure BitSave4Click(Sender: TObject);
+    procedure BitSave5Click(Sender: TObject);
     procedure BtExitClick(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
     procedure Edit2Exit(Sender: TObject);
@@ -287,7 +320,14 @@ type
     procedure Image32Click(Sender: TObject);
     procedure Image33Click(Sender: TObject);
     procedure Image34Click(Sender: TObject);
+    procedure Image35Click(Sender: TObject);
+    procedure Image36Click(Sender: TObject);
+    procedure Image37Click(Sender: TObject);
+    procedure Image38Click(Sender: TObject);
+    procedure Image39Click(Sender: TObject);
     procedure Image3Click(Sender: TObject);
+    procedure Image40Click(Sender: TObject);
+    procedure Image41Click(Sender: TObject);
     procedure Image4Click(Sender: TObject);
     procedure Image5Click(Sender: TObject);
     procedure Image6Click(Sender: TObject);
@@ -303,6 +343,7 @@ type
     procedure ScrollBox2MouseWheelUp(Sender: TObject; Shift: TShiftState;
       MousePos: TPoint; var Handled: Boolean);
     procedure SpinEdit10Change(Sender: TObject);
+    procedure SpinEdit20Change(Sender: TObject);
     procedure SpinEdit8Change(Sender: TObject);
     procedure SpinEdit9Change(Sender: TObject);
     procedure tAboutClick(Sender: TObject);
@@ -334,6 +375,8 @@ type
     procedure login_save();
     procedure hangar_loading();
     procedure hangar_save();
+    procedure userinfo_loading();
+    procedure userinfo_save();
     procedure rating_loading();
     procedure rating_save();
     { public declarations }
@@ -344,8 +387,8 @@ var
   ChangeEditText: String;
   ChangeEdit: Integer;
   XCTuner_Form1: TXCTuner_Form1;
-  xvm_base, xvm, battle, login, hangar, rating, temp_list: TStringList;
-  activ_config, xvm_file_name, battle_name, login_name, hangar_name, rating_name: String;
+  xvm_base, xvm, battle, login, hangar, userInfo, rating, temp_list: TStringList;
+  activ_config, xvm_file_name, battle_name, login_name, hangar_name, userInfo_name, rating_name: String;
   px1, px2, px3: Integer;
   dir_xvm: String;
   b_s1, b_s2, b_s3, b_s4, b_s5, b_s6, b_s7, b_s8, b_s7_2, b_s8_2: String;
@@ -381,6 +424,10 @@ var
   hgar27_SL, hgar28_SL, hgar29_SL, hgar30_SL, hgar31_SL: Integer;
 
   rat1_SL, rat2_SL, rat3_SL, rat4_SL, rat5_SL: Integer;
+
+  UserInfo_s1, UserInfo_s2, UserInfo_s3, UserInfo_s4, UserInfo_s5, UserInfo_s6, UserInfo_s7: String;
+  UserInfo_s1_2, UserInfo_s2_2, UserInfo_s3_2, UserInfo_s4_2, UserInfo_s5_2, UserInfo_s6_2, UserInfo_s7_2: String;
+  UI1_SL, UI2_SL, UI3_SL, UI4_SL, UI5_SL, UI6_SL, UI7_SL: Integer;
 
 implementation
 
@@ -505,6 +552,11 @@ begin
   hangar_loading();
 end;
 
+procedure TXCTuner_Form1.BitRefresh5Click(Sender: TObject);
+begin
+  userinfo_loading();
+end;
+
 // По кнопке происходит вызов процедуры сохранения данных в файла "rating.xc"
 procedure TXCTuner_Form1.BitSave1Click(Sender: TObject);
 begin
@@ -536,6 +588,13 @@ begin
   hangar_save();
   hangar.SaveToFile(dir_xvm+hangar_name);
   hangar_loading();
+end;
+
+procedure TXCTuner_Form1.BitSave5Click(Sender: TObject);
+begin
+  userinfo_save();
+  userInfo.SaveToFile(dir_xvm+userInfo_name);
+  userinfo_loading();
 end;
 
 // Закрытие программы стандартным способом
@@ -635,6 +694,7 @@ begin
   battle.Free;
   login.Free;
   hangar.Free;
+  userInfo.Free;
   rating.Free;
   temp_list.Free;
 end;
@@ -653,6 +713,7 @@ begin
   battle:=TStringList.Create;
   login:=TStringList.Create;
   hangar:=TStringList.Create;
+  userInfo:=TStringList.Create;
   rating:=TStringList.Create;
   temp_list:=TStringList.Create;
 
@@ -662,22 +723,25 @@ begin
   battle_name:=FindFilesXVM('"battle"', xvm);
   login_name:=FindFilesXVM('"login"', xvm);
   hangar_name:=FindFilesXVM('"hangar"', xvm);
+  userInfo_name:=FindFilesXVM('"userInfo"', xvm);
   rating_name:=FindFilesXVM('"rating"', xvm);
 
   if ((FileExists(dir_xvm+xvm_file_name )) and
       (FileExists(dir_xvm+battle_name   )) and
       (FileExists(dir_xvm+login_name    )) and
       (FileExists(dir_xvm+hangar_name   )) and
+      (FileExists(dir_xvm+userInfo_name )) and
       (FileExists(dir_xvm+rating_name   ))) then
     begin
       // Загрузка в соответствующие объекты файлы
       battle.LoadFromFile(dir_xvm+battle_name);
       login.LoadFromFile(dir_xvm+login_name);
       login.LoadFromFile(dir_xvm+hangar_name);
+      userInfo.LoadFromFile(dir_xvm+userInfo_name);
       rating.LoadFromFile(dir_xvm+rating_name);
 
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.7.87';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.7.98';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       BitBtn1.Click;
@@ -690,6 +754,7 @@ begin
       battle_loading();
       login_loading();
       hangar_loading();
+      userinfo_loading();
       rating_loading();
 
       BitBtn1.Hint:='Настройка в файлах: ' + xvm_file_name + ', ' + battle_name + ' и ' + rating_name;
@@ -704,6 +769,8 @@ begin
       xvm_base.Free ;
       battle.Free;
       login.Free;
+      hangar.Free;
+      userInfo.Free;
       rating.Free;
       temp_list.Free;
       Application.Terminate;
@@ -898,10 +965,52 @@ begin
   +activ_config+#13#10+'Чем меньше значение, тем более прозрачен текст!');
 end;
 
+procedure TXCTuner_Form1.Image35Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(UI3_SL+1)+' строке в файле '+userInfo_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "showExtraDataInProfile": true'+#13#10+'Отключить опцию - "showExtraDataInProfile": false');
+end;
+
+procedure TXCTuner_Form1.Image36Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(UI1_SL+1)+' строке в файле '+userInfo_name+' по пути '
+  +activ_config+#13#10+'Диапазон - 1 - 4');
+end;
+
+procedure TXCTuner_Form1.Image37Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(UI2_SL+1)+' строке в файле '+userInfo_name+' по пути '
+  +activ_config+#13#10+'Диапазон - 1 - 8');
+end;
+
+procedure TXCTuner_Form1.Image38Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(UI4_SL+1)+' строке в файле '+userInfo_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "inHangarFilterEnabled": true'+#13#10+'Отключить опцию - "inHangarFilterEnabled": false');
+end;
+
+procedure TXCTuner_Form1.Image39Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(UI5_SL+1)+' строке в файле '+userInfo_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "showFilters": true'+#13#10+'Отключить опцию - "showFilters": false');
+end;
+
 procedure TXCTuner_Form1.Image3Click(Sender: TObject);
 begin
   ShowMessage('Данный параметр находится в '+IntToStr(rat2_SL+1)+' строке в файле '+rating_name+' по пути '
   +activ_config+#13#10+'Включить опцию -   "enableUserInfoStatistics": true'+#13#10+'Отключить опцию - "enableUserInfoStatistics": false');
+end;
+
+procedure TXCTuner_Form1.Image40Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(UI6_SL+1)+' строке в файле '+userInfo_name+' по пути '
+  +activ_config+#13#10+'Включить опцию -   "filterFocused": true'+#13#10+'Отключить опцию - "filterFocused": false');
+end;
+
+procedure TXCTuner_Form1.Image41Click(Sender: TObject);
+begin
+  ShowMessage('Данный параметр находится в '+IntToStr(UI7_SL+1)+' строке в файле '+userInfo_name+' по пути '
+  +activ_config+#13#10+'Описание замен: (+all, -premium, ...)');
 end;
 
 procedure TXCTuner_Form1.Image4Click(Sender: TObject);
@@ -974,6 +1083,11 @@ begin
   TrackBar1.SelEnd:=SpinEdit10.Value;
 end;
 
+procedure TXCTuner_Form1.SpinEdit20Change(Sender: TObject);
+begin
+
+end;
+
 procedure TXCTuner_Form1.SpinEdit8Change(Sender: TObject);
 begin
   TrackBar2.Position:=SpinEdit8.Value;
@@ -1024,7 +1138,6 @@ begin
   TrackBar3.SelEnd:=TrackBar3.Position;
 end;
 
-
 // Функция преобразования цвета в вид типа #FFFFFF
 function TXCTuner_Form1.ColorToHex(rgb: TColor): String;
 begin
@@ -1062,6 +1175,7 @@ end;
 // Функция для записи в начало " или "0x , а в конец "
 function TXCTuner_Form1.RecStartEnd(RecStr: String): String;
 begin
+  if Length(RecStr)=0 then Result:='""' else
   if RecStr[1]='#' then
     begin
       Delete(RecStr, 1, 1);
@@ -2041,9 +2155,185 @@ begin
 
 end;
 
+// Процедура загрузки данных из файла userInfo.xc в программу
+procedure TXCTuner_Form1.userinfo_loading;
+begin
+  userInfo.Clear;
+  userInfo.LoadFromFile(dir_xvm+userInfo_name);
+  temp_list.Clear;
+  temp_list.Text:=userInfo.Text;
+
+  // Номер начальной страницы // 1
+  Search:='"userInfo"';
+  SearchLine_my();
+  Search:='"startPage"';
+  SearchLine_my_2();
+  UserInfo_s1:=TrimRight(userInfo.Strings[SearchLine]);
+  UI1_SL:=SearchLine;
+  search_sN:=UserInfo_s1;
+  search_info();
+  UserInfo_s1:=search_sN;
+  ComboBox2.ItemIndex:=StrToInt(UserInfo_s1) - 1;
+
+  // Номер колонки для сортировки // 2
+  Search:='"userInfo"';
+  SearchLine_my();
+  Search:='"sortColumn"';
+  SearchLine_my_2();
+  UserInfo_s2:=TrimRight(userInfo.Strings[SearchLine]);
+  UI2_SL:=SearchLine;
+  search_sN:=UserInfo_s2;
+  search_info();
+  UserInfo_s2:=search_sN;
+  ComboBox3.ItemIndex:=StrToInt(UserInfo_s2) - 1;
+
+  // Показывать расширенные данные в профиле // 3
+  Search:='"userInfo"';
+  SearchLine_my();
+  Search:='"showExtraDataInProfile"';
+  SearchLine_my_2();
+  UserInfo_s3:=TrimRight(userInfo.Strings[SearchLine]);
+  UI3_SL:=SearchLine;
+  search_sN:=UserInfo_s3;
+  search_info();
+  UserInfo_s3:=search_sN;
+  if UserInfo_s3='true' then RadioButton47.Checked:=True else
+  if UserInfo_s3='false' then RadioButton48.Checked:=True else
+  begin
+    ShowMessage('В конфиге ошибка! В файле '+userInfo_name+' по пути '+activ_config
+    +#13#10+'Ошибка: '+UserInfo_s3+' (в строке '+IntToStr(UI3_SL+1)+' )'
+    +#13#10+'Исправьте (правильно true или false)! Программа закроется!');
+    Application.Terminate;
+  end;
+
+  // Включить фильтр отображения танков в ангаре по умолчанию // 4
+  Search:='"userInfo"';
+  SearchLine_my();
+  Search:='"inHangarFilterEnabled"';
+  SearchLine_my_2();
+  UserInfo_s4:=TrimRight(userInfo.Strings[SearchLine]);
+  UI4_SL:=SearchLine;
+  search_sN:=UserInfo_s4;
+  search_info();
+  UserInfo_s4:=search_sN;
+  if UserInfo_s4='true' then RadioButton49.Checked:=True else
+  if UserInfo_s4='false' then RadioButton50.Checked:=True else
+  begin
+    ShowMessage('В конфиге ошибка! В файле '+userInfo_name+' по пути '+activ_config
+    +#13#10+'Ошибка: '+UserInfo_s4+' (в строке '+IntToStr(UI4_SL+1)+' )'
+    +#13#10+'Исправьте (правильно true или false)! Программа закроется!');
+    Application.Terminate;
+  end;
+
+  // Показывать фильтры отображения танков // 5
+  Search:='"userInfo"';
+  SearchLine_my();
+  Search:='"showFilters"';
+  SearchLine_my_2();
+  UserInfo_s5:=TrimRight(userInfo.Strings[SearchLine]);
+  UI5_SL:=SearchLine;
+  search_sN:=UserInfo_s5;
+  search_info();
+  UserInfo_s5:=search_sN;
+  if UserInfo_s5='true' then RadioButton51.Checked:=True else
+  if UserInfo_s5='false' then RadioButton52.Checked:=True else
+  begin
+    ShowMessage('В конфиге ошибка! В файле '+userInfo_name+' по пути '+activ_config
+    +#13#10+'Ошибка: '+UserInfo_s5+' (в строке '+IntToStr(UI5_SL+1)+' )'
+    +#13#10+'Исправьте (правильно true или false)! Программа закроется!');
+    Application.Terminate;
+  end;
+
+  // Выбрать поле ввода фильтра по умолчанию // 6
+  Search:='"userInfo"';
+  SearchLine_my();
+  Search:='"filterFocused"';
+  SearchLine_my_2();
+  UserInfo_s6:=TrimRight(userInfo.Strings[SearchLine]);
+  UI6_SL:=SearchLine;
+  search_sN:=UserInfo_s6;
+  search_info();
+  UserInfo_s6:=search_sN;
+  if UserInfo_s6='true' then RadioButton53.Checked:=True else
+  if UserInfo_s6='false' then RadioButton54.Checked:=True else
+  begin
+    ShowMessage('В конфиге ошибка! В файле '+userInfo_name+' по пути '+activ_config
+    +#13#10+'Ошибка: '+UserInfo_s6+' (в строке '+IntToStr(UI6_SL+1)+' )'
+    +#13#10+'Исправьте (правильно true или false)! Программа закроется!');
+    Application.Terminate;
+  end;
+
+  // Значение фильтра по умолчанию // 7
+  Search:='"userInfo"';
+  SearchLine_my();
+  Search:='"defaultFilterValue"';
+  SearchLine_my_2();
+  UserInfo_s7:=TrimRight(userInfo.Strings[SearchLine]);
+  UI7_SL:=SearchLine;
+  search_sN:=UserInfo_s7;
+  search_info();
+  UserInfo_s7:=search_sN;
+  Edit7.Text:=DelStartEnd(UserInfo_s7);
+
+end;
+
+// Сохранение параметров в файл UserInfo.xc
+procedure TXCTuner_Form1.userinfo_save;
+var
+chek1, chek2, chek3, chek4: String;
+begin
+
+  if (RadioButton47.Checked=True) then chek1:='true' else chek1:='false';
+  if (RadioButton49.Checked=True) then chek2:='true' else chek2:='false';
+  if (RadioButton51.Checked=True) then chek3:='true' else chek3:='false';
+  if (RadioButton53.Checked=True) then chek4:='true' else chek4:='false';
+
+  // Номер начальной страницы // 1
+  UserInfo_s1_2:=userInfo.Strings[UI1_SL];
+  UserInfo_s1_2:=Smart_Replacing('"startPage"', UserInfo_s1, UserInfo_s1_2, IntToStr(ComboBox2.ItemIndex+1));
+  userInfo.Delete(UI1_SL);
+  userInfo.Insert(UI1_SL, UserInfo_s1_2);
+
+  // Номер колонки для сортировки // 2
+  UserInfo_s2_2:=userInfo.Strings[UI2_SL];
+  UserInfo_s2_2:=Smart_Replacing('"sortColumn"', UserInfo_s2, UserInfo_s2_2, IntToStr(ComboBox3.ItemIndex+1));
+  userInfo.Delete(UI2_SL);
+  userInfo.Insert(UI2_SL, UserInfo_s2_2);
+
+  // Показывать расширенные данные в профиле // 3
+  UserInfo_s3_2:=userInfo.Strings[UI3_SL];
+  UserInfo_s3_2:=Smart_Replacing('"showExtraDataInProfile"', UserInfo_s3, UserInfo_s3_2, chek1);
+  userInfo.Delete(UI3_SL);
+  userInfo.Insert(UI3_SL, UserInfo_s3_2);
+
+  // Включить фильтр отображения танков в ангаре по умолчанию // 4
+  UserInfo_s4_2:=userInfo.Strings[UI4_SL];
+  UserInfo_s4_2:=Smart_Replacing('"inHangarFilterEnabled"', UserInfo_s4, UserInfo_s4_2, chek2);
+  userInfo.Delete(UI4_SL);
+  userInfo.Insert(UI4_SL, UserInfo_s4_2);
+
+  // Показывать фильтры отображения танков // 5
+  UserInfo_s5_2:=userInfo.Strings[UI5_SL];
+  UserInfo_s5_2:=Smart_Replacing('"showFilters"', UserInfo_s5, UserInfo_s5_2, chek3);
+  userInfo.Delete(UI5_SL);
+  userInfo.Insert(UI5_SL, UserInfo_s5_2);
+
+  // Выбрать поле ввода фильтра по умолчанию // 6
+  UserInfo_s6_2:=userInfo.Strings[UI6_SL];
+  UserInfo_s6_2:=Smart_Replacing('"filterFocused"', UserInfo_s6, UserInfo_s6_2, chek4);
+  userInfo.Delete(UI6_SL);
+  userInfo.Insert(UI6_SL, UserInfo_s6_2);
+
+  // Значение фильтра по умолчанию // 7
+  UserInfo_s7_2:=userInfo.Strings[UI7_SL];
+  UserInfo_s7_2:=Smart_Replacing('"defaultFilterValue"', UserInfo_s7, UserInfo_s7_2, RecStartEnd(Edit7.Text));
+  UserInfo.Delete(UI7_SL);
+  UserInfo.Insert(UI7_SL, UserInfo_s7_2);
+
+end;
+
 // сохранение параметров в файл battle.xc
 procedure TXCTuner_Form1.battle_save;
-
 begin
   // процедура подготовки изменений для сохранения в файл battle.xc
   if (RadioButton2.Checked=True) then

@@ -22,7 +22,7 @@
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="1"/>
       <RevisionNr Value="7"/>
-      <BuildNr Value="88"/>
+      <BuildNr Value="100"/>
       <Language Value="0419"/>
       <Attributes pvaPreRelease="True"/>
       <StringTable FileDescription="XCTuner" LegalCopyright="Ded_Shalfey" ProductName="XCTuner" ProductVersion=""/>
@@ -38,25 +38,28 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="6">
+    <RequiredPackages Count="7">
       <Item1>
-        <PackageName Value="pl_cindy"/>
+        <PackageName Value="pl_pascalscada"/>
       </Item1>
       <Item2>
-        <PackageName Value="RunTimeTypeInfoControls"/>
+        <PackageName Value="pl_cindy"/>
       </Item2>
       <Item3>
-        <PackageName Value="pl_excontrols"/>
+        <PackageName Value="RunTimeTypeInfoControls"/>
       </Item3>
       <Item4>
-        <PackageName Value="pl_colorlib"/>
+        <PackageName Value="pl_excontrols"/>
       </Item4>
       <Item5>
-        <PackageName Value="pl_visualplanit"/>
+        <PackageName Value="pl_colorlib"/>
       </Item5>
       <Item6>
-        <PackageName Value="LCL"/>
+        <PackageName Value="pl_visualplanit"/>
       </Item6>
+      <Item7>
+        <PackageName Value="LCL"/>
+      </Item7>
     </RequiredPackages>
     <Units Count="5">
       <Unit0>

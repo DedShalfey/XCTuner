@@ -8,7 +8,7 @@ uses
   {$ENDIF}{$ENDIF}
   Interfaces, // this includes the LCL widgetset
   Forms, Unit1, Unit2, Unit3, pl_visualplanit, pl_excontrols,
-  runtimetypeinfocontrols, Unit4
+  runtimetypeinfocontrols, Unit4, pl_pascalscada
   { you can add units after this };
 
 {$R *.res}

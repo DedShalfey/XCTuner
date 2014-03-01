@@ -425,7 +425,7 @@ object About: TAbout
     Height = 15
     Top = 112
     Width = 84
-    Caption = 'Версия: 0.1.7.87'
+    Caption = 'Версия: 0.1.7.98'
     ParentColor = False
   end
   object Label3: TLabel
