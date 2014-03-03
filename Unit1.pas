@@ -6,9 +6,8 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, RTTICtrls, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, Buttons, ComCtrls, StdCtrls, Spin, ColorBox, Unit2, Unit3,
-  TplColorPanelUnit, mbColorPalette, mbColorList, mbColorPreview,
-  HSVColorPicker, HexaColorPicker, StrUtils, types, Unit4, HMITrackBar;
+  ExtCtrls, Buttons, ComCtrls, StdCtrls, Spin, Unit2, Unit3,
+  mbColorPreview, StrUtils, types, Unit4;
 
 type
 
@@ -343,7 +342,6 @@ type
     procedure ScrollBox2MouseWheelUp(Sender: TObject; Shift: TShiftState;
       MousePos: TPoint; var Handled: Boolean);
     procedure SpinEdit10Change(Sender: TObject);
-    procedure SpinEdit20Change(Sender: TObject);
     procedure SpinEdit8Change(Sender: TObject);
     procedure SpinEdit9Change(Sender: TObject);
     procedure tAboutClick(Sender: TObject);
@@ -381,6 +379,20 @@ type
     procedure rating_save();
     { public declarations }
   end;
+
+const
+  tpi = 'Данный параметр находится в ';
+  tpis = 'Данные параметры находятся в файле ';
+  litf = ' строке в файле ';
+  path = ' по пути ';
+  enopt = 'Включить опцию - ';
+  disopt = 'Отключить опцию - ';
+  switchon = 'Вкл. переключатель - ';
+  switchoff = 'Откл. переключатель - ';
+  ErrorConf = 'В конфиге ошибка! В файле ';
+  Correct = 'Исправьте (правильно true или false)! Программа закроется!';
+  colorInf = 'Значение должно быть в формате типа #FFFFFF';
+  range = 'Диапазон - ';
 
 var
   ColorSelect: Integer;
@@ -620,7 +632,7 @@ begin
       mbColorPreview5.Color:=HexToTColor(ChangeEditText);
     end else
     begin
-       ShowMessage('Значение должно быть в формате типа #FFFFFF');
+       ShowMessage(colorInf);
     end;
 end;
 
@@ -635,7 +647,7 @@ begin
       mbColorPreview1.Color:=HexToTColor(ChangeEditText);
     end else
     begin
-       ShowMessage('Значение должно быть в формате типа #FFFFFF');
+       ShowMessage(colorInf);
     end;
 end;
 
@@ -650,7 +662,7 @@ begin
       mbColorPreview2.Color:=HexToTColor(ChangeEditText);
     end else
     begin
-       ShowMessage('Значение должно быть в формате типа #FFFFFF');
+       ShowMessage(colorInf);
     end;
 end;
 
@@ -665,7 +677,7 @@ begin
       mbColorPreview3.Color:=HexToTColor(ChangeEditText);
     end else
     begin
-       ShowMessage('Значение должно быть в формате типа #FFFFFF');
+       ShowMessage(colorInf);
     end;
 end;
 
@@ -680,7 +692,7 @@ begin
       mbColorPreview4.Color:=HexToTColor(ChangeEditText);
     end else
     begin
-       ShowMessage('Значение должно быть в формате типа #FFFFFF');
+       ShowMessage(colorInf);
     end;
 end;
 
@@ -741,7 +753,7 @@ begin
       rating.LoadFromFile(dir_xvm+rating_name);
 
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.7.98';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.7.99';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       BitBtn1.Click;
@@ -779,65 +791,65 @@ end;
 
 procedure TXCTuner_Form1.Image10Click(Sender: TObject);
 begin
-  ShowMessage('Данные параметры находятся в файле '+battle_name+' по пути '
+  ShowMessage('Данные параметры находятся в файле '+battle_name+path
   +activ_config+#13#10+'Задержка исчезновения панели -   "delay" '+IntToStr(bs4_SL+1)+' строка'+#13#10
   +'Увеличение панели -   "scale" '+IntToStr(bs5_SL+1)+' строка');
 end;
 
 procedure TXCTuner_Form1.Image11Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(bs6_SL+1)+' строке в файле '+battle_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "highlightVehicleIcon": true'+#13#10+'Отключить опцию - "highlightVehicleIcon": false');
+  ShowMessage(tpi+IntToStr(bs6_SL+1)+litf+battle_name+path
+  +activ_config+#13#10+enopt+'"highlightVehicleIcon": true'+#13#10+disopt+'"highlightVehicleIcon": false');
 end;
 
 procedure TXCTuner_Form1.Image12Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(bs7_SL+1)+' строке в файле '+battle_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "useStandardMarkers": true'+#13#10+'Отключить опцию - "useStandardMarkers": false');
+  ShowMessage(tpi+IntToStr(bs7_SL+1)+litf+battle_name+path
+  +activ_config+#13#10+enopt+'"useStandardMarkers": true'+#13#10+disopt+'"useStandardMarkers": false');
 end;
 
 procedure TXCTuner_Form1.Image13Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(bs8_SL+1)+' строке в файле '+battle_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "hideTeamTextFields": false'+#13#10+'Отключить опцию - "hideTeamTextFields": true');
+  ShowMessage(tpi+IntToStr(bs8_SL+1)+litf+battle_name+path
+  +activ_config+#13#10+enopt+'"hideTeamTextFields": false'+#13#10+disopt+'"hideTeamTextFields": true');
 end;
 
 procedure TXCTuner_Form1.Image14Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(log1_SL+1)+' строке в файле '+login_name+' по пути '
-  +activ_config+#13#10+'Вкл. переключатель -   "skipIntro": true'+#13#10+'Откл. переключатель - "skipIntro": false');
+  ShowMessage(tpi+IntToStr(log1_SL+1)+litf+login_name+path
+  +activ_config+#13#10+switchon+'"skipIntro": true'+#13#10+switchoff+'"skipIntro": false');
 end;
 
 procedure TXCTuner_Form1.Image15Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(log2_SL+1)+' строке в файле '+login_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "autologin": true'+#13#10+'Отключить опцию - "autologin": false');
+  ShowMessage(tpi+IntToStr(log2_SL+1)+litf+login_name+path
+  +activ_config+#13#10+enopt+'"autologin": true'+#13#10+disopt+'"autologin": false');
 end;
 
 procedure TXCTuner_Form1.Image16Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(log3_SL+1)+' строке в файле '+login_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "confirmOldReplays": true'+#13#10+'Отключить опцию - "confirmOldReplays": false');
+  ShowMessage(tpi+IntToStr(log3_SL+1)+litf+login_name+path
+  +activ_config+#13#10+enopt+'"confirmOldReplays": true'+#13#10+disopt+'"confirmOldReplays": false');
 end;
 
 procedure TXCTuner_Form1.Image17Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(log4_SL+1)+' строке в файле '+login_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "enabled": true'+#13#10+'Отключить опцию - "enabled": false'
+  ShowMessage(tpi+IntToStr(log4_SL+1)+litf+login_name+path
+  +activ_config+#13#10+enopt+'"enabled": true'+#13#10+disopt+'"enabled": false'
   +#13#10+'Положение поля по осям настраиваются:'+#13#10+'X - '+IntToStr(log5_SL+1)+' строка'
   +#13#10+'Y - '+IntToStr(log6_SL+1)+' строка');
 end;
 
 procedure TXCTuner_Form1.Image18Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(hgar1_SL+1)+' строке в файле '+hangar_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "hideTutorial": false'+#13#10+'Отключить опцию - "hideTutorial": true');
+  ShowMessage(tpi+IntToStr(hgar1_SL+1)+litf+hangar_name+path
+  +activ_config+#13#10+enopt+'"hideTutorial": false'+#13#10+disopt+'"hideTutorial": true');
 end;
 
 procedure TXCTuner_Form1.Image19Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(hgar2_SL+1)+' строке в файле '+hangar_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "xwnInCompany": true'+#13#10+'Отключить опцию - "xwnInCompany": false');
+  ShowMessage(tpi+IntToStr(hgar2_SL+1)+litf+hangar_name+path
+  +activ_config+#13#10+enopt+'"xwnInCompany": true'+#13#10+disopt+'"xwnInCompany": false');
 end;
 
 // Передача параметров в форму редактирования Edit_XVM
@@ -856,37 +868,37 @@ end;
 
 procedure TXCTuner_Form1.Image20Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(hgar3_SL+1)+' строке в файле '+hangar_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "masteryMarkInTankCarousel": true'+#13#10+'Отключить опцию - "masteryMarkInTankCarousel": false');
+  ShowMessage(tpi+IntToStr(hgar3_SL+1)+litf+hangar_name+path
+  +activ_config+#13#10+enopt+'"masteryMarkInTankCarousel": true'+#13#10+disopt+'"masteryMarkInTankCarousel": false');
 end;
 
 procedure TXCTuner_Form1.Image21Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(hgar7_SL+1)+' строке в файле '+hangar_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "enabled": true'+#13#10+'Отключить опцию - "enabled": false');
+  ShowMessage(tpi+IntToStr(hgar7_SL+1)+litf+hangar_name+path
+  +activ_config+#13#10+enopt+'"enabled": true'+#13#10+disopt+'"enabled": false');
 end;
 
 procedure TXCTuner_Form1.Image22Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(hgar8_SL+1)+' строке в файле '+hangar_name+' по пути '
+  ShowMessage(tpi+IntToStr(hgar8_SL+1)+litf+hangar_name+path
   +activ_config+#13#10+'Чем меньше значение, тем чаще происходить будет обновление!');
 end;
 
 procedure TXCTuner_Form1.Image23Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(hgar12_SL+1)+' строке в файле '+hangar_name+' по пути '
+  ShowMessage(tpi+IntToStr(hgar12_SL+1)+litf+hangar_name+path
   +activ_config);
 end;
 
 procedure TXCTuner_Form1.Image24Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(hgar13_SL+1)+' строке в файле '+hangar_name+' по пути '
+  ShowMessage(tpi+IntToStr(hgar13_SL+1)+litf+hangar_name+path
   +activ_config);
 end;
 
 procedure TXCTuner_Form1.Image25Click(Sender: TObject);
 begin
-  ShowMessage('Данные параметры находятся в файле '+hangar_name+' по пути '
+  ShowMessage(tpis+hangar_name+path
   +activ_config+#13#10+'great - '+IntToStr(hgar22_SL+1)+' строка (до этого значения отклик отличный);'
   +#13#10+'good - '+IntToStr(hgar23_SL+1)+' строка (до этого значения отклик хороший);'
   +#13#10+'poor - '+IntToStr(hgar24_SL+1)+' строка (до этого значения отклик так себе);'
@@ -895,7 +907,7 @@ end;
 
 procedure TXCTuner_Form1.Image26Click(Sender: TObject);
 begin
-  ShowMessage('Данные параметр находится в файле '+hangar_name+' по пути '
+  ShowMessage(tpis+hangar_name+path
   +activ_config+#13#10+'Видимость (enabled) - '+IntToStr(hgar25_SL+1)+' строка (true - вкл., false -откл.);'
   +#13#10+'Цвет (color) - '+IntToStr(hgar26_SL+1)+' строка;'
   +#13#10+'Дистанция (distance) - '+IntToStr(hgar27_SL+1)+' строка;'
@@ -907,7 +919,7 @@ end;
 
 procedure TXCTuner_Form1.Image27Click(Sender: TObject);
 begin
-  ShowMessage('Данные параметр находится в файле '+hangar_name+' по пути '
+  ShowMessage(tpis+hangar_name+path
   +activ_config+#13#10+'Отличный (great) - '+IntToStr(hgar18_SL+1)+' строка;'
   +#13#10+'Хороший  (good) - '+IntToStr(hgar19_SL+1)+' строка;'
   +#13#10+'Так себе    (poor)  - '+IntToStr(hgar20_SL+1)+' строка;'
@@ -916,7 +928,7 @@ end;
 
 procedure TXCTuner_Form1.Image28Click(Sender: TObject);
 begin
-  ShowMessage('Данные параметр находится в файле '+hangar_name+' по пути '
+  ShowMessage(tpis+hangar_name+path
   +activ_config+#13#10+'Имя шрифта - '+IntToStr(hgar14_SL+1)+' строка;'
   +#13#10+'Размер шрифта - '+IntToStr(hgar15_SL+1)+' строка;'
   +#13#10+'Стиль шрифта жирный - '+IntToStr(hgar16_SL+1)+' строка (true - вкл., false - откл.);'
@@ -925,128 +937,128 @@ end;
 
 procedure TXCTuner_Form1.Image29Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(hgar4_SL+1)+' строке в файле '+hangar_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "masteryMarkInTechTree": true'+#13#10+'Отключить опцию - "masteryMarkInTechTree": false');
+  ShowMessage(tpi+IntToStr(hgar4_SL+1)+litf+hangar_name+path
+  +activ_config+#13#10+enopt+'"masteryMarkInTechTree": true'+#13#10+disopt+'"masteryMarkInTechTree": false');
 end;
 
 procedure TXCTuner_Form1.Image2Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(rat1_SL+1)+' строке в файле '+rating_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "showPlayersStatistics": true'+#13#10+'Отключить опцию - "showPlayersStatistics": false');
+  ShowMessage(tpi+IntToStr(rat1_SL+1)+litf+rating_name+path
+  +activ_config+#13#10+enopt+'"showPlayersStatistics": true'+#13#10+disopt+'"showPlayersStatistics": false');
 end;
 
 procedure TXCTuner_Form1.Image30Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(hgar5_SL+1)+' строке в файле '+hangar_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "hidePricesInTechTree": false'+#13#10+'Отключить опцию - "hidePricesInTechTree": true');
+  ShowMessage(tpi+IntToStr(hgar5_SL+1)+litf+hangar_name+path
+  +activ_config+#13#10+enopt+'"hidePricesInTechTree": false'+#13#10+disopt+'"hidePricesInTechTree": true');
 end;
 
 procedure TXCTuner_Form1.Image31Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(hgar6_SL+1)+' строке в файле '+hangar_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "widgetsEnabled": true'+#13#10+'Отключить опцию - "widgetsEnabled": false');
+  ShowMessage(tpi+IntToStr(hgar6_SL+1)+litf+hangar_name+path
+  +activ_config+#13#10+enopt+'"widgetsEnabled": true'+#13#10+disopt+'"widgetsEnabled": false');
 end;
 
 procedure TXCTuner_Form1.Image32Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(hgar9_SL+1)+' строке в файле '+hangar_name+' по пути '
+  ShowMessage(tpi+IntToStr(hgar9_SL+1)+litf+hangar_name+path
   +activ_config);
 end;
 
 procedure TXCTuner_Form1.Image33Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(hgar10_SL+1)+' строке в файле '+hangar_name+' по пути '
+  ShowMessage(tpi+IntToStr(hgar10_SL+1)+litf+hangar_name+path
   +activ_config);
 end;
 
 procedure TXCTuner_Form1.Image34Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(hgar11_SL+1)+' строке в файле '+hangar_name+' по пути '
+  ShowMessage(tpi+IntToStr(hgar11_SL+1)+litf+hangar_name+path
   +activ_config+#13#10+'Чем меньше значение, тем более прозрачен текст!');
 end;
 
 procedure TXCTuner_Form1.Image35Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(UI3_SL+1)+' строке в файле '+userInfo_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "showExtraDataInProfile": true'+#13#10+'Отключить опцию - "showExtraDataInProfile": false');
+  ShowMessage(tpi+IntToStr(UI3_SL+1)+litf+userInfo_name+path
+  +activ_config+#13#10+enopt+'"showExtraDataInProfile": true'+#13#10+disopt+'"showExtraDataInProfile": false');
 end;
 
 procedure TXCTuner_Form1.Image36Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(UI1_SL+1)+' строке в файле '+userInfo_name+' по пути '
-  +activ_config+#13#10+'Диапазон - 1 - 4');
+  ShowMessage(tpi+IntToStr(UI1_SL+1)+litf+userInfo_name+path
+  +activ_config+#13#10+range+'1 - 4');
 end;
 
 procedure TXCTuner_Form1.Image37Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(UI2_SL+1)+' строке в файле '+userInfo_name+' по пути '
-  +activ_config+#13#10+'Диапазон - 1 - 8');
+  ShowMessage(tpi+IntToStr(UI2_SL+1)+litf+userInfo_name+path
+  +activ_config+#13#10+range+'1 - 8');
 end;
 
 procedure TXCTuner_Form1.Image38Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(UI4_SL+1)+' строке в файле '+userInfo_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "inHangarFilterEnabled": true'+#13#10+'Отключить опцию - "inHangarFilterEnabled": false');
+  ShowMessage(tpi+IntToStr(UI4_SL+1)+litf+userInfo_name+path
+  +activ_config+#13#10+enopt+'"inHangarFilterEnabled": true'+#13#10+disopt+'"inHangarFilterEnabled": false');
 end;
 
 procedure TXCTuner_Form1.Image39Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(UI5_SL+1)+' строке в файле '+userInfo_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "showFilters": true'+#13#10+'Отключить опцию - "showFilters": false');
+  ShowMessage(tpi+IntToStr(UI5_SL+1)+litf+userInfo_name+path
+  +activ_config+#13#10+enopt+'"showFilters": true'+#13#10+disopt+'"showFilters": false');
 end;
 
 procedure TXCTuner_Form1.Image3Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(rat2_SL+1)+' строке в файле '+rating_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "enableUserInfoStatistics": true'+#13#10+'Отключить опцию - "enableUserInfoStatistics": false');
+  ShowMessage(tpi+IntToStr(rat2_SL+1)+litf+rating_name+path
+  +activ_config+#13#10+enopt+'"enableUserInfoStatistics": true'+#13#10+disopt+'"enableUserInfoStatistics": false');
 end;
 
 procedure TXCTuner_Form1.Image40Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(UI6_SL+1)+' строке в файле '+userInfo_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "filterFocused": true'+#13#10+'Отключить опцию - "filterFocused": false');
+  ShowMessage(tpi+IntToStr(UI6_SL+1)+litf+userInfo_name+path
+  +activ_config+#13#10+enopt+'"filterFocused": true'+#13#10+disopt+'"filterFocused": false');
 end;
 
 procedure TXCTuner_Form1.Image41Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(UI7_SL+1)+' строке в файле '+userInfo_name+' по пути '
+  ShowMessage(tpi+IntToStr(UI7_SL+1)+litf+userInfo_name+path
   +activ_config+#13#10+'Описание замен: (+all, -premium, ...)');
 end;
 
 procedure TXCTuner_Form1.Image4Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(rat3_SL+1)+' строке в файле '+rating_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "enableCompanyStatistics": true'+#13#10+'Отключить опцию - "enableCompanyStatistics": false');
+  ShowMessage(tpi+IntToStr(rat3_SL+1)+litf+rating_name+path
+  +activ_config+#13#10+enopt+'"enableCompanyStatistics": true'+#13#10+disopt+'"enableCompanyStatistics": false');
 end;
 
 procedure TXCTuner_Form1.Image5Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(rat4_SL+1)+' строке в файле '+rating_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "loadEnemyStatsInFogOfWar": true'+#13#10+'Отключить опцию - "loadEnemyStatsInFogOfWar": false');
+  ShowMessage(tpi+IntToStr(rat4_SL+1)+litf+rating_name+path
+  +activ_config+#13#10+enopt+'"loadEnemyStatsInFogOfWar": true'+#13#10+disopt+'"loadEnemyStatsInFogOfWar": false');
 end;
 
 procedure TXCTuner_Form1.Image6Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(rat5_SL+1)+' строке в файле '+rating_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "enableStatisticsLog": true'+#13#10+'Отключить опцию - "enableStatisticsLog": false');
+  ShowMessage(tpi+IntToStr(rat5_SL+1)+litf+rating_name+path
+  +activ_config+#13#10+enopt+'"enableStatisticsLog": true'+#13#10+disopt+'"enableStatisticsLog": false');
 end;
 
 procedure TXCTuner_Form1.Image7Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(bs1_SL+1)+' строке в файле '+battle_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "mirroredVehicleIcons": true'+#13#10+'Отключить опцию - "mirroredVehicleIcons": false');
+  ShowMessage(tpi+IntToStr(bs1_SL+1)+litf+battle_name+path
+  +activ_config+#13#10+enopt+'"mirroredVehicleIcons": true'+#13#10+disopt+'"mirroredVehicleIcons": false');
 end;
 
 procedure TXCTuner_Form1.Image8Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(bs2_SL+1)+' строке в файле '+battle_name+' по пути '
-  +activ_config+#13#10+'Включить опцию -   "showPostmortemTips": true'+#13#10+'Отключить опцию - "showPostmortemTips": false');
+  ShowMessage(tpi+IntToStr(bs2_SL+1)+litf+battle_name+path
+  +activ_config+#13#10+enopt+'"showPostmortemTips": true'+#13#10+disopt+'"showPostmortemTips": false');
 end;
 
 procedure TXCTuner_Form1.Image9Click(Sender: TObject);
 begin
-  ShowMessage('Данный параметр находится в '+IntToStr(bs3_SL+1)+' строке в файле '+battle_name+' по пути '
-  +activ_config+#13#10+'Вкл. переключатель -   "removePanelsModeSwitcher": false'+#13#10+'Откл. переключатель - "removePanelsModeSwitcher": true');
+  ShowMessage(tpi+IntToStr(bs3_SL+1)+litf+battle_name+path
+  +activ_config+#13#10+switchon+'"removePanelsModeSwitcher": false'+#13#10+switchoff+'"removePanelsModeSwitcher": true');
 end;
 
 // Прокрутка скролбокса колесиком вниз на 400 pt
@@ -1081,11 +1093,6 @@ procedure TXCTuner_Form1.SpinEdit10Change(Sender: TObject);
 begin
   TrackBar1.Position:=SpinEdit10.Value;
   TrackBar1.SelEnd:=SpinEdit10.Value;
-end;
-
-procedure TXCTuner_Form1.SpinEdit20Change(Sender: TObject);
-begin
-
 end;
 
 procedure TXCTuner_Form1.SpinEdit8Change(Sender: TObject);
@@ -2200,9 +2207,9 @@ begin
   if UserInfo_s3='true' then RadioButton47.Checked:=True else
   if UserInfo_s3='false' then RadioButton48.Checked:=True else
   begin
-    ShowMessage('В конфиге ошибка! В файле '+userInfo_name+' по пути '+activ_config
+    ShowMessage(ErrorConf+userInfo_name+path+activ_config
     +#13#10+'Ошибка: '+UserInfo_s3+' (в строке '+IntToStr(UI3_SL+1)+' )'
-    +#13#10+'Исправьте (правильно true или false)! Программа закроется!');
+    +#13#10+Correct);
     Application.Terminate;
   end;
 
@@ -2219,9 +2226,9 @@ begin
   if UserInfo_s4='true' then RadioButton49.Checked:=True else
   if UserInfo_s4='false' then RadioButton50.Checked:=True else
   begin
-    ShowMessage('В конфиге ошибка! В файле '+userInfo_name+' по пути '+activ_config
+    ShowMessage(ErrorConf+userInfo_name+path+activ_config
     +#13#10+'Ошибка: '+UserInfo_s4+' (в строке '+IntToStr(UI4_SL+1)+' )'
-    +#13#10+'Исправьте (правильно true или false)! Программа закроется!');
+    +#13#10+Correct);
     Application.Terminate;
   end;
 
@@ -2238,9 +2245,9 @@ begin
   if UserInfo_s5='true' then RadioButton51.Checked:=True else
   if UserInfo_s5='false' then RadioButton52.Checked:=True else
   begin
-    ShowMessage('В конфиге ошибка! В файле '+userInfo_name+' по пути '+activ_config
+    ShowMessage(ErrorConf+userInfo_name+path+activ_config
     +#13#10+'Ошибка: '+UserInfo_s5+' (в строке '+IntToStr(UI5_SL+1)+' )'
-    +#13#10+'Исправьте (правильно true или false)! Программа закроется!');
+    +#13#10+Correct);
     Application.Terminate;
   end;
 
@@ -2257,9 +2264,9 @@ begin
   if UserInfo_s6='true' then RadioButton53.Checked:=True else
   if UserInfo_s6='false' then RadioButton54.Checked:=True else
   begin
-    ShowMessage('В конфиге ошибка! В файле '+userInfo_name+' по пути '+activ_config
+    ShowMessage(ErrorConf+userInfo_name+path+activ_config
     +#13#10+'Ошибка: '+UserInfo_s6+' (в строке '+IntToStr(UI6_SL+1)+' )'
-    +#13#10+'Исправьте (правильно true или false)! Программа закроется!');
+    +#13#10+Correct);
     Application.Terminate;
   end;
 
