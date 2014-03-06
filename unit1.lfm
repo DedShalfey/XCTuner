@@ -1,7 +1,7 @@
 object XCTuner_Form1: TXCTuner_Form1
-  Left = 216
+  Left = 275
   Height = 575
-  Top = 98
+  Top = 100
   Width = 1053
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
@@ -417,9 +417,9 @@ object XCTuner_Form1: TXCTuner_Form1
         Height = 547
         Top = 0
         Width = 859
-        ActivePage = TabSheet13
+        ActivePage = TabSheet9
         Align = alClient
-        TabIndex = 1
+        TabIndex = 0
         TabOrder = 0
         object TabSheet9: TTabSheet
           Caption = 'Основная Информация'

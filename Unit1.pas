@@ -789,8 +789,7 @@ procedure TXCTuner_Form1.BitSave1Click(Sender: TObject);
 begin
   rating_save();
   rating.SaveToFile(dir_xvm+rating_name);
-  rating.Clear;
-  rating.LoadFromFile(dir_xvm+rating_name);
+  rating_loading();
 end;
 
 // По кнопке происходит вызов процедуры сохранения данных в файла "battle.xc"
@@ -1028,7 +1027,7 @@ begin
     begin
 
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.8.42';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.8.43';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       BitBtn1.Click;
