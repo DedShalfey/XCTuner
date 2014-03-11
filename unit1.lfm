@@ -427,10 +427,10 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 851
           object GroupBox15: TGroupBox
             Left = 79
-            Height = 176
+            Height = 194
             Top = 144
             Width = 584
-            ClientHeight = 158
+            ClientHeight = 176
             ClientWidth = 580
             TabOrder = 0
             object Label1: TLabel
@@ -508,7 +508,7 @@ object XCTuner_Form1: TXCTuner_Form1
             object Label9: TLabel
               Left = 14
               Height = 15
-              Top = 112
+              Top = 114
               Width = 60
               Caption = 'Авторство:'
               ParentColor = False
@@ -517,7 +517,7 @@ object XCTuner_Form1: TXCTuner_Form1
             object Label10: TLabel
               Left = 135
               Height = 15
-              Top = 112
+              Top = 114
               Width = 64
               Caption = 'Ded_Shalfey'
               ParentColor = False
@@ -526,7 +526,7 @@ object XCTuner_Form1: TXCTuner_Form1
             object Label11: TLabel
               Left = 14
               Height = 15
-              Top = 130
+              Top = 131
               Width = 108
               Caption = 'Описание конфига:'
               ParentColor = False
@@ -535,7 +535,7 @@ object XCTuner_Form1: TXCTuner_Form1
             object Label12: TLabel
               Left = 135
               Height = 15
-              Top = 130
+              Top = 131
               Width = 108
               Caption = 'Version 9.2.8 Elegant'
               ParentColor = False
@@ -544,7 +544,7 @@ object XCTuner_Form1: TXCTuner_Form1
             object Label13: TLabel
               Left = 14
               Height = 15
-              Top = 96
+              Top = 97
               Width = 109
               Caption = 'Дата модификации:'
               ParentColor = False
@@ -553,7 +553,7 @@ object XCTuner_Form1: TXCTuner_Form1
             object Label14: TLabel
               Left = 135
               Height = 15
-              Top = 96
+              Top = 97
               Width = 42
               Caption = '15.02.14'
               ParentColor = False
@@ -635,6 +635,31 @@ object XCTuner_Form1: TXCTuner_Form1
                 FF061C19FF0A30003CE51E452B5F74EA0000000049454E44AE426082
               }
               ShowHint = True
+            end
+            object Label62: TLabel
+              Left = 14
+              Height = 15
+              Top = 149
+              Width = 86
+              Caption = 'Адрес конфига:'
+              ParentColor = False
+            end
+            object Label63: TLabel
+              Cursor = crHandPoint
+              Left = 135
+              Height = 15
+              Top = 149
+              Width = 430
+              AutoSize = False
+              Caption = 'url'
+              Font.Color = clBlue
+              ParentColor = False
+              ParentFont = False
+              ParentShowHint = False
+              ShowHint = True
+              OnClick = Label63Click
+              OnMouseMove = Label63MouseMove
+              OnMouseLeave = Label63MouseLeave
             end
           end
         end
@@ -6171,13 +6196,13 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientHeight = 519
           ClientWidth = 851
           object GroupBox50: TGroupBox
-            Left = 174
+            Left = 54
             Height = 160
             Top = 120
-            Width = 362
+            Width = 528
             Caption = 'Название типа техники:'
             ClientHeight = 142
-            ClientWidth = 358
+            ClientWidth = 524
             TabOrder = 0
             object Label59: TLabel
               Left = 14
@@ -6191,7 +6216,7 @@ object XCTuner_Form1: TXCTuner_Form1
               Left = 186
               Height = 23
               Top = 8
-              Width = 136
+              Width = 300
               TabOrder = 0
             end
             object Label60: TLabel
@@ -6206,12 +6231,12 @@ object XCTuner_Form1: TXCTuner_Form1
               Left = 186
               Height = 23
               Top = 38
-              Width = 136
+              Width = 300
               TabOrder = 1
             end
             object BitSave10: TBitBtn
               Cursor = crHandPoint
-              Left = 230
+              Left = 395
               Height = 49
               Hint = 'Сохранить изменения в конфиг'
               Top = 80
@@ -6389,7 +6414,7 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object Image60: TImage
               Cursor = crHandPoint
-              Left = 329
+              Left = 494
               Height = 16
               Top = 12
               Width = 16
@@ -6411,7 +6436,7 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object Image61: TImage
               Cursor = crHandPoint
-              Left = 329
+              Left = 494
               Height = 16
               Top = 42
               Width = 16

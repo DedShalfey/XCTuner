@@ -1,12 +1,12 @@
 object Edit_XVM: TEdit_XVM
   Left = 823
-  Height = 296
+  Height = 318
   Top = 226
   Width = 345
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Редактирование ...'
-  ClientHeight = 296
+  ClientHeight = 318
   ClientWidth = 345
   Icon.Data = {
     BE1000000000010001002020000001002000A810000016000000280000002000
@@ -152,7 +152,7 @@ object Edit_XVM: TEdit_XVM
     Left = 8
     Height = 38
     Hint = 'Сохранить изменения в конфиг'
-    Top = 248
+    Top = 272
     Width = 99
     Caption = 'Сохранить'
     Glyph.Data = {
@@ -241,7 +241,7 @@ object Edit_XVM: TEdit_XVM
     Left = 237
     Height = 38
     Hint = 'Отменить или Закрыть'
-    Top = 248
+    Top = 272
     Width = 99
     Caption = 'Отмена'
     Glyph.Data = {
@@ -468,5 +468,21 @@ object Edit_XVM: TEdit_XVM
     Width = 192
     TabOrder = 9
     Text = 'Edit7'
+  end
+  object Label16: TLabel
+    Left = 8
+    Height = 15
+    Top = 244
+    Width = 86
+    Caption = 'Адрес конфига:'
+    ParentColor = False
+  end
+  object Edit8: TEdit
+    Left = 144
+    Height = 23
+    Top = 240
+    Width = 192
+    TabOrder = 10
+    Text = 'Edit8'
   end
 end

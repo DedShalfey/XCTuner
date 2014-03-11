@@ -7,7 +7,7 @@ interface
 uses
   Classes, SysUtils, FileUtil, RTTICtrls, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, Buttons, ComCtrls, StdCtrls, Spin, Unit2, Unit3,
-  mbColorPreview, StrUtils, types, Unit4;
+  mbColorPreview, StrUtils, types, Unit4, ShellApi;
 
 type
 
@@ -245,6 +245,8 @@ type
     Label6: TLabel;
     Label60: TLabel;
     Label61: TLabel;
+    Label62: TLabel;
+    Label63: TLabel;
     Label7: TLabel;
     Label8: TLabel;
     Label9: TLabel;
@@ -464,6 +466,10 @@ type
     procedure Image7Click(Sender: TObject);
     procedure Image8Click(Sender: TObject);
     procedure Image9Click(Sender: TObject);
+    procedure Label63Click(Sender: TObject);
+    procedure Label63MouseLeave(Sender: TObject);
+    procedure Label63MouseMove(Sender: TObject; Shift: TShiftState; X,
+      Y: Integer);
     procedure ScrollBox1MouseWheelDown(Sender: TObject; Shift: TShiftState;
       MousePos: TPoint; var Handled: Boolean);
     procedure ScrollBox1MouseWheelUp(Sender: TObject; Shift: TShiftState;
@@ -486,6 +492,7 @@ type
     function RecStartEnd(RecStr: String): String;
     function Smart_Replacing(PodStr1, PodStr2, FullStr, ChangeStr: String): String;
     function FindFilesXVM(FindStr: String; FileXVMAllStr: TStringList): String;
+    function new_change_str(sub_str, full_str: String): String;
     { private declarations }
   public
     procedure SearchLine_my();
@@ -545,8 +552,8 @@ var
   dir_xvm: String;
   b_s1, b_s2, b_s3, b_s4, b_s5, b_s6, b_s7, b_s8: String;
   b_s1_2, b_s2_2, b_s3_2, b_s4_2, b_s5_2, b_s6_2, b_s7_2, b_s8_2: String;
-  xvm_s1, xvm_s2, xvm_s3, xvm_s4, xvm_s5, xvm_s6, xvm_s7, xvm_s8, xvm_sN: String;
-  xvm_s1_2, xvm_s2_2, xvm_s3_2, xvm_s4_2, xvm_s5_2, xvm_s6_2, xvm_s7_2, xvm_s8_2: String;
+  xvm_s1, xvm_s2, xvm_s3, xvm_s4, xvm_s5, xvm_s6, xvm_s7, xvm_s8, xvm_s9, xvm_sN: String;
+  xvm_s1_2, xvm_s2_2, xvm_s3_2, xvm_s4_2, xvm_s5_2, xvm_s6_2, xvm_s7_2, xvm_s8_2, xvm_s9_2: String;
   login_s1, login_s2, login_s3, login_s4, login_s5, login_s6, login_s5_2, login_s6_2: string;
   login_s1_2, login_s2_2, login_s3_2, login_s4_2: string;
 
@@ -570,7 +577,7 @@ var
   SearchLine: Integer;
   bs1_SL, bs2_SL, bs3_SL, bs4_SL, bs5_SL, bs6_SL, bs7_SL, bs8_SL: Integer;
   log1_SL, log2_SL, log3_SL, log4_SL, log5_SL, log6_SL: Integer;
-  xvm1_SL, xvm2_SL, xvm3_SL, xvm4_SL, xvm5_SL, xvm6_SL, xvm7_SL, xvm8_SL: Integer;
+  xvm1_SL, xvm2_SL, xvm3_SL, xvm4_SL, xvm5_SL, xvm6_SL, xvm7_SL, xvm8_SL, xvm9_SL: Integer;
 
   hgar1_SL, hgar2_SL, hgar3_SL, hgar4_SL, hgar5_SL, hgar6_SL, hgar7_SL: Integer;
   hgar8_SL, hgar9_SL, hgar10_SL, hgar11_SL, hgar12_SL, hgar13_SL: Integer;
@@ -1027,7 +1034,7 @@ begin
     begin
 
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.8.43';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.8.47';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       BitBtn1.Click;
@@ -1149,6 +1156,7 @@ begin
   Edit_XVM.Edit6.Text:=xvm_s6;
   Edit_XVM.DateEdit1.Text:=xvm_s7;
   Edit_XVM.Edit7.Text:=xvm_s8;
+  Edit_XVM.Edit8.Text:=xvm_s9;
   Edit_XVM.ShowModal;
 end;
 
@@ -1481,6 +1489,22 @@ begin
   +activ_config+#13#10+switchon+'"removePanelsModeSwitcher": false'+#13#10+switchoff+'"removePanelsModeSwitcher": true');
 end;
 
+procedure TXCTuner_Form1.Label63Click(Sender: TObject);
+begin
+  ShellExecute(0,PChar('open'),PChar('explorer'),PChar(xvm_s9),nil,5);
+end;
+
+procedure TXCTuner_Form1.Label63MouseLeave(Sender: TObject);
+begin
+  Label63.Font.Style:=Label63.Font.Style-[fsUnderLine];
+end;
+
+procedure TXCTuner_Form1.Label63MouseMove(Sender: TObject; Shift: TShiftState;
+  X, Y: Integer);
+begin
+  Label63.Font.Style:=Label63.Font.Style+[fsUnderline];
+end;
+
 // Прокрутка скролбокса колесиком вниз на 400 pt
 procedure TXCTuner_Form1.ScrollBox1MouseWheelDown(Sender: TObject;
   Shift: TShiftState; MousePos: TPoint; var Handled: Boolean);
@@ -1558,6 +1582,7 @@ begin
   Result:=Format('#%.2x%.2x%.2x', [byte(rgb),byte(rgb shr 8),byte(rgb shr 16)]);
 end;
 
+// Перевод hex в color
 function TXCTuner_Form1.HexToTColor(myColor : string) : TColor;
 var
   rColor: TColor;
@@ -1639,6 +1664,58 @@ begin
       end;
     end;
   Result:=Trim(Copy(strFind, c1+1, c2-c1-1));
+end;
+
+// Функция возвращает новую строку по входным данным
+function TXCTuner_Form1.new_change_str(sub_str, full_str: String): String;
+var i, p1: Integer;
+begin
+  // Отсекаем все шмотки от начала до : (+их самих!)
+  p1:=PosEx(':', full_str, Pos(sub_str, full_str));
+  if p1<>0 then
+    begin
+      Delete(full_str, 1, p1 + 1);
+      // для верности уберем лишние пробелы слева!
+      full_str:=TrimLeft(full_str);
+    end;
+  // Делаем проверку на 1-й знак в строке
+  // Если это " то делаем нижеследующие
+  // Ищем вторые (следующие) кавычки
+  // Имеет право, т.к. внутри кавычек не могут быть еще пары кавычек!!!
+  // И если находим / выходим из цикла
+  // и копируем (ф-я Copy) нужный участок строки (длинною i, начиная с 1 символа!)
+  // ASCII-код #034 (или #34) - двойная кавычка (")
+  if full_str[1]=#34 then
+    begin
+      for i:=2 to Length(full_str) do
+        begin
+          // Если находим на участке двойную кавычку, то
+          // копируем этот участкок длиною i, начиная с первого символа
+          // и выходим из функции
+          if full_str[i]=#34 then
+            begin
+              Result:=Copy(full_str, 1, i);
+              Exit;
+            end;
+        end;
+    end else
+    begin
+      for i:=2 to Length(full_str) do
+        begin
+          // ASCII-коды #044 (или #44) - запятая; #032 (или #32) - пробел
+          // Если находим на участке запятую или пробел, то
+          // копируем этот участкок длиною i-1, начиная с первого символа
+          // и выходим из функции
+          if (full_str[i]=#44) or (full_str[i]=#32) then
+            begin
+              Result:=Copy(full_str, 1, i - 1 );
+              Exit;
+            end;
+        end;
+      // Если вышеследующее не найдено ничего, то возвращаем
+      // полученную на первом этапе, строку
+      Result:=full_str;
+    end;
 end;
 
 // процедура поиска нужного слова / выводит номер строки где найдено это слово
@@ -3244,6 +3321,14 @@ begin
     xvm8_SL:=SearchLine;
     xvm_s8:=Trim(xvm.Strings[SearchLine]);
 
+    Search:='"url"';
+    SearchLine_my();
+    xvm9_SL:=SearchLine;
+    xvm_s9:=Trim(xvm.Strings[SearchLine]);
+    xvm_s9:=DelStartEnd(new_change_str(Search, xvm_s9));
+    Label63.Caption:=xvm_s9;
+    Label63.Hint:='Перейти по адресу - '+xvm_s9;
+
     // Обработка строк и вывод их в программу
 
     xvm_sN:=xvm_s1;
@@ -3285,6 +3370,7 @@ begin
     xvm_info();
     xvm_s8:=xvm_sN;
     Label16.Caption:=xvm_s8;
+
 end;
 
 // загрузка из файла rating.xc
@@ -3989,9 +4075,7 @@ begin
   begin
   turret_s1:=TrimRight(turret.Strings[SearchLine]);
   TUR1_SL:=SearchLine;
-  search_sN:=turret_s1;
-  search_info();
-  turret_s1:=search_sN;
+  turret_s1:=new_change_str(Search, turret_s1);
   Edit22.Text:=DelStartEnd(turret_s1);
   end;
 
@@ -4005,9 +4089,7 @@ begin
   begin
   turret_s2:=TrimRight(turret.Strings[SearchLine]);
   TUR2_SL:=SearchLine;
-  search_sN:=turret_s2;
-  search_info();
-  turret_s2:=search_sN;
+  turret_s2:=new_change_str(Search, turret_s2);
   Edit23.Text:=DelStartEnd(turret_s2);
   end;
 

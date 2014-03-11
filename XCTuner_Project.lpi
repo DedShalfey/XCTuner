@@ -22,7 +22,7 @@
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="1"/>
       <RevisionNr Value="8"/>
-      <BuildNr Value="44"/>
+      <BuildNr Value="48"/>
       <Language Value="0419"/>
       <Attributes pvaPreRelease="True"/>
       <StringTable FileDescription="XCTuner" LegalCopyright="Ded_Shalfey" ProductName="XCTuner" ProductVersion=""/>
@@ -38,28 +38,31 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="7">
+    <RequiredPackages Count="8">
       <Item1>
-        <PackageName Value="pl_pascalscada"/>
+        <PackageName Value="pl_ExText"/>
       </Item1>
       <Item2>
-        <PackageName Value="pl_cindy"/>
+        <PackageName Value="pl_pascalscada"/>
       </Item2>
       <Item3>
-        <PackageName Value="RunTimeTypeInfoControls"/>
+        <PackageName Value="pl_cindy"/>
       </Item3>
       <Item4>
-        <PackageName Value="pl_excontrols"/>
+        <PackageName Value="RunTimeTypeInfoControls"/>
       </Item4>
       <Item5>
-        <PackageName Value="pl_colorlib"/>
+        <PackageName Value="pl_excontrols"/>
       </Item5>
       <Item6>
-        <PackageName Value="pl_visualplanit"/>
+        <PackageName Value="pl_colorlib"/>
       </Item6>
       <Item7>
-        <PackageName Value="LCL"/>
+        <PackageName Value="pl_visualplanit"/>
       </Item7>
+      <Item8>
+        <PackageName Value="LCL"/>
+      </Item8>
     </RequiredPackages>
     <Units Count="5">
       <Unit0>
@@ -120,7 +123,6 @@
     </CodeGeneration>
     <Linking>
       <Debugging>
-        <StripSymbols Value="True"/>
         <UseExternalDbgSyms Value="True"/>
       </Debugging>
       <LinkSmart Value="True"/>

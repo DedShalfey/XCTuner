@@ -23,10 +23,12 @@ type
     Edit5: TEdit;
     Edit6: TEdit;
     Edit7: TEdit;
+    Edit8: TEdit;
     Label1: TLabel;
     Label11: TLabel;
     Label13: TLabel;
     Label15: TLabel;
+    Label16: TLabel;
     Label3: TLabel;
     Label5: TLabel;
     Label7: TLabel;
@@ -96,6 +98,11 @@ begin
   xvm_s8_2:=StringReplace(xvm_s8_2, xvm_s8, Edit7.Text, []);
   xvm.Delete(xvm8_SL);
   xvm.Insert(xvm8_SL, xvm_s8_2);
+
+  xvm_s9_2:=xvm.Strings[xvm9_SL];
+  xvm_s9_2:=StringReplace(xvm_s9_2, xvm_s9, Edit8.Text, []);
+  xvm.Delete(xvm9_SL);
+  xvm.Insert(xvm9_SL, xvm_s9_2);
 
   xvm.SaveToFile(dir_xvm+xvm_file_name);
   xvm.Clear;
