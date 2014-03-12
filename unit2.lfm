@@ -1,7 +1,7 @@
 object About: TAbout
-  Left = 967
+  Left = 451
   Height = 223
-  Top = 455
+  Top = 273
   Width = 354
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
@@ -415,18 +415,20 @@ object About: TAbout
   object Label1: TLabel
     Left = 88
     Height = 15
-    Top = 80
+    Top = 72
     Width = 181
     Caption = 'Автор: Rustam А. aka Ded_Shalfey'
     ParentColor = False
   end
   object Label2: TLabel
-    Left = 138
+    Left = 140
     Height = 15
-    Top = 112
+    Top = 96
     Width = 84
-    Caption = 'Версия: 0.1.8.47'
+    Caption = 'Версия: 0.1.8.49'
+    Font.Color = clBlack
     ParentColor = False
+    ParentFont = False
   end
   object Label3: TLabel
     Left = 136
@@ -435,5 +437,22 @@ object About: TAbout
     Width = 88
     Caption = 'Copyright©2014'
     ParentColor = False
+  end
+  object Label4: TLabel
+    Cursor = crHandPoint
+    Left = 121
+    Height = 15
+    Hint = 'http://www.koreanrandom.com/forum/topic/12494-xctuner-настройщик-конфигов-версия-01847-дата-110314-статус-beta/'
+    Top = 117
+    Width = 119
+    Caption = 'Оф. тема программы'
+    Font.Color = clBlue
+    ParentColor = False
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    OnClick = Label4Click
+    OnMouseMove = Label4MouseMove
+    OnMouseLeave = Label4MouseLeave
   end
 end

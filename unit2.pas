@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Buttons,
-  ExtCtrls, StdCtrls;
+  ExtCtrls, StdCtrls, ShellApi;
 
 type
 
@@ -18,6 +18,11 @@ type
     Label1: TLabel;
     Label2: TLabel;
     Label3: TLabel;
+    Label4: TLabel;
+    procedure Label4Click(Sender: TObject);
+    procedure Label4MouseLeave(Sender: TObject);
+    procedure Label4MouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer
+      );
   private
     { private declarations }
   public
@@ -30,6 +35,27 @@ var
 implementation
 
 {$R *.lfm}
+
+{ TAbout }
+
+procedure TAbout.Label4Click(Sender: TObject);
+var url: String;
+begin
+  url:='http://www.koreanrandom.com/forum/topic/12494-xctuner-настройщик-конфигов-версия-01847-дата-110314-статус-beta/';
+  ShellExecute(0,PChar('open'),PChar('explorer'),PChar(url),nil,5);
+end;
+
+procedure TAbout.Label4MouseLeave(Sender: TObject);
+begin
+  Label4.Font.Style:=Label4.Font.Style-[fsUnderLine];
+end;
+
+
+procedure TAbout.Label4MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+  Label4.Font.Style:=Label4.Font.Style+[fsUnderLine];
+end;
 
 end.
 

@@ -1034,7 +1034,7 @@ begin
     begin
 
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.8.47';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.8.49';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       BitBtn1.Click;
@@ -1630,15 +1630,16 @@ end;
 // Функция замены значений в файлах конфига!
 function TXCTuner_Form1.Smart_Replacing(PodStr1, PodStr2, FullStr, ChangeStr: String): String;
 var
-  poz1, poz2: Integer;
+  poz1, poz2, poz3: Integer;
   s1, s2: String;
 begin
   poz1:=Pos(PodStr1, FullStr);
-  poz2:=PosEx(PodStr2, FullStr, poz1) + Length(PodStr2);
-  s1:=Copy(FullStr, poz1, poz2 - poz1);
-  s2:=s1;
-  s2:=StringReplace(s2, PodStr2, ChangeStr, []);
-  Result:=StringReplace(FullStr, s1, s2, []);
+  PodStr2:=new_change_str(PodStr1, FullStr);
+  poz2:=PosEx(PodStr2, FullStr, poz1+1);
+  poz3:=poz2+Length(PodStr2);
+  Delete(FullStr, poz2, poz3-poz2);
+  Insert(ChangeStr, FullStr, poz2);
+  Result:=FullStr;
 end;
 
 // Функция нахождения имени файлов, на которые ссылается файл @xvm.xc
@@ -3952,9 +3953,7 @@ begin
   begin
   texts_s1:=TrimRight(texts.Strings[SearchLine]);
   TXT1_SL:=SearchLine;
-  search_sN:=texts_s1;
-  search_info();
-  texts_s1:=search_sN;
+  texts_s1:=new_change_str(Search, texts_s1);
   Edit17.Text:=DelStartEnd(texts_s1);
   end;
 
