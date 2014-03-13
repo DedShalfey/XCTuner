@@ -247,6 +247,8 @@ type
     Label61: TLabel;
     Label62: TLabel;
     Label63: TLabel;
+    Label64: TLabel;
+    Label65: TLabel;
     Label7: TLabel;
     Label8: TLabel;
     Label9: TLabel;
@@ -485,21 +487,19 @@ type
     procedure TrackBar2Change(Sender: TObject);
     procedure TrackBar3Change(Sender: TObject);
   private
+    { private declarations }
+  public
+    function Smart_Replacing(PodStr1, FullStr, ChangeStr: String): String;
     function ColorToHex(rgb: TColor):String;
     function HexToTColor(myColor: string): TColor;
     function DelStartEnd(InputStr: String): String;
     function RecStartEnd(RecStr: String): String;
-    function Smart_Replacing(PodStr1, FullStr, ChangeStr: String): String;
     function FindFilesXVM(FindStr: String; FileXVMAllStr: TStringList): String;
     function new_change_str(sub_str, full_str: String): String;
     function error_message(file_name, str_sub: String; line_str: Integer): String;
-    { private declarations }
-  public
     procedure SearchLine_my();
     procedure SearchLine_my_2();
-    procedure xvm_info();
     procedure activ_conf();
-    procedure search_info();
     procedure xvm_loading();
     procedure battle_loading();
     procedure battle_save();
@@ -539,50 +539,46 @@ const
   range = 'Диапазон - ';
 
 var
-  chek1, chek2, chek3, chek4, chek5, chek6, chek7, chek8, chek9, chek10: String;
-  ColorSelect: Integer;
-  ChangeEditText: String;
-  ChangeEdit: Integer;
   XCTuner_Form1: TXCTuner_Form1;
+
+  chek1, chek2, chek3, chek4, chek5, chek6, chek7, chek8, chek9, chek10: String;
+  ColorSelect, ChangeEdit, SearchLine, px1, px2, px3: Integer;
+  ChangeEditText, Search, temp_name, dir_xvm: String;
+
   xvm_base, xvm, battle, iconset, login, hangar, hotkeys, userInfo, rating, texts, squad, turret, temp_list: TStringList;
+
   activ_config, xvm_file_name, battle_name, login_name, hangar_name, hotkeys_name, userInfo_name, rating_name: String;
   squad_name, iconset_name, texts_name, turret_name: String;
-  temp_name: String;
-  px1, px2, px3: Integer;
-  dir_xvm: String;
 
   b_s1, b_s2, b_s3, b_s4, b_s5, b_s6, b_s7, b_s8: String;
-  b_s1_2, b_s2_2, b_s3_2, b_s4_2, b_s5_2, b_s6_2, b_s7_2, b_s8_2: String;
 
-  xvm_s1, xvm_s2, xvm_s3, xvm_s4, xvm_s5, xvm_s6, xvm_s7, xvm_s8, xvm_s9, xvm_sN: String;
-  xvm_s1_2, xvm_s2_2, xvm_s3_2, xvm_s4_2, xvm_s5_2, xvm_s6_2, xvm_s7_2, xvm_s8_2, xvm_s9_2: String;
+  xvm_s1, xvm_s2, xvm_s3, xvm_s4, xvm_s5, xvm_s6, xvm_s7, xvm_s8, xvm_s9, xvm_s10: String;
 
-  login_s1, login_s2, login_s3, login_s4, login_s5, login_s6, login_s5_2, login_s6_2: string;
-  login_s1_2, login_s2_2, login_s3_2, login_s4_2: string;
+  login_s1, login_s2, login_s3, login_s4, login_s5, login_s6: string;
 
-  hangar_s1, hangar_s2, hangar_s3, hangar_s4, hangar_s5, hangar_s6, hangar_s7: string;
-  hangar_s8, hangar_s9, hangar_s10, hangar_s11, hangar_s12, hangar_s13: string;
-  hangar_s1_2, hangar_s2_2, hangar_s3_2, hangar_s4_2, hangar_s5_2, hangar_s6_2, hangar_s7_2: string;
-  hangar_s8_2, hangar_s9_2, hangar_s10_2, hangar_s11_2, hangar_s12_2, hangar_s13_2: string;
-
-  hangar_s14, hangar_s15, hangar_s16, hangar_s17, hangar_s18, hangar_s19: string;
-  hangar_s20, hangar_s21, hangar_s22, hangar_s23, hangar_s24, hangar_s25: string;
+  hangar_s1, hangar_s2, hangar_s3, hangar_s4, hangar_s5, hangar_s6, hangar_s7,
+  hangar_s8, hangar_s9, hangar_s10, hangar_s11, hangar_s12, hangar_s13,
+  hangar_s14, hangar_s15, hangar_s16, hangar_s17, hangar_s18, hangar_s19,
+  hangar_s20, hangar_s21, hangar_s22, hangar_s23, hangar_s24, hangar_s25,
   hangar_s26, hangar_s27, hangar_s28, hangar_s29, hangar_s30, hangar_s31: string;
 
-  hangar_s14_2, hangar_s15_2, hangar_s16_2, hangar_s17_2, hangar_s18_2, hangar_s19_2: string;
-  hangar_s20_2, hangar_s21_2, hangar_s22_2, hangar_s23_2, hangar_s24_2, hangar_s25_2: string;
-  hangar_s26_2, hangar_s27_2, hangar_s28_2, hangar_s29_2, hangar_s30_2, hangar_s31_2: string;
+  hotkeys_s1, hotkeys_s2, hotkeys_s3: String;
 
+  iconset_s1, iconset_s2, iconset_s3, iconset_s4, iconset_s5, iconset_s6, iconset_s7, iconset_s8: String;
 
   rating_s1, rating_s2, rating_s3, rating_s4, rating_s5: String;
-  rating_s1_2, rating_s2_2, rating_s3_2, rating_s4_2, rating_s5_2: String;
 
-  Search, search_sN: String;
-  SearchLine: Integer;
+  UserInfo_s1, UserInfo_s2, UserInfo_s3, UserInfo_s4, UserInfo_s5, UserInfo_s6, UserInfo_s7: String;
+
+  texts_s1, texts_s2, texts_s3, texts_s4, texts_s5: String;
+
+  turret_s1, turret_s2: String;
+
+  squad_s1, squad_s2, squad_s3: String;
 
   bs1_SL, bs2_SL, bs3_SL, bs4_SL, bs5_SL, bs6_SL, bs7_SL, bs8_SL: Integer;
   log1_SL, log2_SL, log3_SL, log4_SL, log5_SL, log6_SL: Integer;
-  xvm1_SL, xvm2_SL, xvm3_SL, xvm4_SL, xvm5_SL, xvm6_SL, xvm7_SL, xvm8_SL, xvm9_SL: Integer;
+  xvm1_SL, xvm2_SL, xvm3_SL, xvm4_SL, xvm5_SL, xvm6_SL, xvm7_SL, xvm8_SL, xvm9_SL, xvm10_SL: Integer;
 
   hgar1_SL, hgar2_SL, hgar3_SL, hgar4_SL, hgar5_SL, hgar6_SL, hgar7_SL: Integer;
   hgar8_SL, hgar9_SL, hgar10_SL, hgar11_SL, hgar12_SL, hgar13_SL: Integer;
@@ -590,31 +586,20 @@ var
   hgar21_SL, hgar22_SL, hgar23_SL, hgar24_SL, hgar25_SL, hgar26_SL: Integer;
   hgar27_SL, hgar28_SL, hgar29_SL, hgar30_SL, hgar31_SL: Integer;
 
-  rat1_SL, rat2_SL, rat3_SL, rat4_SL, rat5_SL: Integer;
-
-  UserInfo_s1, UserInfo_s2, UserInfo_s3, UserInfo_s4, UserInfo_s5, UserInfo_s6, UserInfo_s7: String;
-  UserInfo_s1_2, UserInfo_s2_2, UserInfo_s3_2, UserInfo_s4_2, UserInfo_s5_2, UserInfo_s6_2, UserInfo_s7_2: String;
-  UI1_SL, UI2_SL, UI3_SL, UI4_SL, UI5_SL, UI6_SL, UI7_SL: Integer;
-
-  squad_s1, squad_s2, squad_s3: String;
-  squad_s1_2, squad_s2_2, squad_s3_2: String;
-  SQ1_SL, SQ2_SL, SQ3_SL: Integer;
-
-  hotkeys_s1, hotkeys_s2, hotkeys_s3: String;
-  hotkeys_s1_2, hotkeys_s2_2, hotkeys_s3_2: String;
   HK1_SL, HK2_SL, HK3_SL: Integer;
 
-  iconset_s1, iconset_s2, iconset_s3, iconset_s4, iconset_s5, iconset_s6, iconset_s7, iconset_s8: String;
-  iconset_s1_2, iconset_s2_2, iconset_s3_2, iconset_s4_2, iconset_s5_2, iconset_s6_2, iconset_s7_2, iconset_s8_2: String;
   IS1_SL, IS2_SL, IS3_SL, IS4_SL, IS5_SL, IS6_SL, IS7_SL, IS8_SL: Integer;
 
-  texts_s1, texts_s2, texts_s3, texts_s4, texts_s5: String;
-  texts_s1_2, texts_s2_2, texts_s3_2, texts_s4_2, texts_s5_2: String;
+  rat1_SL, rat2_SL, rat3_SL, rat4_SL, rat5_SL: Integer;
+
+  SQ1_SL, SQ2_SL, SQ3_SL: Integer;
+
   TXT1_SL, TXT2_SL, TXT3_SL, TXT4_SL, TXT5_SL: Integer;
 
-  turret_s1, turret_s2: String;
-  turret_s1_2, turret_s2_2: String;
   TUR1_SL, TUR2_SL: Integer;
+
+  UI1_SL, UI2_SL, UI3_SL, UI4_SL, UI5_SL, UI6_SL, UI7_SL: Integer;
+
 
 implementation
 
@@ -1156,6 +1141,7 @@ begin
   Edit_XVM.DateEdit1.Text:=xvm_s7;
   Edit_XVM.Edit7.Text:=xvm_s8;
   Edit_XVM.Edit8.Text:=xvm_s9;
+  Edit_XVM.Edit9.Text:=xvm_s10;
   Edit_XVM.ShowModal;
 end;
 
@@ -1756,25 +1742,6 @@ begin
   ShowMessage('Строка с параметром '+Search+' не найдена в файле '+temp_name+path+activ_config+#10#13+' Исправьте! Программа закроется!');
 end;
 
-// процедура удаления лишних сиволов и пробелов в обработчике загр. информации из xvm
-procedure TXCTuner_Form1.xvm_info;
-begin
-  if pos('//', xvm_sN)<>0 then
-     begin
-       Delete(xvm_sN, pos('//', xvm_sN), (Length(xvm_sN) - pos('//', xvm_sN) + 1));
-       xvm_sN:=TrimRight(xvm_sN);
-     end;
-  if xvm_sN[Length(xvm_sN)]='"' then
-    Delete(xvm_sN, Length(xvm_sN), 1)
-    else
-      begin
-        Delete(xvm_sN, Length(xvm_sN)-1, 2);
-      end;
-  Delete(xvm_sN, 1, Pos(':', xvm_sN));
-  xvm_sN:=TrimLeft(xvm_sN);
-  Delete(xvm_sN, 1, 1);
-end;
-
 // процедура нахождения активного конфига
 procedure TXCTuner_Form1.activ_conf;
 var tx: Integer;
@@ -1832,36 +1799,6 @@ begin
     end;
 end;
 
-// процедура удаления лишних сиволов и пробелов из файлов xvm
-procedure TXCTuner_Form1.search_info;
-var
-  p1, p2, p3: Integer;
-begin
-  p1:=PosEx('//', search_sN, Pos(Search, search_sN));
-  if p1<>0 then
-    begin
-      Delete(search_sN, p1, Length(search_sN));
-    end;
-  p1:=PosEx(',', search_sN, Pos(Search, search_sN));
-  if p1<>0 then
-    begin
-      Delete(search_sN, p1, Length(search_sN));
-    end;
-  p3:=PosEx('"', search_sN, Pos(Search, search_sN)+Length(Search)+1);
-  p2:=PosEx('"', search_sN, p3+1);
-  p1:=PosEx('}', search_sN, p2);
-  if p1<>0 then
-    begin
-      Delete(search_sN, p1, Length(search_sN));
-    end;
-  p1:=PosEx(':', search_sN, Pos(Search, search_sN));
-  if p1<>0 then
-    begin
-      Delete(search_sN, 1, p1 + 1);
-    end;{ TODO : Доработать если что! }
-  search_sN:=Trim(search_sN);
-end;
-
 // загрузка из файла battle.xc
 procedure TXCTuner_Form1.battle_loading;
 begin
@@ -1880,15 +1817,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  b_s1:=TrimRight(battle.Strings[SearchLine]);
+  b_s1:=battle.Strings[SearchLine];
   bs1_SL:=SearchLine;
   b_s1:=new_change_str(Search, b_s1);
   if b_s1='true' then RadioButton1.Checked:=True else
   if b_s1='false' then RadioButton2.Checked:=True else
   begin
-    ShowMessage(ErrorConf+battle_name+path+activ_config
-    +#13#10+'Ошибка: '+b_s1+' (в строке '+IntToStr(bs1_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(battle_name, b_s1, bs1_SL));
     Application.Terminate;
   end;
   end;
@@ -1900,15 +1835,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  b_s2:=TrimRight(battle.Strings[SearchLine]);
+  b_s2:=battle.Strings[SearchLine];
   bs2_SL:=SearchLine;
   b_s2:=new_change_str(Search, b_s2);
   if b_s2='true' then RadioButton3.Checked:=True else
   if b_s2='false' then RadioButton4.Checked:=True else
   begin
-    ShowMessage(ErrorConf+battle_name+path+activ_config
-    +#13#10+'Ошибка: '+b_s2+' (в строке '+IntToStr(bs2_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(battle_name, b_s2, bs2_SL));
     Application.Terminate;
   end;
   end;
@@ -1920,15 +1853,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  b_s3:=TrimRight(battle.Strings[SearchLine]);
+  b_s3:=battle.Strings[SearchLine];
   bs3_SL:=SearchLine;
   b_s3:=new_change_str(Search, b_s3);
   if b_s3='true' then RadioButton6.Checked:=True else
   if b_s3='false' then RadioButton5.Checked:=True else
   begin
-    ShowMessage(ErrorConf+battle_name+path+activ_config
-    +#13#10+'Ошибка: '+b_s3+' (в строке '+IntToStr(bs3_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(battle_name, b_s3, bs3_SL));
     Application.Terminate;
   end;
   end;
@@ -1940,15 +1871,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  b_s4:=TrimRight(battle.Strings[SearchLine]);
+  b_s4:=battle.Strings[SearchLine];
   bs4_SL:=SearchLine;
   b_s4:=new_change_str(Search, b_s4);
   if b_s4='true' then RadioButton7.Checked:=True else
   if b_s4='false' then RadioButton8.Checked:=True else
   begin
-    ShowMessage(ErrorConf+battle_name+path+activ_config
-    +#13#10+'Ошибка: '+b_s4+' (в строке '+IntToStr(bs4_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(battle_name, b_s4, bs4_SL));
     Application.Terminate;
   end;
   end;
@@ -1960,15 +1889,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  b_s5:=TrimRight(battle.Strings[SearchLine]);
+  b_s5:=battle.Strings[SearchLine];
   bs5_SL:=SearchLine;
   b_s5:=new_change_str(Search, b_s5);
   if b_s5='true' then RadioButton9.Checked:=True else
   if b_s5='false' then RadioButton10.Checked:=True else
   begin
-    ShowMessage(ErrorConf+battle_name+path+activ_config
-    +#13#10+'Ошибка: '+b_s5+' (в строке '+IntToStr(bs5_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(battle_name, b_s5, bs5_SL));
     Application.Terminate;
   end;
   end;
@@ -1980,15 +1907,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  b_s6:=TrimRight(battle.Strings[SearchLine]);
+  b_s6:=battle.Strings[SearchLine];
   bs6_SL:=SearchLine;
   b_s6:=new_change_str(Search, b_s6);
   if b_s6='true' then RadioButton12.Checked:=True else
   if b_s6='false' then RadioButton11.Checked:=True else
   begin
-    ShowMessage(ErrorConf+battle_name+path+activ_config
-    +#13#10+'Ошибка: '+b_s6+' (в строке '+IntToStr(bs6_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(battle_name, b_s6, bs6_SL));
     Application.Terminate;
   end;
   end;
@@ -2003,7 +1928,7 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  b_s7:=TrimRight(battle.Strings[SearchLine]);
+  b_s7:=battle.Strings[SearchLine];
   bs7_SL:=SearchLine;
   b_s7:=new_change_str(Search, b_s7);
   SpinEdit1.Value:=StrToInt(b_s7);
@@ -2017,7 +1942,7 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  b_s8:=TrimRight(battle.Strings[SearchLine]);
+  b_s8:=battle.Strings[SearchLine];
   bs8_SL:=SearchLine;
   b_s8:=new_change_str(Search, b_s8);
   SpinEdit2.Value:=StrToInt(b_s8);
@@ -2043,15 +1968,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  login_s1:=TrimRight(login.Strings[SearchLine]);
+  login_s1:=login.Strings[SearchLine];
   log1_SL:=SearchLine;
   login_s1:=new_change_str(Search, login_s1);
   if login_s1='true' then RadioButton23.Checked:=True else
   if login_s1='false' then RadioButton24.Checked:=True else
   begin
-    ShowMessage(ErrorConf+login_name+path+activ_config
-    +#13#10+'Ошибка: '+login_s1+' (в строке '+IntToStr(log1_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(login_name, login_s1, log1_SL));
     Application.Terminate;
   end;
   end;
@@ -2063,15 +1986,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  login_s2:=TrimRight(login.Strings[SearchLine]);
+  login_s2:=login.Strings[SearchLine];
   log2_SL:=SearchLine;
   login_s2:=new_change_str(Search, login_s2);
   if login_s2='true' then RadioButton25.Checked:=True else
   if login_s2='false' then RadioButton26.Checked:=True else
   begin
-    ShowMessage(ErrorConf+login_name+path+activ_config
-    +#13#10+'Ошибка: '+login_s2+' (в строке '+IntToStr(log2_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(login_name, login_s2, log2_SL));
     Application.Terminate;
   end;
   end;
@@ -2083,15 +2004,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  login_s3:=TrimRight(login.Strings[SearchLine]);
+  login_s3:=login.Strings[SearchLine];
   log3_SL:=SearchLine;
   login_s3:=new_change_str(Search, login_s3);
   if login_s3='true' then RadioButton27.Checked:=True else
   if login_s3='false' then RadioButton28.Checked:=True else
   begin
-    ShowMessage(ErrorConf+login_name+path+activ_config
-    +#13#10+'Ошибка: '+login_s3+' (в строке '+IntToStr(log3_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(login_name, login_s3, log3_SL));
     Application.Terminate;
   end;
   end;
@@ -2103,15 +2022,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  login_s4:=TrimRight(login.Strings[SearchLine]);
+  login_s4:=login.Strings[SearchLine];
   log4_SL:=SearchLine;
   login_s4:=new_change_str(Search, login_s4);
   if login_s4='true' then RadioButton29.Checked:=True else
   if login_s4='false' then RadioButton30.Checked:=True else
   begin
-    ShowMessage(ErrorConf+login_name+path+activ_config
-    +#13#10+'Ошибка: '+login_s4+' (в строке '+IntToStr(log4_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(login_name, login_s4, log4_SL));
     Application.Terminate;
   end;
   end;
@@ -2123,7 +2040,7 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  login_s5:=TrimRight(login.Strings[SearchLine]);
+  login_s5:=login.Strings[SearchLine];
   log5_SL:=SearchLine;
   login_s5:=new_change_str(Search, login_s5);
   SpinEdit3.Value:=StrToInt(login_s5);
@@ -2136,7 +2053,7 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  login_s6:=TrimRight(login.Strings[SearchLine]);
+  login_s6:=login.Strings[SearchLine];
   log6_SL:=SearchLine;
   login_s6:=new_change_str(Search, login_s6);
   SpinEdit4.Value:=StrToInt(login_s6);
@@ -2155,40 +2072,40 @@ begin
   if (RadioButton29.Checked=True) then chek4:='true' else chek4:='false';
 
   // Пропустить вступительное видео / 1
-  login_s1_2:=login.Strings[log1_SL];
-  login_s1_2:=Smart_Replacing('"skipIntro"', login_s1_2, chek1);
+  login_s1:=login.Strings[log1_SL];
+  login_s1:=Smart_Replacing('"skipIntro"', login_s1, chek1);
   login.Delete(log1_SL);
-  login.Insert(log1_SL, login_s1_2);
+  login.Insert(log1_SL, login_s1);
 
   // Автоматический вход в игру / 2
-  login_s2_2:=login.Strings[log2_SL];
-  login_s2_2:=Smart_Replacing('"autologin"', login_s2_2, chek2);
+  login_s2:=login.Strings[log2_SL];
+  login_s2:=Smart_Replacing('"autologin"', login_s2, chek2);
   login.Delete(log2_SL);
-  login.Insert(log2_SL, login_s2_2);
+  login.Insert(log2_SL, login_s2);
 
   // Автоматически подтверждать проигрывание старых реплеев / 3
-  login_s3_2:=login.Strings[log3_SL];
-  login_s3_2:=Smart_Replacing('"confirmOldReplays"', login_s3_2, chek3);
+  login_s3:=login.Strings[log3_SL];
+  login_s3:=Smart_Replacing('"confirmOldReplays"', login_s3, chek3);
   login.Delete(log3_SL);
-  login.Insert(log3_SL, login_s3_2);
+  login.Insert(log3_SL, login_s3);
 
   // показывать пинг до серверов / 4
-  login_s4_2:=login.Strings[log4_SL];
-  login_s4_2:=Smart_Replacing('"enabled"', login_s4_2, chek4);
+  login_s4:=login.Strings[log4_SL];
+  login_s4:=Smart_Replacing('"enabled"', login_s4, chek4);
   login.Delete(log4_SL);
-  login.Insert(log4_SL, login_s4_2);
+  login.Insert(log4_SL, login_s4);
 
   // Пинг до серверов / позиция по X / 5
-  login_s5_2:=login.Strings[log5_SL];
-  login_s5_2:=Smart_Replacing('"x"', login_s5_2, IntToStr(SpinEdit3.Value));
+  login_s5:=login.Strings[log5_SL];
+  login_s5:=Smart_Replacing('"x"', login_s5, IntToStr(SpinEdit3.Value));
   login.Delete(log5_SL);
-  login.Insert(log5_SL, login_s5_2);
+  login.Insert(log5_SL, login_s5);
 
   // Пинг до серверов / позиция по Y / 6
-  login_s6_2:=login.Strings[log6_SL];
-  login_s6_2:=Smart_Replacing('"y"', login_s6_2, IntToStr(SpinEdit4.Value));
+  login_s6:=login.Strings[log6_SL];
+  login_s6:=Smart_Replacing('"y"', login_s6, IntToStr(SpinEdit4.Value));
   login.Delete(log6_SL);
-  login.Insert(log6_SL, login_s6_2);
+  login.Insert(log6_SL, login_s6);
 end;
 
 // загрузка из файла hangar.xc
@@ -2710,193 +2627,190 @@ begin
   if (CheckBox2.Checked=True)     then chek10:='true' else chek10:='false';
 
   // 1
-  hangar_s1_2:=hangar.Strings[hgar1_SL];
-  hangar_s1_2:=Smart_Replacing('"hideTutorial"', hangar_s1_2, chek1);
+  hangar_s1:=hangar.Strings[hgar1_SL];
+  hangar_s1:=Smart_Replacing('"hideTutorial"', hangar_s1, chek1);
   hangar.Delete(hgar1_SL);
-  hangar.Insert(hgar1_SL, hangar_s1_2);
+  hangar.Insert(hgar1_SL, hangar_s1);
 
   // 2
-  hangar_s2_2:=hangar.Strings[hgar2_SL];
-  hangar_s2_2:=Smart_Replacing('"xwnInCompany"', hangar_s2_2, chek2);
+  hangar_s2:=hangar.Strings[hgar2_SL];
+  hangar_s2:=Smart_Replacing('"xwnInCompany"', hangar_s2, chek2);
   hangar.Delete(hgar2_SL);
-  hangar.Insert(hgar2_SL, hangar_s2_2);
+  hangar.Insert(hgar2_SL, hangar_s2);
 
   // 3
-  hangar_s3_2:=hangar.Strings[hgar3_SL];
-  hangar_s3_2:=Smart_Replacing('"masteryMarkInTankCarousel"', hangar_s3_2, chek3);
+  hangar_s3:=hangar.Strings[hgar3_SL];
+  hangar_s3:=Smart_Replacing('"masteryMarkInTankCarousel"', hangar_s3, chek3);
   hangar.Delete(hgar3_SL);
-  hangar.Insert(hgar3_SL, hangar_s3_2);
+  hangar.Insert(hgar3_SL, hangar_s3);
 
   // 4
-  hangar_s4_2:=hangar.Strings[hgar4_SL];
-  hangar_s4_2:=Smart_Replacing('"masteryMarkInTechTree"', hangar_s4_2, chek4);
+  hangar_s4:=hangar.Strings[hgar4_SL];
+  hangar_s4:=Smart_Replacing('"masteryMarkInTechTree"', hangar_s4, chek4);
   hangar.Delete(hgar4_SL);
-  hangar.Insert(hgar4_SL, hangar_s4_2);
+  hangar.Insert(hgar4_SL, hangar_s4);
 
   // 5
-  hangar_s5_2:=hangar.Strings[hgar5_SL];
-  hangar_s5_2:=Smart_Replacing('"hidePricesInTechTree"', hangar_s5_2, chek5);
+  hangar_s5:=hangar.Strings[hgar5_SL];
+  hangar_s5:=Smart_Replacing('"hidePricesInTechTree"', hangar_s5, chek5);
   hangar.Delete(hgar5_SL);
-  hangar.Insert(hgar5_SL, hangar_s5_2);
+  hangar.Insert(hgar5_SL, hangar_s5);
 
   // 6
-  hangar_s6_2:=hangar.Strings[hgar6_SL];
-  hangar_s6_2:=Smart_Replacing('"widgetsEnabled"', hangar_s6_2, chek6);
+  hangar_s6:=hangar.Strings[hgar6_SL];
+  hangar_s6:=Smart_Replacing('"widgetsEnabled"', hangar_s6, chek6);
   hangar.Delete(hgar6_SL);
-  hangar.Insert(hgar6_SL, hangar_s6_2);
+  hangar.Insert(hgar6_SL, hangar_s6);
 
   // 7
-  hangar_s7_2:=hangar.Strings[hgar7_SL];
-  hangar_s7_2:=Smart_Replacing('"enabled"', hangar_s7_2, chek7);
+  hangar_s7:=hangar.Strings[hgar7_SL];
+  hangar_s7:=Smart_Replacing('"enabled"', hangar_s7, chek7);
   hangar.Delete(hgar7_SL);
-  hangar.Insert(hgar7_SL, hangar_s7_2);
+  hangar.Insert(hgar7_SL, hangar_s7);
 
-  // 25
-  hangar_s25_2:=hangar.Strings[hgar25_SL];
-  hangar_s25_2:=Smart_Replacing('"enabled"', hangar_s25_2, chek8);
-  hangar.Delete(hgar25_SL);
-  hangar.Insert(hgar25_SL, hangar_s25_2);
+  // 8
+  hangar_s8:=hangar.Strings[hgar8_SL];
+  hangar_s8:=Smart_Replacing('"updateInterval"', hangar_s8, IntToStr(SpinEdit10.Value));
+  hangar.Delete(hgar8_SL);
+  hangar.Insert(hgar8_SL, hangar_s8);
+
+  // 9
+  hangar_s9:=hangar.Strings[hgar9_SL];
+  hangar_s9:=Smart_Replacing('"x"', hangar_s9, IntToStr(SpinEdit5.Value));
+  hangar.Delete(hgar9_SL);
+  hangar.Insert(hgar9_SL, hangar_s9);
+
+  // 10
+  hangar_s10:=hangar.Strings[hgar10_SL];
+  hangar_s10:=Smart_Replacing('"y"', hangar_s10, IntToStr(SpinEdit6.Value));
+  hangar.Delete(hgar10_SL);
+  hangar.Insert(hgar10_SL, hangar_s10);
+
+  // 11
+  hangar_s11:=hangar.Strings[hgar11_SL];
+  hangar_s11:=Smart_Replacing('"alpha"', hangar_s11, IntToStr(SpinEdit7.Value));
+  hangar.Delete(hgar11_SL);
+  hangar.Insert(hgar11_SL, hangar_s11);
+
+  // 12
+  hangar_s12:=hangar.Strings[hgar12_SL];
+  hangar_s12:=Smart_Replacing('"maxRows"', hangar_s12, IntToStr(SpinEdit8.Value));
+  hangar.Delete(hgar12_SL);
+  hangar.Insert(hgar12_SL, hangar_s12);
+
+  // 13
+  hangar_s13:=hangar.Strings[hgar13_SL];
+  hangar_s13:=Smart_Replacing('"columnGap"', hangar_s13, IntToStr(SpinEdit9.Value));
+  hangar.Delete(hgar13_SL);
+  hangar.Insert(hgar13_SL, hangar_s13);
+
+  // поле "название шрифта" // 14
+  hangar_s14:=hangar.Strings[hgar14_SL];
+  hangar_s14:=Smart_Replacing('"name"', hangar_s14, RecStartEnd(Edit1.Text));
+  hangar.Delete(hgar14_SL);
+  hangar.Insert(hgar14_SL, hangar_s14);
+
+  // поле "размер шрифта" // 15
+  hangar_s15:=hangar.Strings[hgar15_SL];
+  hangar_s15:=Smart_Replacing('"size"', hangar_s15, IntToStr(SpinEdit11.Value));
+  hangar.Delete(hgar15_SL);
+  hangar.Insert(hgar15_SL, hangar_s15);
 
   // 16
-  hangar_s16_2:=hangar.Strings[hgar16_SL];
-  hangar_s16_2:=Smart_Replacing('"bold"', hangar_s16_2, chek9);
+  hangar_s16:=hangar.Strings[hgar16_SL];
+  hangar_s16:=Smart_Replacing('"bold"', hangar_s16, chek9);
   hangar.Delete(hgar16_SL);
-  hangar.Insert(hgar16_SL, hangar_s16_2);
+  hangar.Insert(hgar16_SL, hangar_s16);
 
   // 17
-  hangar_s17_2:=hangar.Strings[hgar17_SL];
-  hangar_s17_2:=Smart_Replacing('"italic"', hangar_s17_2, chek10);
+  hangar_s17:=hangar.Strings[hgar17_SL];
+  hangar_s17:=Smart_Replacing('"italic"', hangar_s17, chek10);
   hangar.Delete(hgar17_SL);
-  hangar.Insert(hgar17_SL, hangar_s17_2);
+  hangar.Insert(hgar17_SL, hangar_s17);
 
-
-
-  hangar_s8_2:=hangar.Strings[hgar8_SL];
-  hangar_s8_2:=Smart_Replacing('"updateInterval"', hangar_s8_2, IntToStr(SpinEdit10.Value));
-  hangar.Delete(hgar8_SL);
-  hangar.Insert(hgar8_SL, hangar_s8_2);
-
-  hangar_s9_2:=hangar.Strings[hgar9_SL];
-  hangar_s9_2:=Smart_Replacing('"x"', hangar_s9_2, IntToStr(SpinEdit5.Value));
-  hangar.Delete(hgar9_SL);
-  hangar.Insert(hgar9_SL, hangar_s9_2);
-
-  hangar_s10_2:=hangar.Strings[hgar10_SL];
-  hangar_s10_2:=Smart_Replacing('"y"', hangar_s10_2, IntToStr(SpinEdit6.Value));
-  hangar.Delete(hgar10_SL);
-  hangar.Insert(hgar10_SL, hangar_s10_2);
-
-  hangar_s11_2:=hangar.Strings[hgar11_SL];
-  hangar_s11_2:=Smart_Replacing('"alpha"', hangar_s11_2, IntToStr(SpinEdit7.Value));
-  hangar.Delete(hgar11_SL);
-  hangar.Insert(hgar11_SL, hangar_s11_2);
-
-  hangar_s12_2:=hangar.Strings[hgar12_SL];
-  hangar_s12_2:=Smart_Replacing('"maxRows"', hangar_s12_2, IntToStr(SpinEdit8.Value));
-  hangar.Delete(hgar12_SL);
-  hangar.Insert(hgar12_SL, hangar_s12_2);
-
-  hangar_s13_2:=hangar.Strings[hgar13_SL];
-  hangar_s13_2:=Smart_Replacing('"columnGap"', hangar_s13_2, IntToStr(SpinEdit9.Value));
-  hangar.Delete(hgar13_SL);
-  hangar.Insert(hgar13_SL, hangar_s13_2);
-
-
-  // поле "название шрифта"
-  hangar_s14_2:=hangar.Strings[hgar14_SL];
-  hangar_s14_2:=Smart_Replacing('"name"', hangar_s14_2, RecStartEnd(Edit1.Text));
-  hangar.Delete(hgar14_SL);
-  hangar.Insert(hgar14_SL, hangar_s14_2);
-
-  // поле "размер шрифта"
-  hangar_s15_2:=hangar.Strings[hgar15_SL];
-  hangar_s15_2:=Smart_Replacing('"size"', hangar_s15_2, IntToStr(SpinEdit11.Value));
-  hangar.Delete(hgar15_SL);
-  hangar.Insert(hgar15_SL, hangar_s15_2);
-
-
-  // поле "цвет пинга" great
-  hangar_s18_2:=hangar.Strings[hgar18_SL];
-  hangar_s18:=RecStartEnd(hangar_s18);
-  hangar_s18_2:=Smart_Replacing('"great"', hangar_s18_2, RecStartEnd(Edit3.Text));
+  // поле "цвет пинга" great // 18
+  hangar_s18:=hangar.Strings[hgar18_SL];
+  hangar_s18:=Smart_Replacing('"great"', hangar_s18, RecStartEnd(Edit3.Text));
   hangar.Delete(hgar18_SL);
-  hangar.Insert(hgar18_SL, hangar_s18_2);
+  hangar.Insert(hgar18_SL, hangar_s18);
 
-  // поле "цвет пинга" good
-  hangar_s19_2:=hangar.Strings[hgar19_SL];
-  hangar_s19:=RecStartEnd(hangar_s19);
-  hangar_s19_2:=Smart_Replacing('"good"', hangar_s19_2, RecStartEnd(Edit4.Text));
+  // поле "цвет пинга" good // 19
+  hangar_s19:=hangar.Strings[hgar19_SL];
+  hangar_s19:=Smart_Replacing('"good"', hangar_s19, RecStartEnd(Edit4.Text));
   hangar.Delete(hgar19_SL);
-  hangar.Insert(hgar19_SL, hangar_s19_2);
+  hangar.Insert(hgar19_SL, hangar_s19);
 
-  // поле "цвет пинга" poor
-  hangar_s20_2:=hangar.Strings[hgar20_SL];
-  hangar_s20:=RecStartEnd(hangar_s20);
-  hangar_s20_2:=Smart_Replacing('"poor"', hangar_s20_2, RecStartEnd(Edit5.Text));
+  // поле "цвет пинга" poor // 20
+  hangar_s20:=hangar.Strings[hgar20_SL];
+  hangar_s20:=Smart_Replacing('"poor"', hangar_s20, RecStartEnd(Edit5.Text));
   hangar.Delete(hgar20_SL);
-  hangar.Insert(hgar20_SL, hangar_s20_2);
+  hangar.Insert(hgar20_SL, hangar_s20);
 
-  // поле "цвет пинга" bad
-  hangar_s21_2:=hangar.Strings[hgar21_SL];
-  hangar_s21:=RecStartEnd(hangar_s21);
-  hangar_s21_2:=Smart_Replacing('"bad"', hangar_s21_2, RecStartEnd(Edit6.Text));
+  // поле "цвет пинга" bad // 21
+  hangar_s21:=hangar.Strings[hgar21_SL];
+  hangar_s21:=Smart_Replacing('"bad"', hangar_s21, RecStartEnd(Edit6.Text));
   hangar.Delete(hgar21_SL);
-  hangar.Insert(hgar21_SL, hangar_s21_2);
+  hangar.Insert(hgar21_SL, hangar_s21);
 
-  // Пороговые значения, определеяющие качество отклика / great
-  hangar_s22_2:=hangar.Strings[hgar22_SL];
-  hangar_s22_2:=Smart_Replacing('"great"', hangar_s22_2, IntToStr(SpinEdit17.Value));
+  // Пороговые значения, определеяющие качество отклика / great // 22
+  hangar_s22:=hangar.Strings[hgar22_SL];
+  hangar_s22:=Smart_Replacing('"great"', hangar_s22, IntToStr(SpinEdit17.Value));
   hangar.Delete(hgar22_SL);
-  hangar.Insert(hgar22_SL, hangar_s22_2);
+  hangar.Insert(hgar22_SL, hangar_s22);
 
-  // Пороговые значения, определеяющие качество отклика / good
-  hangar_s23_2:=hangar.Strings[hgar23_SL];
-  hangar_s23_2:=Smart_Replacing('"good"', hangar_s23_2, IntToStr(SpinEdit18.Value));
+  // Пороговые значения, определеяющие качество отклика / good // 23
+  hangar_s23:=hangar.Strings[hgar23_SL];
+  hangar_s23:=Smart_Replacing('"good"', hangar_s23, IntToStr(SpinEdit18.Value));
   hangar.Delete(hgar23_SL);
-  hangar.Insert(hgar23_SL, hangar_s23_2);
+  hangar.Insert(hgar23_SL, hangar_s23);
 
-  // Пороговые значения, определеяющие качество отклика / poor
-  hangar_s24_2:=hangar.Strings[hgar24_SL];
-  hangar_s24_2:=Smart_Replacing('"poor"', hangar_s24_2, IntToStr(SpinEdit19.Value));
+  // Пороговые значения, определеяющие качество отклика / poor // 24
+  hangar_s24:=hangar.Strings[hgar24_SL];
+  hangar_s24:=Smart_Replacing('"poor"', hangar_s24, IntToStr(SpinEdit19.Value));
   hangar.Delete(hgar24_SL);
-  hangar.Insert(hgar24_SL, hangar_s24_2);
+  hangar.Insert(hgar24_SL, hangar_s24);
 
-  // поле "цвет тени" пинга
-  hangar_s26_2:=hangar.Strings[hgar26_SL];
-  hangar_s26:=RecStartEnd(hangar_s26);
-  hangar_s26_2:=Smart_Replacing('"color"', hangar_s26_2, RecStartEnd(Edit2.Text));
+  // 25
+  hangar_s25:=hangar.Strings[hgar25_SL];
+  hangar_s25:=Smart_Replacing('"enabled"', hangar_s25, chek8);
+  hangar.Delete(hgar25_SL);
+  hangar.Insert(hgar25_SL, hangar_s25);
+
+  // поле "цвет тени" пинга // 26
+  hangar_s26:=hangar.Strings[hgar26_SL];
+  hangar_s26:=Smart_Replacing('"color"', hangar_s26, RecStartEnd(Edit2.Text));
   hangar.Delete(hgar26_SL);
-  hangar.Insert(hgar26_SL, hangar_s26_2);
+  hangar.Insert(hgar26_SL, hangar_s26);
 
-  // поле "дистанция" тени
-  hangar_s27_2:=hangar.Strings[hgar27_SL];
-  hangar_s27_2:=Smart_Replacing('"distance"', hangar_s27_2, IntToStr(SpinEdit12.Value));
+  // поле "дистанция" тени // 27
+  hangar_s27:=hangar.Strings[hgar27_SL];
+  hangar_s27:=Smart_Replacing('"distance"', hangar_s27, IntToStr(SpinEdit12.Value));
   hangar.Delete(hgar27_SL);
-  hangar.Insert(hgar27_SL, hangar_s27_2);
+  hangar.Insert(hgar27_SL, hangar_s27);
 
-  // поле "угол" тени
-  hangar_s28_2:=hangar.Strings[hgar28_SL];
-  hangar_s28_2:=Smart_Replacing('"angle"', hangar_s28_2, IntToStr(SpinEdit13.Value));
+  // поле "угол" тени // 28
+  hangar_s28:=hangar.Strings[hgar28_SL];
+  hangar_s28:=Smart_Replacing('"angle"', hangar_s28, IntToStr(SpinEdit13.Value));
   hangar.Delete(hgar28_SL);
-  hangar.Insert(hgar28_SL, hangar_s28_2);
+  hangar.Insert(hgar28_SL, hangar_s28);
 
-  // поле "прозрачность" тени
-  hangar_s29_2:=hangar.Strings[hgar29_SL];
-  hangar_s29_2:=Smart_Replacing('"alpha"', hangar_s29_2, IntToStr(SpinEdit14.Value));
+  // поле "прозрачность" тени // 29
+  hangar_s29:=hangar.Strings[hgar29_SL];
+  hangar_s29:=Smart_Replacing('"alpha"', hangar_s29, IntToStr(SpinEdit14.Value));
   hangar.Delete(hgar29_SL);
-  hangar.Insert(hgar29_SL, hangar_s29_2);
+  hangar.Insert(hgar29_SL, hangar_s29);
 
-  // поле "размытие/размер" тени
-  hangar_s30_2:=hangar.Strings[hgar30_SL];
-  hangar_s30_2:=Smart_Replacing('"blur"', hangar_s30_2, IntToStr(SpinEdit15.Value));
+  // поле "размытие/размер" тени // 30
+  hangar_s30:=hangar.Strings[hgar30_SL];
+  hangar_s30:=Smart_Replacing('"blur"', hangar_s30, IntToStr(SpinEdit15.Value));
   hangar.Delete(hgar30_SL);
-  hangar.Insert(hgar30_SL, hangar_s30_2);
+  hangar.Insert(hgar30_SL, hangar_s30);
 
-  // поле "интенсивность" тени
-  hangar_s31_2:=hangar.Strings[hgar31_SL];
-  hangar_s31_2:=Smart_Replacing('"strength"', hangar_s31_2, IntToStr(SpinEdit16.Value));
+  // поле "интенсивность" тени // 31
+  hangar_s31:=hangar.Strings[hgar31_SL];
+  hangar_s31:=Smart_Replacing('"strength"', hangar_s31, IntToStr(SpinEdit16.Value));
   hangar.Delete(hgar31_SL);
-  hangar.Insert(hgar31_SL, hangar_s31_2);
+  hangar.Insert(hgar31_SL, hangar_s31);
 
 end;
 
@@ -2917,11 +2831,9 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  UserInfo_s1:=TrimRight(userInfo.Strings[SearchLine]);
+  UserInfo_s1:=userInfo.Strings[SearchLine];
   UI1_SL:=SearchLine;
-  search_sN:=UserInfo_s1;
-  search_info();
-  UserInfo_s1:=search_sN;
+  UserInfo_s1:=new_change_str(Search, UserInfo_s1);
   ComboBox2.ItemIndex:=StrToInt(UserInfo_s1) - 1;
   end;
 
@@ -2932,11 +2844,9 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  UserInfo_s2:=TrimRight(userInfo.Strings[SearchLine]);
+  UserInfo_s2:=userInfo.Strings[SearchLine];
   UI2_SL:=SearchLine;
-  search_sN:=UserInfo_s2;
-  search_info();
-  UserInfo_s2:=search_sN;
+  UserInfo_s2:=new_change_str(Search, UserInfo_s2);
   ComboBox3.ItemIndex:=StrToInt(UserInfo_s2) - 1;
   end;
 
@@ -2947,17 +2857,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  UserInfo_s3:=TrimRight(userInfo.Strings[SearchLine]);
+  UserInfo_s3:=userInfo.Strings[SearchLine];
   UI3_SL:=SearchLine;
-  search_sN:=UserInfo_s3;
-  search_info();
-  UserInfo_s3:=search_sN;
+  UserInfo_s3:=new_change_str(Search, UserInfo_s3);
   if UserInfo_s3='true' then RadioButton47.Checked:=True else
   if UserInfo_s3='false' then RadioButton48.Checked:=True else
   begin
-    ShowMessage(ErrorConf+userInfo_name+path+activ_config
-    +#13#10+'Ошибка: '+UserInfo_s3+' (в строке '+IntToStr(UI3_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(userInfo_name, UserInfo_s3, UI3_SL));
     Application.Terminate;
   end;
   end;
@@ -2969,17 +2875,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  UserInfo_s4:=TrimRight(userInfo.Strings[SearchLine]);
+  UserInfo_s4:=userInfo.Strings[SearchLine];
   UI4_SL:=SearchLine;
-  search_sN:=UserInfo_s4;
-  search_info();
-  UserInfo_s4:=search_sN;
+  UserInfo_s4:=new_change_str(Search, UserInfo_s4);
   if UserInfo_s4='true' then RadioButton49.Checked:=True else
   if UserInfo_s4='false' then RadioButton50.Checked:=True else
   begin
-    ShowMessage(ErrorConf+userInfo_name+path+activ_config
-    +#13#10+'Ошибка: '+UserInfo_s4+' (в строке '+IntToStr(UI4_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(userInfo_name, UserInfo_s4, UI4_SL));
     Application.Terminate;
   end;
   end;
@@ -2991,17 +2893,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  UserInfo_s5:=TrimRight(userInfo.Strings[SearchLine]);
+  UserInfo_s5:=userInfo.Strings[SearchLine];
   UI5_SL:=SearchLine;
-  search_sN:=UserInfo_s5;
-  search_info();
-  UserInfo_s5:=search_sN;
+  UserInfo_s5:=new_change_str(Search, UserInfo_s5);
   if UserInfo_s5='true' then RadioButton51.Checked:=True else
   if UserInfo_s5='false' then RadioButton52.Checked:=True else
   begin
-    ShowMessage(ErrorConf+userInfo_name+path+activ_config
-    +#13#10+'Ошибка: '+UserInfo_s5+' (в строке '+IntToStr(UI5_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(userInfo_name, UserInfo_s5, UI5_SL));
     Application.Terminate;
   end;
   end;
@@ -3013,17 +2911,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  UserInfo_s6:=TrimRight(userInfo.Strings[SearchLine]);
+  UserInfo_s6:=userInfo.Strings[SearchLine];
   UI6_SL:=SearchLine;
-  search_sN:=UserInfo_s6;
-  search_info();
-  UserInfo_s6:=search_sN;
+  UserInfo_s6:=new_change_str(Search, UserInfo_s6);
   if UserInfo_s6='true' then RadioButton53.Checked:=True else
   if UserInfo_s6='false' then RadioButton54.Checked:=True else
   begin
-    ShowMessage(ErrorConf+userInfo_name+path+activ_config
-    +#13#10+'Ошибка: '+UserInfo_s6+' (в строке '+IntToStr(UI6_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(userInfo_name, UserInfo_s6, UI6_SL));
     Application.Terminate;
   end;
   end;
@@ -3035,11 +2929,9 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  UserInfo_s7:=TrimRight(userInfo.Strings[SearchLine]);
+  UserInfo_s7:=userInfo.Strings[SearchLine];
   UI7_SL:=SearchLine;
-  search_sN:=UserInfo_s7;
-  search_info();
-  UserInfo_s7:=search_sN;
+  UserInfo_s7:=new_change_str(Search, UserInfo_s7);
   Edit7.Text:=DelStartEnd(UserInfo_s7);
   end;
 
@@ -3055,46 +2947,46 @@ begin
   if (RadioButton53.Checked=True) then chek4:='true' else chek4:='false';
 
   // Номер начальной страницы // 1
-  UserInfo_s1_2:=userInfo.Strings[UI1_SL];
-  UserInfo_s1_2:=Smart_Replacing('"startPage"', UserInfo_s1_2, IntToStr(ComboBox2.ItemIndex+1));
+  UserInfo_s1:=userInfo.Strings[UI1_SL];
+  UserInfo_s1:=Smart_Replacing('"startPage"', UserInfo_s1, IntToStr(ComboBox2.ItemIndex+1));
   userInfo.Delete(UI1_SL);
-  userInfo.Insert(UI1_SL, UserInfo_s1_2);
+  userInfo.Insert(UI1_SL, UserInfo_s1);
 
   // Номер колонки для сортировки // 2
-  UserInfo_s2_2:=userInfo.Strings[UI2_SL];
-  UserInfo_s2_2:=Smart_Replacing('"sortColumn"', UserInfo_s2_2, IntToStr(ComboBox3.ItemIndex+1));
+  UserInfo_s2:=userInfo.Strings[UI2_SL];
+  UserInfo_s2:=Smart_Replacing('"sortColumn"', UserInfo_s2, IntToStr(ComboBox3.ItemIndex+1));
   userInfo.Delete(UI2_SL);
-  userInfo.Insert(UI2_SL, UserInfo_s2_2);
+  userInfo.Insert(UI2_SL, UserInfo_s2);
 
   // Показывать расширенные данные в профиле // 3
-  UserInfo_s3_2:=userInfo.Strings[UI3_SL];
-  UserInfo_s3_2:=Smart_Replacing('"showExtraDataInProfile"', UserInfo_s3_2, chek1);
+  UserInfo_s3:=userInfo.Strings[UI3_SL];
+  UserInfo_s3:=Smart_Replacing('"showExtraDataInProfile"', UserInfo_s3, chek1);
   userInfo.Delete(UI3_SL);
-  userInfo.Insert(UI3_SL, UserInfo_s3_2);
+  userInfo.Insert(UI3_SL, UserInfo_s3);
 
   // Включить фильтр отображения танков в ангаре по умолчанию // 4
-  UserInfo_s4_2:=userInfo.Strings[UI4_SL];
-  UserInfo_s4_2:=Smart_Replacing('"inHangarFilterEnabled"', UserInfo_s4_2, chek2);
+  UserInfo_s4:=userInfo.Strings[UI4_SL];
+  UserInfo_s4:=Smart_Replacing('"inHangarFilterEnabled"', UserInfo_s4, chek2);
   userInfo.Delete(UI4_SL);
-  userInfo.Insert(UI4_SL, UserInfo_s4_2);
+  userInfo.Insert(UI4_SL, UserInfo_s4);
 
   // Показывать фильтры отображения танков // 5
-  UserInfo_s5_2:=userInfo.Strings[UI5_SL];
-  UserInfo_s5_2:=Smart_Replacing('"showFilters"', UserInfo_s5_2, chek3);
+  UserInfo_s5:=userInfo.Strings[UI5_SL];
+  UserInfo_s5:=Smart_Replacing('"showFilters"', UserInfo_s5, chek3);
   userInfo.Delete(UI5_SL);
-  userInfo.Insert(UI5_SL, UserInfo_s5_2);
+  userInfo.Insert(UI5_SL, UserInfo_s5);
 
   // Выбрать поле ввода фильтра по умолчанию // 6
-  UserInfo_s6_2:=userInfo.Strings[UI6_SL];
-  UserInfo_s6_2:=Smart_Replacing('"filterFocused"', UserInfo_s6_2, chek4);
+  UserInfo_s6:=userInfo.Strings[UI6_SL];
+  UserInfo_s6:=Smart_Replacing('"filterFocused"', UserInfo_s6, chek4);
   userInfo.Delete(UI6_SL);
-  userInfo.Insert(UI6_SL, UserInfo_s6_2);
+  userInfo.Insert(UI6_SL, UserInfo_s6);
 
   // Значение фильтра по умолчанию // 7
-  UserInfo_s7_2:=userInfo.Strings[UI7_SL];
-  UserInfo_s7_2:=Smart_Replacing('"defaultFilterValue"', UserInfo_s7_2, RecStartEnd(Edit7.Text));
+  UserInfo_s7:=userInfo.Strings[UI7_SL];
+  UserInfo_s7:=Smart_Replacing('"defaultFilterValue"', UserInfo_s7, RecStartEnd(Edit7.Text));
   UserInfo.Delete(UI7_SL);
-  UserInfo.Insert(UI7_SL, UserInfo_s7_2);
+  UserInfo.Insert(UI7_SL, UserInfo_s7);
 
 end;
 
@@ -3110,52 +3002,52 @@ begin
   if (RadioButton12.Checked=True) then chek6:='true' else chek6:='false';
 
   // 1
-  b_s1_2:=battle.Strings[bs1_SL];
-  b_s1_2:=Smart_Replacing('"mirroredVehicleIcons"', b_s1_2, chek1);
+  b_s1:=battle.Strings[bs1_SL];
+  b_s1:=Smart_Replacing('"mirroredVehicleIcons"', b_s1, chek1);
   battle.Delete(bs1_SL);
-  battle.Insert(bs1_SL, b_s1_2);
+  battle.Insert(bs1_SL, b_s1);
 
   // 2
-  b_s2_2:=battle.Strings[bs2_SL];
-  b_s2_2:=Smart_Replacing('"showPostmortemTips"', b_s2_2, chek2);
+  b_s2:=battle.Strings[bs2_SL];
+  b_s2:=Smart_Replacing('"showPostmortemTips"', b_s2, chek2);
   battle.Delete(bs2_SL);
-  battle.Insert(bs2_SL, b_s2_2);
+  battle.Insert(bs2_SL, b_s2);
 
   // 3
-  b_s3_2:=battle.Strings[bs3_SL];
-  b_s3_2:=Smart_Replacing('"removePanelsModeSwitcher"', b_s3_2, chek3);
+  b_s3:=battle.Strings[bs3_SL];
+  b_s3:=Smart_Replacing('"removePanelsModeSwitcher"', b_s3, chek3);
   battle.Delete(bs3_SL);
-  battle.Insert(bs3_SL, b_s3_2);
+  battle.Insert(bs3_SL, b_s3);
 
   // 4
-  b_s4_2:=battle.Strings[bs4_SL];
-  b_s4_2:=Smart_Replacing('"highlightVehicleIcon"', b_s4_2, chek4);
+  b_s4:=battle.Strings[bs4_SL];
+  b_s4:=Smart_Replacing('"highlightVehicleIcon"', b_s4, chek4);
   battle.Delete(bs4_SL);
-  battle.Insert(bs4_SL, b_s4_2);
+  battle.Insert(bs4_SL, b_s4);
 
   // 5
-  b_s5_2:=battle.Strings[bs5_SL];
-  b_s5_2:=Smart_Replacing('"useStandardMarkers"', b_s5_2, chek5);
+  b_s5:=battle.Strings[bs5_SL];
+  b_s5:=Smart_Replacing('"useStandardMarkers"', b_s5, chek5);
   battle.Delete(bs5_SL);
-  battle.Insert(bs5_SL, b_s5_2);
+  battle.Insert(bs5_SL, b_s5);
 
   // 6
-  b_s6_2:=battle.Strings[bs6_SL];
-  b_s6_2:=Smart_Replacing('"hideTeamTextFields"', b_s6_2, chek6);
+  b_s6:=battle.Strings[bs6_SL];
+  b_s6:=Smart_Replacing('"hideTeamTextFields"', b_s6, chek6);
   battle.Delete(bs6_SL);
-  battle.Insert(bs6_SL, b_s6_2);
+  battle.Insert(bs6_SL, b_s6);
 
   // 7
-  b_s7_2:=battle.Strings[bs7_SL];
-  b_s7_2:=Smart_Replacing('"delay"', b_s7_2, IntToStr(SpinEdit1.Value));
+  b_s7:=battle.Strings[bs7_SL];
+  b_s7:=Smart_Replacing('"delay"', b_s7, IntToStr(SpinEdit1.Value));
   battle.Delete(bs7_SL);
-  battle.Insert(bs7_SL, b_s7_2);
+  battle.Insert(bs7_SL, b_s7);
 
   // 8
-  b_s8_2:=battle.Strings[bs8_SL];
-  b_s8_2:=Smart_Replacing('"scale"', b_s8_2, IntToStr(SpinEdit2.Value));
+  b_s8:=battle.Strings[bs8_SL];
+  b_s8:=Smart_Replacing('"scale"', b_s8, IntToStr(SpinEdit2.Value));
   battle.Delete(bs8_SL);
-  battle.Insert(bs8_SL, b_s8_2);
+  battle.Insert(bs8_SL, b_s8);
 
 end;
 
@@ -3169,92 +3061,73 @@ begin
     Search:='"configVersion"';
     SearchLine_my();
     xvm1_SL:=SearchLine;
-    xvm_s1:=Trim(xvm.Strings[SearchLine]);
+    xvm_s1:=xvm.Strings[SearchLine];
+    xvm_s1:=DelStartEnd(new_change_str(Search, xvm_s1));
+    Label2.Caption:=xvm_s1;
 
     Search:='"editorVersion"';
     SearchLine_my();
     xvm2_SL:=SearchLine;
-    xvm_s2:=Trim(xvm.Strings[SearchLine]);
+    xvm_s2:=xvm.Strings[SearchLine];
+    xvm_s2:=DelStartEnd(new_change_str(Search, xvm_s2));
+    Label4.Caption:=xvm_s2;
 
     Search:='"language"';
     SearchLine_my();
     xvm3_SL:=SearchLine;
-    xvm_s3:=Trim(xvm.Strings[SearchLine]);
+    xvm_s3:=xvm.Strings[SearchLine];
+    xvm_s3:=DelStartEnd(new_change_str(Search, xvm_s3));
+    Label6.Caption:=xvm_s3;
 
     Search:='"region"';
     SearchLine_my();
     xvm4_SL:=SearchLine;
-    xvm_s4:=Trim(xvm.Strings[SearchLine]);
+    xvm_s4:=xvm.Strings[SearchLine];
+    xvm_s4:=DelStartEnd(new_change_str(Search, xvm_s4));
+    Label8.Caption:=xvm_s4;
 
     Search:='"author"';
     SearchLine_my();
     xvm5_SL:=SearchLine;
-    xvm_s5:=Trim(xvm.Strings[SearchLine]);
+    xvm_s5:=xvm.Strings[SearchLine];
+    xvm_s5:=DelStartEnd(new_change_str(Search, xvm_s5));
+    Label10.Caption:=xvm_s5;
 
     Search:='"description"';
     SearchLine_my();
     xvm6_SL:=SearchLine;
-    xvm_s6:=Trim(xvm.Strings[SearchLine]);
+    xvm_s6:=xvm.Strings[SearchLine];
+    xvm_s6:=DelStartEnd(new_change_str(Search, xvm_s6));
+    Label12.Caption:=xvm_s6;
 
     Search:='"date"';
     SearchLine_my();
     xvm7_SL:=SearchLine;
-    xvm_s7:=Trim(xvm.Strings[SearchLine]);
+    xvm_s7:=xvm.Strings[SearchLine];
+    xvm_s7:=DelStartEnd(new_change_str(Search, xvm_s7));
+    Label14.Caption:=xvm_s7;
 
     Search:='"gameVersion"';
     SearchLine_my();
     xvm8_SL:=SearchLine;
-    xvm_s8:=Trim(xvm.Strings[SearchLine]);
+    xvm_s8:=xvm.Strings[SearchLine];
+    xvm_s8:=DelStartEnd(new_change_str(Search, xvm_s8));
+    Label16.Caption:=xvm_s8;
 
     Search:='"url"';
     SearchLine_my();
     xvm9_SL:=SearchLine;
-    xvm_s9:=Trim(xvm.Strings[SearchLine]);
+    xvm_s9:=xvm.Strings[SearchLine];
     xvm_s9:=DelStartEnd(new_change_str(Search, xvm_s9));
     Label63.Caption:=xvm_s9;
     Label63.Hint:='Перейти по адресу - '+xvm_s9;
 
-    // Обработка строк и вывод их в программу
-
-    xvm_sN:=xvm_s1;
-    xvm_info();
-    xvm_s1:=xvm_sN;
-    Label2.Caption:=xvm_s1;
-
-    xvm_sN:=xvm_s2;
-    xvm_info();
-    xvm_s2:=xvm_sN;
-    Label4.Caption:=xvm_s2;
-
-    xvm_sN:=xvm_s3;
-    xvm_info();
-    xvm_s3:=xvm_sN;
-    Label6.Caption:=xvm_s3;
-
-    xvm_sN:=xvm_s4;
-    xvm_info();
-    xvm_s4:=xvm_sN;
-    Label8.Caption:=xvm_s4;
-
-    xvm_sN:=xvm_s5;
-    xvm_info();
-    xvm_s5:=xvm_sN;
-    Label10.Caption:=xvm_s5;
-
-    xvm_sN:=xvm_s6;
-    xvm_info();
-    xvm_s6:=xvm_sN;
-    Label12.Caption:=xvm_s6;
-
-    xvm_sN:=xvm_s7;
-    xvm_info();
-    xvm_s7:=xvm_sN;
-    Label14.Caption:=xvm_s7;
-
-    xvm_sN:=xvm_s8;
-    xvm_info();
-    xvm_s8:=xvm_sN;
-    Label16.Caption:=xvm_s8;
+    Search:='"modMinVersion"';
+    SearchLine_my();
+    xvm10_SL:=SearchLine;
+    xvm_s10:=xvm.Strings[SearchLine];
+    xvm_s10:=DelStartEnd(new_change_str(Search, xvm_s10));
+    Label64.Caption:=xvm_s10;
 
 end;
 
@@ -3274,15 +3147,13 @@ begin
   SearchLine_my();
   if SearchLine=-1 then Application.Terminate else
   begin
-  rating_s1:=TrimRight(rating.Strings[SearchLine]);
+  rating_s1:=rating.Strings[SearchLine];
   rat1_SL:=SearchLine;
   rating_s1:=new_change_str(Search, rating_s1);
   if rating_s1='true' then RadioButton13.Checked:=True else
   if rating_s1='false' then RadioButton14.Checked:=True else
   begin
-    ShowMessage(ErrorConf+rating_name+path+activ_config
-    +#13#10+'Ошибка: '+rating_s1+' (в строке '+IntToStr(rat1_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(rating_name, rating_s1, rat1_SL));
     Application.Terminate;
   end;
   end;
@@ -3292,15 +3163,13 @@ begin
   SearchLine_my();
   if SearchLine=-1 then Application.Terminate else
   begin
-  rating_s2:=TrimRight(rating.Strings[SearchLine]);
+  rating_s2:=rating.Strings[SearchLine];
   rat2_SL:=SearchLine;
   rating_s2:=new_change_str(Search, rating_s2);
   if rating_s2='true' then RadioButton15.Checked:=True else
   if rating_s2='false' then RadioButton16.Checked:=True else
   begin
-    ShowMessage(ErrorConf+rating_name+path+activ_config
-    +#13#10+'Ошибка: '+rating_s2+' (в строке '+IntToStr(rat2_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(rating_name, rating_s2, rat2_SL));
     Application.Terminate;
   end;
   end;
@@ -3310,15 +3179,13 @@ begin
   SearchLine_my();
   if SearchLine=-1 then Application.Terminate else
   begin
-  rating_s3:=TrimRight(rating.Strings[SearchLine]);
+  rating_s3:=rating.Strings[SearchLine];
   rat3_SL:=SearchLine;
   rating_s3:=new_change_str(Search, rating_s3);
   if rating_s3='true' then RadioButton17.Checked:=True else
   if rating_s3='false' then RadioButton18.Checked:=True else
   begin
-    ShowMessage(ErrorConf+rating_name+path+activ_config
-    +#13#10+'Ошибка: '+rating_s3+' (в строке '+IntToStr(rat3_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(rating_name, rating_s3, rat3_SL));
     Application.Terminate;
   end;
   end;
@@ -3328,15 +3195,13 @@ begin
   SearchLine_my();
   if SearchLine=-1 then Application.Terminate else
   begin
-  rating_s4:=TrimRight(rating.Strings[SearchLine]);
+  rating_s4:=rating.Strings[SearchLine];
   rat4_SL:=SearchLine;
   rating_s4:=new_change_str(Search, rating_s4);
   if rating_s4='true' then RadioButton19.Checked:=True else
   if rating_s4='false' then RadioButton20.Checked:=True else
   begin
-    ShowMessage(ErrorConf+rating_name+path+activ_config
-    +#13#10+'Ошибка: '+rating_s4+' (в строке '+IntToStr(rat4_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(rating_name, rating_s4, rat4_SL));
     Application.Terminate;
   end;
   end;
@@ -3346,15 +3211,13 @@ begin
   SearchLine_my();
   if SearchLine=-1 then Application.Terminate else
   begin
-  rating_s5:=TrimRight(rating.Strings[SearchLine]);
+  rating_s5:=rating.Strings[SearchLine];
   rat5_SL:=SearchLine;
   rating_s5:=new_change_str(Search, rating_s5);
   if rating_s5='true' then RadioButton21.Checked:=True else
   if rating_s5='false' then RadioButton22.Checked:=True else
   begin
-    ShowMessage(ErrorConf+rating_name+path+activ_config
-    +#13#10+'Ошибка: '+rating_s5+' (в строке '+IntToStr(rat5_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(rating_name, rating_s5, rat5_SL));
     Application.Terminate;
   end;
   end;
@@ -3372,34 +3235,34 @@ begin
   if (RadioButton21.Checked=True) then chek5:='true' else chek5:='false';
 
   // Глобальный переключатель / 1
-  rating_s1_2:=rating.Strings[rat1_SL];
-  rating_s1_2:=Smart_Replacing('"showPlayersStatistics"', rating_s1_2, chek1);
+  rating_s1:=rating.Strings[rat1_SL];
+  rating_s1:=Smart_Replacing('"showPlayersStatistics"', rating_s1, chek1);
   rating.Delete(rat1_SL);
-  rating.Insert(rat1_SL, rating_s1_2);
+  rating.Insert(rat1_SL, rating_s1);
 
   // Статистика в достижениях пользователя / 2
-  rating_s2_2:=rating.Strings[rat2_SL];
-  rating_s2_2:=Smart_Replacing('"enableUserInfoStatistics"', rating_s2_2, chek2);
+  rating_s2:=rating.Strings[rat2_SL];
+  rating_s2:=Smart_Replacing('"enableUserInfoStatistics"', rating_s2, chek2);
   rating.Delete(rat2_SL);
-  rating.Insert(rat2_SL, rating_s2_2);
+  rating.Insert(rat2_SL, rating_s2);
 
   // Отображение статистики при наборе роты / 3
-  rating_s3_2:=rating.Strings[rat3_SL];
-  rating_s3_2:=Smart_Replacing('"enableCompanyStatistics"', rating_s3_2, chek3);
+  rating_s3:=rating.Strings[rat3_SL];
+  rating_s3:=Smart_Replacing('"enableCompanyStatistics"', rating_s3, chek3);
   rating.Delete(rat3_SL);
-  rating.Insert(rat3_SL, rating_s3_2);
+  rating.Insert(rat3_SL, rating_s3);
 
   // Загрузка данных по противникам в "тумане войны"
-  rating_s4_2:=rating.Strings[rat4_SL];
-  rating_s4_2:=Smart_Replacing('"loadEnemyStatsInFogOfWar"', rating_s4_2, chek4);
+  rating_s4:=rating.Strings[rat4_SL];
+  rating_s4:=Smart_Replacing('"loadEnemyStatsInFogOfWar"', rating_s4, chek4);
   rating.Delete(rat4_SL);
-  rating.Insert(rat4_SL, rating_s4_2);
+  rating.Insert(rat4_SL, rating_s4);
 
   // Сохранение статистики в файл "XVM.log"
-  rating_s5_2:=rating.Strings[rat5_SL];
-  rating_s5_2:=Smart_Replacing('"enableStatisticsLog"', rating_s5_2, chek5);
+  rating_s5:=rating.Strings[rat5_SL];
+  rating_s5:=Smart_Replacing('"enableStatisticsLog"', rating_s5, chek5);
   rating.Delete(rat5_SL);
-  rating.Insert(rat5_SL, rating_s5_2);
+  rating.Insert(rat5_SL, rating_s5);
 
 end;
 
@@ -3420,17 +3283,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  squad_s1:=TrimRight(squad.Strings[SearchLine]);
+  squad_s1:=squad.Strings[SearchLine];
   SQ1_SL:=SearchLine;
-  search_sN:=squad_s1;
-  search_info();
-  squad_s1:=search_sN;
+  squad_s1:=new_change_str(Search, squad_s1);
   if squad_s1='true' then RadioButton59.Checked:=True else
   if squad_s1='false' then RadioButton60.Checked:=True else
   begin
-    ShowMessage(ErrorConf+squad_name+path+activ_config
-    +#13#10+'Ошибка: '+squad_s1+' (в строке '+IntToStr(SQ1_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(squad_name, squad_s1, SQ1_SL));
     Application.Terminate;
   end;
   end;
@@ -3442,17 +3301,13 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  squad_s2:=TrimRight(squad.Strings[SearchLine]);
+  squad_s2:=squad.Strings[SearchLine];
   SQ2_SL:=SearchLine;
-  search_sN:=squad_s2;
-  search_info();
-  squad_s2:=search_sN;
+  squad_s2:=new_change_str(Search, squad_s2);
   if squad_s2='true' then RadioButton61.Checked:=True else
   if squad_s2='false' then RadioButton62.Checked:=True else
   begin
-    ShowMessage(ErrorConf+userInfo_name+path+activ_config
-    +#13#10+'Ошибка: '+squad_s2+' (в строке '+IntToStr(SQ2_SL+1)+' )'
-    +#13#10+Correct);
+    ShowMessage(error_message(squad_name, squad_s2, SQ2_SL));
     Application.Terminate;
   end;
   end;
@@ -3464,11 +3319,9 @@ begin
   SearchLine_my_2();
   if SearchLine=-1 then Application.Terminate else
   begin
-  squad_s3:=TrimRight(squad.Strings[SearchLine]);
+  squad_s3:=squad.Strings[SearchLine];
   SQ3_SL:=SearchLine;
-  search_sN:=squad_s3;
-  search_info();
-  squad_s3:=search_sN;
+  squad_s3:=new_change_str(Search, squad_s3);
   Edit16.Text:=DelStartEnd(squad_s3);
   end;
 end;
@@ -3480,22 +3333,22 @@ begin
   if (RadioButton61.Checked=True) then chek2:='true' else chek2:='false';
 
   // Отображение информации // 1
-  squad_s1_2:=squad.Strings[SQ1_SL];
-  squad_s1_2:=Smart_Replacing('"enabled"', squad_s1_2, chek1);
+  squad_s1:=squad.Strings[SQ1_SL];
+  squad_s1:=Smart_Replacing('"enabled"', squad_s1, chek1);
   squad.Delete(SQ1_SL);
-  squad.Insert(SQ1_SL, squad_s1_2);
+  squad.Insert(SQ1_SL, squad_s1);
 
   // Отображение клана // 2
-  squad_s2_2:=squad.Strings[SQ2_SL];
-  squad_s2_2:=Smart_Replacing('"showClan"', squad_s2_2, chek2);
+  squad_s2:=squad.Strings[SQ2_SL];
+  squad_s2:=Smart_Replacing('"showClan"', squad_s2, chek2);
   squad.Delete(SQ2_SL);
-  squad.Insert(SQ2_SL, squad_s2_2);
+  squad.Insert(SQ2_SL, squad_s2);
 
   // Формат поля информации о танке // 3
-  squad_s3_2:=squad.Strings[SQ3_SL];
-  squad_s3_2:=Smart_Replacing('"formatInfoField"', squad_s3_2, RecStartEnd(Edit16.Text));
+  squad_s3:=squad.Strings[SQ3_SL];
+  squad_s3:=Smart_Replacing('"formatInfoField"', squad_s3, RecStartEnd(Edit16.Text));
   squad.Delete(SQ3_SL);
-  squad.Insert(SQ3_SL, squad_s3_2);
+  squad.Insert(SQ3_SL, squad_s3);
 
 end;
 
@@ -3514,11 +3367,9 @@ begin
   SearchLine_my();
   if SearchLine=-1 then Application.Terminate else
   begin
-  iconset_s1:=TrimRight(iconset.Strings[SearchLine]);
+  iconset_s1:=iconset.Strings[SearchLine];
   IS1_SL:=SearchLine;
-  search_sN:=iconset_s1;
-  search_info();
-  iconset_s1:=search_sN;
+  iconset_s1:=new_change_str(Search, iconset_s1);
   Edit8.Text:=DelStartEnd(iconset_s1);
   end;
 
@@ -3527,11 +3378,9 @@ begin
   SearchLine_my();
   if SearchLine=-1 then Application.Terminate else
   begin
-  iconset_s2:=TrimRight(iconset.Strings[SearchLine]);
+  iconset_s2:=iconset.Strings[SearchLine];
   IS2_SL:=SearchLine;
-  search_sN:=iconset_s2;
-  search_info();
-  iconset_s2:=search_sN;
+  iconset_s2:=new_change_str(Search, iconset_s2);
   Edit9.Text:=DelStartEnd(iconset_s2);
   end;
 
@@ -3540,11 +3389,9 @@ begin
   SearchLine_my();
   if SearchLine=-1 then Application.Terminate else
   begin
-  iconset_s3:=TrimRight(iconset.Strings[SearchLine]);
+  iconset_s3:=iconset.Strings[SearchLine];
   IS3_SL:=SearchLine;
-  search_sN:=iconset_s3;
-  search_info();
-  iconset_s3:=search_sN;
+  iconset_s3:=new_change_str(Search, iconset_s3);
   Edit10.Text:=DelStartEnd(iconset_s3);
   end;
 
@@ -3553,11 +3400,9 @@ begin
   SearchLine_my();
   if SearchLine=-1 then Application.Terminate else
   begin
-  iconset_s4:=TrimRight(iconset.Strings[SearchLine]);
+  iconset_s4:=iconset.Strings[SearchLine];
   IS4_SL:=SearchLine;
-  search_sN:=iconset_s4;
-  search_info();
-  iconset_s4:=search_sN;
+  iconset_s4:=new_change_str(Search, iconset_s4);
   Edit11.Text:=DelStartEnd(iconset_s4);
   end;
 
@@ -3566,11 +3411,9 @@ begin
   SearchLine_my();
   if SearchLine=-1 then Application.Terminate else
   begin
-  iconset_s5:=TrimRight(iconset.Strings[SearchLine]);
+  iconset_s5:=iconset.Strings[SearchLine];
   IS5_SL:=SearchLine;
-  search_sN:=iconset_s5;
-  search_info();
-  iconset_s5:=search_sN;
+  iconset_s5:=new_change_str(Search, iconset_s5);
   Edit12.Text:=DelStartEnd(iconset_s5);
   end;
 
@@ -3579,11 +3422,9 @@ begin
   SearchLine_my();
   if SearchLine=-1 then Application.Terminate else
   begin
-  iconset_s6:=TrimRight(iconset.Strings[SearchLine]);
+  iconset_s6:=iconset.Strings[SearchLine];
   IS6_SL:=SearchLine;
-  search_sN:=iconset_s6;
-  search_info();
-  iconset_s6:=search_sN;
+  iconset_s6:=new_change_str(Search, iconset_s6);
   Edit13.Text:=DelStartEnd(iconset_s6);
   end;
 
@@ -3592,11 +3433,9 @@ begin
   SearchLine_my();
   if SearchLine=-1 then Application.Terminate else
   begin
-  iconset_s7:=TrimRight(iconset.Strings[SearchLine]);
+  iconset_s7:=iconset.Strings[SearchLine];
   IS7_SL:=SearchLine;
-  search_sN:=iconset_s7;
-  search_info();
-  iconset_s7:=search_sN;
+  iconset_s7:=new_change_str(Search, iconset_s7);
   Edit14.Text:=DelStartEnd(iconset_s7);
   end;
 
@@ -3605,11 +3444,9 @@ begin
   SearchLine_my();
   if SearchLine=-1 then Application.Terminate else
   begin
-  iconset_s8:=TrimRight(iconset.Strings[SearchLine]);
+  iconset_s8:=iconset.Strings[SearchLine];
   IS8_SL:=SearchLine;
-  search_sN:=iconset_s8;
-  search_info();
-  iconset_s8:=search_sN;
+  iconset_s8:=new_change_str(Search, iconset_s8);
   Edit15.Text:=DelStartEnd(iconset_s8);
   end;
 end;
@@ -3618,53 +3455,52 @@ end;
 procedure TXCTuner_Form1.iconset_save;
 begin
   // Набор иконок для экрана загрузки боя / свои // 1
-  iconset_s1_2:=iconset.Strings[IS1_SL];
-  iconset_s1_2:=Smart_Replacing('"battleLoadingAlly"', iconset_s1_2, RecStartEnd(Edit8.Text));
+  iconset_s1:=iconset.Strings[IS1_SL];
+  iconset_s1:=Smart_Replacing('"battleLoadingAlly"', iconset_s1, RecStartEnd(Edit8.Text));
   iconset.Delete(IS1_SL);
-  iconset.Insert(IS1_SL, iconset_s1_2);
-
+  iconset.Insert(IS1_SL, iconset_s1);
 
   // Набор иконок для экрана загрузки боя / чужие // 2
-  iconset_s2_2:=iconset.Strings[IS2_SL];
-  iconset_s2_2:=Smart_Replacing('"battleLoadingEnemy"', iconset_s2_2, RecStartEnd(Edit9.Text));
+  iconset_s2:=iconset.Strings[IS2_SL];
+  iconset_s2:=Smart_Replacing('"battleLoadingEnemy"', iconset_s2, RecStartEnd(Edit9.Text));
   iconset.Delete(IS2_SL);
-  iconset.Insert(IS2_SL, iconset_s2_2);
+  iconset.Insert(IS2_SL, iconset_s2);
 
   // Набор иконок для формы статистики (по Tab) / свои // 3
-  iconset_s3_2:=iconset.Strings[IS3_SL];
-  iconset_s3_2:=Smart_Replacing('"statisticFormAlly"', iconset_s3_2, RecStartEnd(Edit10.Text));
+  iconset_s3:=iconset.Strings[IS3_SL];
+  iconset_s3:=Smart_Replacing('"statisticFormAlly"', iconset_s3, RecStartEnd(Edit10.Text));
   iconset.Delete(IS3_SL);
-  iconset.Insert(IS3_SL, iconset_s3_2);
+  iconset.Insert(IS3_SL, iconset_s3);
 
   // Набор иконок для формы статистики (по Tab) / чужие // 4
-  iconset_s4_2:=iconset.Strings[IS4_SL];
-  iconset_s4_2:=Smart_Replacing('"statisticFormEnemy"', iconset_s4_2, RecStartEnd(Edit11.Text));
+  iconset_s4:=iconset.Strings[IS4_SL];
+  iconset_s4:=Smart_Replacing('"statisticFormEnemy"', iconset_s4, RecStartEnd(Edit11.Text));
   iconset.Delete(IS4_SL);
-  iconset.Insert(IS4_SL, iconset_s4_2);
+  iconset.Insert(IS4_SL, iconset_s4);
 
   // Набор иконок для "ушей" / свои // 5
-  iconset_s5_2:=iconset.Strings[IS5_SL];
-  iconset_s5_2:=Smart_Replacing('"playersPanelAlly"', iconset_s5_2, RecStartEnd(Edit12.Text));
+  iconset_s5:=iconset.Strings[IS5_SL];
+  iconset_s5:=Smart_Replacing('"playersPanelAlly"', iconset_s5, RecStartEnd(Edit12.Text));
   iconset.Delete(IS5_SL);
-  iconset.Insert(IS5_SL, iconset_s5_2);
+  iconset.Insert(IS5_SL, iconset_s5);
 
   // Набор иконок для "ушей" / чужие // 6
-  iconset_s6_2:=iconset.Strings[IS6_SL];
-  iconset_s6_2:=Smart_Replacing('"playersPanelEnemy"', iconset_s6_2, RecStartEnd(Edit13.Text));
+  iconset_s6:=iconset.Strings[IS6_SL];
+  iconset_s6:=Smart_Replacing('"playersPanelEnemy"', iconset_s6, RecStartEnd(Edit13.Text));
   iconset.Delete(IS6_SL);
-  iconset.Insert(IS6_SL, iconset_s6_2);
+  iconset.Insert(IS6_SL, iconset_s6);
 
   // Набор иконок для маркеров над танками / свои // 7
-  iconset_s7_2:=iconset.Strings[IS7_SL];
-  iconset_s7_2:=Smart_Replacing('"vehicleMarkerAlly"', iconset_s7_2, RecStartEnd(Edit14.Text));
+  iconset_s7:=iconset.Strings[IS7_SL];
+  iconset_s7:=Smart_Replacing('"vehicleMarkerAlly"', iconset_s7, RecStartEnd(Edit14.Text));
   iconset.Delete(IS7_SL);
-  iconset.Insert(IS7_SL, iconset_s7_2);
+  iconset.Insert(IS7_SL, iconset_s7);
 
   // Набор иконок для маркеров над танками / чужие // 8
-  iconset_s8_2:=iconset.Strings[IS8_SL];
-  iconset_s8_2:=Smart_Replacing('"vehicleMarkerEnemy"', iconset_s8_2, RecStartEnd(Edit15.Text));
+  iconset_s8:=iconset.Strings[IS8_SL];
+  iconset_s8:=Smart_Replacing('"vehicleMarkerEnemy"', iconset_s8, RecStartEnd(Edit15.Text));
   iconset.Delete(IS8_SL);
-  iconset.Insert(IS8_SL, iconset_s8_2);
+  iconset.Insert(IS8_SL, iconset_s8);
 
 end;
 
@@ -3759,19 +3595,19 @@ begin
   if (RadioButton57.Checked=True) then chek2:='true' else chek2:='false';
 
   // Отображение информации // 1
-  hotkeys_s1_2:=hotkeys.Strings[HK1_SL];
-  hotkeys_s1_2:=Smart_Replacing('"enabled"', hotkeys_s1_2, chek1);
+  hotkeys_s1:=hotkeys.Strings[HK1_SL];
+  hotkeys_s1:=Smart_Replacing('"enabled"', hotkeys_s1, chek1);
   hotkeys.Delete(HK1_SL);
-  hotkeys.Insert(HK1_SL, hotkeys_s1_2);
+  hotkeys.Insert(HK1_SL, hotkeys_s1);
 
   // действие по разовому нажатию клавиши // 2
-  hotkeys_s2_2:=hotkeys.Strings[HK2_SL];
-  hotkeys_s2_2:=Smart_Replacing('"onHold"', hotkeys_s2_2, chek2);
+  hotkeys_s2:=hotkeys.Strings[HK2_SL];
+  hotkeys_s2:=Smart_Replacing('"onHold"', hotkeys_s2, chek2);
   hotkeys.Delete(HK2_SL);
-  hotkeys.Insert(HK2_SL, hotkeys_s2_2);
+  hotkeys.Insert(HK2_SL, hotkeys_s2);
 
   // Код клавиши // 3
-  hotkeys_s3_2:=hotkeys.Strings[HK3_SL];
+  hotkeys_s3:=hotkeys.Strings[HK3_SL];
   key_int:=ComboBox4.ItemIndex;
   case key_int of
     0:  key_str:='8';
@@ -3791,9 +3627,9 @@ begin
     14: key_str:='112';
     15: key_str:='20';
   end;
-  hotkeys_s3_2:=Smart_Replacing('"keyCode"', hotkeys_s3_2, key_str);
+  hotkeys_s3:=Smart_Replacing('"keyCode"', hotkeys_s3, key_str);
   hotkeys.Delete(HK3_SL);
-  hotkeys.Insert(HK3_SL, hotkeys_s3_2);
+  hotkeys.Insert(HK3_SL, hotkeys_s3);
 end;
 
 // Загрузка из файла texts.xc в программу
@@ -3878,34 +3714,34 @@ end;
 procedure TXCTuner_Form1.texts_save;
 begin
   // Текст для легких танков // 1
-  texts_s1_2:=texts.Strings[TXT1_SL];
-  texts_s1_2:=Smart_Replacing('"LT"', texts_s1_2, RecStartEnd(Edit17.Text));
+  texts_s1:=texts.Strings[TXT1_SL];
+  texts_s1:=Smart_Replacing('"LT"', texts_s1, RecStartEnd(Edit17.Text));
   texts.Delete(TXT1_SL);
-  texts.Insert(TXT1_SL, texts_s1_2);
+  texts.Insert(TXT1_SL, texts_s1);
 
   // Текст для средних танков // 2
-  texts_s2_2:=texts.Strings[TXT2_SL];
-  texts_s2_2:=Smart_Replacing('"MT"', texts_s2_2, RecStartEnd(Edit18.Text));
+  texts_s2:=texts.Strings[TXT2_SL];
+  texts_s2:=Smart_Replacing('"MT"', texts_s2, RecStartEnd(Edit18.Text));
   texts.Delete(TXT2_SL);
-  texts.Insert(TXT2_SL, texts_s2_2);
+  texts.Insert(TXT2_SL, texts_s2);
 
   // Текст для тяжелых танков // 3
-  texts_s3_2:=texts.Strings[TXT3_SL];
-  texts_s3_2:=Smart_Replacing('"HT"', texts_s3_2, RecStartEnd(Edit19.Text));
+  texts_s3:=texts.Strings[TXT3_SL];
+  texts_s3:=Smart_Replacing('"HT"', texts_s3, RecStartEnd(Edit19.Text));
   texts.Delete(TXT3_SL);
-  texts.Insert(TXT3_SL, texts_s3_2);
+  texts.Insert(TXT3_SL, texts_s3);
 
   // Текст для арты // 4
-  texts_s4_2:=texts.Strings[TXT4_SL];
-  texts_s4_2:=Smart_Replacing('"SPG"', texts_s4_2, RecStartEnd(Edit20.Text));
+  texts_s4:=texts.Strings[TXT4_SL];
+  texts_s4:=Smart_Replacing('"SPG"', texts_s4, RecStartEnd(Edit20.Text));
   texts.Delete(TXT4_SL);
-  texts.Insert(TXT4_SL, texts_s4_2);
+  texts.Insert(TXT4_SL, texts_s4);
 
   // Текст для ПТ // 5
-  texts_s5_2:=texts.Strings[TXT5_SL];
-  texts_s5_2:=Smart_Replacing('"TD"', texts_s5_2, RecStartEnd(Edit21.Text));
+  texts_s5:=texts.Strings[TXT5_SL];
+  texts_s5:=Smart_Replacing('"TD"', texts_s5, RecStartEnd(Edit21.Text));
   texts.Delete(TXT5_SL);
-  texts.Insert(TXT5_SL, texts_s5_2);
+  texts.Insert(TXT5_SL, texts_s5);
 
 end;
 
@@ -3953,16 +3789,16 @@ end;
 procedure TXCTuner_Form1.turret_save;
 begin
   // Субъект имеет стоковую башню и топ орудие не может быть установлено. Субъект сильно уязвим. // 1
-  turret_s1_2:=turret.Strings[TUR1_SL];
-  turret_s1_2:=Smart_Replacing('"highVulnerability"', turret_s1_2, RecStartEnd(Edit22.Text));
+  turret_s1:=turret.Strings[TUR1_SL];
+  turret_s1:=Smart_Replacing('"highVulnerability"', turret_s1, RecStartEnd(Edit22.Text));
   turret.Delete(TUR1_SL);
-  turret.Insert(TUR1_SL, turret_s1_2);
+  turret.Insert(TUR1_SL, turret_s1);
 
   // Субъект имеет стоковую башню и топ орудие может быть установлено. Субъект немного уязвим. // 2
-  turret_s2_2:=turret.Strings[TUR2_SL];
-  turret_s2_2:=Smart_Replacing('"lowVulnerability"', turret_s2_2, RecStartEnd(Edit23.Text));
+  turret_s2:=turret.Strings[TUR2_SL];
+  turret_s2:=Smart_Replacing('"lowVulnerability"', turret_s2, RecStartEnd(Edit23.Text));
   turret.Delete(TUR2_SL);
-  turret.Insert(TUR2_SL, turret_s2_2);
+  turret.Insert(TUR2_SL, turret_s2);
 end;
 
 end.

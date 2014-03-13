@@ -427,10 +427,10 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 851
           object GroupBox15: TGroupBox
             Left = 77
-            Height = 194
+            Height = 216
             Top = 137
             Width = 584
-            ClientHeight = 176
+            ClientHeight = 198
             ClientWidth = 580
             TabOrder = 0
             object Label1: TLabel
@@ -443,7 +443,7 @@ object XCTuner_Form1: TXCTuner_Form1
               ParentFont = False
             end
             object Label2: TLabel
-              Left = 135
+              Left = 127
               Height = 15
               Top = 9
               Width = 24
@@ -461,7 +461,7 @@ object XCTuner_Form1: TXCTuner_Form1
               ParentFont = False
             end
             object Label4: TLabel
-              Left = 135
+              Left = 127
               Height = 15
               Top = 27
               Width = 21
@@ -472,16 +472,16 @@ object XCTuner_Form1: TXCTuner_Form1
             object Label5: TLabel
               Left = 14
               Height = 15
-              Top = 45
+              Top = 65
               Width = 30
               Caption = 'Язык:'
               ParentColor = False
               ParentFont = False
             end
             object Label6: TLabel
-              Left = 135
+              Left = 127
               Height = 15
-              Top = 45
+              Top = 65
               Width = 24
               Caption = 'auto'
               ParentColor = False
@@ -490,16 +490,16 @@ object XCTuner_Form1: TXCTuner_Form1
             object Label7: TLabel
               Left = 14
               Height = 15
-              Top = 63
+              Top = 83
               Width = 42
               Caption = 'Регион:'
               ParentColor = False
               ParentFont = False
             end
             object Label8: TLabel
-              Left = 135
+              Left = 127
               Height = 15
-              Top = 63
+              Top = 83
               Width = 24
               Caption = 'auto'
               ParentColor = False
@@ -508,16 +508,16 @@ object XCTuner_Form1: TXCTuner_Form1
             object Label9: TLabel
               Left = 14
               Height = 15
-              Top = 114
+              Top = 134
               Width = 60
               Caption = 'Авторство:'
               ParentColor = False
               ParentFont = False
             end
             object Label10: TLabel
-              Left = 135
+              Left = 127
               Height = 15
-              Top = 114
+              Top = 134
               Width = 64
               Caption = 'Ded_Shalfey'
               ParentColor = False
@@ -526,16 +526,16 @@ object XCTuner_Form1: TXCTuner_Form1
             object Label11: TLabel
               Left = 14
               Height = 15
-              Top = 131
+              Top = 151
               Width = 108
               Caption = 'Описание конфига:'
               ParentColor = False
               ParentFont = False
             end
             object Label12: TLabel
-              Left = 135
+              Left = 127
               Height = 15
-              Top = 131
+              Top = 151
               Width = 108
               Caption = 'Version 9.2.8 Elegant'
               ParentColor = False
@@ -544,16 +544,16 @@ object XCTuner_Form1: TXCTuner_Form1
             object Label13: TLabel
               Left = 14
               Height = 15
-              Top = 97
+              Top = 117
               Width = 109
               Caption = 'Дата модификации:'
               ParentColor = False
               ParentFont = False
             end
             object Label14: TLabel
-              Left = 135
+              Left = 127
               Height = 15
-              Top = 97
+              Top = 117
               Width = 42
               Caption = '15.02.14'
               ParentColor = False
@@ -562,16 +562,16 @@ object XCTuner_Form1: TXCTuner_Form1
             object Label15: TLabel
               Left = 14
               Height = 15
-              Top = 80
+              Top = 100
               Width = 73
               Caption = 'Версия игры:'
               ParentColor = False
               ParentFont = False
             end
             object Label16: TLabel
-              Left = 135
+              Left = 127
               Height = 15
-              Top = 80
+              Top = 100
               Width = 30
               Caption = '0.8.11'
               ParentColor = False
@@ -639,16 +639,16 @@ object XCTuner_Form1: TXCTuner_Form1
             object Label62: TLabel
               Left = 14
               Height = 15
-              Top = 149
+              Top = 169
               Width = 86
               Caption = 'Адрес конфига:'
               ParentColor = False
             end
             object Label63: TLabel
               Cursor = crHandPoint
-              Left = 135
+              Left = 127
               Height = 15
-              Top = 149
+              Top = 169
               Width = 430
               AutoSize = False
               Caption = 'url'
@@ -660,6 +660,24 @@ object XCTuner_Form1: TXCTuner_Form1
               OnClick = Label63Click
               OnMouseMove = Label63MouseMove
               OnMouseLeave = Label63MouseLeave
+            end
+            object Label64: TLabel
+              Left = 127
+              Height = 15
+              Top = 46
+              Width = 24
+              Caption = '5.1.0'
+              ParentColor = False
+              ParentFont = False
+            end
+            object Label65: TLabel
+              Left = 14
+              Height = 15
+              Top = 46
+              Width = 100
+              Caption = 'Мин. версия XVM:'
+              ParentColor = False
+              ParentFont = False
             end
           end
         end

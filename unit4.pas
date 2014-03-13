@@ -28,7 +28,6 @@ type
     procedure FormActivate(Sender: TObject);
     procedure SLHColorPicker1Change(Sender: TObject);
   private
-    function ColorToHexMy(rgb:TColor):String;
     { private declarations }
   public
     { public declarations }
@@ -55,7 +54,7 @@ procedure TColorSelectMy.cyColorGrid1BoxClick(Sender: TObject; aRow: integer;
 begin
   SLHColorPicker1.SelectedColor:=cyColorGrid1.Selection;
   mbColorPreview1.Color:=cyColorGrid1.Selection;
-  Label2.Caption:='Значение: ' + ColorToHexMy(cyColorGrid1.Selection);
+  Label2.Caption:='Значение: ' + XCTuner_Form1.ColorToHex(cyColorGrid1.Selection);
 end;
 
 procedure TColorSelectMy.BitBtn1Click(Sender: TObject);
@@ -66,27 +65,27 @@ begin
     1:
       begin
         XCTuner_Form1.mbColorPreview1.Color:=mbColorPreview1.Color;
-        XCTuner_Form1.Edit3.Text:=ColorToHexMy(rgb);
+        XCTuner_Form1.Edit3.Text:=XCTuner_Form1.ColorToHex(rgb);
       end;
     2:
       begin
         XCTuner_Form1.mbColorPreview2.Color:=mbColorPreview1.Color;
-        XCTuner_Form1.Edit4.Text:=ColorToHexMy(rgb);
+        XCTuner_Form1.Edit4.Text:=XCTuner_Form1.ColorToHex(rgb);
       end;
     3:
       begin
         XCTuner_Form1.mbColorPreview3.Color:=mbColorPreview1.Color;
-        XCTuner_Form1.Edit5.Text:=ColorToHexMy(rgb);
+        XCTuner_Form1.Edit5.Text:=XCTuner_Form1.ColorToHex(rgb);
       end;
     4:
       begin
         XCTuner_Form1.mbColorPreview4.Color:=mbColorPreview1.Color;
-        XCTuner_Form1.Edit6.Text:=ColorToHexMy(rgb);
+        XCTuner_Form1.Edit6.Text:=XCTuner_Form1.ColorToHex(rgb);
       end;
     5:
       begin
         XCTuner_Form1.mbColorPreview5.Color:=mbColorPreview1.Color;
-        XCTuner_Form1.Edit2.Text:=ColorToHexMy(rgb);
+        XCTuner_Form1.Edit2.Text:=XCTuner_Form1.ColorToHex(rgb);
       end;
   end;
   ColorSelectMy.Close;
@@ -100,12 +99,7 @@ end;
 procedure TColorSelectMy.SLHColorPicker1Change(Sender: TObject);
 begin
   mbColorPreview1.Color:=SLHColorPicker1.SelectedColor;
-  Label2.Caption:='Значение: ' + ColorToHexMy(SLHColorPicker1.SelectedColor);
-end;
-
-function TColorSelectMy.ColorToHexMy(rgb:TColor): String;
-begin
-  Result:=Format('#%.2x%.2x%.2x', [byte(rgb),byte(rgb shr 8),byte(rgb shr 16)]);
+  Label2.Caption:='Значение: ' + XCTuner_Form1.ColorToHex(SLHColorPicker1.SelectedColor);
 end;
 
 end.
