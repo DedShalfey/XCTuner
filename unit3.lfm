@@ -496,7 +496,7 @@ object Edit_XVM: TEdit_XVM
   object Edit9: TEdit
     Left = 144
     Height = 23
-    Hint = 'Версия конфига. Не удаляйте и не изменяйте её без необходимости!'
+    Hint = 'Минимально необходимая версия мода XVM'
     Top = 65
     Width = 192
     ParentShowHint = False

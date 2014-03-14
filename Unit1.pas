@@ -1713,14 +1713,18 @@ end;
 // процедура поиска нужного слова / выводит номер строки где найдено это слово
 procedure TXCTuner_Form1.SearchLine_my;
 var k: Integer;
+  temp_str: String;
 begin
   for k := 0 to (temp_list.Count - 1) do
     begin
-    if pos(Search, temp_list.Strings[k])>0 then
-    begin
-    SearchLine:= k;
-    Exit;
-    end;
+      temp_str:=TrimLeft(temp_list.Strings[k]);
+      if Length(temp_str)=0 then Continue;
+      if (temp_str[1]='/') and (temp_str[2]='/') then Continue;
+      if pos(Search, temp_list.Strings[k])>0 then
+        begin
+          SearchLine:= k;
+          Exit;
+        end;
     end;
   SearchLine:=-1;
   ShowMessage('Строка с параметром '+Search+' не найдена в файле '+temp_name+path+activ_config+#10#13+' Исправьте! Программа закроется!');
@@ -1729,14 +1733,18 @@ end;
 // процедура нахождения слов во вложенных конструкциях 2 уровня
 procedure TXCTuner_Form1.SearchLine_my_2;
 var n: Integer;
+  temp_str: String;
 begin
   for n := SearchLine to (temp_list.Count - 1) do
     begin
-    if pos(Search, temp_list.Strings[n])>0 then
-    begin
-      SearchLine:= n;
-      Exit;
-    end;
+      temp_str:=TrimLeft(temp_list.Strings[n]);
+      if Length(temp_str)=0 then Continue;
+      if (temp_str[1]='/') and (temp_str[2]='/') then Continue;
+      if pos(Search, temp_list.Strings[n])>0 then
+        begin
+          SearchLine:= n;
+          Exit;
+        end;
     end;
   SearchLine:=-1;
   ShowMessage('Строка с параметром '+Search+' не найдена в файле '+temp_name+path+activ_config+#10#13+' Исправьте! Программа закроется!');
