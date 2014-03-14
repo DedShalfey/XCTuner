@@ -66,6 +66,7 @@ type
     Edit21: TEdit;
     Edit22: TEdit;
     Edit23: TEdit;
+    Edit24: TEdit;
     Edit3: TEdit;
     Edit4: TEdit;
     Edit5: TEdit;
@@ -183,6 +184,7 @@ type
     Image61: TImage;
     Image62: TImage;
     Image63: TImage;
+    Image64: TImage;
     Image7: TImage;
     Image8: TImage;
     Image9: TImage;
@@ -249,6 +251,7 @@ type
     Label63: TLabel;
     Label64: TLabel;
     Label65: TLabel;
+    Label66: TLabel;
     Label7: TLabel;
     Label8: TLabel;
     Label9: TLabel;
@@ -463,6 +466,7 @@ type
     procedure Image61Click(Sender: TObject);
     procedure Image62Click(Sender: TObject);
     procedure Image63Click(Sender: TObject);
+    procedure Image64Click(Sender: TObject);
     procedure Image6Click(Sender: TObject);
     procedure Image7Click(Sender: TObject);
     procedure Image8Click(Sender: TObject);
@@ -497,6 +501,8 @@ type
     function FindFilesXVM(FindStr: String; FileXVMAllStr: TStringList): String;
     function new_change_str(sub_str, full_str: String): String;
     function error_message(file_name, str_sub: String; line_str: Integer): String;
+    function Search_Line(Line: Integer; Search: String; temp_list: TStringList): Integer;
+    procedure error_line(Search, temp_name: String);
     procedure SearchLine_my();
     procedure SearchLine_my_2();
     procedure activ_conf();
@@ -507,6 +513,8 @@ type
     procedure login_save();
     procedure hangar_loading();
     procedure hangar_save();
+    procedure fragCorrelation_loading();
+    procedure fragCorrelation_save();
     procedure userinfo_loading();
     procedure userinfo_save();
     procedure rating_loading();
@@ -521,6 +529,8 @@ type
     procedure texts_save();
     procedure turret_loading();
     procedure turret_save();
+    procedure expanel_loading();
+    procedure expanel_save();
     { public declarations }
   end;
 
@@ -546,11 +556,12 @@ var
   ChangeEditText, Search, temp_name, dir_xvm: String;
 
   xvm_base, xvm, battle, iconset, login, hangar, hotkeys, userInfo, rating, texts, squad, turret, temp_list: TStringList;
+  fragcorr, expanel: TStringList;
 
   activ_config, xvm_file_name, battle_name, login_name, hangar_name, hotkeys_name, userInfo_name, rating_name: String;
-  squad_name, iconset_name, texts_name, turret_name: String;
+  squad_name, iconset_name, texts_name, turret_name, frag_name, expanel_name: String;
 
-  b_s1, b_s2, b_s3, b_s4, b_s5, b_s6, b_s7, b_s8: String;
+  b_s1, b_s2, b_s3, b_s4, b_s5, b_s6: String;
 
   xvm_s1, xvm_s2, xvm_s3, xvm_s4, xvm_s5, xvm_s6, xvm_s7, xvm_s8, xvm_s9, xvm_s10: String;
 
@@ -566,6 +577,12 @@ var
 
   iconset_s1, iconset_s2, iconset_s3, iconset_s4, iconset_s5, iconset_s6, iconset_s7, iconset_s8: String;
 
+  fragcorr_s1: String;
+  fr0_SL, fr1_SL: Integer;
+
+  expanel_s1, expanel_s2: String;
+  exp0_SL, exp1_SL, exp2_SL: Integer;
+
   rating_s1, rating_s2, rating_s3, rating_s4, rating_s5: String;
 
   UserInfo_s1, UserInfo_s2, UserInfo_s3, UserInfo_s4, UserInfo_s5, UserInfo_s6, UserInfo_s7: String;
@@ -576,7 +593,7 @@ var
 
   squad_s1, squad_s2, squad_s3: String;
 
-  bs1_SL, bs2_SL, bs3_SL, bs4_SL, bs5_SL, bs6_SL, bs7_SL, bs8_SL: Integer;
+  bs0_SL, bs1_SL, bs2_SL, bs3_SL, bs4_SL, bs5_SL, bs6_SL: Integer;
   log1_SL, log2_SL, log3_SL, log4_SL, log5_SL, log6_SL: Integer;
   xvm1_SL, xvm2_SL, xvm3_SL, xvm4_SL, xvm5_SL, xvm6_SL, xvm7_SL, xvm8_SL, xvm9_SL, xvm10_SL: Integer;
 
@@ -736,6 +753,8 @@ end;
 procedure TXCTuner_Form1.BitRefresh2Click(Sender: TObject);
 begin
   battle_loading();
+  fragCorrelation_loading();
+  expanel_loading();
 end;
 
 // По кнопке происходит вызов процедуры загрузки данных из файла "login.xc"
@@ -795,7 +814,16 @@ procedure TXCTuner_Form1.BitSave2Click(Sender: TObject);
 begin
   battle_save();
   battle.SaveToFile(dir_xvm+battle_name);
+  fragCorrelation_save();
+  fragcorr.SaveToFile(dir_xvm+frag_name);
+  expanel_save();
+  expanel.SaveToFile(dir_xvm+expanel_name);
+  battle.Clear;
+  fragcorr.Clear;
+  expanel.Clear;
   battle_loading();
+  fragCorrelation_loading();
+  expanel_loading();
 end;
 
 // По кнопке происходит вызов процедуры сохранения данных в файла "login.xc"
@@ -965,11 +993,13 @@ begin
   login:=TStringList.Create;
   hangar:=TStringList.Create;
   hotkeys:=TStringList.Create;
+  fragcorr:=TStringList.Create;
   userInfo:=TStringList.Create;
   rating:=TStringList.Create;
   texts:=TStringList.Create;
   squad:=TStringList.Create;
   turret:=TStringList.Create;
+  expanel:=TStringList.Create;
   temp_list:=TStringList.Create;
 
   xvm.LoadFromFile(dir_xvm+xvm_file_name);
@@ -980,11 +1010,13 @@ begin
   login_name:=FindFilesXVM('"login"', xvm);
   hangar_name:=FindFilesXVM('"hangar"', xvm);
   hotkeys_name:=FindFilesXVM('"hotkeys"', xvm);
+  frag_name:=FindFilesXVM('"fragCorrelation"', xvm);
   userInfo_name:=FindFilesXVM('"userInfo"', xvm);
   rating_name:=FindFilesXVM('"rating"', xvm);
   texts_name:=FindFilesXVM('"texts"', xvm);
   turret_name:=FindFilesXVM('"turretMarkers"', xvm);
   squad_name:=FindFilesXVM('"squad"', xvm);
+  expanel_name:=FindFilesXVM('"expertPanel"', xvm);
 
   if ((FileExists(dir_xvm+xvm_file_name )) and
       (FileExists(dir_xvm+battle_name   )) and
@@ -992,15 +1024,17 @@ begin
       (FileExists(dir_xvm+login_name    )) and
       (FileExists(dir_xvm+hangar_name   )) and
       (FileExists(dir_xvm+hotkeys_name  )) and
+      (FileExists(dir_xvm+frag_name     )) and
       (FileExists(dir_xvm+userInfo_name )) and
       (FileExists(dir_xvm+squad_name    )) and
       (FileExists(dir_xvm+texts_name    )) and
       (FileExists(dir_xvm+turret_name   )) and
+      (FileExists(dir_xvm+expanel_name  )) and
       (FileExists(dir_xvm+rating_name   ))) then
     begin
 
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.8.49';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.8.53';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       BitBtn1.Click;
@@ -1015,11 +1049,13 @@ begin
       login_loading();
       hangar_loading();
       hotkeys_loading();
+      fragCorrelation_loading();
       userinfo_loading();
       rating_loading();
       squad_loading();
       texts_loading();
       turret_loading();
+      expanel_loading();
 
       BitBtn1.Hint:='Настройка в файлах: ' + xvm_file_name + ', ' + battle_name + ' и ' + rating_name;
       BitBtn2.Hint:='Настройка в файле: ' + login_name;
@@ -1030,19 +1066,6 @@ begin
     begin
       // выводим сообщение, очищаем переменную xvm и принудительно закрываем программу
       ShowMessage('Файлы конфига не найдены или отсутствует запись в файле xvm.xc! Поместите программу в папку xvm и проверте правильность пути к конфигу! Программа закроется!');
-      xvm.Free;
-      xvm_base.Free ;
-      battle.Free;
-      iconset.Free;
-      login.Free;
-      hangar.Free;
-      hotkeys.Free;
-      userInfo.Free;
-      rating.Free;
-      squad.Free;
-      texts.Free;
-      turret.Free;
-      temp_list.Free;
       Application.Terminate;
     end;
 end;
@@ -1057,19 +1080,21 @@ begin
   login.Free;
   hangar.Free;
   hotkeys.Free;
+  fragcorr.Free;
   userInfo.Free;
   rating.Free;
   squad.Free;
   texts.Free;
   turret.Free;
+  expanel.Free;
   temp_list.Free;
 end;
 
 procedure TXCTuner_Form1.Image10Click(Sender: TObject);
 begin
-  ShowMessage(tpis+battle_name+path
-  +activ_config+#13#10+'Задержка исчезновения панели -   "delay" '+IntToStr(bs7_SL+1)+' строка'+#13#10
-  +'Увеличение панели -   "scale" '+IntToStr(bs8_SL+1)+' строка');
+  ShowMessage(tpis+expanel_name+path
+  +activ_config+#13#10+'Задержка исчезновения панели -   "delay" '+IntToStr(exp1_SL+1)+' строка'+#13#10
+  +'Увеличение панели -   "scale" '+IntToStr(exp2_SL+1)+' строка');
 end;
 
 procedure TXCTuner_Form1.Image11Click(Sender: TObject);
@@ -1086,7 +1111,7 @@ end;
 
 procedure TXCTuner_Form1.Image13Click(Sender: TObject);
 begin
-  ShowMessage(tpi+IntToStr(bs6_SL+1)+litf+battle_name+path
+  ShowMessage(tpi+IntToStr(fr1_SL+1)+litf+frag_name+path
   +activ_config+#13#10+enopt+'"hideTeamTextFields": false'+#13#10+disopt+'"hideTeamTextFields": true');
 end;
 
@@ -1448,6 +1473,12 @@ begin
   +activ_config);
 end;
 
+procedure TXCTuner_Form1.Image64Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(bs6_SL+1)+litf+battle_name+path
+  +activ_config);
+end;
+
 procedure TXCTuner_Form1.Image6Click(Sender: TObject);
 begin
   ShowMessage(tpi+IntToStr(rat5_SL+1)+litf+rating_name+path
@@ -1709,6 +1740,49 @@ begin
   +#13#10+'Ошибка: '+str_sub+' (в строке '+IntToStr(line_str+1)+' )'
   +#13#10+Correct;
 end;
+// Функция поиска нужного слова / возвращает номер строки, где это слово найдено
+function TXCTuner_Form1.Search_Line(Line: Integer; Search: String;
+  temp_list: TStringList): Integer;
+var i: Integer;
+  temp_str: String;
+begin
+  if Line=0 then
+    begin
+    for i := 0 to (temp_list.Count - 1) do
+      begin
+        temp_str:=TrimLeft(temp_list.Strings[i]);
+        if Length(temp_str)=0 then Continue;
+        if (temp_str[1]='/') and (temp_str[2]='/') then Continue;
+        if pos(Search, temp_list.Strings[i])>0 then
+          begin
+            Result:=i;
+            Exit;
+          end;
+      end;
+    end;
+  if Line>0 then
+    begin
+    for i := Line to (temp_list.Count - 1) do
+      begin
+        temp_str:=TrimLeft(temp_list.Strings[i]);
+        if Length(temp_str)=0 then Continue;
+        if (temp_str[1]='/') and (temp_str[2]='/') then Continue;
+        if pos(Search, temp_list.Strings[i])>0 then
+          begin
+            Result:=i;
+            Exit;
+          end;
+      end;
+    end;
+  Result:=-1;
+end;
+
+// Процедура вывода на несуществующий параметр
+procedure TXCTuner_Form1.error_line(Search, temp_name: String);
+begin
+  ShowMessage('Строка с параметром '+Search+' не найдена в файле '+temp_name+path+activ_config+#10#13+'Исправьте! Программа закроется!');
+  Application.Terminate;
+end;
 
 // процедура поиска нужного слова / выводит номер строки где найдено это слово
 procedure TXCTuner_Form1.SearchLine_my;
@@ -1797,163 +1871,101 @@ begin
     begin
       // выводим сообщение, очищаем переменную xvm и принудительно закрываем программу
       ShowMessage('Файл xvm.xc в папке xvm не найден! Проверте правильность нахождения файла! Программа закроется!');
-      xvm.Free;
-      xvm_base.Free;
-      battle.Free;
-      login.Free;
-      rating.Free;
-      temp_list.Free;
       Application.Terminate;
     end;
 end;
-
 // загрузка из файла battle.xc
 procedure TXCTuner_Form1.battle_loading;
 begin
-  battle.Clear;
   battle.LoadFromFile(dir_xvm+battle_name);
   // загрузка данных из файла battle.xc в интерфейс
-  temp_list.Clear;
-  temp_list.Text:=battle.Text;
+  bs0_SL:=Search_Line(0, '"battle"', battle);
+  if bs0_SL=-1 then error_line('"battle"', battle_name) else
+  begin
+    // зеркалирование иконок / 1
+    Search:='"mirroredVehicleIcons"';
+    bs1_SL:=Search_Line(bs0_SL, Search, battle);
+    if bs1_SL=-1 then error_line(Search, battle_name) else
+    begin
+      b_s1:=battle.Strings[bs1_SL];
+      b_s1:=new_change_str(Search, b_s1);
+      if b_s1='true' then RadioButton1.Checked:=True else
+      if b_s1='false' then RadioButton2.Checked:=True else
+      begin
+        ShowMessage(error_message(battle_name, b_s1, bs1_SL));
+        Application.Terminate;
+      end;
+    end;
 
-  temp_name:=battle_name;
+    // Всплывающая панель после смерти / 2
+    Search:='"showPostmortemTips"';
+    bs2_SL:=Search_Line(bs0_SL, Search, battle);
+    if bs2_SL=-1 then error_line(Search, battle_name) else
+    begin
+      b_s2:=battle.Strings[bs2_SL];
+      b_s2:=new_change_str(Search, b_s2);
+      if b_s2='true' then RadioButton3.Checked:=True else
+      if b_s2='false' then RadioButton4.Checked:=True else
+      begin
+        ShowMessage(error_message(battle_name, b_s2, bs2_SL));
+        Application.Terminate;
+      end;
+    end;
 
-  // Зеркалирование иконок / 1
-  Search:='"battle"';
-  SearchLine_my();
-  Search:='"mirroredVehicleIcons"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  b_s1:=battle.Strings[SearchLine];
-  bs1_SL:=SearchLine;
-  b_s1:=new_change_str(Search, b_s1);
-  if b_s1='true' then RadioButton1.Checked:=True else
-  if b_s1='false' then RadioButton2.Checked:=True else
-  begin
-    ShowMessage(error_message(battle_name, b_s1, bs1_SL));
-    Application.Terminate;
-  end;
-  end;
+    // Переключатель режимов ушей / 3
+    Search:='"removePanelsModeSwitcher"';
+    bs3_SL:=Search_Line(bs0_SL, Search, battle);
+    if bs3_SL=-1 then error_line(Search, battle_name) else
+    begin
+      b_s3:=battle.Strings[bs3_SL];
+      b_s3:=new_change_str(Search, b_s3);
+      if b_s3='true' then RadioButton6.Checked:=True else
+      if b_s3='false' then RadioButton5.Checked:=True else
+      begin
+        ShowMessage(error_message(battle_name, b_s3, bs3_SL));
+        Application.Terminate;
+      end;
+    end;
 
-  // Всплывающая панель после смерти / 2
-  Search:='"battle"';
-  SearchLine_my();
-  Search:='"showPostmortemTips"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  b_s2:=battle.Strings[SearchLine];
-  bs2_SL:=SearchLine;
-  b_s2:=new_change_str(Search, b_s2);
-  if b_s2='true' then RadioButton3.Checked:=True else
-  if b_s2='false' then RadioButton4.Checked:=True else
-  begin
-    ShowMessage(error_message(battle_name, b_s2, bs2_SL));
-    Application.Terminate;
-  end;
-  end;
+    // Подсветка иконки своего танка и взвода / 4
+    Search:='"highlightVehicleIcon"';
+    bs4_SL:=Search_Line(bs0_SL, Search, battle);
+    if bs4_SL=-1 then error_line(Search, battle_name) else
+    begin
+      b_s4:=battle.Strings[bs4_SL];
+      b_s4:=new_change_str(Search, b_s4);
+      if b_s4='true' then RadioButton7.Checked:=True else
+      if b_s4='false' then RadioButton8.Checked:=True else
+      begin
+        ShowMessage(error_message(battle_name, b_s4, bs4_SL));
+        Application.Terminate;
+      end;
+    end;
 
-  // Переключатель режимов ушей / 3
-  Search:='"battle"';
-  SearchLine_my();
-  Search:='"removePanelsModeSwitcher"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  b_s3:=battle.Strings[SearchLine];
-  bs3_SL:=SearchLine;
-  b_s3:=new_change_str(Search, b_s3);
-  if b_s3='true' then RadioButton6.Checked:=True else
-  if b_s3='false' then RadioButton5.Checked:=True else
-  begin
-    ShowMessage(error_message(battle_name, b_s3, bs3_SL));
-    Application.Terminate;
-  end;
-  end;
+    // Стандартные маркеры / 5
+    Search:='"useStandardMarkers"';
+    bs5_SL:=Search_Line(bs0_SL, Search, battle);
+    if bs5_SL=-1 then error_line(Search, battle_name) else
+    begin
+      b_s5:=battle.Strings[bs5_SL];
+      b_s5:=new_change_str(Search, b_s5);
+      if b_s5='true' then RadioButton9.Checked:=True else
+      if b_s5='false' then RadioButton10.Checked:=True else
+      begin
+        ShowMessage(error_message(battle_name, b_s5, bs5_SL));
+        Application.Terminate;
+      end;
+    end;
 
-  // Подсветка иконки своего танка и взвода / 4
-  Search:='"battle"';
-  SearchLine_my();
-  Search:='"highlightVehicleIcon"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  b_s4:=battle.Strings[SearchLine];
-  bs4_SL:=SearchLine;
-  b_s4:=new_change_str(Search, b_s4);
-  if b_s4='true' then RadioButton7.Checked:=True else
-  if b_s4='false' then RadioButton8.Checked:=True else
-  begin
-    ShowMessage(error_message(battle_name, b_s4, bs4_SL));
-    Application.Terminate;
-  end;
-  end;
-
-  // Стандартные маркеры / 5
-  Search:='"battle"';
-  SearchLine_my();
-  Search:='"useStandardMarkers"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  b_s5:=battle.Strings[SearchLine];
-  bs5_SL:=SearchLine;
-  b_s5:=new_change_str(Search, b_s5);
-  if b_s5='true' then RadioButton9.Checked:=True else
-  if b_s5='false' then RadioButton10.Checked:=True else
-  begin
-    ShowMessage(error_message(battle_name, b_s5, bs5_SL));
-    Application.Terminate;
-  end;
-  end;
-
-  // Панель счета в бою / 6
-  Search:='"battle"';
-  SearchLine_my();
-  Search:='"hideTeamTextFields"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  b_s6:=battle.Strings[SearchLine];
-  bs6_SL:=SearchLine;
-  b_s6:=new_change_str(Search, b_s6);
-  if b_s6='true' then RadioButton12.Checked:=True else
-  if b_s6='false' then RadioButton11.Checked:=True else
-  begin
-    ShowMessage(error_message(battle_name, b_s6, bs6_SL));
-    Application.Terminate;
-  end;
-  end;
-
-
-  // Задержка исчезновения панели / 7
-  Search:='"expertPanel"';
-  SearchLine_my();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  Search:='"delay"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  b_s7:=battle.Strings[SearchLine];
-  bs7_SL:=SearchLine;
-  b_s7:=new_change_str(Search, b_s7);
-  SpinEdit1.Value:=StrToInt(b_s7);
-  end;
-  end;
-
-  // Увеличение панели / 8
-  Search:='"expertPanel"';
-  SearchLine_my();
-  Search:='"scale"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  b_s8:=battle.Strings[SearchLine];
-  bs8_SL:=SearchLine;
-  b_s8:=new_change_str(Search, b_s8);
-  SpinEdit2.Value:=StrToInt(b_s8);
+    // Формат часов / 6
+    Search:='"clockFormat"';
+    bs6_SL:=Search_Line(bs0_SL, Search, battle);
+    if bs6_SL=-1 then error_line(Search, battle_name) else
+    begin
+      b_s6:=battle.Strings[bs6_SL];
+      b_s6:=new_change_str(Search, b_s6);
+      Edit24.Text:=DelStartEnd(b_s6);
+    end;
   end;
 end;
 
@@ -2822,6 +2834,42 @@ begin
 
 end;
 
+// Загрузка из файла
+procedure TXCTuner_Form1.fragCorrelation_loading;
+begin
+  fragcorr.LoadFromFile(dir_xvm+frag_name);
+  // загрузка данных из файла battle.xc в интерфейс
+  fr0_SL:=Search_Line(0, '"fragCorrelation"', fragcorr);
+  if fr0_SL=-1 then error_line('"fragCorrelation"', frag_name) else
+  begin
+  // Панель счета в бою
+    Search:='"hideTeamTextFields"';
+    fr1_SL:=Search_Line(fr0_SL, Search, fragcorr);
+    if fr1_SL=-1 then error_line(Search, frag_name) else
+    begin
+      fragcorr_s1:=fragcorr.Strings[fr1_SL];
+      fragcorr_s1:=new_change_str(Search, fragcorr_s1);
+      if fragcorr_s1='true' then RadioButton12.Checked:=True else
+      if fragcorr_s1='false' then RadioButton11.Checked:=True else
+      begin
+        ShowMessage(error_message(frag_name, fragcorr_s1, fr1_SL));
+        Application.Terminate;
+      end;
+    end;
+  end;
+end;
+
+// Сохранение в файл
+procedure TXCTuner_Form1.fragCorrelation_save;
+begin
+  fragcorr.LoadFromFile(dir_xvm+frag_name);
+  if (RadioButton12.Checked=True) then chek1:='true' else chek1:='false';
+  fragcorr_s1:=fragcorr.Strings[fr1_SL];
+  fragcorr_s1:=Smart_Replacing('"hideTeamTextFields"', fragcorr_s1, chek1);
+  fragcorr.Delete(fr1_SL);
+  fragcorr.Insert(fr1_SL, fragcorr_s1);
+end;
+
 // Процедура загрузки данных из файла userInfo.xc в программу
 procedure TXCTuner_Form1.userinfo_loading;
 begin
@@ -3007,7 +3055,6 @@ begin
   if (RadioButton6.Checked=True) then chek3:='true' else chek3:='false';
   if (RadioButton7.Checked=True) then chek4:='true' else chek4:='false';
   if (RadioButton9.Checked=True) then chek5:='true' else chek5:='false';
-  if (RadioButton12.Checked=True) then chek6:='true' else chek6:='false';
 
   // 1
   b_s1:=battle.Strings[bs1_SL];
@@ -3039,23 +3086,11 @@ begin
   battle.Delete(bs5_SL);
   battle.Insert(bs5_SL, b_s5);
 
-  // 6
+  // 5
   b_s6:=battle.Strings[bs6_SL];
-  b_s6:=Smart_Replacing('"hideTeamTextFields"', b_s6, chek6);
+  b_s6:=Smart_Replacing('"clockFormat"', b_s6, RecStartEnd(Edit24.Text));
   battle.Delete(bs6_SL);
   battle.Insert(bs6_SL, b_s6);
-
-  // 7
-  b_s7:=battle.Strings[bs7_SL];
-  b_s7:=Smart_Replacing('"delay"', b_s7, IntToStr(SpinEdit1.Value));
-  battle.Delete(bs7_SL);
-  battle.Insert(bs7_SL, b_s7);
-
-  // 8
-  b_s8:=battle.Strings[bs8_SL];
-  b_s8:=Smart_Replacing('"scale"', b_s8, IntToStr(SpinEdit2.Value));
-  battle.Delete(bs8_SL);
-  battle.Insert(bs8_SL, b_s8);
 
 end;
 
@@ -3807,6 +3842,54 @@ begin
   turret_s2:=Smart_Replacing('"lowVulnerability"', turret_s2, RecStartEnd(Edit23.Text));
   turret.Delete(TUR2_SL);
   turret.Insert(TUR2_SL, turret_s2);
+end;
+
+// Загрузка из файла
+procedure TXCTuner_Form1.expanel_loading;
+begin
+  expanel.LoadFromFile(dir_xvm+expanel_name);
+  // Задержка исчезновения панели / 1
+  Search:='"expertPanel"';
+  exp0_SL:=Search_Line(exp0_SL, Search, expanel);
+  if exp0_SL=-1 then error_line(Search, battle_name) else
+  begin
+    Search:='"delay"';
+    exp1_SL:=Search_Line(exp0_SL, Search, expanel);
+    if exp1_SL=-1 then error_line(Search, expanel_name) else
+    begin
+      expanel_s1:=expanel.Strings[exp1_SL];
+      expanel_s1:=new_change_str(Search, expanel_s1);
+      SpinEdit1.Value:=StrToInt(expanel_s1);
+    end;
+
+    // Увеличение панели / 2
+    Search:='"scale"';
+    exp2_SL:=Search_Line(exp0_SL, Search, expanel);
+    if exp2_SL=-1 then error_line(Search, expanel_name) else
+    begin
+      expanel_s2:=expanel.Strings[exp2_SL];
+      expanel_s2:=new_change_str(Search, expanel_s2);
+      SpinEdit2.Value:=StrToInt(expanel_s2);
+    end;
+  end;
+end;
+
+// Сохранение в файл
+procedure TXCTuner_Form1.expanel_save;
+begin
+  expanel.LoadFromFile(dir_xvm+expanel_name);
+  // 1
+  expanel_s1:=expanel.Strings[exp1_SL];
+  expanel_s1:=Smart_Replacing('"delay"', expanel_s1, IntToStr(SpinEdit1.Value));
+  expanel.Delete(exp1_SL);
+  expanel.Insert(exp1_SL, expanel_s1);
+
+  // 2
+  expanel_s2:=expanel.Strings[exp2_SL];
+  expanel_s2:=Smart_Replacing('"scale"', expanel_s2, IntToStr(SpinEdit2.Value));
+  expanel.Delete(exp2_SL);
+  expanel.Insert(exp2_SL, expanel_s2);
+
 end;
 
 end.

@@ -1,7 +1,7 @@
 object XCTuner_Form1: TXCTuner_Form1
-  Left = 275
+  Left = 218
   Height = 575
-  Top = 100
+  Top = 88
   Width = 1053
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
@@ -1142,12 +1142,12 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientHeight = 519
           ClientWidth = 851
           object GroupBox7: TGroupBox
-            Left = 82
-            Height = 320
-            Top = 88
+            Left = 78
+            Height = 324
+            Top = 71
             Width = 584
             BorderSpacing.Bottom = 8
-            ClientHeight = 302
+            ClientHeight = 306
             ClientWidth = 580
             TabOrder = 0
             object GroupBox8: TGroupBox
@@ -1309,9 +1309,9 @@ object XCTuner_Form1: TXCTuner_Form1
               end
             end
             object GroupBox11: TGroupBox
-              Left = 302
+              Left = 14
               Height = 57
-              Top = 8
+              Top = 203
               Width = 265
               Caption = 'Подсветка иконки своего танка и взвода:'
               ClientHeight = 39
@@ -1361,9 +1361,9 @@ object XCTuner_Form1: TXCTuner_Form1
               end
             end
             object GroupBox12: TGroupBox
-              Left = 302
+              Left = 299
               Height = 57
-              Top = 72
+              Top = 8
               Width = 265
               Caption = 'Стандартные маркеры WG:'
               ClientHeight = 39
@@ -1413,9 +1413,9 @@ object XCTuner_Form1: TXCTuner_Form1
               end
             end
             object GroupBox13: TGroupBox
-              Left = 302
+              Left = 299
               Height = 57
-              Top = 136
+              Top = 164
               Width = 265
               Caption = 'Текстовое поле "Союзники | Противники":'
               ClientHeight = 39
@@ -1466,10 +1466,10 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object BitRefresh2: TBitBtn
               Cursor = crHandPoint
-              Left = 302
+              Left = 299
               Height = 49
               Hint = 'Обновить данные из конфига'
-              Top = 224
+              Top = 242
               Width = 115
               Caption = 'Обновить'
               Glyph.Data = {
@@ -1555,10 +1555,10 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object BitSave2: TBitBtn
               Cursor = crHandPoint
-              Left = 452
+              Left = 449
               Height = 49
               Hint = 'Сохранить изменения в конфиг'
-              Top = 224
+              Top = 242
               Width = 115
               Caption = 'Сохранить'
               Glyph.Data = {
@@ -1643,9 +1643,9 @@ object XCTuner_Form1: TXCTuner_Form1
               TabOrder = 7
             end
             object GroupBox14: TGroupBox
-              Left = 14
+              Left = 299
               Height = 88
-              Top = 200
+              Top = 72
               Width = 265
               Caption = 'Панель критов от навыка "эксперт":'
               ClientHeight = 70
@@ -1724,6 +1724,47 @@ object XCTuner_Form1: TXCTuner_Form1
                   4E44AE426082
                 }
               end
+            end
+            object Label66: TLabel
+              Left = 14
+              Height = 15
+              Top = 276
+              Width = 81
+              Caption = 'Формат часов:'
+              ParentColor = False
+            end
+            object Edit24: TEdit
+              Left = 102
+              Height = 23
+              Hint = 'Формат часов на экране панели отладки (возле FPS). Формат: "Y.m.d H:i:s" => 2013.05.20 01:23:45, "H:i" => 01:23, Y:год, M:месяц, D:день, H:часы, N:минуты, S:секунды. Чтобы убрать часы, нужно оставить поле пустым!'
+              Top = 273
+              Width = 152
+              Alignment = taCenter
+              ParentShowHint = False
+              ShowHint = True
+              TabOrder = 9
+            end
+            object Image64: TImage
+              Cursor = crHandPoint
+              Left = 263
+              Height = 16
+              Top = 277
+              Width = 16
+              OnClick = Image64Click
+              Picture.Data = {
+                1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+                0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+                0467414D410000AFC837058AE90000001974455874536F667477617265004164
+                6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+                F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+                E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+                3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+                8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+                2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+                2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+                4E44AE426082
+              }
             end
           end
         end
