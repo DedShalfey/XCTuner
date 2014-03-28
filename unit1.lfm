@@ -1,7 +1,7 @@
 object XCTuner_Form1: TXCTuner_Form1
-  Left = 150
+  Left = 201
   Height = 602
-  Top = 66
+  Top = 83
   Width = 1053
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
@@ -1143,11 +1143,11 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 851
           object GroupBox7: TGroupBox
             Left = 78
-            Height = 353
+            Height = 297
             Top = 64
             Width = 584
             BorderSpacing.Bottom = 8
-            ClientHeight = 335
+            ClientHeight = 279
             ClientWidth = 580
             TabOrder = 0
             object GroupBox8: TGroupBox
@@ -1256,67 +1256,15 @@ object XCTuner_Form1: TXCTuner_Form1
                 }
               end
             end
-            object GroupBox10: TGroupBox
+            object GroupBox11: TGroupBox
               Left = 14
               Height = 57
               Top = 136
               Width = 265
-              Caption = 'Переключатель режимов ушей:'
-              ClientHeight = 39
-              ClientWidth = 261
-              TabOrder = 2
-              object RadioButton5: TRadioButton
-                Cursor = crHandPoint
-                Left = 14
-                Height = 19
-                Top = 8
-                Width = 70
-                Caption = 'Включен'
-                Checked = True
-                TabOrder = 1
-                TabStop = True
-              end
-              object RadioButton6: TRadioButton
-                Cursor = crHandPoint
-                Left = 142
-                Height = 19
-                Top = 8
-                Width = 77
-                Caption = 'Отключен'
-                TabOrder = 0
-              end
-              object Image9: TImage
-                Cursor = crHandPoint
-                Left = 244
-                Height = 16
-                Top = 22
-                Width = 16
-                OnClick = Image9Click
-                Picture.Data = {
-                  1754506F727461626C654E6574776F726B477261706869634A01000089504E47
-                  0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
-                  0467414D410000AFC837058AE90000001974455874536F667477617265004164
-                  6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
-                  F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
-                  E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
-                  3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                  FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
-                  8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
-                  2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
-                  2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
-                  4E44AE426082
-                }
-              end
-            end
-            object GroupBox11: TGroupBox
-              Left = 14
-              Height = 57
-              Top = 203
-              Width = 265
               Caption = 'Подсветка иконки своего танка и взвода:'
               ClientHeight = 39
               ClientWidth = 261
-              TabOrder = 3
+              TabOrder = 2
               object RadioButton7: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
@@ -1360,67 +1308,15 @@ object XCTuner_Form1: TXCTuner_Form1
                 }
               end
             end
-            object GroupBox12: TGroupBox
-              Left = 14
-              Height = 57
-              Top = 265
-              Width = 265
-              Caption = 'Стандартные маркеры WG:'
-              ClientHeight = 39
-              ClientWidth = 261
-              TabOrder = 4
-              object RadioButton9: TRadioButton
-                Cursor = crHandPoint
-                Left = 14
-                Height = 19
-                Top = 8
-                Width = 79
-                Caption = 'Включены'
-                Checked = True
-                TabOrder = 1
-                TabStop = True
-              end
-              object RadioButton10: TRadioButton
-                Cursor = crHandPoint
-                Left = 142
-                Height = 19
-                Top = 8
-                Width = 86
-                Caption = 'Отключены'
-                TabOrder = 0
-              end
-              object Image12: TImage
-                Cursor = crHandPoint
-                Left = 245
-                Height = 16
-                Top = 22
-                Width = 16
-                OnClick = Image12Click
-                Picture.Data = {
-                  1754506F727461626C654E6574776F726B477261706869634A01000089504E47
-                  0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
-                  0467414D410000AFC837058AE90000001974455874536F667477617265004164
-                  6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
-                  F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
-                  E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
-                  3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                  FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
-                  8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
-                  2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
-                  2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
-                  4E44AE426082
-                }
-              end
-            end
             object GroupBox13: TGroupBox
               Left = 302
               Height = 57
-              Top = 203
+              Top = 112
               Width = 265
               Caption = 'Текстовое поле "Союзники | Противники":'
               ClientHeight = 39
               ClientWidth = 261
-              TabOrder = 5
+              TabOrder = 3
               object RadioButton11: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
@@ -1469,7 +1365,7 @@ object XCTuner_Form1: TXCTuner_Form1
               Left = 302
               Height = 49
               Hint = 'Обновить данные из конфига'
-              Top = 273
+              Top = 215
               Width = 115
               Caption = 'Обновить'
               Glyph.Data = {
@@ -1551,14 +1447,14 @@ object XCTuner_Form1: TXCTuner_Form1
               OnClick = BitRefresh2Click
               ParentShowHint = False
               ShowHint = True
-              TabOrder = 6
+              TabOrder = 4
             end
             object BitSave2: TBitBtn
               Cursor = crHandPoint
               Left = 452
               Height = 49
               Hint = 'Сохранить изменения в конфиг'
-              Top = 273
+              Top = 215
               Width = 115
               Caption = 'Сохранить'
               Glyph.Data = {
@@ -1640,17 +1536,17 @@ object XCTuner_Form1: TXCTuner_Form1
               OnClick = BitSave2Click
               ParentShowHint = False
               ShowHint = True
-              TabOrder = 7
+              TabOrder = 5
             end
             object GroupBox14: TGroupBox
               Left = 302
               Height = 88
-              Top = 105
+              Top = 8
               Width = 265
               Caption = 'Панель критов от навыка "эксперт":'
               ClientHeight = 70
               ClientWidth = 261
-              TabOrder = 8
+              TabOrder = 6
               object Label17: TLabel
                 Cursor = crHelp
                 Left = 21
@@ -1726,29 +1622,29 @@ object XCTuner_Form1: TXCTuner_Form1
               end
             end
             object Label66: TLabel
-              Left = 302
+              Left = 14
               Height = 15
-              Top = 22
+              Top = 206
               Width = 81
               Caption = 'Формат часов:'
               ParentColor = False
             end
             object Edit24: TEdit
-              Left = 390
+              Left = 102
               Height = 23
               Hint = 'Формат часов на экране панели отладки (возле FPS). Формат: "Y.m.d H:i:s" => 2013.05.20 01:23:45, "H:i" => 01:23, Y:год, M:месяц, D:день, H:часы, N:минуты, S:секунды. Чтобы убрать часы, нужно оставить поле пустым!'
-              Top = 19
+              Top = 203
               Width = 152
               Alignment = taCenter
               ParentShowHint = False
               ShowHint = True
-              TabOrder = 9
+              TabOrder = 7
             end
             object Image64: TImage
               Cursor = crHandPoint
-              Left = 551
+              Left = 263
               Height = 16
-              Top = 23
+              Top = 207
               Width = 16
               OnClick = Image64Click
               Picture.Data = {
@@ -1767,29 +1663,29 @@ object XCTuner_Form1: TXCTuner_Form1
               }
             end
             object Label67: TLabel
-              Left = 302
+              Left = 14
               Height = 15
-              Top = 65
+              Top = 249
               Width = 88
               Caption = 'ClanIconsFolder:'
               ParentColor = False
             end
             object Edit25: TEdit
-              Left = 395
+              Left = 107
               Height = 23
               Hint = 'Путь к папке иконок кланов относительно res_mods/xvm/res'
-              Top = 61
+              Top = 245
               Width = 147
               Alignment = taCenter
               ParentShowHint = False
               ShowHint = True
-              TabOrder = 10
+              TabOrder = 8
             end
             object Image65: TImage
               Cursor = crHandPoint
-              Left = 551
+              Left = 263
               Height = 16
-              Top = 65
+              Top = 249
               Width = 16
               OnClick = Image65Click
               Picture.Data = {

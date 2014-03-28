@@ -77,9 +77,7 @@ type
     Edit8: TEdit;
     Edit9: TEdit;
     GroupBox1: TGroupBox;
-    GroupBox10: TGroupBox;
     GroupBox11: TGroupBox;
-    GroupBox12: TGroupBox;
     GroupBox13: TGroupBox;
     GroupBox14: TGroupBox;
     GroupBox15: TGroupBox;
@@ -129,7 +127,6 @@ type
     Image1: TImage;
     Image10: TImage;
     Image11: TImage;
-    Image12: TImage;
     Image13: TImage;
     Image14: TImage;
     Image15: TImage;
@@ -191,7 +188,6 @@ type
     Image66: TImage;
     Image7: TImage;
     Image8: TImage;
-    Image9: TImage;
     ImageList1: TImageList;
     Label1: TLabel;
     Label10: TLabel;
@@ -270,7 +266,6 @@ type
     PageControl3: TPageControl;
     PageControl4: TPageControl;
     RadioButton1: TRadioButton;
-    RadioButton10: TRadioButton;
     RadioButton11: TRadioButton;
     RadioButton12: TRadioButton;
     RadioButton13: TRadioButton;
@@ -313,7 +308,6 @@ type
     RadioButton47: TRadioButton;
     RadioButton48: TRadioButton;
     RadioButton49: TRadioButton;
-    RadioButton5: TRadioButton;
     RadioButton50: TRadioButton;
     RadioButton51: TRadioButton;
     RadioButton52: TRadioButton;
@@ -324,13 +318,11 @@ type
     RadioButton57: TRadioButton;
     RadioButton58: TRadioButton;
     RadioButton59: TRadioButton;
-    RadioButton6: TRadioButton;
     RadioButton60: TRadioButton;
     RadioButton61: TRadioButton;
     RadioButton62: TRadioButton;
     RadioButton7: TRadioButton;
     RadioButton8: TRadioButton;
-    RadioButton9: TRadioButton;
     ScrollBox1: TScrollBox;
     SpinEdit1: TSpinEdit;
     SpinEdit10: TSpinEdit;
@@ -415,7 +407,6 @@ type
     procedure FormDestroy(Sender: TObject);
     procedure Image10Click(Sender: TObject);
     procedure Image11Click(Sender: TObject);
-    procedure Image12Click(Sender: TObject);
     procedure Image13Click(Sender: TObject);
     procedure Image14Click(Sender: TObject);
     procedure Image15Click(Sender: TObject);
@@ -511,8 +502,6 @@ type
     function error_message(file_name, str_sub: String; line_str: Integer): String;
     function Search_Line(Line: Integer; Search: String; temp_list: TStringList): Integer;
     procedure error_line(Search, temp_name: String);
-    procedure SearchLine_my();
-    procedure SearchLine_my_2();
     procedure activ_conf();
     procedure xvm_loading();
     procedure battle_loading();
@@ -560,16 +549,16 @@ var
   XCTuner_Form1: TXCTuner_Form1;
 
   chek1, chek2, chek3, chek4, chek5, chek6, chek7, chek8, chek9, chek10: String;
-  ColorSelect, ChangeEdit, SearchLine, px1, px2, px3: Integer;
-  ChangeEditText, Search, temp_name, dir_xvm: String;
+  ColorSelect, ChangeEdit, SearchLine: Integer;
+  ChangeEditText, Search, dir_xvm: String;
 
-  xvm_base, xvm, battle, iconset, login, hangar, hotkeys, userInfo, rating, texts, squad, turret, temp_list: TStringList;
+  xvm_base, xvm, battle, iconset, login, hangar, hotkeys, userInfo, rating, texts, squad, turret: TStringList;
   fragcorr, expanel: TStringList;
 
   activ_config, xvm_file_name, battle_name, login_name, hangar_name, hotkeys_name, userInfo_name, rating_name: String;
   squad_name, iconset_name, texts_name, turret_name, frag_name, expanel_name: String;
 
-  b_s1, b_s2, b_s3, b_s4, b_s5, b_s6, b_s7: String;
+  b_s1, b_s2, b_s4, b_s6, b_s7: String;
 
   xvm_s1, xvm_s2, xvm_s3, xvm_s4, xvm_s5, xvm_s6, xvm_s7, xvm_s8, xvm_s9, xvm_s10: String;
 
@@ -601,10 +590,11 @@ var
 
   squad_s1, squad_s2, squad_s3: String;
 
-  bs0_SL, bs1_SL, bs2_SL, bs3_SL, bs4_SL, bs5_SL, bs6_SL, bs7_SL: Integer;
+  bs0_SL, bs1_SL, bs2_SL, bs4_SL, bs6_SL, bs7_SL: Integer;
   log0_SL, log1_SL, log2_SL, log3_SL, log4_SL, log5_SL, log6_SL: Integer;
   xvm0_SL, xvm1_SL, xvm2_SL, xvm3_SL, xvm4_SL, xvm5_SL, xvm6_SL, xvm7_SL, xvm8_SL, xvm9_SL, xvm10_SL: Integer;
 
+  hgar01_SL, hgar02_SL, hgar03_SL, hgar04_SL, hgar05_SL, hgar06_SL: Integer;
   hgar1_SL, hgar2_SL, hgar3_SL, hgar4_SL, hgar5_SL, hgar6_SL, hgar7_SL: Integer;
   hgar8_SL, hgar9_SL, hgar10_SL, hgar11_SL, hgar12_SL, hgar13_SL: Integer;
   hgar14_SL, hgar15_SL, hgar16_SL, hgar17_SL, hgar18_SL, hgar19_SL, hgar20_SL: Integer;
@@ -635,61 +625,61 @@ implementation
 // Открытие вкладки "Общие"
 procedure TXCTuner_Form1.BitBtn1Click(Sender: TObject);
 begin
-  BitBtn1.Glyph:=nil;
-  BitBtn2.Glyph:=nil;
-  BitBtn3.Glyph:=nil;
-  BitBtn10.Glyph:=nil;
-  BitBtn1.Font.Style:=[fsBold];
-  BitBtn2.Font.Style:=[];
-  BitBtn3.Font.Style:=[];
-  BitBtn10.Font.Style:=[];
+  BitBtn1.Glyph := nil;
+  BitBtn2.Glyph := nil;
+  BitBtn3.Glyph := nil;
+  BitBtn10.Glyph := nil;
+  BitBtn1.Font.Style := [fsBold];
+  BitBtn2.Font.Style := [];
+  BitBtn3.Font.Style := [];
+  BitBtn10.Font.Style := [];
   ImageList1.GetBitmap(0, BitBtn1.Glyph);
-  PageControl1.ActivePage:=TabSheet1;
+  PageControl1.ActivePage := TabSheet1;
 end;
 
 // Открытие вкладки "Прочее"
 procedure TXCTuner_Form1.BitBtn10Click(Sender: TObject);
 begin
-  BitBtn1.Glyph:=nil;
-  BitBtn2.Glyph:=nil;
-  BitBtn3.Glyph:=nil;
-  BitBtn10.Glyph:=nil;
-  BitBtn1.Font.Style:=[];
-  BitBtn2.Font.Style:=[];
-  BitBtn3.Font.Style:=[];
-  BitBtn10.Font.Style:=[fsBold];
+  BitBtn1.Glyph := nil;
+  BitBtn2.Glyph := nil;
+  BitBtn3.Glyph := nil;
+  BitBtn10.Glyph := nil;
+  BitBtn1.Font.Style := [];
+  BitBtn2.Font.Style := [];
+  BitBtn3.Font.Style := [];
+  BitBtn10.Font.Style := [fsBold];
   ImageList1.GetBitmap(0, BitBtn10.Glyph);
-  PageControl1.ActivePage:=TabSheet6;
+  PageControl1.ActivePage := TabSheet6;
 end;
 
 // Открытие вкладки "Логин"
 procedure TXCTuner_Form1.BitBtn2Click(Sender: TObject);
 begin
-  BitBtn1.Glyph:=nil;
-  BitBtn2.Glyph:=nil;
-  BitBtn3.Glyph:=nil;
-  BitBtn10.Glyph:=nil;
-  BitBtn1.Font.Style:=[];
-  BitBtn2.Font.Style:=[fsBold];
-  BitBtn3.Font.Style:=[];
-  BitBtn10.Font.Style:=[];
+  BitBtn1.Glyph := nil;
+  BitBtn2.Glyph := nil;
+  BitBtn3.Glyph := nil;
+  BitBtn10.Glyph := nil;
+  BitBtn1.Font.Style := [];
+  BitBtn2.Font.Style := [fsBold];
+  BitBtn3.Font.Style := [];
+  BitBtn10.Font.Style := [];
   ImageList1.GetBitmap(0, BitBtn2.Glyph);
-  PageControl1.ActivePage:=TabSheet2;
+  PageControl1.ActivePage := TabSheet2;
 end;
 
 // Открытие вкладки "Ангар"
 procedure TXCTuner_Form1.BitBtn3Click(Sender: TObject);
 begin
-  BitBtn1.Glyph:=nil;
-  BitBtn2.Glyph:=nil;
-  BitBtn3.Glyph:=nil;
-  BitBtn10.Glyph:=nil;
-  BitBtn1.Font.Style:=[];
-  BitBtn2.Font.Style:=[];
-  BitBtn3.Font.Style:=[fsBold];
-  BitBtn10.Font.Style:=[];
+  BitBtn1.Glyph := nil;
+  BitBtn2.Glyph := nil;
+  BitBtn3.Glyph := nil;
+  BitBtn10.Glyph := nil;
+  BitBtn1.Font.Style := [];
+  BitBtn2.Font.Style := [];
+  BitBtn3.Font.Style := [fsBold];
+  BitBtn10.Font.Style := [];
   ImageList1.GetBitmap(0, BitBtn3.Glyph);
-  PageControl1.ActivePage:=TabSheet3;
+  PageControl1.ActivePage := TabSheet3;
 end;
 
 // Скрытие или открытие навигационной панели слева
@@ -697,52 +687,51 @@ procedure TXCTuner_Form1.BitBtn4Click(Sender: TObject);
 begin
   if (Panel1.Visible=true) then
     begin
-      Panel1.Visible:=false;
-      BitBtn4.Caption:='>';
-      XCTuner_Form1.Width:=770;
-      BitBtn4.Hint:='Развернуть панель';
-    end
-      else
+      Panel1.Visible := false;
+      BitBtn4.Caption := '>';
+      XCTuner_Form1.Width := 770;
+      BitBtn4.Hint := 'Развернуть панель';
+    end else
     begin
-      Panel1.Visible:=true;
-      BitBtn4.Caption:='<';
-      XCTuner_Form1.Width:=940;
-      BitBtn4.Hint:='Свернуть панель';
+      Panel1.Visible := true;
+      BitBtn4.Caption := '<';
+      XCTuner_Form1.Width := 940;
+      BitBtn4.Hint := 'Свернуть панель';
     end;
 end;
 
 // Кнопка выбора цвета 1 / Передача параметра типа Integer
 procedure TXCTuner_Form1.BitBtn5Click(Sender: TObject);
 begin
-  ColorSelect:=1;
+  ColorSelect := 1;
   ColorSelectMy.ShowModal;
 end;
 
 // Кнопка выбора цвета 2 / Передача параметра типа Integer
 procedure TXCTuner_Form1.BitBtn6Click(Sender: TObject);
 begin
-  ColorSelect:=2;
+  ColorSelect := 2;
   ColorSelectMy.ShowModal;
 end;
 
 // Кнопка выбора цвета 3 / Передача параметра типа Integer
 procedure TXCTuner_Form1.BitBtn7Click(Sender: TObject);
 begin
-  ColorSelect:=3;
+  ColorSelect := 3;
   ColorSelectMy.ShowModal;
 end;
 
 // Кнопка выбора цвета 4 / Передача параметра типа Integer
 procedure TXCTuner_Form1.BitBtn8Click(Sender: TObject);
 begin
-  ColorSelect:=4;
+  ColorSelect := 4;
   ColorSelectMy.ShowModal;
 end;
 
 // Кнопка выбора цвета 5 / Передача параметра типа Integer
 procedure TXCTuner_Form1.BitBtn9Click(Sender: TObject);
 begin
-  ColorSelect:=5;
+  ColorSelect := 5;
   ColorSelectMy.ShowModal;
 end;
 
@@ -868,7 +857,7 @@ end;
 procedure TXCTuner_Form1.BitSave9Click(Sender: TObject);
 begin
   texts_save();
-  texts.SaveToFile(dir_xvm+texts_name);
+  texts.SaveToFile(dir_xvm + texts_name);
   texts_loading();
 end;
 
@@ -881,31 +870,31 @@ end;
 // Выбор шрифта / Шрифт заполняет соотв. поле
 procedure TXCTuner_Form1.ComboBox1Change(Sender: TObject);
 begin
-  Edit1.Text:=ComboBox1.Text;
+  Edit1.Text := ComboBox1.Text;
 end;
 
 procedure TXCTuner_Form1.ComboBox5Change(Sender: TObject);
 begin
   case ComboBox5.ItemIndex of
-    0: Edit16.Text:=Edit16.Text+'{{level}}';
-    1: Edit16.Text:=Edit16.Text+'{{rlevel}}';
-    2: Edit16.Text:=Edit16.Text+'{{vtype}}';
-    3: Edit16.Text:=Edit16.Text+'{{vtype-l}}';
-    4: Edit16.Text:=Edit16.Text+'{{battletier-min}}';
-    5: Edit16.Text:=Edit16.Text+'{{battletier-max}}';
+    0: Edit16.Text := Edit16.Text + '{{level}}';
+    1: Edit16.Text := Edit16.Text + '{{rlevel}}';
+    2: Edit16.Text := Edit16.Text + '{{vtype}}';
+    3: Edit16.Text := Edit16.Text + '{{vtype-l}}';
+    4: Edit16.Text := Edit16.Text + '{{battletier-min}}';
+    5: Edit16.Text := Edit16.Text + '{{battletier-max}}';
   end;
-  ComboBox5.ItemIndex:=-1;
+  ComboBox5.ItemIndex := -1;
 end;
 
 // события при изменение Edit2 при выходе из поля
 procedure TXCTuner_Form1.Edit2Exit(Sender: TObject);
 begin
-  ChangeEdit:=Length(Edit2.Text);
-  ChangeEditText:=Edit2.Text;
-  if ChangeEdit=7 then
+  ChangeEdit := Length(Edit2.Text);
+  ChangeEditText := Edit2.Text;
+  if ChangeEdit = 7 then
     begin
       Delete(ChangeEditText, 1, 1);
-      mbColorPreview5.Color:=HexToTColor(ChangeEditText);
+      mbColorPreview5.Color := HexToTColor(ChangeEditText);
     end else
     begin
        ShowMessage(colorInf);
@@ -915,12 +904,12 @@ end;
 // события при изменение Edit3 при выходе из поля
 procedure TXCTuner_Form1.Edit3Exit(Sender: TObject);
 begin
-  ChangeEdit:=Length(Edit3.Text);
-  ChangeEditText:=Edit3.Text;
-  if ChangeEdit=7 then
+  ChangeEdit := Length(Edit3.Text);
+  ChangeEditText := Edit3.Text;
+  if ChangeEdit = 7 then
     begin
       Delete(ChangeEditText, 1, 1);
-      mbColorPreview1.Color:=HexToTColor(ChangeEditText);
+      mbColorPreview1.Color := HexToTColor(ChangeEditText);
     end else
     begin
        ShowMessage(colorInf);
@@ -930,12 +919,12 @@ end;
 // события при изменение Edit4 при выходе из поля
 procedure TXCTuner_Form1.Edit4Exit(Sender: TObject);
 begin
-  ChangeEdit:=Length(Edit4.Text);
-  ChangeEditText:=Edit4.Text;
-  if ChangeEdit=7 then
+  ChangeEdit := Length(Edit4.Text);
+  ChangeEditText := Edit4.Text;
+  if ChangeEdit = 7 then
     begin
       Delete(ChangeEditText, 1, 1);
-      mbColorPreview2.Color:=HexToTColor(ChangeEditText);
+      mbColorPreview2.Color := HexToTColor(ChangeEditText);
     end else
     begin
        ShowMessage(colorInf);
@@ -945,12 +934,12 @@ end;
 // события при изменение Edit5 при выходе из поля
 procedure TXCTuner_Form1.Edit5Exit(Sender: TObject);
 begin
-  ChangeEdit:=Length(Edit5.Text);
-  ChangeEditText:=Edit5.Text;
-  if ChangeEdit=7 then
+  ChangeEdit := Length(Edit5.Text);
+  ChangeEditText := Edit5.Text;
+  if ChangeEdit = 7 then
     begin
       Delete(ChangeEditText, 1, 1);
-      mbColorPreview3.Color:=HexToTColor(ChangeEditText);
+      mbColorPreview3.Color := HexToTColor(ChangeEditText);
     end else
     begin
        ShowMessage(colorInf);
@@ -960,12 +949,12 @@ end;
 // события при изменение Edit6 при выходе из поля
 procedure TXCTuner_Form1.Edit6Exit(Sender: TObject);
 begin
-  ChangeEdit:=Length(Edit6.Text);
-  ChangeEditText:=Edit6.Text;
-  if ChangeEdit=7 then
+  ChangeEdit := Length(Edit6.Text);
+  ChangeEditText := Edit6.Text;
+  if ChangeEdit = 7 then
     begin
       Delete(ChangeEditText, 1, 1);
-      mbColorPreview4.Color:=HexToTColor(ChangeEditText);
+      mbColorPreview4.Color := HexToTColor(ChangeEditText);
     end else
     begin
        ShowMessage(colorInf);
@@ -995,7 +984,6 @@ begin
   squad:=TStringList.Create;
   turret:=TStringList.Create;
   expanel:=TStringList.Create;
-  temp_list:=TStringList.Create;
 
   xvm.LoadFromFile(dir_xvm+xvm_file_name);
 
@@ -1029,7 +1017,7 @@ begin
     begin
 
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.8.53';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.8.61';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       BitBtn1.Click;
@@ -1082,7 +1070,6 @@ begin
   texts.Free;
   turret.Free;
   expanel.Free;
-  temp_list.Free;
 end;
 
 procedure TXCTuner_Form1.Image10Click(Sender: TObject);
@@ -1098,10 +1085,11 @@ begin
   +activ_config+#13#10+enopt+'"highlightVehicleIcon": true'+#13#10+disopt+'"highlightVehicleIcon": false');
 end;
 
-procedure TXCTuner_Form1.Image12Click(Sender: TObject);
+// Процедура вывода на несуществующий параметр
+procedure TXCTuner_Form1.error_line(Search, temp_name: String);
 begin
-  ShowMessage(tpi+IntToStr(bs5_SL+1)+litf+battle_name+path
-  +activ_config+#13#10+enopt+'"useStandardMarkers": true'+#13#10+disopt+'"useStandardMarkers": false');
+  ShowMessage('Строка с параметром '+Search+' не найдена в файле '+temp_name+path+activ_config+#10#13+'Исправьте! Программа закроется!');
+  Application.Terminate;
 end;
 
 procedure TXCTuner_Form1.Image13Click(Sender: TObject);
@@ -1507,8 +1495,7 @@ end;
 
 procedure TXCTuner_Form1.Image9Click(Sender: TObject);
 begin
-  ShowMessage(tpi+IntToStr(bs3_SL+1)+litf+battle_name+path
-  +activ_config+#13#10+switchon+'"removePanelsModeSwitcher": false'+#13#10+switchoff+'"removePanelsModeSwitcher": true');
+
 end;
 
 procedure TXCTuner_Form1.Label63Click(Sender: TObject);
@@ -1666,14 +1653,14 @@ end;
 function TXCTuner_Form1.FindFilesXVM(FindStr: String; FileXVMAllStr: TStringList
   ): String;
 var
-  m, c1, c2: Integer;
+  i, c1, c2: Integer;
   strFind: String;
 begin
-  c1:=0;
-  c2:=0;
-  for m := 0 to (FileXVMAllStr.Count - 1) do
+  c1 := 0;
+  c2 := 0;
+  for i := 0 to (FileXVMAllStr.Count - 1) do
     begin
-    strFind:=Trim(FileXVMAllStr.Strings[m]);
+    strFind:=Trim(FileXVMAllStr.Strings[i]);
     c1:=pos(FindStr, strFind);
     c2:=PosEx('${', strFind, c1);
     if Length(strFind)=0 then Continue;
@@ -1784,64 +1771,17 @@ begin
   Result:=-1;
 end;
 
-// Процедура вывода на несуществующий параметр
-procedure TXCTuner_Form1.error_line(Search, temp_name: String);
-begin
-  ShowMessage('Строка с параметром '+Search+' не найдена в файле '+temp_name+path+activ_config+#10#13+'Исправьте! Программа закроется!');
-  Application.Terminate;
-end;
-
-// процедура поиска нужного слова / выводит номер строки где найдено это слово
-procedure TXCTuner_Form1.SearchLine_my;
-var k: Integer;
-  temp_str: String;
-begin
-  for k := 0 to (temp_list.Count - 1) do
-    begin
-      temp_str:=TrimLeft(temp_list.Strings[k]);
-      if Length(temp_str)=0 then Continue;
-      if (temp_str[1]='/') and (temp_str[2]='/') then Continue;
-      if pos(Search, temp_list.Strings[k])>0 then
-        begin
-          SearchLine:= k;
-          Exit;
-        end;
-    end;
-  SearchLine:=-1;
-  ShowMessage('Строка с параметром '+Search+' не найдена в файле '+temp_name+path+activ_config+#10#13+' Исправьте! Программа закроется!');
-end;
-
-// процедура нахождения слов во вложенных конструкциях 2 уровня
-procedure TXCTuner_Form1.SearchLine_my_2;
-var n: Integer;
-  temp_str: String;
-begin
-  for n := SearchLine to (temp_list.Count - 1) do
-    begin
-      temp_str:=TrimLeft(temp_list.Strings[n]);
-      if Length(temp_str)=0 then Continue;
-      if (temp_str[1]='/') and (temp_str[2]='/') then Continue;
-      if pos(Search, temp_list.Strings[n])>0 then
-        begin
-          SearchLine:= n;
-          Exit;
-        end;
-    end;
-  SearchLine:=-1;
-  ShowMessage('Строка с параметром '+Search+' не найдена в файле '+temp_name+path+activ_config+#10#13+' Исправьте! Программа закроется!');
-end;
-
 // процедура нахождения активного конфига
 procedure TXCTuner_Form1.activ_conf;
-var tx: Integer;
+var i, px2, px3: Integer;
 begin
   if (FileExists(ExtractFilePath(ParamStr(0))+'xvm.xc')) then
     begin
       xvm_base:=TStringList.Create;
       xvm_base.LoadFromFile(ExtractFilePath(ParamStr(0))+'xvm.xc');
-    for tx := 0 to (xvm_base.Count - 1) do
+    for i := 0 to (xvm_base.Count - 1) do
       begin
-        activ_config:=Trim(xvm_base.Strings[tx]);
+        activ_config:=Trim(xvm_base.Strings[i]);
         if Length(activ_config)=0  then Continue;
         if activ_config[1]='$' then
           begin
@@ -1914,21 +1854,6 @@ begin
       end;
     end;
 
-    // Переключатель режимов ушей / 3
-    Search:='"removePanelsModeSwitcher"';
-    bs3_SL:=Search_Line(bs0_SL, Search, battle);
-    if bs3_SL=-1 then error_line(Search, battle_name) else
-    begin
-      b_s3:=battle.Strings[bs3_SL];
-      b_s3:=new_change_str(Search, b_s3);
-      if b_s3='true' then RadioButton6.Checked:=True else
-      if b_s3='false' then RadioButton5.Checked:=True else
-      begin
-        ShowMessage(error_message(battle_name, b_s3, bs3_SL));
-        Application.Terminate;
-      end;
-    end;
-
     // Подсветка иконки своего танка и взвода / 4
     Search:='"highlightVehicleIcon"';
     bs4_SL:=Search_Line(bs0_SL, Search, battle);
@@ -1940,21 +1865,6 @@ begin
       if b_s4='false' then RadioButton8.Checked:=True else
       begin
         ShowMessage(error_message(battle_name, b_s4, bs4_SL));
-        Application.Terminate;
-      end;
-    end;
-
-    // Стандартные маркеры / 5
-    Search:='"useStandardMarkers"';
-    bs5_SL:=Search_Line(bs0_SL, Search, battle);
-    if bs5_SL=-1 then error_line(Search, battle_name) else
-    begin
-      b_s5:=battle.Strings[bs5_SL];
-      b_s5:=new_change_str(Search, b_s5);
-      if b_s5='true' then RadioButton9.Checked:=True else
-      if b_s5='false' then RadioButton10.Checked:=True else
-      begin
-        ShowMessage(error_message(battle_name, b_s5, bs5_SL));
         Application.Terminate;
       end;
     end;
@@ -2125,519 +2035,417 @@ begin
   login.SaveToFile(dir_xvm+login_name);
 end;
 
-// загрузка из файла hangar.xc / { TODO : Переписать на новую функцию и процедуру }
+// загрузка из файла hangar.xc
 procedure TXCTuner_Form1.hangar_loading;
 begin
   hangar.Clear;
   hangar.LoadFromFile(dir_xvm+hangar_name);
   // загрузка данных из файла hangar.xc в интерфейс
-  temp_list.Clear;
-  temp_list.Text:=hangar.Text;
+  hgar01_SL:=Search_Line(0, '"hangar"', hangar);
+  if hgar01_SL=-1 then error_line('"hangar"', hangar_name) else
+  begin
+    // 1
+    Search:='"hideTutorial"';
+    hgar1_SL:=Search_Line(hgar01_SL, Search, hangar);
+    if hgar1_SL=-1 then error_line(Search, hangar_name) else
+    begin
+      hangar_s1:=hangar.Strings[hgar1_SL];
+      hangar_s1:=new_change_str(Search, hangar_s1);
+      if hangar_s1='true' then RadioButton32.Checked:=True else
+      if hangar_s1='false' then RadioButton31.Checked:=True else
+      begin
+        ShowMessage(error_message(hangar_name, hangar_s1, hgar1_SL));
+        Application.Terminate;
+      end;
+    end;
 
-  temp_name:=hangar_name;
+    // 2
+    Search:='"xwnInCompany"';
+    hgar2_SL:=Search_Line(hgar01_SL, Search, hangar);
+    if hgar2_SL=-1 then error_line(Search, hangar_name) else
+    begin
+      hangar_s2:=hangar.Strings[hgar2_SL];
+      hangar_s2:=new_change_str(Search, hangar_s2);
+      if hangar_s2='true' then RadioButton33.Checked:=True else
+      if hangar_s2='false' then RadioButton34.Checked:=True else
+      begin
+        ShowMessage(error_message(hangar_name, hangar_s2, hgar2_SL));
+        Application.Terminate;
+      end;
+    end;
 
-  // / 1
-  Search:='"hideTutorial"';
-  SearchLine_my();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s1:=hangar.Strings[SearchLine];
-  hgar1_SL:=SearchLine;
-  hangar_s1:=new_change_str(Search, hangar_s1);
-  if hangar_s1='true' then RadioButton32.Checked:=True else
-  if hangar_s1='false' then RadioButton31.Checked:=True else
-  begin
-    ShowMessage(error_message(hangar_name, hangar_s1, hgar1_SL));
-    Application.Terminate;
-  end;
-  end;
+    // 3
+    Search:='"masteryMarkInTankCarousel"';
+    hgar3_SL:=Search_Line(hgar01_SL, Search, hangar);
+    if hgar3_SL=-1 then error_line(Search, hangar_name) else
+    begin
+      hangar_s3:=hangar.Strings[hgar3_SL];
+      hangar_s3:=new_change_str(Search, hangar_s3);
+      if hangar_s3='true' then RadioButton35.Checked:=True else
+      if hangar_s3='false' then RadioButton36.Checked:=True else
+      begin
+        ShowMessage(error_message(hangar_name, hangar_s3, hgar3_SL));
+        Application.Terminate;
+      end;
+    end;
 
-  // / 2
-  Search:='"xwnInCompany"';
-  SearchLine_my();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s2:=hangar.Strings[SearchLine];
-  hgar2_SL:=SearchLine;
-  hangar_s2:=new_change_str(Search, hangar_s2);
-  if hangar_s2='true' then RadioButton33.Checked:=True else
-  if hangar_s2='false' then RadioButton34.Checked:=True else
-  begin
-    ShowMessage(error_message(hangar_name, hangar_s2, hgar2_SL));
-    Application.Terminate;
-  end;
-  end;
+    // 4
+    Search:='"masteryMarkInTechTree"';
+    hgar4_SL:=Search_Line(hgar01_SL, Search, hangar);
+    if hgar4_SL=-1 then error_line(Search, hangar_name) else
+    begin
+      hangar_s4:=hangar.Strings[hgar4_SL];
+      hangar_s4:=new_change_str(Search, hangar_s4);
+      if hangar_s4='true' then RadioButton37.Checked:=True else
+      if hangar_s4='false' then RadioButton38.Checked:=True else
+      begin
+        ShowMessage(error_message(hangar_name, hangar_s4, hgar4_SL));
+        Application.Terminate;
+      end;
+    end;
 
-  // / 3
-  Search:='"masteryMarkInTankCarousel"';
-  SearchLine_my();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s3:=hangar.Strings[SearchLine];
-  hgar3_SL:=SearchLine;
-  hangar_s3:=new_change_str(Search, hangar_s3);
-  if hangar_s3='true' then RadioButton35.Checked:=True else
-  if hangar_s3='false' then RadioButton36.Checked:=True else
-  begin
-    ShowMessage(error_message(hangar_name, hangar_s3, hgar3_SL));
-    Application.Terminate;
-  end;
-  end;
+    // 5
+    Search:='"hidePricesInTechTree"';
+    hgar5_SL:=Search_Line(hgar01_SL, Search, hangar);
+    if hgar5_SL=-1 then error_line(Search, hangar_name) else
+    begin
+      hangar_s5:=hangar.Strings[hgar5_SL];
+      hangar_s5:=new_change_str(Search, hangar_s5);
+      if hangar_s5='true' then RadioButton40.Checked:=True else
+      if hangar_s5='false' then RadioButton39.Checked:=True else
+      begin
+        ShowMessage(error_message(hangar_name, hangar_s5, hgar5_SL));
+        Application.Terminate;
+      end;
+    end;
 
-  // / 4
-  Search:='"masteryMarkInTechTree"';
-  SearchLine_my();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s4:=hangar.Strings[SearchLine];
-  hgar4_SL:=SearchLine;
-  hangar_s4:=new_change_str(Search, hangar_s4);
-  if hangar_s4='true' then RadioButton37.Checked:=True else
-  if hangar_s4='false' then RadioButton38.Checked:=True else
-  begin
-    ShowMessage(error_message(hangar_name, hangar_s4, hgar4_SL));
-    Application.Terminate;
-  end;
-  end;
+    // 6
+    Search:='"widgetsEnabled"';
+    hgar6_SL:=Search_Line(hgar01_SL, Search, hangar);
+    if hgar6_SL=-1 then error_line(Search, hangar_name) else
+    begin
+      hangar_s6:=hangar.Strings[hgar6_SL];
+      hangar_s6:=new_change_str(Search, hangar_s6);
+      if hangar_s6='true' then RadioButton41.Checked:=True else
+      if hangar_s6='false' then RadioButton42.Checked:=True else
+      begin
+        ShowMessage(error_message(hangar_name, hangar_s6, hgar6_SL));
+        Application.Terminate;
+      end;
+    end;
 
-  // / 5
-  Search:='"hidePricesInTechTree"';
-  SearchLine_my();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s5:=hangar.Strings[SearchLine];
-  hgar5_SL:=SearchLine;
-  hangar_s5:=new_change_str(Search, hangar_s5);
-  if hangar_s5='true' then RadioButton40.Checked:=True else
-  if hangar_s5='false' then RadioButton39.Checked:=True else
-  begin
-    ShowMessage(error_message(hangar_name, hangar_s5, hgar5_SL));
-    Application.Terminate;
-  end;
-  end;
+    hgar02_SL:=Search_Line(hgar01_SL, '"pingServers"', hangar);
+    if hgar02_SL=-1 then error_line('"pingServers"', hangar_name) else
+    begin
+      // 7
+      Search:='"enabled"';
+      hgar7_SL:=Search_Line(hgar02_SL, Search, hangar);
+      if hgar7_SL=-1 then error_line(Search, hangar_name) else
+      begin
+        hangar_s7:=hangar.Strings[hgar7_SL];
+        hangar_s7:=new_change_str(Search, hangar_s7);
+        if hangar_s7='true' then RadioButton43.Checked:=True else
+        if hangar_s7='false' then RadioButton44.Checked:=True else
+        begin
+          ShowMessage(error_message(hangar_name, hangar_s7, hgar7_SL));
+          Application.Terminate;
+        end;
+      end;
 
-  // / 6
-  Search:='"widgetsEnabled"';
-  SearchLine_my();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s6:=hangar.Strings[SearchLine];
-  hgar6_SL:=SearchLine;
-  hangar_s6:=new_change_str(Search, hangar_s6);
-  if hangar_s6='true' then RadioButton41.Checked:=True else
-  if hangar_s6='false' then RadioButton42.Checked:=True else
-  begin
-    ShowMessage(error_message(hangar_name, hangar_s6, hgar6_SL));
-    Application.Terminate;
-  end;
-  end;
+      // интервал обновления пинга
+      Search:='"updateInterval"';
+      hgar8_SL:=Search_Line(hgar02_SL, Search, hangar);
+      if hgar8_SL=-1 then error_line(Search, hangar_name) else
+      begin
+        hangar_s8:=hangar.Strings[hgar8_SL];
+        hangar_s8:=new_change_str(Search, hangar_s8);
+        TrackBar1.Position:=StrToInt(hangar_s8);
+        SpinEdit10.Value:=StrToInt(hangar_s8);
+      end;
 
-  // / 7
-  Search:='"pingServers"';
-  SearchLine_my();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  Search:='"enabled"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s7:=hangar.Strings[SearchLine];
-  hgar7_SL:=SearchLine;
-  hangar_s7:=new_change_str(Search, hangar_s7);
-  if hangar_s7='true' then RadioButton43.Checked:=True else
-  if hangar_s7='false' then RadioButton44.Checked:=True else
-  begin
-    ShowMessage(error_message(hangar_name, hangar_s7, hgar7_SL));
-    Application.Terminate;
-  end;
-  end;
-  end;
+      // положение поля по x
+      Search:='"x"';
+      hgar9_SL:=Search_Line(hgar02_SL, Search, hangar);
+      if hgar9_SL=-1 then error_line(Search, hangar_name) else
+      begin
+        hangar_s9:=hangar.Strings[hgar9_SL];
+        hangar_s9:=new_change_str(Search, hangar_s9);
+        SpinEdit5.Value:=StrToInt(hangar_s9);
+      end;
 
-  // интервал обновления пинга
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"updateInterval"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s8:=hangar.Strings[SearchLine];
-  hgar8_SL:=SearchLine;
-  hangar_s8:=new_change_str(Search, hangar_s8);
-  TrackBar1.Position:=StrToInt(hangar_s8);
-  SpinEdit10.Value:=StrToInt(hangar_s8);
-  end;
+      // положение поля по y
+      Search:='"y"';
+      hgar10_SL:=Search_Line(hgar02_SL, Search, hangar);
+      if hgar10_SL=-1 then error_line(Search, hangar_name) else
+      begin
+        hangar_s10:=hangar.Strings[hgar10_SL];
+        hangar_s10:=new_change_str(Search, hangar_s10);
+        SpinEdit6.Value:=StrToInt(hangar_s10);
+      end;
 
-  // положение поля по x
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"x"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s9:=hangar.Strings[SearchLine];
-  hgar9_SL:=SearchLine;
-  hangar_s9:=new_change_str(Search, hangar_s9);
-  SpinEdit5.Value:=StrToInt(hangar_s9);
-  end;
+      // прозрачность поля
+      Search:='"alpha"';
+      hgar11_SL:=Search_Line(hgar02_SL, Search, hangar);
+      if hgar11_SL=-1 then error_line(Search, hangar_name) else
+      begin
+        hangar_s11:=hangar.Strings[hgar11_SL];
+        hangar_s11:=new_change_str(Search, hangar_s11);
+        SpinEdit7.Value:=StrToInt(hangar_s11);
+      end;
 
-  // положение поля по y
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"y"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s10:=hangar.Strings[SearchLine];
-  hgar10_SL:=SearchLine;
-  hangar_s10:=new_change_str(Search, hangar_s10);
-  SpinEdit6.Value:=StrToInt(hangar_s10);
-  end;
+      // Разделитель / 32
+      Search:='"delimiter"';
+      hgar32_SL:=Search_Line(hgar02_SL, Search, hangar);
+      if hgar32_SL=-1 then error_line(Search, hangar_name) else
+      begin
+        hangar_s32:=hangar.Strings[hgar32_SL];
+        hangar_s32:=new_change_str(Search, hangar_s32);
+        Edit26.Text:=DelStartEnd(hangar_s32);
+      end;
 
-  // прозрачность поля
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"alpha"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s11:=hangar.Strings[SearchLine];
-  hgar11_SL:=SearchLine;
-  hangar_s11:=new_change_str(Search, hangar_s11);
-  SpinEdit7.Value:=StrToInt(hangar_s11);
-  end;
+      // максимальное количество строк одной колонки
+      Search:='"maxRows"';
+      hgar12_SL:=Search_Line(hgar02_SL, Search, hangar);
+      if hgar12_SL=-1 then error_line(Search, hangar_name) else
+      begin
+        hangar_s12:=hangar.Strings[hgar12_SL];
+        hangar_s12:=new_change_str(Search, hangar_s12);
+        TrackBar2.Position:=StrToInt(hangar_s12);
+        SpinEdit8.Value:=StrToInt(hangar_s12);
+      end;
 
-  // максимальное количество строк одной колонки
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"maxRows"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s12:=hangar.Strings[SearchLine];
-  hgar12_SL:=SearchLine;
-  hangar_s12:=new_change_str(Search, hangar_s12);
-  TrackBar2.Position:=StrToInt(hangar_s12);
-  SpinEdit8.Value:=StrToInt(hangar_s12);
-  end;
+      // пространство между колонками
+      Search:='"columnGap"';
+      hgar13_SL:=Search_Line(hgar02_SL, Search, hangar);
+      if hgar13_SL=-1 then error_line(Search, hangar_name) else
+      begin
+        hangar_s13:=hangar.Strings[hgar13_SL];
+        hangar_s13:=new_change_str(Search, hangar_s13);
+        TrackBar3.Position:=StrToInt(hangar_s13);
+        SpinEdit9.Value:=StrToInt(hangar_s13);
+      end;
 
-  // пространство между колонками
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"columnGap"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s13:=hangar.Strings[SearchLine];
-  hgar13_SL:=SearchLine;
-  hangar_s13:=new_change_str(Search, hangar_s13);
-  TrackBar3.Position:=StrToInt(hangar_s13);
-  SpinEdit9.Value:=StrToInt(hangar_s13);
-  end;
+      hgar03_SL:=Search_Line(hgar02_SL, '"fontStyle"', hangar);
+      if hgar03_SL=-1 then error_line('"fontStyle"', hangar_name) else
+      begin
+        // Название шрифта // 14
+        Search:='"name"';
+        hgar14_SL:=Search_Line(hgar03_SL, Search, hangar);
+        if hgar14_SL=-1 then error_line(Search, hangar_name) else
+        begin
+          hangar_s14:=hangar.Strings[hgar14_SL];
+          hangar_s14:=new_change_str(Search, hangar_s14);
+          Edit1.Text:=DelStartEnd(hangar_s14);
+        end;
 
-  // Название шрифта // 14
-  Search:='"fontStyle"';
-  SearchLine_my();
-  Search:='"name"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s14:=hangar.Strings[SearchLine];
-  hgar14_SL:=SearchLine;
-  hangar_s14:=new_change_str(Search, hangar_s14);
-  Edit1.Text:=DelStartEnd(hangar_s14);
-  end;
+        // Размер шрифта // 15
+        Search:='"size"';
+        hgar15_SL:=Search_Line(hgar03_SL, Search, hangar);
+        if hgar15_SL=-1 then error_line(Search, hangar_name) else
+        begin
+          hangar_s15:=hangar.Strings[hgar15_SL];
+          hangar_s15:=new_change_str(Search, hangar_s15);
+          SpinEdit11.Value:=StrToInt(hangar_s15);
+        end;
 
-  // Размер шрифта // 15
-  Search:='"fontStyle"';
-  SearchLine_my();
-  Search:='"size"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s15:=hangar.Strings[SearchLine];
-  hgar15_SL:=SearchLine;
-  hangar_s15:=new_change_str(Search, hangar_s15);
-  SpinEdit11.Value:=StrToInt(hangar_s15);
-  end;
+        // Стиль жирный шрифта // 16
+        Search:='"bold"';
+        hgar16_SL:=Search_Line(hgar03_SL, Search, hangar);
+        if hgar16_SL=-1 then error_line(Search, hangar_name) else
+        begin
+          hangar_s16:=hangar.Strings[hgar16_SL];
+          hangar_s16:=new_change_str(Search, hangar_s16);
+          if hangar_s16='true' then CheckBox1.Checked:=True else
+          if hangar_s16='false' then CheckBox1.Checked:=False else
+          begin
+            ShowMessage(error_message(hangar_name, hangar_s16, hgar16_SL));
+            Application.Terminate;
+          end;
+        end;
 
-  // Стиль жирный шрифта // 16
-  Search:='"fontStyle"';
-  SearchLine_my();
-  Search:='"bold"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s16:=hangar.Strings[SearchLine];
-  hgar16_SL:=SearchLine;
-  hangar_s16:=new_change_str(Search, hangar_s16);
-  if hangar_s16='true' then CheckBox1.Checked:=True else
-  if hangar_s16='false' then CheckBox1.Checked:=False else
-  begin
-    ShowMessage(error_message(hangar_name, hangar_s16, hgar16_SL));
-    Application.Terminate;
-  end;
-  end;
+        // Стиль курсив шрифта // 17
+        Search:='"italic"';
+        hgar17_SL:=Search_Line(hgar03_SL, Search, hangar);
+        if hgar17_SL=-1 then error_line(Search, hangar_name) else
+        begin
+          hangar_s17:=hangar.Strings[hgar17_SL];
+          hangar_s17:=new_change_str(Search, hangar_s17);
+          if hangar_s17='true' then CheckBox2.Checked:=True else
+          if hangar_s17='false' then CheckBox2.Checked:=False else
+          begin
+            ShowMessage(error_message(hangar_name, hangar_s17, hgar17_SL));
+            Application.Terminate;
+          end;
+        end;
 
-  // Стиль курсив шрифта // 17
-  Search:='"fontStyle"';
-  SearchLine_my();
-  Search:='"italic"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s17:=hangar.Strings[SearchLine];
-  hgar17_SL:=SearchLine;
-  hangar_s17:=new_change_str(Search, hangar_s17);
-  if hangar_s17='true' then CheckBox2.Checked:=True else
-  if hangar_s17='false' then CheckBox2.Checked:=False else
-  begin
-    ShowMessage(error_message(hangar_name, hangar_s17, hgar17_SL));
-    Application.Terminate;
-  end;
-  end;
+        hgar04_SL:=Search_Line(hgar03_SL, '"color"', hangar);
+        if hgar04_SL=-1 then error_line('"color"', hangar_name) else
+        begin
+          // Разные цвета в зависимости от времени отклика сервера // 18
+          Search:='"great"';
+          hgar18_SL:=Search_Line(hgar04_SL, Search, hangar);
+          if hgar18_SL=-1 then error_line(Search, hangar_name) else
+          begin
+            hangar_s18:=hangar.Strings[hgar18_SL];
+            hangar_s18:=DelStartEnd(new_change_str(Search, hangar_s18));
+            mbColorPreview1.Color:=HexToTColor(hangar_s18);
+            hangar_s18:='#' + hangar_s18;
+            Edit3.Text:=hangar_s18;
+            end;
+          end;
 
-  // Разные цвета в зависимости от времени отклика сервера // 18
-  Search:='"fontStyle"';
-  SearchLine_my();
-  Search:='"color"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  Search:='"great"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s18:=hangar.Strings[SearchLine];
-  hgar18_SL:=SearchLine;
-  hangar_s18:=DelStartEnd(new_change_str(Search, hangar_s18));
-  mbColorPreview1.Color:=HexToTColor(hangar_s18);
-  hangar_s18:='#' + hangar_s18;
-  Edit3.Text:=hangar_s18;
-  end;
-  end;
+          // Разные цвета в зависимости от времени отклика сервера // 19
+          Search:='"good"';
+          hgar19_SL:=Search_Line(hgar04_SL, Search, hangar);
+          if hgar19_SL=-1 then error_line(Search, hangar_name) else
+          begin
+            hangar_s19:=hangar.Strings[hgar19_SL];
+            hangar_s19:=DelStartEnd(new_change_str(Search, hangar_s19));
+            mbColorPreview2.Color:=HexToTColor(hangar_s19);
+            hangar_s19:='#' + hangar_s19;
+            Edit4.Text:=hangar_s19;
+          end;
 
-  // Разные цвета в зависимости от времени отклика сервера // 19
-  Search:='"fontStyle"';
-  SearchLine_my();
-  Search:='"color"';
-  SearchLine_my_2();
-  Search:='"good"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s19:=hangar.Strings[SearchLine];
-  hgar19_SL:=SearchLine;
-  hangar_s19:=DelStartEnd(new_change_str(Search, hangar_s19));
-  mbColorPreview2.Color:=HexToTColor(hangar_s19);
-  hangar_s19:='#' + hangar_s19;
-  Edit4.Text:=hangar_s19;
-  end;
+          // Разные цвета в зависимости от времени отклика сервера // 20
+          Search:='"poor"';
+          hgar20_SL:=Search_Line(hgar04_SL, Search, hangar);
+          if hgar20_SL=-1 then error_line(Search, hangar_name) else
+          begin
+            hangar_s20:=hangar.Strings[hgar20_SL];
+            hangar_s20:=DelStartEnd(new_change_str(Search, hangar_s20));
+            mbColorPreview3.Color:=HexToTColor(hangar_s20);
+            hangar_s20:='#' + hangar_s20;
+            Edit5.Text:=hangar_s20;
+          end;
 
-  // Разные цвета в зависимости от времени отклика сервера // 20
-  Search:='"fontStyle"';
-  SearchLine_my();
-  Search:='"color"';
-  SearchLine_my_2();
-  Search:='"poor"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s20:=hangar.Strings[SearchLine];
-  hgar20_SL:=SearchLine;
-  hangar_s20:=DelStartEnd(new_change_str(Search, hangar_s20));
-  mbColorPreview3.Color:=HexToTColor(hangar_s20);
-  hangar_s20:='#' + hangar_s20;
-  Edit5.Text:=hangar_s20;
-  end;
+          // Разные цвета в зависимости от времени отклика сервера // 21
+          Search:='"bad"';
+          hgar21_SL:=Search_Line(hgar04_SL, Search, hangar);
+          if hgar21_SL=-1 then error_line(Search, hangar_name) else
+          begin
+            hangar_s21:=hangar.Strings[hgar21_SL];
+            hangar_s21:=DelStartEnd(new_change_str(Search, hangar_s21));
+            mbColorPreview4.Color:=HexToTColor(hangar_s21);
+            hangar_s21:='#' + hangar_s21;
+            Edit6.Text:=hangar_s21;
+          end;
+        end;
 
-  // Разные цвета в зависимости от времени отклика сервера // 21
-  Search:='"fontStyle"';
-  SearchLine_my();
-  Search:='"color"';
-  SearchLine_my_2();
-  Search:='"bad"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s21:=hangar.Strings[SearchLine];
-  hgar21_SL:=SearchLine;
-  hangar_s21:=DelStartEnd(new_change_str(Search, hangar_s21));
-  mbColorPreview4.Color:=HexToTColor(hangar_s21);
-  hangar_s21:='#' + hangar_s21;
-  Edit6.Text:=hangar_s21;
-  end;
+      hgar05_SL:=Search_Line(hgar02_SL, '"threshold"', hangar);
+      if hgar05_SL=-1 then error_line('"threshold"', hangar_name) else
+      begin
+        // Пороговые значения, определеяющие качество отклика // 22
+        Search:='"great"';
+        hgar22_SL:=Search_Line(hgar05_SL, Search, hangar);
+        if hgar22_SL=-1 then error_line(Search, hangar_name) else
+        begin
+          hangar_s22:=hangar.Strings[hgar22_SL];
+          hangar_s22:=new_change_str(Search, hangar_s22);
+          SpinEdit17.Value:=StrToInt(hangar_s22);
+        end;
 
-  // Пороговые значения, определеяющие качество отклика // 22
-  Search:='"threshold"';
-  SearchLine_my();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  Search:='"great"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s22:=hangar.Strings[SearchLine];
-  hgar22_SL:=SearchLine;
-  hangar_s22:=new_change_str(Search, hangar_s22);
-  SpinEdit17.Value:=StrToInt(hangar_s22);
-  end;
-  end;
+        // Пороговые значения, определеяющие качество отклика // 23
+        Search:='"good"';
+        hgar23_SL:=Search_Line(hgar05_SL, Search, hangar);
+        if hgar23_SL=-1 then error_line(Search, hangar_name) else
+        begin
+          hangar_s23:=hangar.Strings[hgar23_SL];
+          hangar_s23:=new_change_str(Search, hangar_s23);
+          SpinEdit18.Value:=StrToInt(hangar_s23);
+        end;
 
-  // Пороговые значения, определеяющие качество отклика // 23
-  Search:='"threshold"';
-  SearchLine_my();
-  Search:='"good"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s23:=hangar.Strings[SearchLine];
-  hgar23_SL:=SearchLine;
-  hangar_s23:=new_change_str(Search, hangar_s23);
-  SpinEdit18.Value:=StrToInt(hangar_s23);
-  end;
+        // Пороговые значения, определеяющие качество отклика // 24
+        Search:='"poor"';
+        hgar24_SL:=Search_Line(hgar05_SL, Search, hangar);
+        if hgar24_SL=-1 then error_line(Search, hangar_name) else
+        begin
+          hangar_s24:=hangar.Strings[hgar24_SL];
+          hangar_s24:=new_change_str(Search, hangar_s24);
+          SpinEdit19.Value:=StrToInt(hangar_s24);
+        end;
+      end;
 
-  // Пороговые значения, определеяющие качество отклика // 24
-  Search:='"threshold"';
-  SearchLine_my();
-  Search:='"poor"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s24:=hangar.Strings[SearchLine];
-  hgar24_SL:=SearchLine;
-  hangar_s24:=new_change_str(Search, hangar_s24);
-  SpinEdit19.Value:=StrToInt(hangar_s24);
-  end;
+      hgar06_SL:=Search_Line(hgar02_SL, '"shadow"', hangar);
+      if hgar06_SL=-1 then error_line('"shadow"', hangar_name) else
+      begin
+        // Параметры тени // 25
+        Search:='"enabled"';
+        hgar25_SL:=Search_Line(hgar06_SL, Search, hangar);
+        if hgar25_SL=-1 then error_line(Search, hangar_name) else
+        begin
+          hangar_s25:=hangar.Strings[hgar25_SL];
+          hangar_s25:=new_change_str(Search, hangar_s25);
+          if hangar_s25='true' then RadioButton45.Checked:=True else
+          if hangar_s25='false' then RadioButton46.Checked:=True else
+          begin
+            ShowMessage(error_message(hangar_name, hangar_s25, hgar25_SL));
+            Application.Terminate;
+          end;
+        end;
 
-  // Параметры тени // 25
-  Search:='"pingServers"';
-  SearchLine_my();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  Search:='"shadow"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  Search:='"enabled"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s25:=hangar.Strings[SearchLine];
-  hgar25_SL:=SearchLine;
-  hangar_s25:=new_change_str(Search, hangar_s25);
-  if hangar_s25='true' then RadioButton45.Checked:=True else
-  if hangar_s25='false' then RadioButton46.Checked:=True else
-  begin
-    ShowMessage(error_message(hangar_name, hangar_s25, hgar25_SL));
-    Application.Terminate;
-  end;
-  end;
-  end;
-  end;
+        // Параметры тени // 26
+        Search:='"color"';
+        hgar26_SL:=Search_Line(hgar06_SL, Search, hangar);
+        if hgar26_SL=-1 then error_line(Search, hangar_name) else
+        begin
+          hangar_s26:=hangar.Strings[hgar26_SL];
+          hangar_s26:=DelStartEnd(new_change_str(Search, hangar_s26));
+          mbColorPreview5.Color:=HexToTColor(hangar_s26);
+          hangar_s26:='#' + hangar_s26;
+          Edit2.Text:=hangar_s26;
+        end;
 
-  // Параметры тени // 26
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"shadow"';
-  SearchLine_my_2();
-  Search:='"color"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s26:=hangar.Strings[SearchLine];
-  hgar26_SL:=SearchLine;
-  hangar_s26:=DelStartEnd(new_change_str(Search, hangar_s26));
-  mbColorPreview5.Color:=HexToTColor(hangar_s26);
-  hangar_s26:='#' + hangar_s26;
-  Edit2.Text:=hangar_s26;
-  end;
+        // Параметры тени // 27
+        Search:='"distance"';
+        hgar27_SL:=Search_Line(hgar06_SL, Search, hangar);
+        if hgar27_SL=-1 then error_line(Search, hangar_name) else
+        begin
+          hangar_s27:=hangar.Strings[hgar27_SL];
+          hangar_s27:=new_change_str(Search, hangar_s27);
+          SpinEdit12.Value:=StrToInt(hangar_s27);
+        end;
 
-  // Параметры тени // 27
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"shadow"';
-  SearchLine_my_2();
-  Search:='"distance"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s27:=hangar.Strings[SearchLine];
-  hgar27_SL:=SearchLine;
-  hangar_s27:=new_change_str(Search, hangar_s27);
-  SpinEdit12.Value:=StrToInt(hangar_s27);
-  end;
+        // Параметры тени // 28
+        Search:='"angle"';
+        hgar28_SL:=Search_Line(hgar06_SL, Search, hangar);
+        if hgar28_SL=-1 then error_line(Search, hangar_name) else
+        begin
+          hangar_s28:=hangar.Strings[hgar28_SL];
+          hangar_s28:=new_change_str(Search, hangar_s28);
+          SpinEdit13.Value:=StrToInt(hangar_s28);
+        end;
 
-  // Параметры тени // 28
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"shadow"';
-  SearchLine_my_2();
-  Search:='"angle"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s28:=hangar.Strings[SearchLine];
-  hgar28_SL:=SearchLine;
-  hangar_s28:=new_change_str(Search, hangar_s28);
-  SpinEdit13.Value:=StrToInt(hangar_s28);
-  end;
+        // Параметры тени // 29
+        Search:='"alpha"';
+        hgar29_SL:=Search_Line(hgar06_SL, Search, hangar);
+        if hgar29_SL=-1 then error_line(Search, hangar_name) else
+        begin
+          hangar_s29:=hangar.Strings[hgar29_SL];
+          hangar_s29:=new_change_str(Search, hangar_s29);
+          SpinEdit14.Value:=StrToInt(hangar_s29);
+        end;
 
-  // Параметры тени // 29
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"shadow"';
-  SearchLine_my_2();
-  Search:='"alpha"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s29:=hangar.Strings[SearchLine];
-  hgar29_SL:=SearchLine;
-  hangar_s29:=new_change_str(Search, hangar_s29);
-  SpinEdit14.Value:=StrToInt(hangar_s29);
-  end;
+        // Параметры тени // 30
+        Search:='"blur"';
+        hgar30_SL:=Search_Line(hgar06_SL, Search, hangar);
+        if hgar30_SL=-1 then error_line(Search, hangar_name) else
+        begin
+          hangar_s30:=hangar.Strings[hgar30_SL];
+          hangar_s30:=new_change_str(Search, hangar_s30);
+          SpinEdit15.Value:=StrToInt(hangar_s30);
+        end;
 
-  // Параметры тени // 30
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"shadow"';
-  SearchLine_my_2();
-  Search:='"blur"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s30:=hangar.Strings[SearchLine];
-  hgar30_SL:=SearchLine;
-  hangar_s30:=new_change_str(Search, hangar_s30);
-  SpinEdit15.Value:=StrToInt(hangar_s30);
-  end;
-
-  // Параметры тени // 31
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"shadow"';
-  SearchLine_my_2();
-  Search:='"strength"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s31:=hangar.Strings[SearchLine];
-  hgar31_SL:=SearchLine;
-  hangar_s31:=new_change_str(Search, hangar_s31);
-  SpinEdit16.Value:=StrToInt(hangar_s31);
-  end;
-
-  // Разделитель / 32
-  Search:='"pingServers"';
-  SearchLine_my();
-  Search:='"delimiter"';
-  SearchLine_my_2();
-  if SearchLine=-1 then Application.Terminate else
-  begin
-  hangar_s32:=hangar.Strings[SearchLine];
-  hgar32_SL:=SearchLine;
-  hangar_s32:=new_change_str(Search, hangar_s32);
-  Edit26.Text:=DelStartEnd(hangar_s32);
+        // Параметры тени // 31
+        Search:='"strength"';
+        hgar31_SL:=Search_Line(hgar06_SL, Search, hangar);
+        if hgar31_SL=-1 then error_line(Search, hangar_name) else
+        begin
+          hangar_s31:=hangar.Strings[hgar31_SL];
+          hangar_s31:=new_change_str(Search, hangar_s31);
+          SpinEdit16.Value:=StrToInt(hangar_s31);
+        end;
+      end;
+    end;
   end;
 end;
 
@@ -3050,9 +2858,7 @@ begin
   // процедура подготовки изменений для сохранения в файл battle.xc
   if (RadioButton1.Checked=True) then chek1:='true' else chek1:='false';
   if (RadioButton3.Checked=True) then chek2:='true' else chek2:='false';
-  if (RadioButton6.Checked=True) then chek3:='true' else chek3:='false';
   if (RadioButton7.Checked=True) then chek4:='true' else chek4:='false';
-  if (RadioButton9.Checked=True) then chek5:='true' else chek5:='false';
 
   // 1
   b_s1:=battle.Strings[bs1_SL];
@@ -3066,23 +2872,11 @@ begin
   battle.Delete(bs2_SL);
   battle.Insert(bs2_SL, b_s2);
 
-  // 3
-  b_s3:=battle.Strings[bs3_SL];
-  b_s3:=Smart_Replacing('"removePanelsModeSwitcher"', b_s3, chek3);
-  battle.Delete(bs3_SL);
-  battle.Insert(bs3_SL, b_s3);
-
   // 4
   b_s4:=battle.Strings[bs4_SL];
   b_s4:=Smart_Replacing('"highlightVehicleIcon"', b_s4, chek4);
   battle.Delete(bs4_SL);
   battle.Insert(bs4_SL, b_s4);
-
-  // 5
-  b_s5:=battle.Strings[bs5_SL];
-  b_s5:=Smart_Replacing('"useStandardMarkers"', b_s5, chek5);
-  battle.Delete(bs5_SL);
-  battle.Insert(bs5_SL, b_s5);
 
   // 6
   b_s6:=battle.Strings[bs6_SL];
