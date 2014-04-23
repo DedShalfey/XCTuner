@@ -1,7 +1,7 @@
 object XCTuner_Form1: TXCTuner_Form1
-  Left = 277
+  Left = 250
   Height = 602
-  Top = 130
+  Top = 86
   Width = 1053
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
@@ -427,9 +427,9 @@ object XCTuner_Form1: TXCTuner_Form1
     Height = 602
     Top = 0
     Width = 867
-    ActivePage = TabSheet16
+    ActivePage = TabSheet1
     Align = alClient
-    TabIndex = 5
+    TabIndex = 0
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Общие'
@@ -1169,11 +1169,11 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientWidth = 851
           object GroupBox7: TGroupBox
             Left = 78
-            Height = 297
+            Height = 312
             Top = 64
             Width = 584
             BorderSpacing.Bottom = 8
-            ClientHeight = 279
+            ClientHeight = 294
             ClientWidth = 580
             TabOrder = 0
             object GroupBox8: TGroupBox
@@ -1337,7 +1337,7 @@ object XCTuner_Form1: TXCTuner_Form1
             object GroupBox13: TGroupBox
               Left = 302
               Height = 57
-              Top = 112
+              Top = 72
               Width = 265
               Caption = 'Текстовое поле "Союзники | Противники":'
               ClientHeight = 39
@@ -1391,7 +1391,7 @@ object XCTuner_Form1: TXCTuner_Form1
               Left = 302
               Height = 49
               Hint = 'Обновить данные из конфига'
-              Top = 215
+              Top = 232
               Width = 115
               Caption = 'Обновить'
               Glyph.Data = {
@@ -1480,7 +1480,7 @@ object XCTuner_Form1: TXCTuner_Form1
               Left = 452
               Height = 49
               Hint = 'Сохранить изменения в конфиг'
-              Top = 215
+              Top = 232
               Width = 115
               Caption = 'Сохранить'
               Glyph.Data = {
@@ -1567,7 +1567,7 @@ object XCTuner_Form1: TXCTuner_Form1
             object GroupBox14: TGroupBox
               Left = 302
               Height = 88
-              Top = 8
+              Top = 136
               Width = 265
               Caption = 'Панель критов от навыка "эксперт":'
               ClientHeight = 70
@@ -1728,6 +1728,58 @@ object XCTuner_Form1: TXCTuner_Form1
                 2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
                 4E44AE426082
               }
+            end
+            object GroupBox62: TGroupBox
+              Left = 302
+              Height = 57
+              Top = 8
+              Width = 265
+              Caption = 'Макрос {{hp}} в ушах и на миникарте:'
+              ClientHeight = 39
+              ClientWidth = 261
+              TabOrder = 9
+              object RadioButton81: TRadioButton
+                Cursor = crHandPoint
+                Left = 14
+                Height = 19
+                Top = 8
+                Width = 77
+                Caption = 'Включено'
+                Checked = True
+                TabOrder = 1
+                TabStop = True
+              end
+              object RadioButton82: TRadioButton
+                Cursor = crHandPoint
+                Left = 142
+                Height = 19
+                Top = 8
+                Width = 84
+                Caption = 'Отключено'
+                TabOrder = 0
+              end
+              object Image86: TImage
+                Cursor = crHandPoint
+                Left = 245
+                Height = 16
+                Top = 22
+                Width = 16
+                OnClick = Image86Click
+                Picture.Data = {
+                  1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+                  0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+                  0467414D410000AFC837058AE90000001974455874536F667477617265004164
+                  6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+                  F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+                  E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+                  3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                  FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+                  8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+                  2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+                  2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+                  4E44AE426082
+                }
+              end
             end
           end
         end
@@ -4140,12 +4192,12 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientHeight = 546
           ClientWidth = 851
           object GroupBox36: TGroupBox
-            Left = 146
+            Left = 118
             Height = 456
             Top = 14
-            Width = 384
+            Width = 424
             ClientHeight = 438
-            ClientWidth = 380
+            ClientWidth = 420
             TabOrder = 0
             object Label41: TLabel
               Left = 14
@@ -4159,8 +4211,8 @@ object XCTuner_Form1: TXCTuner_Form1
               Left = 14
               Height = 15
               Top = 46
-              Width = 181
-              Caption = 'Номер колонки для сортировки:'
+              Width = 140
+              Caption = 'Колонка для сортировки:'
               ParentColor = False
             end
             object ComboBox2: TComboBox
@@ -4183,28 +4235,36 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object ComboBox3: TComboBox
               Cursor = crHandPoint
-              Left = 205
+              Left = 161
               Height = 23
-              Top = 43
-              Width = 129
+              Top = 42
+              Width = 229
               ItemHeight = 15
-              ItemIndex = 0
+              ItemIndex = 2
               Items.Strings = (
-                '1 - Нация'
-                '2 - Тип'
-                '3 - Уровень'
-                '4 - Название'
-                '5 - Бои'
-                '6 - Победы'
-                '7 - Средний опыт'
-                '8 - Классность'
+                '1 - Нация (по возрастанию)'
+                '2 - Тип (по возрастанию)'
+                '3 - Уровень (по возрастанию)'
+                '4 - Название (по возрастанию)'
+                '5 - Бои (по возрастанию)'
+                '6 - Победы (по возрастанию)'
+                '7 - Средний опыт (по возрастанию)'
+                '8 - Классность (по возрастанию)'
+                '-1 - Нация (по убыванию)'
+                '-2 - Тип (по убыванию)'
+                '-3 - Уровень (по убыванию)'
+                '-4 - Название (по убыванию)'
+                '-5 - Бои (по убыванию)'
+                '-6 - Победы (по убыванию)'
+                '-7 - Средний опыт (по убыванию)'
+                '-8 - Классность (по убыванию)'
               )
               Style = csDropDownList
               TabOrder = 1
-              Text = '1 - Нация'
+              Text = '3 - Уровень (по возрастанию)'
             end
             object GroupBox38: TGroupBox
-              Left = 43
+              Left = 58
               Height = 57
               Top = 96
               Width = 296
@@ -4279,7 +4339,7 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object Image37: TImage
               Cursor = crHandPoint
-              Left = 345
+              Left = 398
               Height = 16
               Top = 46
               Width = 16
@@ -4300,7 +4360,7 @@ object XCTuner_Form1: TXCTuner_Form1
               }
             end
             object GroupBox39: TGroupBox
-              Left = 43
+              Left = 58
               Height = 57
               Top = 168
               Width = 296
@@ -4352,7 +4412,7 @@ object XCTuner_Form1: TXCTuner_Form1
               end
             end
             object GroupBox40: TGroupBox
-              Left = 43
+              Left = 58
               Height = 57
               Top = 240
               Width = 296
@@ -4404,7 +4464,7 @@ object XCTuner_Form1: TXCTuner_Form1
               end
             end
             object GroupBox41: TGroupBox
-              Left = 43
+              Left = 58
               Height = 57
               Top = 312
               Width = 296
@@ -4456,7 +4516,7 @@ object XCTuner_Form1: TXCTuner_Form1
               end
             end
             object Label43: TLabel
-              Left = 14
+              Left = 29
               Height = 15
               Top = 397
               Width = 130
@@ -4464,7 +4524,7 @@ object XCTuner_Form1: TXCTuner_Form1
               ParentColor = False
             end
             object Edit7: TEdit
-              Left = 150
+              Left = 165
               Height = 23
               Top = 394
               Width = 204
@@ -4472,7 +4532,7 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object Image41: TImage
               Cursor = crHandPoint
-              Left = 359
+              Left = 374
               Height = 16
               Top = 397
               Width = 16
@@ -4495,7 +4555,7 @@ object XCTuner_Form1: TXCTuner_Form1
           end
           object BitRefresh5: TBitBtn
             Cursor = crHandPoint
-            Left = 538
+            Left = 550
             Height = 49
             Hint = 'Обновить данные из конфига'
             Top = 20
@@ -4584,7 +4644,7 @@ object XCTuner_Form1: TXCTuner_Form1
           end
           object BitSave5: TBitBtn
             Cursor = crHandPoint
-            Left = 538
+            Left = 550
             Height = 49
             Hint = 'Сохранить изменения в конфиг'
             Top = 74

@@ -140,6 +140,7 @@ type
     GroupBox6: TGroupBox;
     GroupBox60: TGroupBox;
     GroupBox61: TGroupBox;
+    GroupBox62: TGroupBox;
     GroupBox7: TGroupBox;
     GroupBox8: TGroupBox;
     GroupBox9: TGroupBox;
@@ -226,6 +227,7 @@ type
     Image83: TImage;
     Image84: TImage;
     Image85: TImage;
+    Image86: TImage;
     ImageList1: TImageList;
     Label1: TLabel;
     Label10: TLabel;
@@ -391,6 +393,8 @@ type
     RadioButton79: TRadioButton;
     RadioButton8: TRadioButton;
     RadioButton80: TRadioButton;
+    RadioButton81: TRadioButton;
+    RadioButton82: TRadioButton;
     ScrollBox1: TScrollBox;
     SpinEdit1: TSpinEdit;
     SpinEdit10: TSpinEdit;
@@ -582,6 +586,7 @@ type
     procedure Image83Click(Sender: TObject);
     procedure Image84Click(Sender: TObject);
     procedure Image85Click(Sender: TObject);
+    procedure Image86Click(Sender: TObject);
     procedure Image8Click(Sender: TObject);
     procedure Image9Click(Sender: TObject);
     procedure Label63Click(Sender: TObject);
@@ -696,7 +701,7 @@ var
   activ_config, xvm_file_name, battle_name, bt_result_name, login_name, hangar_name, hotkeys_name, userInfo_name, rating_name: String;
   squad_name, iconset_name, texts_name, turret_name, frag_name, pl_panel_name, expanel_name: String;
 
-  b_s1, b_s2, b_s4, b_s6, b_s7: String;
+  b_s1, b_s2, b_s4, b_s6, b_s7, b_s8: String;
 
   bt_res_s1, bt_res_s2, bt_res_s3, bt_res_s4, bt_res_s5, bt_res_s6: String;
 
@@ -737,7 +742,7 @@ var
 
   squad_s1, squad_s2, squad_s3: String;
 
-  bs0_SL, bs1_SL, bs2_SL, bs4_SL, bs6_SL, bs7_SL: Integer;
+  bs0_SL, bs1_SL, bs2_SL, bs4_SL, bs6_SL, bs7_SL, bs8_SL: Integer;
   log0_SL, log1_SL, log2_SL, log3_SL, log4_SL, log5_SL, log6_SL, log7_SL: Integer;
   xvm0_SL, xvm1_SL, xvm2_SL, xvm3_SL, xvm4_SL, xvm5_SL, xvm6_SL, xvm7_SL, xvm8_SL, xvm9_SL, xvm10_SL: Integer;
 
@@ -1243,7 +1248,7 @@ begin
       (FileExists(dir_xvm+rating_name   ))) then
     begin
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.8.93';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.9.1';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       BitBtn1.Click;
@@ -1344,9 +1349,8 @@ end;
 
 procedure TXCTuner_Form1.Image16Click(Sender: TObject);
 begin
-  ShowMessage(tpi+IntToStr(log3_SL+1)+litf+login_name+path
-  +activ_config+#13#10+enopt+'"confirmOldReplays": true'+#13#10+disopt+'"confirmOldReplays": false'
-  +#13#10+'Если включить, то при открытие старых реплеев они будут автоматически запускаться на проигрывание');
+  ShowMessage(tpi+IntToStr(log7_SL+1)+litf+login_name+path
+  +activ_config+#13#10+enopt+'"saveLastServer": true'+#13#10+disopt+'"saveLastServer": false');
 end;
 
 procedure TXCTuner_Form1.Image17Click(Sender: TObject);
@@ -1827,6 +1831,13 @@ begin
   +activ_config+#13#10+'0 - прозрачные, 100 - не прозрачные');
 end;
 
+procedure TXCTuner_Form1.Image86Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(bs8_SL+1)+litf+battle_name+path
+  +activ_config+#13#10+enopt+'"allowHpInPanelsAndMinimap": true'+#13#10+disopt+'"allowHpInPanelsAndMinimap": false'
+  +#13#10+'ВНИМАНИЕ: может понизить производительность');
+end;
+
 procedure TXCTuner_Form1.Image8Click(Sender: TObject);
 begin
   ShowMessage(tpi+IntToStr(bs2_SL+1)+litf+battle_name+path
@@ -2176,7 +2187,7 @@ begin
           // Если находим на участке запятую или пробел, то
           // копируем этот участкок длиною i-1, начиная с первого символа
           // и выходим из функции
-          if (full_str[i]=#44) or (full_str[i]=#32) then
+          if ((full_str[i]=#44) or (full_str[i]=#32) or (full_str[i]=#9)) then
             begin
               Result:=Copy(full_str, 1, i - 1 );
               Exit;
@@ -2233,7 +2244,7 @@ begin
   Result:=-1;
 end;
 
-// процедура нахождения активного конфига
+// процедура нахождения активного конфига  { TODO : Доработать для случая, когда 1 строка в файле! }
 procedure TXCTuner_Form1.activ_conf;
 var i, px2, px3: Integer;
 begin
@@ -2241,10 +2252,36 @@ begin
     begin
       xvm_base:=TStringList.Create;
       xvm_base.LoadFromFile(ExtractFilePath(ParamStr(0))+'xvm.xc');
+      if (xvm_base.Count=1) then
+        begin
+        activ_config:=Trim(xvm_base.Strings[0]);
+        if Length(activ_config)=0  then begin ShowMessage('Пустой файл! Программа закроется!'); Application.Terminate; end;
+        if activ_config[1]='$' then
+          begin
+            Delete(activ_config, 1, pos('"', activ_config));
+            activ_config:=TrimLeft(activ_config);
+            px2:=pos('@xvm.xc', activ_config);
+            px3:=pos('xvm.xc', activ_config);
+            if px2<>0 then
+              begin
+                Delete(activ_config, px2, Length(activ_config) - px2 + 2);
+                xvm_file_name:='@xvm.xc';
+                exit;
+              end;
+            if px3<>0 then
+              begin
+                Delete(activ_config, px3-1, Length(activ_config) - px3 + 2);
+                xvm_file_name:='xvm.xc';
+                exit;
+              end;
+          end;
+      end else
+      begin
     for i := 0 to (xvm_base.Count - 1) do
       begin
         activ_config:=Trim(xvm_base.Strings[i]);
         if Length(activ_config)=0  then Continue;
+        if ((activ_config[1] = '/') and (activ_config[2] = '/')) then Continue;
         if activ_config[1]='$' then
           begin
             Delete(activ_config, 1, pos('"', activ_config));
@@ -2270,6 +2307,7 @@ begin
       ShowMessage('Активный конфиг не найден! Проверте правильность нахождения пути! Программа закроется!');
       Application.Terminate;
     end;
+      end;
     end else
     begin
       // выводим сообщение и принудительно закрываем программу
@@ -2327,6 +2365,21 @@ begin
       if b_s4='false' then RadioButton8.Checked:=True else
       begin
         ShowMessage(error_message(battle_name, b_s4, bs4_SL));
+        Application.Terminate;
+      end;
+    end;
+
+    // включить {{hp*}} макросы в ушах и на миникарте / 8
+    Search:='"allowHpInPanelsAndMinimap"';
+    bs8_SL:=Search_Line(bs0_SL, Search, battle);
+    if bs8_SL=-1 then error_line(Search, battle_name) else
+    begin
+      b_s8:=battle.Strings[bs8_SL];
+      b_s8:=new_change_str(Search, b_s8);
+      if b_s8='true' then RadioButton81.Checked:=True else
+      if b_s8='false' then RadioButton82.Checked:=True else
+      begin
+        ShowMessage(error_message(battle_name, b_s8, bs8_SL));
         Application.Terminate;
       end;
     end;
@@ -3184,6 +3237,7 @@ end;
 
 // Процедура загрузки данных из файла userInfo.xc в программу /
 procedure TXCTuner_Form1.userinfo_loading;
+var temp: string;
 begin
   userInfo.Clear;
   userInfo.LoadFromFile(dir_xvm+userInfo_name);
@@ -3207,7 +3261,13 @@ begin
     begin
       UserInfo_s2:=userInfo.Strings[UI2_SL];
       UserInfo_s2:=new_change_str(Search, UserInfo_s2);
-      ComboBox3.ItemIndex:=StrToInt(UserInfo_s2) - 1;
+      if (UserInfo_s2[1] <> '-') then
+        ComboBox3.ItemIndex:=StrToInt(UserInfo_s2) - 1;
+      if (UserInfo_s2[1] = '-') then
+        begin
+          temp := Copy(UserInfo_s2, 2, Length(UserInfo_s2));
+          ComboBox3.ItemIndex:=StrToInt(temp) + 7;
+        end;
     end;
 
     // Показывать расширенные данные в профиле // 3
@@ -3299,9 +3359,18 @@ begin
 
   // Номер колонки для сортировки // 2
   UserInfo_s2:=userInfo.Strings[UI2_SL];
-  UserInfo_s2:=Smart_Replacing('"sortColumn"', UserInfo_s2, IntToStr(ComboBox3.ItemIndex+1));
-  userInfo.Delete(UI2_SL);
-  userInfo.Insert(UI2_SL, UserInfo_s2);
+  if (ComboBox3.ItemIndex <= 7) then
+    begin
+      UserInfo_s2:=Smart_Replacing('"sortColumn"', UserInfo_s2, IntToStr(ComboBox3.ItemIndex+1));
+      userInfo.Delete(UI2_SL);
+      userInfo.Insert(UI2_SL, UserInfo_s2);
+    end;
+  if (ComboBox3.ItemIndex >= 8) then
+    begin
+      UserInfo_s2:=Smart_Replacing('"sortColumn"', UserInfo_s2, '-'+IntToStr((ComboBox3.ItemIndex-7)));
+      userInfo.Delete(UI2_SL);
+      userInfo.Insert(UI2_SL, UserInfo_s2);
+    end;
 
   // Показывать расширенные данные в профиле // 3
   UserInfo_s3:=userInfo.Strings[UI3_SL];
@@ -3583,6 +3652,7 @@ begin
   if (RadioButton1.Checked=True) then chek1:='true' else chek1:='false';
   if (RadioButton3.Checked=True) then chek2:='true' else chek2:='false';
   if (RadioButton7.Checked=True) then chek4:='true' else chek4:='false';
+  if (RadioButton81.Checked=True) then chek5:='true' else chek5:='false';
 
   // 1
   b_s1:=battle.Strings[bs1_SL];
@@ -3601,6 +3671,12 @@ begin
   b_s4:=Smart_Replacing('"highlightVehicleIcon"', b_s4, chek4);
   battle.Delete(bs4_SL);
   battle.Insert(bs4_SL, b_s4);
+
+  // 8
+  b_s8:=battle.Strings[bs8_SL];
+  b_s8:=Smart_Replacing('"allowHpInPanelsAndMinimap"', b_s8, chek5);
+  battle.Delete(bs8_SL);
+  battle.Insert(bs8_SL, b_s8);
 
   // 6
   b_s6:=battle.Strings[bs6_SL];

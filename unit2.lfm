@@ -424,8 +424,8 @@ object About: TAbout
     Left = 140
     Height = 15
     Top = 96
-    Width = 84
-    Caption = 'Версия: 0.1.8.93'
+    Width = 78
+    Caption = 'Версия: 0.1.9.1'
     Font.Color = clBlack
     ParentColor = False
     ParentFont = False
