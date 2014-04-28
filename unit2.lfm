@@ -415,7 +415,7 @@ object About: TAbout
   object Label1: TLabel
     Left = 88
     Height = 15
-    Top = 72
+    Top = 66
     Width = 181
     Caption = 'Автор: Rustam А. aka Ded_Shalfey'
     ParentColor = False
@@ -423,9 +423,9 @@ object About: TAbout
   object Label2: TLabel
     Left = 140
     Height = 15
-    Top = 96
-    Width = 78
-    Caption = 'Версия: 0.1.9.1'
+    Top = 85
+    Width = 84
+    Caption = 'Версия: 0.1.9.96'
     Font.Color = clBlack
     ParentColor = False
     ParentFont = False
@@ -433,7 +433,7 @@ object About: TAbout
   object Label3: TLabel
     Left = 136
     Height = 15
-    Top = 144
+    Top = 153
     Width = 88
     Caption = 'Copyright©2014'
     ParentColor = False
@@ -443,7 +443,7 @@ object About: TAbout
     Left = 121
     Height = 15
     Hint = 'http://www.koreanrandom.com/forum/topic/12494-xctuner-настройщик-конфигов-версия-01847-дата-110314-статус-beta/'
-    Top = 117
+    Top = 102
     Width = 119
     Caption = 'Оф. тема программы'
     Font.Color = clBlue
@@ -454,5 +454,30 @@ object About: TAbout
     OnClick = Label4Click
     OnMouseMove = Label4MouseMove
     OnMouseLeave = Label4MouseLeave
+  end
+  object Label5: TLabel
+    Left = 170
+    Height = 15
+    Top = 118
+    Width = 21
+    Caption = 'или'
+    ParentColor = False
+  end
+  object Label6: TLabel
+    Cursor = crHandPoint
+    Left = 121
+    Height = 15
+    Hint = 'http://shalfey-lab.ru/testirovanie/'
+    Top = 133
+    Width = 119
+    Caption = 'Оф. тема программы'
+    Font.Color = clBlue
+    ParentColor = False
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = True
+    OnClick = Label6Click
+    OnMouseMove = Label6MouseMove
+    OnMouseLeave = Label6MouseLeave
   end
 end

@@ -18,6 +18,8 @@ type
     BitBtn10: TBitBtn;
     BitBtn11: TBitBtn;
     BitBtn12: TBitBtn;
+    BitBtn13: TBitBtn;
+    BitBtn14: TBitBtn;
     BitBtn2: TBitBtn;
     BitBtn4: TBitBtn;
     BitBtn5: TBitBtn;
@@ -29,6 +31,8 @@ type
     BitRefresh10: TBitBtn;
     BitRefresh11: TBitBtn;
     BitRefresh12: TBitBtn;
+    BitRefresh13: TBitBtn;
+    BitRefresh14: TBitBtn;
     BitRefresh2: TBitBtn;
     BitRefresh3: TBitBtn;
     BitRefresh4: TBitBtn;
@@ -41,6 +45,8 @@ type
     BitSave10: TBitBtn;
     BitSave11: TBitBtn;
     BitSave12: TBitBtn;
+    BitSave13: TBitBtn;
+    BitSave14: TBitBtn;
     BitSave2: TBitBtn;
     BitSave3: TBitBtn;
     BitSave4: TBitBtn;
@@ -76,9 +82,34 @@ type
     Edit24: TEdit;
     Edit25: TEdit;
     Edit26: TEdit;
+    Edit27: TEdit;
+    Edit28: TEdit;
+    Edit29: TEdit;
     Edit3: TEdit;
+    Edit30: TEdit;
+    Edit31: TEdit;
+    Edit32: TEdit;
+    Edit33: TEdit;
+    Edit34: TEdit;
+    Edit35: TEdit;
+    Edit36: TEdit;
+    Edit37: TEdit;
+    Edit38: TEdit;
+    Edit39: TEdit;
     Edit4: TEdit;
+    Edit40: TEdit;
+    Edit41: TEdit;
+    Edit42: TEdit;
+    Edit43: TEdit;
+    Edit44: TEdit;
+    Edit45: TEdit;
+    Edit46: TEdit;
+    Edit47: TEdit;
+    Edit49: TEdit;
     Edit5: TEdit;
+    Edit50: TEdit;
+    Edit51: TEdit;
+    Edit52: TEdit;
     Edit6: TEdit;
     Edit7: TEdit;
     Edit8: TEdit;
@@ -86,6 +117,7 @@ type
     GroupBox1: TGroupBox;
     GroupBox10: TGroupBox;
     GroupBox11: TGroupBox;
+    GroupBox12: TGroupBox;
     GroupBox13: TGroupBox;
     GroupBox14: TGroupBox;
     GroupBox15: TGroupBox;
@@ -141,14 +173,76 @@ type
     GroupBox60: TGroupBox;
     GroupBox61: TGroupBox;
     GroupBox62: TGroupBox;
+    GroupBox63: TGroupBox;
+    GroupBox64: TGroupBox;
+    GroupBox65: TGroupBox;
+    GroupBox66: TGroupBox;
+    GroupBox67: TGroupBox;
+    GroupBox68: TGroupBox;
+    GroupBox69: TGroupBox;
     GroupBox7: TGroupBox;
+    GroupBox70: TGroupBox;
+    GroupBox71: TGroupBox;
+    GroupBox72: TGroupBox;
+    GroupBox73: TGroupBox;
+    GroupBox74: TGroupBox;
+    GroupBox75: TGroupBox;
+    GroupBox76: TGroupBox;
+    GroupBox77: TGroupBox;
+    GroupBox78: TGroupBox;
+    GroupBox79: TGroupBox;
     GroupBox8: TGroupBox;
+    GroupBox80: TGroupBox;
+    GroupBox81: TGroupBox;
+    GroupBox82: TGroupBox;
+    GroupBox83: TGroupBox;
     GroupBox9: TGroupBox;
     Image1: TImage;
     Image10: TImage;
+    Image100: TImage;
+    Image101: TImage;
+    Image102: TImage;
+    Image103: TImage;
+    Image104: TImage;
+    Image105: TImage;
+    Image106: TImage;
+    Image107: TImage;
+    Image108: TImage;
+    Image109: TImage;
     Image11: TImage;
+    Image110: TImage;
+    Image111: TImage;
+    Image112: TImage;
+    Image113: TImage;
+    Image114: TImage;
+    Image115: TImage;
+    Image116: TImage;
+    Image117: TImage;
+    Image118: TImage;
+    Image119: TImage;
+    Image120: TImage;
+    Image121: TImage;
+    Image122: TImage;
+    Image123: TImage;
+    Image124: TImage;
+    Image125: TImage;
+    Image126: TImage;
+    Image127: TImage;
+    Image128: TImage;
+    Image129: TImage;
     Image13: TImage;
+    Image130: TImage;
+    Image131: TImage;
+    Image132: TImage;
+    Image133: TImage;
+    Image134: TImage;
+    Image135: TImage;
+    Image136: TImage;
+    Image137: TImage;
+    Image138: TImage;
+    Image139: TImage;
     Image14: TImage;
+    Image140: TImage;
     Image15: TImage;
     Image16: TImage;
     Image17: TImage;
@@ -228,11 +322,51 @@ type
     Image84: TImage;
     Image85: TImage;
     Image86: TImage;
+    Image87: TImage;
+    Image88: TImage;
+    Image89: TImage;
+    Image90: TImage;
+    Image91: TImage;
+    Image92: TImage;
+    Image93: TImage;
+    Image94: TImage;
+    Image95: TImage;
+    Image96: TImage;
+    Image97: TImage;
+    Image98: TImage;
+    Image99: TImage;
     ImageList1: TImageList;
     Label1: TLabel;
     Label10: TLabel;
+    Label100: TLabel;
+    Label101: TLabel;
+    Label102: TLabel;
+    Label103: TLabel;
+    Label104: TLabel;
+    Label105: TLabel;
+    Label106: TLabel;
+    Label107: TLabel;
+    Label108: TLabel;
+    Label109: TLabel;
     Label11: TLabel;
+    Label110: TLabel;
+    Label111: TLabel;
+    Label112: TLabel;
+    Label113: TLabel;
+    Label114: TLabel;
+    Label115: TLabel;
+    Label116: TLabel;
+    Label117: TLabel;
+    Label118: TLabel;
+    Label119: TLabel;
     Label12: TLabel;
+    Label120: TLabel;
+    Label121: TLabel;
+    Label122: TLabel;
+    Label124: TLabel;
+    Label125: TLabel;
+    Label126: TLabel;
+    Label127: TLabel;
     Label13: TLabel;
     Label14: TLabel;
     Label15: TLabel;
@@ -307,7 +441,27 @@ type
     Label78: TLabel;
     Label79: TLabel;
     Label8: TLabel;
+    Label80: TLabel;
+    Label81: TLabel;
+    Label82: TLabel;
+    Label83: TLabel;
+    Label84: TLabel;
+    Label85: TLabel;
+    Label86: TLabel;
+    Label87: TLabel;
+    Label88: TLabel;
+    Label89: TLabel;
     Label9: TLabel;
+    Label90: TLabel;
+    Label91: TLabel;
+    Label92: TLabel;
+    Label93: TLabel;
+    Label94: TLabel;
+    Label95: TLabel;
+    Label96: TLabel;
+    Label97: TLabel;
+    Label98: TLabel;
+    Label99: TLabel;
     mbColorPreview1: TmbColorPreview;
     mbColorPreview2: TmbColorPreview;
     mbColorPreview3: TmbColorPreview;
@@ -317,7 +471,12 @@ type
     PageControl3: TPageControl;
     PageControl4: TPageControl;
     PageControl5: TPageControl;
+    PageControl6: TPageControl;
+    PageControl7: TPageControl;
     RadioButton1: TRadioButton;
+    RadioButton100: TRadioButton;
+    RadioButton101: TRadioButton;
+    RadioButton102: TRadioButton;
     RadioButton11: TRadioButton;
     RadioButton12: TRadioButton;
     RadioButton13: TRadioButton;
@@ -395,6 +554,23 @@ type
     RadioButton80: TRadioButton;
     RadioButton81: TRadioButton;
     RadioButton82: TRadioButton;
+    RadioButton83: TRadioButton;
+    RadioButton84: TRadioButton;
+    RadioButton85: TRadioButton;
+    RadioButton86: TRadioButton;
+    RadioButton87: TRadioButton;
+    RadioButton88: TRadioButton;
+    RadioButton89: TRadioButton;
+    RadioButton90: TRadioButton;
+    RadioButton91: TRadioButton;
+    RadioButton92: TRadioButton;
+    RadioButton93: TRadioButton;
+    RadioButton94: TRadioButton;
+    RadioButton95: TRadioButton;
+    RadioButton96: TRadioButton;
+    RadioButton97: TRadioButton;
+    RadioButton98: TRadioButton;
+    RadioButton99: TRadioButton;
     ScrollBox1: TScrollBox;
     SpinEdit1: TSpinEdit;
     SpinEdit10: TSpinEdit;
@@ -417,8 +593,27 @@ type
     SpinEdit26: TSpinEdit;
     SpinEdit27: TSpinEdit;
     SpinEdit28: TSpinEdit;
+    SpinEdit29: TSpinEdit;
     SpinEdit3: TSpinEdit;
+    SpinEdit30: TSpinEdit;
+    SpinEdit31: TSpinEdit;
+    SpinEdit32: TSpinEdit;
+    SpinEdit33: TSpinEdit;
+    SpinEdit34: TSpinEdit;
+    SpinEdit35: TSpinEdit;
+    SpinEdit36: TSpinEdit;
+    SpinEdit37: TSpinEdit;
+    SpinEdit38: TSpinEdit;
+    SpinEdit39: TSpinEdit;
     SpinEdit4: TSpinEdit;
+    SpinEdit40: TSpinEdit;
+    SpinEdit41: TSpinEdit;
+    SpinEdit42: TSpinEdit;
+    SpinEdit43: TSpinEdit;
+    SpinEdit44: TSpinEdit;
+    SpinEdit45: TSpinEdit;
+    SpinEdit46: TSpinEdit;
+    SpinEdit47: TSpinEdit;
     SpinEdit5: TSpinEdit;
     SpinEdit6: TSpinEdit;
     SpinEdit7: TSpinEdit;
@@ -439,7 +634,16 @@ type
     TabSheet16: TTabSheet;
     TabSheet17: TTabSheet;
     TabSheet18: TTabSheet;
+    TabSheet19: TTabSheet;
     TabSheet2: TTabSheet;
+    TabSheet20: TTabSheet;
+    TabSheet21: TTabSheet;
+    TabSheet22: TTabSheet;
+    TabSheet23: TTabSheet;
+    TabSheet24: TTabSheet;
+    TabSheet25: TTabSheet;
+    TabSheet26: TTabSheet;
+    TabSheet27: TTabSheet;
     TabSheet3: TTabSheet;
     TabSheet4: TTabSheet;
     TabSheet5: TTabSheet;
@@ -451,8 +655,27 @@ type
     TrackBar10: TTrackBar;
     TrackBar11: TTrackBar;
     TrackBar12: TTrackBar;
+    TrackBar13: TTrackBar;
+    TrackBar14: TTrackBar;
+    TrackBar15: TTrackBar;
+    TrackBar16: TTrackBar;
+    TrackBar17: TTrackBar;
+    TrackBar18: TTrackBar;
+    TrackBar19: TTrackBar;
     TrackBar2: TTrackBar;
+    TrackBar20: TTrackBar;
+    TrackBar21: TTrackBar;
+    TrackBar22: TTrackBar;
+    TrackBar23: TTrackBar;
+    TrackBar24: TTrackBar;
+    TrackBar25: TTrackBar;
+    TrackBar26: TTrackBar;
+    TrackBar27: TTrackBar;
+    TrackBar28: TTrackBar;
+    TrackBar29: TTrackBar;
     TrackBar3: TTrackBar;
+    TrackBar30: TTrackBar;
+    TrackBar31: TTrackBar;
     TrackBar4: TTrackBar;
     TrackBar5: TTrackBar;
     TrackBar6: TTrackBar;
@@ -462,6 +685,8 @@ type
     procedure BitBtn10Click(Sender: TObject);
     procedure BitBtn11Click(Sender: TObject);
     procedure BitBtn12Click(Sender: TObject);
+    procedure BitBtn13Click(Sender: TObject);
+    procedure BitBtn14Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
     procedure BitBtn3Click(Sender: TObject);
@@ -474,6 +699,8 @@ type
     procedure BitRefresh10Click(Sender: TObject);
     procedure BitRefresh11Click(Sender: TObject);
     procedure BitRefresh12Click(Sender: TObject);
+    procedure BitRefresh13Click(Sender: TObject);
+    procedure BitRefresh14Click(Sender: TObject);
     procedure BitRefresh1Click(Sender: TObject);
     procedure BitRefresh2Click(Sender: TObject);
     procedure BitRefresh3Click(Sender: TObject);
@@ -486,6 +713,8 @@ type
     procedure BitSave10Click(Sender: TObject);
     procedure BitSave11Click(Sender: TObject);
     procedure BitSave12Click(Sender: TObject);
+    procedure BitSave13Click(Sender: TObject);
+    procedure BitSave14Click(Sender: TObject);
     procedure BitSave1Click(Sender: TObject);
     procedure BitSave2Click(Sender: TObject);
     procedure BitSave3Click(Sender: TObject);
@@ -505,9 +734,50 @@ type
     procedure Edit6Exit(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
+    procedure Image100Click(Sender: TObject);
+    procedure Image101Click(Sender: TObject);
+    procedure Image102Click(Sender: TObject);
+    procedure Image103Click(Sender: TObject);
+    procedure Image104Click(Sender: TObject);
+    procedure Image105Click(Sender: TObject);
+    procedure Image106Click(Sender: TObject);
+    procedure Image107Click(Sender: TObject);
+    procedure Image108Click(Sender: TObject);
+    procedure Image109Click(Sender: TObject);
     procedure Image10Click(Sender: TObject);
+    procedure Image110Click(Sender: TObject);
+    procedure Image111Click(Sender: TObject);
+    procedure Image112Click(Sender: TObject);
+    procedure Image113Click(Sender: TObject);
+    procedure Image114Click(Sender: TObject);
+    procedure Image115Click(Sender: TObject);
+    procedure Image116Click(Sender: TObject);
+    procedure Image117Click(Sender: TObject);
+    procedure Image118Click(Sender: TObject);
+    procedure Image119Click(Sender: TObject);
     procedure Image11Click(Sender: TObject);
+    procedure Image120Click(Sender: TObject);
+    procedure Image121Click(Sender: TObject);
+    procedure Image122Click(Sender: TObject);
+    procedure Image123Click(Sender: TObject);
+    procedure Image124Click(Sender: TObject);
+    procedure Image125Click(Sender: TObject);
+    procedure Image126Click(Sender: TObject);
+    procedure Image127Click(Sender: TObject);
+    procedure Image128Click(Sender: TObject);
+    procedure Image129Click(Sender: TObject);
+    procedure Image130Click(Sender: TObject);
+    procedure Image131Click(Sender: TObject);
+    procedure Image132Click(Sender: TObject);
+    procedure Image133Click(Sender: TObject);
+    procedure Image134Click(Sender: TObject);
+    procedure Image135Click(Sender: TObject);
+    procedure Image136Click(Sender: TObject);
+    procedure Image137Click(Sender: TObject);
+    procedure Image138Click(Sender: TObject);
+    procedure Image139Click(Sender: TObject);
     procedure Image13Click(Sender: TObject);
+    procedure Image140Click(Sender: TObject);
     procedure Image14Click(Sender: TObject);
     procedure Image15Click(Sender: TObject);
     procedure Image16Click(Sender: TObject);
@@ -587,13 +857,25 @@ type
     procedure Image84Click(Sender: TObject);
     procedure Image85Click(Sender: TObject);
     procedure Image86Click(Sender: TObject);
+    procedure Image87Click(Sender: TObject);
+    procedure Image88Click(Sender: TObject);
+    procedure Image89Click(Sender: TObject);
     procedure Image8Click(Sender: TObject);
+    procedure Image90Click(Sender: TObject);
+    procedure Image91Click(Sender: TObject);
+    procedure Image92Click(Sender: TObject);
+    procedure Image93Click(Sender: TObject);
+    procedure Image94Click(Sender: TObject);
+    procedure Image95Click(Sender: TObject);
+    procedure Image96Click(Sender: TObject);
+    procedure Image97Click(Sender: TObject);
+    procedure Image98Click(Sender: TObject);
+    procedure Image99Click(Sender: TObject);
     procedure Image9Click(Sender: TObject);
     procedure Label63Click(Sender: TObject);
     procedure Label63MouseLeave(Sender: TObject);
     procedure Label63MouseMove(Sender: TObject; Shift: TShiftState; X,
       Y: Integer);
-    procedure PageControl5Change(Sender: TObject);
     procedure ScrollBox1MouseWheelDown(Sender: TObject; Shift: TShiftState;
       MousePos: TPoint; var Handled: Boolean);
     procedure ScrollBox1MouseWheelUp(Sender: TObject; Shift: TShiftState;
@@ -608,18 +890,56 @@ type
     procedure SpinEdit26Change(Sender: TObject);
     procedure SpinEdit27Change(Sender: TObject);
     procedure SpinEdit28Change(Sender: TObject);
+    procedure SpinEdit29Change(Sender: TObject);
+    procedure SpinEdit30Change(Sender: TObject);
+    procedure SpinEdit31Change(Sender: TObject);
+    procedure SpinEdit32Change(Sender: TObject);
+    procedure SpinEdit33Change(Sender: TObject);
+    procedure SpinEdit34Change(Sender: TObject);
+    procedure SpinEdit35Change(Sender: TObject);
+    procedure SpinEdit36Change(Sender: TObject);
+    procedure SpinEdit37Change(Sender: TObject);
+    procedure SpinEdit38Change(Sender: TObject);
+    procedure SpinEdit39Change(Sender: TObject);
+    procedure SpinEdit40Change(Sender: TObject);
+    procedure SpinEdit41Change(Sender: TObject);
+    procedure SpinEdit42Change(Sender: TObject);
+    procedure SpinEdit43Change(Sender: TObject);
+    procedure SpinEdit44Change(Sender: TObject);
+    procedure SpinEdit45Change(Sender: TObject);
+    procedure SpinEdit46Change(Sender: TObject);
+    procedure SpinEdit47Change(Sender: TObject);
     procedure SpinEdit8Change(Sender: TObject);
     procedure SpinEdit9Change(Sender: TObject);
     procedure tAboutClick(Sender: TObject);
     procedure TrackBar10Change(Sender: TObject);
     procedure TrackBar11Change(Sender: TObject);
     procedure TrackBar12Change(Sender: TObject);
+    procedure TrackBar13Change(Sender: TObject);
+    procedure TrackBar14Change(Sender: TObject);
+    procedure TrackBar15Change(Sender: TObject);
+    procedure TrackBar16Change(Sender: TObject);
+    procedure TrackBar17Change(Sender: TObject);
+    procedure TrackBar18Change(Sender: TObject);
+    procedure TrackBar19Change(Sender: TObject);
     procedure TrackBar1Change(Sender: TObject);
     procedure TrackBar1MouseWheelDown(Sender: TObject; Shift: TShiftState;
       MousePos: TPoint; var Handled: Boolean);
     procedure TrackBar1MouseWheelUp(Sender: TObject; Shift: TShiftState;
       MousePos: TPoint; var Handled: Boolean);
+    procedure TrackBar20Change(Sender: TObject);
+    procedure TrackBar21Change(Sender: TObject);
+    procedure TrackBar22Change(Sender: TObject);
+    procedure TrackBar23Change(Sender: TObject);
+    procedure TrackBar24Change(Sender: TObject);
+    procedure TrackBar25Change(Sender: TObject);
+    procedure TrackBar26Change(Sender: TObject);
+    procedure TrackBar27Change(Sender: TObject);
+    procedure TrackBar28Change(Sender: TObject);
+    procedure TrackBar29Change(Sender: TObject);
     procedure TrackBar2Change(Sender: TObject);
+    procedure TrackBar30Change(Sender: TObject);
+    procedure TrackBar31Change(Sender: TObject);
     procedure TrackBar3Change(Sender: TObject);
     procedure TrackBar4Change(Sender: TObject);
     procedure TrackBar5Change(Sender: TObject);
@@ -645,6 +965,8 @@ type
     procedure xvm_loading();
     procedure battle_loading();
     procedure battle_save();
+    procedure battload_loading();
+    procedure battload_save();
     procedure bt_result_loading();
     procedure bt_result_save();
     procedure login_loading();
@@ -667,6 +989,8 @@ type
     procedure hotkeys_save();
     procedure texts_loading();
     procedure texts_save();
+    procedure tab_loading();
+    procedure tab_save();
     procedure turret_loading();
     procedure turret_save();
     procedure expanel_loading();
@@ -696,10 +1020,10 @@ var
   ChangeEditText, Search, dir_xvm: String;
 
   xvm_base, xvm, battle, bt_result, iconset, login, hangar, hotkeys, userInfo: TStringList;
-  fragcorr, expanel, rating, texts, pl_panel, squad, turret: TStringList;
+  battload, fragcorr, expanel, rating, texts, pl_panel, squad, turret, tab: TStringList;
 
   activ_config, xvm_file_name, battle_name, bt_result_name, login_name, hangar_name, hotkeys_name, userInfo_name, rating_name: String;
-  squad_name, iconset_name, texts_name, turret_name, frag_name, pl_panel_name, expanel_name: String;
+  squad_name, battload_name, iconset_name, texts_name, turret_name, frag_name, pl_panel_name, expanel_name, tab_name: String;
 
   b_s1, b_s2, b_s4, b_s6, b_s7, b_s8: String;
 
@@ -736,9 +1060,15 @@ var
   turret_s1, turret_s2: String;
 
   pl_s1, pl_s2, pl_s3, pl_s4, pl_s5: String;
-  pl_s6, pl_s7, pl_s8, pl_s9, pl_s10, pl_s11, pl_s12: String;
-  pl0_SL, pl00_SL, pl1_SL, pl2_SL, pl3_SL, pl4_SL, pl5_SL: Integer;
-  pl6_SL, pl7_SL, pl8_SL, pl9_SL, pl10_SL, pl11_SL, pl12_SL: Integer;
+  pl_s6, pl_s7, pl_s8, pl_s9, pl_s10, pl_s11, pl_s12, pl_s13, pl_s14, pl_s15: String;
+  pl_s16, pl_s17, pl_s18, pl_s19, pl_s20, pl_s21, pl_s22, pl_s23: String;
+  pl_s24, pl_s25, pl_s26, pl_s27, pl_s28, pl_s29, pl_s30, pl_s31, pl_s32, pl_s33, pl_s34: String;
+
+  pl0_SL, pl00_SL, pl000_SL, pl04_SL, pl05_SL, pl06_SL, pl07_SL, pl08_SL: Integer;
+  pl1_SL, pl2_SL, pl3_SL, pl4_SL, pl5_SL: Integer;
+  pl6_SL, pl7_SL, pl8_SL, pl9_SL, pl10_SL, pl11_SL, pl12_SL, pl13_SL, pl14_SL, pl15_SL: Integer;
+  pl16_SL, pl17_SL, pl18_SL, pl19_SL, pl20_SL, pl21_SL, pl22_SL, pl23_SL: Integer;
+  pl24_SL, pl25_SL, pl26_SL, pl27_SL, pl28_SL, pl29_SL, pl30_SL, pl31_SL, pl32_SL, pl33_SL, pl34_SL: Integer;
 
   squad_s1, squad_s2, squad_s3: String;
 
@@ -767,6 +1097,22 @@ var
 
   UI0_SL, UI1_SL, UI2_SL, UI3_SL, UI4_SL, UI5_SL, UI6_SL, UI7_SL: Integer;
 
+  battload_s1, battload_s2, battload_s3, battload_s4, battload_s5, battload_s6,
+  battload_s7, battload_s8, battload_s9, battload_s10, battload_s11, battload_s12,
+  battload_s13, battload_s14, battload_s15, battload_s16: String;
+
+  BL_0_SL, BL_01_SL, BL_1_SL, BL_2_SL, BL_3_SL, BL_4_SL, BL_5_SL, BL_6_SL, BL_7_SL,
+  BL_8_SL, BL_9_SL, BL_10_SL, BL_11_SL, BL_12_SL, BL_13_SL, BL_14_SL, BL_15_SL, BL_16_SL: Integer;
+
+  // TAB
+  tab_s1, tab_s2, tab_s3, tab_s4, tab_s5, tab_s6,
+  tab_s7, tab_s8, tab_s9, tab_s10, tab_s11, tab_s12,
+  tab_s13, tab_s14, tab_s15, tab_s16: String;
+
+  tab_0_SL, tab_01_SL, tab_1_SL, tab_2_SL, tab_3_SL, tab_4_SL, tab_5_SL, tab_6_SL, tab_7_SL,
+  tab_8_SL, tab_9_SL, tab_10_SL, tab_11_SL, tab_12_SL, tab_13_SL, tab_14_SL, tab_15_SL, tab_16_SL: Integer;
+  //
+
 
 implementation
 
@@ -783,12 +1129,16 @@ begin
   BitBtn10.Glyph := nil;
   BitBtn11.Glyph := nil;
   BitBtn12.Glyph := nil;
+  BitBtn13.Glyph := nil;
+  BitBtn14.Glyph := nil;
   BitBtn1.Font.Style := [fsBold];
   BitBtn2.Font.Style := [];
   BitBtn3.Font.Style := [];
   BitBtn10.Font.Style := [];
   BitBtn11.Font.Style := [];
   BitBtn12.Font.Style := [];
+  BitBtn13.Font.Style := [];
+  BitBtn14.Font.Style := [];
   ImageList1.GetBitmap(0, BitBtn1.Glyph);
   PageControl1.ActivePage := TabSheet1;
 end;
@@ -802,12 +1152,16 @@ begin
   BitBtn10.Glyph := nil;
   BitBtn11.Glyph := nil;
   BitBtn12.Glyph := nil;
+  BitBtn13.Glyph := nil;
+  BitBtn14.Glyph := nil;
   BitBtn1.Font.Style := [];
   BitBtn2.Font.Style := [];
   BitBtn3.Font.Style := [];
   BitBtn10.Font.Style := [fsBold];
   BitBtn11.Font.Style := [];
   BitBtn12.Font.Style := [];
+  BitBtn13.Font.Style := [];
+  BitBtn14.Font.Style := [];
   ImageList1.GetBitmap(0, BitBtn10.Glyph);
   PageControl1.ActivePage := TabSheet6;
 end;
@@ -820,12 +1174,16 @@ begin
   BitBtn10.Glyph := nil;
   BitBtn11.Glyph := nil;
   BitBtn12.Glyph := nil;
+  BitBtn13.Glyph := nil;
+  BitBtn14.Glyph := nil;
   BitBtn1.Font.Style := [];
   BitBtn2.Font.Style := [];
   BitBtn3.Font.Style := [];
   BitBtn10.Font.Style := [];
   BitBtn11.Font.Style := [fsBold];
   BitBtn12.Font.Style := [];
+  BitBtn13.Font.Style := [];
+  BitBtn14.Font.Style := [];
   ImageList1.GetBitmap(0, BitBtn11.Glyph);
   PageControl1.ActivePage := TabSheet15;
 end;
@@ -838,14 +1196,62 @@ begin
   BitBtn10.Glyph := nil;
   BitBtn11.Glyph := nil;
   BitBtn12.Glyph := nil;
+  BitBtn13.Glyph := nil;
+  BitBtn14.Glyph := nil;
   BitBtn1.Font.Style := [];
   BitBtn2.Font.Style := [];
   BitBtn3.Font.Style := [];
   BitBtn10.Font.Style := [];
   BitBtn11.Font.Style := [];
   BitBtn12.Font.Style := [fsBold];
+  BitBtn13.Font.Style := [];
+  BitBtn14.Font.Style := [];
   ImageList1.GetBitmap(0, BitBtn12.Glyph);
   PageControl1.ActivePage := TabSheet16;
+end;
+
+procedure TXCTuner_Form1.BitBtn13Click(Sender: TObject);
+begin
+  BitBtn1.Glyph := nil;
+  BitBtn2.Glyph := nil;
+  BitBtn3.Glyph := nil;
+  BitBtn10.Glyph := nil;
+  BitBtn11.Glyph := nil;
+  BitBtn12.Glyph := nil;
+  BitBtn13.Glyph := nil;
+  BitBtn14.Glyph := nil;
+  BitBtn1.Font.Style := [];
+  BitBtn2.Font.Style := [];
+  BitBtn3.Font.Style := [];
+  BitBtn10.Font.Style := [];
+  BitBtn11.Font.Style := [];
+  BitBtn12.Font.Style := [];
+  BitBtn13.Font.Style := [fsBold];
+  BitBtn14.Font.Style := [];
+  ImageList1.GetBitmap(0, BitBtn13.Glyph);
+  PageControl1.ActivePage := TabSheet20;
+end;
+
+procedure TXCTuner_Form1.BitBtn14Click(Sender: TObject);
+begin
+  BitBtn1.Glyph := nil;
+  BitBtn2.Glyph := nil;
+  BitBtn3.Glyph := nil;
+  BitBtn10.Glyph := nil;
+  BitBtn11.Glyph := nil;
+  BitBtn12.Glyph := nil;
+  BitBtn13.Glyph := nil;
+  BitBtn14.Glyph := nil;
+  BitBtn1.Font.Style := [];
+  BitBtn2.Font.Style := [];
+  BitBtn3.Font.Style := [];
+  BitBtn10.Font.Style := [];
+  BitBtn11.Font.Style := [];
+  BitBtn12.Font.Style := [];
+  BitBtn13.Font.Style := [];
+  BitBtn14.Font.Style := [fsBold];
+  ImageList1.GetBitmap(0, BitBtn14.Glyph);
+  PageControl1.ActivePage := TabSheet24;
 end;
 
 // Открытие вкладки "Логин"
@@ -857,12 +1263,16 @@ begin
   BitBtn10.Glyph := nil;
   BitBtn11.Glyph := nil;
   BitBtn12.Glyph := nil;
+  BitBtn13.Glyph := nil;
+  BitBtn14.Glyph := nil;
   BitBtn1.Font.Style := [];
   BitBtn2.Font.Style := [fsBold];
   BitBtn3.Font.Style := [];
   BitBtn10.Font.Style := [];
   BitBtn11.Font.Style := [];
   BitBtn12.Font.Style := [];
+  BitBtn13.Font.Style := [];
+  BitBtn14.Font.Style := [];
   ImageList1.GetBitmap(0, BitBtn2.Glyph);
   PageControl1.ActivePage := TabSheet2;
 end;
@@ -876,12 +1286,16 @@ begin
   BitBtn10.Glyph := nil;
   BitBtn11.Glyph := nil;
   BitBtn12.Glyph := nil;
-  BitBtn1.Font.Style := [];
+  BitBtn13.Glyph := nil;
+  BitBtn14.Glyph := nil;
+  BitBtn14.Font.Style := [];
   BitBtn2.Font.Style := [];
   BitBtn3.Font.Style := [fsBold];
   BitBtn10.Font.Style := [];
   BitBtn11.Font.Style := [];
   BitBtn12.Font.Style := [];
+  BitBtn13.Font.Style := [];
+  BitBtn14.Font.Style := [];
   ImageList1.GetBitmap(0, BitBtn3.Glyph);
   PageControl1.ActivePage := TabSheet3;
 end;
@@ -954,6 +1368,16 @@ begin
   pl_panel_loading();
 end;
 
+procedure TXCTuner_Form1.BitRefresh13Click(Sender: TObject);
+begin
+  battload_loading();
+end;
+
+procedure TXCTuner_Form1.BitRefresh14Click(Sender: TObject);
+begin
+  tab_loading();
+end;
+
 // По кнопке происходит вызов процедуры загрузки данных из файла "rating.xc"
 procedure TXCTuner_Form1.BitRefresh1Click(Sender: TObject);
 begin
@@ -1021,6 +1445,18 @@ procedure TXCTuner_Form1.BitSave12Click(Sender: TObject);
 begin
   pl_panel_save();
   pl_panel_loading();
+end;
+
+procedure TXCTuner_Form1.BitSave13Click(Sender: TObject);
+begin
+  battload_save();
+  battload_loading();
+end;
+
+procedure TXCTuner_Form1.BitSave14Click(Sender: TObject);
+begin
+  tab_save();
+  tab_loading();
 end;
 
 // По кнопке происходит вызов процедуры сохранения данных в файла "rating.xc"
@@ -1199,6 +1635,7 @@ begin
   // Создаем объекты типа TStringlist
   xvm:=TStringList.Create;
   battle:=TStringList.Create;
+  battload:=TStringList.Create;
   bt_result:=TStringList.Create;
   iconset:=TStringList.Create;
   login:=TStringList.Create;
@@ -1208,6 +1645,7 @@ begin
   userInfo:=TStringList.Create;
   pl_panel:=TStringList.Create;
   rating:=TStringList.Create;
+  tab:=TStringList.Create;
   texts:=TStringList.Create;
   squad:=TStringList.Create;
   turret:=TStringList.Create;
@@ -1218,6 +1656,7 @@ begin
   // Узнаем ссылочные имена файлов из файла @xvm.xc
   battle_name:=FindFilesXVM('"battle"', xvm);
   bt_result_name:=FindFilesXVM('"battleResults"', xvm);
+  battload_name:=FindFilesXVM('"battleLoading"', xvm);
   iconset_name:=FindFilesXVM('"iconset"', xvm);
   login_name:=FindFilesXVM('"login"', xvm);
   hangar_name:=FindFilesXVM('"hangar"', xvm);
@@ -1226,6 +1665,7 @@ begin
   userInfo_name:=FindFilesXVM('"userInfo"', xvm);
   pl_panel_name:=FindFilesXVM('"playersPanel"', xvm);
   rating_name:=FindFilesXVM('"rating"', xvm);
+  tab_name:=FindFilesXVM('"statisticForm"', xvm);;
   texts_name:=FindFilesXVM('"texts"', xvm);
   turret_name:=FindFilesXVM('"turretMarkers"', xvm);
   squad_name:=FindFilesXVM('"squad"', xvm);
@@ -1234,6 +1674,7 @@ begin
   if ((FileExists(dir_xvm+xvm_file_name  )) and
       (FileExists(dir_xvm+battle_name    )) and
       (FileExists(dir_xvm+bt_result_name )) and
+      (FileExists(dir_xvm+battload_name  )) and
       (FileExists(dir_xvm+iconset_name   )) and
       (FileExists(dir_xvm+login_name     )) and
       (FileExists(dir_xvm+hangar_name    )) and
@@ -1242,13 +1683,14 @@ begin
       (FileExists(dir_xvm+userInfo_name  )) and
       (FileExists(dir_xvm+pl_panel_name  )) and
       (FileExists(dir_xvm+squad_name     )) and
+      (FileExists(dir_xvm+tab_name       )) and
       (FileExists(dir_xvm+texts_name     )) and
       (FileExists(dir_xvm+turret_name    )) and
       (FileExists(dir_xvm+expanel_name   )) and
       (FileExists(dir_xvm+rating_name   ))) then
     begin
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.9.1';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.1.9.96';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       BitBtn1.Click;
@@ -1260,6 +1702,7 @@ begin
       xvm_loading();
       battle_loading();
       bt_result_loading();
+      battload_loading();
       iconset_loading();
       login_loading();
       hangar_loading();
@@ -1269,6 +1712,7 @@ begin
       userinfo_loading();
       rating_loading();
       squad_loading();
+      tab_loading();
       texts_loading();
       turret_loading();
       expanel_loading();
@@ -1278,12 +1722,14 @@ begin
       BitBtn3.Hint:='Настройка в файлах: ' + hangar_name+', '+userInfo_name + ' и ' + squad_name;
       BitBtn10.Hint:='Настройка в файлах: '+iconset_name+', '+hotkeys_name+', '+texts_name+' и '+turret_name;
       BitBtn11.Hint:='Настройка в файле: ' + bt_result_name;
-      BitBtn11.Hint:='Настройка в файле: ' + pl_panel_name;
+      BitBtn12.Hint:='Настройка в файле: ' + pl_panel_name;
+      BitBtn13.Hint:='Настройка в файле: ' + battload_name;
+      BitBtn14.Hint:='Настройка в файле: ' + tab_name;
     end
   else
     begin
       // выводим сообщение, очищаем переменную xvm и принудительно закрываем программу
-      ShowMessage('Файлы конфига не найдены или отсутствует запись в файле xvm.xc! Поместите программу в папку configs и проверте правильность пути к конфигу! Программа закроется!');
+      ShowMessage('Файлы конфига не найдены или отсутствует запись в файле @xvm.xc! Поместите программу в папку configs и проверте правильность пути к конфигу! Программа закроется!');
       Application.Terminate;
     end;
 end;
@@ -1295,6 +1741,7 @@ begin
   xvm_base.Free;
   battle.Free;
   bt_result.Free;
+  battload.Free;
   iconset.Free;
   login.Free;
   hangar.Free;
@@ -1304,9 +1751,70 @@ begin
   pl_panel.Free;
   rating.Free;
   squad.Free;
+  tab.Free;
   texts.Free;
   turret.Free;
   expanel.Free;
+end;
+
+procedure TXCTuner_Form1.Image100Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl26_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image101Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl27_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image102Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl28_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image103Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl29_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image104Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl30_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image105Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl31_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image106Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl32_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image107Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl33_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image108Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl34_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image109Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_2_SL+1)+litf+battload_name+path
+  +activ_config+#13#10+enopt+'"showChances": true'+#13#10+disopt+'"showChances": false');
 end;
 
 procedure TXCTuner_Form1.Image10Click(Sender: TObject);
@@ -1316,10 +1824,190 @@ begin
   +'Увеличение панели -   "scale" '+IntToStr(exp2_SL+1)+' строка');
 end;
 
+procedure TXCTuner_Form1.Image110Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_3_SL+1)+litf+battload_name+path
+  +activ_config+#13#10+enopt+'"showBattleTier": true'+#13#10+disopt+'"showBattleTier": false');
+end;
+
+procedure TXCTuner_Form1.Image111Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_4_SL+1)+litf+battload_name+path
+  +activ_config+#13#10+enopt+'"removeSquadIcon": false'+#13#10+disopt+'"removeSquadIcon": true');
+end;
+
+procedure TXCTuner_Form1.Image112Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_1_SL+1)+litf+battload_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image113Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_5_SL+1)+litf+battload_name+path
+  +activ_config+#13#10+enopt+'"show": true'+#13#10+disopt+'"show": false');
+end;
+
+procedure TXCTuner_Form1.Image114Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_6_SL+1)+litf+battload_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image115Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_7_SL+1)+litf+battload_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image116Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_8_SL+1)+litf+battload_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image117Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_9_SL+1)+litf+battload_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image118Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_10_SL+1)+litf+battload_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image119Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_11_SL+1)+litf+battload_name+path
+  +activ_config);
+end;
+
 procedure TXCTuner_Form1.Image11Click(Sender: TObject);
 begin
   ShowMessage(tpi+IntToStr(bs4_SL+1)+litf+battle_name+path
   +activ_config+#13#10+enopt+'"highlightVehicleIcon": true'+#13#10+disopt+'"highlightVehicleIcon": false');
+end;
+
+procedure TXCTuner_Form1.Image120Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_12_SL+1)+litf+battload_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image121Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_3_SL+1)+litf+tab_name+path
+  +activ_config+#13#10+enopt+'"showBattleTier": true'+#13#10+disopt+'"showBattleTier": false');
+end;
+
+procedure TXCTuner_Form1.Image122Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_13_SL+1)+litf+battload_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image123Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_14_SL+1)+litf+battload_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image124Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_15_SL+1)+litf+battload_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image125Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(BL_16_SL+1)+litf+battload_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image126Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_1_SL+1)+litf+tab_name+path
+  +activ_config+#13#10+enopt+'"showChances": true'+#13#10+disopt+'"showChances": false');
+end;
+
+procedure TXCTuner_Form1.Image127Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_2_SL+1)+litf+tab_name+path
+  +activ_config+#13#10+enopt+'"showChancesLive": true'+#13#10+disopt+'"showChancesLive": false');
+end;
+
+procedure TXCTuner_Form1.Image128Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_4_SL+1)+litf+tab_name+path
+  +activ_config+#13#10+enopt+'"removeSquadIcon": false'+#13#10+disopt+'"removeSquadIcon": true');
+end;
+
+procedure TXCTuner_Form1.Image129Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_5_SL+1)+litf+tab_name+path
+  +activ_config+#13#10+enopt+'"show": true'+#13#10+disopt+'"show": false');
+end;
+
+procedure TXCTuner_Form1.Image130Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_6_SL+1)+litf+tab_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image131Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_7_SL+1)+litf+tab_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image132Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_8_SL+1)+litf+tab_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image133Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_9_SL+1)+litf+tab_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image134Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_10_SL+1)+litf+tab_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image135Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_11_SL+1)+litf+tab_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image136Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_12_SL+1)+litf+tab_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image137Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_13_SL+1)+litf+tab_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image138Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_14_SL+1)+litf+tab_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image139Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_15_SL+1)+litf+tab_name+path
+  +activ_config);
 end;
 
 // Процедура вывода на несуществующий параметр
@@ -1333,6 +2021,12 @@ procedure TXCTuner_Form1.Image13Click(Sender: TObject);
 begin
   ShowMessage(tpi+IntToStr(fr1_SL+1)+litf+frag_name+path
   +activ_config+#13#10+enopt+'"hideTeamTextFields": false'+#13#10+disopt+'"hideTeamTextFields": true');
+end;
+
+procedure TXCTuner_Form1.Image140Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(tab_16_SL+1)+litf+tab_name+path
+  +activ_config);
 end;
 
 procedure TXCTuner_Form1.Image14Click(Sender: TObject);
@@ -1838,10 +2532,88 @@ begin
   +#13#10+'ВНИМАНИЕ: может понизить производительность');
 end;
 
+procedure TXCTuner_Form1.Image87Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl13_SL+1)+litf+pl_panel_name+path
+  +activ_config+#13#10+enopt+'"enabled": true'+#13#10+disopt+'"enabled": false');
+end;
+
+procedure TXCTuner_Form1.Image88Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl14_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image89Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl15_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
 procedure TXCTuner_Form1.Image8Click(Sender: TObject);
 begin
   ShowMessage(tpi+IntToStr(bs2_SL+1)+litf+battle_name+path
   +activ_config+#13#10+enopt+'"showPostmortemTips": true'+#13#10+disopt+'"showPostmortemTips": false');
+end;
+
+procedure TXCTuner_Form1.Image90Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl16_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image91Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl17_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image92Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl18_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image93Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl19_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image94Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl20_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image95Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl21_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image96Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl22_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image97Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl23_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image98Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl24_SL+1)+litf+pl_panel_name+path
+  +activ_config);
+end;
+
+procedure TXCTuner_Form1.Image99Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(pl25_SL+1)+litf+pl_panel_name+path
+  +activ_config);
 end;
 
 procedure TXCTuner_Form1.Image9Click(Sender: TObject);
@@ -1863,15 +2635,6 @@ procedure TXCTuner_Form1.Label63MouseMove(Sender: TObject; Shift: TShiftState;
   X, Y: Integer);
 begin
   Label63.Font.Style:=Label63.Font.Style+[fsUnderline];
-end;
-
-procedure TXCTuner_Form1.PageControl5Change(Sender: TObject);
-begin
-  if PageControl5.ActivePage=TabSheet18 then
-    begin
-      ShowMessage('В разработке!');
-      PageControl5.ActivePage:=TabSheet17;
-    end;
 end;
 
 // Прокрутка скролбокса колесиком вниз на 400 pt
@@ -1948,6 +2711,120 @@ begin
   TrackBar12.SelEnd:=SpinEdit28.Value;
 end;
 
+procedure TXCTuner_Form1.SpinEdit29Change(Sender: TObject);
+begin
+  TrackBar13.Position:=SpinEdit29.Value;
+  TrackBar13.SelEnd:=SpinEdit29.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit30Change(Sender: TObject);
+begin
+  TrackBar14.Position:=SpinEdit30.Value;
+  TrackBar14.SelEnd:=SpinEdit30.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit31Change(Sender: TObject);
+begin
+  TrackBar15.Position:=SpinEdit31.Value;
+  TrackBar15.SelEnd:=SpinEdit31.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit32Change(Sender: TObject);
+begin
+  TrackBar16.Position:=SpinEdit32.Value;
+  TrackBar16.SelEnd:=SpinEdit32.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit33Change(Sender: TObject);
+begin
+  TrackBar17.Position:=SpinEdit33.Value;
+  TrackBar17.SelEnd:=SpinEdit33.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit34Change(Sender: TObject);
+begin
+  TrackBar18.Position:=SpinEdit34.Value;
+  TrackBar18.SelEnd:=SpinEdit34.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit35Change(Sender: TObject);
+begin
+  TrackBar19.Position:=SpinEdit35.Value;
+  TrackBar19.SelEnd:=SpinEdit35.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit36Change(Sender: TObject);
+begin
+  TrackBar20.Position:=SpinEdit36.Value;
+  TrackBar20.SelEnd:=SpinEdit36.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit37Change(Sender: TObject);
+begin
+  TrackBar21.Position:=SpinEdit37.Value;
+  TrackBar21.SelEnd:=SpinEdit37.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit38Change(Sender: TObject);
+begin
+  TrackBar22.Position:=SpinEdit38.Value;
+  TrackBar22.SelEnd:=SpinEdit38.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit39Change(Sender: TObject);
+begin
+  TrackBar23.Position:=SpinEdit39.Value;
+  TrackBar23.SelEnd:=SpinEdit39.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit40Change(Sender: TObject);
+begin
+  TrackBar24.Position:=SpinEdit40.Value;
+  TrackBar24.SelEnd:=SpinEdit40.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit41Change(Sender: TObject);
+begin
+  TrackBar25.Position:=SpinEdit41.Value;
+  TrackBar25.SelEnd:=SpinEdit41.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit42Change(Sender: TObject);
+begin
+  TrackBar26.Position:=SpinEdit42.Value;
+  TrackBar26.SelEnd:=SpinEdit42.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit43Change(Sender: TObject);
+begin
+  TrackBar27.Position:=SpinEdit43.Value;
+  TrackBar27.SelEnd:=SpinEdit43.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit44Change(Sender: TObject);
+begin
+  TrackBar28.Position:=SpinEdit44.Value;
+  TrackBar28.SelEnd:=SpinEdit44.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit45Change(Sender: TObject);
+begin
+  TrackBar29.Position:=SpinEdit45.Value;
+  TrackBar29.SelEnd:=SpinEdit45.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit46Change(Sender: TObject);
+begin
+  TrackBar30.Position:=SpinEdit46.Value;
+  TrackBar30.SelEnd:=SpinEdit46.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit47Change(Sender: TObject);
+begin
+  TrackBar31.Position:=SpinEdit47.Value;
+  TrackBar31.SelEnd:=SpinEdit47.Value;
+end;
+
 procedure TXCTuner_Form1.SpinEdit8Change(Sender: TObject);
 begin
   TrackBar2.Position:=SpinEdit8.Value;
@@ -1984,6 +2861,48 @@ begin
   TrackBar12.SelEnd:=TrackBar12.Position;
 end;
 
+procedure TXCTuner_Form1.TrackBar13Change(Sender: TObject);
+begin
+  SpinEdit29.Value:=TrackBar13.Position;
+  TrackBar13.SelEnd:=TrackBar13.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar14Change(Sender: TObject);
+begin
+  SpinEdit30.Value:=TrackBar14.Position;
+  TrackBar14.SelEnd:=TrackBar14.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar15Change(Sender: TObject);
+begin
+  SpinEdit31.Value:=TrackBar15.Position;
+  TrackBar15.SelEnd:=TrackBar15.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar16Change(Sender: TObject);
+begin
+  SpinEdit32.Value:=TrackBar16.Position;
+  TrackBar16.SelEnd:=TrackBar16.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar17Change(Sender: TObject);
+begin
+  SpinEdit33.Value:=TrackBar17.Position;
+  TrackBar17.SelEnd:=TrackBar17.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar18Change(Sender: TObject);
+begin
+  SpinEdit34.Value:=TrackBar18.Position;
+  TrackBar18.SelEnd:=TrackBar18.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar19Change(Sender: TObject);
+begin
+  SpinEdit35.Value:=TrackBar19.Position;
+  TrackBar19.SelEnd:=TrackBar19.Position;
+end;
+
 procedure TXCTuner_Form1.TrackBar1Change(Sender: TObject);
 begin
   SpinEdit10.Value:=TrackBar1.Position;
@@ -2004,10 +2923,82 @@ begin
     TrackBar1.Position:=100;
 end;
 
+procedure TXCTuner_Form1.TrackBar20Change(Sender: TObject);
+begin
+  SpinEdit36.Value:=TrackBar20.Position;
+  TrackBar20.SelEnd:=TrackBar20.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar21Change(Sender: TObject);
+begin
+  SpinEdit37.Value:=TrackBar21.Position;
+  TrackBar21.SelEnd:=TrackBar21.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar22Change(Sender: TObject);
+begin
+  SpinEdit38.Value:=TrackBar22.Position;
+  TrackBar22.SelEnd:=TrackBar22.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar23Change(Sender: TObject);
+begin
+  SpinEdit39.Value:=TrackBar23.Position;
+  TrackBar23.SelEnd:=TrackBar23.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar24Change(Sender: TObject);
+begin
+  SpinEdit40.Value:=TrackBar24.Position;
+  TrackBar24.SelEnd:=TrackBar24.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar25Change(Sender: TObject);
+begin
+  SpinEdit41.Value:=TrackBar25.Position;
+  TrackBar25.SelEnd:=TrackBar25.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar26Change(Sender: TObject);
+begin
+  SpinEdit42.Value:=TrackBar26.Position;
+  TrackBar26.SelEnd:=TrackBar26.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar27Change(Sender: TObject);
+begin
+  SpinEdit43.Value:=TrackBar27.Position;
+  TrackBar27.SelEnd:=TrackBar27.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar28Change(Sender: TObject);
+begin
+  SpinEdit44.Value:=TrackBar28.Position;
+  TrackBar28.SelEnd:=TrackBar28.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar29Change(Sender: TObject);
+begin
+  SpinEdit45.Value:=TrackBar29.Position;
+  TrackBar29.SelEnd:=TrackBar29.Position;
+end;
+
 procedure TXCTuner_Form1.TrackBar2Change(Sender: TObject);
 begin
   SpinEdit8.Value:=TrackBar2.Position;
   TrackBar2.SelEnd:=TrackBar2.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar30Change(Sender: TObject);
+begin
+  SpinEdit46.Value:=TrackBar30.Position;
+  TrackBar30.SelEnd:=TrackBar30.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar31Change(Sender: TObject);
+begin
+  SpinEdit47.Value:=TrackBar31.Position;
+  TrackBar31.SelEnd:=TrackBar31.Position;
 end;
 
 procedure TXCTuner_Form1.TrackBar3Change(Sender: TObject);
@@ -2155,7 +3146,7 @@ begin
   p1:=PosEx(':', full_str, Pos(sub_str, full_str));
   if p1<>0 then
     begin
-      Delete(full_str, 1, p1 + 1);
+      Delete(full_str, 1, p1);
       // для верности уберем лишние пробелы слева!
       full_str:=TrimLeft(full_str);
     end;
@@ -2253,36 +3244,37 @@ begin
       xvm_base:=TStringList.Create;
       xvm_base.LoadFromFile(ExtractFilePath(ParamStr(0))+'xvm.xc');
       if (xvm_base.Count=1) then
-        begin
+      begin
         activ_config:=Trim(xvm_base.Strings[0]);
-        if Length(activ_config)=0  then begin ShowMessage('Пустой файл! Программа закроется!'); Application.Terminate; end;
-        if activ_config[1]='$' then
-          begin
-            Delete(activ_config, 1, pos('"', activ_config));
-            activ_config:=TrimLeft(activ_config);
-            px2:=pos('@xvm.xc', activ_config);
-            px3:=pos('xvm.xc', activ_config);
-            if px2<>0 then
-              begin
-                Delete(activ_config, px2, Length(activ_config) - px2 + 2);
-                xvm_file_name:='@xvm.xc';
-                exit;
-              end;
-            if px3<>0 then
-              begin
-                Delete(activ_config, px3-1, Length(activ_config) - px3 + 2);
-                xvm_file_name:='xvm.xc';
-                exit;
-              end;
-          end;
+        if Length(activ_config)=0  then
+        begin
+          ShowMessage('Пустой файл! Программа закроется!');
+          Application.Terminate;
+        end;
+        Delete(activ_config, 1, pos('"', activ_config));
+        activ_config:=TrimLeft(activ_config);
+        px2:=pos('@xvm.xc', activ_config);
+        px3:=pos('xvm.xc', activ_config);
+        if px2<>0 then
+        begin
+          Delete(activ_config, px2, Length(activ_config) - px2 + 2);
+          xvm_file_name:='@xvm.xc';
+          exit;
+        end;
+        if px3<>0 then
+        begin
+          Delete(activ_config, px3-1, Length(activ_config) - px3 + 2);
+          xvm_file_name:='xvm.xc';
+          exit;
+        end;
       end else
       begin
-    for i := 0 to (xvm_base.Count - 1) do
-      begin
-        activ_config:=Trim(xvm_base.Strings[i]);
-        if Length(activ_config)=0  then Continue;
-        if ((activ_config[1] = '/') and (activ_config[2] = '/')) then Continue;
-        if activ_config[1]='$' then
+        for i := 0 to (xvm_base.Count - 1) do
+        begin
+          activ_config:=Trim(xvm_base.Strings[i]);
+          if Length(activ_config)=0  then Continue else
+          if ((activ_config[1] = '/') and (activ_config[2] = '/')) then Continue else
+          if (activ_config[1]='$') then
           begin
             Delete(activ_config, 1, pos('"', activ_config));
             activ_config:=TrimLeft(activ_config);
@@ -2302,12 +3294,39 @@ begin
               end;
           end;
       end;
+    end;
+    begin
+      activ_config:=Trim(xvm_base.Strings[0]);
+      if Length(activ_config)=0  then
+      begin
+        ShowMessage('Пустой файл! Программа закроется!');
+        Application.Terminate;
+      end;
+      if pos('$', activ_config)=4 then
+      begin
+        Delete(activ_config, 1, pos('"', activ_config));
+        activ_config:=TrimLeft(activ_config);
+        px2:=pos('@xvm.xc', activ_config);
+        px3:=pos('xvm.xc', activ_config);
+        if px2<>0 then
+        begin
+          Delete(activ_config, px2, Length(activ_config) - px2 + 2);
+          xvm_file_name:='@xvm.xc';
+          exit;
+        end;
+        if px3<>0 then
+        begin
+          Delete(activ_config, px3-1, Length(activ_config) - px3 + 2);
+          xvm_file_name:='xvm.xc';
+          exit;
+        end;
+      end;
+    end;
     begin
       // выводим сообщение и принудительно закрываем программу
       ShowMessage('Активный конфиг не найден! Проверте правильность нахождения пути! Программа закроется!');
       Application.Terminate;
     end;
-      end;
     end else
     begin
       // выводим сообщение и принудительно закрываем программу
@@ -3561,6 +4580,265 @@ begin
         TrackBar12.Position:=SpinEdit28.Value;
       end;
     end;
+
+    // Маркер статуса засвета  // 5
+    pl000_SL:=Search_Line(pl00_SL, '"enemySpottedMarker"', pl_panel);
+    if pl00_SL=-1 then error_line('"enemySpottedMarker"', pl_panel_name) else
+    begin
+      // видимость // 5.1
+      Search:='"enabled"';
+      pl13_SL:=Search_Line(pl000_SL, Search, pl_panel);
+      if pl13_SL=-1 then error_line(Search, pl_panel_name) else
+      begin
+        pl_s13:=pl_panel.Strings[pl13_SL];
+        pl_s13:=new_change_str(Search, pl_s13);
+        if pl_s13='true' then RadioButton83.Checked:=True else
+        if pl_s13='false' then RadioButton84.Checked:=True else
+        begin
+          ShowMessage(error_message(pl_panel_name, pl_s13, pl13_SL));
+          Application.Terminate;
+        end;
+      end;
+
+      // смещение по X // 5.2
+      Search:='"Xoffset"';
+      pl14_SL:=Search_Line(pl000_SL, Search, pl_panel);
+      if pl14_SL=-1 then error_line(Search, pl_panel_name) else
+      begin
+        pl_s14:=pl_panel.Strings[pl14_SL];
+        pl_s14:=new_change_str(Search, pl_s14);
+        SpinEdit29.Value:=StrToInt(pl_s14);
+        TrackBar13.Position:=SpinEdit29.Value;
+      end;
+
+      // смещение по Y // 5.3
+      Search:='"Yoffset"';
+      pl15_SL:=Search_Line(pl000_SL, Search, pl_panel);
+      if pl15_SL=-1 then error_line(Search, pl_panel_name) else
+      begin
+        pl_s15:=pl_panel.Strings[pl15_SL];
+        pl_s15:=new_change_str(Search, pl_s15);
+        SpinEdit30.Value:=StrToInt(pl_s15);
+        TrackBar14.Position:=SpinEdit30.Value;
+      end;
+
+      // Формат  // 6
+      pl04_SL:=Search_Line(pl000_SL, '"format"', pl_panel);
+      if pl04_SL=-1 then error_line('"format"', pl_panel_name) else
+      begin
+        // Этот враг никогда не светился // 6.1
+        Search:='"neverSeen"';
+        pl16_SL:=Search_Line(pl04_SL, Search, pl_panel);
+        if pl16_SL=-1 then error_line(Search, pl_panel_name) else
+        begin
+          pl_s16:=pl_panel.Strings[pl16_SL];
+          pl_s16:=new_change_str(Search, pl_s16);
+          Edit27.Text:=DelStartEnd(pl_s16);
+        end;
+
+        // Этот враг светился хотя бы один раз // 6.2
+        Search:='"lost"';
+        pl17_SL:=Search_Line(pl04_SL, Search, pl_panel);
+        if pl17_SL=-1 then error_line(Search, pl_panel_name) else
+        begin
+          pl_s17:=pl_panel.Strings[pl17_SL];
+          pl_s17:=new_change_str(Search, pl_s17);
+          Edit28.Text:=DelStartEnd(pl_s17);
+        end;
+
+        // Виден на миникарте прямо сейчас // 6.3
+        Search:='"revealed"';
+        pl18_SL:=Search_Line(pl04_SL, Search, pl_panel);
+        if pl18_SL=-1 then error_line(Search, pl_panel_name) else
+        begin
+          pl_s18:=pl_panel.Strings[pl18_SL];
+          pl_s18:=new_change_str(Search, pl_s18);
+          Edit29.Text:=DelStartEnd(pl_s18);
+        end;
+
+        // Уничтоженный враг // 6.4
+        Search:='"dead"';
+        pl19_SL:=Search_Line(pl04_SL, Search, pl_panel);
+        if pl19_SL=-1 then error_line(Search, pl_panel_name) else
+        begin
+          pl_s19:=pl_panel.Strings[pl19_SL];
+          pl_s19:=new_change_str(Search, pl_s19);
+          Edit30.Text:=DelStartEnd(pl_s19);
+        end;
+
+        // Специфичные значения для артиллерии  // 7
+        pl05_SL:=Search_Line(pl04_SL, '"artillery"', pl_panel);
+        if pl05_SL=-1 then error_line('"artillery"', pl_panel_name) else
+        begin
+          // Этот враг никогда не светился // 7.1
+          Search:='"neverSeen"';
+          pl20_SL:=Search_Line(pl05_SL, Search, pl_panel);
+          if pl20_SL=-1 then error_line(Search, pl_panel_name) else
+          begin
+            pl_s20:=pl_panel.Strings[pl20_SL];
+            pl_s20:=new_change_str(Search, pl_s20);
+            Edit31.Text:=DelStartEnd(pl_s20);
+          end;
+
+          // Этот враг светился хотя бы один раз // 7.2
+          Search:='"lost"';
+          pl21_SL:=Search_Line(pl05_SL, Search, pl_panel);
+          if pl21_SL=-1 then error_line(Search, pl_panel_name) else
+          begin
+            pl_s21:=pl_panel.Strings[pl21_SL];
+            pl_s21:=new_change_str(Search, pl_s21);
+            Edit32.Text:=DelStartEnd(pl_s21);
+          end;
+
+          // Виден на миникарте прямо сейчас // 7.3
+          Search:='"revealed"';
+          pl22_SL:=Search_Line(pl05_SL, Search, pl_panel);
+          if pl22_SL=-1 then error_line(Search, pl_panel_name) else
+          begin
+            pl_s22:=pl_panel.Strings[pl22_SL];
+            pl_s22:=new_change_str(Search, pl_s22);
+            Edit33.Text:=DelStartEnd(pl_s22);
+          end;
+
+          // Уничтоженный враг // 7.4
+          Search:='"dead"';
+          pl23_SL:=Search_Line(pl05_SL, Search, pl_panel);
+          if pl23_SL=-1 then error_line(Search, pl_panel_name) else
+          begin
+            pl_s23:=pl_panel.Strings[pl23_SL];
+            pl_s23:=new_change_str(Search, pl_s23);
+            Edit34.Text:=DelStartEnd(pl_s23);
+          end;
+        end;
+      end;
+    end;
+    // Режим ушей "medium" - первые средние уши в игре  // 8
+    pl06_SL:=Search_Line(pl0_SL, '"medium"', pl_panel);
+    if pl06_SL=-1 then error_line('"medium"', pl_panel_name) else
+    begin
+      // Ширина поля имени игрока // 8.1
+      Search:='"width"';
+      pl24_SL:=Search_Line(pl06_SL, Search, pl_panel);
+      if pl24_SL=-1 then error_line(Search, pl_panel_name) else
+      begin
+        pl_s24:=pl_panel.Strings[pl24_SL];
+        pl_s24:=new_change_str(Search, pl_s24);
+        SpinEdit31.Value:=StrToInt(pl_s24);
+        TrackBar15.Position:=SpinEdit31.Value;
+      end;
+
+      // Формат отображения для левой панели // 8.2
+      Search:='"formatLeft"';
+      pl25_SL:=Search_Line(pl06_SL, Search, pl_panel);
+      if pl25_SL=-1 then error_line(Search, pl_panel_name) else
+      begin
+        pl_s25:=pl_panel.Strings[pl25_SL];
+        pl_s25:=new_change_str(Search, pl_s25);
+        Edit35.Text:=DelStartEnd(pl_s25);
+      end;
+
+      // Формат отображения для правой панели // 8.3
+      Search:='"formatRight"';
+      pl26_SL:=Search_Line(pl06_SL, Search, pl_panel);
+      if pl26_SL=-1 then error_line(Search, pl_panel_name) else
+      begin
+        pl_s26:=pl_panel.Strings[pl26_SL];
+        pl_s26:=new_change_str(Search, pl_s26);
+        Edit36.Text:=DelStartEnd(pl_s26);
+      end;
+    end;
+
+    // Режим ушей "medium2" - вторые средние уши в игре  // 9
+    pl07_SL:=Search_Line(pl0_SL, '"medium2"', pl_panel);
+    if pl07_SL=-1 then error_line('"medium2"', pl_panel_name) else
+    begin
+      // Ширина поля названия танка // 9.1
+      Search:='"width"';
+      pl27_SL:=Search_Line(pl07_SL, Search, pl_panel);
+      if pl27_SL=-1 then error_line(Search, pl_panel_name) else
+      begin
+        pl_s27:=pl_panel.Strings[pl27_SL];
+        pl_s27:=new_change_str(Search, pl_s27);
+        SpinEdit32.Value:=StrToInt(pl_s27);
+        TrackBar16.Position:=SpinEdit32.Value;
+      end;
+
+      // Формат отображения для левой панели // 8.2
+      Search:='"formatLeft"';
+      pl28_SL:=Search_Line(pl07_SL, Search, pl_panel);
+      if pl28_SL=-1 then error_line(Search, pl_panel_name) else
+      begin
+        pl_s28:=pl_panel.Strings[pl28_SL];
+        pl_s28:=new_change_str(Search, pl_s28);
+        Edit37.Text:=DelStartEnd(pl_s28);
+      end;
+
+      // Формат отображения для правой панели // 8.3
+      Search:='"formatRight"';
+      pl29_SL:=Search_Line(pl07_SL, Search, pl_panel);
+      if pl29_SL=-1 then error_line(Search, pl_panel_name) else
+      begin
+        pl_s29:=pl_panel.Strings[pl29_SL];
+        pl_s29:=new_change_str(Search, pl_s29);
+        Edit38.Text:=DelStartEnd(pl_s29);
+      end;
+    end;
+
+    // Режим ушей "large" - широкие уши в игре  // 10
+    pl08_SL:=Search_Line(pl0_SL, '"large"', pl_panel);
+    if pl08_SL=-1 then error_line('"large"', pl_panel_name) else
+    begin
+      // Ширина поля названия танка // 10.1
+      Search:='"width"';
+      pl30_SL:=Search_Line(pl08_SL, Search, pl_panel);
+      if pl30_SL=-1 then error_line(Search, pl_panel_name) else
+      begin
+        pl_s30:=pl_panel.Strings[pl30_SL];
+        pl_s30:=new_change_str(Search, pl_s30);
+        SpinEdit33.Value:=StrToInt(pl_s30);
+        TrackBar17.Position:=SpinEdit33.Value;
+      end;
+
+      // Формат отображения имени игрока // 10.2
+      Search:='"nickFormatLeft"';
+      pl31_SL:=Search_Line(pl08_SL, Search, pl_panel);
+      if pl31_SL=-1 then error_line(Search, pl_panel_name) else
+      begin
+        pl_s31:=pl_panel.Strings[pl31_SL];
+        pl_s31:=new_change_str(Search, pl_s31);
+        Edit39.Text:=DelStartEnd(pl_s31);
+      end;
+
+      // Формат отображения имени игрока // 10.3
+      Search:='"nickFormatRight"';
+      pl32_SL:=Search_Line(pl08_SL, Search, pl_panel);
+      if pl32_SL=-1 then error_line(Search, pl_panel_name) else
+      begin
+        pl_s32:=pl_panel.Strings[pl32_SL];
+        pl_s32:=new_change_str(Search, pl_s32);
+        Edit40.Text:=DelStartEnd(pl_s32);
+      end;
+
+      // Формат отображения названия танка // 10.4
+      Search:='"vehicleFormatLeft"';
+      pl33_SL:=Search_Line(pl08_SL, Search, pl_panel);
+      if pl33_SL=-1 then error_line(Search, pl_panel_name) else
+      begin
+        pl_s33:=pl_panel.Strings[pl33_SL];
+        pl_s33:=new_change_str(Search, pl_s33);
+        Edit41.Text:=DelStartEnd(pl_s33);
+      end;
+
+      // Формат отображения названия танка // 10.5
+      Search:='"vehicleFormatRight"';
+      pl34_SL:=Search_Line(pl08_SL, Search, pl_panel);
+      if pl34_SL=-1 then error_line(Search, pl_panel_name) else
+      begin
+        pl_s34:=pl_panel.Strings[pl34_SL];
+        pl_s34:=new_change_str(Search, pl_s34);
+        Edit42.Text:=DelStartEnd(pl_s34);
+      end;
+    end;
   end;
 end;
 
@@ -3570,6 +4848,7 @@ begin
   if (RadioButton76.Checked=True) then chek1:='true' else chek1:='false';
   if (RadioButton78.Checked=True) then chek2:='true' else chek2:='false';
   if (RadioButton79.Checked=True) then chek3:='true' else chek3:='false';
+  if (RadioButton83.Checked=True) then chek4:='true' else chek4:='false';
   // Прозрачность в процентах ушей // 1
   pl_s1:=pl_panel.Strings[pl1_SL];
   pl_s1:=Smart_Replacing('"alpha"', pl_s1, IntToStr(SpinEdit20.Value));
@@ -3642,6 +4921,139 @@ begin
   pl_panel.Delete(pl12_SL);
   pl_panel.Insert(pl12_SL, pl_s12);
 
+  // видимость маркера статуса засвета // 5.1
+  pl_s13:=pl_panel.Strings[pl13_SL];
+  pl_s13:=Smart_Replacing('"enabled"', pl_s13, chek4);
+  pl_panel.Delete(pl13_SL);
+  pl_panel.Insert(pl13_SL, pl_s13);
+
+  // Смещение относительно X // 5.2
+  pl_s14:=pl_panel.Strings[pl14_SL];
+  pl_s14:=Smart_Replacing('"Xoffset"', pl_s14, IntToStr(SpinEdit29.Value));
+  pl_panel.Delete(pl14_SL);
+  pl_panel.Insert(pl14_SL, pl_s14);
+
+  // Смещение относительно Y // 5.3
+  pl_s15:=pl_panel.Strings[pl15_SL];
+  pl_s15:=Smart_Replacing('"Yoffset"', pl_s15, IntToStr(SpinEdit30.Value));
+  pl_panel.Delete(pl15_SL);
+  pl_panel.Insert(pl15_SL, pl_s15);
+
+  // Этот враг никогда не светился // 6.1
+  pl_s16:=pl_panel.Strings[pl16_SL];
+  pl_s16:=Smart_Replacing('"neverSeen"', pl_s16, RecStartEnd(Edit27.Text));
+  pl_panel.Delete(pl16_SL);
+  pl_panel.Insert(pl16_SL, pl_s16);
+
+  // Этот враг светился хотя бы один раз // 6.2
+  pl_s17:=pl_panel.Strings[pl17_SL];
+  pl_s17:=Smart_Replacing('"lost"', pl_s17, RecStartEnd(Edit28.Text));
+  pl_panel.Delete(pl17_SL);
+  pl_panel.Insert(pl17_SL, pl_s17);
+
+  // Виден на миникарте прямо сейчас // 6.3
+  pl_s18:=pl_panel.Strings[pl18_SL];
+  pl_s18:=Smart_Replacing('"revealed"', pl_s18, RecStartEnd(Edit29.Text));
+  pl_panel.Delete(pl18_SL);
+  pl_panel.Insert(pl18_SL, pl_s18);
+
+  // Уничтоженный враг // 6.4
+  pl_s19:=pl_panel.Strings[pl19_SL];
+  pl_s19:=Smart_Replacing('"dead"', pl_s19, RecStartEnd(Edit30.Text));
+  pl_panel.Delete(pl19_SL);
+  pl_panel.Insert(pl19_SL, pl_s19);
+
+  // Этот враг никогда не светился // 7.1
+  pl_s20:=pl_panel.Strings[pl20_SL];
+  pl_s20:=Smart_Replacing('"neverSeen"', pl_s20, RecStartEnd(Edit31.Text));
+  pl_panel.Delete(pl20_SL);
+  pl_panel.Insert(pl20_SL, pl_s20);
+
+  // Этот враг светился хотя бы один раз // 7.2
+  pl_s21:=pl_panel.Strings[pl21_SL];
+  pl_s21:=Smart_Replacing('"lost"', pl_s21, RecStartEnd(Edit32.Text));
+  pl_panel.Delete(pl21_SL);
+  pl_panel.Insert(pl21_SL, pl_s21);
+
+  // Виден на миникарте прямо сейчас // 7.3
+  pl_s22:=pl_panel.Strings[pl22_SL];
+  pl_s22:=Smart_Replacing('"revealed"', pl_s22, RecStartEnd(Edit33.Text));
+  pl_panel.Delete(pl22_SL);
+  pl_panel.Insert(pl22_SL, pl_s22);
+
+  // Уничтоженный враг // 7.4
+  pl_s23:=pl_panel.Strings[pl23_SL];
+  pl_s23:=Smart_Replacing('"dead"', pl_s23, RecStartEnd(Edit34.Text));
+  pl_panel.Delete(pl23_SL);
+  pl_panel.Insert(pl23_SL, pl_s23);
+
+  // Ширина поля имени игрока // 8.1
+  pl_s24:=pl_panel.Strings[pl24_SL];
+  pl_s24:=Smart_Replacing('"width"', pl_s24, IntToStr(SpinEdit31.Value));
+  pl_panel.Delete(pl24_SL);
+  pl_panel.Insert(pl24_SL, pl_s24);
+
+  // Формат отображения для левой панели // 8.2
+  pl_s25:=pl_panel.Strings[pl25_SL];
+  pl_s25:=Smart_Replacing('"formatLeft"', pl_s25, RecStartEnd(Edit35.Text));
+  pl_panel.Delete(pl25_SL);
+  pl_panel.Insert(pl25_SL, pl_s25);
+
+  // Формат отображения для правой панели // 8.3
+  pl_s26:=pl_panel.Strings[pl26_SL];
+  pl_s26:=Smart_Replacing('"formatRight"', pl_s26, RecStartEnd(Edit36.Text));
+  pl_panel.Delete(pl26_SL);
+  pl_panel.Insert(pl26_SL, pl_s26);
+
+  // Ширина поля названия танка // 9.1
+  pl_s27:=pl_panel.Strings[pl27_SL];
+  pl_s27:=Smart_Replacing('"width"', pl_s27, IntToStr(SpinEdit32.Value));
+  pl_panel.Delete(pl27_SL);
+  pl_panel.Insert(pl27_SL, pl_s27);
+
+  // Формат отображения для левой панели // 9.2
+  pl_s28:=pl_panel.Strings[pl28_SL];
+  pl_s28:=Smart_Replacing('"formatLeft"', pl_s28, RecStartEnd(Edit37.Text));
+  pl_panel.Delete(pl28_SL);
+  pl_panel.Insert(pl28_SL, pl_s28);
+
+  // Формат отображения для правой панели // 9.3
+  pl_s29:=pl_panel.Strings[pl29_SL];
+  pl_s29:=Smart_Replacing('"formatRight"', pl_s29, RecStartEnd(Edit38.Text));
+  pl_panel.Delete(pl29_SL);
+  pl_panel.Insert(pl29_SL, pl_s29);
+
+  // Ширина поля имени игрока // 10.1
+  pl_s30:=pl_panel.Strings[pl30_SL];
+  pl_s30:=Smart_Replacing('"width"', pl_s30, IntToStr(SpinEdit33.Value));
+  pl_panel.Delete(pl30_SL);
+  pl_panel.Insert(pl30_SL, pl_s30);
+
+  // Формат отображения для правой панели // 10.2
+  pl_s31:=pl_panel.Strings[pl31_SL];
+  pl_s31:=Smart_Replacing('"nickFormatLeft"', pl_s31, RecStartEnd(Edit39.Text));
+  pl_panel.Delete(pl31_SL);
+  pl_panel.Insert(pl31_SL, pl_s31);
+
+  // Формат отображения для правой панели // 10.3
+  pl_s32:=pl_panel.Strings[pl32_SL];
+  pl_s32:=Smart_Replacing('"nickFormatRight"', pl_s32, RecStartEnd(Edit40.Text));
+  pl_panel.Delete(pl32_SL);
+  pl_panel.Insert(pl32_SL, pl_s32);
+
+  // Формат отображения для правой панели // 10.4
+  pl_s33:=pl_panel.Strings[pl33_SL];
+  pl_s33:=Smart_Replacing('"vehicleFormatLeft"', pl_s33, RecStartEnd(Edit41.Text));
+  pl_panel.Delete(pl33_SL);
+  pl_panel.Insert(pl33_SL, pl_s33);
+
+  // Формат отображения для правой панели // 10.5
+  pl_s34:=pl_panel.Strings[pl34_SL];
+  pl_s34:=Smart_Replacing('"vehicleFormatRight"', pl_s34, RecStartEnd(Edit42.Text));
+  pl_panel.Delete(pl34_SL);
+  pl_panel.Insert(pl34_SL, pl_s34);
+
+  // сохранение в файл
   pl_panel.SaveToFile(dir_xvm+pl_panel_name);
 end;
 
@@ -3691,6 +5103,317 @@ begin
   battle.Insert(bs7_SL, b_s7);
 
   battle.SaveToFile(dir_xvm+battle_name);
+end;
+
+// Загрузка из файла Battleloading.xc
+procedure TXCTuner_Form1.battload_loading;
+begin
+  battload.Clear;
+  battload.LoadFromFile(dir_xvm+battload_name);
+  // загрузка данных из файла Battleloading.xc в интерфейс
+  BL_0_SL:=Search_Line(0, '"battleLoading"', battload);
+  if BL_0_SL=-1 then error_line('"battleLoading"', battload_name) else
+  begin
+    // Формат часов / 1
+    Search:='"clockFormat"';
+    BL_1_SL:=Search_Line(BL_0_SL, Search, battload);
+    if BL_1_SL=-1 then error_line(Search, battload_name) else
+    begin
+      battload_s1:=battload.Strings[BL_1_SL];
+      battload_s1:=new_change_str(Search, battload_s1);
+      Edit43.Text:=DelStartEnd(battload_s1);
+    end;
+
+    // включить отображение шансов на победу // 2
+    Search:='"showChances"';
+    BL_2_SL:=Search_Line(BL_0_SL, Search, battload);
+    if BL_2_SL=-1 then error_line(Search, battload_name) else
+    begin
+      battload_s2:=battload.Strings[BL_2_SL];
+      battload_s2:=new_change_str(Search, battload_s2);
+      if battload_s2='true' then RadioButton85.Checked:=True else
+      if battload_s2='false' then RadioButton86.Checked:=True else
+      begin
+        ShowMessage(error_message(battload_name, battload_s2, BL_2_SL));
+        Application.Terminate;
+      end;
+    end;
+
+    // включить отображение уровня боя // 3
+    Search:='"showBattleTier"';
+    BL_3_SL:=Search_Line(BL_0_SL, Search, battload);
+    if BL_3_SL=-1 then error_line(Search, battload_name) else
+    begin
+      battload_s3:=battload.Strings[BL_3_SL];
+      battload_s3:=new_change_str(Search, battload_s3);
+      if battload_s3='true' then RadioButton87.Checked:=True else
+      if battload_s3='false' then RadioButton88.Checked:=True else
+      begin
+        ShowMessage(error_message(battload_name, battload_s3, BL_3_SL));
+        Application.Terminate;
+      end;
+    end;
+
+    // убрать отображение иконки взвода // 4
+    Search:='"removeSquadIcon"';
+    BL_4_SL:=Search_Line(BL_0_SL, Search, battload);
+    if BL_4_SL=-1 then error_line(Search, battload_name) else
+    begin
+      battload_s4:=battload.Strings[BL_4_SL];
+      battload_s4:=new_change_str(Search, battload_s4);
+      if battload_s4='true' then RadioButton90.Checked:=True else
+      if battload_s4='false' then RadioButton89.Checked:=True else
+      begin
+        ShowMessage(error_message(battload_name, battload_s4, BL_4_SL));
+        Application.Terminate;
+      end;
+    end;
+
+    // клановые эмблемы  // 5
+    BL_01_SL:=Search_Line(BL_0_SL, '"clanIcon"', battload);
+    if BL_01_SL=-1 then error_line('"clanIcon"', battload_name) else
+    begin
+      // видимость // 5.1
+      Search:='"show"';
+      BL_5_SL:=Search_Line(BL_01_SL, Search, battload);
+      if BL_5_SL=-1 then error_line(Search, battload_name) else
+      begin
+        battload_s5:=battload.Strings[BL_5_SL];
+        battload_s5:=new_change_str(Search, battload_s5);
+        if battload_s5='true' then RadioButton91.Checked:=True else
+        if battload_s5='false' then RadioButton92.Checked:=True else
+        begin
+          ShowMessage(error_message(battload_name, battload_s5, BL_5_SL));
+          Application.Terminate;
+        end;
+      end;
+
+      // Позиция x (слева) // 5.2
+      Search:='"x"';
+      BL_6_SL:=Search_Line(BL_01_SL, Search, battload);
+      if BL_6_SL=-1 then error_line(Search, battload_name) else
+      begin
+        battload_s6:=battload.Strings[BL_6_SL];
+        battload_s6:=new_change_str(Search, battload_s6);
+        SpinEdit34.Value:=StrToInt(battload_s6);
+        TrackBar18.Position:=SpinEdit34.Value;
+      end;
+
+      // Позиция y (слева) // 5.3
+      Search:='"y"';
+      BL_7_SL:=Search_Line(BL_01_SL, Search, battload);
+      if BL_7_SL=-1 then error_line(Search, battload_name) else
+      begin
+        battload_s7:=battload.Strings[BL_7_SL];
+        battload_s7:=new_change_str(Search, battload_s7);
+        SpinEdit35.Value:=StrToInt(battload_s7);
+        TrackBar19.Position:=SpinEdit35.Value;
+      end;
+
+      // Позиция x (справа) // 5.4
+      Search:='"xr"';
+      BL_8_SL:=Search_Line(BL_01_SL, Search, battload);
+      if BL_8_SL=-1 then error_line(Search, battload_name) else
+      begin
+        battload_s8:=battload.Strings[BL_8_SL];
+        battload_s8:=new_change_str(Search, battload_s8);
+        SpinEdit36.Value:=StrToInt(battload_s8);
+        TrackBar20.Position:=SpinEdit36.Value;
+      end;
+
+      // Позиция y (справа) // 5.5
+      Search:='"yr"';
+      BL_9_SL:=Search_Line(BL_01_SL, Search, battload);
+      if BL_9_SL=-1 then error_line(Search, battload_name) else
+      begin
+        battload_s9:=battload.Strings[BL_9_SL];
+        battload_s9:=new_change_str(Search, battload_s9);
+        SpinEdit37.Value:=StrToInt(battload_s9);
+        TrackBar21.Position:=SpinEdit37.Value;
+      end;
+
+      // Ширина иконки // 5.6
+      Search:='"w"';
+      BL_10_SL:=Search_Line(BL_01_SL, Search, battload);
+      if BL_10_SL=-1 then error_line(Search, battload_name) else
+      begin
+        battload_s10:=battload.Strings[BL_10_SL];
+        battload_s10:=new_change_str(Search, battload_s10);
+        SpinEdit38.Value:=StrToInt(battload_s10);
+        TrackBar22.Position:=SpinEdit38.Value;
+      end;
+
+      // Высота иконки // 5.7
+      Search:='"h"';
+      BL_11_SL:=Search_Line(BL_01_SL, Search, battload);
+      if BL_11_SL=-1 then error_line(Search, battload_name) else
+      begin
+        battload_s11:=battload.Strings[BL_11_SL];
+        battload_s11:=new_change_str(Search, battload_s11);
+        SpinEdit39.Value:=StrToInt(battload_s11);
+        TrackBar23.Position:=SpinEdit39.Value;
+      end;
+
+      // Прозрачность // 5.8
+      Search:='"alpha"';
+      BL_12_SL:=Search_Line(BL_01_SL, Search, battload);
+      if BL_12_SL=-1 then error_line(Search, battload_name) else
+      begin
+        battload_s12:=battload.Strings[BL_12_SL];
+        battload_s12:=new_change_str(Search, battload_s12);
+        SpinEdit40.Value:=StrToInt(battload_s12);
+        TrackBar24.Position:=SpinEdit40.Value;
+      end;
+    end;
+
+    // Формат отображения имени игрока // 6
+    Search:='"formatLeftNick"';
+    BL_13_SL:=Search_Line(BL_0_SL, Search, battload);
+    if BL_13_SL=-1 then error_line(Search, battload_name) else
+    begin
+      battload_s13:=battload.Strings[BL_13_SL];
+      battload_s13:=new_change_str(Search, battload_s13);
+      Edit44.Text:=DelStartEnd(battload_s13);
+    end;
+
+    // Формат отображения имени игрока // 7
+    Search:='"formatRightNick"';
+    BL_14_SL:=Search_Line(BL_0_SL, Search, battload);
+    if BL_14_SL=-1 then error_line(Search, battload_name) else
+    begin
+      battload_s14:=battload.Strings[BL_14_SL];
+      battload_s14:=new_change_str(Search, battload_s14);
+      Edit45.Text:=DelStartEnd(battload_s14);
+    end;
+
+    // Формат отображения названия танка // 8
+    Search:='"formatLeftVehicle"';
+    BL_15_SL:=Search_Line(BL_0_SL, Search, battload);
+    if BL_15_SL=-1 then error_line(Search, battload_name) else
+    begin
+      battload_s15:=battload.Strings[BL_15_SL];
+      battload_s15:=new_change_str(Search, battload_s15);
+      Edit46.Text:=DelStartEnd(battload_s15);
+    end;
+
+    // Формат отображения названия танка // 9
+    Search:='"formatRightVehicle"';
+    BL_16_SL:=Search_Line(BL_0_SL, Search, battload);
+    if BL_16_SL=-1 then error_line(Search, battload_name) else
+    begin
+      battload_s16:=battload.Strings[BL_16_SL];
+      battload_s16:=new_change_str(Search, battload_s16);
+      Edit47.Text:=DelStartEnd(battload_s16);
+    end;
+  end;
+  //Edit44.Hint:=Edit44.Text;
+end;
+
+// сохранение в файл Battleloading.xc
+procedure TXCTuner_Form1.battload_save;
+begin
+  if (RadioButton85.Checked=True) then chek1:='true' else chek1:='false';
+  if (RadioButton87.Checked=True) then chek2:='true' else chek2:='false';
+  if (RadioButton90.Checked=True) then chek3:='true' else chek3:='false';
+  if (RadioButton91.Checked=True) then chek4:='true' else chek4:='false';
+  // Формат часов на экране загрузки боя // 1
+  battload_s1:=battload.Strings[BL_1_SL];
+  battload_s1:=Smart_Replacing('"clockFormat"', battload_s1, RecStartEnd(Edit43.Text));
+  battload.Delete(BL_1_SL);
+  battload.Insert(BL_1_SL, battload_s1);
+
+  // отображение шансов на победу // 2
+  battload_s2:=battload.Strings[BL_2_SL];
+  battload_s2:=Smart_Replacing('"showChances"', battload_s2, chek1);
+  battload.Delete(BL_2_SL);
+  battload.Insert(BL_2_SL, battload_s2);
+
+  // отображение уровня боя // 3
+  battload_s3:=battload.Strings[BL_3_SL];
+  battload_s3:=Smart_Replacing('"showBattleTier"', battload_s3, chek2);
+  battload.Delete(BL_3_SL);
+  battload.Insert(BL_3_SL, battload_s3);
+
+  // убрать отображение иконки взвода // 4
+  battload_s4:=battload.Strings[BL_4_SL];
+  battload_s4:=Smart_Replacing('"removeSquadIcon"', battload_s4, chek3);
+  battload.Delete(BL_4_SL);
+  battload.Insert(BL_4_SL, battload_s4);
+
+  // Параметры отображения иконки игрока/клана // 5.1
+  battload_s5:=battload.Strings[BL_5_SL];
+  battload_s5:=Smart_Replacing('"show"', battload_s5, chek4);
+  battload.Delete(BL_5_SL);
+  battload.Insert(BL_5_SL, battload_s5);
+
+  // Положение по оси X относительно иконки танка // 5.2
+  battload_s6:=battload.Strings[BL_6_SL];
+  battload_s6:=Smart_Replacing('"x"', battload_s6, IntToStr(SpinEdit34.Value));
+  battload.Delete(BL_6_SL);
+  battload.Insert(BL_6_SL, battload_s6);
+
+  // Положение по оси Y относительно иконки танка // 5.3
+  battload_s7:=battload.Strings[BL_7_SL];
+  battload_s7:=Smart_Replacing('"y"', battload_s7, IntToStr(SpinEdit35.Value));
+  battload.Delete(BL_7_SL);
+  battload.Insert(BL_7_SL, battload_s7);
+
+  // Положение по оси X для правых ушей // 5.4
+  battload_s8:=battload.Strings[BL_8_SL];
+  battload_s8:=Smart_Replacing('"xr"', battload_s8, IntToStr(SpinEdit36.Value));
+  battload.Delete(BL_8_SL);
+  battload.Insert(BL_8_SL, battload_s8);
+
+  // Положение по оси Y для правых ушей // 5.5
+  battload_s9:=battload.Strings[BL_9_SL];
+  battload_s9:=Smart_Replacing('"yr"', battload_s9, IntToStr(SpinEdit37.Value));
+  battload.Delete(BL_9_SL);
+  battload.Insert(BL_9_SL, battload_s9);
+
+  // Ширина иконки игрока/клана // 5.6
+  battload_s10:=battload.Strings[BL_10_SL];
+  battload_s10:=Smart_Replacing('"w"', battload_s10, IntToStr(SpinEdit38.Value));
+  battload.Delete(BL_10_SL);
+  battload.Insert(BL_10_SL, battload_s10);
+
+  // Высота иконки игрока/клана // 5.7
+  battload_s11:=battload.Strings[BL_11_SL];
+  battload_s11:=Smart_Replacing('"h"', battload_s11, IntToStr(SpinEdit39.Value));
+  battload.Delete(BL_11_SL);
+  battload.Insert(BL_11_SL, battload_s11);
+
+  // Прозрачность иконки игрока/клана // 5.8
+  battload_s12:=battload.Strings[BL_12_SL];
+  battload_s12:=Smart_Replacing('"alpha"', battload_s12, IntToStr(SpinEdit40.Value));
+  battload.Delete(BL_12_SL);
+  battload.Insert(BL_12_SL, battload_s12);
+
+  // Формат отображения для левой панели // 6
+  battload_s13:=battload.Strings[BL_13_SL];
+  battload_s13:=Smart_Replacing('"formatLeftNick"', battload_s13, RecStartEnd(Edit44.Text));
+  battload.Delete(BL_13_SL);
+  battload.Insert(BL_13_SL, battload_s13);
+
+  // Формат отображения для правой панели // 7
+  battload_s14:=battload.Strings[BL_14_SL];
+  battload_s14:=Smart_Replacing('"formatRightNick"', battload_s14, RecStartEnd(Edit45.Text));
+  battload.Delete(BL_14_SL);
+  battload.Insert(BL_14_SL, battload_s14);
+
+  // Формат отображения для левой панели // 8
+  battload_s15:=battload.Strings[BL_15_SL];
+  battload_s15:=Smart_Replacing('"formatLeftVehicle"', battload_s15, RecStartEnd(Edit46.Text));
+  battload.Delete(BL_15_SL);
+  battload.Insert(BL_15_SL, battload_s15);
+
+  // Формат отображения для правой панели // 9
+  battload_s16:=battload.Strings[BL_16_SL];
+  battload_s16:=Smart_Replacing('"formatRightVehicle"', battload_s16, RecStartEnd(Edit47.Text));
+  battload.Delete(BL_16_SL);
+  battload.Insert(BL_16_SL, battload_s16);
+
+  // само сохранение
+  battload.SaveToFile(dir_xvm+battload_name);
 end;
 
 // загрузка из файла battleresults.xc
@@ -4506,6 +6229,322 @@ begin
   texts.Delete(TXT5_SL);
   texts.Insert(TXT5_SL, texts_s5);
 
+end;
+
+// Загрузка из файла statisticForm.xc
+procedure TXCTuner_Form1.tab_loading;
+begin
+  tab.Clear;
+  tab.LoadFromFile(dir_xvm+tab_name);
+  // загрузка данных из файла statisticForm.xc в интерфейс
+  tab_0_SL:=Search_Line(0, '"statisticForm"', tab);
+  if tab_0_SL=-1 then error_line('"statisticForm"', tab_name) else
+  begin
+    // включить отображение шансов на победу / 1
+    Search:='"showChances"';
+    tab_1_SL:=Search_Line(tab_0_SL, Search, tab);
+    if tab_1_SL=-1 then error_line(Search, tab_name) else
+    begin
+      tab_s1:=tab.Strings[tab_1_SL];
+      tab_s1:=new_change_str(Search, tab_s1);
+      if tab_s1='true' then RadioButton93.Checked:=True else
+      if tab_s1='false' then RadioButton94.Checked:=True else
+      begin
+        ShowMessage(error_message(tab_name, tab_s1, tab_1_SL));
+        Application.Terminate;
+      end;
+    end;
+
+    // Показывать шансы только для живых танков // 2
+    Search:='"showChancesLive"';
+    tab_2_SL:=Search_Line(tab_0_SL, Search, tab);
+    if tab_2_SL=-1 then error_line(Search, tab_name) else
+    begin
+      tab_s2:=tab.Strings[tab_2_SL];
+      tab_s2:=new_change_str(Search, tab_s2);
+      if tab_s2='true' then RadioButton95.Checked:=True else
+      if tab_s2='false' then RadioButton96.Checked:=True else
+      begin
+        ShowMessage(error_message(tab_name, tab_s2, tab_2_SL));
+        Application.Terminate;
+      end;
+    end;
+
+    // включить отображение уровня боя // 3
+    Search:='"showBattleTier"';
+    tab_3_SL:=Search_Line(tab_0_SL, Search, tab);
+    if tab_3_SL=-1 then error_line(Search, tab_name) else
+    begin
+      tab_s3:=tab.Strings[tab_3_SL];
+      tab_s3:=new_change_str(Search, tab_s3);
+      if tab_s3='true' then RadioButton97.Checked:=True else
+      if tab_s3='false' then RadioButton98.Checked:=True else
+      begin
+        ShowMessage(error_message(tab_name, tab_s3, tab_3_SL));
+        Application.Terminate;
+      end;
+    end;
+
+    // убрать отображение иконки взвода // 4
+    Search:='"removeSquadIcon"';
+    tab_4_SL:=Search_Line(tab_0_SL, Search, tab);
+    if tab_4_SL=-1 then error_line(Search, tab_name) else
+    begin
+      tab_s4:=tab.Strings[tab_4_SL];
+      tab_s4:=new_change_str(Search, tab_s4);
+      if tab_s4='true' then RadioButton100.Checked:=True else
+      if tab_s4='false' then RadioButton99.Checked:=True else
+      begin
+        ShowMessage(error_message(tab_name, tab_s4, tab_4_SL));
+        Application.Terminate;
+      end;
+    end;
+
+    // клановые эмблемы  // 5
+    tab_01_SL:=Search_Line(tab_0_SL, '"clanIcon"', tab);
+    if tab_01_SL=-1 then error_line('"clanIcon"', tab_name) else
+    begin
+      // видимость // 5.1
+      Search:='"show"';
+      tab_5_SL:=Search_Line(tab_01_SL, Search, tab);
+      if tab_5_SL=-1 then error_line(Search, tab_name) else
+      begin
+        tab_s5:=tab.Strings[tab_5_SL];
+        tab_s5:=new_change_str(Search, tab_s5);
+        if tab_s5='true' then RadioButton101.Checked:=True else
+        if tab_s5='false' then RadioButton102.Checked:=True else
+        begin
+          ShowMessage(error_message(tab_name, tab_s5, tab_5_SL));
+          Application.Terminate;
+        end;
+      end;
+
+      // Позиция x (слева) // 5.2
+      Search:='"x"';
+      tab_6_SL:=Search_Line(tab_01_SL, Search, tab);
+      if tab_6_SL=-1 then error_line(Search, tab_name) else
+      begin
+        tab_s6:=tab.Strings[tab_6_SL];
+        tab_s6:=new_change_str(Search, tab_s6);
+        SpinEdit41.Value:=StrToInt(tab_s6);
+        TrackBar25.Position:=SpinEdit41.Value;
+      end;
+
+      // Позиция y (слева) // 5.3
+      Search:='"y"';
+      tab_7_SL:=Search_Line(tab_01_SL, Search, tab);
+      if tab_7_SL=-1 then error_line(Search, tab_name) else
+      begin
+        tab_s7:=tab.Strings[tab_7_SL];
+        tab_s7:=new_change_str(Search, tab_s7);
+        SpinEdit42.Value:=StrToInt(tab_s7);
+        TrackBar26.Position:=SpinEdit42.Value;
+      end;
+
+      // Позиция x (справа) // 5.4
+      Search:='"xr"';
+      tab_8_SL:=Search_Line(tab_01_SL, Search, tab);
+      if tab_8_SL=-1 then error_line(Search, tab_name) else
+      begin
+        tab_s8:=tab.Strings[tab_8_SL];
+        tab_s8:=new_change_str(Search, tab_s8);
+        SpinEdit43.Value:=StrToInt(tab_s8);
+        TrackBar27.Position:=SpinEdit43.Value;
+      end;
+
+      // Позиция y (справа) // 5.5
+      Search:='"yr"';
+      tab_9_SL:=Search_Line(tab_01_SL, Search, tab);
+      if tab_9_SL=-1 then error_line(Search, tab_name) else
+      begin
+        tab_s9:=tab.Strings[tab_9_SL];
+        tab_s9:=new_change_str(Search, tab_s9);
+        SpinEdit44.Value:=StrToInt(tab_s9);
+        TrackBar28.Position:=SpinEdit44.Value;
+      end;
+
+      // Ширина иконки // 5.6
+      Search:='"w"';
+      tab_10_SL:=Search_Line(tab_01_SL, Search, tab);
+      if tab_10_SL=-1 then error_line(Search, tab_name) else
+      begin
+        tab_s10:=tab.Strings[tab_10_SL];
+        tab_s10:=new_change_str(Search, tab_s10);
+        SpinEdit45.Value:=StrToInt(tab_s10);
+        TrackBar29.Position:=SpinEdit45.Value;
+      end;
+
+      // Высота иконки // 5.7
+      Search:='"h"';
+      tab_11_SL:=Search_Line(tab_01_SL, Search, tab);
+      if tab_11_SL=-1 then error_line(Search, tab_name) else
+      begin
+        tab_s11:=tab.Strings[tab_11_SL];
+        tab_s11:=new_change_str(Search, tab_s11);
+        SpinEdit46.Value:=StrToInt(tab_s11);
+        TrackBar30.Position:=SpinEdit46.Value;
+      end;
+
+      // Прозрачность // 5.8
+      Search:='"alpha"';
+      tab_12_SL:=Search_Line(tab_01_SL, Search, tab);
+      if tab_12_SL=-1 then error_line(Search, tab_name) else
+      begin
+        tab_s12:=tab.Strings[tab_12_SL];
+        tab_s12:=new_change_str(Search, tab_s12);
+        SpinEdit47.Value:=StrToInt(tab_s12);
+        TrackBar31.Position:=SpinEdit47.Value;
+      end;
+    end;
+
+    // Формат отображения имени игрока // 6
+    Search:='"formatLeftNick"';
+    tab_13_SL:=Search_Line(tab_0_SL, Search, tab);
+    if tab_13_SL=-1 then error_line(Search, tab_name) else
+    begin
+      tab_s13:=tab.Strings[tab_13_SL];
+      tab_s13:=new_change_str(Search, tab_s13);
+      Edit49.Text:=DelStartEnd(tab_s13);
+    end;
+
+    // Формат отображения имени игрока // 7
+    Search:='"formatRightNick"';
+    tab_14_SL:=Search_Line(tab_0_SL, Search, tab);
+    if tab_14_SL=-1 then error_line(Search, tab_name) else
+    begin
+      tab_s14:=tab.Strings[tab_14_SL];
+      tab_s14:=new_change_str(Search, tab_s14);
+      Edit50.Text:=DelStartEnd(tab_s14);
+    end;
+
+    // Формат отображения названия танка // 8
+    Search:='"formatLeftVehicle"';
+    tab_15_SL:=Search_Line(tab_0_SL, Search, tab);
+    if tab_15_SL=-1 then error_line(Search, tab_name) else
+    begin
+      tab_s15:=tab.Strings[tab_15_SL];
+      tab_s15:=new_change_str(Search, tab_s15);
+      Edit51.Text:=DelStartEnd(tab_s15);
+    end;
+
+    // Формат отображения названия танка // 9
+    Search:='"formatRightVehicle"';
+    tab_16_SL:=Search_Line(tab_0_SL, Search, tab);
+    if tab_16_SL=-1 then error_line(Search, tab_name) else
+    begin
+      tab_s16:=tab.Strings[tab_16_SL];
+      tab_s16:=new_change_str(Search, tab_s16);
+      Edit52.Text:=DelStartEnd(tab_s16);
+    end;
+  end;
+end;
+
+// Сохранение в файл statisticForm.xc
+procedure TXCTuner_Form1.tab_save;
+begin
+  if (RadioButton93.Checked=True)  then chek1:='true' else chek1:='false';
+  if (RadioButton95.Checked=True)  then chek2:='true' else chek2:='false';
+  if (RadioButton97.Checked=True)  then chek3:='true' else chek3:='false';
+  if (RadioButton100.Checked=True) then chek4:='true' else chek4:='false';
+  if (RadioButton101.Checked=True) then chek5:='true' else chek5:='false';
+  // отображение шансов на победу // 1
+  tab_s1:=tab.Strings[tab_1_SL];
+  tab_s1:=Smart_Replacing('"showChances"', tab_s1, chek1);
+  tab.Delete(tab_1_SL);
+  tab.Insert(tab_1_SL, tab_s1);
+
+  // Показывать шансы только для живых танков. // 2
+  tab_s2:=tab.Strings[tab_2_SL];
+  tab_s2:=Smart_Replacing('"showChancesLive"', tab_s2, chek2);
+  tab.Delete(tab_2_SL);
+  tab.Insert(tab_2_SL, tab_s2);
+
+  // отображение уровня боя // 3
+  tab_s3:=tab.Strings[tab_3_SL];
+  tab_s3:=Smart_Replacing('"showBattleTier"', tab_s3, chek3);
+  tab.Delete(tab_3_SL);
+  tab.Insert(tab_3_SL, tab_s3);
+
+  // убрать отображение иконки взвода // 4
+  tab_s4:=tab.Strings[tab_4_SL];
+  tab_s4:=Smart_Replacing('"removeSquadIcon"', tab_s4, chek4);
+  tab.Delete(tab_4_SL);
+  tab.Insert(tab_4_SL, tab_s4);
+
+  // Параметры отображения иконки игрока/клана // 5.1
+  tab_s5:=tab.Strings[tab_5_SL];
+  tab_s5:=Smart_Replacing('"show"', tab_s5, chek5);
+  tab.Delete(tab_5_SL);
+  tab.Insert(tab_5_SL, tab_s5);
+
+  // Положение по оси X относительно иконки танка // 5.2
+  tab_s6:=tab.Strings[tab_6_SL];
+  tab_s6:=Smart_Replacing('"x"', tab_s6, IntToStr(SpinEdit41.Value));
+  tab.Delete(tab_6_SL);
+  tab.Insert(tab_6_SL, tab_s6);
+
+  // Положение по оси Y относительно иконки танка // 5.3
+  tab_s7:=tab.Strings[tab_7_SL];
+  tab_s7:=Smart_Replacing('"y"', tab_s7, IntToStr(SpinEdit42.Value));
+  tab.Delete(tab_7_SL);
+  tab.Insert(tab_7_SL, tab_s7);
+
+  // Положение по оси X для правых ушей // 5.4
+  tab_s8:=tab.Strings[tab_8_SL];
+  tab_s8:=Smart_Replacing('"xr"', tab_s8, IntToStr(SpinEdit43.Value));
+  tab.Delete(tab_8_SL);
+  tab.Insert(tab_8_SL, tab_s8);
+
+  // Положение по оси Y для правых ушей // 5.5
+  tab_s9:=tab.Strings[tab_9_SL];
+  tab_s9:=Smart_Replacing('"yr"', tab_s9, IntToStr(SpinEdit44.Value));
+  tab.Delete(tab_9_SL);
+  tab.Insert(tab_9_SL, tab_s9);
+
+  // Ширина иконки игрока/клана // 5.6
+  tab_s10:=tab.Strings[tab_10_SL];
+  tab_s10:=Smart_Replacing('"w"', tab_s10, IntToStr(SpinEdit45.Value));
+  tab.Delete(tab_10_SL);
+  tab.Insert(tab_10_SL, tab_s10);
+
+  // Высота иконки игрока/клана // 5.7
+  tab_s11:=tab.Strings[tab_11_SL];
+  tab_s11:=Smart_Replacing('"h"', tab_s11, IntToStr(SpinEdit46.Value));
+  tab.Delete(tab_11_SL);
+  tab.Insert(tab_11_SL, tab_s11);
+
+  // Прозрачность иконки игрока/клана // 5.8
+  tab_s12:=tab.Strings[tab_12_SL];
+  tab_s12:=Smart_Replacing('"alpha"', tab_s12, IntToStr(SpinEdit47.Value));
+  tab.Delete(tab_12_SL);
+  tab.Insert(tab_12_SL, tab_s12);
+
+  // Формат отображения для левой панели // 6
+  tab_s13:=tab.Strings[tab_13_SL];
+  tab_s13:=Smart_Replacing('"formatLeftNick"', tab_s13, RecStartEnd(Edit49.Text));
+  tab.Delete(tab_13_SL);
+  tab.Insert(tab_13_SL, tab_s13);
+
+  // Формат отображения для правой панели // 7
+  tab_s14:=tab.Strings[tab_14_SL];
+  tab_s14:=Smart_Replacing('"formatRightNick"', tab_s14, RecStartEnd(Edit50.Text));
+  tab.Delete(tab_14_SL);
+  tab.Insert(tab_14_SL, tab_s14);
+
+  // Формат отображения для левой панели // 8
+  tab_s15:=tab.Strings[tab_15_SL];
+  tab_s15:=Smart_Replacing('"formatLeftVehicle"', tab_s15, RecStartEnd(Edit51.Text));
+  tab.Delete(tab_15_SL);
+  tab.Insert(tab_15_SL, tab_s15);
+
+  // Формат отображения для правой панели // 9
+  tab_s16:=tab.Strings[tab_16_SL];
+  tab_s16:=Smart_Replacing('"formatRightVehicle"', tab_s16, RecStartEnd(Edit52.Text));
+  tab.Delete(tab_16_SL);
+  tab.Insert(tab_16_SL, tab_s16);
+
+  // само сохранение
+  tab.SaveToFile(dir_xvm+tab_name);
 end;
 
 // Загрузка из файла turretMarkers.xc в программу

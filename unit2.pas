@@ -19,9 +19,15 @@ type
     Label2: TLabel;
     Label3: TLabel;
     Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
     procedure Label4Click(Sender: TObject);
     procedure Label4MouseLeave(Sender: TObject);
     procedure Label4MouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer
+      );
+    procedure Label6Click(Sender: TObject);
+    procedure Label6MouseLeave(Sender: TObject);
+    procedure Label6MouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer
       );
   private
     { private declarations }
@@ -55,6 +61,24 @@ procedure TAbout.Label4MouseMove(Sender: TObject; Shift: TShiftState; X,
   Y: Integer);
 begin
   Label4.Font.Style:=Label4.Font.Style+[fsUnderLine];
+end;
+
+procedure TAbout.Label6Click(Sender: TObject);
+var url: String;
+begin
+  url:='http://shalfey-lab.ru/testirovanie/';
+  ShellExecute(0,PChar('open'),PChar('explorer'),PChar(url),nil,5);
+end;
+
+procedure TAbout.Label6MouseLeave(Sender: TObject);
+begin
+  Label6.Font.Style:=Label6.Font.Style-[fsUnderLine];
+end;
+
+procedure TAbout.Label6MouseMove(Sender: TObject; Shift: TShiftState; X,
+  Y: Integer);
+begin
+  Label6.Font.Style:=Label6.Font.Style+[fsUnderLine];
 end;
 
 end.
