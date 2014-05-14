@@ -87,6 +87,36 @@ begin
         XCTuner_Form1.mbColorPreview5.Color:=mbColorPreview1.Color;
         XCTuner_Form1.Edit2.Text:=XCTuner_Form1.ColorToHex(rgb);
       end;
+    6:
+      begin
+        XCTuner_Form1.mbColorPreview6.Color:=mbColorPreview1.Color;
+        XCTuner_Form1.Edit48.Text:=XCTuner_Form1.ColorToHex(rgb);
+      end;
+    7:
+      begin
+        XCTuner_Form1.mbColorPreview7.Color:=mbColorPreview1.Color;
+        XCTuner_Form1.Edit53.Text:=XCTuner_Form1.ColorToHex(rgb);
+      end;
+    8:
+      begin
+        XCTuner_Form1.mbColorPreview8.Color:=mbColorPreview1.Color;
+        XCTuner_Form1.Edit54.Text:=XCTuner_Form1.ColorToHex(rgb);
+      end;
+    9:
+      begin
+        XCTuner_Form1.mbColorPreview9.Color:=mbColorPreview1.Color;
+        XCTuner_Form1.Edit55.Text:=XCTuner_Form1.ColorToHex(rgb);
+      end;
+    10:
+      begin
+        XCTuner_Form1.mbColorPreview10.Color:=mbColorPreview1.Color;
+        XCTuner_Form1.Edit56.Text:=XCTuner_Form1.ColorToHex(rgb);
+      end;
+    11:
+      begin
+        XCTuner_Form1.mbColorPreview11.Color:=mbColorPreview1.Color;
+        XCTuner_Form1.Edit57.Text:=XCTuner_Form1.ColorToHex(rgb);
+      end;
   end;
   ColorSelectMy.Close;
 end;
