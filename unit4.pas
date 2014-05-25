@@ -117,6 +117,11 @@ begin
         XCTuner_Form1.mbColorPreview11.Color:=mbColorPreview1.Color;
         XCTuner_Form1.Edit57.Text:=XCTuner_Form1.ColorToHex(rgb);
       end;
+    12:
+      begin
+        XCTuner_Form1.mbColorPreview12.Color:=mbColorPreview1.Color;
+        XCTuner_Form1.Edit58.Text:=XCTuner_Form1.ColorToHex(rgb);
+      end;
   end;
   ColorSelectMy.Close;
 end;
