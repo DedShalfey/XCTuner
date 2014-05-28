@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, cyColorGrid, SLHColorPicker, mbColorPreview,
-  Forms, Controls, Graphics, Dialogs, Buttons, StdCtrls;
+  Forms, Controls, Graphics, Dialogs, Buttons, StdCtrls, ComCtrls;
 
 type
 
@@ -43,6 +43,42 @@ implementation
 uses Unit1;
 
 { TColorSelectMy }
+
+function GetColorBtn: TmbColorPreview;
+var
+  MP, SP: TTabSheet;
+  SB: TScrollBox;
+  GB: TGroupBox;
+  mbP: TmbColorPreview;
+  i: integer;
+begin
+  MP := TTabSheet(XCTuner_Form1.PageControl11.ActivePage);
+  for i := 0 to MP.ControlCount - 1 do
+  if MP.Controls[i] is TPageControl then
+    SP := TTabSheet(TPageControl(MP.Controls[i]).ActivePage);
+  SB := TScrollBox(SP.FindChildControl(SBSelect));
+  GB := TGroupBox(SB.FindChildControl(GBSelect));
+  mbP := TmbColorPreview(GB.FindChildControl(ColSelectBtn));
+  Result := mbp;
+end;
+
+function GetColorEdit: TEdit;
+var
+  MP, SP: TTabSheet;
+  SB: TScrollBox;
+  GB: TGroupBox;
+  Edt: TEdit;
+  i: integer;
+begin
+  MP := TTabSheet(XCTuner_Form1.PageControl11.ActivePage);
+  for i := 0 to MP.ControlCount - 1 do
+  if MP.Controls[i] is TPageControl then
+    SP := TTabSheet(TPageControl(MP.Controls[i]).ActivePage);
+  SB := TScrollBox(SP.FindChildControl(SBSelect));
+  GB := TGroupBox(SB.FindChildControl(GBSelect));
+  Edt := TEdit(GB.FindChildControl(ColSelectEdit));
+  Result := Edt;
+end;
 
 procedure TColorSelectMy.BitBtn2Click(Sender: TObject);
 begin
@@ -121,6 +157,11 @@ begin
       begin
         XCTuner_Form1.mbColorPreview12.Color:=mbColorPreview1.Color;
         XCTuner_Form1.Edit58.Text:=XCTuner_Form1.ColorToHex(rgb);
+      end;
+    13:
+      begin
+        GetColorBtn.Color := mbColorPreview1.Color;
+        GetColorEdit.Text := XCTuner_Form1.ColorToHex(rgb);
       end;
   end;
   ColorSelectMy.Close;

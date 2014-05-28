@@ -1,12 +1,12 @@
 object About: TAbout
   Left = 340
-  Height = 238
+  Height = 255
   Top = 227
   Width = 354
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'О Программе...'
-  ClientHeight = 238
+  ClientHeight = 255
   ClientWidth = 354
   Icon.Data = {
     BE1000000000010001002020000001002000A810000016000000280000002000
@@ -151,7 +151,7 @@ object About: TAbout
     Cursor = crHandPoint
     Left = 121
     Height = 38
-    Top = 192
+    Top = 211
     Width = 120
     Default = True
     DefaultCaption = True
@@ -513,9 +513,9 @@ object About: TAbout
   object Label2: TLabel
     Left = 140
     Height = 15
-    Top = 85
+    Top = 104
     Width = 84
-    Caption = 'Версия: 0.2.2.94'
+    Caption = 'Версия: 0.2.3.67'
     Font.Color = clBlack
     ParentColor = False
     ParentFont = False
@@ -523,7 +523,7 @@ object About: TAbout
   object Label3: TLabel
     Left = 136
     Height = 15
-    Top = 153
+    Top = 172
     Width = 88
     Caption = 'Copyright©2014'
     ParentColor = False
@@ -533,7 +533,7 @@ object About: TAbout
     Left = 121
     Height = 15
     Hint = 'http://www.koreanrandom.com/forum/topic/12494-xctuner-настройщик-конфигов-версия-01847-дата-110314-статус-beta/'
-    Top = 102
+    Top = 121
     Width = 119
     Caption = 'Оф. тема программы'
     Font.Color = clBlue
@@ -548,7 +548,7 @@ object About: TAbout
   object Label5: TLabel
     Left = 170
     Height = 15
-    Top = 118
+    Top = 137
     Width = 21
     Caption = 'или'
     ParentColor = False
@@ -558,7 +558,7 @@ object About: TAbout
     Left = 121
     Height = 15
     Hint = 'http://shalfey-lab.ru/testirovanie/'
-    Top = 133
+    Top = 152
     Width = 119
     Caption = 'Оф. тема программы'
     Font.Color = clBlue
@@ -573,9 +573,17 @@ object About: TAbout
   object Label7: TLabel
     Left = 96
     Height = 15
-    Top = 170
+    Top = 189
     Width = 168
-    Caption = 'Дата Сборки: 21.05.2014 (15:25)'
+    Caption = 'Дата Сборки: 28.05.2014 (20:36)'
+    ParentColor = False
+  end
+  object Label8: TLabel
+    Left = 90
+    Height = 15
+    Top = 83
+    Width = 172
+    Caption = 'Кодинг: Viktor R. aka Skiffmaster'
     ParentColor = False
   end
 end

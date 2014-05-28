@@ -327,23 +327,23 @@ object Edit_XVM: TEdit_XVM
   end
   object Label1: TLabel
     Left = 8
-    Height = 15
+    Height = 13
     Top = 11
-    Width = 101
+    Width = 90
     Caption = 'Версия мода XVM:'
     ParentColor = False
   end
   object Label3: TLabel
     Left = 8
-    Height = 15
+    Height = 13
     Top = 38
-    Width = 101
+    Width = 97
     Caption = 'Версия редактора:'
     ParentColor = False
   end
   object Label5: TLabel
     Left = 8
-    Height = 15
+    Height = 13
     Top = 98
     Width = 30
     Caption = 'Язык:'
@@ -351,47 +351,47 @@ object Edit_XVM: TEdit_XVM
   end
   object Label7: TLabel
     Left = 8
-    Height = 15
+    Height = 13
     Top = 127
-    Width = 42
+    Width = 39
     Caption = 'Регион:'
     ParentColor = False
   end
   object Label9: TLabel
     Left = 8
-    Height = 15
+    Height = 13
     Top = 154
-    Width = 60
+    Width = 58
     Caption = 'Авторство:'
     ParentColor = False
   end
   object Label11: TLabel
     Left = 8
-    Height = 15
+    Height = 13
     Top = 183
-    Width = 108
+    Width = 99
     Caption = 'Описание конфига:'
     ParentColor = False
   end
   object Label13: TLabel
     Left = 8
-    Height = 15
+    Height = 13
     Top = 212
-    Width = 109
+    Width = 102
     Caption = 'Дата модификации:'
     ParentColor = False
   end
   object Label15: TLabel
     Left = 8
-    Height = 15
+    Height = 13
     Top = 244
-    Width = 73
+    Width = 67
     Caption = 'Версия игры:'
     ParentColor = False
   end
   object Edit1: TEdit
     Left = 144
-    Height = 23
+    Height = 21
     Hint = 'Версия конфига. Не удаляйте и не изменяйте её без необходимости!'
     Top = 8
     Width = 192
@@ -402,7 +402,7 @@ object Edit_XVM: TEdit_XVM
   end
   object Edit2: TEdit
     Left = 144
-    Height = 23
+    Height = 21
     Top = 36
     Width = 192
     TabOrder = 3
@@ -410,7 +410,7 @@ object Edit_XVM: TEdit_XVM
   end
   object Edit3: TEdit
     Left = 144
-    Height = 23
+    Height = 21
     Hint = 'auto - автоматически определять язык клиента игры, или укажите имя файла в папке res_mods/xvm/l10n/ (например, en или ru)'
     Top = 95
     Width = 192
@@ -421,7 +421,7 @@ object Edit_XVM: TEdit_XVM
   end
   object Edit4: TEdit
     Left = 144
-    Height = 23
+    Height = 21
     Hint = 'auto - автоматически определять регион из клиента игры, или укажите один из: RU, EU, NA, SG, VTC, KR'
     Top = 123
     Width = 192
@@ -432,7 +432,7 @@ object Edit_XVM: TEdit_XVM
   end
   object Edit5: TEdit
     Left = 144
-    Height = 23
+    Height = 21
     Top = 151
     Width = 192
     TabOrder = 6
@@ -440,7 +440,7 @@ object Edit_XVM: TEdit_XVM
   end
   object Edit6: TEdit
     Left = 144
-    Height = 23
+    Height = 21
     Top = 180
     Width = 192
     TabOrder = 7
@@ -448,7 +448,7 @@ object Edit_XVM: TEdit_XVM
   end
   object DateEdit1: TDateEdit
     Left = 144
-    Height = 23
+    Height = 21
     Top = 209
     Width = 168
     CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
@@ -463,7 +463,7 @@ object Edit_XVM: TEdit_XVM
   end
   object Edit7: TEdit
     Left = 144
-    Height = 23
+    Height = 21
     Top = 240
     Width = 192
     TabOrder = 9
@@ -471,15 +471,15 @@ object Edit_XVM: TEdit_XVM
   end
   object Label16: TLabel
     Left = 8
-    Height = 15
+    Height = 13
     Top = 273
-    Width = 86
+    Width = 81
     Caption = 'Адрес конфига:'
     ParentColor = False
   end
   object Edit8: TEdit
     Left = 144
-    Height = 23
+    Height = 21
     Top = 269
     Width = 192
     TabOrder = 10
@@ -487,15 +487,15 @@ object Edit_XVM: TEdit_XVM
   end
   object Label2: TLabel
     Left = 8
-    Height = 15
+    Height = 13
     Top = 68
-    Width = 100
+    Width = 89
     Caption = 'Мин. версия XVM:'
     ParentColor = False
   end
   object Edit9: TEdit
     Left = 144
-    Height = 23
+    Height = 21
     Hint = 'Минимально необходимая версия мода XVM'
     Top = 65
     Width = 192

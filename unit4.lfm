@@ -1,7 +1,7 @@
 object ColorSelectMy: TColorSelectMy
-  Left = 355
+  Left = 287
   Height = 321
-  Top = 207
+  Top = 85
   Width = 482
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
@@ -341,25 +341,25 @@ object ColorSelectMy: TColorSelectMy
   end
   object Label1: TLabel
     Left = 354
-    Height = 15
+    Height = 13
     Top = 123
-    Width = 83
+    Width = 73
     Caption = 'Предпросмотр'
     ParentColor = False
   end
   object Label2: TLabel
     Left = 349
-    Height = 15
+    Height = 13
     Top = 203
-    Width = 102
+    Width = 99
     Caption = 'Значение: #000000'
     ParentColor = False
   end
   object Label3: TLabel
     Left = 368
-    Height = 15
+    Height = 13
     Top = 6
-    Width = 56
+    Width = 53
     Caption = 'Заготовки'
     ParentColor = False
   end

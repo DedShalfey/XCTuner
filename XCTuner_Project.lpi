@@ -21,11 +21,11 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="2"/>
-      <RevisionNr Value="2"/>
-      <BuildNr Value="95"/>
+      <RevisionNr Value="3"/>
+      <BuildNr Value="68"/>
       <Language Value="0419"/>
       <Attributes pvaPreRelease="True"/>
-      <StringTable FileDescription="XCTuner" LegalCopyright="Ded_Shalfey" ProductName="XCTuner" ProductVersion=""/>
+      <StringTable FileDescription="XCTuner" LegalCopyright="Ded_Shalfey &amp; Skiffmaster" ProductName="XCTuner" ProductVersion=""/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="Default" Default="True"/>
@@ -38,34 +38,46 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="9">
+    <RequiredPackages Count="13">
       <Item1>
-        <PackageName Value="SynEdit"/>
+        <PackageName Value="pl_spktoolbar"/>
       </Item1>
       <Item2>
-        <PackageName Value="pl_ExText"/>
+        <PackageName Value="pl_exdesign"/>
       </Item2>
       <Item3>
-        <PackageName Value="pl_pascalscada"/>
+        <PackageName Value="pl_KControls"/>
       </Item3>
       <Item4>
-        <PackageName Value="pl_cindy"/>
+        <PackageName Value="FCL"/>
       </Item4>
       <Item5>
-        <PackageName Value="RunTimeTypeInfoControls"/>
+        <PackageName Value="SynEdit"/>
       </Item5>
       <Item6>
-        <PackageName Value="pl_excontrols"/>
+        <PackageName Value="pl_ExText"/>
       </Item6>
       <Item7>
-        <PackageName Value="pl_colorlib"/>
+        <PackageName Value="pl_pascalscada"/>
       </Item7>
       <Item8>
-        <PackageName Value="pl_visualplanit"/>
+        <PackageName Value="pl_cindy"/>
       </Item8>
       <Item9>
-        <PackageName Value="LCL"/>
+        <PackageName Value="RunTimeTypeInfoControls"/>
       </Item9>
+      <Item10>
+        <PackageName Value="pl_excontrols"/>
+      </Item10>
+      <Item11>
+        <PackageName Value="pl_colorlib"/>
+      </Item11>
+      <Item12>
+        <PackageName Value="pl_visualplanit"/>
+      </Item12>
+      <Item13>
+        <PackageName Value="LCL"/>
+      </Item13>
     </RequiredPackages>
     <Units Count="5">
       <Unit0>
@@ -116,6 +128,7 @@
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      <SrcPath Value="lib\ext"/>
     </SearchPaths>
     <CodeGeneration>
       <SmartLinkUnit Value="True"/>

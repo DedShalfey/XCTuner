@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, VpCalendar, Forms, Controls, Graphics, Dialogs,
-  Buttons, StdCtrls, Calendar, EditBtn;
+  Buttons, StdCtrls, EditBtn;
 
 type
 
