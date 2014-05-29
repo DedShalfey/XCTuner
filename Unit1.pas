@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs,
-  ExtCtrls, Buttons, ComCtrls, StdCtrls, Spin, CheckLst, Unit2, Unit3,
+  ExtCtrls, Buttons, ComCtrls, StdCtrls, Spin, Unit2, Unit3, Unit5,
   mbColorPreview, StrUtils, types, Unit4, ShellApi, RegExpr, IniFiles;
 
 type
@@ -29,7 +29,6 @@ type
     BitBtn9: TBitBtn;
     BitBtnColor10: TBitBtn;
     BitBtnColor11: TBitBtn;
-    BitBtnColor12: TBitBtn;
     BitBtnColor6: TBitBtn;
     BitBtn2: TBitBtn;
     BitBtn4: TBitBtn;
@@ -123,7 +122,6 @@ type
     ComboBox4: TComboBox;
     ComboBox5: TComboBox;
     ComboBox6: TComboBox;
-    ComboBox7: TComboBox;
     Edit1: TEdit;
     Edit10: TEdit;
     Edit11: TEdit;
@@ -177,7 +175,6 @@ type
     Edit55: TEdit;
     Edit56: TEdit;
     Edit57: TEdit;
-    Edit58: TEdit;
     Edit6: TEdit;
     Edit7: TEdit;
     Edit8: TEdit;
@@ -189,7 +186,6 @@ type
     FloatSpinEdit5: TFloatSpinEdit;
     FloatSpinEdit6: TFloatSpinEdit;
     FloatSpinEdit7: TFloatSpinEdit;
-    FloatSpinEdit8: TFloatSpinEdit;
     GroupBox1: TGroupBox;
     GroupBox10: TGroupBox;
     GroupBox11: TGroupBox;
@@ -277,7 +273,6 @@ type
     GroupBox86: TGroupBox;
     GroupBox87: TGroupBox;
     GroupBox88: TGroupBox;
-    GroupBox89: TGroupBox;
     GroupBox9: TGroupBox;
     GroupBox90: TGroupBox;
     GroupBox91: TGroupBox;
@@ -286,7 +281,6 @@ type
     GroupBox94: TGroupBox;
     GroupBox95: TGroupBox;
     GroupBox96: TGroupBox;
-    GroupBox97: TGroupBox;
     Image1: TImage;
     Image10: TImage;
     Image100: TImage;
@@ -358,7 +352,6 @@ type
     Image161: TImage;
     Image162: TImage;
     Image163: TImage;
-    Image164: TImage;
     Image165: TImage;
     Image166: TImage;
     Image167: TImage;
@@ -372,9 +365,6 @@ type
     Image174: TImage;
     Image175: TImage;
     Image176: TImage;
-    Image177: TImage;
-    Image178: TImage;
-    Image179: TImage;
     Image18: TImage;
     Image19: TImage;
     Image2: TImage;
@@ -530,16 +520,12 @@ type
     Label156: TLabel;
     Label157: TLabel;
     Label158: TLabel;
-    Label159: TLabel;
     Label16: TLabel;
-    Label160: TLabel;
-    Label161: TLabel;
     Label17: TLabel;
     Label18: TLabel;
     Label19: TLabel;
     Label2: TLabel;
     Label20: TLabel;
-    Label21: TLabel;
     Label22: TLabel;
     Label23: TLabel;
     Label24: TLabel;
@@ -628,7 +614,6 @@ type
     mbColorPreview1: TmbColorPreview;
     mbColorPreview10: TmbColorPreview;
     mbColorPreview11: TmbColorPreview;
-    mbColorPreview12: TmbColorPreview;
     mbColorPreview2: TmbColorPreview;
     mbColorPreview3: TmbColorPreview;
     mbColorPreview4: TmbColorPreview;
@@ -840,7 +825,6 @@ type
     SpinEdit58: TSpinEdit;
     SpinEdit59: TSpinEdit;
     SpinEdit6: TSpinEdit;
-    SpinEdit60: TSpinEdit;
     SpinEdit7: TSpinEdit;
     SpinEdit8: TSpinEdit;
     SpinEdit9: TSpinEdit;
@@ -858,7 +842,6 @@ type
     TabSheet15: TTabSheet;
     TabSheet16: TTabSheet;
     TabSheet17: TTabSheet;
-    TabSheet18: TTabSheet;
     TabSheet19: TTabSheet;
     TabSheet2: TTabSheet;
     TabSheet20: TTabSheet;
@@ -959,8 +942,6 @@ type
     TrackBar49: TTrackBar;
     TrackBar5: TTrackBar;
     TrackBar50: TTrackBar;
-    TrackBar51: TTrackBar;
-    TrackBar52: TTrackBar;
     TrackBar6: TTrackBar;
     TrackBar7: TTrackBar;
     TrackBar8: TTrackBar;
@@ -974,7 +955,6 @@ type
     procedure BitBtn16Click(Sender: TObject);
     procedure BitBtnColor10Click(Sender: TObject);
     procedure BitBtnColor11Click(Sender: TObject);
-    procedure BitBtnColor12Click(Sender: TObject);
     procedure BitBtnColor6Click(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure BitBtn2Click(Sender: TObject);
@@ -1076,7 +1056,6 @@ type
     procedure Edit55Exit(Sender: TObject);
     procedure Edit56Exit(Sender: TObject);
     procedure Edit57Exit(Sender: TObject);
-    procedure Edit58Exit(Sender: TObject);
     procedure Edit5Exit(Sender: TObject);
     procedure Edit6Exit(Sender: TObject);
     procedure FloatSpinEdit1Change(Sender: TObject);
@@ -1086,7 +1065,6 @@ type
     procedure FloatSpinEdit5Change(Sender: TObject);
     procedure FloatSpinEdit6Change(Sender: TObject);
     procedure FloatSpinEdit7Change(Sender: TObject);
-    procedure FloatSpinEdit8Change(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
     procedure Image100Click(Sender: TObject);
@@ -1158,7 +1136,6 @@ type
     procedure Image161Click(Sender: TObject);
     procedure Image162Click(Sender: TObject);
     procedure Image163Click(Sender: TObject);
-    procedure Image164Click(Sender: TObject);
     procedure Image165Click(Sender: TObject);
     procedure Image166Click(Sender: TObject);
     procedure Image167Click(Sender: TObject);
@@ -1172,9 +1149,6 @@ type
     procedure Image174Click(Sender: TObject);
     procedure Image175Click(Sender: TObject);
     procedure Image176Click(Sender: TObject);
-    procedure Image177Click(Sender: TObject);
-    procedure Image178Click(Sender: TObject);
-    procedure Image179Click(Sender: TObject);
     procedure Image17Click(Sender: TObject);
     procedure Image180Click(Sender: TObject);
     procedure Image181Click(Sender: TObject);
@@ -1313,7 +1287,6 @@ type
     procedure SpinEdit57Change(Sender: TObject);
     procedure SpinEdit58Change(Sender: TObject);
     procedure SpinEdit59Change(Sender: TObject);
-    procedure SpinEdit60Change(Sender: TObject);
     procedure SpinEdit8Change(Sender: TObject);
     procedure SpinEdit9Change(Sender: TObject);
     procedure tAboutClick(Sender: TObject);
@@ -1328,10 +1301,6 @@ type
     procedure TrackBar18Change(Sender: TObject);
     procedure TrackBar19Change(Sender: TObject);
     procedure TrackBar1Change(Sender: TObject);
-    procedure TrackBar1MouseWheelDown(Sender: TObject; Shift: TShiftState;
-      MousePos: TPoint; var Handled: Boolean);
-    procedure TrackBar1MouseWheelUp(Sender: TObject; Shift: TShiftState;
-      MousePos: TPoint; var Handled: Boolean);
     procedure TrackBar20Change(Sender: TObject);
     procedure TrackBar21Change(Sender: TObject);
     procedure TrackBar22Change(Sender: TObject);
@@ -1366,15 +1335,12 @@ type
     procedure TrackBar49Change(Sender: TObject);
     procedure TrackBar4Change(Sender: TObject);
     procedure TrackBar50Change(Sender: TObject);
-    procedure TrackBar51Change(Sender: TObject);
-    procedure TrackBar52Change(Sender: TObject);
     procedure TrackBar5Change(Sender: TObject);
     procedure TrackBar6Change(Sender: TObject);
     procedure TrackBar7Change(Sender: TObject);
     procedure TrackBar8Change(Sender: TObject);
     procedure TrackBar9Change(Sender: TObject);
     procedure OnClickColorButton(Sender: TObject);
-    procedure OnClickColorButtonEx(Sender: TObject);
     procedure ClickColorSelectComboBox(Sender: TObject);
   private
     { private declarations }
@@ -1431,7 +1397,7 @@ type
     procedure expanel_loading();
     procedure expanel_save();
     function LoadColorsTab(s, FindExpr: string; GB: TScrollBox; ShowSub: Boolean):string;
-    function LoadColorsTabEx(s, FindExpr: string; GB: TScrollBox):string;
+    function LoadColorsTabEx(FindExpr: string; GB: TScrollBox):string;
     //procedure edithint();
     { public declarations }
   end;
@@ -1574,7 +1540,7 @@ var
   CIR_15_SL, CIR_16_SL, CIR_17_SL, CIR_18_SL, CIR_19_SL, CIR_20_SL, CIR_21_SL, CIR_22_SL,
   CIR_23_SL, CIR_24_SL, CIR_25_SL, CIR_26_SL: integer;
 
-  lang_config: TIniFile;
+  lang_config, config: TIniFile;
 
 
 implementation
@@ -1635,22 +1601,6 @@ else
 end;
 
 procedure TXCTuner_Form1.OnClickColorButton(Sender: TObject);
-var
-s, p, g: string;
-begin
-ColorSelect := 13;
-p := TScrollBox(Sender).Parent.Parent.Name;
-g := TGroupBox(Sender).Parent.Name;
-s := TBitBtn(Sender).Name;
-s := Copy(s, Length('sBitBtnScrollBox') + 1, MaxInt);
-ColSelectBtn := 'sCPScrollBox' + s;
-ColSelectEdit := 'sEditScrollBox' + s;
-SBSelect := p;
-GBSelect := g;
-ColorSelectMy.ShowModal;
-end;
-
-procedure TXCTuner_Form1.OnClickColorButtonEx(Sender: TObject);
 var
 s, p, g: string;
 begin
@@ -1739,16 +1689,16 @@ begin
     begin
       sLabel := TGroupBox(GB.FindChildControl('sGroupBox' + GB.Name + IntToStr(i)));
       sLabel.Caption := sCaption;
-      sEdit := TEdit(sLabel.FindChildControl('sEdit' + GB.Name + IntToStr(i)));
+      sEdit := TEdit(sLabel.FindChildControl('sColorValue' + GB.Name + IntToStr(i)));
       if Pos('$', s1) > 0 then
       begin
         sEdit.Text := sValue;
-        TmbColorPreview(sLabel.FindChildControl('sCP' + GB.Name + IntToStr(i))).Color := clWhite;
+        TmbColorPreview(sLabel.FindChildControl('sColorValuePreview' + GB.Name + IntToStr(i))).Color := clWhite;
       end
       else
       begin
         sEdit.Text := '#' + DelStartEnd(sValue);
-        TmbColorPreview(sLabel.FindChildControl('sCP' + GB.Name + IntToStr(i))).Color := HexToTColor(Copy(sEdit.Text, 2, MaxInt));
+        TmbColorPreview(sLabel.FindChildControl('sColorValuePreview' + GB.Name + IntToStr(i))).Color := HexToTColor(Copy(sEdit.Text, 2, MaxInt));
       end;
       if ShowSub then
       begin
@@ -1820,7 +1770,7 @@ begin
       Parent := sLabel;
       Hint := sName;
       Alignment := taCenter;
-      Name := 'sEdit' + GB.Name + IntToStr(i);
+      Name := 'sColorValue' + GB.Name + IntToStr(i);
       Top := 6;
       Width := 100;
       Left := 18;
@@ -1835,7 +1785,7 @@ begin
     begin
       Parent := sLabel;
       Hint := sName;
-      Name := 'sCP' + GB.Name + IntToStr(i);
+      Name := 'sColorValuePreview' + GB.Name + IntToStr(i);
       Top := sEdit.Top;
       Left := sEdit.Left + sEdit.Width + 6;
       Width := 23;
@@ -1933,16 +1883,17 @@ sRE.Free;
 RE.Free;
 end;
 
-function TXCTuner_Form1.LoadColorsTabEx(s, FindExpr: string; GB: TScrollBox):string;
+function TXCTuner_Form1.LoadColorsTabEx(FindExpr: string; GB: TScrollBox):string;
 var
   RE, sRE: TRegExpr;
   sLabel: TGroupBox;
-  sValueName, sColorName: TLabel;
+  sValueName, sColorName, sColorSelectLabel: TLabel;
   sValue, sColorValue: tEdit;
   sColorValuePreview: TmbColorPreview;
   sBitBtn: TBitBtn;
+  sColorSubStrValue: TComboBox;
   fValueName, fValue, fColorValue: string;
-  i: integer;
+  i, j: integer;
 begin
 colors.Clear;
 colors.LoadFromFile(dir_xvm+colors_name);
@@ -1974,9 +1925,18 @@ begin
       end
       else
       begin
-        sColorValue.Text := '"#' + DelStartEnd(RecStartEnd(fColorValue)) + '"';
+        sColorValue.Text := '#' + DelStartEnd(RecStartEnd(fColorValue));
         TmbColorPreview(sLabel.FindChildControl('sColorValuePreview' + GB.Name + IntToStr(i))).Color := HexToTColor(Copy(sColorValue.Text, 2, MaxInt));
       end;
+      sColorSubStrValue := TComboBox(sLabel.FindChildControl('sColorSubStrValue' + GB.Name + IntToStr(i)));
+      sColorSubStrValue.Items.Clear;
+      sColorSubStrValue.Items.Add('Выберите...');
+      for j := 0 to ColorSubStrValue.Count - 1 do
+        sColorSubStrValue.Items.Add(ColorSubStrValue.Strings[j]);
+      if sColorSubStrValue.Items.IndexOf(sColorValue.Text) <> -1 then
+        sColorSubStrValue.ItemIndex := sColorSubStrValue.Items.IndexOf(sColorValue.Text)
+      else
+        sColorSubStrValue.ItemIndex := 0;
     end
     else
     begin
@@ -1986,7 +1946,7 @@ begin
       Parent := GB;
       Hint := fValueName;
       Name := 'sGroupBox' + GB.Name + IntToStr(i);
-      Width := 560;
+      Width := 575;
       Height := 54;
       if TGroupBox(GB.FindChildControl('sGroupBox' + GB.Name + IntToStr(i - 1))) = nil then
         Top := 0
@@ -2003,7 +1963,7 @@ begin
       Hint := fValueName;
       Name := 'sValueName' + GB.Name + IntToStr(i);
       Top := 6;
-      Left := 18;
+      Left := 6;
       Caption := 'Значение: ';
       Width := 55;
     end;
@@ -2029,7 +1989,7 @@ begin
       Name := 'sColorName' + GB.Name + IntToStr(i);
       Top := 6;
       Width := 35;
-      Left := sValue.Left + sValue.Width + 18;
+      Left := sValue.Left + sValue.Width + 6;
       Caption := 'Цвет: ';
     end;
 
@@ -2041,7 +2001,7 @@ begin
       Alignment := taCenter;
       Name := 'sColorValue' + GB.Name + IntToStr(i);
       Top := sValue.Top;
-      Width := 175;
+      Width := 150;
       Left := sColorName.Left + sColorName.Width + 3;
       if Pos('0x', fColorValue) = 0 then
         Text := fColorValue
@@ -2064,6 +2024,7 @@ begin
       else
          Color := HexToTColor(Copy(sColorValue.Text, 2, MaxInt));
     end;
+
     sBitBtn := TBitBtn.Create(nil);
     with sBitBtn do
     begin
@@ -2079,7 +2040,37 @@ begin
       Hint := 'Выбрать цвет';
       Cursor := crHandPoint;
       ShowHint := True;
-      OnClick := @OnClickColorButtonEx;
+      OnClick := @OnClickColorButton;
+    end;
+
+    sColorSelectLabel := TLabel.Create(nil);
+    with sColorSelectLabel do
+    begin
+      Parent := sLabel;
+      Name := 'sColorSelectLabel' + GB.Name + IntToStr(i);
+      Width := 75;
+      Caption := 'Подстановка: ';
+      Top := sBitBtn.Top - 4;
+      Left := sBitBtn.Left + sBitBtn.Width + 6;
+    end;
+
+    sColorSubStrValue := TComboBox.Create(nil);
+    with sColorSubStrValue do
+    begin
+      Parent := sLabel;
+      Name := 'sColorSubStrValue' + GB.Name + IntToStr(i);
+      Top := sColorSelectLabel.Top + sColorSelectLabel.Height;
+      Width := 160;
+      Left := sColorSelectLabel.Left;
+      Style := csDropDownList;
+      Items.Add('Выберите...');
+      for j := 0 to ColorSubStrValue.Count - 1 do
+        Items.Add(ColorSubStrValue.Strings[j]);
+      if Items.IndexOf(sColorValue.Text) <> -1 then
+        ItemIndex := Items.IndexOf(sColorValue.Text)
+      else
+        ItemIndex := 0;
+      OnSelect := @ClickColorSelectComboBox;
     end;
     end;
     Inc(i);
@@ -2094,177 +2085,37 @@ end;
 procedure TXCTuner_Form1.BitBtn1Click(Sender: TObject);
 begin
   UpdateBitBtnStatus(BitBtn1, TabSheet1);
-{  BitBtn1.Glyph := nil;
-  BitBtn2.Glyph := nil;
-  BitBtn3.Glyph := nil;
-  BitBtn10.Glyph := nil;
-  BitBtn11.Glyph := nil;
-  BitBtn12.Glyph := nil;
-  BitBtn13.Glyph := nil;
-  BitBtn14.Glyph := nil;
-  BitBtn15.Glyph := nil;
-  BitBtn2.Font.Style := [];
-  BitBtn3.Font.Style := [];
-  BitBtn10.Font.Style := [];
-  BitBtn11.Font.Style := [];
-  BitBtn12.Font.Style := [];
-  BitBtn13.Font.Style := [];
-  BitBtn14.Font.Style := [];
-  BitBtn15.Font.Style := [];
-  BitBtn1.Font.Style := [fsBold];
-  ImageList1.GetBitmap(0, BitBtn1.Glyph);
-  PageControl1.ActivePage := TabSheet1;}
 end;
 
 // Открытие вкладки "Прочее"
 procedure TXCTuner_Form1.BitBtn10Click(Sender: TObject);
 begin
   UpdateBitBtnStatus(BitBtn10, TabSheet6);
-  {BitBtn1.Glyph := nil;
-  BitBtn2.Glyph := nil;
-  BitBtn3.Glyph := nil;
-  BitBtn10.Glyph := nil;
-  BitBtn11.Glyph := nil;
-  BitBtn12.Glyph := nil;
-  BitBtn13.Glyph := nil;
-  BitBtn14.Glyph := nil;
-  BitBtn15.Glyph := nil;
-  BitBtn1.Font.Style := [];
-  BitBtn2.Font.Style := [];
-  BitBtn3.Font.Style := [];
-  BitBtn11.Font.Style := [];
-  BitBtn12.Font.Style := [];
-  BitBtn13.Font.Style := [];
-  BitBtn14.Font.Style := [];
-  BitBtn15.Font.Style := [];
-  BitBtn10.Font.Style := [fsBold];
-  ImageList1.GetBitmap(0, BitBtn10.Glyph);
-  PageControl1.ActivePage := TabSheet6;}
 end;
 
 procedure TXCTuner_Form1.BitBtn11Click(Sender: TObject);
 begin
   UpdateBitBtnStatus(BitBtn11, TabSheet15);
-{  BitBtn1.Glyph := nil;
-  BitBtn2.Glyph := nil;
-  BitBtn3.Glyph := nil;
-  BitBtn10.Glyph := nil;
-  BitBtn11.Glyph := nil;
-  BitBtn12.Glyph := nil;
-  BitBtn13.Glyph := nil;
-  BitBtn14.Glyph := nil;
-  BitBtn15.Glyph := nil;
-  BitBtn1.Font.Style := [];
-  BitBtn2.Font.Style := [];
-  BitBtn3.Font.Style := [];
-  BitBtn10.Font.Style := [];
-  BitBtn12.Font.Style := [];
-  BitBtn13.Font.Style := [];
-  BitBtn14.Font.Style := [];
-  BitBtn15.Font.Style := [];
-  BitBtn11.Font.Style := [fsBold];
-  ImageList1.GetBitmap(0, BitBtn11.Glyph);
-  PageControl1.ActivePage := TabSheet15;}
 end;
 
 procedure TXCTuner_Form1.BitBtn12Click(Sender: TObject);
 begin
   UpdateBitBtnStatus(BitBtn12, TabSheet16);
-{  BitBtn1.Glyph := nil;
-  BitBtn2.Glyph := nil;
-  BitBtn3.Glyph := nil;
-  BitBtn10.Glyph := nil;
-  BitBtn11.Glyph := nil;
-  BitBtn12.Glyph := nil;
-  BitBtn13.Glyph := nil;
-  BitBtn14.Glyph := nil;
-  BitBtn15.Glyph := nil;
-  BitBtn1.Font.Style := [];
-  BitBtn2.Font.Style := [];
-  BitBtn3.Font.Style := [];
-  BitBtn10.Font.Style := [];
-  BitBtn11.Font.Style := [];
-  BitBtn13.Font.Style := [];
-  BitBtn14.Font.Style := [];
-  BitBtn15.Font.Style := [];
-  BitBtn12.Font.Style := [fsBold];
-  ImageList1.GetBitmap(0, BitBtn12.Glyph);
-  PageControl1.ActivePage := TabSheet16;}
 end;
 
 procedure TXCTuner_Form1.BitBtn13Click(Sender: TObject);
 begin
 UpdateBitBtnStatus(BitBtn13, TabSheet20);
-{  BitBtn1.Glyph := nil;
-  BitBtn2.Glyph := nil;
-  BitBtn3.Glyph := nil;
-  BitBtn10.Glyph := nil;
-  BitBtn11.Glyph := nil;
-  BitBtn12.Glyph := nil;
-  BitBtn13.Glyph := nil;
-  BitBtn14.Glyph := nil;
-  BitBtn15.Glyph := nil;
-  BitBtn1.Font.Style := [];
-  BitBtn2.Font.Style := [];
-  BitBtn3.Font.Style := [];
-  BitBtn10.Font.Style := [];
-  BitBtn11.Font.Style := [];
-  BitBtn12.Font.Style := [];
-  BitBtn14.Font.Style := [];
-  BitBtn15.Font.Style := [];
-  BitBtn13.Font.Style := [fsBold];
-  ImageList1.GetBitmap(0, BitBtn13.Glyph);
-  PageControl1.ActivePage := TabSheet20;}
 end;
 
 procedure TXCTuner_Form1.BitBtn14Click(Sender: TObject);
 begin
 UpdateBitBtnStatus(BitBtn14, TabSheet24);
-{  BitBtn1.Glyph := nil;
-  BitBtn2.Glyph := nil;
-  BitBtn3.Glyph := nil;
-  BitBtn10.Glyph := nil;
-  BitBtn11.Glyph := nil;
-  BitBtn12.Glyph := nil;
-  BitBtn13.Glyph := nil;
-  BitBtn14.Glyph := nil;
-  BitBtn15.Glyph := nil;
-  BitBtn1.Font.Style := [];
-  BitBtn2.Font.Style := [];
-  BitBtn3.Font.Style := [];
-  BitBtn10.Font.Style := [];
-  BitBtn11.Font.Style := [];
-  BitBtn12.Font.Style := [];
-  BitBtn13.Font.Style := [];
-  BitBtn15.Font.Style := [];
-  BitBtn14.Font.Style := [fsBold];
-  ImageList1.GetBitmap(0, BitBtn14.Glyph);
-  PageControl1.ActivePage := TabSheet24;}
 end;
 
 procedure TXCTuner_Form1.BitBtn15Click(Sender: TObject);
 begin
 UpdateBitBtnStatus(BitBtn15, TabSheet28);
-{  BitBtn1.Glyph := nil;
-  BitBtn2.Glyph := nil;
-  BitBtn3.Glyph := nil;
-  BitBtn10.Glyph := nil;
-  BitBtn11.Glyph := nil;
-  BitBtn12.Glyph := nil;
-  BitBtn13.Glyph := nil;
-  BitBtn14.Glyph := nil;
-  BitBtn15.Glyph := nil;
-  BitBtn1.Font.Style := [];
-  BitBtn2.Font.Style := [];
-  BitBtn3.Font.Style := [];
-  BitBtn10.Font.Style := [];
-  BitBtn11.Font.Style := [];
-  BitBtn12.Font.Style := [];
-  BitBtn13.Font.Style := [];
-  BitBtn14.Font.Style := [];
-  BitBtn15.Font.Style := [fsBold];
-  ImageList1.GetBitmap(0, BitBtn15.Glyph);
-  PageControl1.ActivePage := TabSheet28;}
 end;
 
 procedure TXCTuner_Form1.BitBtn16Click(Sender: TObject);
@@ -2284,12 +2135,6 @@ begin
   ColorSelectMy.ShowModal;
 end;
 
-procedure TXCTuner_Form1.BitBtnColor12Click(Sender: TObject);
-begin
-  ColorSelect := 12;
-  ColorSelectMy.ShowModal;
-end;
-
 procedure TXCTuner_Form1.BitBtnColor6Click(Sender: TObject);
 begin
   ColorSelect := 6;
@@ -2300,52 +2145,12 @@ end;
 procedure TXCTuner_Form1.BitBtn2Click(Sender: TObject);
 begin
   UpdateBitBtnStatus(BitBtn2, TabSheet2);
-  {BitBtn1.Glyph := nil;
-  BitBtn2.Glyph := nil;
-  BitBtn3.Glyph := nil;
-  BitBtn10.Glyph := nil;
-  BitBtn11.Glyph := nil;
-  BitBtn12.Glyph := nil;
-  BitBtn13.Glyph := nil;
-  BitBtn14.Glyph := nil;
-  BitBtn15.Glyph := nil;
-  BitBtn1.Font.Style := [];
-  BitBtn3.Font.Style := [];
-  BitBtn10.Font.Style := [];
-  BitBtn11.Font.Style := [];
-  BitBtn12.Font.Style := [];
-  BitBtn13.Font.Style := [];
-  BitBtn14.Font.Style := [];
-  BitBtn15.Font.Style := [];
-  BitBtn2.Font.Style := [fsBold];
-  ImageList1.GetBitmap(0, BitBtn2.Glyph);
-  PageControl1.ActivePage := TabSheet2;}
 end;
 
 // Открытие вкладки "Ангар"
 procedure TXCTuner_Form1.BitBtn3Click(Sender: TObject);
 begin
   UpdateBitBtnStatus(BitBtn3, TabSheet3);
-{  BitBtn1.Glyph := nil;
-  BitBtn2.Glyph := nil;
-  BitBtn3.Glyph := nil;
-  BitBtn10.Glyph := nil;
-  BitBtn11.Glyph := nil;
-  BitBtn12.Glyph := nil;
-  BitBtn13.Glyph := nil;
-  BitBtn14.Glyph := nil;
-  BitBtn15.Glyph := nil;
-  BitBtn14.Font.Style := [];
-  BitBtn2.Font.Style := [];
-  BitBtn10.Font.Style := [];
-  BitBtn11.Font.Style := [];
-  BitBtn12.Font.Style := [];
-  BitBtn13.Font.Style := [];
-  BitBtn14.Font.Style := [];
-  BitBtn15.Font.Style := [];
-  BitBtn3.Font.Style := [fsBold];
-  ImageList1.GetBitmap(0, BitBtn3.Glyph);
-  PageControl1.ActivePage := TabSheet3;}
 end;
 
 // Скрытие или открытие навигационной панели слева
@@ -2431,7 +2236,7 @@ end;
 
 procedure TXCTuner_Form1.BitRefresh12Click(Sender: TObject);
 begin
-  pl_panel_loading();
+ pl_panel_loading();
 end;
 
 procedure TXCTuner_Form1.BitRefresh13Click(Sender: TObject);
@@ -2497,32 +2302,32 @@ end;
 
 procedure TXCTuner_Form1.BitRefresh24Click(Sender: TObject);
 begin
-  LoadColorsTabEx('', '"hp":(.*?)"hp_ratio":', ScrollBox8);
+  LoadColorsTabEx('"hp":(.*?)"hp_ratio":', ScrollBox8);
 end;
 
 procedure TXCTuner_Form1.BitRefresh25Click(Sender: TObject);
 begin
-  LoadColorsTabEx('', '"hp_ratio":(.*?)"x":', ScrollBox9);
+  LoadColorsTabEx('"hp_ratio":(.*?)"x":', ScrollBox9);
 end;
 
 procedure TXCTuner_Form1.BitRefresh26Click(Sender: TObject);
 begin
-  LoadColorsTabEx('', '"x":(.*?)"eff":', ScrollBox10);
+  LoadColorsTabEx('"x":(.*?)"eff":', ScrollBox10);
 end;
 
 procedure TXCTuner_Form1.BitRefresh27Click(Sender: TObject);
 begin
-  LoadColorsTabEx('', '"eff":(.*?)"wn6":', ScrollBox11);
+  LoadColorsTabEx('"eff":(.*?)"wn6":', ScrollBox11);
 end;
 
 procedure TXCTuner_Form1.BitRefresh28Click(Sender: TObject);
 begin
-  LoadColorsTabEx('', '"wn6":(.*?)"wn8":', ScrollBox12);
+  LoadColorsTabEx('"wn6":(.*?)"wn8":', ScrollBox12);
 end;
 
 procedure TXCTuner_Form1.BitRefresh29Click(Sender: TObject);
 begin
-  LoadColorsTabEx('', '"wn8":(.*?)"e":', ScrollBox13);
+  LoadColorsTabEx('"wn8":(.*?)"e":', ScrollBox13);
 end;
 
 // По кнопке происходит вызов процедуры загрузки данных из файла "battle.xc"
@@ -2535,47 +2340,47 @@ end;
 
 procedure TXCTuner_Form1.BitRefresh30Click(Sender: TObject);
 begin
-  LoadColorsTabEx('', '"e":(.*?)"rating":', ScrollBox14);
+  LoadColorsTabEx('"e":(.*?)"rating":', ScrollBox14);
 end;
 
 procedure TXCTuner_Form1.BitRefresh31Click(Sender: TObject);
 begin
-  LoadColorsTabEx('', '"rating":(.*?)"kb":', ScrollBox15);
+  LoadColorsTabEx('"rating":(.*?)"kb":', ScrollBox15);
 end;
 
 procedure TXCTuner_Form1.BitRefresh32Click(Sender: TObject);
 begin
-  LoadColorsTabEx('', '"kb":(.*?)"avglvl":', ScrollBox16);
+  LoadColorsTabEx('"kb":(.*?)"avglvl":', ScrollBox16);
 end;
 
 procedure TXCTuner_Form1.BitRefresh33Click(Sender: TObject);
 begin
-  LoadColorsTabEx('', '"avglvl":(.*?)"t_battles":', ScrollBox17);
+  LoadColorsTabEx('"avglvl":(.*?)"t_battles":', ScrollBox17);
 end;
 
 procedure TXCTuner_Form1.BitRefresh34Click(Sender: TObject);
 begin
-  LoadColorsTabEx('', '"t_battles":(.*?)"tdb":', ScrollBox18);
+  LoadColorsTabEx('"t_battles":(.*?)"tdb":', ScrollBox18);
 end;
 
 procedure TXCTuner_Form1.BitRefresh35Click(Sender: TObject);
 begin
-  LoadColorsTabEx('', '"tdb":(.*?)"tdv":', ScrollBox19);
+  LoadColorsTabEx('"tdb":(.*?)"tdv":', ScrollBox19);
 end;
 
 procedure TXCTuner_Form1.BitRefresh36Click(Sender: TObject);
 begin
-  LoadColorsTabEx('', '"tdv":(.*?)"tfb":', ScrollBox20);
+  LoadColorsTabEx('"tdv":(.*?)"tfb":', ScrollBox20);
 end;
 
 procedure TXCTuner_Form1.BitRefresh37Click(Sender: TObject);
 begin
-  LoadColorsTabEx('', '"tfb":(.*?)"tsb":', ScrollBox21);
+  LoadColorsTabEx('"tfb":(.*?)"tsb":', ScrollBox21);
 end;
 
 procedure TXCTuner_Form1.BitRefresh38Click(Sender: TObject);
 begin
-  LoadColorsTabEx('', '"tsb":(.*?)]', ScrollBox22);
+  LoadColorsTabEx('"tsb":(.*?)]', ScrollBox22);
 end;
 
 // По кнопке происходит вызов процедуры загрузки данных из файла "login.xc"
@@ -2629,8 +2434,8 @@ end;
 
 procedure TXCTuner_Form1.BitSave12Click(Sender: TObject);
 begin
-  pl_panel_save();
-  pl_panel_loading();
+ pl_panel_save();
+ pl_panel_loading();
 end;
 
 procedure TXCTuner_Form1.BitSave13Click(Sender: TObject);
@@ -2678,7 +2483,7 @@ begin
     for j := 0 to GB.ControlCount - 1 do
     begin
       if GB.Controls[j] is TEdit then
-      if Pos('sEdit', GB.Controls[j].Name) > 0 then
+      if Pos('sColorValue', GB.Controls[j].Name) > 0 then
       begin
         Edt := TEdit(GB.Controls[j]);
         RE.Expression := '"' + Edt.Hint + '"(.*?)[\r\n]';
@@ -2822,37 +2627,37 @@ end;
 procedure TXCTuner_Form1.BitSave24Click(Sender: TObject);
 begin
   SaveColorsEx('"hp": [', ScrollBox8);
-  LoadColorsTabEx('', '"hp":(.*?)"hp_ratio":', ScrollBox8);
+  LoadColorsTabEx('"hp":(.*?)"hp_ratio":', ScrollBox8);
 end;
 
 procedure TXCTuner_Form1.BitSave25Click(Sender: TObject);
 begin
   SaveColorsEx('"hp_ratio": [', ScrollBox9);
-  LoadColorsTabEx('', '"hp_ratio":(.*?)"x":', ScrollBox9);
+  LoadColorsTabEx('"hp_ratio":(.*?)"x":', ScrollBox9);
 end;
 
 procedure TXCTuner_Form1.BitSave26Click(Sender: TObject);
 begin
   SaveColorsEx('"x": [', ScrollBox10);
-  LoadColorsTabEx('', '"x":(.*?)"eff":', ScrollBox10);
+  LoadColorsTabEx('"x":(.*?)"eff":', ScrollBox10);
 end;
 
 procedure TXCTuner_Form1.BitSave27Click(Sender: TObject);
 begin
   SaveColorsEx('"eff": [', ScrollBox11);
-  LoadColorsTabEx('', '"eff":(.*?)"wn6":', ScrollBox11);
+  LoadColorsTabEx('"eff":(.*?)"wn6":', ScrollBox11);
 end;
 
 procedure TXCTuner_Form1.BitSave28Click(Sender: TObject);
 begin
   SaveColorsEx('"wn6": [', ScrollBox12);
-  LoadColorsTabEx('', '"wn6":(.*?)"wn8":', ScrollBox12);
+  LoadColorsTabEx('"wn6":(.*?)"wn8":', ScrollBox12);
 end;
 
 procedure TXCTuner_Form1.BitSave29Click(Sender: TObject);
 begin
   SaveColorsEx('"wn8": [', ScrollBox13);
-  LoadColorsTabEx('', '"wn8":(.*?)"e":', ScrollBox13);
+  LoadColorsTabEx('"wn8":(.*?)"e":', ScrollBox13);
 end;
 
 // По кнопке происходит вызов процедуры сохранения данных в файла "battle.xc"
@@ -2869,55 +2674,55 @@ end;
 procedure TXCTuner_Form1.BitSave30Click(Sender: TObject);
 begin
   SaveColorsEx('"e": [', ScrollBox14);
-  LoadColorsTabEx('', '"e":(.*?)"rating":', ScrollBox14);
+  LoadColorsTabEx('"e":(.*?)"rating":', ScrollBox14);
 end;
 
 procedure TXCTuner_Form1.BitSave31Click(Sender: TObject);
 begin
   SaveColorsEx('"rating": [', ScrollBox15);
-  LoadColorsTabEx('', '"rating":(.*?)"kb":', ScrollBox15);
+  LoadColorsTabEx('"rating":(.*?)"kb":', ScrollBox15);
 end;
 
 procedure TXCTuner_Form1.BitSave32Click(Sender: TObject);
 begin
   SaveColorsEx('"kb": [', ScrollBox16);
-  LoadColorsTabEx('', '"kb":(.*?)"avglvl":', ScrollBox16);
+  LoadColorsTabEx('"kb":(.*?)"avglvl":', ScrollBox16);
 end;
 
 procedure TXCTuner_Form1.BitSave33Click(Sender: TObject);
 begin
   SaveColorsEx('"avglvl": [', ScrollBox17);
-  LoadColorsTabEx('', '"avglvl":(.*?)"t_battles":', ScrollBox17);
+  LoadColorsTabEx('"avglvl":(.*?)"t_battles":', ScrollBox17);
 end;
 
 procedure TXCTuner_Form1.BitSave34Click(Sender: TObject);
 begin
   SaveColorsEx('"t_battles": [', ScrollBox18);
-  LoadColorsTabEx('', '"t_battles":(.*?)"tdb":', ScrollBox18);
+  LoadColorsTabEx('"t_battles":(.*?)"tdb":', ScrollBox18);
 end;
 
 procedure TXCTuner_Form1.BitSave35Click(Sender: TObject);
 begin
   SaveColorsEx('"tdb": [', ScrollBox19);
-  LoadColorsTabEx('', '"tdb":(.*?)"tdv":', ScrollBox19);
+  LoadColorsTabEx('"tdb":(.*?)"tdv":', ScrollBox19);
 end;
 
 procedure TXCTuner_Form1.BitSave36Click(Sender: TObject);
 begin
   SaveColorsEx('"tdv": [', ScrollBox20);
-  LoadColorsTabEx('', '"tdv":(.*?)"tfb":', ScrollBox20);
+  LoadColorsTabEx('"tdv":(.*?)"tfb":', ScrollBox20);
 end;
 
 procedure TXCTuner_Form1.BitSave37Click(Sender: TObject);
 begin
   SaveColorsEx('"tfb": [', ScrollBox21);
-  LoadColorsTabEx('', '"tfb":(.*?)"tsb":', ScrollBox21);
+  LoadColorsTabEx('"tfb":(.*?)"tsb":', ScrollBox21);
 end;
 
 procedure TXCTuner_Form1.BitSave38Click(Sender: TObject);
 begin
   SaveColorsEx('"tsb": [', ScrollBox22);
-  LoadColorsTabEx('', '"tsb":(.*?)]', ScrollBox22);
+  LoadColorsTabEx('"tsb":(.*?)]', ScrollBox22);
 end;
 
 // По кнопке происходит вызов процедуры сохранения данных в файла "login.xc"
@@ -3156,24 +2961,6 @@ begin
     end;
 end;
 
-procedure TXCTuner_Form1.Edit58Exit(Sender: TObject);
-begin
-  ChangeEdit := Length(Edit58.Text);
-  ChangeEditText := Edit58.Text;
-  if ChangeEdit = 7 then
-    begin
-      Delete(ChangeEditText, 1, 1);
-      mbColorPreview12.Color := HexToTColor(ChangeEditText);
-    end else
-    begin
-       ShowMessage(colorInf);
-       Edit58.Text:=circle_s26;
-       temp_str:=circle_s26;
-       Delete(temp_str, 1, 1);
-       mbColorPreview12.Color:=HexToTColor(temp_str);
-    end;
-end;
-
 // события при изменение Edit5 при выходе из поля
 procedure TXCTuner_Form1.Edit5Exit(Sender: TObject);
 begin
@@ -3254,21 +3041,27 @@ begin
   TrackBar49.SelEnd:=TrackBar49.Position;
 end;
 
-procedure TXCTuner_Form1.FloatSpinEdit8Change(Sender: TObject);
-begin
-  TrackBar51.Position:=StrToInt(FloatToStr(FloatSpinEdit8.Value*100));
-  TrackBar51.SelEnd:=TrackBar51.Position;
-end;
-
 // События происходящие при создание приложения
 procedure TXCTuner_Form1.FormCreate(Sender: TObject);
 begin
+  config := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'config.ini');
   lang_config := TIniFile.Create(ExtractFilePath(ParamStr(0)) + 'Locale/Ru.lng');
-  // Проверяем присутствие файла @xvm.xc в директории с программой
+
+  if ((not config.ValueExists('Main', 'XVM_dir')) or (config.ReadString('Main', 'XVM_dir', '') <> ''))
+     and (not FileExists(config.ReadString('Main', 'XVM_dir', '') + '\xvm.xc')) then
+  begin
+     Application.CreateForm(TPromtForm, PromtForm);
+     case PromtForm.ShowModal of
+       mrOK: config.WriteString('Main', 'XVM_dir', PromtForm.Edit1.Text + '\');
+       mrCANCEL: Application.Terminate;
+     end;
+     PromtForm.Free;
+  end;
+  // Проверяем присутствие файла @xvm.xc в указанной директории
   activ_conf();
   activ_config:=StringReplace(activ_config, '/', '\', [rfReplaceAll, rfIgnoreCase]);
   // заносим путь к директории конфига
-  dir_xvm:=ExtractFilePath(ParamStr(0))+activ_config;
+  dir_xvm := config.ReadString('Main', 'XVM_dir', '') + activ_config;
 
   // Создаем объекты типа TStringlist
   xvm:=TStringList.Create;
@@ -3345,7 +3138,7 @@ begin
       (FileExists(dir_xvm+rating_name   ))) then
     begin
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.2.3.67';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.2.3.93';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       BitBtn1.Click;
@@ -3381,21 +3174,21 @@ begin
       LoadColorsTab('', '"dmg_kind":(.*?)"vtype":', ScrollBox5, True);
       LoadColorsTab('', '"vtype":(.*?)"damage":', ScrollBox6, True);
       LoadColorsTab('', '"damage":(.*?)"hp":', ScrollBox7, True);
-      LoadColorsTabEx('', '"hp":(.*?)"hp_ratio":', ScrollBox8);
-      LoadColorsTabEx('', '"hp_ratio":(.*?)"x":', ScrollBox9);
-      LoadColorsTabEx('', '"x":(.*?)"eff":', ScrollBox10);
-      LoadColorsTabEx('', '"eff":(.*?)"wn6":', ScrollBox11);
-      LoadColorsTabEx('', '"wn6":(.*?)"wn8":', ScrollBox12);
-      LoadColorsTabEx('', '"wn8":(.*?)"e":', ScrollBox13);
-      LoadColorsTabEx('', '"e":(.*?)"rating":', ScrollBox14);
-      LoadColorsTabEx('', '"rating":(.*?)"kb":', ScrollBox15);
-      LoadColorsTabEx('', '"kb":(.*?)"avglvl":', ScrollBox16);
-      LoadColorsTabEx('', '"avglvl":(.*?)"t_battles":', ScrollBox17);
-      LoadColorsTabEx('', '"t_battles":(.*?)"tdb":', ScrollBox18);
-      LoadColorsTabEx('', '"tdb":(.*?)"tdv":', ScrollBox19);
-      LoadColorsTabEx('', '"tdv":(.*?)"tfb":', ScrollBox20);
-      LoadColorsTabEx('', '"tfb":(.*?)"tsb":', ScrollBox21);
-      LoadColorsTabEx('', '"tsb":(.*?)]', ScrollBox22);
+      LoadColorsTabEx('"hp":(.*?)"hp_ratio":', ScrollBox8);
+      LoadColorsTabEx('"hp_ratio":(.*?)"x":', ScrollBox9);
+      LoadColorsTabEx('"x":(.*?)"eff":', ScrollBox10);
+      LoadColorsTabEx('"eff":(.*?)"wn6":', ScrollBox11);
+      LoadColorsTabEx('"wn6":(.*?)"wn8":', ScrollBox12);
+      LoadColorsTabEx('"wn8":(.*?)"e":', ScrollBox13);
+      LoadColorsTabEx('"e":(.*?)"rating":', ScrollBox14);
+      LoadColorsTabEx('"rating":(.*?)"kb":', ScrollBox15);
+      LoadColorsTabEx('"kb":(.*?)"avglvl":', ScrollBox16);
+      LoadColorsTabEx('"avglvl":(.*?)"t_battles":', ScrollBox17);
+      LoadColorsTabEx('"t_battles":(.*?)"tdb":', ScrollBox18);
+      LoadColorsTabEx('"tdb":(.*?)"tdv":', ScrollBox19);
+      LoadColorsTabEx('"tdv":(.*?)"tfb":', ScrollBox20);
+      LoadColorsTabEx('"tfb":(.*?)"tsb":', ScrollBox21);
+      LoadColorsTabEx('"tsb":(.*?)]', ScrollBox22);
 
       BitBtn1.Hint:='Настройка в файлах: ' + xvm_file_name + ', ' + battle_name + ' и ' + rating_name;
       BitBtn2.Hint:='Настройка в файле: ' + login_name;
@@ -3884,13 +3677,6 @@ begin
   +activ_config+#13#10+enopt+'"enabled": true'+#13#10+disopt+'"enabled": false');
 end;
 
-procedure TXCTuner_Form1.Image164Click(Sender: TObject);
-begin
-  ShowMessage(tpi+IntToStr(pl41_SL+1)+litf+pl_panel_name+path
-  +activ_config+#13#10+'Возможные значения: "none", "short", "medium", "medium2", "large"');
-
-end;
-
 procedure TXCTuner_Form1.Image165Click(Sender: TObject);
 begin
   ShowMessage(tpi+IntToStr(CIR_13_SL+1)+litf+circle_name+path
@@ -3967,24 +3753,6 @@ procedure TXCTuner_Form1.Image176Click(Sender: TObject);
 begin
   ShowMessage(tpi+IntToStr(CIR_20_SL+1)+litf+circle_name+path
   +activ_config+#13#10+enopt+'"enabled": true'+#13#10+disopt+'"enabled": false');
-end;
-
-procedure TXCTuner_Form1.Image177Click(Sender: TObject);
-begin
-  ShowMessage(tpi+IntToStr(CIR_24_SL+1)+litf+circle_name+path
-  +activ_config);
-end;
-
-procedure TXCTuner_Form1.Image178Click(Sender: TObject);
-begin
-  ShowMessage(tpi+IntToStr(CIR_25_SL+1)+litf+circle_name+path
-  +activ_config);
-end;
-
-procedure TXCTuner_Form1.Image179Click(Sender: TObject);
-begin
-  ShowMessage(tpi+IntToStr(CIR_26_SL+1)+litf+circle_name+path
-  +activ_config);
 end;
 
 procedure TXCTuner_Form1.Image17Click(Sender: TObject);
@@ -4836,12 +4604,6 @@ begin
   TrackBar50.SelEnd:=SpinEdit59.Value;
 end;
 
-procedure TXCTuner_Form1.SpinEdit60Change(Sender: TObject);
-begin
-  TrackBar52.Position:=SpinEdit60.Value;
-  TrackBar52.SelEnd:=SpinEdit60.Value;
-end;
-
 procedure TXCTuner_Form1.SpinEdit8Change(Sender: TObject);
 begin
   TrackBar2.Position:=SpinEdit8.Value;
@@ -4924,20 +4686,6 @@ procedure TXCTuner_Form1.TrackBar1Change(Sender: TObject);
 begin
   SpinEdit10.Value:=TrackBar1.Position;
   TrackBar1.SelEnd:=TrackBar1.Position;
-end;
-
-procedure TXCTuner_Form1.TrackBar1MouseWheelDown(Sender: TObject;
-  Shift: TShiftState; MousePos: TPoint; var Handled: Boolean);
-begin
-  TrackBar1.Position:=(TrackBar1.Position + 2500);
-end;
-
-// Фикс прокрутки трэкбара колесиком мыши
-procedure TXCTuner_Form1.TrackBar1MouseWheelUp(Sender: TObject;
-  Shift: TShiftState; MousePos: TPoint; var Handled: Boolean);
-begin
-    if (TrackBar1.Position)>2600 then TrackBar1.Position:=(TrackBar1.Position - 2500) else
-    TrackBar1.Position:=100;
 end;
 
 procedure TXCTuner_Form1.TrackBar20Change(Sender: TObject);
@@ -5144,18 +4892,6 @@ begin
   TrackBar50.SelEnd:=TrackBar50.Position;
 end;
 
-procedure TXCTuner_Form1.TrackBar51Change(Sender: TObject);
-begin
-  FloatSpinEdit8.Value:=0.01*TrackBar51.Position;
-  TrackBar51.SelEnd:=TrackBar51.Position;
-end;
-
-procedure TXCTuner_Form1.TrackBar52Change(Sender: TObject);
-begin
-  SpinEdit60.Value:=TrackBar52.Position;
-  TrackBar52.SelEnd:=TrackBar52.Position;
-end;
-
 procedure TXCTuner_Form1.TrackBar5Change(Sender: TObject);
 begin
   SpinEdit21.Value:=TrackBar5.Position;
@@ -5241,7 +4977,6 @@ end;
 function TXCTuner_Form1.Smart_Replacing(PodStr1, FullStr, ChangeStr: String): String;
 var
   poz1: Integer;
-  i: Real;
   PodStr2: String;
 begin
   poz1:=Pos(PodStr1, FullStr);
@@ -5289,13 +5024,6 @@ begin
       // для верности уберем лишние пробелы слева!
       full_str:=TrimLeft(full_str);
     end;
-  // Делаем проверку на 1-й знак в строке
-  // Если это " то делаем нижеследующие
-  // Ищем вторые (следующие) кавычки
-  // Имеет право, т.к. внутри кавычек не могут быть еще пары кавычек!!!
-  // И если находим / выходим из цикла
-  // и копируем (ф-я Copy) нужный участок строки (длинною i, начиная с 1 символа!)
-  // ASCII-код #034 (или #34) - двойная кавычка (")
   if full_str[1]='$' then
     begin
       for i:=2 to Length(full_str) do
@@ -5310,6 +5038,13 @@ begin
             end;
         end;
     end else
+    // Делаем проверку на 1-й знак в строке
+    // Если это " то делаем нижеследующие
+    // Ищем вторые (следующие) кавычки
+    // Имеет право, т.к. внутри кавычек не могут быть еще пары кавычек!!!
+    // И если находим / выходим из цикла
+    // и копируем (ф-я Copy) нужный участок строки (длинною i, начиная с 1 символа!)
+    // ASCII-код #034 (или #34) - двойная кавычка (")
   if full_str[1]=#34 then
     begin
       for i:=2 to Length(full_str) do
@@ -5390,7 +5125,7 @@ end;
 
 // Замена знака '.' на ','
 function TXCTuner_Form1.currect_float(str: String): String;
-var i, temp: integer;
+var temp: integer;
 begin
   if (Length(str)>3) and (StrToInt(str[4])>=5) then
     begin
@@ -5459,10 +5194,10 @@ end;
 procedure TXCTuner_Form1.activ_conf;
 var i, px2, px3: Integer;
 begin
-  if (FileExists(ExtractFilePath(ParamStr(0))+'xvm.xc')) then
+  if (FileExists(config.ReadString('Main', 'XVM_dir', '') + 'xvm.xc')) then
     begin
       xvm_base:=TStringList.Create;
-      xvm_base.LoadFromFile(ExtractFilePath(ParamStr(0))+'xvm.xc');
+      xvm_base.LoadFromFile(config.ReadString('Main', 'XVM_dir', '') + 'xvm.xc');
       if (xvm_base.Count=1) then
       begin
         activ_config:=Trim(xvm_base.Strings[0]);
@@ -6739,7 +6474,7 @@ end;
 // Процедура загрузки из файла minimapCircles.xc
 procedure TXCTuner_Form1.circlemap_loading;
 var
-CIR_02_SL, CIR_03_SL, CIR_04_SL, CIR_05_SL, CIR_06_SL, CIR_07_SL, CIR_08_SL: integer;
+CIR_02_SL, CIR_03_SL, CIR_04_SL, CIR_05_SL, CIR_06_SL, CIR_07_SL: integer;
 begin
   circle.Clear;
   circle.LoadFromFile(dir_xvm+circle_name);
@@ -7026,8 +6761,8 @@ begin
       end;
 
       // Дальность обзора / активный круг / 21
-      CIR_07_SL:=Search_Line(CIR_06_SL, '"active"', circle);
-      if CIR_07_SL=-1 then error_line('"active"', circle_name) else
+      CIR_07_SL:=Search_Line(CIR_06_SL, '"enabled"', circle);
+      if CIR_07_SL=-1 then error_line('"enabled"', circle_name) else
       begin
         // Толщина / 21
         Search:='"thickness"';
@@ -7062,46 +6797,6 @@ begin
           mbColorPreview11.Color:=HexToTColor(circle_s23);
           circle_s23:='#' + circle_s23;
           Edit57.Text:=circle_s23;
-        end;
-      end;
-
-      // Дальность обзора / пассивный круг / 24
-      CIR_08_SL:=Search_Line(CIR_06_SL, '"passive"', circle);
-      if CIR_08_SL=-1 then error_line('"passive"', circle_name) else
-      begin
-        // Толщина / 24
-        Search:='"thickness"';
-        CIR_24_SL:=Search_Line(CIR_08_SL, Search, circle);
-        if CIR_24_SL=-1 then error_line(Search, circle_name) else
-        begin
-          circle_s24:=circle.Strings[CIR_24_SL];
-          circle_s24:=new_change_str(Search, circle_s24);
-          circle_s24:=currect_float_for4(circle_s24);
-          FloatSpinEdit8.Value:=StrToFloat(circle_s24);
-          TrackBar51.Position:=StrToInt(FloatToStr(FloatSpinEdit8.Value*100));
-        end;
-
-        // Прозрачность / 25
-        Search:='"alpha"';
-        CIR_25_SL:=Search_Line(CIR_08_SL, Search, circle);
-        if CIR_25_SL=-1 then error_line(Search, circle_name) else
-        begin
-          circle_s25:=circle.Strings[CIR_25_SL];
-          circle_s25:=new_change_str(Search, circle_s25);
-          SpinEdit60.Value:=StrToInt(circle_s25);
-          TrackBar52.Position:=SpinEdit60.Value;
-        end;
-
-        // Цвет / 26
-        Search:='"color"';
-        CIR_26_SL:=Search_Line(CIR_08_SL, Search, circle);
-        if CIR_26_SL=-1 then error_line(Search, circle_name) else
-        begin
-          circle_s26:=circle.Strings[CIR_26_SL];
-          circle_s26:=DelStartEnd(new_change_str(Search, circle_s26));
-          mbColorPreview12.Color:=HexToTColor(circle_s26);
-          circle_s26:='#' + circle_s26;
-          Edit58.Text:=circle_s26;
         end;
       end;
     end;
@@ -7266,25 +6961,6 @@ begin
   circle_s23:=Smart_Replacing('"color"', circle_s23, RecStartEnd(Edit57.Text));
   circle.Delete(CIR_23_SL);
   circle.Insert(CIR_23_SL, circle_s23);
-
-  // Толщина / 24
-  circle_s24:=circle.Strings[CIR_24_SL];
-  circle_s24:=Smart_Replacing('"thickness"', circle_s24,
-                              currect_float_back(FloatToStr(FloatSpinEdit8.Value)));
-  circle.Delete(CIR_24_SL);
-  circle.Insert(CIR_24_SL, circle_s24);
-
-  // Прозрачность / 25
-  circle_s25:=circle.Strings[CIR_25_SL];
-  circle_s25:=Smart_Replacing('"alpha"', circle_s25, IntToStr(SpinEdit60.Value));
-  circle.Delete(CIR_25_SL);
-  circle.Insert(CIR_25_SL, circle_s25);
-
-  // Цвет / 26
-  circle_s26:=circle.Strings[CIR_26_SL];
-  circle_s26:=Smart_Replacing('"color"', circle_s26, RecStartEnd(Edit58.Text));
-  circle.Delete(CIR_26_SL);
-  circle.Insert(CIR_26_SL, circle_s26);
 
   circle.SaveToFile(dir_xvm+circle_name);
 end;
@@ -7516,25 +7192,6 @@ begin
       if pl_s4='false' then RadioButton77.Checked:=True else
       begin
         ShowMessage(error_message(pl_panel_name, pl_s4, pl4_SL));
-        Application.Terminate;
-      end;
-    end;
-
-    // Переключатель режима ушей // 41
-    Search:='"startMode"';
-    pl41_SL:=Search_Line(pl0_SL, Search, pl_panel);
-    if pl41_SL=-1 then error_line(Search, pl_panel_name) else
-    begin
-      pl_s41:=pl_panel.Strings[pl41_SL];
-      pl_s41:=new_change_str(Search, pl_s41);
-      if pl_s41='"none"' then ComboBox7.ItemIndex:=0 else
-      if pl_s41='"short"' then ComboBox7.ItemIndex:=1 else
-      if pl_s41='"medium"' then ComboBox7.ItemIndex:=2 else
-      if pl_s41='"medium2"' then ComboBox7.ItemIndex:=3 else
-      if pl_s41='"large"' then ComboBox7.ItemIndex:=4 else
-      begin
-        ShowMessage('Ошибка считывания!' +
-        ' Возможные значения для "startMode" это: "none", "short", "medium", "medium2", "large"');
         Application.Terminate;
       end;
     end;
@@ -7928,17 +7585,6 @@ begin
   pl_s4:=Smart_Replacing('"removePanelsModeSwitcher"', pl_s4, chek2);
   pl_panel.Delete(pl4_SL);
   pl_panel.Insert(pl4_SL, pl_s4);
-
-  // Стартовый режим ушей // 41
-  if ComboBox7.ItemIndex=0 then chek5:='"none"' else
-  if ComboBox7.ItemIndex=1 then chek5:='"short"' else
-  if ComboBox7.ItemIndex=2 then chek5:='"medium"' else
-  if ComboBox7.ItemIndex=3 then chek5:='"medium2"' else
-  if ComboBox7.ItemIndex=4 then chek5:='"large"';
-  pl_s41:=pl_panel.Strings[pl41_SL];
-  pl_s41:=Smart_Replacing('"startMode"', pl_s41, chek5);
-  pl_panel.Delete(pl41_SL);
-  pl_panel.Insert(pl41_SL, pl_s41);
 
   // видимость клановых эмблемм // 4.1
   pl_s5:=pl_panel.Strings[pl5_SL];

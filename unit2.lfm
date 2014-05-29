@@ -1,7 +1,7 @@
 object About: TAbout
-  Left = 340
+  Left = 336
   Height = 255
-  Top = 227
+  Top = 223
   Width = 354
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
@@ -515,7 +515,7 @@ object About: TAbout
     Height = 15
     Top = 104
     Width = 84
-    Caption = 'Версия: 0.2.3.67'
+    Caption = 'Версия: 0.2.3.93'
     Font.Color = clBlack
     ParentColor = False
     ParentFont = False
@@ -575,7 +575,7 @@ object About: TAbout
     Height = 15
     Top = 189
     Width = 168
-    Caption = 'Дата Сборки: 28.05.2014 (20:36)'
+    Caption = 'Дата Сборки: 29.05.2014 (17:25)'
     ParentColor = False
   end
   object Label8: TLabel

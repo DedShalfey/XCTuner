@@ -1,7 +1,7 @@
 object XCTuner_Form1: TXCTuner_Form1
-  Left = 299
+  Left = 231
   Height = 594
-  Top = 110
+  Top = 80
   Width = 1022
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
@@ -1217,8 +1217,8 @@ object XCTuner_Form1: TXCTuner_Form1
         end
         object TabSheet14: TTabSheet
           Caption = 'Общие Параметра Боевого Интерфейса'
-          ClientHeight = 546
-          ClientWidth = 851
+          ClientHeight = 542
+          ClientWidth = 820
           object GroupBox7: TGroupBox
             Left = 78
             Height = 312
@@ -1241,9 +1241,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton1: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
-                Height = 19
+                Height = 17
                 Top = 8
-                Width = 77
+                Width = 71
                 Caption = 'Включено'
                 Checked = True
                 ParentShowHint = False
@@ -1253,9 +1253,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton2: TRadioButton
                 Cursor = crHandPoint
                 Left = 142
-                Height = 19
+                Height = 17
                 Top = 8
-                Width = 84
+                Width = 79
                 Caption = 'Отключено'
                 TabOrder = 0
               end
@@ -1294,9 +1294,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton3: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
-                Height = 19
+                Height = 17
                 Top = 8
-                Width = 76
+                Width = 71
                 Caption = 'Включена'
                 Checked = True
                 TabOrder = 1
@@ -1305,9 +1305,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton4: TRadioButton
                 Cursor = crHandPoint
                 Left = 142
-                Height = 19
+                Height = 17
                 Top = 8
-                Width = 83
+                Width = 79
                 Caption = 'Отключена'
                 TabOrder = 0
               end
@@ -1346,9 +1346,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton7: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
-                Height = 19
+                Height = 17
                 Top = 8
-                Width = 76
+                Width = 71
                 Caption = 'Включена'
                 Checked = True
                 TabOrder = 1
@@ -1357,9 +1357,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton8: TRadioButton
                 Cursor = crHandPoint
                 Left = 142
-                Height = 19
+                Height = 17
                 Top = 8
-                Width = 83
+                Width = 79
                 Caption = 'Отключена'
                 TabOrder = 0
               end
@@ -1398,9 +1398,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton11: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
-                Height = 19
+                Height = 17
                 Top = 8
-                Width = 77
+                Width = 71
                 Caption = 'Включено'
                 Checked = True
                 TabOrder = 1
@@ -1409,9 +1409,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton12: TRadioButton
                 Cursor = crHandPoint
                 Left = 142
-                Height = 19
+                Height = 17
                 Top = 8
-                Width = 84
+                Width = 79
                 Caption = 'Отключено'
                 TabOrder = 0
               end
@@ -1628,10 +1628,10 @@ object XCTuner_Form1: TXCTuner_Form1
               object Label17: TLabel
                 Cursor = crHelp
                 Left = 21
-                Height = 15
+                Height = 13
                 Hint = 'Задержка исчезновения панели. Оригинальное значение было 5'
                 Top = 8
-                Width = 56
+                Width = 55
                 Caption = 'Задержка:'
                 ParentColor = False
                 ParentShowHint = False
@@ -1640,10 +1640,10 @@ object XCTuner_Form1: TXCTuner_Form1
               object Label18: TLabel
                 Cursor = crHelp
                 Left = 21
-                Height = 15
+                Height = 13
                 Hint = 'Увеличение панели. 100 в оригинале.'
                 Top = 40
-                Width = 69
+                Width = 65
                 Caption = 'Увеличение:'
                 ParentColor = False
                 ParentShowHint = False
@@ -1651,7 +1651,7 @@ object XCTuner_Form1: TXCTuner_Form1
               end
               object SpinEdit1: TSpinEdit
                 Left = 150
-                Height = 23
+                Height = 21
                 Hint = 'Задержка исчезновения панели в сек.!'
                 Top = 7
                 Width = 50
@@ -1664,7 +1664,7 @@ object XCTuner_Form1: TXCTuner_Form1
               end
               object SpinEdit2: TSpinEdit
                 Left = 150
-                Height = 23
+                Height = 21
                 Hint = 'Увеличение панели в %'
                 Top = 38
                 Width = 50
@@ -1701,15 +1701,15 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object Label66: TLabel
               Left = 14
-              Height = 15
+              Height = 13
               Top = 206
-              Width = 81
+              Width = 74
               Caption = 'Формат часов:'
               ParentColor = False
             end
             object Edit24: TEdit
               Left = 107
-              Height = 23
+              Height = 21
               Hint = 'Формат часов на экране панели отладки (возле FPS). Формат: "Y.m.d H:i:s" => 2013.05.20 01:23:45, "H:i" => 01:23, Y:год, M:месяц, D:день, H:часы, N:минуты, S:секунды. Чтобы убрать часы, нужно оставить поле пустым!'
               Top = 203
               Width = 147
@@ -1742,15 +1742,15 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object Label67: TLabel
               Left = 14
-              Height = 15
+              Height = 13
               Top = 249
-              Width = 88
+              Width = 81
               Caption = 'ClanIconsFolder:'
               ParentColor = False
             end
             object Edit25: TEdit
               Left = 107
-              Height = 23
+              Height = 21
               Hint = 'Путь к папке иконок кланов относительно res_mods/xvm/res'
               Top = 245
               Width = 147
@@ -1793,9 +1793,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton81: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
-                Height = 19
+                Height = 17
                 Top = 8
-                Width = 77
+                Width = 71
                 Caption = 'Включено'
                 Checked = True
                 TabOrder = 1
@@ -1804,9 +1804,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton82: TRadioButton
                 Cursor = crHandPoint
                 Left = 142
-                Height = 19
+                Height = 17
                 Top = 8
-                Width = 84
+                Width = 79
                 Caption = 'Отключено'
                 TabOrder = 0
               end
@@ -1839,7 +1839,7 @@ object XCTuner_Form1: TXCTuner_Form1
     end
     object TabSheet2: TTabSheet
       Caption = 'Логин'
-      ClientHeight = 566
+      ClientHeight = 568
       ClientWidth = 828
       TabVisible = False
       object GroupBox20: TGroupBox
@@ -1863,9 +1863,9 @@ object XCTuner_Form1: TXCTuner_Form1
           object RadioButton23: TRadioButton
             Cursor = crHandPoint
             Left = 14
-            Height = 19
+            Height = 17
             Top = 8
-            Width = 77
+            Width = 71
             Caption = 'Включено'
             Checked = True
             TabOrder = 1
@@ -1874,9 +1874,9 @@ object XCTuner_Form1: TXCTuner_Form1
           object RadioButton24: TRadioButton
             Cursor = crHandPoint
             Left = 142
-            Height = 19
+            Height = 17
             Top = 8
-            Width = 84
+            Width = 79
             Caption = 'Отключено'
             TabOrder = 0
           end
@@ -1915,9 +1915,9 @@ object XCTuner_Form1: TXCTuner_Form1
           object RadioButton25: TRadioButton
             Cursor = crHandPoint
             Left = 14
-            Height = 19
+            Height = 17
             Top = 8
-            Width = 77
+            Width = 71
             Caption = 'Включено'
             Checked = True
             TabOrder = 1
@@ -1926,9 +1926,9 @@ object XCTuner_Form1: TXCTuner_Form1
           object RadioButton26: TRadioButton
             Cursor = crHandPoint
             Left = 142
-            Height = 19
+            Height = 17
             Top = 8
-            Width = 84
+            Width = 79
             Caption = 'Отключено'
             TabOrder = 0
           end
@@ -1968,9 +1968,9 @@ object XCTuner_Form1: TXCTuner_Form1
           object RadioButton27: TRadioButton
             Cursor = crHandPoint
             Left = 14
-            Height = 19
+            Height = 17
             Top = 8
-            Width = 77
+            Width = 71
             Caption = 'Включено'
             Checked = True
             TabOrder = 1
@@ -1979,9 +1979,9 @@ object XCTuner_Form1: TXCTuner_Form1
           object RadioButton28: TRadioButton
             Cursor = crHandPoint
             Left = 142
-            Height = 19
+            Height = 17
             Top = 8
-            Width = 84
+            Width = 79
             Caption = 'Отключено'
             TabOrder = 0
           end
@@ -2019,23 +2019,23 @@ object XCTuner_Form1: TXCTuner_Form1
           TabOrder = 3
           object Label19: TLabel
             Left = 21
-            Height = 15
+            Height = 13
             Top = 35
-            Width = 101
+            Width = 90
             Caption = 'Позиция по оси X:'
             ParentColor = False
           end
           object Label20: TLabel
             Left = 21
-            Height = 15
+            Height = 13
             Top = 67
-            Width = 101
+            Width = 90
             Caption = 'Позиция по оси Y:'
             ParentColor = False
           end
           object SpinEdit3: TSpinEdit
             Left = 150
-            Height = 23
+            Height = 21
             Top = 34
             Width = 64
             Alignment = taCenter
@@ -2047,7 +2047,7 @@ object XCTuner_Form1: TXCTuner_Form1
           end
           object SpinEdit4: TSpinEdit
             Left = 150
-            Height = 23
+            Height = 21
             Top = 65
             Width = 64
             Alignment = taCenter
@@ -2060,9 +2060,9 @@ object XCTuner_Form1: TXCTuner_Form1
           object RadioButton29: TRadioButton
             Cursor = crHandPoint
             Left = 14
-            Height = 19
+            Height = 17
             Top = 8
-            Width = 77
+            Width = 71
             Caption = 'Включено'
             Checked = True
             TabOrder = 2
@@ -2071,9 +2071,9 @@ object XCTuner_Form1: TXCTuner_Form1
           object RadioButton30: TRadioButton
             Cursor = crHandPoint
             Left = 142
-            Height = 19
+            Height = 17
             Top = 8
-            Width = 84
+            Width = 79
             Caption = 'Отключено'
             TabOrder = 3
           end
@@ -2291,9 +2291,9 @@ object XCTuner_Form1: TXCTuner_Form1
           object RadioButton73: TRadioButton
             Cursor = crHandPoint
             Left = 14
-            Height = 19
+            Height = 17
             Top = 8
-            Width = 77
+            Width = 71
             Caption = 'Включено'
             Checked = True
             TabOrder = 1
@@ -2302,9 +2302,9 @@ object XCTuner_Form1: TXCTuner_Form1
           object RadioButton74: TRadioButton
             Cursor = crHandPoint
             Left = 142
-            Height = 19
+            Height = 17
             Top = 8
-            Width = 84
+            Width = 79
             Caption = 'Отключено'
             TabOrder = 0
           end
@@ -2335,13 +2335,13 @@ object XCTuner_Form1: TXCTuner_Form1
     end
     object TabSheet3: TTabSheet
       Caption = 'Ангар'
-      ClientHeight = 566
+      ClientHeight = 568
       ClientWidth = 828
       TabVisible = False
       object PageControl2: TPageControl
         Cursor = crHandPoint
         Left = 0
-        Height = 566
+        Height = 568
         Top = 0
         Width = 828
         ActivePage = TabSheet4
@@ -2350,12 +2350,12 @@ object XCTuner_Form1: TXCTuner_Form1
         TabOrder = 0
         object TabSheet4: TTabSheet
           Caption = 'Ангар'
-          ClientHeight = 538
+          ClientHeight = 542
           ClientWidth = 820
           object PageControl9: TPageControl
             Cursor = crHandPoint
             Left = 0
-            Height = 538
+            Height = 542
             Top = 0
             Width = 820
             ActivePage = TabSheet30
@@ -2364,7 +2364,7 @@ object XCTuner_Form1: TXCTuner_Form1
             TabOrder = 0
             object TabSheet30: TTabSheet
               Caption = 'Общие параметры'
-              ClientHeight = 510
+              ClientHeight = 516
               ClientWidth = 812
               object GroupBox21: TGroupBox
                 Left = 50
@@ -2387,9 +2387,9 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton31: TRadioButton
                     Cursor = crHandPoint
                     Left = 14
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 76
+                    Width = 71
                     Caption = 'Включена'
                     Checked = True
                     TabOrder = 1
@@ -2398,9 +2398,9 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton32: TRadioButton
                     Cursor = crHandPoint
                     Left = 168
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 83
+                    Width = 79
                     Caption = 'Отключена'
                     TabOrder = 0
                   end
@@ -2439,9 +2439,9 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton33: TRadioButton
                     Cursor = crHandPoint
                     Left = 14
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 70
+                    Width = 65
                     Caption = 'Включен'
                     Checked = True
                     TabOrder = 1
@@ -2450,9 +2450,9 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton34: TRadioButton
                     Cursor = crHandPoint
                     Left = 168
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 77
+                    Width = 73
                     Caption = 'Отключен'
                     TabOrder = 0
                   end
@@ -2491,9 +2491,9 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton35: TRadioButton
                     Cursor = crHandPoint
                     Left = 14
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 70
+                    Width = 65
                     Caption = 'Включен'
                     Checked = True
                     TabOrder = 1
@@ -2502,9 +2502,9 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton36: TRadioButton
                     Cursor = crHandPoint
                     Left = 168
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 77
+                    Width = 73
                     Caption = 'Отключен'
                     TabOrder = 0
                   end
@@ -2543,9 +2543,9 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton37: TRadioButton
                     Cursor = crHandPoint
                     Left = 14
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 70
+                    Width = 65
                     Caption = 'Включен'
                     Checked = True
                     TabOrder = 1
@@ -2554,9 +2554,9 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton38: TRadioButton
                     Cursor = crHandPoint
                     Left = 179
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 77
+                    Width = 73
                     Caption = 'Отключен'
                     TabOrder = 0
                   end
@@ -2595,9 +2595,9 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton39: TRadioButton
                     Cursor = crHandPoint
                     Left = 14
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 76
+                    Width = 71
                     Caption = 'Включена'
                     Checked = True
                     TabOrder = 1
@@ -2606,9 +2606,9 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton40: TRadioButton
                     Cursor = crHandPoint
                     Left = 179
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 83
+                    Width = 79
                     Caption = 'Отключена'
                     TabOrder = 0
                   end
@@ -2647,9 +2647,9 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton41: TRadioButton
                     Cursor = crHandPoint
                     Left = 14
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 79
+                    Width = 73
                     Caption = 'Включены'
                     Checked = True
                     TabOrder = 1
@@ -2658,9 +2658,9 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton42: TRadioButton
                     Cursor = crHandPoint
                     Left = 179
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 86
+                    Width = 81
                     Caption = 'Отключены'
                     TabOrder = 0
                   end
@@ -2691,7 +2691,7 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object TabSheet31: TTabSheet
               Caption = 'Пинг до серверов (настройка 1)'
-              ClientHeight = 510
+              ClientHeight = 516
               ClientWidth = 812
               object GroupBox28: TGroupBox
                 Left = 66
@@ -2714,9 +2714,9 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton43: TRadioButton
                     Cursor = crHandPoint
                     Left = 14
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 70
+                    Width = 65
                     Caption = 'Включен'
                     Checked = True
                     TabOrder = 1
@@ -2725,9 +2725,9 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton44: TRadioButton
                     Cursor = crHandPoint
                     Left = 174
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 77
+                    Width = 73
                     Caption = 'Отключен'
                     TabOrder = 0
                   end
@@ -2765,7 +2765,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   TabOrder = 1
                   object SpinEdit10: TSpinEdit
                     Left = 12
-                    Height = 23
+                    Height = 21
                     Top = 21
                     Width = 72
                     Alignment = taCenter
@@ -2791,8 +2791,6 @@ object XCTuner_Form1: TXCTuner_Form1
                     TickStyle = tsNone
                     BorderSpacing.CellAlignHorizontal = ccaCenter
                     BorderSpacing.CellAlignVertical = ccaCenter
-                    OnMouseWheelDown = TrackBar1MouseWheelDown
-                    OnMouseWheelUp = TrackBar1MouseWheelUp
                     TabOrder = 1
                   end
                   object Image22: TImage
@@ -2820,31 +2818,31 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object Label22: TLabel
                   Left = 16
-                  Height = 15
+                  Height = 13
                   Top = 173
-                  Width = 101
+                  Width = 90
                   Caption = 'Позиция по оси X:'
                   ParentColor = False
                 end
                 object Label23: TLabel
                   Left = 16
-                  Height = 15
+                  Height = 13
                   Top = 207
-                  Width = 101
+                  Width = 90
                   Caption = 'Позиция по оси Y:'
                   ParentColor = False
                 end
                 object Label24: TLabel
                   Left = 16
-                  Height = 15
+                  Height = 13
                   Top = 241
-                  Width = 82
+                  Width = 75
                   Caption = 'Прозрачность:'
                   ParentColor = False
                 end
                 object SpinEdit5: TSpinEdit
                   Left = 183
-                  Height = 23
+                  Height = 21
                   Top = 168
                   Width = 66
                   Alignment = taCenter
@@ -2855,7 +2853,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object SpinEdit6: TSpinEdit
                   Left = 183
-                  Height = 23
+                  Height = 21
                   Top = 202
                   Width = 66
                   Alignment = taCenter
@@ -2866,7 +2864,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object SpinEdit7: TSpinEdit
                   Left = 183
-                  Height = 23
+                  Height = 21
                   Hint = 'Диапазон: 0 - 100'
                   Top = 237
                   Width = 66
@@ -2902,7 +2900,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   end
                   object SpinEdit8: TSpinEdit
                     Left = 14
-                    Height = 23
+                    Height = 21
                     Top = 20
                     Width = 50
                     Alignment = taCenter
@@ -2946,7 +2944,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   TabOrder = 6
                   object SpinEdit9: TSpinEdit
                     Left = 14
-                    Height = 23
+                    Height = 21
                     Top = 17
                     Width = 50
                     Alignment = taCenter
@@ -3008,31 +3006,31 @@ object XCTuner_Form1: TXCTuner_Form1
                   TabOrder = 7
                   object Label33: TLabel
                     Left = 14
-                    Height = 15
+                    Height = 13
                     Top = 8
-                    Width = 58
+                    Width = 52
                     Caption = 'Отличный'
                     ParentColor = False
                   end
                   object Label34: TLabel
                     Left = 14
-                    Height = 15
+                    Height = 13
                     Top = 34
-                    Width = 53
+                    Width = 44
                     Caption = 'Хороший'
                     ParentColor = False
                   end
                   object Label35: TLabel
                     Left = 146
-                    Height = 15
+                    Height = 13
                     Top = 19
-                    Width = 47
+                    Width = 44
                     Caption = 'Так себе'
                     ParentColor = False
                   end
                   object SpinEdit17: TSpinEdit
                     Left = 86
-                    Height = 23
+                    Height = 21
                     Hint = 'Диапазон: 1 - 500'
                     Top = 3
                     Width = 50
@@ -3046,7 +3044,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   end
                   object SpinEdit18: TSpinEdit
                     Left = 86
-                    Height = 23
+                    Height = 21
                     Hint = 'Диапазон: 1 - 500'
                     Top = 32
                     Width = 50
@@ -3060,7 +3058,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   end
                   object SpinEdit19: TSpinEdit
                     Left = 206
-                    Height = 23
+                    Height = 21
                     Hint = 'Диапазон: 1 - 500'
                     Top = 16
                     Width = 50
@@ -3163,15 +3161,15 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object Label68: TLabel
                   Left = 16
-                  Height = 15
+                  Height = 13
                   Top = 273
-                  Width = 71
+                  Width = 70
                   Caption = 'Разделитель:'
                   ParentColor = False
                 end
                 object Edit26: TEdit
                   Left = 92
-                  Height = 23
+                  Height = 21
                   Top = 270
                   Width = 164
                   Alignment = taCenter
@@ -3203,7 +3201,7 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object TabSheet32: TTabSheet
               Caption = 'Пинг до серверов (настройка 2)'
-              ClientHeight = 510
+              ClientHeight = 516
               ClientWidth = 812
               object GroupBox33: TGroupBox
                 Left = 74
@@ -3217,15 +3215,15 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object Label25: TLabel
                   Left = 14
-                  Height = 15
+                  Height = 13
                   Top = 8
-                  Width = 42
+                  Width = 40
                   Caption = 'Шрифт:'
                   ParentColor = False
                 end
                 object Edit1: TEdit
                   Left = 62
-                  Height = 23
+                  Height = 21
                   Top = 4
                   Width = 190
                   Alignment = taCenter
@@ -3234,15 +3232,15 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object Label26: TLabel
                   Left = 14
-                  Height = 15
+                  Height = 13
                   Top = 69
-                  Width = 43
+                  Width = 39
                   Caption = 'Размер:'
                   ParentColor = False
                 end
                 object SpinEdit11: TSpinEdit
                   Left = 62
-                  Height = 23
+                  Height = 21
                   Top = 65
                   Width = 66
                   Alignment = taCenter
@@ -3253,17 +3251,17 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object CheckBox1: TCheckBox
                   Left = 134
-                  Height = 19
+                  Height = 17
                   Top = 67
-                  Width = 68
+                  Width = 62
                   Caption = 'Жирный'
                   TabOrder = 2
                 end
                 object CheckBox2: TCheckBox
                   Left = 203
-                  Height = 19
+                  Height = 17
                   Top = 67
-                  Width = 59
+                  Width = 56
                   Caption = 'Курсив'
                   TabOrder = 3
                 end
@@ -3280,9 +3278,9 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton45: TRadioButton
                     Cursor = crHandPoint
                     Left = 14
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 76
+                    Width = 71
                     Caption = 'Включена'
                     Checked = True
                     TabOrder = 0
@@ -3291,15 +3289,15 @@ object XCTuner_Form1: TXCTuner_Form1
                   object RadioButton46: TRadioButton
                     Cursor = crHandPoint
                     Left = 150
-                    Height = 19
+                    Height = 17
                     Top = 8
-                    Width = 83
+                    Width = 79
                     Caption = 'Отключена'
                     TabOrder = 1
                   end
                   object Label27: TLabel
                     Left = 21
-                    Height = 15
+                    Height = 13
                     Top = 40
                     Width = 26
                     Caption = 'Цвет'
@@ -3307,47 +3305,47 @@ object XCTuner_Form1: TXCTuner_Form1
                   end
                   object Label28: TLabel
                     Left = 51
-                    Height = 15
+                    Height = 13
                     Top = 75
-                    Width = 59
+                    Width = 55
                     Caption = 'Дистанция'
                     ParentColor = False
                   end
                   object Label29: TLabel
                     Left = 51
-                    Height = 15
+                    Height = 13
                     Top = 104
-                    Width = 26
+                    Width = 24
                     Caption = 'Угол'
                     ParentColor = False
                   end
                   object Label30: TLabel
                     Left = 51
-                    Height = 15
+                    Height = 13
                     Top = 133
-                    Width = 79
+                    Width = 71
                     Caption = 'Прозрачность'
                     ParentColor = False
                   end
                   object Label31: TLabel
                     Left = 51
-                    Height = 15
+                    Height = 13
                     Top = 163
-                    Width = 54
+                    Width = 49
                     Caption = 'Размытие'
                     ParentColor = False
                   end
                   object Label32: TLabel
                     Left = 52
-                    Height = 15
+                    Height = 13
                     Top = 191
-                    Width = 84
+                    Width = 77
                     Caption = 'Интенсивность'
                     ParentColor = False
                   end
                   object Edit2: TEdit
                     Left = 66
-                    Height = 23
+                    Height = 21
                     Top = 37
                     Width = 80
                     Alignment = taCenter
@@ -3357,7 +3355,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   end
                   object SpinEdit12: TSpinEdit
                     Left = 142
-                    Height = 23
+                    Height = 21
                     Hint = 'Диапазон: 0 - 10'
                     Top = 72
                     Width = 66
@@ -3369,7 +3367,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   end
                   object SpinEdit13: TSpinEdit
                     Left = 142
-                    Height = 23
+                    Height = 21
                     Hint = 'Диапазон: 0 - 359'
                     Top = 100
                     Width = 66
@@ -3381,7 +3379,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   end
                   object SpinEdit14: TSpinEdit
                     Left = 142
-                    Height = 23
+                    Height = 21
                     Hint = 'Диапазон: 0 - 100'
                     Top = 130
                     Width = 66
@@ -3392,7 +3390,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   end
                   object SpinEdit15: TSpinEdit
                     Left = 142
-                    Height = 23
+                    Height = 21
                     Hint = 'Диапазон: 0 - 10'
                     Top = 159
                     Width = 66
@@ -3404,7 +3402,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   end
                   object SpinEdit16: TSpinEdit
                     Left = 142
-                    Height = 23
+                    Height = 21
                     Hint = 'Диапазон: 0 - 1000'
                     Top = 187
                     Width = 66
@@ -3543,15 +3541,15 @@ object XCTuner_Form1: TXCTuner_Form1
                   TabOrder = 5
                   object Label36: TLabel
                     Left = 11
-                    Height = 15
+                    Height = 13
                     Top = 13
-                    Width = 58
+                    Width = 52
                     Caption = 'Отличный'
                     ParentColor = False
                   end
                   object Edit3: TEdit
                     Left = 83
-                    Height = 23
+                    Height = 21
                     Top = 8
                     Width = 68
                     Alignment = taCenter
@@ -3561,15 +3559,15 @@ object XCTuner_Form1: TXCTuner_Form1
                   end
                   object Label37: TLabel
                     Left = 11
-                    Height = 15
+                    Height = 13
                     Top = 50
-                    Width = 53
+                    Width = 44
                     Caption = 'Хороший'
                     ParentColor = False
                   end
                   object Edit4: TEdit
                     Left = 83
-                    Height = 23
+                    Height = 21
                     Top = 45
                     Width = 68
                     Alignment = taCenter
@@ -3579,15 +3577,15 @@ object XCTuner_Form1: TXCTuner_Form1
                   end
                   object Label38: TLabel
                     Left = 11
-                    Height = 15
+                    Height = 13
                     Top = 84
-                    Width = 47
+                    Width = 44
                     Caption = 'Так себе'
                     ParentColor = False
                   end
                   object Edit5: TEdit
                     Left = 83
-                    Height = 23
+                    Height = 21
                     Top = 80
                     Width = 68
                     Alignment = taCenter
@@ -3597,15 +3595,15 @@ object XCTuner_Form1: TXCTuner_Form1
                   end
                   object Label39: TLabel
                     Left = 14
-                    Height = 15
+                    Height = 13
                     Top = 121
-                    Width = 42
+                    Width = 37
                     Caption = 'Плохой'
                     ParentColor = False
                   end
                   object Edit6: TEdit
                     Left = 83
-                    Height = 23
+                    Height = 21
                     Top = 117
                     Width = 68
                     Alignment = taCenter
@@ -4018,9 +4016,9 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object Label40: TLabel
                   Left = 14
-                  Height = 15
+                  Height = 13
                   Top = 36
-                  Width = 89
+                  Width = 81
                   Caption = 'Выбрать шрифт'
                   ParentColor = False
                 end
@@ -7241,8 +7239,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelEnd = 75
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 1
             end
             object Label71: TLabel
@@ -7276,8 +7272,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelEnd = 75
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 3
             end
             object GroupBox58: TGroupBox
@@ -7537,8 +7531,6 @@ object XCTuner_Form1: TXCTuner_Form1
                 SelStart = -400
                 TickMarks = tmBoth
                 TickStyle = tsNone
-                OnMouseWheelDown = TrackBar1MouseWheelDown
-                OnMouseWheelUp = TrackBar1MouseWheelUp
                 TabOrder = 2
               end
               object Image79: TImage
@@ -7600,8 +7592,6 @@ object XCTuner_Form1: TXCTuner_Form1
                 SelStart = -20
                 TickMarks = tmBoth
                 TickStyle = tsNone
-                OnMouseWheelDown = TrackBar1MouseWheelDown
-                OnMouseWheelUp = TrackBar1MouseWheelUp
                 TabOrder = 3
               end
               object SpinEdit23: TSpinEdit
@@ -7653,8 +7643,6 @@ object XCTuner_Form1: TXCTuner_Form1
                 SelStart = -400
                 TickMarks = tmBoth
                 TickStyle = tsNone
-                OnMouseWheelDown = TrackBar1MouseWheelDown
-                OnMouseWheelUp = TrackBar1MouseWheelUp
                 TabOrder = 5
               end
               object SpinEdit24: TSpinEdit
@@ -7706,8 +7694,6 @@ object XCTuner_Form1: TXCTuner_Form1
                 SelStart = -20
                 TickMarks = tmBoth
                 TickStyle = tsNone
-                OnMouseWheelDown = TrackBar1MouseWheelDown
-                OnMouseWheelUp = TrackBar1MouseWheelUp
                 TabOrder = 7
               end
               object SpinEdit25: TSpinEdit
@@ -7757,8 +7743,6 @@ object XCTuner_Form1: TXCTuner_Form1
                 SelEnd = 75
                 TickMarks = tmBoth
                 TickStyle = tsNone
-                OnMouseWheelDown = TrackBar1MouseWheelDown
-                OnMouseWheelUp = TrackBar1MouseWheelUp
                 TabOrder = 9
               end
               object SpinEdit26: TSpinEdit
@@ -7807,8 +7791,6 @@ object XCTuner_Form1: TXCTuner_Form1
                 SelEnd = 75
                 TickMarks = tmBoth
                 TickStyle = tsNone
-                OnMouseWheelDown = TrackBar1MouseWheelDown
-                OnMouseWheelUp = TrackBar1MouseWheelUp
                 TabOrder = 11
               end
               object SpinEdit27: TSpinEdit
@@ -7857,8 +7839,6 @@ object XCTuner_Form1: TXCTuner_Form1
                 SelEnd = 75
                 TickMarks = tmBoth
                 TickStyle = tsNone
-                OnMouseWheelDown = TrackBar1MouseWheelDown
-                OnMouseWheelUp = TrackBar1MouseWheelUp
                 TabOrder = 13
               end
               object SpinEdit28: TSpinEdit
@@ -7966,8 +7946,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelStart = -500
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 1
             end
             object Image88: TImage
@@ -8027,8 +8005,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelStart = -50
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 3
             end
             object Image89: TImage
@@ -8501,8 +8477,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelEnd = 75
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 1
             end
             object Image98: TImage
@@ -8649,8 +8623,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelEnd = 75
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 1
             end
             object Image101: TImage
@@ -8797,8 +8769,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelEnd = 75
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 1
             end
             object Image104: TImage
@@ -8985,165 +8955,13 @@ object XCTuner_Form1: TXCTuner_Form1
             end
           end
         end
-        object TabSheet18: TTabSheet
-          Caption = 'Расширенные настройки _3'
-          ClientHeight = 542
-          ClientWidth = 820
-          object GroupBox89: TGroupBox
-            Left = 22
-            Height = 52
-            Top = 8
-            Width = 395
-            ClientHeight = 34
-            ClientWidth = 391
-            TabOrder = 0
-            object Label21: TLabel
-              Left = 9
-              Height = 13
-              Top = 6
-              Width = 125
-              Caption = 'Начальный режим ушей:'
-              ParentColor = False
-            end
-            object ComboBox7: TComboBox
-              Cursor = crHandPoint
-              Left = 157
-              Height = 23
-              Top = 3
-              Width = 201
-              ItemHeight = 15
-              ItemIndex = 0
-              Items.Strings = (
-                'none (пустые уши)'
-                'short (короткие уши)'
-                'medium (первые средние уши)'
-                'medium2 (вторые средние уши)'
-                'large (широкие уши)'
-              )
-              Style = csDropDownList
-              TabOrder = 0
-              Text = 'none (пустые уши)'
-            end
-            object Image164: TImage
-              Cursor = crHandPoint
-              Left = 367
-              Height = 16
-              Top = 7
-              Width = 16
-              OnClick = Image164Click
-              Picture.Data = {
-                1754506F727461626C654E6574776F726B477261706869634A01000089504E47
-                0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
-                0467414D410000AFC837058AE90000001974455874536F667477617265004164
-                6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
-                F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
-                E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
-                3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
-                8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
-                2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
-                2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
-                4E44AE426082
-              }
-            end
-          end
-        end
-      end
-      object BitRefresh12: TBitBtn
-        Cursor = crHandPoint
-        Left = 500
-        Height = 49
-        Hint = 'Обновить данные из конфига'
-        Top = 32
-        Width = 115
-        Caption = 'Обновить'
-        Glyph.Data = {
-          36090000424D3609000000000000360000002800000018000000180000000100
-          20000000000000090000640000006400000000000000000000000C1900000C19
-          00000C19000008110000183000002C5700000B15000000000000000000000000
-          000009000014100800270E0700250400000E0000000000000000000000000000
-          00000000000000000000000000000000000000000000000000000C1900000C19
-          00000C19000008110000183000002D580000070C0000000000000A0500131E17
-          005A272800932C3900A82B3400A6242000881814005002000009000000000000
-          00000000000000000000000000000000000000000000000000000C1900000C19
-          00000C1900000811000018310000274F00000C10000523200087346B00ED2CA7
-          00FF21C500FF1AD300FF1DCD00FF26BA00FF338E00FF364D00E11E1B006F0000
-          00000000000000000000000000000000000000000000000000000C1900000C19
-          00000C19000008120000152C000028400020325100D726B800FF06F700FF00FF
-          00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF16DB00FF378E00FF3033
-          00BA0000000B00000000000000000000000000000000000000000D1B00000D1B
-          00000D1B0000070F000015230013335D00E628BF13FF0CFF16FF0AFE10FF09FF
-          0FFF03FF0BFF00FF06FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF30A7
-          00FF323800CA0000000000000000000000000000000000000000000000000000
-          00000000000003030000284D00BD40B327FF3CEA49FF3CE044FF34DE38FF2BC9
-          22FF27BB16FF20C412FF15EC14FF0AFF12FF05FB05FF01FD00FF00FF00FF00FF
-          00FF329400FF311C00B0231D0076292B008C0E17004C000000001C3800001C38
-          00001A350000112B004749921FFF8AF996FF84F58EFF5AC24DFF3A8016FF3155
-          03D4365300973D5B009D396F08DE2CB21CFE25E62CFF22DD23FF1EE11DFF0CF9
-          12FF0BE807FF2A9D00FF23BC00FF26C000FF377B00FF0D0E0036142800001428
-          000015270000225700BCA8E29FFFD4FFE0FF66A74CFF295101DC264300542449
-          0000285100001E3A00001B22001C334100ED3AA825FF29E931FF11ED11FF05FB
-          04FF00FF00FF00FF00FF00FF00FF00FF00FF2F9900FF190D00581B3800001B39
-          000005270013678E43FDFFFFFFFF6E9F4DFF194C00AD173B000A275400002F62
-          00001A3600000E18000F274A04BC339212FC24C41BFF13E816FF06ED07FF05F0
-          04FF02F502FF00FB00FF00FF00FF04FC00FF347700FF0D08002329540000274D
-          00001248004698B47CFF95A372FF001A008C00080000060F00000C1B0000152A
-          0000346B00002F5F00344F9123FF89FF9AFF66E76EFF53CD51FF4BCC4BFF3FCD
-          3FFF34CE34FF29D028FF1EEC28FF2FC416FF2C4400C80001000019320000162C
-          0000274A0066446B0CFF236A00FF264200AB1806005900000007000000000000
-          0000173000002E6900052B6007B585B670FFDDFFE3FFC8FDCFFFA1E7A1FF90E1
-          90FF82DC82FF76DC78FF74E37BFF4C8F17FF101C005E000000000C0F00000B11
-          0000323C00B3219800FF00F100FF12EB00FF2AAC00FF325800DF1F1000690000
-          000000000000193C00002F6900002150009D709459FFE4EDDDFFFFFFFFFFFEFF
-          FFFFE1FAE2FFEAFFF3FFA8D894FF215000E50003000200000000132700002533
-          003B367802FF08FD0BFF00FF00FF00FF00FF00FF00FF0FF200FF2CA900FF313E
-          00C50A00002A0000000021400000356D00001246004C2C5903CF8DAA73FFE5EA
-          DCFFFFFFFFFFFFFFFFFF57842AFF001700570000000000000000142000003047
-          00C12ABE13FF12FF1DFF09F609FF00FF00FF00FF00FF00FF00FF00FF00FF1BDE
-          00FF346500F20B050032000000001C3A0000406D000025520000064700572858
-          00A7698445E9628133FF1D5600F30303000500000000000000002D48002A3370
-          03FF2AD52BFF21E424FF17E917FF09F609FF00FF00FF00FF00FF00FF00FF00FF
-          00FF16F700FF2D3B00C700000000000000001E31000026430000092100000B0F
-          00001D3E00D50FA300FF286F00D201000000000000000000000029480083449D
-          25FF42DF4BFF29CF29FF21DD21FF14E814FF02F702FF00FF00FF00FF00FF06E6
-          00FF2AB600FF273B008C000000000000000000000000000000000E0600253539
-          00D218CF00FF0FFC00FF283B00A6000000000000000000000000274F00BF6BC7
-          5FFF74FC84FF45E04AFF25DA2AFF12D911FF19E518FF11EC14FF15E313FF3675
-          00FF2F2400A700000000000000000000000003000000241C0065395E00F31BCF
-          00FF00FF00FF26BA00FF1F0E005A000000000000000000000000295500BA62A9
-          42FF78DB6AFF3FA82FFF60BC50FF9DF6A4FF71DB71FF51CB51FF2FD234FF29BC
-          19FF285F02DC1D21008B1711005E2322007E314B00D12F9700FF0DEA00FF00FF
-          00FF08FD00FF355E00EF06000007000000000000000000000000305F00232750
-          009F203F00B41D4100A446661AFFE2F1DCFFD8FFE2FF85DF84FF5DD35DFF33DB
-          3CFF26D723FF2FB712FF31A70CFF2BB70AFF16E206FF00FF00FF00FF00FF00FF
-          00FF31AA00FF221A006200000000000000000000000000000000376B0000172B
-          0000000000001F380000276200734B7625FFEDF5E9FFEFFFF6FFA0EAA1FF6FD7
-          6EFF46D64AFF28E030FF1DE924FF17F71FFF0FFC16FF06FF0DFF00FF04FF24C0
-          00FF323A00B00303000000000000000000000000000000000000366A00001A31
-          000000000000082C0000115300000B46008046721AFFC8D2BCFFF6FFFCFFD2FF
-          DBFF9BF3A2FF69E26EFF41DA46FF2CE234FF21F02AFF1AE518FF2CA106FF323E
-          00B2030000000000000000000000000000000000000000000000366A00001A32
-          0000000000000024000000410000245800002151004F1D5300D56A8B46FF9EBC
-          8BFFA5D49AFF90D887FF67CC5DFF3EB22EFF329B11FF346503EC384B00771422
-          0000000000000000000000000000000000000000000000000000366A00001A32
-          000000000000002700000047000023580000385D00002A5B0000154E00511B4F
-          00972F5E00C4346006D4325E03CC305400A7283800662B4F001129520000172C
-          0000000000000000000000000000000000000000000000000000366A00001A32
-          000000000000002700000047000023580000375E00002E5F00002B5C00002456
-          00171C4E00411239005218360049294900261A300000285400002C550000182D
-          0000000000000000000000000000000000000000000000000000
-        }
-        OnClick = BitRefresh12Click
-        ParentShowHint = False
-        ShowHint = True
-        TabOrder = 1
       end
       object BitSave12: TBitBtn
         Cursor = crHandPoint
-        Left = 620
+        Left = 626
         Height = 49
         Hint = 'Сохранить изменения в конфиг'
-        Top = 32
+        Top = 42
         Width = 115
         Caption = 'Сохранить'
         Glyph.Data = {
@@ -9223,6 +9041,95 @@ object XCTuner_Form1: TXCTuner_Form1
           47C0DFB26471D8AC5C00D7AB5C00D7AB5C00D7AB5C00D7AB5C00
         }
         OnClick = BitSave12Click
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 1
+      end
+      object BitRefresh12: TBitBtn
+        Cursor = crHandPoint
+        Left = 506
+        Height = 49
+        Hint = 'Обновить данные из конфига'
+        Top = 42
+        Width = 115
+        Caption = 'Обновить'
+        Glyph.Data = {
+          36090000424D3609000000000000360000002800000018000000180000000100
+          20000000000000090000640000006400000000000000000000000C1900000C19
+          00000C19000008110000183000002C5700000B15000000000000000000000000
+          000009000014100800270E0700250400000E0000000000000000000000000000
+          00000000000000000000000000000000000000000000000000000C1900000C19
+          00000C19000008110000183000002D580000070C0000000000000A0500131E17
+          005A272800932C3900A82B3400A6242000881814005002000009000000000000
+          00000000000000000000000000000000000000000000000000000C1900000C19
+          00000C1900000811000018310000274F00000C10000523200087346B00ED2CA7
+          00FF21C500FF1AD300FF1DCD00FF26BA00FF338E00FF364D00E11E1B006F0000
+          00000000000000000000000000000000000000000000000000000C1900000C19
+          00000C19000008120000152C000028400020325100D726B800FF06F700FF00FF
+          00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF16DB00FF378E00FF3033
+          00BA0000000B00000000000000000000000000000000000000000D1B00000D1B
+          00000D1B0000070F000015230013335D00E628BF13FF0CFF16FF0AFE10FF09FF
+          0FFF03FF0BFF00FF06FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF30A7
+          00FF323800CA0000000000000000000000000000000000000000000000000000
+          00000000000003030000284D00BD40B327FF3CEA49FF3CE044FF34DE38FF2BC9
+          22FF27BB16FF20C412FF15EC14FF0AFF12FF05FB05FF01FD00FF00FF00FF00FF
+          00FF329400FF311C00B0231D0076292B008C0E17004C000000001C3800001C38
+          00001A350000112B004749921FFF8AF996FF84F58EFF5AC24DFF3A8016FF3155
+          03D4365300973D5B009D396F08DE2CB21CFE25E62CFF22DD23FF1EE11DFF0CF9
+          12FF0BE807FF2A9D00FF23BC00FF26C000FF377B00FF0D0E0036142800001428
+          000015270000225700BCA8E29FFFD4FFE0FF66A74CFF295101DC264300542449
+          0000285100001E3A00001B22001C334100ED3AA825FF29E931FF11ED11FF05FB
+          04FF00FF00FF00FF00FF00FF00FF00FF00FF2F9900FF190D00581B3800001B39
+          000005270013678E43FDFFFFFFFF6E9F4DFF194C00AD173B000A275400002F62
+          00001A3600000E18000F274A04BC339212FC24C41BFF13E816FF06ED07FF05F0
+          04FF02F502FF00FB00FF00FF00FF04FC00FF347700FF0D08002329540000274D
+          00001248004698B47CFF95A372FF001A008C00080000060F00000C1B0000152A
+          0000346B00002F5F00344F9123FF89FF9AFF66E76EFF53CD51FF4BCC4BFF3FCD
+          3FFF34CE34FF29D028FF1EEC28FF2FC416FF2C4400C80001000019320000162C
+          0000274A0066446B0CFF236A00FF264200AB1806005900000007000000000000
+          0000173000002E6900052B6007B585B670FFDDFFE3FFC8FDCFFFA1E7A1FF90E1
+          90FF82DC82FF76DC78FF74E37BFF4C8F17FF101C005E000000000C0F00000B11
+          0000323C00B3219800FF00F100FF12EB00FF2AAC00FF325800DF1F1000690000
+          000000000000193C00002F6900002150009D709459FFE4EDDDFFFFFFFFFFFEFF
+          FFFFE1FAE2FFEAFFF3FFA8D894FF215000E50003000200000000132700002533
+          003B367802FF08FD0BFF00FF00FF00FF00FF00FF00FF0FF200FF2CA900FF313E
+          00C50A00002A0000000021400000356D00001246004C2C5903CF8DAA73FFE5EA
+          DCFFFFFFFFFFFFFFFFFF57842AFF001700570000000000000000142000003047
+          00C12ABE13FF12FF1DFF09F609FF00FF00FF00FF00FF00FF00FF00FF00FF1BDE
+          00FF346500F20B050032000000001C3A0000406D000025520000064700572858
+          00A7698445E9628133FF1D5600F30303000500000000000000002D48002A3370
+          03FF2AD52BFF21E424FF17E917FF09F609FF00FF00FF00FF00FF00FF00FF00FF
+          00FF16F700FF2D3B00C700000000000000001E31000026430000092100000B0F
+          00001D3E00D50FA300FF286F00D201000000000000000000000029480083449D
+          25FF42DF4BFF29CF29FF21DD21FF14E814FF02F702FF00FF00FF00FF00FF06E6
+          00FF2AB600FF273B008C000000000000000000000000000000000E0600253539
+          00D218CF00FF0FFC00FF283B00A6000000000000000000000000274F00BF6BC7
+          5FFF74FC84FF45E04AFF25DA2AFF12D911FF19E518FF11EC14FF15E313FF3675
+          00FF2F2400A700000000000000000000000003000000241C0065395E00F31BCF
+          00FF00FF00FF26BA00FF1F0E005A000000000000000000000000295500BA62A9
+          42FF78DB6AFF3FA82FFF60BC50FF9DF6A4FF71DB71FF51CB51FF2FD234FF29BC
+          19FF285F02DC1D21008B1711005E2322007E314B00D12F9700FF0DEA00FF00FF
+          00FF08FD00FF355E00EF06000007000000000000000000000000305F00232750
+          009F203F00B41D4100A446661AFFE2F1DCFFD8FFE2FF85DF84FF5DD35DFF33DB
+          3CFF26D723FF2FB712FF31A70CFF2BB70AFF16E206FF00FF00FF00FF00FF00FF
+          00FF31AA00FF221A006200000000000000000000000000000000376B0000172B
+          0000000000001F380000276200734B7625FFEDF5E9FFEFFFF6FFA0EAA1FF6FD7
+          6EFF46D64AFF28E030FF1DE924FF17F71FFF0FFC16FF06FF0DFF00FF04FF24C0
+          00FF323A00B00303000000000000000000000000000000000000366A00001A31
+          000000000000082C0000115300000B46008046721AFFC8D2BCFFF6FFFCFFD2FF
+          DBFF9BF3A2FF69E26EFF41DA46FF2CE234FF21F02AFF1AE518FF2CA106FF323E
+          00B2030000000000000000000000000000000000000000000000366A00001A32
+          0000000000000024000000410000245800002151004F1D5300D56A8B46FF9EBC
+          8BFFA5D49AFF90D887FF67CC5DFF3EB22EFF329B11FF346503EC384B00771422
+          0000000000000000000000000000000000000000000000000000366A00001A32
+          000000000000002700000047000023580000385D00002A5B0000154E00511B4F
+          00972F5E00C4346006D4325E03CC305400A7283800662B4F001129520000172C
+          0000000000000000000000000000000000000000000000000000366A00001A32
+          000000000000002700000047000023580000375E00002E5F00002B5C00002456
+          00171C4E00411239005218360049294900261A300000285400002C550000182D
+          0000000000000000000000000000000000000000000000000000
+        }
+        OnClick = BitRefresh12Click
         ParentShowHint = False
         ShowHint = True
         TabOrder = 2
@@ -9612,8 +9519,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelStart = -400
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 2
             end
             object Image114: TImage
@@ -9675,8 +9580,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelStart = -20
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 3
             end
             object SpinEdit35: TSpinEdit
@@ -9728,8 +9631,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelStart = -400
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 5
             end
             object SpinEdit36: TSpinEdit
@@ -9781,8 +9682,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelStart = -20
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 7
             end
             object SpinEdit37: TSpinEdit
@@ -9832,8 +9731,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelEnd = 75
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 9
             end
             object SpinEdit38: TSpinEdit
@@ -9882,8 +9779,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelEnd = 75
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 11
             end
             object SpinEdit39: TSpinEdit
@@ -9932,8 +9827,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelEnd = 75
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 13
             end
             object SpinEdit40: TSpinEdit
@@ -10691,8 +10584,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelStart = -400
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 2
             end
             object Image130: TImage
@@ -10754,8 +10645,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelStart = -20
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 3
             end
             object SpinEdit42: TSpinEdit
@@ -10807,8 +10696,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelStart = -400
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 5
             end
             object SpinEdit43: TSpinEdit
@@ -10860,8 +10747,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelStart = -20
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 7
             end
             object SpinEdit44: TSpinEdit
@@ -10911,8 +10796,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelEnd = 75
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 9
             end
             object SpinEdit45: TSpinEdit
@@ -10961,8 +10844,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelEnd = 75
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 11
             end
             object SpinEdit46: TSpinEdit
@@ -11011,8 +10892,6 @@ object XCTuner_Form1: TXCTuner_Form1
               SelEnd = 75
               TickMarks = tmBoth
               TickStyle = tsNone
-              OnMouseWheelDown = TrackBar1MouseWheelDown
-              OnMouseWheelUp = TrackBar1MouseWheelUp
               TabOrder = 13
             end
             object SpinEdit47: TSpinEdit
@@ -11508,8 +11387,6 @@ object XCTuner_Form1: TXCTuner_Form1
                 SelEnd = 75
                 TickMarks = tmBoth
                 TickStyle = tsNone
-                OnMouseWheelDown = TrackBar1MouseWheelDown
-                OnMouseWheelUp = TrackBar1MouseWheelUp
                 TabOrder = 1
               end
               object Image142: TImage
@@ -11557,8 +11434,6 @@ object XCTuner_Form1: TXCTuner_Form1
                 SelEnd = 75
                 TickMarks = tmBoth
                 TickStyle = tsNone
-                OnMouseWheelDown = TrackBar1MouseWheelDown
-                OnMouseWheelUp = TrackBar1MouseWheelUp
                 TabOrder = 3
               end
               object Image143: TImage
@@ -11606,8 +11481,6 @@ object XCTuner_Form1: TXCTuner_Form1
                 SelEnd = 75
                 TickMarks = tmBoth
                 TickStyle = tsNone
-                OnMouseWheelDown = TrackBar1MouseWheelDown
-                OnMouseWheelUp = TrackBar1MouseWheelUp
                 TabOrder = 5
               end
               object Image144: TImage
@@ -11668,8 +11541,6 @@ object XCTuner_Form1: TXCTuner_Form1
                 SelEnd = 2
                 TickMarks = tmBoth
                 TickStyle = tsNone
-                OnMouseWheelDown = TrackBar1MouseWheelDown
-                OnMouseWheelUp = TrackBar1MouseWheelUp
                 TabOrder = 7
               end
               object Image145: TImage
@@ -11739,8 +11610,6 @@ object XCTuner_Form1: TXCTuner_Form1
                 SelEnd = 160
                 TickMarks = tmBoth
                 TickStyle = tsNone
-                OnMouseWheelDown = TrackBar1MouseWheelDown
-                OnMouseWheelUp = TrackBar1MouseWheelUp
                 TabOrder = 1
               end
               object Image146: TImage
@@ -11910,8 +11779,6 @@ object XCTuner_Form1: TXCTuner_Form1
                 SelEnd = 2
                 TickMarks = tmBoth
                 TickStyle = tsNone
-                OnMouseWheelDown = TrackBar1MouseWheelDown
-                OnMouseWheelUp = TrackBar1MouseWheelUp
                 TabOrder = 3
               end
               object Image150: TImage
@@ -11967,8 +11834,6 @@ object XCTuner_Form1: TXCTuner_Form1
                 SelEnd = 75
                 TickMarks = tmBoth
                 TickStyle = tsNone
-                OnMouseWheelDown = TrackBar1MouseWheelDown
-                OnMouseWheelUp = TrackBar1MouseWheelUp
                 TabOrder = 5
               end
               object Image151: TImage
@@ -12442,8 +12307,6 @@ object XCTuner_Form1: TXCTuner_Form1
                     SelEnd = 160
                     TickMarks = tmBoth
                     TickStyle = tsNone
-                    OnMouseWheelDown = TrackBar1MouseWheelDown
-                    OnMouseWheelUp = TrackBar1MouseWheelUp
                     TabOrder = 1
                   end
                   object Image155: TImage
@@ -12503,8 +12366,6 @@ object XCTuner_Form1: TXCTuner_Form1
                     SelEnd = 20
                     TickMarks = tmBoth
                     TickStyle = tsNone
-                    OnMouseWheelDown = TrackBar1MouseWheelDown
-                    OnMouseWheelUp = TrackBar1MouseWheelUp
                     TabOrder = 3
                   end
                   object Image156: TImage
@@ -12560,8 +12421,6 @@ object XCTuner_Form1: TXCTuner_Form1
                     SelEnd = 75
                     TickMarks = tmBoth
                     TickStyle = tsNone
-                    OnMouseWheelDown = TrackBar1MouseWheelDown
-                    OnMouseWheelUp = TrackBar1MouseWheelUp
                     TabOrder = 5
                   end
                   object Image157: TImage
@@ -12818,8 +12677,6 @@ object XCTuner_Form1: TXCTuner_Form1
                     SelEnd = 160
                     TickMarks = tmBoth
                     TickStyle = tsNone
-                    OnMouseWheelDown = TrackBar1MouseWheelDown
-                    OnMouseWheelUp = TrackBar1MouseWheelUp
                     TabOrder = 1
                   end
                   object Image159: TImage
@@ -12879,8 +12736,6 @@ object XCTuner_Form1: TXCTuner_Form1
                     SelEnd = 2
                     TickMarks = tmBoth
                     TickStyle = tsNone
-                    OnMouseWheelDown = TrackBar1MouseWheelDown
-                    OnMouseWheelUp = TrackBar1MouseWheelUp
                     TabOrder = 3
                   end
                   object Image160: TImage
@@ -12936,8 +12791,6 @@ object XCTuner_Form1: TXCTuner_Form1
                     SelEnd = 75
                     TickMarks = tmBoth
                     TickStyle = tsNone
-                    OnMouseWheelDown = TrackBar1MouseWheelDown
-                    OnMouseWheelUp = TrackBar1MouseWheelUp
                     TabOrder = 5
                   end
                   object Image161: TImage
@@ -13154,7 +13007,7 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object TabSheet35: TTabSheet
               Caption = 'Дальнобойность арты'
-              ClientHeight = 510
+              ClientHeight = 516
               ClientWidth = 812
               object GroupBox94: TGroupBox
                 Left = 66
@@ -13167,9 +13020,9 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object Label147: TLabel
                   Left = 14
-                  Height = 15
+                  Height = 13
                   Top = 32
-                  Width = 55
+                  Width = 49
                   Caption = 'Толщина:'
                   ParentColor = False
                 end
@@ -13200,8 +13053,6 @@ object XCTuner_Form1: TXCTuner_Form1
                   SelEnd = 2
                   TickMarks = tmBoth
                   TickStyle = tsNone
-                  OnMouseWheelDown = TrackBar1MouseWheelDown
-                  OnMouseWheelUp = TrackBar1MouseWheelUp
                   TabOrder = 1
                 end
                 object Image165: TImage
@@ -13228,15 +13079,15 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object Label148: TLabel
                   Left = 14
-                  Height = 15
+                  Height = 13
                   Top = 64
-                  Width = 82
+                  Width = 75
                   Caption = 'Прозрачность:'
                   ParentColor = False
                 end
                 object SpinEdit57: TSpinEdit
                   Left = 110
-                  Height = 23
+                  Height = 21
                   Top = 61
                   Width = 64
                   Alignment = taCenter
@@ -13257,8 +13108,6 @@ object XCTuner_Form1: TXCTuner_Form1
                   SelEnd = 75
                   TickMarks = tmBoth
                   TickStyle = tsNone
-                  OnMouseWheelDown = TrackBar1MouseWheelDown
-                  OnMouseWheelUp = TrackBar1MouseWheelUp
                   TabOrder = 3
                 end
                 object Image166: TImage
@@ -13285,15 +13134,15 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object Label149: TLabel
                   Left = 14
-                  Height = 15
+                  Height = 13
                   Top = 100
-                  Width = 29
+                  Width = 30
                   Caption = 'Цвет:'
                   ParentColor = False
                 end
                 object Edit55: TEdit
                   Left = 54
-                  Height = 23
+                  Height = 21
                   Top = 97
                   Width = 68
                   Alignment = taCenter
@@ -13420,9 +13269,9 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object Label150: TLabel
                   Left = 14
-                  Height = 15
+                  Height = 13
                   Top = 4
-                  Width = 83
+                  Width = 84
                   Caption = 'Отображение:'
                   Font.Style = [fsBold, fsUnderline]
                   ParentColor = False
@@ -13431,9 +13280,9 @@ object XCTuner_Form1: TXCTuner_Form1
                 object RadioButton111: TRadioButton
                   Cursor = crHandPoint
                   Left = 126
-                  Height = 19
+                  Height = 17
                   Top = 3
-                  Width = 77
+                  Width = 71
                   Caption = 'Включено'
                   Checked = True
                   TabOrder = 7
@@ -13442,9 +13291,9 @@ object XCTuner_Form1: TXCTuner_Form1
                 object RadioButton112: TRadioButton
                   Cursor = crHandPoint
                   Left = 218
-                  Height = 19
+                  Height = 17
                   Top = 3
-                  Width = 84
+                  Width = 79
                   Caption = 'Отключено'
                   TabOrder = 8
                 end
@@ -13474,7 +13323,7 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object TabSheet36: TTabSheet
               Caption = 'Дальность полета снаряда для пулеметных танков'
-              ClientHeight = 510
+              ClientHeight = 516
               ClientWidth = 812
               object GroupBox95: TGroupBox
                 Left = 66
@@ -13487,9 +13336,9 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object Label151: TLabel
                   Left = 14
-                  Height = 15
+                  Height = 13
                   Top = 32
-                  Width = 55
+                  Width = 49
                   Caption = 'Толщина:'
                   ParentColor = False
                 end
@@ -13520,8 +13369,6 @@ object XCTuner_Form1: TXCTuner_Form1
                   SelEnd = 2
                   TickMarks = tmBoth
                   TickStyle = tsNone
-                  OnMouseWheelDown = TrackBar1MouseWheelDown
-                  OnMouseWheelUp = TrackBar1MouseWheelUp
                   TabOrder = 1
                 end
                 object Image169: TImage
@@ -13548,15 +13395,15 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object Label152: TLabel
                   Left = 14
-                  Height = 15
+                  Height = 13
                   Top = 64
-                  Width = 82
+                  Width = 75
                   Caption = 'Прозрачность:'
                   ParentColor = False
                 end
                 object SpinEdit58: TSpinEdit
                   Left = 110
-                  Height = 23
+                  Height = 21
                   Top = 61
                   Width = 64
                   Alignment = taCenter
@@ -13577,8 +13424,6 @@ object XCTuner_Form1: TXCTuner_Form1
                   SelEnd = 75
                   TickMarks = tmBoth
                   TickStyle = tsNone
-                  OnMouseWheelDown = TrackBar1MouseWheelDown
-                  OnMouseWheelUp = TrackBar1MouseWheelUp
                   TabOrder = 3
                 end
                 object Image170: TImage
@@ -13605,15 +13450,15 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object Label153: TLabel
                   Left = 14
-                  Height = 15
+                  Height = 13
                   Top = 100
-                  Width = 29
+                  Width = 30
                   Caption = 'Цвет:'
                   ParentColor = False
                 end
                 object Edit56: TEdit
                   Left = 54
-                  Height = 23
+                  Height = 21
                   Top = 97
                   Width = 68
                   Alignment = taCenter
@@ -13740,9 +13585,9 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object Label154: TLabel
                   Left = 14
-                  Height = 15
+                  Height = 13
                   Top = 4
-                  Width = 83
+                  Width = 84
                   Caption = 'Отображение:'
                   Font.Style = [fsBold, fsUnderline]
                   ParentColor = False
@@ -13751,9 +13596,9 @@ object XCTuner_Form1: TXCTuner_Form1
                 object RadioButton113: TRadioButton
                   Cursor = crHandPoint
                   Left = 126
-                  Height = 19
+                  Height = 17
                   Top = 3
-                  Width = 77
+                  Width = 71
                   Caption = 'Включено'
                   Checked = True
                   TabOrder = 7
@@ -13762,9 +13607,9 @@ object XCTuner_Form1: TXCTuner_Form1
                 object RadioButton114: TRadioButton
                   Cursor = crHandPoint
                   Left = 218
-                  Height = 19
+                  Height = 17
                   Top = 3
-                  Width = 84
+                  Width = 79
                   Caption = 'Отключено'
                   TabOrder = 8
                 end
@@ -13794,29 +13639,29 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object TabSheet37: TTabSheet
               Caption = 'Дальность обзора'
-              ClientHeight = 510
+              ClientHeight = 516
               ClientWidth = 812
               object GroupBox96: TGroupBox
                 Left = 66
-                Height = 128
-                Top = 96
+                Height = 152
+                Top = 140
                 Width = 592
-                Caption = 'Активный круг:'
-                ClientHeight = 110
+                Caption = 'Круг'
+                ClientHeight = 134
                 ClientWidth = 588
                 TabOrder = 0
                 object Label155: TLabel
                   Left = 14
-                  Height = 15
-                  Top = 9
-                  Width = 55
+                  Height = 13
+                  Top = 32
+                  Width = 49
                   Caption = 'Толщина:'
                   ParentColor = False
                 end
                 object FloatSpinEdit7: TFloatSpinEdit
                   Left = 110
                   Height = 23
-                  Top = 6
+                  Top = 29
                   Width = 64
                   Alignment = taCenter
                   AutoSize = False
@@ -13831,7 +13676,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   Cursor = crHandPoint
                   Left = 183
                   Height = 30
-                  Top = 3
+                  Top = 26
                   Width = 368
                   Max = 500
                   OnChange = TrackBar49Change
@@ -13840,15 +13685,13 @@ object XCTuner_Form1: TXCTuner_Form1
                   SelEnd = 2
                   TickMarks = tmBoth
                   TickStyle = tsNone
-                  OnMouseWheelDown = TrackBar1MouseWheelDown
-                  OnMouseWheelUp = TrackBar1MouseWheelUp
                   TabOrder = 1
                 end
                 object Image173: TImage
                   Cursor = crHandPoint
                   Left = 558
                   Height = 16
-                  Top = 13
+                  Top = 36
                   Width = 16
                   OnClick = Image173Click
                   Picture.Data = {
@@ -13868,16 +13711,16 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object Label156: TLabel
                   Left = 14
-                  Height = 15
-                  Top = 41
-                  Width = 82
+                  Height = 13
+                  Top = 64
+                  Width = 75
                   Caption = 'Прозрачность:'
                   ParentColor = False
                 end
                 object SpinEdit59: TSpinEdit
                   Left = 110
-                  Height = 23
-                  Top = 38
+                  Height = 21
+                  Top = 61
                   Width = 64
                   Alignment = taCenter
                   OnChange = SpinEdit59Change
@@ -13888,7 +13731,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   Cursor = crHandPoint
                   Left = 183
                   Height = 30
-                  Top = 35
+                  Top = 58
                   Width = 368
                   Max = 100
                   OnChange = TrackBar50Change
@@ -13897,15 +13740,13 @@ object XCTuner_Form1: TXCTuner_Form1
                   SelEnd = 75
                   TickMarks = tmBoth
                   TickStyle = tsNone
-                  OnMouseWheelDown = TrackBar1MouseWheelDown
-                  OnMouseWheelUp = TrackBar1MouseWheelUp
                   TabOrder = 3
                 end
                 object Image174: TImage
                   Cursor = crHandPoint
                   Left = 558
                   Height = 16
-                  Top = 45
+                  Top = 68
                   Width = 16
                   OnClick = Image174Click
                   Picture.Data = {
@@ -13925,16 +13766,16 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object Label157: TLabel
                   Left = 14
-                  Height = 15
-                  Top = 77
-                  Width = 29
+                  Height = 13
+                  Top = 100
+                  Width = 30
                   Caption = 'Цвет:'
                   ParentColor = False
                 end
                 object Edit57: TEdit
                   Left = 54
-                  Height = 23
-                  Top = 74
+                  Height = 21
+                  Top = 97
                   Width = 68
                   Alignment = taCenter
                   OnExit = Edit57Exit
@@ -13944,7 +13785,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 object mbColorPreview11: TmbColorPreview
                   Left = 128
                   Height = 23
-                  Top = 74
+                  Top = 97
                   Width = 23
                 end
                 object BitBtnColor11: TBitBtn
@@ -13952,7 +13793,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   Left = 159
                   Height = 34
                   Hint = 'Выбрать цвет'
-                  Top = 68
+                  Top = 91
                   Width = 54
                   AutoSize = True
                   Glyph.Data = {
@@ -14040,7 +13881,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   Cursor = crHandPoint
                   Left = 222
                   Height = 16
-                  Top = 77
+                  Top = 100
                   Width = 16
                   OnClick = Image175Click
                   Picture.Data = {
@@ -14058,306 +13899,43 @@ object XCTuner_Form1: TXCTuner_Form1
                     4E44AE426082
                   }
                 end
-              end
-              object Label158: TLabel
-                Left = 197
-                Height = 15
-                Top = 70
-                Width = 83
-                Caption = 'Отображение:'
-                Font.Style = [fsBold, fsUnderline]
-                ParentColor = False
-                ParentFont = False
-              end
-              object RadioButton115: TRadioButton
-                Cursor = crHandPoint
-                Left = 309
-                Height = 19
-                Top = 69
-                Width = 77
-                Caption = 'Включено'
-                Checked = True
-                TabOrder = 1
-                TabStop = True
-              end
-              object RadioButton116: TRadioButton
-                Cursor = crHandPoint
-                Left = 401
-                Height = 19
-                Top = 69
-                Width = 84
-                Caption = 'Отключено'
-                TabOrder = 2
-              end
-              object Image176: TImage
-                Cursor = crHandPoint
-                Left = 497
-                Height = 16
-                Top = 71
-                Width = 16
-                OnClick = Image176Click
-                Picture.Data = {
-                  1754506F727461626C654E6574776F726B477261706869634A01000089504E47
-                  0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
-                  0467414D410000AFC837058AE90000001974455874536F667477617265004164
-                  6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
-                  F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
-                  E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
-                  3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                  FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
-                  8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
-                  2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
-                  2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
-                  4E44AE426082
-                }
-              end
-              object GroupBox97: TGroupBox
-                Left = 66
-                Height = 128
-                Top = 224
-                Width = 592
-                Caption = 'Пассивный круг:'
-                ClientHeight = 110
-                ClientWidth = 588
-                TabOrder = 3
-                object Label159: TLabel
+                object Label158: TLabel
                   Left = 14
-                  Height = 15
-                  Top = 9
-                  Width = 55
-                  Caption = 'Толщина:'
+                  Height = 13
+                  Top = 4
+                  Width = 84
+                  Caption = 'Отображение:'
+                  Font.Style = [fsBold, fsUnderline]
                   ParentColor = False
+                  ParentFont = False
                 end
-                object FloatSpinEdit8: TFloatSpinEdit
-                  Left = 110
-                  Height = 23
-                  Top = 6
-                  Width = 64
-                  Alignment = taCenter
-                  AutoSize = False
-                  Increment = 0.01
-                  MaxValue = 5
-                  MinValue = 0
-                  OnChange = FloatSpinEdit8Change
-                  TabOrder = 0
-                  Value = 0.2
-                end
-                object TrackBar51: TTrackBar
+                object RadioButton115: TRadioButton
                   Cursor = crHandPoint
-                  Left = 183
-                  Height = 30
+                  Left = 126
+                  Height = 17
                   Top = 3
-                  Width = 368
-                  Max = 500
-                  OnChange = TrackBar51Change
-                  PageSize = 10
-                  Position = 2
-                  SelEnd = 2
-                  TickMarks = tmBoth
-                  TickStyle = tsNone
-                  OnMouseWheelDown = TrackBar1MouseWheelDown
-                  OnMouseWheelUp = TrackBar1MouseWheelUp
-                  TabOrder = 1
+                  Width = 71
+                  Caption = 'Включено'
+                  Checked = True
+                  TabOrder = 7
+                  TabStop = True
                 end
-                object Image177: TImage
+                object RadioButton116: TRadioButton
                   Cursor = crHandPoint
-                  Left = 558
+                  Left = 218
+                  Height = 17
+                  Top = 3
+                  Width = 79
+                  Caption = 'Отключено'
+                  TabOrder = 8
+                end
+                object Image176: TImage
+                  Cursor = crHandPoint
+                  Left = 314
                   Height = 16
-                  Top = 13
+                  Top = 5
                   Width = 16
-                  OnClick = Image177Click
-                  Picture.Data = {
-                    1754506F727461626C654E6574776F726B477261706869634A01000089504E47
-                    0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
-                    0467414D410000AFC837058AE90000001974455874536F667477617265004164
-                    6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
-                    F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
-                    E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
-                    3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                    FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
-                    8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
-                    2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
-                    2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
-                    4E44AE426082
-                  }
-                end
-                object Label160: TLabel
-                  Left = 14
-                  Height = 15
-                  Top = 41
-                  Width = 82
-                  Caption = 'Прозрачность:'
-                  ParentColor = False
-                end
-                object SpinEdit60: TSpinEdit
-                  Left = 110
-                  Height = 23
-                  Top = 38
-                  Width = 64
-                  Alignment = taCenter
-                  OnChange = SpinEdit60Change
-                  TabOrder = 2
-                  Value = 75
-                end
-                object TrackBar52: TTrackBar
-                  Cursor = crHandPoint
-                  Left = 183
-                  Height = 30
-                  Top = 35
-                  Width = 368
-                  Max = 100
-                  OnChange = TrackBar52Change
-                  PageSize = 10
-                  Position = 75
-                  SelEnd = 75
-                  TickMarks = tmBoth
-                  TickStyle = tsNone
-                  OnMouseWheelDown = TrackBar1MouseWheelDown
-                  OnMouseWheelUp = TrackBar1MouseWheelUp
-                  TabOrder = 3
-                end
-                object Image178: TImage
-                  Cursor = crHandPoint
-                  Left = 558
-                  Height = 16
-                  Top = 45
-                  Width = 16
-                  OnClick = Image178Click
-                  Picture.Data = {
-                    1754506F727461626C654E6574776F726B477261706869634A01000089504E47
-                    0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
-                    0467414D410000AFC837058AE90000001974455874536F667477617265004164
-                    6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
-                    F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
-                    E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
-                    3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
-                    FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
-                    8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
-                    2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
-                    2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
-                    4E44AE426082
-                  }
-                end
-                object Label161: TLabel
-                  Left = 14
-                  Height = 15
-                  Top = 77
-                  Width = 29
-                  Caption = 'Цвет:'
-                  ParentColor = False
-                end
-                object Edit58: TEdit
-                  Left = 54
-                  Height = 23
-                  Top = 74
-                  Width = 68
-                  Alignment = taCenter
-                  OnExit = Edit58Exit
-                  TabOrder = 4
-                  Text = '#000000'
-                end
-                object mbColorPreview12: TmbColorPreview
-                  Left = 128
-                  Height = 23
-                  Top = 74
-                  Width = 23
-                end
-                object BitBtnColor12: TBitBtn
-                  Cursor = crHandPoint
-                  Left = 159
-                  Height = 34
-                  Hint = 'Выбрать цвет'
-                  Top = 68
-                  Width = 54
-                  AutoSize = True
-                  Glyph.Data = {
-                    36090000424D3609000000000000360000002800000018000000180000000100
-                    2000000000000009000064000000640000000000000000000000FFFFFF00FFFF
-                    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008EBADDFF86B4
-                    D8FF6085A5FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0097BFDFFF88B6
-                    DBFF6E96B8FF4B6A84FF1A2630FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF000000FF000000FF000000FF406B77FF9DC3E1FF8EBA
-                    DDFF87B5DAFF688FB0FF4A6881FF3B5367FF152029FF000000FF000000FF0000
-                    00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF365B66FF7EA9C7FFACCC
-                    E6FF86B1D3FF92B8D6FF749FC2FF6185A1FF4C6B83FF24323DFF2C2D21FFEC7E
-                    E0FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF7ED3EAFF5F8398FFB6D2
-                    E8FFA5C8E3FF96BEDEFFA1C5E0FF80ACD0FF739CBDFF4E6C84FF475658FFEC7E
-                    E0FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF6097ABFF98BA
-                    D5FFB9D4E9FFACCCE5FF8EBADCFF9ABDDAFF779AB7FF5D788AFF364A56FF5B60
-                    49FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF6AAEC3FF8FA9
-                    BEFFB7D2E7FF9CC1DFFFA7C5DEFF7FA6C6FF86B0D3FF465D6FFF1E2426FF7275
-                    57FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF7ED2EAFF768D
-                    A0FF90B1CCFF96B8D3FF85ACCAFF90B7D7FF415A6FFF38464AFF435050FF7174
-                    56FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF313F
-                    4AFF8CA6BAFF9ABAD4FF6E96B8FF4B6374FF50687DFF384E60FF14181AFF4A4C
-                    38FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF4652
-                    45FF64808DFF6E8C9AFF86AFCFFF3E5767FF303932FF2A363AFF1A242AFFEE8D
-                    4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
-                    00FF9DB79AFF788D78FF7D9CB2FF6A90AFFF253034FF6F6E42FF525130FFEE8D
-                    4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
-                    00FFB8D6B4FFB8D6B4FF647870FF88AECCFF4C6B84FFEE8D4CFFEE8D4CFFEE8D
-                    4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
-                    00FFB8D6B4FFB8D6B4FFB2CFAEFF62797EFF7AA1C0FF506264FFEE8D4CFFEE8D
-                    4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
-                    00FFB8D6B4FFB8D6B4FFB8D6B4FF95AE92FF6E8CA1FF648AA9FF6F7350FFEE8D
-                    4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF0000
-                    00FF000000FF000000FF000000FF000000FF000000FF67859BFF374A57FF0000
-                    00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
-                    00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF525734FF435050FF7877
-                    28FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
-                    00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF929131FF7F7E2BFF9695
-                    32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
-                    00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
-                    32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
-                    00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
-                    32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
-                    00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
-                    32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF0000
-                    00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
-                    00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
-                    FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
-                  }
-                  OnClick = BitBtnColor12Click
-                  ParentShowHint = False
-                  ShowHint = True
-                  TabOrder = 6
-                end
-                object Image179: TImage
-                  Cursor = crHandPoint
-                  Left = 222
-                  Height = 16
-                  Top = 77
-                  Width = 16
-                  OnClick = Image179Click
+                  OnClick = Image176Click
                   Picture.Data = {
                     1754506F727461626C654E6574776F726B477261706869634A01000089504E47
                     0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
@@ -14559,13 +14137,13 @@ object XCTuner_Form1: TXCTuner_Form1
     end
     object TabSheet39: TTabSheet
       Caption = 'Цвета'
-      ClientHeight = 566
+      ClientHeight = 568
       ClientWidth = 828
       TabVisible = False
       object PageControl11: TPageControl
         Cursor = crHandPoint
         Left = 0
-        Height = 566
+        Height = 568
         Top = 0
         Width = 828
         ActivePage = TabSheet40
@@ -14574,12 +14152,12 @@ object XCTuner_Form1: TXCTuner_Form1
         TabOrder = 0
         object TabSheet40: TTabSheet
           Caption = 'Цвета для подстановок'
-          ClientHeight = 538
+          ClientHeight = 542
           ClientWidth = 820
           object PageControl12: TPageControl
             Cursor = crHandPoint
             Left = 0
-            Height = 538
+            Height = 542
             Top = 0
             Width = 820
             ActivePage = TabSheet43
@@ -14588,21 +14166,21 @@ object XCTuner_Form1: TXCTuner_Form1
             TabOrder = 0
             object TabSheet43: TTabSheet
               Caption = 'Значения'
-              ClientHeight = 510
+              ClientHeight = 516
               ClientWidth = 812
               object ScrollBox1: TScrollBox
                 Left = 0
-                Height = 510
+                Height = 516
                 Top = 0
                 Width = 812
                 HorzScrollBar.Page = 812
                 VertScrollBar.Increment = 51
-                VertScrollBar.Page = 510
+                VertScrollBar.Page = 516
                 VertScrollBar.Smooth = True
                 VertScrollBar.Tracking = True
                 Align = alClient
                 BorderStyle = bsNone
-                ClientHeight = 510
+                ClientHeight = 516
                 ClientWidth = 812
                 TabOrder = 0
                 object BitRefresh17: TBitBtn
@@ -15187,11 +14765,11 @@ object XCTuner_Form1: TXCTuner_Form1
         end
         object TabSheet42: TTabSheet
           Caption = 'Системные цвета'
-          ClientHeight = 538
+          ClientHeight = 542
           ClientWidth = 820
           object PageControl13: TPageControl
             Left = 0
-            Height = 538
+            Height = 542
             Top = 0
             Width = 820
             ActivePage = TabSheet45
@@ -15200,21 +14778,21 @@ object XCTuner_Form1: TXCTuner_Form1
             TabOrder = 0
             object TabSheet45: TTabSheet
               Caption = 'Системные цвета'
-              ClientHeight = 510
+              ClientHeight = 516
               ClientWidth = 812
               object ScrollBox4: TScrollBox
                 Left = 0
-                Height = 510
+                Height = 516
                 Top = 0
                 Width = 812
                 HorzScrollBar.Page = 812
                 VertScrollBar.Increment = 51
-                VertScrollBar.Page = 510
+                VertScrollBar.Page = 516
                 VertScrollBar.Smooth = True
                 VertScrollBar.Tracking = True
                 Align = alClient
                 BorderStyle = bsNone
-                ClientHeight = 510
+                ClientHeight = 516
                 ClientWidth = 812
                 TabOrder = 0
                 object BitRefresh20: TBitBtn
@@ -16027,7 +15605,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object BitRefresh24: TBitBtn
                   Cursor = crHandPoint
-                  Left = 585
+                  Left = 600
                   Height = 49
                   Hint = 'Обновить данные из конфига'
                   Top = 10
@@ -16116,7 +15694,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object BitSave24: TBitBtn
                   Cursor = crHandPoint
-                  Left = 586
+                  Left = 600
                   Height = 49
                   Hint = 'Сохранить изменения в конфиг'
                   Top = 70
@@ -16223,7 +15801,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object BitRefresh25: TBitBtn
                   Cursor = crHandPoint
-                  Left = 585
+                  Left = 600
                   Height = 49
                   Hint = 'Обновить данные из конфига'
                   Top = 10
@@ -16312,7 +15890,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object BitSave25: TBitBtn
                   Cursor = crHandPoint
-                  Left = 586
+                  Left = 600
                   Height = 49
                   Hint = 'Сохранить изменения в конфиг'
                   Top = 70
@@ -16419,7 +15997,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object BitRefresh26: TBitBtn
                   Cursor = crHandPoint
-                  Left = 585
+                  Left = 600
                   Height = 49
                   Hint = 'Обновить данные из конфига'
                   Top = 10
@@ -16508,7 +16086,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object BitSave26: TBitBtn
                   Cursor = crHandPoint
-                  Left = 586
+                  Left = 600
                   Height = 49
                   Hint = 'Сохранить изменения в конфиг'
                   Top = 70
@@ -16615,7 +16193,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object BitRefresh27: TBitBtn
                   Cursor = crHandPoint
-                  Left = 585
+                  Left = 600
                   Height = 49
                   Hint = 'Обновить данные из конфига'
                   Top = 10
@@ -16704,7 +16282,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object BitSave27: TBitBtn
                   Cursor = crHandPoint
-                  Left = 586
+                  Left = 600
                   Height = 49
                   Hint = 'Сохранить изменения в конфиг'
                   Top = 70
@@ -16811,7 +16389,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object BitRefresh28: TBitBtn
                   Cursor = crHandPoint
-                  Left = 585
+                  Left = 600
                   Height = 49
                   Hint = 'Обновить данные из конфига'
                   Top = 10
@@ -16900,7 +16478,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object BitSave28: TBitBtn
                   Cursor = crHandPoint
-                  Left = 586
+                  Left = 600
                   Height = 49
                   Hint = 'Сохранить изменения в конфиг'
                   Top = 70
@@ -17007,7 +16585,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object BitRefresh29: TBitBtn
                   Cursor = crHandPoint
-                  Left = 585
+                  Left = 600
                   Height = 49
                   Hint = 'Обновить данные из конфига'
                   Top = 10
@@ -17096,7 +16674,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object BitSave29: TBitBtn
                   Cursor = crHandPoint
-                  Left = 586
+                  Left = 600
                   Height = 49
                   Hint = 'Сохранить изменения в конфиг'
                   Top = 70
@@ -17203,7 +16781,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object BitRefresh30: TBitBtn
                   Cursor = crHandPoint
-                  Left = 585
+                  Left = 600
                   Height = 49
                   Hint = 'Обновить данные из конфига'
                   Top = 10
@@ -17292,7 +16870,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object BitSave30: TBitBtn
                   Cursor = crHandPoint
-                  Left = 586
+                  Left = 600
                   Height = 49
                   Hint = 'Сохранить изменения в конфиг'
                   Top = 70
@@ -17399,7 +16977,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object BitRefresh31: TBitBtn
                   Cursor = crHandPoint
-                  Left = 585
+                  Left = 600
                   Height = 49
                   Hint = 'Обновить данные из конфига'
                   Top = 10
@@ -17488,7 +17066,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object BitSave31: TBitBtn
                   Cursor = crHandPoint
-                  Left = 586
+                  Left = 600
                   Height = 49
                   Hint = 'Сохранить изменения в конфиг'
                   Top = 70
@@ -17595,7 +17173,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object BitRefresh32: TBitBtn
                   Cursor = crHandPoint
-                  Left = 585
+                  Left = 600
                   Height = 49
                   Hint = 'Обновить данные из конфига'
                   Top = 10
@@ -17684,7 +17262,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object BitSave32: TBitBtn
                   Cursor = crHandPoint
-                  Left = 586
+                  Left = 600
                   Height = 49
                   Hint = 'Сохранить изменения в конфиг'
                   Top = 70
@@ -17791,7 +17369,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object BitRefresh33: TBitBtn
                   Cursor = crHandPoint
-                  Left = 585
+                  Left = 600
                   Height = 49
                   Hint = 'Обновить данные из конфига'
                   Top = 10
@@ -17880,7 +17458,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object BitSave33: TBitBtn
                   Cursor = crHandPoint
-                  Left = 586
+                  Left = 600
                   Height = 49
                   Hint = 'Сохранить изменения в конфиг'
                   Top = 70
@@ -17987,7 +17565,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object BitRefresh34: TBitBtn
                   Cursor = crHandPoint
-                  Left = 585
+                  Left = 600
                   Height = 49
                   Hint = 'Обновить данные из конфига'
                   Top = 10
@@ -18076,7 +17654,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object BitSave34: TBitBtn
                   Cursor = crHandPoint
-                  Left = 586
+                  Left = 600
                   Height = 49
                   Hint = 'Сохранить изменения в конфиг'
                   Top = 70
@@ -18183,7 +17761,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object BitRefresh35: TBitBtn
                   Cursor = crHandPoint
-                  Left = 585
+                  Left = 600
                   Height = 49
                   Hint = 'Обновить данные из конфига'
                   Top = 10
@@ -18272,7 +17850,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object BitSave35: TBitBtn
                   Cursor = crHandPoint
-                  Left = 586
+                  Left = 600
                   Height = 49
                   Hint = 'Сохранить изменения в конфиг'
                   Top = 70
@@ -18379,7 +17957,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object BitRefresh36: TBitBtn
                   Cursor = crHandPoint
-                  Left = 585
+                  Left = 600
                   Height = 49
                   Hint = 'Обновить данные из конфига'
                   Top = 10
@@ -18468,7 +18046,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object BitSave36: TBitBtn
                   Cursor = crHandPoint
-                  Left = 586
+                  Left = 600
                   Height = 49
                   Hint = 'Сохранить изменения в конфиг'
                   Top = 70
@@ -18575,7 +18153,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object BitRefresh37: TBitBtn
                   Cursor = crHandPoint
-                  Left = 585
+                  Left = 600
                   Height = 49
                   Hint = 'Обновить данные из конфига'
                   Top = 10
@@ -18664,7 +18242,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object BitSave37: TBitBtn
                   Cursor = crHandPoint
-                  Left = 586
+                  Left = 600
                   Height = 49
                   Hint = 'Сохранить изменения в конфиг'
                   Top = 70
@@ -18771,7 +18349,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 TabOrder = 0
                 object BitRefresh38: TBitBtn
                   Cursor = crHandPoint
-                  Left = 585
+                  Left = 600
                   Height = 49
                   Hint = 'Обновить данные из конфига'
                   Top = 10
@@ -18860,7 +18438,7 @@ object XCTuner_Form1: TXCTuner_Form1
                 end
                 object BitSave38: TBitBtn
                   Cursor = crHandPoint
-                  Left = 586
+                  Left = 600
                   Height = 49
                   Hint = 'Сохранить изменения в конфиг'
                   Top = 70

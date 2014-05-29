@@ -1,7 +1,7 @@
 object ColorSelectMy: TColorSelectMy
-  Left = 287
+  Left = 283
   Height = 321
-  Top = 85
+  Top = 81
   Width = 482
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle

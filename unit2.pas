@@ -25,8 +25,7 @@ type
     Label8: TLabel;
     procedure Label4Click(Sender: TObject);
     procedure Label4MouseLeave(Sender: TObject);
-    procedure Label4MouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer
-      );
+    procedure Label4MouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer);
     procedure Label6Click(Sender: TObject);
     procedure Label6MouseLeave(Sender: TObject);
     procedure Label6MouseMove(Sender: TObject; Shift: TShiftState; X, Y: Integer

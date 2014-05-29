@@ -22,7 +22,7 @@
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="2"/>
       <RevisionNr Value="3"/>
-      <BuildNr Value="68"/>
+      <BuildNr Value="94"/>
       <Language Value="0419"/>
       <Attributes pvaPreRelease="True"/>
       <StringTable FileDescription="XCTuner" LegalCopyright="Ded_Shalfey &amp; Skiffmaster" ProductName="XCTuner" ProductVersion=""/>
@@ -38,48 +38,54 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="13">
+    <RequiredPackages Count="15">
       <Item1>
-        <PackageName Value="pl_spktoolbar"/>
+        <PackageName Value="pl_jvcl"/>
       </Item1>
       <Item2>
-        <PackageName Value="pl_exdesign"/>
+        <PackageName Value="pl_richview"/>
       </Item2>
       <Item3>
-        <PackageName Value="pl_KControls"/>
+        <PackageName Value="pl_spktoolbar"/>
       </Item3>
       <Item4>
-        <PackageName Value="FCL"/>
+        <PackageName Value="pl_exdesign"/>
       </Item4>
       <Item5>
-        <PackageName Value="SynEdit"/>
+        <PackageName Value="pl_KControls"/>
       </Item5>
       <Item6>
-        <PackageName Value="pl_ExText"/>
+        <PackageName Value="FCL"/>
       </Item6>
       <Item7>
-        <PackageName Value="pl_pascalscada"/>
+        <PackageName Value="SynEdit"/>
       </Item7>
       <Item8>
-        <PackageName Value="pl_cindy"/>
+        <PackageName Value="pl_ExText"/>
       </Item8>
       <Item9>
-        <PackageName Value="RunTimeTypeInfoControls"/>
+        <PackageName Value="pl_pascalscada"/>
       </Item9>
       <Item10>
-        <PackageName Value="pl_excontrols"/>
+        <PackageName Value="pl_cindy"/>
       </Item10>
       <Item11>
-        <PackageName Value="pl_colorlib"/>
+        <PackageName Value="RunTimeTypeInfoControls"/>
       </Item11>
       <Item12>
-        <PackageName Value="pl_visualplanit"/>
+        <PackageName Value="pl_excontrols"/>
       </Item12>
       <Item13>
-        <PackageName Value="LCL"/>
+        <PackageName Value="pl_colorlib"/>
       </Item13>
+      <Item14>
+        <PackageName Value="pl_visualplanit"/>
+      </Item14>
+      <Item15>
+        <PackageName Value="LCL"/>
+      </Item15>
     </RequiredPackages>
-    <Units Count="5">
+    <Units Count="6">
       <Unit0>
         <Filename Value="XCTuner_Project.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -117,6 +123,14 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit4"/>
       </Unit4>
+      <Unit5>
+        <Filename Value="unit5.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="PromtForm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+        <UnitName Value="Unit5"/>
+      </Unit5>
     </Units>
   </ProjectOptions>
   <CompilerOptions>
