@@ -1,7 +1,7 @@
 object PromtForm: TPromtForm
-  Left = 616
+  Left = 756
   Height = 120
-  Top = 187
+  Top = 241
   Width = 340
   BorderStyle = bsDialog
   Caption = 'XCTuner'

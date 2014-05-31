@@ -1,7 +1,7 @@
 object XCTuner_Form1: TXCTuner_Form1
-  Left = 263
+  Left = 254
   Height = 594
-  Top = 70
+  Top = 63
   Width = 1022
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
@@ -493,7 +493,7 @@ object XCTuner_Form1: TXCTuner_Form1
     Top = 0
     Width = 836
     ActivePage = TabSheet1
-    Align = alClient
+    Align = alCustom
     TabIndex = 0
     TabOrder = 1
     object TabSheet1: TTabSheet
@@ -501,7 +501,6 @@ object XCTuner_Form1: TXCTuner_Form1
       ClientHeight = 566
       ClientWidth = 828
       ParentFont = False
-      TabVisible = False
       object PageControl4: TPageControl
         Cursor = crHandPoint
         Left = 0
@@ -1853,7 +1852,6 @@ object XCTuner_Form1: TXCTuner_Form1
       Caption = 'Логин'
       ClientHeight = 566
       ClientWidth = 828
-      TabVisible = False
       object GroupBox20: TGroupBox
         Left = 226
         Height = 464
@@ -2349,7 +2347,6 @@ object XCTuner_Form1: TXCTuner_Form1
       Caption = 'Ангар'
       ClientHeight = 566
       ClientWidth = 828
-      TabVisible = False
       object PageControl2: TPageControl
         Cursor = crHandPoint
         Left = 0
@@ -5193,7 +5190,6 @@ object XCTuner_Form1: TXCTuner_Form1
       Caption = 'Прочее'
       ClientHeight = 566
       ClientWidth = 828
-      TabVisible = False
       object PageControl3: TPageControl
         Cursor = crHandPoint
         Left = 0
@@ -6697,7 +6693,6 @@ object XCTuner_Form1: TXCTuner_Form1
       Caption = 'Результат боя'
       ClientHeight = 566
       ClientWidth = 828
-      TabVisible = False
       object GroupBox51: TGroupBox
         Left = 130
         Height = 424
@@ -7197,7 +7192,6 @@ object XCTuner_Form1: TXCTuner_Form1
       Caption = 'Уши'
       ClientHeight = 566
       ClientWidth = 828
-      TabVisible = False
       object PageControl5: TPageControl
         Cursor = crHandPoint
         Left = 0
@@ -9211,7 +9205,6 @@ object XCTuner_Form1: TXCTuner_Form1
       Caption = 'Загр. экран'
       ClientHeight = 566
       ClientWidth = 828
-      TabVisible = False
       object PageControl6: TPageControl
         Cursor = crHandPoint
         Left = 0
@@ -10265,7 +10258,6 @@ object XCTuner_Form1: TXCTuner_Form1
       Caption = 'TAB'
       ClientHeight = 566
       ClientWidth = 828
-      TabVisible = False
       object PageControl7: TPageControl
         Cursor = crHandPoint
         Left = 0
@@ -11328,7 +11320,6 @@ object XCTuner_Form1: TXCTuner_Form1
       Caption = 'Миникарта'
       ClientHeight = 566
       ClientWidth = 828
-      TabVisible = False
       object PageControl8: TPageControl
         Cursor = crHandPoint
         Left = 0
@@ -12334,7 +12325,9 @@ object XCTuner_Form1: TXCTuner_Form1
                 Caption = 'Основные 2 круга:'
                 ClientHeight = 376
                 ClientWidth = 604
+                Enabled = False
                 TabOrder = 1
+                Visible = False
                 object GroupBox92: TGroupBox
                   Left = 6
                   Height = 184
@@ -13713,6 +13706,7 @@ object XCTuner_Form1: TXCTuner_Form1
               Caption = 'Дальность обзора'
               ClientHeight = 510
               ClientWidth = 812
+              TabVisible = False
               object GroupBox96: TGroupBox
                 Left = 66
                 Height = 228
@@ -14330,7 +14324,6 @@ object XCTuner_Form1: TXCTuner_Form1
       Caption = 'Цвета'
       ClientHeight = 566
       ClientWidth = 828
-      TabVisible = False
       object PageControl11: TPageControl
         Cursor = crHandPoint
         Left = 0
@@ -14364,9 +14357,9 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 795
-                VertScrollBar.Increment = 49
-                VertScrollBar.Page = 493
+                HorzScrollBar.Page = 812
+                VertScrollBar.Increment = 51
+                VertScrollBar.Page = 510
                 VertScrollBar.Smooth = True
                 VertScrollBar.Tracking = True
                 Align = alClient
@@ -14419,6 +14412,7 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientHeight = 538
           ClientWidth = 820
           object PageControl13: TPageControl
+            Cursor = crHandPoint
             Left = 0
             Height = 538
             Top = 0
@@ -14436,9 +14430,9 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 795
-                VertScrollBar.Increment = 49
-                VertScrollBar.Page = 493
+                HorzScrollBar.Page = 812
+                VertScrollBar.Increment = 51
+                VertScrollBar.Page = 510
                 VertScrollBar.Smooth = True
                 VertScrollBar.Tracking = True
                 Align = alClient
@@ -14510,6 +14504,7 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientHeight = 538
           ClientWidth = 820
           object PageControl14: TPageControl
+            Cursor = crHandPoint
             Left = 0
             Height = 538
             Top = 0
@@ -14527,8 +14522,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 795
-                VertScrollBar.Page = 493
+                HorzScrollBar.Page = 812
+                VertScrollBar.Page = 510
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0
@@ -14575,8 +14570,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 795
-                VertScrollBar.Page = 493
+                HorzScrollBar.Page = 812
+                VertScrollBar.Page = 510
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0
@@ -14655,8 +14650,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 795
-                VertScrollBar.Page = 493
+                HorzScrollBar.Page = 812
+                VertScrollBar.Page = 510
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0
@@ -14703,8 +14698,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 795
-                VertScrollBar.Page = 493
+                HorzScrollBar.Page = 812
+                VertScrollBar.Page = 510
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0
@@ -14719,8 +14714,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 795
-                VertScrollBar.Page = 493
+                HorzScrollBar.Page = 812
+                VertScrollBar.Page = 510
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0
@@ -14735,8 +14730,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 795
-                VertScrollBar.Page = 493
+                HorzScrollBar.Page = 812
+                VertScrollBar.Page = 510
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0
@@ -14944,8 +14939,8 @@ object XCTuner_Form1: TXCTuner_Form1
       Caption = 'Прозрачность'
       ClientHeight = 566
       ClientWidth = 828
-      TabVisible = False
       object PageControl15: TPageControl
+        Cursor = crHandPoint
         Left = 0
         Height = 566
         Top = 0
@@ -14959,6 +14954,7 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientHeight = 538
           ClientWidth = 820
           object PageControl17: TPageControl
+            Cursor = crHandPoint
             Left = 0
             Height = 538
             Top = 0
@@ -15006,6 +15002,7 @@ object XCTuner_Form1: TXCTuner_Form1
           ClientHeight = 538
           ClientWidth = 820
           object PageControl16: TPageControl
+            Cursor = crHandPoint
             Left = 0
             Height = 538
             Top = 0
@@ -15023,8 +15020,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 795
-                VertScrollBar.Page = 493
+                HorzScrollBar.Page = 812
+                VertScrollBar.Page = 510
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0
@@ -15430,6 +15427,7 @@ object XCTuner_Form1: TXCTuner_Form1
           FFCAFFFFFFCAFFFFFFCAFFFFFFCAFFFFFFCAFFFFFFCAFDFCFACAC09B52CAC99D
           47C0DFB26471D8AC5C00D7AB5C00D7AB5C00D7AB5C00D7AB5C00
         }
+        OnClick = BitSave39Click
         ParentShowHint = False
         ShowHint = True
         TabOrder = 2

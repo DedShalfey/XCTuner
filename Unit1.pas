@@ -1049,6 +1049,7 @@ type
     procedure BitSave17Click(Sender: TObject);
     procedure BitSave1Click(Sender: TObject);
     procedure BitSave2Click(Sender: TObject);
+    procedure BitSave39Click(Sender: TObject);
     procedure BitSave3Click(Sender: TObject);
     procedure BitSave4Click(Sender: TObject);
     procedure BitSave5Click(Sender: TObject);
@@ -1359,6 +1360,7 @@ type
     procedure TrackBar9Change(Sender: TObject);
     procedure OnClickColorButton(Sender: TObject);
     procedure ClickColorSelectComboBox(Sender: TObject);
+    procedure ClickAlphaSelectComboBox(Sender: TObject);
   private
     { private declarations }
   public
@@ -1572,7 +1574,7 @@ implementation
 
 { TXCTuner_Form1 }
 
-function UpdateBitBtnStatus(BitBtn: TBitBtn; ActiveSheet:TTabSheet): Boolean;
+function UpdateBitBtnStatus(BitBtn: TBitBtn; sActiveSheet:integer): Boolean;
 var
   i: integer;
 begin
@@ -1587,13 +1589,10 @@ begin
       TBitBtn(Panel1.Controls[i]).Glyph := nil;
       TBitBtn(Panel1.Controls[i]).Font.Style := [];
     end;
-    Application.ProcessMessages;
   end;
   BitBtn.Font.Style := [fsBold];
   ImageList1.GetBitmap(0, BitBtn.Glyph);
-  PageControl1.ActivePage := ActiveSheet;
-  Application.ProcessMessages;
-  Result := True;
+  PageControl1.PageIndex := sActiveSheet;
 end;
 end;
 
@@ -1648,6 +1647,20 @@ s := TComboBox(Sender).Name;
 GB := TGroupBox(TComboBox(Sender).Parent);
 s := Copy(s, Pos('sColorSubStrValueScrollBox', s) + Length('sColorSubStrValueScrollBox'), MaxInt);
 Edt := TEdit(GB.FindChildControl('sColorValueScrollBox' + s));
+if TComboBox(Sender).Text <> 'Выберите...' then
+  Edt.Text := TComboBox(Sender).Text;
+end;
+
+procedure TXCTuner_Form1.ClickAlphaSelectComboBox(Sender: TObject);
+var
+   s: string;
+   Edt: TEdit;
+   GB: TGroupBox;
+begin
+s := TComboBox(Sender).Name;
+GB := TGroupBox(TComboBox(Sender).Parent);
+s := Copy(s, Pos('sAlphaSubStrValueScrollBox', s) + Length('sAlphaSubStrValueScrollBox'), MaxInt);
+Edt := TEdit(GB.FindChildControl('sAlphaValueScrollBox' + s));
 if TComboBox(Sender).Text <> 'Выберите...' then
   Edt.Text := TComboBox(Sender).Text;
 end;
@@ -2135,13 +2148,14 @@ begin
     sCaption := lang_config.ReadString('colors', sName, '');
 
       sValue := Trim(GetWord(s1, '"', 2));
-      sValue := StringReplace(sValue, ',', '', [rfIgnoreCase, rfReplaceAll]);
+      //sValue := StringReplace(sValue, ',', '', [rfIgnoreCase, rfReplaceAll]);
 
     if TGroupBox(GB.FindChildControl('sGroupBox' + GB.Name + IntToStr(i))) <> nil then
     begin
       sLabel := TGroupBox(GB.FindChildControl('sGroupBox' + GB.Name + IntToStr(i)));
       sLabel.Caption := sCaption;
       sEdit := TSpinEdit(sLabel.FindChildControl('sAlphaValue' + GB.Name + IntToStr(i)));
+      sEdit.Value := StrToInt(sValue);
       if ShowSub then
       begin
         sAlphaSubStrValue := TComboBox(sLabel.FindChildControl('sAlphaSubStrValue' + GB.Name + IntToStr(i)));
@@ -2246,7 +2260,7 @@ begin
           ItemIndex := Items.IndexOf(sEdit.Text)
         else
           ItemIndex := 0;
-        //OnSelect := @ClickColorSelectComboBox;
+        OnSelect := @ClickAlphaSelectComboBox;
       end;
     end;
     end;
@@ -2291,6 +2305,7 @@ begin
       sValue := TEdit(sLabel.FindChildControl('sEdit' + GB.Name + IntToStr(i)));
       sValue.Text := fValue;
       sAlphaValue := TEdit(sLabel.FindChildControl('sAlphaValue' + GB.Name + IntToStr(i)));
+      sAlphaValue.Text := fAlphaValue;
 
       sAlphaSubStrValue := TComboBox(sLabel.FindChildControl('sAlphaSubStrValue' + GB.Name + IntToStr(i)));
       sAlphaSubStrValue.Items.Clear;
@@ -2399,7 +2414,7 @@ begin
         ItemIndex := Items.IndexOf(sAlphaValue.Text)
       else
         ItemIndex := 0;
-      //OnSelect := @ClickColorSelectComboBox;
+      OnSelect := @ClickAlphaSelectComboBox;
     end;
     end;
     Inc(i);
@@ -2413,48 +2428,48 @@ end;
 // Открытие вкладки "Общие"
 procedure TXCTuner_Form1.BitBtn1Click(Sender: TObject);
 begin
-  UpdateBitBtnStatus(BitBtn1, TabSheet1);
+  UpdateBitBtnStatus(BitBtn1, 0);
 end;
 
 // Открытие вкладки "Прочее"
 procedure TXCTuner_Form1.BitBtn10Click(Sender: TObject);
 begin
-  UpdateBitBtnStatus(BitBtn10, TabSheet6);
+  UpdateBitBtnStatus(BitBtn10, 3);
 end;
 
 procedure TXCTuner_Form1.BitBtn11Click(Sender: TObject);
 begin
-  UpdateBitBtnStatus(BitBtn11, TabSheet15);
+  UpdateBitBtnStatus(BitBtn11, 4);
 end;
 
 procedure TXCTuner_Form1.BitBtn12Click(Sender: TObject);
 begin
-  UpdateBitBtnStatus(BitBtn12, TabSheet16);
+  UpdateBitBtnStatus(BitBtn12, 5);
 end;
 
 procedure TXCTuner_Form1.BitBtn13Click(Sender: TObject);
 begin
-UpdateBitBtnStatus(BitBtn13, TabSheet20);
+UpdateBitBtnStatus(BitBtn13, 6);
 end;
 
 procedure TXCTuner_Form1.BitBtn14Click(Sender: TObject);
 begin
-UpdateBitBtnStatus(BitBtn14, TabSheet24);
+UpdateBitBtnStatus(BitBtn14, 7);
 end;
 
 procedure TXCTuner_Form1.BitBtn15Click(Sender: TObject);
 begin
-UpdateBitBtnStatus(BitBtn15, TabSheet28);
+UpdateBitBtnStatus(BitBtn15, 8);
 end;
 
 procedure TXCTuner_Form1.BitBtn16Click(Sender: TObject);
 begin
-  UpdateBitBtnStatus(BitBtn16, TabSheet39);
+  UpdateBitBtnStatus(BitBtn16, 9);
 end;
 
 procedure TXCTuner_Form1.BitBtn17Click(Sender: TObject);
 begin
-  UpdateBitBtnStatus(BitBtn17, TabSheet18);
+  UpdateBitBtnStatus(BitBtn17, 10);
 end;
 
 procedure TXCTuner_Form1.BitBtnColor10Click(Sender: TObject);
@@ -2478,13 +2493,13 @@ end;
 // Открытие вкладки "Логин"
 procedure TXCTuner_Form1.BitBtn2Click(Sender: TObject);
 begin
-  UpdateBitBtnStatus(BitBtn2, TabSheet2);
+  UpdateBitBtnStatus(BitBtn2, 1);
 end;
 
 // Открытие вкладки "Ангар"
 procedure TXCTuner_Form1.BitBtn3Click(Sender: TObject);
 begin
-  UpdateBitBtnStatus(BitBtn3, TabSheet3);
+  UpdateBitBtnStatus(BitBtn3, 2);
 end;
 
 // Скрытие или открытие навигационной панели слева
@@ -2696,6 +2711,98 @@ begin
   circlemap_loading();
 end;
 
+function SaveAlpha(SB: TScrollBox):string;
+var
+  i, j, l, k: integer;
+  GB: TGroupBox;
+  RE: TRegExpr;
+  Edt: TSpinEdit;
+  t: string;
+  Index: Integer;
+  st: TStringList;
+begin
+RE := TRegExpr.Create;
+st := TStringList.Create;
+for i := 0 to SB.ControlCount - 1 do
+begin
+  if SB.Controls[i] is TGroupBox then
+  begin
+    GB := TGroupBox(SB.Controls[i]);
+    for j := 0 to GB.ControlCount - 1 do
+    begin
+      if GB.Controls[j] is TSpinEdit then
+      if Pos('sAlphaValue', GB.Controls[j].Name) > 0 then
+      begin
+        Edt := TSpinEdit(GB.Controls[j]);
+        RE.Expression := '"' + Edt.Hint + '"(.*?)[\r\n]';
+        if RE.Exec(alpha.Text) then
+        begin
+          t := IntToStr(Edt.Value);
+          if TryStrToInt(t, k) then
+             t := XCTuner_Form1.RecStartEnd(t)
+          else
+             t := '${"' + t + '"}';
+          l := XCTuner_Form1.Search_Line(0, '"' + Edt.Hint + '"', alpha);
+          alpha.Strings[l] := XCTuner_Form1.Smart_Replacing(Edt.Hint, alpha.Strings[l], t);
+        end;
+      end;
+    end;
+  end;
+end;
+alpha.SaveToFile(dir_xvm+alpha_name);
+st.Free;
+RE.Free;
+end;
+
+function SaveAlphaEx(sExpr: string; SB: TScrollBox):string;
+var
+  i, j, l, k, f: integer;
+  GB: TGroupBox;
+  RE, sRE: TRegExpr;
+  s, t: string;
+  st: TStringList;
+begin
+RE := TRegExpr.Create;
+sRE := TRegExpr.Create;
+st := TStringList.Create;
+RE.Expression := sExpr + ']';
+l := XCTuner_Form1.Search_Line(0, sExpr, alpha);
+k := 1;
+for i := 0 to SB.ControlCount - 1 do
+begin
+  if SB.Controls[i] is TGroupBox then
+  begin
+    GB := TGroupBox(SB.Controls[i]);
+    for j := 0 to GB.ControlCount - 1 do
+    begin
+      if GB.Controls[j] is TEdit then
+      begin
+        if pos('sEdit', TEdit(GB.Controls[j]).Name) > 0 then
+           s := TEdit(GB.Controls[j]).TExt;
+        if pos('sAlphaValue', TEdit(GB.Controls[j]).Name) > 0 then
+           t := TEdit(GB.Controls[j]).Text;
+        if (s <> '') and (t <> '') then
+        begin
+          if TryStrToInt(t, f) then
+             t := XCTuner_Form1.RecStartEnd(t)
+          else
+             t := '${"' + t + '"}';
+        alpha.Strings[l + k] := XCTuner_Form1.Smart_Replacing('value', alpha.Strings[l + k], s);
+        alpha.Strings[l + k] := XCTuner_Form1.Smart_Replacing('alpha', alpha.Strings[l + k], t);
+        s := '';
+        t := '';
+        Inc(k) ;
+        end;
+      end;
+    end;
+  end;
+end;
+alpha.SaveToFile(dir_xvm+alpha_name);
+st.Free;
+sRE.Free;
+RE.Free;
+end;
+
 function SaveColors(SB: TScrollBox):string;
 var
   i, j, l: integer;
@@ -2873,6 +2980,27 @@ begin
   battle_loading();
   fragCorrelation_loading();
   expanel_loading();
+end;
+
+procedure TXCTuner_Form1.BitSave39Click(Sender: TObject);
+begin
+  SaveAlpha(ScrollBox23);
+  SaveAlpha(ScrollBox24);
+  SaveAlphaEx('"hp": [', ScrollBox27);
+  SaveAlphaEx('"hp_ratio": [', ScrollBox28);
+  SaveAlphaEx('"x": [', ScrollBox29);
+  SaveAlphaEx('"eff": [', ScrollBox30);
+  SaveAlphaEx('"wn6": [', ScrollBox31);
+  SaveAlphaEx('"wn8": [', ScrollBox32);
+  SaveAlphaEx('"e": [', ScrollBox33);
+  SaveAlphaEx('"rating": [', ScrollBox34);
+  SaveAlphaEx('"kb": [', ScrollBox35);
+  SaveAlphaEx('"avglvl": [', ScrollBox36);
+  SaveAlphaEx('"t_battles": [', ScrollBox37);
+  SaveAlphaEx('"tdb": [', ScrollBox38);
+  SaveAlphaEx('"tdv": [', ScrollBox39);
+  SaveAlphaEx('"tfb": [', ScrollBox40);
+  SaveAlphaEx('"tsb": [', ScrollBox41);
 end;
 
 // По кнопке происходит вызов процедуры сохранения данных в файла "login.xc"
@@ -3303,9 +3431,12 @@ begin
       (FileExists(dir_xvm+rating_name   ))) then
     begin
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.2.4.32';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.2.4.33';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
+      PageControl1.Top := PageControl1.Top - 25;
+      PageControl1.Width := XCTuner_Form1.Width - 186;
+      PageControl1.Height := XCTuner_Form1.Height + 25;
       BitBtn1.Click;
 
       ComboBox1.Items:=Screen.Fonts;            // загружает в ComboBox все шрифты что есть в windows
@@ -3345,8 +3476,7 @@ begin
       BitBtn15.Hint:='Настройка в файлах: ' + map_name + ' и ' + circle_name;
       BitBtn16.Hint:='Настройка в файле: ' + colors_name;
       BitBtn17.Hint:='Настройка в файле: ' + alpha_name;
-
-    end
+  end
   else
     begin
       // выводим сообщение, очищаем переменную xvm и принудительно закрываем программу
@@ -3384,6 +3514,7 @@ begin
   AlphaSubStrValue.Free;
   ColorSubStrValue.Free;
   lang_config.Free;
+  config.Free;
 end;
 
 procedure TXCTuner_Form1.Image100Click(Sender: TObject);
@@ -4526,6 +4657,7 @@ procedure TXCTuner_Form1.Label63MouseMove(Sender: TObject; Shift: TShiftState;
 begin
   Label63.Font.Style:=Label63.Font.Style+[fsUnderline];
 end;
+
 
 procedure TXCTuner_Form1.SpinEdit10Change(Sender: TObject);
 begin
@@ -6916,6 +7048,9 @@ begin
       end;
     end;
 
+    { TODO : Доработать! }
+    (*
+
     // Дальность обзора / 20
     CIR_06_SL:=Search_Line(CIR_0_SL, '"view"', circle);
     if CIR_06_SL=-1 then error_line('"view"', circle_name) else
@@ -6995,6 +7130,8 @@ begin
         end;
       end;
     end;
+    *)
+
   end;
 end;
 
@@ -7014,6 +7151,8 @@ begin
   circle.Delete(CIR_1_SL);
   circle.Insert(CIR_1_SL, circle_s1);
 
+  { TODO : Доработать! }
+  (*
   // Основные круги
   // Первый круг
   // Видимость / 2
@@ -7079,6 +7218,8 @@ begin
   circle.Delete(CIR_11_SL);
   circle.Insert(CIR_11_SL, circle_s11);
 
+  *)
+
   // Дальнобойность арты / 12
   // Видимость / 12
   circle_s12:=circle.Strings[CIR_12_SL];
@@ -7131,6 +7272,8 @@ begin
   circle.Delete(CIR_19_SL);
   circle.Insert(CIR_19_SL, circle_s19);
 
+  { TODO : Доработать! }
+  (*
   // Дальность обзора / 20
   // Видимость / 20
   circle_s20:=circle.Strings[CIR_20_SL];
@@ -7156,6 +7299,8 @@ begin
   circle_s23:=Smart_Replacing('"color"', circle_s23, RecStartEnd(Edit57.Text));
   circle.Delete(CIR_23_SL);
   circle.Insert(CIR_23_SL, circle_s23);
+
+  *)
 
   circle.SaveToFile(dir_xvm+circle_name);
 end;
