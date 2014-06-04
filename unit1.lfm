@@ -1,7 +1,7 @@
 object XCTuner_Form1: TXCTuner_Form1
-  Left = 254
+  Left = 313
   Height = 594
-  Top = 63
+  Top = 94
   Width = 1022
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
@@ -14430,9 +14430,9 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 812
-                VertScrollBar.Increment = 51
-                VertScrollBar.Page = 510
+                HorzScrollBar.Page = 795
+                VertScrollBar.Increment = 49
+                VertScrollBar.Page = 493
                 VertScrollBar.Smooth = True
                 VertScrollBar.Tracking = True
                 Align = alClient
@@ -14522,8 +14522,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 812
-                VertScrollBar.Page = 510
+                HorzScrollBar.Page = 795
+                VertScrollBar.Page = 493
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0
@@ -14570,8 +14570,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 812
-                VertScrollBar.Page = 510
+                HorzScrollBar.Page = 795
+                VertScrollBar.Page = 493
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0
@@ -14650,8 +14650,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 812
-                VertScrollBar.Page = 510
+                HorzScrollBar.Page = 795
+                VertScrollBar.Page = 493
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0
@@ -14698,8 +14698,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 812
-                VertScrollBar.Page = 510
+                HorzScrollBar.Page = 795
+                VertScrollBar.Page = 493
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0
@@ -14714,8 +14714,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 812
-                VertScrollBar.Page = 510
+                HorzScrollBar.Page = 795
+                VertScrollBar.Page = 493
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0
@@ -14730,8 +14730,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 812
-                VertScrollBar.Page = 510
+                HorzScrollBar.Page = 795
+                VertScrollBar.Page = 493
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0
@@ -15020,8 +15020,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 812
-                VertScrollBar.Page = 510
+                HorzScrollBar.Page = 795
+                VertScrollBar.Page = 493
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0

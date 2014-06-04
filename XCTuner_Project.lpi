@@ -22,7 +22,7 @@
       <AutoIncrementBuild Value="True"/>
       <MinorVersionNr Value="2"/>
       <RevisionNr Value="4"/>
-      <BuildNr Value="34"/>
+      <BuildNr Value="78"/>
       <Language Value="0419"/>
       <Attributes pvaPreRelease="True"/>
       <StringTable FileDescription="XCTuner" LegalCopyright="Ded_Shalfey &amp; Skiffmaster" ProductName="XCTuner" ProductVersion=""/>
@@ -85,7 +85,7 @@
         <PackageName Value="LCL"/>
       </Item15>
     </RequiredPackages>
-    <Units Count="6">
+    <Units Count="7">
       <Unit0>
         <Filename Value="XCTuner_Project.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -131,6 +131,11 @@
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="Unit5"/>
       </Unit5>
+      <Unit6>
+        <Filename Value="ColorsTabUnit.pas"/>
+        <IsPartOfProject Value="True"/>
+        <UnitName Value="ColorsTabUnit"/>
+      </Unit6>
     </Units>
   </ProjectOptions>
   <CompilerOptions>

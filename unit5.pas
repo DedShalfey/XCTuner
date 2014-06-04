@@ -39,7 +39,7 @@ implementation
 procedure TPromtForm.Button1Click(Sender: TObject);
 begin
  if SelectDirectoryDialog1.Execute then
-    if FileExists(SelectDirectoryDialog1.FileName + '\xvm.xc') then
+    if FileExists(UTF8ToSys(SelectDirectoryDialog1.FileName) + '\xvm.xc') then
       Edit1.Text := SelectDirectoryDialog1.FileName
     else
       ShowMessage('В указанной папке отсутствует файл xvm.xc!');
