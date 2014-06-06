@@ -2869,7 +2869,7 @@ begin
       (FileExists(dir_xvm+rating_name   ))) then
     begin
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.2.4.77';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.2.4.83';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       PageControl1.Top := PageControl1.Top - 25;
@@ -9147,6 +9147,7 @@ end;
 
 procedure TXCTuner_Form1.color_loading;
 begin
+ColorSubStrValue.Clear;
 LoadColorsTab('def.', '"def":(.*?)"colorRating"', ScrollBox1, False);
 LoadColorsTab('def.colorRating.', '"colorRating":(.*?)"colorHP"', ScrollBox2, False);
 LoadColorsTab('def.colorHP.', '"colorHP":(.*?)"colors"', ScrollBox3, False);

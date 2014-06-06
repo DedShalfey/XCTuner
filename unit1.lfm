@@ -492,9 +492,9 @@ object XCTuner_Form1: TXCTuner_Form1
     Height = 594
     Top = 0
     Width = 836
-    ActivePage = TabSheet1
+    ActivePage = TabSheet28
     Align = alCustom
-    TabIndex = 0
+    TabIndex = 8
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Общие'

@@ -107,7 +107,10 @@ begin
           sColorSubStrValue.ItemIndex := 0;
       end;
       if s <> '' then
+      begin
         TEdit(sLabel.FindChildControl('sSubstEdit' + GB.Name + IntToStr(i))).Text := s + sName;
+        ColorSubStrValue.Add(s + sName + '=' + sEdit.Text);
+      end;
     end
     else
     begin
@@ -163,6 +166,7 @@ begin
     begin
       Parent := sLabel;
       Hint := sName;
+      ShowHint := True;
       Alignment := taCenter;
       Name := 'sColorValue' + GB.Name + IntToStr(i);
       Top := 6;
@@ -330,6 +334,7 @@ begin
         sColorValue.Text := '#' + DelStartEnd(RecStartEnd(fColorValue));
         sColorValuePreview.Color := HexToTColor(Copy(sColorValue.Text, 2, MaxInt));
       end;
+
       sColorSubStrValue := TComboBox(sLabel.FindChildControl('sColorSubStrValue' + GB.Name + IntToStr(i)));
       sColorSubStrValue.Items.Clear;
       sColorSubStrValue.Items.Add('Выберите...');
@@ -518,7 +523,7 @@ begin
     for j := 0 to GB.ControlCount - 1 do
     begin
       if GB.Controls[j] is TEdit then
-      if Pos('sColorValue', GB.Controls[j].Name) > 0 then
+      if Pos('sColorValueScrollBox', GB.Controls[j].Name) > 0 then
       begin
         Edt := TEdit(GB.Controls[j]);
         RE.Expression := '"' + Edt.Hint + '"(.*?)[\r\n]';
@@ -533,7 +538,7 @@ begin
           end
           else
             t := '${"' + t + '"}';
-          l := Search_Line(0, Edt.Hint, colors);
+          l := Search_Line(0, '"' + Edt.Hint + '"', colors);
           colors.Strings[l] := Smart_Replacing(Edt.Hint, colors.Strings[l], t);
         end;
       end;
@@ -589,7 +594,7 @@ begin
       begin
         if pos('sEdit', TEdit(GB.Controls[j]).Name) > 0 then
            s := TEdit(GB.Controls[j]).TExt;
-        if pos('sColorValue', TEdit(GB.Controls[j]).Name) > 0 then
+        if pos('sColorValueScrollBox', TEdit(GB.Controls[j]).Name) > 0 then
            t := TEdit(GB.Controls[j]).Text;
         if (s <> '') and (t <> '') then
         begin
