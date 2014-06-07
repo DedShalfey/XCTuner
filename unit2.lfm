@@ -515,7 +515,7 @@ object About: TAbout
     Height = 15
     Top = 104
     Width = 84
-    Caption = 'Версия: 0.2.4.83'
+    Caption = 'Версия: 0.2.4.86'
     Font.Color = clBlack
     ParentColor = False
     ParentFont = False
@@ -575,7 +575,7 @@ object About: TAbout
     Height = 15
     Top = 189
     Width = 168
-    Caption = 'Дата Сборки: 06.06.2014 (13:19)'
+    Caption = 'Дата Сборки: 08.06.2014 (00:48)'
     ParentColor = False
   end
   object Label8: TLabel

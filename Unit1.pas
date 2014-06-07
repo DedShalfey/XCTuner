@@ -2869,7 +2869,7 @@ begin
       (FileExists(dir_xvm+rating_name   ))) then
     begin
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.2.4.83';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.2.4.86';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       PageControl1.Top := PageControl1.Top - 25;

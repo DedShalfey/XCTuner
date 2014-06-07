@@ -42,7 +42,7 @@ i := 0;
 
 if RE.Exec(colors.Text) then
 begin
-  sRE.Expression := '[ \/]"(.*?)":(.*?)\n';
+  sRE.Expression := '[ \/\t]"(.*?)":(.*?)\n';
   if sRE.Exec(RE.Substitute('$1')) then
   repeat
     if sRE.Substitute('$0')[1] <> '/' then
@@ -261,6 +261,7 @@ begin
         Width := 200;
         Left := sColorSelectLabel.Left + sColorSelectLabel.Width + 3;
         Style := csDropDownList;
+        DropDownCount := 15;
         Items.Add('Выберите...');
         for j := 0 to ColorSubStrValue.Count - 1 do
           Items.Add(GetWord(ColorSubStrValue.Strings[j], '=', 1));
