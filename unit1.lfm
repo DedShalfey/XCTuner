@@ -1,7 +1,7 @@
 object XCTuner_Form1: TXCTuner_Form1
-  Left = 313
+  Left = 486
   Height = 594
-  Top = 94
+  Top = 112
   Width = 1022
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
@@ -492,9 +492,9 @@ object XCTuner_Form1: TXCTuner_Form1
     Height = 594
     Top = 0
     Width = 836
-    ActivePage = TabSheet39
+    ActivePage = TabSheet18
     Align = alCustom
-    TabIndex = 9
+    TabIndex = 10
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Общие'
@@ -14357,9 +14357,9 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 812
-                VertScrollBar.Increment = 51
-                VertScrollBar.Page = 510
+                HorzScrollBar.Page = 795
+                VertScrollBar.Increment = 49
+                VertScrollBar.Page = 493
                 VertScrollBar.Smooth = True
                 VertScrollBar.Tracking = True
                 Align = alClient
@@ -14959,9 +14959,9 @@ object XCTuner_Form1: TXCTuner_Form1
             Height = 538
             Top = 0
             Width = 820
-            ActivePage = TabSheet84
+            ActivePage = TabSheet85
             Align = alClient
-            TabIndex = 0
+            TabIndex = 1
             TabOrder = 0
             object TabSheet84: TTabSheet
               Caption = '... по различным статистическим показателям'
@@ -14972,8 +14972,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 812
-                VertScrollBar.Page = 510
+                HorzScrollBar.Page = 795
+                VertScrollBar.Page = 493
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0
@@ -14988,8 +14988,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 795
-                VertScrollBar.Page = 493
+                HorzScrollBar.Page = 812
+                VertScrollBar.Page = 510
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0

@@ -1691,7 +1691,7 @@ i := 0;
 
 if RE.Exec(alpha.Text) then
 begin
-  sRE.Expression := '[ \/]"(.*?)":(.*?)\n';
+  sRE.Expression := '[ \/\t]"(.*?)":(.*?)\n';
   if sRE.Exec(RE.Substitute('$1')) then
   repeat
     if sRE.Substitute('$0')[1] <> '/' then
@@ -1819,6 +1819,15 @@ begin
     Inc(i);
     end;
   until not sRE.ExecNext;
+end
+else
+begin
+  TTabSheet(GB.Parent).TabVisible := False;
+  if (not TabSheet84.TabVisible) and (not TabSheet85.TabVisible) then
+  begin
+     PageControl15.ActivePageIndex := 1;
+     TabSheet65.TabVisible := False;
+  end;
 end;
 sRE.Free;
 RE.Free;
@@ -2869,7 +2878,7 @@ begin
       (FileExists(dir_xvm+rating_name   ))) then
     begin
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.2.4.86';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.2.4.95';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       PageControl1.Top := PageControl1.Top - 25;
@@ -9128,20 +9137,20 @@ procedure TXCTuner_Form1.alpha_loading;
 begin
  LoadAlphaTab('alphaRating.', '"alphaRating":(.*?)"alphaHP"', ScrollBox23, False);
  LoadAlphaTab('alphaHP.', '"alphaHP":(.*?)"alpha"', ScrollBox24, False);
- LoadAlphaTabEx('"hp":(.*?)"hp_ratio"', ScrollBox27);
- LoadAlphaTabEx('"hp_ratio":(.*?)"x"', ScrollBox28);
- LoadAlphaTabEx('"x":(.*?)"eff"', ScrollBox29);
- LoadAlphaTabEx('"eff":(.*?)"wn6"', ScrollBox30);
- LoadAlphaTabEx('"wn6":(.*?)"wn8"', ScrollBox31);
- LoadAlphaTabEx('"wn8":(.*?)"e"', ScrollBox32);
- LoadAlphaTabEx('"e":(.*?)"rating"', ScrollBox33);
- LoadAlphaTabEx('"rating":(.*?)"kb"', ScrollBox34);
- LoadAlphaTabEx('"kb":(.*?)"avglvl"', ScrollBox35);
- LoadAlphaTabEx('"avglvl":(.*?)"t_battles"', ScrollBox36);
- LoadAlphaTabEx('"t_battles":(.*?)"tdb"', ScrollBox37);
- LoadAlphaTabEx('"tdb":(.*?)"tdv"', ScrollBox38);
- LoadAlphaTabEx('"tdv":(.*?)"tfb"', ScrollBox39);
- LoadAlphaTabEx('"tfb":(.*?)"tsb"', ScrollBox40);
+ LoadAlphaTabEx('"hp":(.*?)]', ScrollBox27);
+ LoadAlphaTabEx('"hp_ratio":(.*?)]', ScrollBox28);
+ LoadAlphaTabEx('"x":(.*?)]', ScrollBox29);
+ LoadAlphaTabEx('"eff":(.*?)]', ScrollBox30);
+ LoadAlphaTabEx('"wn6":(.*?)]', ScrollBox31);
+ LoadAlphaTabEx('"wn8":(.*?)]', ScrollBox32);
+ LoadAlphaTabEx('"e":(.*?)]', ScrollBox33);
+ LoadAlphaTabEx('"rating":(.*?)]', ScrollBox34);
+ LoadAlphaTabEx('"kb":(.*?)]', ScrollBox35);
+ LoadAlphaTabEx('"avglvl":(.*?)]', ScrollBox36);
+ LoadAlphaTabEx('"t_battles":(.*?)]', ScrollBox37);
+ LoadAlphaTabEx('"tdb":(.*?)]', ScrollBox38);
+ LoadAlphaTabEx('"tdv":(.*?)]', ScrollBox39);
+ LoadAlphaTabEx('"tfb":(.*?)]', ScrollBox40);
  LoadAlphaTabEx('"tsb":(.*?)]', ScrollBox41);
 end;
 
