@@ -5,8 +5,7 @@ unit Unit2;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, Buttons,
-  ExtCtrls, StdCtrls, ShellApi;
+  Classes, Forms, Graphics, Buttons, ExtCtrls, StdCtrls, ShellApi;
 
 type
 

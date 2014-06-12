@@ -5,8 +5,7 @@ unit Unit5;
 interface
 
 uses
- Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs, StdCtrls,
- Buttons;
+ SysUtils, FileUtil, Forms, Dialogs, StdCtrls, Buttons;
 
 type
 

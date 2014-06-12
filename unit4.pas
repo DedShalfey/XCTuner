@@ -5,8 +5,8 @@ unit Unit4;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, cyColorGrid, SLHColorPicker, mbColorPreview,
-  Forms, Controls, Graphics, Dialogs, Buttons, StdCtrls, ComCtrls;
+  cyColorGrid, SLHColorPicker, mbColorPreview, Forms, Controls, Graphics,
+  Buttons, StdCtrls, ComCtrls;
 
 type
 
@@ -157,6 +157,11 @@ begin
       begin
         GetColorBtn.Color := mbColorPreview1.Color;
         GetColorEdit.Text := XCTuner_Form1.ColorToHex(rgb);
+      end;
+    14:
+      begin
+        XCTuner_Form1.mbColorPreview12.Color:=mbColorPreview1.Color;
+        XCTuner_Form1.Edit61.Text:=XCTuner_Form1.ColorToHex(rgb);
       end;
   end;
   ColorSelectMy.Close;

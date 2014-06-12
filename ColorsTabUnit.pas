@@ -6,7 +6,7 @@ interface
 
 uses
   Classes, SysUtils, Forms, RegExpr, StdCtrls, mbColorPreview, Buttons, ExtCtrls,
-  Graphics, Controls, Dialogs;
+  Graphics, Controls;
 
   function LoadColorsTab(s, FindExpr: string; GB: TScrollBox; ShowSub: Boolean):string;
   function LoadColorsTabEx(FindExpr: string; GB: TScrollBox):string;

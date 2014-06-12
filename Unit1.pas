@@ -7,8 +7,8 @@ interface
 uses
   Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs,
   ExtCtrls, Buttons, ComCtrls, StdCtrls, Spin, Unit2, Unit3, Unit5,
-  mbColorPreview, StrUtils, types, Unit4, ShellApi, RegExpr, IniFiles,
-  ColorsTabUnit;
+  mbColorPreview, StrUtils, types, Unit4, ShellApi, IniFiles,
+  ColorsTabUnit, AlphaTabUnit;
 
 type
 
@@ -24,6 +24,8 @@ type
     BitBtn15: TBitBtn;
     BitBtn16: TBitBtn;
     BitBtn17: TBitBtn;
+    BitBtn18: TBitBtn;
+    BitBtn19: TBitBtn;
     BitBtn5: TBitBtn;
     BitBtn6: TBitBtn;
     BitBtn7: TBitBtn;
@@ -115,7 +117,9 @@ type
     CheckBox3: TCheckBox;
     CheckBox4: TCheckBox;
     CheckBox5: TCheckBox;
+    CheckBox6: TCheckBox;
     ComboBox1: TComboBox;
+    ComboBox10: TComboBox;
     ComboBox2: TComboBox;
     ComboBox3: TComboBox;
     ComboBox4: TComboBox;
@@ -123,6 +127,7 @@ type
     ComboBox6: TComboBox;
     ComboBox7: TComboBox;
     ComboBox8: TComboBox;
+    ComboBox9: TComboBox;
     Edit1: TEdit;
     Edit10: TEdit;
     Edit11: TEdit;
@@ -177,7 +182,10 @@ type
     Edit56: TEdit;
     Edit57: TEdit;
     Edit58: TEdit;
+    Edit59: TEdit;
     Edit6: TEdit;
+    Edit60: TEdit;
+    Edit61: TEdit;
     Edit7: TEdit;
     Edit8: TEdit;
     Edit9: TEdit;
@@ -285,6 +293,9 @@ type
     GroupBox94: TGroupBox;
     GroupBox95: TGroupBox;
     GroupBox96: TGroupBox;
+    GroupBox97: TGroupBox;
+    GroupBox98: TGroupBox;
+    GroupBox99: TGroupBox;
     Image1: TImage;
     Image10: TImage;
     Image100: TImage;
@@ -372,10 +383,28 @@ type
     Image176: TImage;
     Image177: TImage;
     Image178: TImage;
+    Image179: TImage;
     Image18: TImage;
+    Image183: TImage;
+    Image184: TImage;
+    Image185: TImage;
+    Image194: TImage;
+    Image187: TImage;
+    Image188: TImage;
+    Image189: TImage;
     Image19: TImage;
+    Image190: TImage;
+    Image191: TImage;
+    Image192: TImage;
+    Image193: TImage;
+    Image195: TImage;
+    Image196: TImage;
+    Image197: TImage;
+    Image198: TImage;
+    Image199: TImage;
     Image2: TImage;
     Image20: TImage;
+    Image200: TImage;
     Image21: TImage;
     Image22: TImage;
     Image23: TImage;
@@ -531,7 +560,22 @@ type
     Label159: TLabel;
     Label16: TLabel;
     Label160: TLabel;
+    Label161: TLabel;
+    Label162: TLabel;
+    Label163: TLabel;
+    Label164: TLabel;
+    Label165: TLabel;
+    Label166: TLabel;
+    Label167: TLabel;
+    Label168: TLabel;
+    Label169: TLabel;
     Label17: TLabel;
+    Label170: TLabel;
+    Label171: TLabel;
+    Label172: TLabel;
+    Label173: TLabel;
+    Label174: TLabel;
+    Label175: TLabel;
     Label18: TLabel;
     Label19: TLabel;
     Label2: TLabel;
@@ -622,9 +666,15 @@ type
     Label97: TLabel;
     Label98: TLabel;
     Label99: TLabel;
+    LabeledEdit1: TLabeledEdit;
+    LabeledEdit2: TLabeledEdit;
+    LabeledEdit3: TLabeledEdit;
+    LabeledEdit4: TLabeledEdit;
+    LabeledEdit5: TLabeledEdit;
     mbColorPreview1: TmbColorPreview;
     mbColorPreview10: TmbColorPreview;
     mbColorPreview11: TmbColorPreview;
+    mbColorPreview12: TmbColorPreview;
     mbColorPreview2: TmbColorPreview;
     mbColorPreview3: TmbColorPreview;
     mbColorPreview4: TmbColorPreview;
@@ -641,6 +691,7 @@ type
     PageControl15: TPageControl;
     PageControl16: TPageControl;
     PageControl17: TPageControl;
+    PageControl18: TPageControl;
     PageControl2: TPageControl;
     PageControl3: TPageControl;
     PageControl4: TPageControl;
@@ -650,6 +701,7 @@ type
     PageControl8: TPageControl;
     PageControl9: TPageControl;
     RadioButton1: TRadioButton;
+    RadioButton10: TRadioButton;
     RadioButton100: TRadioButton;
     RadioButton101: TRadioButton;
     RadioButton102: TRadioButton;
@@ -709,6 +761,7 @@ type
     RadioButton47: TRadioButton;
     RadioButton48: TRadioButton;
     RadioButton49: TRadioButton;
+    RadioButton5: TRadioButton;
     RadioButton50: TRadioButton;
     RadioButton51: TRadioButton;
     RadioButton52: TRadioButton;
@@ -719,6 +772,7 @@ type
     RadioButton57: TRadioButton;
     RadioButton58: TRadioButton;
     RadioButton59: TRadioButton;
+    RadioButton6: TRadioButton;
     RadioButton60: TRadioButton;
     RadioButton61: TRadioButton;
     RadioButton62: TRadioButton;
@@ -751,6 +805,7 @@ type
     RadioButton87: TRadioButton;
     RadioButton88: TRadioButton;
     RadioButton89: TRadioButton;
+    RadioButton9: TRadioButton;
     RadioButton90: TRadioButton;
     RadioButton91: TRadioButton;
     RadioButton92: TRadioButton;
@@ -856,6 +911,16 @@ type
     SpinEdit58: TSpinEdit;
     SpinEdit59: TSpinEdit;
     SpinEdit6: TSpinEdit;
+    SpinEdit60: TSpinEdit;
+    SpinEdit61: TSpinEdit;
+    SpinEdit62: TSpinEdit;
+    SpinEdit63: TSpinEdit;
+    SpinEdit64: TSpinEdit;
+    SpinEdit65: TSpinEdit;
+    SpinEdit66: TSpinEdit;
+    SpinEdit67: TSpinEdit;
+    SpinEdit68: TSpinEdit;
+    SpinEdit69: TSpinEdit;
     SpinEdit7: TSpinEdit;
     SpinEdit8: TSpinEdit;
     SpinEdit9: TSpinEdit;
@@ -928,6 +993,7 @@ type
     TabSheet65: TTabSheet;
     TabSheet66: TTabSheet;
     TabSheet67: TTabSheet;
+    TabSheet68: TTabSheet;
     TabSheet69: TTabSheet;
     TabSheet7: TTabSheet;
     TabSheet70: TTabSheet;
@@ -947,6 +1013,8 @@ type
     TabSheet83: TTabSheet;
     TabSheet84: TTabSheet;
     TabSheet85: TTabSheet;
+    TabSheet86: TTabSheet;
+    TabSheet87: TTabSheet;
     TabSheet9: TTabSheet;
     TrackBar1: TTrackBar;
     TrackBar10: TTrackBar;
@@ -995,6 +1063,11 @@ type
     TrackBar5: TTrackBar;
     TrackBar50: TTrackBar;
     TrackBar51: TTrackBar;
+    TrackBar52: TTrackBar;
+    TrackBar53: TTrackBar;
+    TrackBar54: TTrackBar;
+    TrackBar55: TTrackBar;
+    TrackBar56: TTrackBar;
     TrackBar6: TTrackBar;
     TrackBar7: TTrackBar;
     TrackBar8: TTrackBar;
@@ -1007,6 +1080,8 @@ type
     procedure BitBtn15Click(Sender: TObject);
     procedure BitBtn16Click(Sender: TObject);
     procedure BitBtn17Click(Sender: TObject);
+    procedure BitBtn18Click(Sender: TObject);
+    procedure BitBtn19Click(Sender: TObject);
     procedure BitBtnColor10Click(Sender: TObject);
     procedure BitBtnColor11Click(Sender: TObject);
     procedure BitBtnColor6Click(Sender: TObject);
@@ -1030,6 +1105,7 @@ type
     procedure BitRefresh15Click(Sender: TObject);
     procedure BitRefresh16Click(Sender: TObject);
     procedure BitRefresh17Click(Sender: TObject);
+    procedure BitRefresh18Click(Sender: TObject);
     procedure BitRefresh1Click(Sender: TObject);
     procedure BitRefresh2Click(Sender: TObject);
     procedure BitRefresh39Click(Sender: TObject);
@@ -1048,6 +1124,7 @@ type
     procedure BitSave15Click(Sender: TObject);
     procedure BitSave16Click(Sender: TObject);
     procedure BitSave17Click(Sender: TObject);
+    procedure BitSave18Click(Sender: TObject);
     procedure BitSave1Click(Sender: TObject);
     procedure BitSave2Click(Sender: TObject);
     procedure BitSave39Click(Sender: TObject);
@@ -1071,6 +1148,7 @@ type
     procedure Edit56Exit(Sender: TObject);
     procedure Edit57Exit(Sender: TObject);
     procedure Edit5Exit(Sender: TObject);
+    procedure Edit61Exit(Sender: TObject);
     procedure Edit6Exit(Sender: TObject);
     procedure FloatSpinEdit1Change(Sender: TObject);
     procedure FloatSpinEdit2Change(Sender: TObject);
@@ -1167,13 +1245,31 @@ type
     procedure Image176Click(Sender: TObject);
     procedure Image177Click(Sender: TObject);
     procedure Image178Click(Sender: TObject);
+    procedure Image179Click(Sender: TObject);
     procedure Image17Click(Sender: TObject);
     procedure Image180Click(Sender: TObject);
     procedure Image181Click(Sender: TObject);
+    procedure Image183Click(Sender: TObject);
+    procedure Image184Click(Sender: TObject);
+    procedure Image185Click(Sender: TObject);
     procedure Image186Click(Sender: TObject);
+    procedure Image187Click(Sender: TObject);
+    procedure Image188Click(Sender: TObject);
+    procedure Image189Click(Sender: TObject);
     procedure Image18Click(Sender: TObject);
+    procedure Image190Click(Sender: TObject);
+    procedure Image191Click(Sender: TObject);
+    procedure Image192Click(Sender: TObject);
+    procedure Image193Click(Sender: TObject);
+    procedure Image194Click(Sender: TObject);
+    procedure Image195Click(Sender: TObject);
+    procedure Image196Click(Sender: TObject);
+    procedure Image197Click(Sender: TObject);
+    procedure Image198Click(Sender: TObject);
+    procedure Image199Click(Sender: TObject);
     procedure Image19Click(Sender: TObject);
     procedure Image1Click(Sender: TObject);
+    procedure Image200Click(Sender: TObject);
     procedure Image20Click(Sender: TObject);
     procedure Image21Click(Sender: TObject);
     procedure Image22Click(Sender: TObject);
@@ -1305,6 +1401,11 @@ type
     procedure SpinEdit57Change(Sender: TObject);
     procedure SpinEdit58Change(Sender: TObject);
     procedure SpinEdit59Change(Sender: TObject);
+    procedure SpinEdit60Change(Sender: TObject);
+    procedure SpinEdit61Change(Sender: TObject);
+    procedure SpinEdit62Change(Sender: TObject);
+    procedure SpinEdit63Change(Sender: TObject);
+    procedure SpinEdit64Change(Sender: TObject);
     procedure SpinEdit8Change(Sender: TObject);
     procedure SpinEdit9Change(Sender: TObject);
     procedure tAboutClick(Sender: TObject);
@@ -1354,6 +1455,11 @@ type
     procedure TrackBar4Change(Sender: TObject);
     procedure TrackBar50Change(Sender: TObject);
     procedure TrackBar51Change(Sender: TObject);
+    procedure TrackBar52Change(Sender: TObject);
+    procedure rackBar53Change(Sender: TObject);
+    procedure TrackBar54Change(Sender: TObject);
+    procedure TrackBar55Change(Sender: TObject);
+    procedure TrackBar56Change(Sender: TObject);
     procedure TrackBar5Change(Sender: TObject);
     procedure TrackBar6Change(Sender: TObject);
     procedure TrackBar7Change(Sender: TObject);
@@ -1414,13 +1520,14 @@ type
     procedure turret_loading();
     procedure turret_save();
     procedure expanel_loading();
+    procedure hitlog_loading();
+    procedure hitlog_save();
     procedure expanel_save();
     procedure color_loading();
     procedure color_save();
     procedure alpha_loading();
+    procedure alpha_save();
     procedure OnClickColorButton(Sender: TObject);
-    function LoadAlphaTab(s, FindExpr: string; GB: TScrollBox; ShowSub: Boolean):string;
-    function LoadAlphaTabEx(FindExpr: string; GB: TScrollBox):string;
     function GetWord(Str,Smb:string; WordNmbr:Byte):string;
     //procedure edithint();
     { public declarations }
@@ -1449,13 +1556,13 @@ var
 
   xvm_base, xvm, battle, bt_result, iconset, login, hangar, hotkeys, userInfo: TStringList;
   battload, fragcorr, expanel, rating, texts, pl_panel, squad, turret, tab: TStringList;
-  map, circle, colors, alpha: TStringList;
+  map, circle, colors, alpha, hitlog: TStringList;
 
   ColorSubStrValue, AlphaSubStrValue: TStringList;
 
   activ_config, xvm_file_name, battle_name, bt_result_name, login_name, hangar_name, hotkeys_name, userInfo_name, rating_name: String;
   squad_name, battload_name, iconset_name, texts_name, turret_name, frag_name, pl_panel_name, expanel_name, tab_name: String;
-  map_name, circle_name, colors_name, alpha_name: String;
+  map_name, circle_name, colors_name, alpha_name, hitlog_name: String;
 
   b_s1, b_s2, b_s4, b_s6, b_s7, b_s8: String;
 
@@ -1480,6 +1587,14 @@ var
 
   expanel_s1, expanel_s2: String;
   exp0_SL, exp1_SL, exp2_SL: Integer;
+
+  hit0_SL, hit1_SL, hit2_SL, hit3_SL, hit4_SL, hit5_SL, hit6_SL, hit7_SL, hit8_SL, hit9_SL, hit10_SL,
+  hit11_SL, hit12_SL, hit13_SL, hit14_SL, hit15_SL, hit16_SL, hit17_SL, hit18_SL, hit19_SL,
+  hit20_SL, hit21_SL, hit22_SL, hit23_SL, hit24_SL, hit25_SL: Integer;
+  hitlog0_SL, hitlog1_SL, hitlog2_SL, hitlog3_SL, hitlog4_SL, hitlog5_SL, hitlog6_SL, hitlog7_SL,
+  hitlog8_SL, hitlog9_SL, hitlog10_SL, hitlog11_SL, hitlog12_SL, hitlog13_SL, hitlog14_SL,
+  hitlog15_SL, hitlog16_SL, hitlog17_SL, hitlog18_SL, hitlog19_SL, hitlog20_SL, hitlog21_SL,
+  hitlog22_SL: string;
 
   bt_res0_SL, bt_res1_SL, bt_res2_SL, bt_res3_SL, bt_res4_SL, bt_res5_SL, bt_res6_SL: Integer;
 
@@ -1671,321 +1786,6 @@ if TComboBox(Sender).Text <> 'Выберите...' then
   Edt.Text := TComboBox(Sender).Text;
 end;
 
-function TXCTuner_Form1.LoadAlphaTab(s, FindExpr: string; GB: TScrollBox; ShowSub: Boolean):string;
-var
-  RE, sRE: TRegExpr;
-  sLabel: TGroupBox;
-  sEdit: TSpinEdit;
-  sSubstEdit: TEdit;
-  sCaption, sValue, sName, s1: string;
-  sSubstLabel, sAlphaSelectLabel: TLabel;
-  sAlphaSubStrValue: TComboBox;
-  i, j: integer;
-begin
-alpha.Clear;
-alpha.LoadFromFile(dir_xvm + alpha_name);
-RE := TRegExpr.Create;
-sRE := TRegExpr.Create;
-RE.Expression := FindExpr;
-i := 0;
-
-if RE.Exec(alpha.Text) then
-begin
-  sRE.Expression := '[ \/\t]"(.*?)":(.*?)\n';
-  if sRE.Exec(RE.Substitute('$1')) then
-  repeat
-    if sRE.Substitute('$0')[1] <> '/' then
-    begin
-    s1 := Trim(sRE.Substitute('$2'));
-    s1 := StringReplace(s1, '  ', ' ', [rfIgnoreCase,rfReplaceAll]);
-    sName := sRE.Substitute('$1');
-    sCaption := lang_config.ReadString('colors', sName, '');
-    sValue := Trim(GetWord(s1, '"', 2));
-
-    if TGroupBox(GB.FindChildControl('sGroupBox' + GB.Name + IntToStr(i))) <> nil then
-    begin
-      sLabel := TGroupBox(GB.FindChildControl('sGroupBox' + GB.Name + IntToStr(i)));
-      sLabel.Caption := sCaption;
-      sEdit := TSpinEdit(sLabel.FindChildControl('sAlphaValue' + GB.Name + IntToStr(i)));
-      sEdit.Value := StrToInt(sValue);
-      if ShowSub then
-      begin
-        sAlphaSubStrValue := TComboBox(sLabel.FindChildControl('sAlphaSubStrValue' + GB.Name + IntToStr(i)));
-        sAlphaSubStrValue.Items.Clear;
-        sAlphaSubStrValue.Items.Add('Выберите...');
-        for j := 0 to AlphaSubStrValue.Count - 1 do
-          sAlphaSubStrValue.Items.Add(AlphaSubStrValue.Strings[j]);
-        if sAlphaSubStrValue.Items.IndexOf(sEdit.Text) <> -1 then
-          sAlphaSubStrValue.ItemIndex := sAlphaSubStrValue.Items.IndexOf(sEdit.Text)
-        else
-          sAlphaSubStrValue.ItemIndex := 0;
-      end;
-      if s <> '' then
-        TEdit(sLabel.FindChildControl('sSubstEdit' + GB.Name + IntToStr(i))).Text := s + sName;
-    end
-    else
-    begin
-    sLabel := TGroupBox.Create(nil);
-    with sLabel do
-    begin
-      Parent := GB;
-      Hint := sName;
-      Name := 'sGroupBox' + GB.Name + IntToStr(i);
-      Width := 560;
-      Height := 60;
-      if TGroupBox(GB.FindChildControl('sGroupBox' + GB.Name + IntToStr(i - 1))) = nil then
-        Top := 0
-      else
-        Top := TGroupBox(GB.FindChildControl('sGroupBox' + GB.Name + IntToStr(i - 1))).Top + TGroupBox(GB.FindChildControl('sGroupBox' + GB.Name + IntToStr(i - 1))).Height + 3;
-      Left := 10;
-      Caption := sCaption;
-    end;
-
-    sEdit := TSpinEdit.Create(nil);
-    with sEdit do
-    begin
-      Parent := sLabel;
-      Hint := sName;
-      Alignment := taCenter;
-      Name := 'sAlphaValue' + GB.Name + IntToStr(i);
-      Top := 6;
-      Width := 100;
-      Left := 18;
-      Text := sValue;
-      Value := StrToInt(sValue);
-    end;
-
-    if s <> '' then
-    begin
-      sSubstLabel := TLabel.Create(nil);
-      with sSubstLabel do
-      begin
-        Parent := sLabel;
-        Hint := sName;
-        Name := 'sSubstLabel' + GB.Name + IntToStr(i);
-        Top := sEdit.Top + 4;
-        Left := sEdit.Left + sEdit.Width + 18;
-        Caption := 'Значение для подстановки: ';
-        Width := 155;
-      end;
-      sSubstEdit := TEdit.Create(nil);
-      with sSubstEdit do
-      begin
-        Parent := sLabel;
-        Hint := sName;
-        Name := 'sSubstEdit' + GB.Name + IntToStr(i);
-        Top := sEdit.Top + 2;
-        Width := 165;
-        Left := sSubstLabel.Left + sSubstLabel.Width + 3;
-        Text := s + sName;
-        AlphaSubStrValue.Add(Text);
-        Alignment := taCenter;
-      end;
-    end;
-
-    if ShowSub then
-    begin
-      sAlphaSelectLabel := TLabel.Create(nil);
-      with sAlphaSelectLabel do
-      begin
-        Parent := sLabel;
-        Name := 'sAlphaSelectLabel' + GB.Name + IntToStr(i);
-        Width := 75;
-        Caption := 'Подстановка: ';
-        Top := sEdit.Top + 4;
-        Left := sSubstEdit.Left + sSubstEdit.Width + 18;
-      end;
-
-      sAlphaSubStrValue := TComboBox.Create(nil);
-      with sAlphaSubStrValue do
-      begin
-        Parent := sLabel;
-        Name := 'sAlphaSubStrValue' + GB.Name + IntToStr(i);
-        Top := sEdit.Top;
-        Width := 200;
-        Left := sAlphaSelectLabel.Left + sAlphaSelectLabel.Width + 3;
-        Style := csDropDownList;
-        Items.Add('Выберите...');
-        for j := 0 to AlphaSubStrValue.Count - 1 do
-          Items.Add(AlphaSubStrValue.Strings[j]);
-        if Items.IndexOf(sEdit.Text) <> -1 then
-          ItemIndex := Items.IndexOf(sEdit.Text)
-        else
-          ItemIndex := 0;
-        OnSelect := @ClickAlphaSelectComboBox;
-      end;
-    end;
-    end;
-    Inc(i);
-    end;
-  until not sRE.ExecNext;
-end
-else
-begin
-  TTabSheet(GB.Parent).TabVisible := False;
-  if (not TabSheet84.TabVisible) and (not TabSheet85.TabVisible) then
-  begin
-     PageControl15.ActivePageIndex := 1;
-     TabSheet65.TabVisible := False;
-  end;
-end;
-sRE.Free;
-RE.Free;
-end;
-
-function TXCTuner_Form1.LoadAlphaTabEx(FindExpr: string; GB: TScrollBox):string;
-var
-  RE, sRE: TRegExpr;
-  sLabel: TGroupBox;
-  sValueName, sAlphaName, sAlphaSelectLabel: TLabel;
-  sValue, sAlphaValue: tEdit;
-  sAlphaSubStrValue: TComboBox;
-  fValueName, fValue, fAlphaValue: string;
-  i, j: integer;
-begin
-alpha.Clear;
-alpha.LoadFromFile(dir_xvm + alpha_name);
-RE := TRegExpr.Create;
-sRE := TRegExpr.Create;
-RE.Expression := FindExpr;
-i := 0;
-
-if RE.Exec(alpha.Text) then
-begin
-  sRE.Expression := '[ \/]"(.*?)":(.*?),(.*?)"(.*?)":(.*?)"(.*?)"(.*?)\n';
-  if sRE.Exec(RE.Substitute('$1')) then
-  repeat
-    if sRE.Substitute('$0')[1] <> '/' then
-    begin
-    fValueName := sRE.Substitute('$1');
-    fValue := Trim(sRE.Substitute('$2'));
-    fAlphaValue := sRE.Substitute('$6');
-    if TGroupBox(GB.FindChildControl('sGroupBox' + GB.Name + IntToStr(i))) <> nil then
-    begin
-      sLabel := TGroupBox(GB.FindChildControl('sGroupBox' + GB.Name + IntToStr(i)));
-      sValue := TEdit(sLabel.FindChildControl('sEdit' + GB.Name + IntToStr(i)));
-      sValue.Text := fValue;
-      sAlphaValue := TEdit(sLabel.FindChildControl('sAlphaValue' + GB.Name + IntToStr(i)));
-      sAlphaValue.Text := fAlphaValue;
-
-      sAlphaSubStrValue := TComboBox(sLabel.FindChildControl('sAlphaSubStrValue' + GB.Name + IntToStr(i)));
-      sAlphaSubStrValue.Items.Clear;
-      sAlphaSubStrValue.Items.Add('Выберите...');
-      for j := 0 to AlphaSubStrValue.Count - 1 do
-        sAlphaSubStrValue.Items.Add(AlphaSubStrValue.Strings[j]);
-
-      if sAlphaSubStrValue.Items.IndexOf(sAlphaValue.Text) <> -1 then
-        sAlphaSubStrValue.ItemIndex := sAlphaSubStrValue.Items.IndexOf(sAlphaValue.Text)
-      else
-        sAlphaSubStrValue.ItemIndex := 0;
-    end
-    else
-    begin
-    sLabel := TGroupBox.Create(nil);
-    with sLabel do
-    begin
-      Parent := GB;
-      Hint := fValueName;
-      Name := 'sGroupBox' + GB.Name + IntToStr(i);
-      Width := 575;
-      Height := 54;
-      if TGroupBox(GB.FindChildControl('sGroupBox' + GB.Name + IntToStr(i - 1))) = nil then
-        Top := 0
-      else
-        Top := TGroupBox(GB.FindChildControl('sGroupBox' + GB.Name + IntToStr(i - 1))).Top + TGroupBox(GB.FindChildControl('sGroupBox' + GB.Name + IntToStr(i - 1))).Height + 3;
-      Left := 10;
-      Caption := '';
-    end;
-
-    sValueName := TLabel.Create(nil);
-    with sValueName do
-    begin
-      Parent := sLabel;
-      Hint := fValueName;
-      Name := 'sValueName' + GB.Name + IntToStr(i);
-      Top := 6;
-      Left := 6;
-      Caption := 'Значение: ';
-      Width := 55;
-    end;
-
-    sValue := TEdit.Create(nil);
-    with sValue do
-    begin
-      Parent := sLabel;
-      Hint := fValueName;
-      Alignment := taCenter;
-      Name := 'sEdit' + GB.Name + IntToStr(i);
-      Top := 3;
-      Width := 50;
-      Left := sValueName.Left + sValueName.Width + 3;
-      Text := fValue;
-    end;
-
-    sAlphaName := TLabel.Create(nil);
-    with sAlphaName do
-    begin
-      Parent := sLabel;
-      Hint := fValueName;
-      Name := 'sAlphaName' + GB.Name + IntToStr(i);
-      Top := 6;
-      Width := 85;
-      Left := sValue.Left + sValue.Width + 6;
-      Caption := 'Прозрачность: ';
-    end;
-
-    sAlphaValue := TEdit.Create(nil);
-    with sAlphaValue do
-    begin
-      Parent := sLabel;
-      Hint := fValueName;
-      Alignment := taCenter;
-      Name := 'sAlphaValue' + GB.Name + IntToStr(i);
-      Top := sValue.Top;
-      Width := 150;
-      Left := sAlphaName.Left + sAlphaName.Width + 3;
-      Text := fAlphaValue
-    end;
-
-    sAlphaSelectLabel := TLabel.Create(nil);
-    with sAlphaSelectLabel do
-    begin
-      Parent := sLabel;
-      Name := 'sAlphaSelectLabel' + GB.Name + IntToStr(i);
-      Width := 75;
-      Caption := 'Подстановка: ';
-      Top := -6;
-      Left := sAlphaValue.Left + sAlphaValue.Width + 6;
-    end;
-
-    sAlphaSubStrValue := TComboBox.Create(nil);
-    with sAlphaSubStrValue do
-    begin
-      Parent := sLabel;
-      Name := 'sAlphaSubStrValue' + GB.Name + IntToStr(i);
-      Top := sAlphaSelectLabel.Top + sAlphaSelectLabel.Height - 3;
-      Width := 160;
-      Left := sAlphaSelectLabel.Left;
-      Style := csDropDownList;
-      DropDownCount := 15;
-      Items.Add('Выберите...');
-      for j := 0 to AlphaSubStrValue.Count - 1 do
-        Items.Add(AlphaSubStrValue.Strings[j]);
-      if Items.IndexOf(sAlphaValue.Text) <> -1 then
-        ItemIndex := Items.IndexOf(sAlphaValue.Text)
-      else
-        ItemIndex := 0;
-      OnSelect := @ClickAlphaSelectComboBox;
-    end;
-    end;
-    Inc(i);
-    end;
-  until not sRE.ExecNext;
-end;
-sRE.Free;
-RE.Free;
-end;
-
 // Открытие вкладки "Общие"
 procedure TXCTuner_Form1.BitBtn1Click(Sender: TObject);
 begin
@@ -2033,6 +1833,17 @@ begin
   UpdateBitBtnStatus(BitBtn17, 10);
 end;
 
+procedure TXCTuner_Form1.BitBtn18Click(Sender: TObject);
+begin
+ UpdateBitBtnStatus(BitBtn18, 11);
+end;
+
+procedure TXCTuner_Form1.BitBtn19Click(Sender: TObject);
+begin
+  ColorSelect := 14;
+  ColorSelectMy.ShowModal;
+end;
+
 procedure TXCTuner_Form1.BitBtnColor10Click(Sender: TObject);
 begin
   ColorSelect := 10;
@@ -2071,12 +1882,15 @@ begin
       Panel1.Visible := false;
       BitBtn4.Caption := '>';
       XCTuner_Form1.Width := 770;
+      PageControl1.Left := BitBtn4.Width;
       BitBtn4.Hint := 'Развернуть панель';
     end else
     begin
       Panel1.Visible := true;
       BitBtn4.Caption := '<';
       XCTuner_Form1.Width := 940;
+      PageControl1.Width := XCTuner_Form1.Width - 186;
+      PageControl1.Left := BitBtn4.Left + BitBtn4.Width;
       BitBtn4.Hint := 'Свернуть панель';
     end;
 end;
@@ -2172,6 +1986,11 @@ end;
 procedure TXCTuner_Form1.BitRefresh17Click(Sender: TObject);
 begin
  color_loading();
+end;
+
+procedure TXCTuner_Form1.BitRefresh18Click(Sender: TObject);
+begin
+ hitlog_loading();
 end;
 
 // По кнопке происходит вызов процедуры загрузки данных из файла "rating.xc"
@@ -2272,97 +2091,6 @@ begin
   circlemap_loading();
 end;
 
-function SaveAlpha(SB: TScrollBox):string;
-var
-  i, j, l, k: integer;
-  GB: TGroupBox;
-  RE: TRegExpr;
-  Edt: TSpinEdit;
-  t: string;
-  st: TStringList;
-begin
-RE := TRegExpr.Create;
-st := TStringList.Create;
-for i := 0 to SB.ControlCount - 1 do
-begin
-  if SB.Controls[i] is TGroupBox then
-  begin
-    GB := TGroupBox(SB.Controls[i]);
-    for j := 0 to GB.ControlCount - 1 do
-    begin
-      if GB.Controls[j] is TSpinEdit then
-      if Pos('sAlphaValue', GB.Controls[j].Name) > 0 then
-      begin
-        Edt := TSpinEdit(GB.Controls[j]);
-        RE.Expression := '"' + Edt.Hint + '"(.*?)[\r\n]';
-        if RE.Exec(alpha.Text) then
-        begin
-          t := IntToStr(Edt.Value);
-          if TryStrToInt(t, k) then
-             t := XCTuner_Form1.RecStartEnd(t)
-          else
-             t := '${"' + t + '"}';
-          l := XCTuner_Form1.Search_Line(0, '"' + Edt.Hint + '"', alpha);
-          alpha.Strings[l] := XCTuner_Form1.Smart_Replacing(Edt.Hint, alpha.Strings[l], t);
-        end;
-      end;
-    end;
-  end;
-end;
-alpha.SaveToFile(dir_xvm+alpha_name);
-st.Free;
-RE.Free;
-end;
-
-function SaveAlphaEx(sExpr: string; SB: TScrollBox):string;
-var
-  i, j, l, k, f: integer;
-  GB: TGroupBox;
-  RE, sRE: TRegExpr;
-  s, t: string;
-  st: TStringList;
-begin
-RE := TRegExpr.Create;
-sRE := TRegExpr.Create;
-st := TStringList.Create;
-RE.Expression := sExpr + ']';
-l := XCTuner_Form1.Search_Line(0, sExpr, alpha);
-k := 1;
-for i := 0 to SB.ControlCount - 1 do
-begin
-  if SB.Controls[i] is TGroupBox then
-  begin
-    GB := TGroupBox(SB.Controls[i]);
-    for j := 0 to GB.ControlCount - 1 do
-    begin
-      if GB.Controls[j] is TEdit then
-      begin
-        if pos('sEdit', TEdit(GB.Controls[j]).Name) > 0 then
-           s := TEdit(GB.Controls[j]).TExt;
-        if pos('sAlphaValue', TEdit(GB.Controls[j]).Name) > 0 then
-           t := TEdit(GB.Controls[j]).Text;
-        if (s <> '') and (t <> '') then
-        begin
-          if TryStrToInt(t, f) then
-             t := XCTuner_Form1.RecStartEnd(t)
-          else
-             t := '${"' + t + '"}';
-        alpha.Strings[l + k] := XCTuner_Form1.Smart_Replacing('value', alpha.Strings[l + k], s);
-        alpha.Strings[l + k] := XCTuner_Form1.Smart_Replacing('alpha', alpha.Strings[l + k], t);
-        s := '';
-        t := '';
-        Inc(k) ;
-        end;
-      end;
-    end;
-  end;
-end;
-alpha.SaveToFile(dir_xvm+alpha_name);
-st.Free;
-sRE.Free;
-RE.Free;
-end;
-
 procedure TXCTuner_Form1.color_save;
 begin
 SaveColors(ScrollBox1);
@@ -2411,6 +2139,12 @@ begin
   color_loading();
 end;
 
+procedure TXCTuner_Form1.BitSave18Click(Sender: TObject);
+begin
+ hitlog_save();
+ hitlog_loading();
+end;
+
 // По кнопке происходит вызов процедуры сохранения данных в файла "rating.xc"
 procedure TXCTuner_Form1.BitSave1Click(Sender: TObject);
 begin
@@ -2431,23 +2165,8 @@ end;
 
 procedure TXCTuner_Form1.BitSave39Click(Sender: TObject);
 begin
-  SaveAlpha(ScrollBox23);
-  SaveAlpha(ScrollBox24);
-  SaveAlphaEx('"hp": [', ScrollBox27);
-  SaveAlphaEx('"hp_ratio": [', ScrollBox28);
-  SaveAlphaEx('"x": [', ScrollBox29);
-  SaveAlphaEx('"eff": [', ScrollBox30);
-  SaveAlphaEx('"wn6": [', ScrollBox31);
-  SaveAlphaEx('"wn8": [', ScrollBox32);
-  SaveAlphaEx('"e": [', ScrollBox33);
-  SaveAlphaEx('"rating": [', ScrollBox34);
-  SaveAlphaEx('"kb": [', ScrollBox35);
-  SaveAlphaEx('"avglvl": [', ScrollBox36);
-  SaveAlphaEx('"t_battles": [', ScrollBox37);
-  SaveAlphaEx('"tdb": [', ScrollBox38);
-  SaveAlphaEx('"tdv": [', ScrollBox39);
-  SaveAlphaEx('"tfb": [', ScrollBox40);
-  SaveAlphaEx('"tsb": [', ScrollBox41);
+  alpha_save();
+  alpha_loading();
 end;
 
 // По кнопке происходит вызов процедуры сохранения данных в файла "login.xc"
@@ -2705,6 +2424,24 @@ begin
     end;
 end;
 
+procedure TXCTuner_Form1.Edit61Exit(Sender: TObject);
+begin
+ChangeEdit := Length(Edit61.Text);
+ChangeEditText := Edit61.Text;
+if ChangeEdit = 7 then
+  begin
+    Delete(ChangeEditText, 1, 1);
+    mbColorPreview12.Color := HexToTColor(ChangeEditText);
+  end else
+  begin
+     ShowMessage(colorInf);
+     Edit61.Text:=hitlog17_SL;
+     temp_str:=hitlog17_SL;
+     Delete(temp_str, 1, 1);
+     mbColorPreview12.Color:=HexToTColor(temp_str);
+  end;
+end;
+
 // события при изменение Edit6 при выходе из поля
 procedure TXCTuner_Form1.Edit6Exit(Sender: TObject);
 begin
@@ -2816,6 +2553,7 @@ begin
   expanel:=TStringList.Create;
   colors:=TStringList.Create;
   alpha:=TStringList.Create;
+  hitlog:=TStringList.Create;
 
   ColorSubStrValue := TStringList.Create;
   ColorSubStrValue.Sorted := True;
@@ -2839,10 +2577,12 @@ begin
   map_name:=FindFilesXVM('"minimap"', xvm);
   colors_name:=FindFilesXVM('"colors"', xvm);
   alpha_name:=FindFilesXVM('"alpha"', xvm);
+  hitlog_name:=FindFilesXVM('"hitLog"', xvm);
 
   map.LoadFromFile(dir_xvm+map_name);
   colors.LoadFromFile(dir_xvm+colors_name);
   alpha.LoadFromFile(dir_xvm+alpha_name);
+  hitlog.LoadFromFile(dir_xvm+hitlog_name);
 
   circle_name:=FindFilesXVM('"circles"', map);
 
@@ -2875,10 +2615,11 @@ begin
       (FileExists(dir_xvm+expanel_name   )) and
       (FileExists(dir_xvm+colors_name   )) and
       (FileExists(dir_xvm+alpha_name   )) and
+      (FileExists(dir_xvm+hitlog_name   )) and
       (FileExists(dir_xvm+rating_name   ))) then
     begin
       // вывод версии файла в заголовок
-      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.2.4.95';
+      XCTuner_Form1.Caption:=XCTuner_Form1.Caption + '   Версия - ' + '0.2.5.68';
       XCTuner_Form1.Height:=520;
       XCTuner_Form1.Width:=940;
       PageControl1.Top := PageControl1.Top - 25;
@@ -2911,6 +2652,7 @@ begin
       expanel_loading();
       color_loading();
       alpha_loading();
+      hitlog_loading();
 
       BitBtn1.Hint:='Настройка в файлах: ' + xvm_file_name + ', ' + battle_name + ' и ' + rating_name;
       BitBtn2.Hint:='Настройка в файле: ' + login_name;
@@ -2923,6 +2665,7 @@ begin
       BitBtn15.Hint:='Настройка в файлах: ' + map_name + ' и ' + circle_name;
       BitBtn16.Hint:='Настройка в файле: ' + colors_name;
       BitBtn17.Hint:='Настройка в файле: ' + alpha_name;
+      BitBtn18.Hint:='Настройка в файле: ' + hitlog_name;
   end
   else
     begin
@@ -2957,6 +2700,7 @@ begin
   expanel.Free;
   colors.Free;
   alpha.Free;
+  hitlog.Free;
 
   AlphaSubStrValue.Free;
   ColorSubStrValue.Free;
@@ -3502,6 +3246,12 @@ begin
   '"motion"    - реальная дальность обзора танка в движении');
 end;
 
+procedure TXCTuner_Form1.Image179Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit1_SL+1)+litf+hitlog_name+path
+  +activ_config+#13#10+enopt+'"enabled": true'+#13#10+disopt+'"enabled": false');
+end;
+
 procedure TXCTuner_Form1.Image17Click(Sender: TObject);
 begin
   ShowMessage(tpi+IntToStr(log4_SL+1)+litf+login_name+path
@@ -3522,16 +3272,110 @@ begin
   +activ_config);
 end;
 
+procedure TXCTuner_Form1.Image183Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit3_SL+1)+litf+hitlog_name+path
+  +activ_config+#13#10+enopt+'"enabled": true'+#13#10+disopt+'"enabled": false' + #13#10 +
+  'Уничтоженные враги и вражеское HP обновляется только, когда маркеры становятся видимыми.'#13#10 +
+  'Маркеры видимы только в квадрате со стороной в 1000м.'#13#10 +
+  'Квадрат в 1000 метров это ограничение игрового движка. Максимальная дистанция отрисовки маркеров.'#13#10 +
+  'Данные по конкретному врагу не могут быть обновлены пока не видно его маркер или обломки.');
+end;
+
+procedure TXCTuner_Form1.Image184Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit4_SL+1)+litf+hitlog_name+path
+  +activ_config+#13#10+'Допускаются только макросы перевода, см. readme-ru.txt.');
+end;
+
+procedure TXCTuner_Form1.Image185Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit5_SL+1)+litf+hitlog_name+path
+  +activ_config+#13#10+'Допускаются макроподстановки, см. readme-ru.txt');
+end;
+
 procedure TXCTuner_Form1.Image186Click(Sender: TObject);
 begin
   ShowMessage(tpi+IntToStr(pl35_SL+1)+litf+pl_panel_name+path
   +activ_config+#13#10+enopt+'"enabled": true'+#13#10+disopt+'"enabled": false');
 end;
 
+procedure TXCTuner_Form1.Image187Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit6_SL+1)+litf+hitlog_name+path
+  +activ_config+#13#10+'Отрицательные значения - привязать к правой стороне экрана');
+end;
+
+procedure TXCTuner_Form1.Image188Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit7_SL+1)+litf+hitlog_name+path
+  +activ_config+#13#10+'Отрицательные значения - привязать к нижней стороне экрана');
+end;
+
+procedure TXCTuner_Form1.Image189Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit8_SL+1)+litf+hitlog_name+path+activ_config);
+end;
+
 procedure TXCTuner_Form1.Image18Click(Sender: TObject);
 begin
   ShowMessage(tpi+IntToStr(hgar1_SL+1)+litf+hangar_name+path
   +activ_config+#13#10+enopt+'"hideTutorial": false'+#13#10+disopt+'"hideTutorial": true');
+end;
+
+procedure TXCTuner_Form1.Image190Click(Sender: TObject);
+begin
+ShowMessage(tpi+IntToStr(hit9_SL+1)+litf+hitlog_name+path+activ_config);
+end;
+
+procedure TXCTuner_Form1.Image191Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit10_SL+1)+litf+hitlog_name+path
+  +activ_config+#13#10+'Устаревшие данные выталкиваются');
+end;
+
+procedure TXCTuner_Form1.Image192Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit11_SL+1)+litf+hitlog_name+path
+  +activ_config+#13#10+'up - строки добавляются сверху,'#13#10'down - строки добавляются снизу');
+end;
+
+procedure TXCTuner_Form1.Image193Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit12_SL+1)+litf+hitlog_name+path+activ_config);
+end;
+
+procedure TXCTuner_Form1.Image194Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit13_SL+1)+litf+hitlog_name+path+activ_config);
+end;
+
+procedure TXCTuner_Form1.Image195Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit14_SL+1)+litf+hitlog_name+path+activ_config);
+end;
+
+procedure TXCTuner_Form1.Image196Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit15_SL+1)+litf+hitlog_name+path+
+  activ_config + #13#10 + 'Допускаются только макросы перевода, см. readme-ru.txt');
+end;
+
+procedure TXCTuner_Form1.Image197Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit16_SL+1)+litf+hitlog_name+path+
+  activ_config + #13#10 + 'Допускаются макроподстановки, см. readme-ru.txt');
+end;
+
+procedure TXCTuner_Form1.Image198Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit17_SL+1)+litf+hitlog_name+path+
+  activ_config + #13#10 + 'Допускаются макроподстановки, см. readme-ru.txt');
+end;
+
+procedure TXCTuner_Form1.Image199Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit18_SL+1)+litf+hitlog_name+path+activ_config);
 end;
 
 procedure TXCTuner_Form1.Image19Click(Sender: TObject);
@@ -3554,6 +3398,12 @@ begin
   Edit_XVM.Edit8.Text:=xvm_s9;
   Edit_XVM.Edit9.Text:=xvm_s10;
   Edit_XVM.ShowModal;
+end;
+
+procedure TXCTuner_Form1.Image200Click(Sender: TObject);
+begin
+  ShowMessage(tpi+IntToStr(hit25_SL+1)+litf+hitlog_name+path
+  +activ_config+#13#10+'begin - новые значения добавляются сверху'#13#10'end - новые значения добавляются снизу');
 end;
 
 procedure TXCTuner_Form1.Image20Click(Sender: TObject);
@@ -4105,7 +3955,6 @@ begin
   Label63.Font.Style:=Label63.Font.Style+[fsUnderline];
 end;
 
-
 procedure TXCTuner_Form1.SpinEdit10Change(Sender: TObject);
 begin
   TrackBar1.Position:=SpinEdit10.Value;
@@ -4350,6 +4199,36 @@ procedure TXCTuner_Form1.SpinEdit59Change(Sender: TObject);
 begin
   TrackBar50.Position:=SpinEdit59.Value;
   TrackBar50.SelEnd:=SpinEdit59.Value;
+end;
+
+procedure TXCTuner_Form1.SpinEdit60Change(Sender: TObject);
+begin
+  TrackBar52.Position:=SpinEdit60.Value;
+  TrackBar52.SelEnd:=TrackBar52.Position;
+end;
+
+procedure TXCTuner_Form1.SpinEdit61Change(Sender: TObject);
+begin
+  TrackBar53.Position:=SpinEdit61.Value;
+  TrackBar53.SelEnd:=TrackBar53.Position;
+end;
+
+procedure TXCTuner_Form1.SpinEdit62Change(Sender: TObject);
+begin
+  TrackBar54.Position:=SpinEdit62.Value;
+  TrackBar54.SelEnd:=TrackBar54.Position;
+end;
+
+procedure TXCTuner_Form1.SpinEdit63Change(Sender: TObject);
+begin
+  TrackBar55.Position:=SpinEdit63.Value;
+  TrackBar55.SelEnd:=TrackBar55.Position;
+end;
+
+procedure TXCTuner_Form1.SpinEdit64Change(Sender: TObject);
+begin
+  TrackBar56.Position:=SpinEdit64.Value;
+  TrackBar56.SelEnd:=TrackBar56.Position;
 end;
 
 procedure TXCTuner_Form1.SpinEdit8Change(Sender: TObject);
@@ -4644,6 +4523,36 @@ procedure TXCTuner_Form1.TrackBar51Change(Sender: TObject);
 begin
   FloatSpinEdit8.Value:=0.01*TrackBar51.Position;
   TrackBar51.SelEnd:=TrackBar51.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar52Change(Sender: TObject);
+begin
+  SpinEdit60.Value:=TrackBar52.Position;
+  TrackBar52.SelEnd:=TrackBar52.Position;
+end;
+
+procedure TXCTuner_Form1.rackBar53Change(Sender: TObject);
+begin
+  SpinEdit61.Value:=TrackBar53.Position;
+  TrackBar53.SelEnd:=TrackBar53.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar54Change(Sender: TObject);
+begin
+  SpinEdit62.Value:=TrackBar54.Position;
+  TrackBar54.SelEnd:=TrackBar54.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar55Change(Sender: TObject);
+begin
+  SpinEdit63.Value:=TrackBar55.Position;
+  TrackBar55.SelEnd:=TrackBar55.Position;
+end;
+
+procedure TXCTuner_Form1.TrackBar56Change(Sender: TObject);
+begin
+  SpinEdit64.Value:=TrackBar56.Position;
+  TrackBar56.SelEnd:=TrackBar56.Position;
 end;
 
 procedure TXCTuner_Form1.TrackBar5Change(Sender: TObject);
@@ -9154,6 +9063,27 @@ begin
  LoadAlphaTabEx('"tsb":(.*?)]', ScrollBox41);
 end;
 
+procedure TXCTuner_Form1.alpha_save;
+begin
+  SaveAlpha(ScrollBox23);
+  SaveAlpha(ScrollBox24);
+  SaveAlphaEx('"hp": [', ScrollBox27);
+  SaveAlphaEx('"hp_ratio": [', ScrollBox28);
+  SaveAlphaEx('"x": [', ScrollBox29);
+  SaveAlphaEx('"eff": [', ScrollBox30);
+  SaveAlphaEx('"wn6": [', ScrollBox31);
+  SaveAlphaEx('"wn8": [', ScrollBox32);
+  SaveAlphaEx('"e": [', ScrollBox33);
+  SaveAlphaEx('"rating": [', ScrollBox34);
+  SaveAlphaEx('"kb": [', ScrollBox35);
+  SaveAlphaEx('"avglvl": [', ScrollBox36);
+  SaveAlphaEx('"t_battles": [', ScrollBox37);
+  SaveAlphaEx('"tdb": [', ScrollBox38);
+  SaveAlphaEx('"tdv": [', ScrollBox39);
+  SaveAlphaEx('"tfb": [', ScrollBox40);
+  SaveAlphaEx('"tsb": [', ScrollBox41);
+end;
+
 procedure TXCTuner_Form1.color_loading;
 begin
 ColorSubStrValue.Clear;
@@ -9179,6 +9109,368 @@ LoadColorsTabEx('"tdb":(.*?)"tdv":', ScrollBox19);
 LoadColorsTabEx('"tdv":(.*?)"tfb":', ScrollBox20);
 LoadColorsTabEx('"tfb":(.*?)"tsb":', ScrollBox21);
 LoadColorsTabEx('"tsb":(.*?)]', ScrollBox22);
+end;
+
+procedure TXCTuner_Form1.hitlog_loading;
+begin
+  hitlog.Clear;
+  hitlog.LoadFromFile(dir_xvm + hitlog_name);
+  hit0_SL:=Search_Line(0, '"hitLog"', hitlog);
+  if hit0_SL=-1 then error_line('"hitLog"', hitlog_name) else
+  begin
+    Search:='"visible"';
+    hit1_SL:=Search_Line(hit0_SL, Search, hitlog);
+    if hit1_SL=-1 then error_line(Search, hitlog_name) else
+    begin
+      hitlog0_SL:=hitlog.Strings[hit1_SL];
+      hitlog0_SL:=new_change_str(Search, hitlog0_SL);
+      if hitlog0_SL='true' then RadioButton5.Checked:=True else
+      if hitlog0_SL='false' then RadioButton6.Checked:=True else
+      begin
+        ShowMessage(error_message(hitlog_name, hitlog0_SL, hit1_SL));
+        Application.Terminate;
+      end;
+    end;
+  end;
+
+  if hit2_SL=-1 then error_line('"hpLeft"', hitlog_name) else
+  begin
+    Search:='"enabled"';
+    hit3_SL:=Search_Line(hit2_SL, Search, hitlog);
+    if hit3_SL=-1 then error_line(Search, hitlog_name) else
+    begin
+      hitlog1_SL:=hitlog.Strings[hit3_SL];
+      hitlog1_SL:=new_change_str(Search, hitlog1_SL);
+      if hitlog1_SL='true' then RadioButton9.Checked:=True else
+      if hitlog1_SL='false' then RadioButton10.Checked:=True else
+      begin
+        ShowMessage(error_message(hitlog_name, hitlog1_SL, hit3_SL));
+        Application.Terminate;
+      end;
+    end;
+
+    Search:='"header"';
+    hit4_SL:=Search_Line(hit2_SL, Search, hitlog);
+    if hit4_SL=-1 then error_line(Search, hitlog_name) else
+    begin
+      hitlog2_SL:=hitlog.Strings[hit4_SL];
+      hitlog2_SL:=DelStartEnd(new_change_str(Search, hitlog2_SL));
+      Edit59.Text:=hitlog2_SL;
+    end;
+
+    Search:='"format"';
+    hit5_SL:=Search_Line(hit2_SL, Search, hitlog);
+    if hit5_SL=-1 then error_line(Search, hitlog_name) else
+    begin
+      hitlog3_SL:=hitlog.Strings[hit5_SL];
+      hitlog3_SL:=DelStartEnd(new_change_str(Search, hitlog3_SL));
+      Edit60.Text:=hitlog3_SL;
+    end;
+  end;
+
+  Search:='"x"';
+  hit6_SL:=Search_Line(hit0_SL, Search, hitlog);
+  if hit6_SL=-1 then error_line(Search, hitlog_name) else
+  begin
+    hitlog4_SL:=hitlog.Strings[hit6_SL];
+    hitlog4_SL:=new_change_str(Search, hitlog4_SL);
+    SpinEdit60.Value:=StrToInt(hitlog4_SL);
+    TrackBar52.Position:=SpinEdit60.Value;
+  end;
+
+  Search:='"y"';
+  hit7_SL:=Search_Line(hit0_SL, Search, hitlog);
+  if hit7_SL=-1 then error_line(Search, hitlog_name) else
+  begin
+    hitlog5_SL:=hitlog.Strings[hit7_SL];
+    hitlog5_SL:=new_change_str(Search, hitlog5_SL);
+    SpinEdit61.Value:=StrToInt(hitlog5_SL);
+    TrackBar53.Position:=SpinEdit61.Value;
+  end;
+
+  Search:='"w"';
+  hit8_SL:=Search_Line(hit0_SL, Search, hitlog);
+  if hit8_SL=-1 then error_line(Search, hitlog_name) else
+  begin
+    hitlog6_SL:=hitlog.Strings[hit8_SL];
+    hitlog6_SL:=new_change_str(Search, hitlog6_SL);
+    SpinEdit62.Value:=StrToInt(hitlog6_SL);
+    TrackBar54.Position:=SpinEdit62.Value;
+  end;
+
+  Search:='"h"';
+  hit9_SL:=Search_Line(hit0_SL, Search, hitlog);
+  if hit9_SL=-1 then error_line(Search, hitlog_name) else
+  begin
+    hitlog7_SL:=hitlog.Strings[hit9_SL];
+    hitlog7_SL:=new_change_str(Search, hitlog7_SL);
+    SpinEdit63.Value:=StrToInt(hitlog7_SL);
+    TrackBar55.Position:=SpinEdit63.Value;
+  end;
+
+  Search:='"lines"';
+  hit10_SL:=Search_Line(hit0_SL, Search, hitlog);
+  if hit10_SL=-1 then error_line(Search, hitlog_name) else
+  begin
+    hitlog8_SL:=hitlog.Strings[hit10_SL];
+    hitlog8_SL:=new_change_str(Search, hitlog8_SL);
+    SpinEdit64.Value:=StrToInt(hitlog8_SL);
+    TrackBar56.Position:=SpinEdit64.Value;
+  end;
+
+  Search:='"direction"';
+  hit11_SL:=Search_Line(hit11_SL, Search, hitlog);
+  if hit11_SL=-1 then error_line(Search, hitlog_name) else
+  begin
+    hitlog9_SL:=hitlog.Strings[hit11_SL];
+    hitlog9_SL:=DelStartEnd(new_change_str(Search, hitlog9_SL));
+    ComboBox9.ItemIndex := ComboBox9.Items.IndexOf(hitlog9_SL);
+  end;
+
+  Search:='"groupHitsByPlayer"';
+  hit12_SL:=Search_Line(hit0_SL, Search, hitlog);
+  if hit12_SL=-1 then error_line(Search, hitlog_name) else
+  begin
+    hitlog10_SL:=hitlog.Strings[hit12_SL];
+    hitlog10_SL:=new_change_str(Search, hitlog10_SL);
+    CheckBox6.Checked := StrToBool(hitlog10_SL);
+  end;
+
+  Search:='"insertOrder"';
+  hit25_SL:=Search_Line(hit0_SL, Search, hitlog);
+  if hit25_SL=-1 then error_line(Search, hitlog_name) else
+  begin
+    hitlog22_SL:=hitlog.Strings[hit25_SL];
+    hitlog22_SL:=DelStartEnd(new_change_str(Search, hitlog22_SL));
+    ComboBox10.ItemIndex := ComboBox10.Items.IndexOf(hitlog22_SL);
+  end;
+
+  Search:='"deadMarker"';
+  hit13_SL:=Search_Line(hit0_SL, Search, hitlog);
+  if hit13_SL=-1 then error_line(Search, hitlog_name) else
+  begin
+    hitlog11_SL:=hitlog.Strings[hit13_SL];
+    hitlog11_SL:=new_change_str(Search, hitlog11_SL);
+    LabeledEdit1.Text :=DelStartEnd(hitlog11_SL);
+  end;
+
+  Search:='"blowupMarker"';
+  hit14_SL:=Search_Line(hit0_SL, Search, hitlog);
+  if hit14_SL=-1 then error_line(Search, hitlog_name) else
+  begin
+    hitlog12_SL:=hitlog.Strings[hit14_SL];
+    hitlog12_SL:=new_change_str(Search, hitlog12_SL);
+    LabeledEdit2.Text :=DelStartEnd(hitlog12_SL);
+  end;
+
+  Search:='"defaultHeader"';
+  hit15_SL:=Search_Line(hit0_SL, Search, hitlog);
+  if hit15_SL=-1 then error_line(Search, hitlog_name) else
+  begin
+    hitlog13_SL:=hitlog.Strings[hit15_SL];
+    hitlog13_SL:=new_change_str(Search, hitlog13_SL);
+    LabeledEdit3.Text :=DelStartEnd(hitlog13_SL);
+  end;
+
+  Search:='"formatHeader"';
+  hit16_SL:=Search_Line(hit0_SL, Search, hitlog);
+  if hit16_SL=-1 then error_line(Search, hitlog_name) else
+  begin
+    hitlog14_SL:=hitlog.Strings[hit16_SL];
+    hitlog14_SL:=new_change_str(Search, hitlog14_SL);
+    LabeledEdit4.Text :=DelStartEnd(hitlog14_SL);
+  end;
+
+  Search:='"formatHistory"';
+  hit17_SL:=Search_Line(hit0_SL, Search, hitlog);
+  if hit17_SL=-1 then error_line(Search, hitlog_name) else
+  begin
+    hitlog15_SL:=hitlog.Strings[hit17_SL];
+    hitlog15_SL:=new_change_str(Search, hitlog15_SL);
+    LabeledEdit5.Text :=DelStartEnd(hitlog15_SL);
+  end;
+
+  hit18_SL:=Search_Line(0, '"shadow"', hitlog);
+  if hit18_SL=-1 then error_line('"shadow"', hitlog_name) else
+  begin
+    Search:='"alpha"';
+    hit19_SL:=Search_Line(hit18_SL, Search, hitlog);
+    if hit19_SL=-1 then error_line(Search, hitlog_name) else
+    begin
+      hitlog16_SL:=hitlog.Strings[hit19_SL];
+      hitlog16_SL:=new_change_str(Search, hitlog16_SL);
+      SpinEdit65.Value := StrToInt(hitlog16_SL);
+    end;
+
+    Search:='"color"';
+    hit20_SL:=Search_Line(hit18_SL, Search, hitlog);
+    if hit20_SL=-1 then error_line(Search, hitlog_name) else
+    begin
+      hitlog17_SL:=hitlog.Strings[hit20_SL];
+      hitlog17_SL:=DelStartEnd(new_change_str(Search, hitlog17_SL));
+      mbColorPreview12.Color := HexToTColor(hitlog17_SL);
+      Edit61.Text := '#' + hitlog17_SL;
+    end;
+
+    Search:='"angle"';
+    hit21_SL:=Search_Line(hit18_SL, Search, hitlog);
+    if hit21_SL=-1 then error_line(Search, hitlog_name) else
+    begin
+      hitlog18_SL:=hitlog.Strings[hit21_SL];
+      hitlog18_SL:=new_change_str(Search, hitlog18_SL);
+      SpinEdit66.Value := StrToInt(hitlog18_SL);
+    end;
+
+    Search:='"distance"';
+    hit22_SL:=Search_Line(hit18_SL, Search, hitlog);
+    if hit22_SL=-1 then error_line(Search, hitlog_name) else
+    begin
+      hitlog19_SL:=hitlog.Strings[hit22_SL];
+      hitlog19_SL:=new_change_str(Search, hitlog19_SL);
+      SpinEdit67.Value := StrToInt(hitlog19_SL);
+    end;
+
+    Search:='"size"';
+    hit23_SL:=Search_Line(hit18_SL, Search, hitlog);
+    if hit23_SL=-1 then error_line(Search, hitlog_name) else
+    begin
+      hitlog20_SL:=hitlog.Strings[hit23_SL];
+      hitlog20_SL:=new_change_str(Search, hitlog20_SL);
+      SpinEdit68.Value := StrToInt(hitlog20_SL);
+    end;
+
+    Search:='"strength"';
+    hit24_SL:=Search_Line(hit18_SL, Search, hitlog);
+    if hit24_SL=-1 then error_line(Search, hitlog_name) else
+    begin
+      hitlog21_SL:=hitlog.Strings[hit24_SL];
+      hitlog21_SL:=new_change_str(Search, hitlog21_SL);
+      SpinEdit69.Value := StrToInt(hitlog21_SL);
+    end;
+  end;
+end;
+
+procedure TXCTuner_Form1.hitlog_save;
+begin
+  if (RadioButton5.Checked=True) then chek1:='true' else chek1:='false';
+  if (RadioButton9.Checked=True) then chek2:='true' else chek2:='false';
+  if (CheckBox6.Checked=True) then chek3:='true' else chek3:='false';
+  hitlog0_SL:=hitlog.Strings[hit1_SL];
+  hitlog0_SL:=Smart_Replacing('"visible"', hitlog0_SL, chek1);
+  hitlog.Delete(hit1_SL);
+  hitlog.Insert(hit1_SL, hitlog0_SL);
+
+  hitlog1_SL:=hitlog.Strings[hit3_SL];
+  hitlog1_SL:=Smart_Replacing('"enabled"', hitlog1_SL, chek2);
+  hitlog.Delete(hit3_SL);
+  hitlog.Insert(hit3_SL, hitlog1_SL);
+
+  hitlog2_SL:=hitlog.Strings[hit4_SL];
+  hitlog2_SL:=Smart_Replacing('"header"', hitlog2_SL, RecStartEnd(Edit59.Text));
+  hitlog.Delete(hit4_SL);
+  hitlog.Insert(hit4_SL, hitlog2_SL);
+
+  hitlog3_SL:=hitlog.Strings[hit5_SL];
+  hitlog3_SL:=Smart_Replacing('"format"', hitlog3_SL, RecStartEnd(Edit60.Text));
+  hitlog.Delete(hit5_SL);
+  hitlog.Insert(hit5_SL, hitlog3_SL);
+
+  hitlog4_SL:=hitlog.Strings[hit6_SL];
+  hitlog4_SL:=Smart_Replacing('"x"', hitlog4_SL, IntToStr(SpinEdit60.Value));
+  hitlog.Delete(hit6_SL);
+  hitlog.Insert(hit6_SL, hitlog4_SL);
+
+  hitlog5_SL:=hitlog.Strings[hit7_SL];
+  hitlog5_SL:=Smart_Replacing('"y"', hitlog5_SL, IntToStr(SpinEdit61.Value));
+  hitlog.Delete(hit7_SL);
+  hitlog.Insert(hit7_SL, hitlog5_SL);
+
+  hitlog6_SL:=hitlog.Strings[hit8_SL];
+  hitlog6_SL:=Smart_Replacing('"w"', hitlog6_SL, IntToStr(SpinEdit62.Value));
+  hitlog.Delete(hit8_SL);
+  hitlog.Insert(hit8_SL, hitlog6_SL);
+
+  hitlog7_SL:=hitlog.Strings[hit9_SL];
+  hitlog7_SL:=Smart_Replacing('"h"', hitlog7_SL, IntToStr(SpinEdit63.Value));
+  hitlog.Delete(hit9_SL);
+  hitlog.Insert(hit9_SL, hitlog7_SL);
+
+  hitlog8_SL:=hitlog.Strings[hit10_SL];
+  hitlog8_SL:=Smart_Replacing('"lines"', hitlog8_SL, IntToStr(SpinEdit64.Value));
+  hitlog.Delete(hit10_SL);
+  hitlog.Insert(hit10_SL, hitlog8_SL);
+
+  hitlog9_SL:=hitlog.Strings[hit11_SL];
+  hitlog9_SL:=Smart_Replacing('"direction"', hitlog9_SL, RecStartEnd(ComboBox9.Items[ComboBox9.ItemIndex]));
+  hitlog.Delete(hit11_SL);
+  hitlog.Insert(hit11_SL, hitlog9_SL);
+
+  hitlog10_SL:=hitlog.Strings[hit12_SL];
+  hitlog10_SL:=Smart_Replacing('"groupHitsByPlayer"', hitlog10_SL, chek3);
+  hitlog.Delete(hit12_SL);
+  hitlog.Insert(hit12_SL, hitlog10_SL);
+
+  hitlog22_SL:=hitlog.Strings[hit25_SL];
+  hitlog22_SL:=Smart_Replacing('"insertOrder"', hitlog22_SL, RecStartEnd(ComboBox10.Items[ComboBox10.ItemIndex]));
+  hitlog.Delete(hit25_SL);
+  hitlog.Insert(hit25_SL, hitlog22_SL);
+
+  hitlog11_SL:=hitlog.Strings[hit13_SL];
+  hitlog11_SL:=Smart_Replacing('"deadMarker"', hitlog11_SL, RecStartEnd(LabeledEdit1.Text));
+  hitlog.Delete(hit13_SL);
+  hitlog.Insert(hit13_SL, hitlog11_SL);
+
+  hitlog12_SL:=hitlog.Strings[hit14_SL];
+  hitlog12_SL:=Smart_Replacing('"blowupMarker"', hitlog12_SL, RecStartEnd(LabeledEdit2.Text));
+  hitlog.Delete(hit14_SL);
+  hitlog.Insert(hit14_SL, hitlog12_SL);
+
+  hitlog13_SL:=hitlog.Strings[hit15_SL];
+  hitlog13_SL:=Smart_Replacing('"defaultHeader"', hitlog13_SL, RecStartEnd(LabeledEdit3.Text));
+  hitlog.Delete(hit15_SL);
+  hitlog.Insert(hit15_SL, hitlog13_SL);
+
+  hitlog14_SL:=hitlog.Strings[hit16_SL];
+  hitlog14_SL:=Smart_Replacing('"formatHeader"', hitlog14_SL, RecStartEnd(LabeledEdit4.Text));
+  hitlog.Delete(hit16_SL);
+  hitlog.Insert(hit16_SL, hitlog14_SL);
+
+  hitlog15_SL:=hitlog.Strings[hit17_SL];
+  hitlog15_SL:=Smart_Replacing('"formatHistory"', hitlog15_SL, RecStartEnd(LabeledEdit5.Text));
+  hitlog.Delete(hit17_SL);
+  hitlog.Insert(hit17_SL, hitlog15_SL);
+
+  hitlog16_SL:=hitlog.Strings[hit19_SL];
+  hitlog16_SL:=Smart_Replacing('"alpha"', hitlog16_SL, IntToStr(SpinEdit65.Value));
+  hitlog.Delete(hit19_SL);
+  hitlog.Insert(hit19_SL, hitlog16_SL);
+
+  hitlog17_SL:=hitlog.Strings[hit20_SL];
+  hitlog17_SL:=Smart_Replacing('"color"', hitlog17_SL, RecStartEnd(Edit61.Text));
+  hitlog.Delete(hit20_SL);
+  hitlog.Insert(hit20_SL, hitlog17_SL);
+
+  hitlog18_SL:=hitlog.Strings[hit21_SL];
+  hitlog18_SL:=Smart_Replacing('"angle"', hitlog18_SL, IntToStr(SpinEdit66.Value));
+  hitlog.Delete(hit21_SL);
+  hitlog.Insert(hit21_SL, hitlog18_SL);
+
+  hitlog19_SL:=hitlog.Strings[hit22_SL];
+  hitlog19_SL:=Smart_Replacing('"distance"', hitlog19_SL, IntToStr(SpinEdit67.Value));
+  hitlog.Delete(hit22_SL);
+  hitlog.Insert(hit22_SL, hitlog19_SL);
+
+  hitlog20_SL:=hitlog.Strings[hit23_SL];
+  hitlog20_SL:=Smart_Replacing('"size"', hitlog20_SL, IntToStr(SpinEdit68.Value));
+  hitlog.Delete(hit23_SL);
+  hitlog.Insert(hit23_SL, hitlog20_SL);
+
+  hitlog21_SL:=hitlog.Strings[hit24_SL];
+  hitlog21_SL:=Smart_Replacing('"strength"', hitlog21_SL, IntToStr(SpinEdit69.Value));
+  hitlog.Delete(hit24_SL);
+  hitlog.Insert(hit24_SL, hitlog21_SL);
+
+  hitlog.SaveToFile(dir_xvm+hitlog_name);
 end;
 
 // Загрузка из файла
@@ -9253,4 +9545,6 @@ end;
 *)
 
 end.
+
+
 

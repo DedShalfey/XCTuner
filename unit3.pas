@@ -5,8 +5,7 @@ unit Unit3;
 interface
 
 uses
-  Classes, SysUtils, FileUtil, Forms, Controls, Graphics, Dialogs,
-  Buttons, StdCtrls, EditBtn;
+  Forms, Buttons, StdCtrls, EditBtn;
 
 type
 

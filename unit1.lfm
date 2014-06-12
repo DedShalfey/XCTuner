@@ -1,13 +1,13 @@
 object XCTuner_Form1: TXCTuner_Form1
-  Left = 486
-  Height = 594
-  Top = 112
-  Width = 1022
+  Left = 314
+  Height = 520
+  Top = 137
+  Width = 940
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'XCTuner'
-  ClientHeight = 594
-  ClientWidth = 1022
+  ClientHeight = 520
+  ClientWidth = 940
   Icon.Data = {
     BE1000000000010001002020000001002000A810000016000000280000002000
     0000400000000100200000000000001000006400000064000000000000000000
@@ -151,11 +151,11 @@ object XCTuner_Form1: TXCTuner_Form1
   LCLVersion = '1.3'
   object Panel1: TPanel
     Left = 0
-    Height = 594
+    Height = 520
     Top = 0
     Width = 170
     Align = alLeft
-    ClientHeight = 594
+    ClientHeight = 520
     ClientWidth = 170
     Color = clGradientInactiveCaption
     ParentColor = False
@@ -193,7 +193,7 @@ object XCTuner_Form1: TXCTuner_Form1
       Left = 1
       Height = 46
       Hint = 'Закрыть программу'
-      Top = 547
+      Top = 473
       Width = 168
       Align = alBottom
       Caption = 'Выход  '
@@ -284,7 +284,7 @@ object XCTuner_Form1: TXCTuner_Form1
       Left = 1
       Height = 38
       Hint = 'Просмотреть сведения о программе...'
-      Top = 509
+      Top = 435
       Width = 168
       Align = alBottom
       Caption = 'About'
@@ -486,15 +486,28 @@ object XCTuner_Form1: TXCTuner_Form1
       ShowHint = True
       TabOrder = 12
     end
+    object BitBtn18: TBitBtn
+      Cursor = crHandPoint
+      Left = 1
+      Height = 24
+      Top = 264
+      Width = 168
+      Align = alTop
+      Caption = 'Лог попаданий'
+      OnClick = BitBtn18Click
+      ParentShowHint = False
+      ShowHint = True
+      TabOrder = 13
+    end
   end
   object PageControl1: TPageControl
     Left = 186
     Height = 594
     Top = 0
     Width = 836
-    ActivePage = TabSheet18
+    ActivePage = TabSheet1
     Align = alCustom
-    TabIndex = 10
+    TabIndex = 0
     TabOrder = 1
     object TabSheet1: TTabSheet
       Caption = 'Общие'
@@ -773,7 +786,7 @@ object XCTuner_Form1: TXCTuner_Form1
         end
         object TabSheet13: TTabSheet
           Caption = 'Блок Управления Статистикой'
-          ClientHeight = 542
+          ClientHeight = 538
           ClientWidth = 820
           object GroupBox1: TGroupBox
             Left = 71
@@ -798,9 +811,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton13: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 71
+                Width = 77
                 Caption = 'Включено'
                 Checked = True
                 ParentShowHint = False
@@ -810,9 +823,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton14: TRadioButton
                 Cursor = crHandPoint
                 Left = 142
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 79
+                Width = 84
                 Caption = 'Отключено'
                 TabOrder = 0
               end
@@ -851,9 +864,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton15: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 71
+                Width = 76
                 Caption = 'Включена'
                 Checked = True
                 TabOrder = 1
@@ -862,9 +875,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton16: TRadioButton
                 Cursor = crHandPoint
                 Left = 142
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 79
+                Width = 83
                 Caption = 'Отключена'
                 TabOrder = 0
               end
@@ -903,9 +916,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton17: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 71
+                Width = 77
                 Caption = 'Включено'
                 Checked = True
                 TabOrder = 1
@@ -914,9 +927,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton18: TRadioButton
                 Cursor = crHandPoint
                 Left = 142
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 79
+                Width = 84
                 Caption = 'Отключено'
                 TabOrder = 0
               end
@@ -955,9 +968,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton19: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 71
+                Width = 76
                 Caption = 'Включена'
                 Checked = True
                 TabOrder = 1
@@ -966,9 +979,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton20: TRadioButton
                 Cursor = crHandPoint
                 Left = 142
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 79
+                Width = 83
                 Caption = 'Отключена'
                 TabOrder = 0
               end
@@ -1007,9 +1020,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton21: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 71
+                Width = 77
                 Caption = 'Включено'
                 Checked = True
                 TabOrder = 1
@@ -1018,9 +1031,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton22: TRadioButton
                 Cursor = crHandPoint
                 Left = 142
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 79
+                Width = 84
                 Caption = 'Отключено'
                 TabOrder = 0
               end
@@ -1228,7 +1241,7 @@ object XCTuner_Form1: TXCTuner_Form1
         end
         object TabSheet14: TTabSheet
           Caption = 'Общие Параметра Боевого Интерфейса'
-          ClientHeight = 542
+          ClientHeight = 538
           ClientWidth = 820
           object GroupBox7: TGroupBox
             Left = 78
@@ -1252,9 +1265,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton1: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 71
+                Width = 77
                 Caption = 'Включено'
                 Checked = True
                 ParentShowHint = False
@@ -1264,9 +1277,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton2: TRadioButton
                 Cursor = crHandPoint
                 Left = 142
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 79
+                Width = 84
                 Caption = 'Отключено'
                 TabOrder = 0
               end
@@ -1305,9 +1318,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton3: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 71
+                Width = 76
                 Caption = 'Включена'
                 Checked = True
                 TabOrder = 1
@@ -1316,9 +1329,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton4: TRadioButton
                 Cursor = crHandPoint
                 Left = 142
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 79
+                Width = 83
                 Caption = 'Отключена'
                 TabOrder = 0
               end
@@ -1357,9 +1370,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton7: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 71
+                Width = 76
                 Caption = 'Включена'
                 Checked = True
                 TabOrder = 1
@@ -1368,9 +1381,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton8: TRadioButton
                 Cursor = crHandPoint
                 Left = 142
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 79
+                Width = 83
                 Caption = 'Отключена'
                 TabOrder = 0
               end
@@ -1409,9 +1422,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton11: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 71
+                Width = 77
                 Caption = 'Включено'
                 Checked = True
                 TabOrder = 1
@@ -1420,9 +1433,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton12: TRadioButton
                 Cursor = crHandPoint
                 Left = 142
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 79
+                Width = 84
                 Caption = 'Отключено'
                 TabOrder = 0
               end
@@ -1639,10 +1652,10 @@ object XCTuner_Form1: TXCTuner_Form1
               object Label17: TLabel
                 Cursor = crHelp
                 Left = 21
-                Height = 13
+                Height = 15
                 Hint = 'Задержка исчезновения панели. Оригинальное значение было 5'
                 Top = 8
-                Width = 55
+                Width = 56
                 Caption = 'Задержка:'
                 ParentColor = False
                 ParentShowHint = False
@@ -1651,10 +1664,10 @@ object XCTuner_Form1: TXCTuner_Form1
               object Label18: TLabel
                 Cursor = crHelp
                 Left = 21
-                Height = 13
+                Height = 15
                 Hint = 'Увеличение панели. 100 в оригинале.'
                 Top = 40
-                Width = 65
+                Width = 69
                 Caption = 'Увеличение:'
                 ParentColor = False
                 ParentShowHint = False
@@ -1662,7 +1675,7 @@ object XCTuner_Form1: TXCTuner_Form1
               end
               object SpinEdit1: TSpinEdit
                 Left = 150
-                Height = 21
+                Height = 23
                 Hint = 'Задержка исчезновения панели в сек.!'
                 Top = 7
                 Width = 50
@@ -1675,7 +1688,7 @@ object XCTuner_Form1: TXCTuner_Form1
               end
               object SpinEdit2: TSpinEdit
                 Left = 150
-                Height = 21
+                Height = 23
                 Hint = 'Увеличение панели в %'
                 Top = 38
                 Width = 50
@@ -1712,15 +1725,15 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object Label66: TLabel
               Left = 14
-              Height = 13
+              Height = 15
               Top = 206
-              Width = 74
+              Width = 81
               Caption = 'Формат часов:'
               ParentColor = False
             end
             object Edit24: TEdit
               Left = 107
-              Height = 21
+              Height = 23
               Hint = 'Формат часов на экране панели отладки (возле FPS). Формат: "Y.m.d H:i:s" => 2013.05.20 01:23:45, "H:i" => 01:23, Y:год, M:месяц, D:день, H:часы, N:минуты, S:секунды. Чтобы убрать часы, нужно оставить поле пустым!'
               Top = 203
               Width = 147
@@ -1753,15 +1766,15 @@ object XCTuner_Form1: TXCTuner_Form1
             end
             object Label67: TLabel
               Left = 14
-              Height = 13
+              Height = 15
               Top = 249
-              Width = 81
+              Width = 88
               Caption = 'ClanIconsFolder:'
               ParentColor = False
             end
             object Edit25: TEdit
               Left = 107
-              Height = 21
+              Height = 23
               Hint = 'Путь к папке иконок кланов относительно res_mods/xvm/res'
               Top = 245
               Width = 147
@@ -1804,9 +1817,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton81: TRadioButton
                 Cursor = crHandPoint
                 Left = 14
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 71
+                Width = 77
                 Caption = 'Включено'
                 Checked = True
                 TabOrder = 1
@@ -1815,9 +1828,9 @@ object XCTuner_Form1: TXCTuner_Form1
               object RadioButton82: TRadioButton
                 Cursor = crHandPoint
                 Left = 142
-                Height = 17
+                Height = 19
                 Top = 8
-                Width = 79
+                Width = 84
                 Caption = 'Отключено'
                 TabOrder = 0
               end
@@ -12325,7 +12338,6 @@ object XCTuner_Form1: TXCTuner_Form1
                 Caption = 'Основные 2 круга:'
                 ClientHeight = 376
                 ClientWidth = 604
-                Enabled = False
                 TabOrder = 1
                 Visible = False
                 object GroupBox92: TGroupBox
@@ -12337,6 +12349,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   ClientHeight = 166
                   ClientWidth = 588
                   TabOrder = 0
+                  Visible = False
                   object Label137: TLabel
                     Left = 14
                     Height = 15
@@ -12707,6 +12720,7 @@ object XCTuner_Form1: TXCTuner_Form1
                   ClientHeight = 166
                   ClientWidth = 588
                   TabOrder = 1
+                  Visible = False
                   object Label141: TLabel
                     Left = 14
                     Height = 15
@@ -14959,9 +14973,9 @@ object XCTuner_Form1: TXCTuner_Form1
             Height = 538
             Top = 0
             Width = 820
-            ActivePage = TabSheet85
+            ActivePage = TabSheet84
             Align = alClient
-            TabIndex = 1
+            TabIndex = 0
             TabOrder = 0
             object TabSheet84: TTabSheet
               Caption = '... по различным статистическим показателям'
@@ -14988,8 +15002,8 @@ object XCTuner_Form1: TXCTuner_Form1
                 Height = 510
                 Top = 0
                 Width = 812
-                HorzScrollBar.Page = 812
-                VertScrollBar.Page = 510
+                HorzScrollBar.Page = 795
+                VertScrollBar.Page = 493
                 Align = alClient
                 BorderStyle = bsNone
                 TabOrder = 0
@@ -15433,11 +15447,1182 @@ object XCTuner_Form1: TXCTuner_Form1
         TabOrder = 2
       end
     end
+    object TabSheet68: TTabSheet
+      Caption = 'Лог попаданий'
+      ClientHeight = 566
+      ClientWidth = 828
+      object PageControl18: TPageControl
+        Left = 0
+        Height = 566
+        Top = 0
+        Width = 828
+        ActivePage = TabSheet86
+        Align = alClient
+        TabIndex = 0
+        TabOrder = 0
+        object TabSheet86: TTabSheet
+          Caption = 'Общие настройки'
+          ClientHeight = 538
+          ClientWidth = 820
+          object GroupBox98: TGroupBox
+            Left = 12
+            Height = 48
+            Top = 16
+            Width = 256
+            Caption = 'Лог попаданий'
+            ClientHeight = 30
+            ClientWidth = 252
+            TabOrder = 0
+            object RadioButton6: TRadioButton
+              Left = 110
+              Height = 19
+              Top = 4
+              Width = 84
+              Caption = 'Отключено'
+              TabOrder = 0
+            end
+            object RadioButton5: TRadioButton
+              Left = 22
+              Height = 19
+              Top = 4
+              Width = 77
+              Caption = 'Включено'
+              TabOrder = 1
+            end
+            object Image179: TImage
+              Cursor = crHandPoint
+              Left = 214
+              Height = 16
+              Top = 6
+              Width = 16
+              OnClick = Image179Click
+              Picture.Data = {
+                1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+                0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+                0467414D410000AFC837058AE90000001974455874536F667477617265004164
+                6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+                F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+                E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+                3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+                8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+                2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+                2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+                4E44AE426082
+              }
+            end
+          end
+          object GroupBox99: TGroupBox
+            Left = 12
+            Height = 128
+            Top = 72
+            Width = 720
+            Caption = 'Оставшееся HP врагов по нажатию Alt'
+            ClientHeight = 110
+            ClientWidth = 716
+            TabOrder = 1
+            object RadioButton9: TRadioButton
+              Left = 22
+              Height = 19
+              Top = 5
+              Width = 77
+              Caption = 'Включено'
+              TabOrder = 0
+            end
+            object RadioButton10: TRadioButton
+              Left = 110
+              Height = 19
+              Top = 5
+              Width = 84
+              Caption = 'Отключено'
+              TabOrder = 1
+            end
+            object Label161: TLabel
+              Left = 10
+              Height = 15
+              Top = 35
+              Width = 64
+              Caption = 'Заголовок: '
+              ParentColor = False
+            end
+            object Edit59: TEdit
+              Left = 80
+              Height = 23
+              Top = 32
+              Width = 600
+              TabOrder = 2
+            end
+            object Label162: TLabel
+              Left = 10
+              Height = 15
+              Top = 64
+              Width = 152
+              Caption = 'Строка в списке попаданий'
+              ParentColor = False
+            end
+            object Edit60: TEdit
+              Left = 10
+              Height = 23
+              Top = 80
+              Width = 670
+              TabOrder = 3
+            end
+            object Image183: TImage
+              Cursor = crHandPoint
+              Left = 214
+              Height = 16
+              Top = 8
+              Width = 16
+              OnClick = Image183Click
+              Picture.Data = {
+                1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+                0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+                0467414D410000AFC837058AE90000001974455874536F667477617265004164
+                6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+                F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+                E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+                3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+                8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+                2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+                2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+                4E44AE426082
+              }
+            end
+            object Image184: TImage
+              Cursor = crHandPoint
+              Left = 688
+              Height = 16
+              Top = 39
+              Width = 16
+              OnClick = Image184Click
+              Picture.Data = {
+                1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+                0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+                0467414D410000AFC837058AE90000001974455874536F667477617265004164
+                6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+                F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+                E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+                3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+                8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+                2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+                2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+                4E44AE426082
+              }
+            end
+            object Image185: TImage
+              Cursor = crHandPoint
+              Left = 688
+              Height = 16
+              Top = 87
+              Width = 16
+              OnClick = Image185Click
+              Picture.Data = {
+                1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+                0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+                0467414D410000AFC837058AE90000001974455874536F667477617265004164
+                6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+                F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+                E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+                3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+                8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+                2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+                2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+                4E44AE426082
+              }
+            end
+          end
+          object Label163: TLabel
+            Left = 12
+            Height = 15
+            Top = 221
+            Width = 101
+            Caption = 'Позиция по оси Х:'
+            ParentColor = False
+          end
+          object Label164: TLabel
+            Left = 12
+            Height = 15
+            Top = 254
+            Width = 101
+            Caption = 'Позиция по оси Y:'
+            ParentColor = False
+          end
+          object Label165: TLabel
+            Left = 12
+            Height = 15
+            Top = 287
+            Width = 48
+            Caption = 'Ширина:'
+            ParentColor = False
+          end
+          object Label166: TLabel
+            Left = 12
+            Height = 15
+            Top = 320
+            Width = 43
+            Caption = 'Высота:'
+            ParentColor = False
+          end
+          object Label167: TLabel
+            Left = 12
+            Height = 30
+            Top = 349
+            Width = 102
+            Caption = 'Количество строк '#13#10'с попаданиями:'
+            ParentColor = False
+          end
+          object Label168: TLabel
+            Left = 12
+            Height = 15
+            Top = 397
+            Width = 105
+            Caption = 'Направление лога:'
+            ParentColor = False
+          end
+          object ComboBox9: TComboBox
+            Left = 158
+            Height = 23
+            Top = 392
+            Width = 100
+            ItemHeight = 15
+            Items.Strings = (
+              'up'
+              'down'
+            )
+            Style = csDropDownList
+            TabOrder = 2
+          end
+          object SpinEdit64: TSpinEdit
+            Left = 124
+            Height = 23
+            Top = 354
+            Width = 64
+            OnChange = SpinEdit64Change
+            TabOrder = 3
+          end
+          object SpinEdit63: TSpinEdit
+            Left = 123
+            Height = 23
+            Top = 317
+            Width = 64
+            MaxValue = 1000
+            OnChange = SpinEdit63Change
+            TabOrder = 4
+          end
+          object SpinEdit62: TSpinEdit
+            Left = 123
+            Height = 23
+            Top = 284
+            Width = 64
+            MaxValue = 1000
+            OnChange = SpinEdit62Change
+            TabOrder = 5
+          end
+          object SpinEdit61: TSpinEdit
+            Left = 123
+            Height = 23
+            Top = 251
+            Width = 64
+            MaxValue = 1000
+            MinValue = -400
+            OnChange = SpinEdit61Change
+            TabOrder = 6
+          end
+          object SpinEdit60: TSpinEdit
+            Left = 123
+            Height = 23
+            Top = 218
+            Width = 64
+            MaxValue = 1000
+            MinValue = -400
+            OnChange = SpinEdit60Change
+            TabOrder = 7
+          end
+          object TrackBar52: TTrackBar
+            Cursor = crHandPoint
+            Left = 195
+            Height = 30
+            Top = 216
+            Width = 507
+            Max = 1000
+            Min = -400
+            OnChange = TrackBar52Change
+            PageSize = 10
+            Position = 0
+            SelStart = -400
+            TickMarks = tmBoth
+            TickStyle = tsNone
+            TabOrder = 8
+          end
+          object TrackBar53: TTrackBar
+            Cursor = crHandPoint
+            Left = 195
+            Height = 30
+            Top = 249
+            Width = 507
+            Max = 1000
+            Min = -400
+            OnChange = rackBar53Change
+            PageSize = 10
+            Position = 0
+            SelStart = -400
+            TickMarks = tmBoth
+            TickStyle = tsNone
+            TabOrder = 9
+          end
+          object TrackBar54: TTrackBar
+            Cursor = crHandPoint
+            Left = 195
+            Height = 30
+            Top = 282
+            Width = 507
+            Max = 1000
+            OnChange = TrackBar54Change
+            PageSize = 10
+            Position = 0
+            TickMarks = tmBoth
+            TickStyle = tsNone
+            TabOrder = 10
+          end
+          object TrackBar55: TTrackBar
+            Cursor = crHandPoint
+            Left = 195
+            Height = 30
+            Top = 315
+            Width = 507
+            Max = 1000
+            OnChange = TrackBar55Change
+            PageSize = 10
+            Position = 0
+            TickMarks = tmBoth
+            TickStyle = tsNone
+            TabOrder = 11
+          end
+          object TrackBar56: TTrackBar
+            Cursor = crHandPoint
+            Left = 195
+            Height = 30
+            Top = 352
+            Width = 507
+            Max = 100
+            OnChange = TrackBar56Change
+            PageSize = 10
+            Position = 0
+            TickMarks = tmBoth
+            TickStyle = tsNone
+            TabOrder = 12
+          end
+          object CheckBox6: TCheckBox
+            Left = 319
+            Height = 19
+            Top = 395
+            Width = 256
+            Caption = 'Группировать попадания по имени игрока'
+            TabOrder = 13
+          end
+          object Image187: TImage
+            Cursor = crHandPoint
+            Left = 702
+            Height = 16
+            Top = 222
+            Width = 16
+            OnClick = Image187Click
+            Picture.Data = {
+              1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+              0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+              0467414D410000AFC837058AE90000001974455874536F667477617265004164
+              6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+              F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+              E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+              3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+              8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+              2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+              2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+              4E44AE426082
+            }
+          end
+          object Image188: TImage
+            Cursor = crHandPoint
+            Left = 702
+            Height = 16
+            Top = 255
+            Width = 16
+            OnClick = Image188Click
+            Picture.Data = {
+              1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+              0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+              0467414D410000AFC837058AE90000001974455874536F667477617265004164
+              6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+              F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+              E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+              3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+              8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+              2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+              2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+              4E44AE426082
+            }
+          end
+          object Image189: TImage
+            Cursor = crHandPoint
+            Left = 702
+            Height = 16
+            Top = 288
+            Width = 16
+            OnClick = Image189Click
+            Picture.Data = {
+              1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+              0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+              0467414D410000AFC837058AE90000001974455874536F667477617265004164
+              6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+              F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+              E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+              3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+              8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+              2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+              2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+              4E44AE426082
+            }
+          end
+          object Image190: TImage
+            Cursor = crHandPoint
+            Left = 702
+            Height = 16
+            Top = 321
+            Width = 16
+            OnClick = Image190Click
+            Picture.Data = {
+              1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+              0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+              0467414D410000AFC837058AE90000001974455874536F667477617265004164
+              6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+              F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+              E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+              3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+              8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+              2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+              2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+              4E44AE426082
+            }
+          end
+          object Image191: TImage
+            Cursor = crHandPoint
+            Left = 702
+            Height = 16
+            Top = 358
+            Width = 16
+            OnClick = Image191Click
+            Picture.Data = {
+              1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+              0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+              0467414D410000AFC837058AE90000001974455874536F667477617265004164
+              6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+              F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+              E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+              3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+              8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+              2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+              2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+              4E44AE426082
+            }
+          end
+          object Image192: TImage
+            Cursor = crHandPoint
+            Left = 265
+            Height = 16
+            Top = 396
+            Width = 16
+            OnClick = Image192Click
+            Picture.Data = {
+              1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+              0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+              0467414D410000AFC837058AE90000001974455874536F667477617265004164
+              6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+              F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+              E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+              3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+              8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+              2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+              2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+              4E44AE426082
+            }
+          end
+          object Image193: TImage
+            Cursor = crHandPoint
+            Left = 577
+            Height = 16
+            Top = 396
+            Width = 16
+            OnClick = Image193Click
+            Picture.Data = {
+              1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+              0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+              0467414D410000AFC837058AE90000001974455874536F667477617265004164
+              6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+              F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+              E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+              3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+              8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+              2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+              2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+              4E44AE426082
+            }
+          end
+          object Label175: TLabel
+            Left = 12
+            Height = 15
+            Top = 427
+            Width = 132
+            Caption = 'Сортировка попаданий:'
+            ParentColor = False
+          end
+          object ComboBox10: TComboBox
+            Left = 158
+            Height = 23
+            Top = 424
+            Width = 100
+            ItemHeight = 15
+            Items.Strings = (
+              'begin'
+              'end'
+            )
+            Style = csDropDownList
+            TabOrder = 14
+          end
+          object Image200: TImage
+            Cursor = crHandPoint
+            Left = 265
+            Height = 16
+            Top = 427
+            Width = 16
+            OnClick = Image200Click
+            Picture.Data = {
+              1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+              0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+              0467414D410000AFC837058AE90000001974455874536F667477617265004164
+              6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+              F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+              E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+              3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+              8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+              2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+              2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+              4E44AE426082
+            }
+          end
+        end
+        object TabSheet87: TTabSheet
+          Caption = 'Расширенные настройки'
+          ClientHeight = 538
+          ClientWidth = 820
+          object GroupBox97: TGroupBox
+            Left = 10
+            Height = 120
+            Top = 256
+            Width = 444
+            Caption = 'Параметры Тени:'
+            ClientHeight = 102
+            ClientWidth = 440
+            TabOrder = 0
+            object Label169: TLabel
+              Left = 10
+              Height = 15
+              Top = 43
+              Width = 82
+              Caption = 'Прозрачность:'
+              ParentColor = False
+            end
+            object SpinEdit65: TSpinEdit
+              Left = 114
+              Height = 23
+              Top = 40
+              Width = 50
+              TabOrder = 0
+            end
+            object Label170: TLabel
+              Left = 10
+              Height = 15
+              Top = 8
+              Width = 29
+              Caption = 'Цвет:'
+              ParentColor = False
+            end
+            object mbColorPreview12: TmbColorPreview
+              Left = 122
+              Height = 23
+              Top = 6
+              Width = 23
+            end
+            object BitBtn19: TBitBtn
+              Left = 150
+              Height = 34
+              Top = 0
+              Width = 54
+              Glyph.Data = {
+                36090000424D3609000000000000360000002800000018000000180000000100
+                2000000000000009000064000000640000000000000000000000FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF008EBADDFF86B4
+                D8FF6085A5FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF0097BFDFFF88B6
+                DBFF6E96B8FF4B6A84FF1A2630FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF000000FF000000FF000000FF406B77FF9DC3E1FF8EBA
+                DDFF87B5DAFF688FB0FF4A6881FF3B5367FF152029FF000000FF000000FF0000
+                00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF365B66FF7EA9C7FFACCC
+                E6FF86B1D3FF92B8D6FF749FC2FF6185A1FF4C6B83FF24323DFF2C2D21FFEC7E
+                E0FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF7ED3EAFF5F8398FFB6D2
+                E8FFA5C8E3FF96BEDEFFA1C5E0FF80ACD0FF739CBDFF4E6C84FF475658FFEC7E
+                E0FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF6097ABFF98BA
+                D5FFB9D4E9FFACCCE5FF8EBADCFF9ABDDAFF779AB7FF5D788AFF364A56FF5B60
+                49FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF6AAEC3FF8FA9
+                BEFFB7D2E7FF9CC1DFFFA7C5DEFF7FA6C6FF86B0D3FF465D6FFF1E2426FF7275
+                57FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF80D6EEFF80D6EEFF80D6EEFF80D6EEFF7ED2EAFF768D
+                A0FF90B1CCFF96B8D3FF85ACCAFF90B7D7FF415A6FFF38464AFF435050FF7174
+                56FFEC7EE0FFEC7EE0FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF313F
+                4AFF8CA6BAFF9ABAD4FF6E96B8FF4B6374FF50687DFF384E60FF14181AFF4A4C
+                38FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF4652
+                45FF64808DFF6E8C9AFF86AFCFFF3E5767FF303932FF2A363AFF1A242AFFEE8D
+                4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                00FF9DB79AFF788D78FF7D9CB2FF6A90AFFF253034FF6F6E42FF525130FFEE8D
+                4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                00FFB8D6B4FFB8D6B4FF647870FF88AECCFF4C6B84FFEE8D4CFFEE8D4CFFEE8D
+                4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                00FFB8D6B4FFB8D6B4FFB2CFAEFF62797EFF7AA1C0FF506264FFEE8D4CFFEE8D
+                4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF430BF8FF430BF8FF430BF8FF430BF8FF430BF8FF0000
+                00FFB8D6B4FFB8D6B4FFB8D6B4FF95AE92FF6E8CA1FF648AA9FF6F7350FFEE8D
+                4CFFEE8D4CFFEE8D4CFF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF0000
+                00FF000000FF000000FF000000FF000000FF000000FF67859BFF374A57FF0000
+                00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF525734FF435050FF7877
+                28FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF929131FF7F7E2BFF9695
+                32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF53389FFF53389FFF53389FFF53389FFF53389FFF0000
+                00FF38CB4DFF38CB4DFF38CB4DFF38CB4DFF000000FF969532FF969532FF9695
+                32FF969532FF969532FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00000000FF000000FF000000FF000000FF000000FF000000FF0000
+                00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+                00FF000000FF000000FF000000FFFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+                FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00
+              }
+              OnClick = BitBtn19Click
+              TabOrder = 2
+            end
+            object Edit61: TEdit
+              Left = 50
+              Height = 23
+              Top = 5
+              Width = 68
+              Alignment = taCenter
+              OnExit = Edit61Exit
+              TabOrder = 3
+            end
+            object Label171: TLabel
+              Left = 10
+              Height = 15
+              Top = 72
+              Width = 90
+              Caption = 'Угол смещения:'
+              ParentColor = False
+            end
+            object SpinEdit66: TSpinEdit
+              Left = 114
+              Height = 23
+              Top = 69
+              Width = 50
+              MaxValue = 359
+              TabOrder = 4
+            end
+            object Label172: TLabel
+              Left = 218
+              Height = 15
+              Top = 8
+              Width = 123
+              Caption = 'Дистанция смещения:'
+              ParentColor = False
+            end
+            object SpinEdit67: TSpinEdit
+              Left = 354
+              Height = 23
+              Top = 5
+              Width = 50
+              MaxValue = 10
+              TabOrder = 5
+            end
+            object Label173: TLabel
+              Left = 218
+              Height = 15
+              Top = 43
+              Width = 43
+              Caption = 'Размер:'
+              ParentColor = False
+            end
+            object SpinEdit68: TSpinEdit
+              Left = 354
+              Height = 23
+              Top = 40
+              Width = 50
+              TabOrder = 6
+            end
+            object Label174: TLabel
+              Left = 218
+              Height = 15
+              Top = 72
+              Width = 87
+              Caption = 'Интенсивность:'
+              ParentColor = False
+            end
+            object SpinEdit69: TSpinEdit
+              Left = 354
+              Height = 23
+              Top = 69
+              Width = 50
+              MaxValue = 1000
+              TabOrder = 7
+            end
+            object Image199: TImage
+              Cursor = crHandPoint
+              Left = 418
+              Height = 16
+              Top = 0
+              Width = 16
+              OnClick = Image199Click
+              Picture.Data = {
+                1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+                0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+                0467414D410000AFC837058AE90000001974455874536F667477617265004164
+                6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+                F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+                E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+                3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+                FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+                8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+                2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+                2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+                4E44AE426082
+              }
+            end
+          end
+          object LabeledEdit1: TLabeledEdit
+            Left = 10
+            Height = 23
+            Top = 24
+            Width = 436
+            EditLabel.AnchorSideLeft.Control = LabeledEdit1
+            EditLabel.AnchorSideRight.Control = LabeledEdit1
+            EditLabel.AnchorSideRight.Side = asrBottom
+            EditLabel.AnchorSideBottom.Control = LabeledEdit1
+            EditLabel.Left = 10
+            EditLabel.Height = 15
+            EditLabel.Top = 6
+            EditLabel.Width = 436
+            EditLabel.Caption = 'Подстановка для макроса {{dead}}, когда танк умирает'
+            EditLabel.ParentColor = False
+            TabOrder = 1
+          end
+          object LabeledEdit2: TLabeledEdit
+            Left = 10
+            Height = 23
+            Top = 72
+            Width = 436
+            EditLabel.AnchorSideLeft.Control = LabeledEdit2
+            EditLabel.AnchorSideRight.Control = LabeledEdit2
+            EditLabel.AnchorSideRight.Side = asrBottom
+            EditLabel.AnchorSideBottom.Control = LabeledEdit2
+            EditLabel.Left = 10
+            EditLabel.Height = 15
+            EditLabel.Top = 54
+            EditLabel.Width = 436
+            EditLabel.Caption = 'Подстановка для макроса {{blowup}}, когда танку взрывают боеуклад'
+            EditLabel.ParentColor = False
+            TabOrder = 2
+          end
+          object LabeledEdit3: TLabeledEdit
+            Left = 10
+            Height = 23
+            Top = 120
+            Width = 676
+            EditLabel.AnchorSideLeft.Control = LabeledEdit3
+            EditLabel.AnchorSideRight.Control = LabeledEdit3
+            EditLabel.AnchorSideRight.Side = asrBottom
+            EditLabel.AnchorSideBottom.Control = LabeledEdit3
+            EditLabel.Left = 10
+            EditLabel.Height = 15
+            EditLabel.Top = 102
+            EditLabel.Width = 676
+            EditLabel.Caption = 'Формат заголовка по умолчанию (до первого попадания)'
+            EditLabel.ParentColor = False
+            TabOrder = 3
+          end
+          object LabeledEdit4: TLabeledEdit
+            Left = 10
+            Height = 23
+            Top = 168
+            Width = 676
+            EditLabel.AnchorSideLeft.Control = LabeledEdit4
+            EditLabel.AnchorSideRight.Control = LabeledEdit4
+            EditLabel.AnchorSideRight.Side = asrBottom
+            EditLabel.AnchorSideBottom.Control = LabeledEdit4
+            EditLabel.Left = 10
+            EditLabel.Height = 15
+            EditLabel.Top = 150
+            EditLabel.Width = 676
+            EditLabel.Caption = 'Формат заголовка'
+            EditLabel.ParentColor = False
+            TabOrder = 4
+          end
+          object LabeledEdit5: TLabeledEdit
+            Left = 10
+            Height = 23
+            Top = 216
+            Width = 676
+            EditLabel.AnchorSideLeft.Control = LabeledEdit5
+            EditLabel.AnchorSideRight.Control = LabeledEdit5
+            EditLabel.AnchorSideRight.Side = asrBottom
+            EditLabel.AnchorSideBottom.Control = LabeledEdit5
+            EditLabel.Left = 10
+            EditLabel.Height = 15
+            EditLabel.Top = 198
+            EditLabel.Width = 676
+            EditLabel.Caption = 'Формат лога попаданий'
+            EditLabel.ParentColor = False
+            TabOrder = 5
+          end
+          object Image194: TImage
+            Cursor = crHandPoint
+            Left = 454
+            Height = 16
+            Top = 31
+            Width = 16
+            OnClick = Image194Click
+            Picture.Data = {
+              1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+              0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+              0467414D410000AFC837058AE90000001974455874536F667477617265004164
+              6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+              F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+              E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+              3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+              8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+              2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+              2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+              4E44AE426082
+            }
+          end
+          object Image195: TImage
+            Cursor = crHandPoint
+            Left = 454
+            Height = 16
+            Top = 79
+            Width = 16
+            OnClick = Image195Click
+            Picture.Data = {
+              1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+              0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+              0467414D410000AFC837058AE90000001974455874536F667477617265004164
+              6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+              F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+              E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+              3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+              8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+              2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+              2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+              4E44AE426082
+            }
+          end
+          object Image196: TImage
+            Cursor = crHandPoint
+            Left = 694
+            Height = 16
+            Top = 127
+            Width = 16
+            OnClick = Image196Click
+            Picture.Data = {
+              1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+              0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+              0467414D410000AFC837058AE90000001974455874536F667477617265004164
+              6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+              F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+              E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+              3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+              8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+              2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+              2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+              4E44AE426082
+            }
+          end
+          object Image197: TImage
+            Cursor = crHandPoint
+            Left = 694
+            Height = 16
+            Top = 175
+            Width = 16
+            OnClick = Image197Click
+            Picture.Data = {
+              1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+              0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+              0467414D410000AFC837058AE90000001974455874536F667477617265004164
+              6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+              F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+              E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+              3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+              8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+              2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+              2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+              4E44AE426082
+            }
+          end
+          object Image198: TImage
+            Cursor = crHandPoint
+            Left = 694
+            Height = 16
+            Top = 223
+            Width = 16
+            OnClick = Image198Click
+            Picture.Data = {
+              1754506F727461626C654E6574776F726B477261706869634A01000089504E47
+              0D0A1A0A0000000D4948445200000010000000100803000000282D0F53000000
+              0467414D410000AFC837058AE90000001974455874536F667477617265004164
+              6F626520496D616765526561647971C9653C00000045504C54457AA3D0FEFFFF
+              F5F8FBA8C4E2F4F7FBD3DFEDA2BFDDFCFDFED0DCEAA3BFDDFFFFFFD4E0EEB8CB
+              E1F4F7FAA8C3E1E2EBF57CA5D1C6D8EBB8CEE695B6D989AED5729ECDFFFFFF69
+              3189A20000001774524E53FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+              FF00E640E65E000000684944415478DA648F590EC0200844B5FB0E8AF6FE47AD
+              8E95A4753E1CF2580473FF64F2435E98C553052E4428B8029C89AF8CCB8090EF
+              2FD450021EC9AE83F90404D13AC1240146B459182BD80705A5653CB505438FD9
+              2E752885A8C2B7CD62EDEAED711F3D020C00540E137563FE70BD000000004945
+              4E44AE426082
+            }
+          end
+        end
+      end
+      object BitRefresh18: TBitBtn
+        Cursor = crHandPoint
+        Left = 490
+        Height = 49
+        Hint = 'Обновить данные из конфига'
+        Top = 40
+        Width = 115
+        Caption = 'Обновить'
+        Glyph.Data = {
+          36090000424D3609000000000000360000002800000018000000180000000100
+          20000000000000090000640000006400000000000000000000000C1900000C19
+          00000C19000008110000183000002C5700000B15000000000000000000000000
+          000009000014100800270E0700250400000E0000000000000000000000000000
+          00000000000000000000000000000000000000000000000000000C1900000C19
+          00000C19000008110000183000002D580000070C0000000000000A0500131E17
+          005A272800932C3900A82B3400A6242000881814005002000009000000000000
+          00000000000000000000000000000000000000000000000000000C1900000C19
+          00000C1900000811000018310000274F00000C10000523200087346B00ED2CA7
+          00FF21C500FF1AD300FF1DCD00FF26BA00FF338E00FF364D00E11E1B006F0000
+          00000000000000000000000000000000000000000000000000000C1900000C19
+          00000C19000008120000152C000028400020325100D726B800FF06F700FF00FF
+          00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF16DB00FF378E00FF3033
+          00BA0000000B00000000000000000000000000000000000000000D1B00000D1B
+          00000D1B0000070F000015230013335D00E628BF13FF0CFF16FF0AFE10FF09FF
+          0FFF03FF0BFF00FF06FF00FF00FF00FF00FF00FF00FF00FF00FF00FF00FF30A7
+          00FF323800CA0000000000000000000000000000000000000000000000000000
+          00000000000003030000284D00BD40B327FF3CEA49FF3CE044FF34DE38FF2BC9
+          22FF27BB16FF20C412FF15EC14FF0AFF12FF05FB05FF01FD00FF00FF00FF00FF
+          00FF329400FF311C00B0231D0076292B008C0E17004C000000001C3800001C38
+          00001A350000112B004749921FFF8AF996FF84F58EFF5AC24DFF3A8016FF3155
+          03D4365300973D5B009D396F08DE2CB21CFE25E62CFF22DD23FF1EE11DFF0CF9
+          12FF0BE807FF2A9D00FF23BC00FF26C000FF377B00FF0D0E0036142800001428
+          000015270000225700BCA8E29FFFD4FFE0FF66A74CFF295101DC264300542449
+          0000285100001E3A00001B22001C334100ED3AA825FF29E931FF11ED11FF05FB
+          04FF00FF00FF00FF00FF00FF00FF00FF00FF2F9900FF190D00581B3800001B39
+          000005270013678E43FDFFFFFFFF6E9F4DFF194C00AD173B000A275400002F62
+          00001A3600000E18000F274A04BC339212FC24C41BFF13E816FF06ED07FF05F0
+          04FF02F502FF00FB00FF00FF00FF04FC00FF347700FF0D08002329540000274D
+          00001248004698B47CFF95A372FF001A008C00080000060F00000C1B0000152A
+          0000346B00002F5F00344F9123FF89FF9AFF66E76EFF53CD51FF4BCC4BFF3FCD
+          3FFF34CE34FF29D028FF1EEC28FF2FC416FF2C4400C80001000019320000162C
+          0000274A0066446B0CFF236A00FF264200AB1806005900000007000000000000
+          0000173000002E6900052B6007B585B670FFDDFFE3FFC8FDCFFFA1E7A1FF90E1
+          90FF82DC82FF76DC78FF74E37BFF4C8F17FF101C005E000000000C0F00000B11
+          0000323C00B3219800FF00F100FF12EB00FF2AAC00FF325800DF1F1000690000
+          000000000000193C00002F6900002150009D709459FFE4EDDDFFFFFFFFFFFEFF
+          FFFFE1FAE2FFEAFFF3FFA8D894FF215000E50003000200000000132700002533
+          003B367802FF08FD0BFF00FF00FF00FF00FF00FF00FF0FF200FF2CA900FF313E
+          00C50A00002A0000000021400000356D00001246004C2C5903CF8DAA73FFE5EA
+          DCFFFFFFFFFFFFFFFFFF57842AFF001700570000000000000000142000003047
+          00C12ABE13FF12FF1DFF09F609FF00FF00FF00FF00FF00FF00FF00FF00FF1BDE
+          00FF346500F20B050032000000001C3A0000406D000025520000064700572858
+          00A7698445E9628133FF1D5600F30303000500000000000000002D48002A3370
+          03FF2AD52BFF21E424FF17E917FF09F609FF00FF00FF00FF00FF00FF00FF00FF
+          00FF16F700FF2D3B00C700000000000000001E31000026430000092100000B0F
+          00001D3E00D50FA300FF286F00D201000000000000000000000029480083449D
+          25FF42DF4BFF29CF29FF21DD21FF14E814FF02F702FF00FF00FF00FF00FF06E6
+          00FF2AB600FF273B008C000000000000000000000000000000000E0600253539
+          00D218CF00FF0FFC00FF283B00A6000000000000000000000000274F00BF6BC7
+          5FFF74FC84FF45E04AFF25DA2AFF12D911FF19E518FF11EC14FF15E313FF3675
+          00FF2F2400A700000000000000000000000003000000241C0065395E00F31BCF
+          00FF00FF00FF26BA00FF1F0E005A000000000000000000000000295500BA62A9
+          42FF78DB6AFF3FA82FFF60BC50FF9DF6A4FF71DB71FF51CB51FF2FD234FF29BC
+          19FF285F02DC1D21008B1711005E2322007E314B00D12F9700FF0DEA00FF00FF
+          00FF08FD00FF355E00EF06000007000000000000000000000000305F00232750
+          009F203F00B41D4100A446661AFFE2F1DCFFD8FFE2FF85DF84FF5DD35DFF33DB
+          3CFF26D723FF2FB712FF31A70CFF2BB70AFF16E206FF00FF00FF00FF00FF00FF
+          00FF31AA00FF221A006200000000000000000000000000000000376B0000172B
+          0000000000001F380000276200734B7625FFEDF5E9FFEFFFF6FFA0EAA1FF6FD7
+          6EFF46D64AFF28E030FF1DE924FF17F71FFF0FFC16FF06FF0DFF00FF04FF24C0
+          00FF323A00B00303000000000000000000000000000000000000366A00001A31
+          000000000000082C0000115300000B46008046721AFFC8D2BCFFF6FFFCFFD2FF
+          DBFF9BF3A2FF69E26EFF41DA46FF2CE234FF21F02AFF1AE518FF2CA106FF323E
+          00B2030000000000000000000000000000000000000000000000366A00001A32
+          0000000000000024000000410000245800002151004F1D5300D56A8B46FF9EBC
+          8BFFA5D49AFF90D887FF67CC5DFF3EB22EFF329B11FF346503EC384B00771422
+          0000000000000000000000000000000000000000000000000000366A00001A32
+          000000000000002700000047000023580000385D00002A5B0000154E00511B4F
+          00972F5E00C4346006D4325E03CC305400A7283800662B4F001129520000172C
+          0000000000000000000000000000000000000000000000000000366A00001A32
+          000000000000002700000047000023580000375E00002E5F00002B5C00002456
+          00171C4E00411239005218360049294900261A300000285400002C550000182D
+          0000000000000000000000000000000000000000000000000000
+        }
+        OnClick = BitRefresh18Click
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 1
+      end
+      object BitSave18: TBitBtn
+        Cursor = crHandPoint
+        Left = 611
+        Height = 49
+        Hint = 'Сохранить изменения в конфиг'
+        Top = 40
+        Width = 115
+        Caption = 'Сохранить'
+        Glyph.Data = {
+          36090000424D3609000000000000360000002800000018000000180000000100
+          2000000000000009000064000000640000000000000000000000A4A3A20CA4A4
+          A541A5AAB740A5ACBB4EA5ABB95DA5ABB969A5ABB973A5ABB97AA5ABB980A5AB
+          B984A5ABB985A5ABB989A5ABB989A5ABB985A5ABB984A5ABB980A2ADBB7BAEA6
+          B474AFA6B46AA2ADBB5FA5ABBA50A5ACBB3FA4A6AA3EA4A3A111A5A8B015A4AB
+          BA6DA2977EE6B0894BFFB48A4AFFB38A4EFFB38A4EFFB38A4EFFB38B4EFFB38B
+          4EFFB38B4EFFB38B4EFFB38B4EFFB38B4EFFB38B4EFFB28B4BFFBB864DFF9998
+          77FF979979FFBB864DFFB48845FFA79064F5A2A7AF84A5ABBA1EA4A8AF00A58C
+          583A9F720FFF597A62FF487F80FF4E7C73FF4E7C73FF4E7C73FF4E7C73FF4E7C
+          73FF4E7C73FF4E7C73FF4E7C73FF4E7C73FF4E7C73FF507B7AFF71817AFF41A8
+          4DFF3EA949FF708279FF477E82FF827227FFAD823383A4A19D009F7F37009E6E
+          067D9E7922FFA2D6F8FF9EE7FFFFAEF2FFFFAFF3FFFFAEF2FFFFAEF2FFFFAEF2
+          FFFFAEF2FFFFAEF2FFFFAEF2FFFFAEF2FFFFAAF2FFFFBBF1FFFF5ACAD7FF14AC
+          4FFF16AC4DFF58CDD6FFAEEBFFFF9F9D77FF9C6300CB9E792400A0781E009A75
+          1F719F7C29FFFFFFEDFFFFFFFFFFFBDFCDFFF9DDC9FFFBDFCDFFFBDFCDFFFBDF
+          CDFFFBDFCDFFFBDFCDFFFBDFCDFFFBE0CDFFFFE2D8FFF0E9CCFF3EBB5BFF24AA
+          57FF26AB5AFF34B453FFFFFFF8FFF0B98DFF876405BDA07A2400A47F2D009F78
+          2171A37E2BFFF5F0E6FFFFFFFFFFEDE8E4FFECE7E3FFEDE8E4FFEDE8E4FFEDE8
+          E4FFEDE8E4FFEDE8E4FFECE8E4FFEDE9E5FFF6DFE0FF3BA961FF13AD52FF37B6
+          6AFF36B66AFF11AA50FF53D096FFD0A670FFA56D12BCA3802E00A7823000A27B
+          2571A6812EFFF6F2E8FFFFFFFFFFE4DDD7FFE2DBD5FFE4DDD7FFE4DDD7FFE4DD
+          D7FFE4DDD7FFE4DDD7FFE7DDD8FFFCE3E6FF8EDCB2FF09B458FF30B86CFF2FB9
+          6DFF2FB96DFF32BB70FF0EBD6BFF5B9E4DFFC57624BBB27D2B00AA853300A57E
+          2871A98431FFF6F1E7FFFFFFFFFFEDE8E4FFECE6E2FFEDE8E4FFEDE8E4FFEDE8
+          E4FFEDE8E4FFE9E9E3FFF9E7E8FFB5CBB4FF02AC51FF26BE70FF2EBE73FF2CBD
+          72FF2CBD72FF2DBD72FF27BF73FF18C579FF829748B3B77F2C00AD873600A880
+          2A71AC8734FFF7F3E9FFFFFFFFFFE5DFD9FFE4DDD7FFE5DFD9FFE5DFD9FFE5DF
+          D9FFE5DFD9FFF1DDDCFFEAE9E4FF3BD28BFF0DBB65FF2DC177FF2AC177FF2AC1
+          77FF2AC177FF2AC177FF2CC076FF23C57AFF26C379E337BC7005B08A3800AB82
+          2C71AF8936FFFFFFFFFFFFFFFFFFE9E6E8FFE8E4E5FFE9E6E8FFE9E6E8FFE9E6
+          E8FFE9E6E8FFF0E3E8FF3FC288FF00BE5FFF0FC97CFF25C67BFF2AC57BFF27C5
+          7BFF27C57BFF28C57BFF2AC479FF16CD83FF04D58CFF15CE84D5B28C3B00B18A
+          3871AB8129FFDDCBA8FFF6F1E7FFFFFDF6FFFFFEF7FFFFFDF6FFFFFDF6FFFFFD
+          F6FFFFFDF6FFF7FCF2FF96DFB4FF92D6AAFF96DAB0FF2ECB83FF1BC87BFF25C9
+          7FFF25C97FFF24CA80FF1CCE84FF68AD5FFF80A253D81CCD8377B68F3E00B690
+          4071B48D3AFFAF852EFFB58D3BFFB58D3BFFB58D3BFFB58D3BFFB58D3BFFB58D
+          3BFFB58D3BFFB68E3CFFD99651FFEB9551FFD79955FF32C880FF13D187FF23CC
+          83FF23CC83FF20CE84FF0FD58CFFA29747FFF6741FB08CA05100B9914100B991
+          4171B99242FFB78F3DFFB58C37FFB58C37FFB58C37FFB58C37FFB58C37FFB58C
+          37FFB58C37FFB58C37FFB58C37FFC08832FFB08E39FF2DCA80FF15D58DFF22D0
+          86FF22D086FF1ED187FF10D78EFF8DA455FFCF8836BCCA8A3900BB944300BB94
+          4371BB9443FFBB9443FFBB9443FFBB9443FFBB9443FFBB9443FFBB9443FFBB94
+          43FFBB9443FFBB9443FFBB9443FFC6903EFFB69645FF2CCD84FF12D78FFF20D2
+          89FF20D289FF1DD38AFF0ED991FF8FA657FFD48A38BCBB944300BF964600BF96
+          4671BF9747FFBD9544FFBC9341FFBD9341FFBD9341FFBD9341FFBD9341FFBD93
+          41FFBD9341FFBD9341FFBD9341FFC78F3CFFB89544FF2BCF87FF10D993FF1ED4
+          8CFF1ED48CFF1BD58DFF0CDB94FF91A85AFFD88C3BBCBF964600C2994900C299
+          4971BF9644FFC9A052FFD0AB60FFCEA85CFFCEA85CFFCEA85CFFCEA85CFFCEA8
+          5CFFCEA85CFFCEA85CFFCEA85CFFDBA558FFC9AA5DFF2BD38BFF0EDA92FF1DD6
+          8EFF1DD68EFF1AD78FFF0ADD96FF93AA5DFFDC8F3EBCC2994900C49B4B00C399
+          4871CBA254FFC5A55EFFB08F42FFAC8834FFAC8733FFAC8834FFAC8834FFAC88
+          34FFAC8834FFAC8834FFAC8834FFB8822EFFA78A36FF26D189FF0FDF98FF1CD8
+          90FF1CD890FF19D991FF07DF98FF94AC5FFFE09240BEC49B4B00C89E4E00C99D
+          4C71D0A95EFFA48232FF896208FFA28138FFA88B47FFAA8D4AFFA78943FFA383
+          39FFA38339FFA38339FFA38339FFAA7C33FF9F863CFF17D184FF02E39CFF0FDB
+          94FF0DDA93FF0ADB93FF00E49FFF93B265FFE69442C5C89E4E00CBA05000CDA1
+          5071CEA658FF987015FFC6B387FFFFFFFFFFFEFEFEFFFDFCFBFFFFFFFEFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF9FFFFFF55E6ABFF2AE295FF3BE5
+          A0FF3BE49FFF37E5A3FF2FE6A2FFA8AC5FFFE098479ECCA05000CEA35300CFA3
+          5271D1A85AFF997117FFE3DAC7FFFFFFFFFFB49859FF946C1FFFC6B080FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF4FBF6FF978D41FFAD99
+          48FFCBB568FFC2AF61FFC4AA5BFFD1A151FFCEA35334CEA35300D1A55600D2A5
+          5571D4AA5DFFA0781FFFDED3BAFFFFFFFFFFA68233FF814F00FFBA9E60FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFFFFB07A30FFC587
+          31FFEAA858FFE19E4CFFE0A04FFFD3A5568BCFA55600D1A55600D4A85900D5A8
+          587AD7AD60FFAA8027FFE1D5BCFFFFFFFFFFB49145FF956400FFC4A96EFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFCF9FFAE8C42FFBF96
+          42FFDCAF61FFD4A859FFD4A859A8D3A75800D3A75800D3A75800D7AB5C00D8AA
+          5967D9B164FFB48931FFE5D8BFFFFFFFFFFFBA9447FF9E6A00FFC9AC70FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFCFAFFB7944AFFC69C
+          4AFFDEB264FFD7AA5BBAD6AA5B00D6AA5B00D6AA5B00D6AA5B00D9AD5E00DBAD
+          5E09DBAF60A0BB8D33CAE5D7BACAFFFFFFCAF3EBDCCAEEE3CDCAF6F0E4CAFFFF
+          FFCAFFFFFFCAFFFFFFCAFFFFFFCAFFFFFFCAFFFFFFCAFDFCFACAC09B52CAC99D
+          47C0DFB26471D8AC5C00D7AB5C00D7AB5C00D7AB5C00D7AB5C00
+        }
+        OnClick = BitSave18Click
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 2
+      end
+    end
   end
   object BitBtn4: TBitBtn
     Cursor = crHandPoint
     Left = 170
-    Height = 594
+    Height = 520
     Hint = 'Свернуть панель'
     Top = 0
     Width = 16
